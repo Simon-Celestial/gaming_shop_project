@@ -1,15 +1,225 @@
-@import  "../../../../Variables/Variables";
+@import "../../../../Variables/Variables";
 
 .headerWrapper {
   display: flex;
   width: 100%;
   justify-content: center;
   box-shadow: 0 4px 24px -1px rgba(0, 0, 0, .2);
-  background: linear-gradient(153.32deg, rgba(255, 255, 255, 0.3) -65.62%, rgba(255, 255, 255, 0.1) 83.28%);
-  height: 100px;
+  background: linear-gradient(153.32deg, rgba(255, 255, 255, 0.1) -65.62%, rgba(255, 255, 255, 0.1) 83.28%);
   backdrop-filter: blur(15px);
   position: fixed;
   left: 0;
   top: 0;
   z-index: 10;
+
+  .headerContent {
+    padding: 25px 25px 25px 100px;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+
+    .leftBlock {
+      display: flex;
+      gap: 50px;
+      align-items: center;
+
+      .logoBlock {
+        display: flex;
+        gap: 5px;
+        align-items: center;
+        transition: transform $transition;
+
+        &:hover {
+          transform: scale(1.05);
+
+          p {
+            color: $green;
+            transition: color $transition;
+
+            span {
+              color: $white;
+              transition: color $transition;
+            }
+          }
+        }
+
+        img {
+          width: 42px;
+          object-position: center;
+          object-fit: cover;
+        }
+
+        p {
+          font-size: 20px;
+          text-transform: uppercase;
+          font-weight: 700;
+
+          span {
+            color: $green;
+          }
+        }
+
+
+      }
+
+      .phoneBlock {
+        display: flex;
+        gap: 5px;
+        align-items: center;
+
+        a {
+          font-family: $interFont;
+        }
+
+        svg {
+          font-size: 24px;
+        }
+      }
+    }
+
+    .navigationBlock {
+      display: flex;
+      gap: 5px;
+      align-items: center;
+      width: 100%;
+      max-width: 550px;
+
+      .navEntity {
+        padding: 5px 10px;
+        font-size: 20px;
+        cursor: pointer;
+        position: relative;
+        &:hover {
+          .navDropDown {
+            opacity: 1;
+            top: 30px;
+          }
+        }
+
+        .navDropDown {
+          display: flex;
+          left: 10px;
+          position: absolute;
+          top: 100px;
+          padding-top: 15px;
+          opacity: 0;
+          transition: opacity $transition,top 0.4s ease;
+
+          .dropDownContent {
+            display: flex;
+            flex-direction: column;
+            background-color: black;
+            padding: 10px;
+            min-width: 160px;
+            border-radius: 5px;
+            gap: 10px;
+
+            a {
+              transition: color $transition, letter-spacing $transition;
+              &:hover {
+                color: $green;
+                letter-spacing: 2px;
+              }
+
+            }
+          }
+        }
+
+        .entity {
+          transition: color $transition;
+          position: relative;
+
+
+          &:after {
+            content: "";
+            opacity: 0;
+            width: 35px;
+            height: 1px;
+            background: $green;
+            position: absolute;
+            left: 20%;
+            top: 50%;
+            transform: translate(-20%, -50%);
+            transition: transform $transition, opacity $transition;
+          }
+        }
+
+        &:hover {
+          .entity {
+            color: $green;
+
+            &:after {
+              opacity: 1;
+              transform: rotate(-45deg);
+            }
+
+            svg {
+              transform: rotate(0);
+            }
+          }
+        }
+
+        p {
+          display: inline-flex;
+          align-items: center;
+          gap: 2px;
+
+          svg {
+            transform: rotate(180deg);
+            transition: transform $transition;
+          }
+        }
+      }
+    }
+
+    .rightBlock {
+      display: flex;
+      gap: 15px;
+      align-items: center;
+
+      .buttonBlock {
+        border: 1px solid $white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        width: 32px;
+        height: 32px;
+        cursor: pointer;
+        transition: border-color $transition;
+
+        &:hover {
+          border-color: $green;
+
+          svg {
+            color: $green;
+            transform: rotate(360deg);
+          }
+        }
+
+        svg {
+          font-size: 20px;
+          transition: color $transition, transform $transition;
+        }
+
+        &.cartButton {
+          margin-left: 100px;
+          border: 0;
+
+          svg {
+            font-size: 25px;
+          }
+
+          &:hover {
+            svg {
+              transform: rotate(0) scale(1.2);
+            }
+          }
+        }
+      }
+    }
+
+  }
 }
