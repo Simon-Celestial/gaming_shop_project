@@ -1,10 +1,9 @@
+import {MainRouter} from "./Routers/router.tsx";
 
 export const App = () => {
 
-  return (
-    <>
-     <h1>App</h1>
-    </>
-  )
+    return (
+        <MainRouter/>
+    )
 }
 
