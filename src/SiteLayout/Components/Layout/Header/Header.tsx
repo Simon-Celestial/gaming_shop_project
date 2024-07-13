@@ -5,10 +5,24 @@ import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import ExpandLessOutlinedIcon from '@mui/icons-material/ExpandLessOutlined';
-import {Link} from "react-router-dom";
+import {Link, useLocation} from "react-router-dom";
 import {SideMenu} from "../SideMenu/SideMenu.tsx";
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-expect-error
+import navData from '/public/data/NavData/navData.json';
+
+interface NAV_DATA {
+    id: string;
+    name: string;
+    route: string;
+}
+
 
 export const Header = () => {
+
+    const location = useLocation();
+    console.log(location.pathname)
+    console.log(navData[0].route)
     return (
         <>
             <SideMenu/>
@@ -25,53 +39,48 @@ export const Header = () => {
                         </div>
                     </div>
                     <nav className={styles.navigationBlock}>
-                        <div className={styles.navEntity}>
-                            <Link to={"/"} className={styles.entity}>Home</Link>
-                        </div>
-                        <div className={styles.navEntity}>
-                            <Link to={"/shop"} className={styles.entity}>Shop</Link>
-                        </div>
-                        <div className={styles.navEntity}>
-                            <p className={styles.entity}>Pages<ExpandLessOutlinedIcon/></p>
-                            <div className={styles.navDropDown}>
-                                <div className={styles.dropDownContent}>
-                                    <Link to={"/"}>
-                                        Option 1
-                                    </Link>
-                                    <Link to={"/"}>
-                                        Option 2
-                                    </Link>
-                                    <Link to={"/"}>
-                                        Option 3
-                                    </Link>
-                                    <Link to={"/"}>
-                                        Option 4
-                                    </Link>
-                                    <Link to={"/"}>
-                                        Option 5
-                                    </Link>
-                                    <Link to={"/"}>
-                                        Option 6
-                                    </Link>
-                                    <Link to={"/"}>
-                                        Option 7
-                                    </Link>
-                                    <Link to={"/"}>
-                                        Option 8
-                                    </Link>
-                                </div>
+                        {navData?.map((nav: NAV_DATA) => {
+                            return (
+                                <div key={nav?.id} className={`${styles.navEntity} `}>
+                                    {nav?.id === 'pages' ?
+                                        <>
+                                            <p className={`${styles.entity}`}>{nav?.name}<ExpandLessOutlinedIcon/></p>
+                                            <div className={styles.navDropDown}>
+                                                <div className={styles.dropDownContent}>
+                                                    <Link to={"/"}>
+                                                        Option 1
+                                                    </Link>
+                                                    <Link to={"/"}>
+                                                        Option 2
+                                                    </Link>
+                                                    <Link to={"/"}>
+                                                        Option 3
+                                                    </Link>
+                                                    <Link to={"/"}>
+                                                        Option 4
+                                                    </Link>
+                                                    <Link to={"/"}>
+                                                        Option 5
+                                                    </Link>
+                                                    <Link to={"/"}>
+                                                        Option 6
+                                                    </Link>
+                                                    <Link to={"/"}>
+                                                        Option 7
+                                                    </Link>
+                                                    <Link to={"/"}>
+                                                        Option 8
+                                                    </Link>
+                                                </div>
 
-                            </div>
-                        </div>
-                        <div className={styles.navEntity}>
-                            <Link to={"/"} className={styles.entity}>About</Link>
-                        </div>
-                        <div className={styles.navEntity}>
-                            <Link to={"/"} className={styles.entity}>Blog</Link>
-                        </div>
-                        <div className={styles.navEntity}>
-                            <Link to={"/"} className={styles.entity}>Contact</Link>
-                        </div>
+                                            </div>
+                                        </>
+                                        :
+                                        <Link to={nav?.route} className={`${styles.entity} ${location.pathname === nav?.route || location.pathname === "/" ? styles.current : ""}`}>{nav?.name}</Link>
+                                    }
+                                </div>
+                            )
+                        })}
                     </nav>
                     <div className={styles.rightBlock}>
                         <div className={styles.buttonBlock}>
@@ -90,5 +99,6 @@ export const Header = () => {
                 </div>
             </header>
         </>
-    );
+    )
+        ;
 };

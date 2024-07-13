@@ -91,12 +91,6 @@
         font-size: 20px;
         cursor: pointer;
         position: relative;
-        &:hover {
-          .navDropDown {
-            opacity: 1;
-            top: 30px;
-          }
-        }
 
         .navDropDown {
           display: flex;
@@ -105,7 +99,8 @@
           top: 100px;
           padding-top: 15px;
           opacity: 0;
-          transition: opacity $transition,top 0.4s ease;
+          transition: opacity $transition, top 0.4s ease;
+          pointer-events: none;
 
           .dropDownContent {
             display: flex;
@@ -118,6 +113,7 @@
 
             a {
               transition: color $transition, letter-spacing $transition;
+
               &:hover {
                 color: $green;
                 letter-spacing: 2px;
@@ -130,7 +126,16 @@
         .entity {
           transition: color $transition;
           position: relative;
+          font-weight: 600;
 
+          &.current {
+            color: $green;
+
+            &:after {
+              opacity: 1;
+              transform: rotate(-45deg);
+            }
+          }
 
           &:after {
             content: "";
@@ -143,6 +148,17 @@
             top: 50%;
             transform: translate(-20%, -50%);
             transition: transform $transition, opacity $transition;
+          }
+        }
+
+        p {
+          display: inline-flex;
+          align-items: center;
+          gap: 2px;
+
+          svg {
+            transform: rotate(180deg);
+            transition: transform $transition;
           }
         }
 
@@ -159,16 +175,11 @@
               transform: rotate(0);
             }
           }
-        }
 
-        p {
-          display: inline-flex;
-          align-items: center;
-          gap: 2px;
-
-          svg {
-            transform: rotate(180deg);
-            transition: transform $transition;
+          .navDropDown {
+            opacity: 1;
+            pointer-events: auto;
+            top: 30px;
           }
         }
       }
