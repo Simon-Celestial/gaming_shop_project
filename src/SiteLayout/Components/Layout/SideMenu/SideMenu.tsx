@@ -105,7 +105,7 @@ export const SideMenu = () => {
                                     </>
                                     :
                                     <Link to={nav?.route}
-                                          className={`${styles.item} ${location.pathname === nav?.route || location.pathname === "/" ? styles.current : ""}`}>{nav?.name}</Link>
+                                          className={`${styles.item} ${location.pathname === nav?.route? styles.current : ""}`}>{nav?.name}</Link>
                                 }
                             </div>
                         )

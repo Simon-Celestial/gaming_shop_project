@@ -2,6 +2,7 @@ import {createBrowserRouter, RouterProvider} from "react-router-dom";
 import {MainLayout} from "../SiteLayout/MainLayout.tsx";
 import {HomePage} from "../SiteLayout/Pages/HomePage/HomePage.tsx";
 import {NotFoundPage} from "../SiteLayout/Pages/NotFoundPage/NotFoundPage.tsx";
+import {ShopPage} from "../SiteLayout/Pages/ShopPage/ShopPage.tsx";
 
 const router = () => createBrowserRouter([
     {
@@ -10,7 +11,7 @@ const router = () => createBrowserRouter([
         children: [
             {
                 path: "*",
-                element: <NotFoundPage />
+                element: <NotFoundPage/>
             },
 
             {
@@ -20,6 +21,10 @@ const router = () => createBrowserRouter([
             {
                 path: 'home',
                 element: <HomePage/>,
+            },
+            {
+                path: 'shop',
+                element: <ShopPage/>
             }
         ],
     }

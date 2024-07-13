@@ -21,8 +21,9 @@ interface NAV_DATA {
 export const Header = () => {
 
     const location = useLocation();
+
     console.log(location.pathname)
-    console.log(navData[0].route)
+
     return (
         <>
             <SideMenu/>
@@ -76,7 +77,7 @@ export const Header = () => {
                                             </div>
                                         </>
                                         :
-                                        <Link to={nav?.route} className={`${styles.entity} ${location.pathname === nav?.route || location.pathname === "/" ? styles.current : ""}`}>{nav?.name}</Link>
+                                        <Link to={nav?.route} className={`${styles.entity} ${location.pathname === nav?.route ? styles.current : ''}`}>{nav?.name}</Link>
                                     }
                                 </div>
                             )
