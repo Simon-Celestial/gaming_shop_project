@@ -16,7 +16,7 @@
       max-width: 1320px;
       display: flex;
       width: 100%;
-      padding: 150px 30px;
+      padding: 160px 15px;
       justify-content: space-between;
       gap: 25px;
       align-items: center;
@@ -80,149 +80,12 @@
             margin-bottom: 5px;
           }
         }
-
-        .deviceCard {
-          width: 100%;
-          border-radius: 0 10px;
-          display: flex;
-          flex-direction: column;
-          height: 100%;
-          padding: 15px;
-          border: 1px solid $green;
-          position: relative;
-          overflow: hidden;
-          background: linear-gradient(148deg, rgba(14, 240, 173, 0.05), rgba(0, 0, 0, 0) 100%);
-          &:hover {
-            .deviceOptions {
-              right: 15px;
-              opacity: 1;
-              pointer-events: auto;
-
-            }
-          }
-           .deviceOptions {
-             position: absolute;
-             display: flex;
-             flex-direction: column;
-             transition: right $transition,opacity $transition;
-             gap: 5px;
-             right: -100%;
-             top: 10px;
-             z-index: 3;
-             opacity: 0;
-             pointer-events: none;
-             .option {
-               &:hover {
-                 svg {
-                   transform: scale(1.1);
-                   color: $green;
-                 }
-               }
-               svg {
-                 transition: color $transition,transform $transition;
-                 font-size: 25px;
-                 cursor: pointer;
-
-               }
-             }
-           }
-          .cardTitle {
-            display: flex;
-            flex-direction: column;
-            overflow-x: hidden;
-            position: relative;
-
-            a {
-              overflow: hidden;
-              text-overflow: ellipsis;
-              font-size: 22px;
-              -webkit-line-clamp: 1;
-              -webkit-box-orient: vertical;
-              font-weight: 500;
-              white-space: nowrap;
-              width: 90%;
-              margin-top: 30px;
-              transition: color $transition;
-              &:hover {
-                color: $green;
-              }
-            }
-
-            .offer {
-              position: absolute;
-              top: 0;
-              left: 0;
-              font-size: 14px;
-              border-radius: 5px;
-              padding: 2px 8px;
-              letter-spacing: 1px;
-              font-weight: 600;
-              background: linear-gradient(90deg, $green 0%, rgba(0, 152, 255, 0) 100%);
-
-            }
-
-            p {
-              font-size: 12px;
-              color: #b0b0b0;
-              text-transform: uppercase;
-              margin-top: 5px;
-            }
-
-          }
-          .cardImage {
-            width: 100%;
-            overflow: hidden;
-            &:hover {
-              img {
-                transform: scale(1.05);
-              }
-            }
-            img {
-              transition: transform $transition;
-              width: 100%;
-              object-position: center;
-              object-fit: cover;
-            }
-          }
-          .cardBottom {
-            display: flex;
-            gap: 25px;
-            width: 100%;
-            align-items: center;
-            justify-content: space-between;
-            .price {
-              display: flex;
-              align-items: center;
-              gap: 10px;
-              p {
-                font-size: 18px;
-              }
-              span {
-                font-size: 14px;
-                text-decoration: line-through;
-                color: gray;
-              }
-
-            }
-            .addBtn {
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              text-transform: uppercase;
-              cursor: pointer;
-              padding: 10px 15px;
-              border-radius: 0 10px;
-              font-size: 18px;
-              font-weight: 600;
-              transition: transform $transition, color $transition;
-              background: linear-gradient(110deg, rgba(14, 240, 173, 100), rgba(0, 0, 0, 0) 100%);
-              &:hover {
-                transform: scale(1.05);
-                color: black;
-              }
-            }
+        .swiperWrapper {
+          .cardWrapper {
+            padding-bottom: 50px;
           }
         }
+
       }
     }
   }

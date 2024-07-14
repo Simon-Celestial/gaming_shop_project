@@ -1,10 +1,31 @@
+import React from "react";
 import styles from "./HomePage.module.scss";
 import {Header} from "../../Components/Layout/Header/Header.tsx";
 import {Footer} from "../../Components/Layout/Footer/Footer.tsx";
 import {TypeAnimation} from "react-type-animation";
-import {Link} from "react-router-dom";
-import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
-import RemoveRedEyeOutlinedIcon from '@mui/icons-material/RemoveRedEyeOutlined';
+import {Autoplay, EffectFade, Pagination} from 'swiper/modules';
+import {DeviceCard} from "../../Components/Reusables/DeviceCard/DeviceCard.tsx";
+import {Swiper, SwiperSlide} from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/pagination';
+
+
+interface PaginationStyles {
+    "--swiper-pagination-color": string;
+    "--swiper-pagination-bullet-inactive-color": string;
+    "--swiper-pagination-bullet-inactive-opacity": string;
+    "--swiper-pagination-bullet-size": string;
+    "--swiper-pagination-bullet-horizontal-gap": string;
+    "--swiper-pagination-bottom": string;
+}
+const paginationStyles: PaginationStyles = {
+    "--swiper-pagination-color": "#0EF0AD",
+    "--swiper-pagination-bullet-inactive-color": "#c5c5ca",
+    "--swiper-pagination-bullet-inactive-opacity": "1",
+    "--swiper-pagination-bullet-size": "16px",
+    "--swiper-pagination-bullet-horizontal-gap": "6px",
+    "--swiper-pagination-bottom": "10px",
+};
 
 export const HomePage = () => {
     return (
@@ -23,42 +44,44 @@ export const HomePage = () => {
                             />
                             <p>Creating innovative, fun-filled gaming devices that bring vibrant colors to your gaming
                                 experience.</p>
+
                         </div>
                         <div className={styles.swiperContainer}>
                             <div className={styles.swiperHead}>
                                 <img src="/images/bottomArrow.png" alt="arrow bottom"/>
                                 <p>Featured Device</p>
                             </div>
-                            <div className={styles.deviceCard}>
-                                <div className={styles.deviceOptions}>
-                                    <div className={styles.option}>
-                                        <FavoriteBorderIcon/>
+                            <div className={styles.swiperWrapper}>
+                                <Swiper
+                                    slidesPerView={1}
+                                    spaceBetween={25}
+                                    freeMode={true}
+                                    loop={true}
+                                    direction={'horizontal'}
+                                    pagination={{
+                                        clickable: true,
+                                        dynamicBullets: true,
+                                    }}
+                                    modules={[EffectFade, Autoplay, Pagination]}
+                                    autoplay={{delay: 3000}}
+                                    style={paginationStyles as React.CSSProperties}
+                                >
+                                <SwiperSlide>
+                                    <div className={styles.cardWrapper}>
+                                        <DeviceCard />
                                     </div>
-                                    <div className={styles.option}>
-                                        <RemoveRedEyeOutlinedIcon/>
-                                    </div>
-
-                                </div>
-                                <div className={styles.cardTitle}>
-                                    <div className={styles.offer}>
-                                    Offer
-                                    </div>
-                                    <Link to={""}>PC Master Series X-9700K Gaming Core i7 Mid Tower cpu</Link>
-                                    <p>Gaming, Best seller, E-sports</p>
-                                </div>
-                                <div className={styles.cardImage}>
-                                    <img src="https://themes.workdo.io/wordpress/toaster/gaming/wp-content/uploads/2022/03/1-2.png" alt="Device"/>
-                                </div>
-                                <div className={styles.cardBottom}>
-                                    <div className={styles.price}>
-                                        <p>$ 449.00</p>
-                                        <span>$ 500.00</span>
-                                    </div>
-                                    <div className={styles.addBtn}>
-                                        add to card
-                                    </div>
-                                </div>
-
+                                </SwiperSlide>
+                                    <SwiperSlide>
+                                        <div className={styles.cardWrapper}>
+                                            <DeviceCard />
+                                        </div>
+                                    </SwiperSlide>
+                                    <SwiperSlide>
+                                        <div className={styles.cardWrapper}>
+                                            <DeviceCard />
+                                        </div>
+                                    </SwiperSlide>
+                                </Swiper>
                             </div>
                         </div>
                     </div>
