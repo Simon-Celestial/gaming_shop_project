@@ -8,6 +8,7 @@ import {DeviceCard} from "../../Components/Reusables/DeviceCard/DeviceCard.tsx";
 import {Swiper, SwiperSlide} from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
+import {DefaultButton} from "../../Components/Reusables/DefaultButton/DefaultButton.tsx";
 
 
 interface PaginationStyles {
@@ -18,6 +19,7 @@ interface PaginationStyles {
     "--swiper-pagination-bullet-horizontal-gap": string;
     "--swiper-pagination-bottom": string;
 }
+
 const paginationStyles: PaginationStyles = {
     "--swiper-pagination-color": "#0EF0AD",
     "--swiper-pagination-bullet-inactive-color": "#c5c5ca",
@@ -33,9 +35,58 @@ export const HomePage = () => {
             <Header/>
             <main className={styles.homeWrapper}>
                 <section className={styles.bannerSection}>
+                    <div className={`${styles.decoration} ${styles.planet}`}>
+                        <img src="https://pixner.net/gamestorm3/main/assets/images/abs-items/planet.png" alt="Planet"/>
+                    </div>
+                    <div className={`${styles.decoration} ${styles.joystick}`}>
+                        <img src="https://pixner.net/gamestorm3/main/assets/images/abs-items/console-2.png"
+                             alt="Console"/>
+                    </div>
+                    <div className={`${styles.decoration} ${styles.controllers}`}>
+                        <img src="https://pixner.net/gamestorm3/main/assets/images/abs-items/console-1.png"
+                             alt="Console"/>
+                    </div>
+                    <div className={`${styles.decoration} ${styles.tubesSolid}`}>
+                        <div className={styles.wideTube}></div>
+                        <div className={styles.thinTube}></div>
+                    </div>
+                    <div className={`${styles.decoration} ${styles.tubesSolid} ${styles.tubeTransparent}`}>
+                        <div className={styles.wideTube}></div>
+                        <div className={styles.thinTube}></div>
+                    </div>
+                    <div className={`${styles.decoration} ${styles.starsDefault} ${styles.starsOne}`}>
+                        <img src="https://pixner.net/gamestorm3/main/assets/images/abs-items/ellipse-3.png"
+                             alt="Star"/>
+                        <img src="https://pixner.net/gamestorm3/main/assets/images/abs-items/ellipse-2.png"
+                             alt="Star"/>
+                        <img src="https://pixner.net/gamestorm3/main/assets/images/abs-items/ellipse-6.png"
+                             alt="Star"/>
+                    </div>
+                    <div className={`${styles.decoration} ${styles.starsDefault} ${styles.starsTwo}`}>
+                        <img src="https://pixner.net/gamestorm3/main/assets/images/abs-items/ellipse-4.png"
+                             alt="Star"/>
+                        <img src="https://pixner.net/gamestorm3/main/assets/images/abs-items/ellipse-5.png"
+                             alt="Star"/>
+                        <img src="https://pixner.net/gamestorm3/main/assets/images/abs-items/ellipse-3.png"
+                             alt="Star"/>
+                    </div>
+                    <div className={`${styles.decoration} ${styles.starsDefault} ${styles.starsThree}`}>
+                        <img src="https://pixner.net/gamestorm3/main/assets/images/abs-items/ellipse-2.png"
+                             alt="Star"/>
+                        <img src="https://pixner.net/gamestorm3/main/assets/images/abs-items/ellipse-4.png"
+                             alt="Star"/>
+                        <img src="https://pixner.net/gamestorm3/main/assets/images/abs-items/ellipse-5.png"
+                             alt="Star"/>
+                        <img src="https://pixner.net/gamestorm3/main/assets/images/abs-items/ellipse-3.png"
+                             alt="Star"/>
+                    </div>
+                    <div className={`${styles.decoration} ${styles.starsDefault} ${styles.starsFour}`}>
+                        <img src="https://pixner.net/gamestorm3/main/assets/images/abs-items/ellipse-6.png"
+                             alt="Star"/>
+                    </div>
                     <div className={styles.sectionContent}>
                         <div className={styles.titleContainer}>
-                            <h4>Enjoy Gaming World</h4>
+                        <h4>Enjoy Gaming World</h4>
                             <h2>We Selling Devices</h2>
                             <TypeAnimation
                                 sequence={['Entertainment', 600, 'Quality', 600, 'Reliability', 600]}
@@ -44,7 +95,7 @@ export const HomePage = () => {
                             />
                             <p>Creating innovative, fun-filled gaming devices that bring vibrant colors to your gaming
                                 experience.</p>
-
+                            <DefaultButton title={'Explore Our Devices'} link={'/shop'}/>
                         </div>
                         <div className={styles.swiperContainer}>
                             <div className={styles.swiperHead}>
@@ -66,19 +117,19 @@ export const HomePage = () => {
                                     autoplay={{delay: 3000}}
                                     style={paginationStyles as React.CSSProperties}
                                 >
-                                <SwiperSlide>
-                                    <div className={styles.cardWrapper}>
-                                        <DeviceCard />
-                                    </div>
-                                </SwiperSlide>
                                     <SwiperSlide>
                                         <div className={styles.cardWrapper}>
-                                            <DeviceCard />
+                                            <DeviceCard/>
                                         </div>
                                     </SwiperSlide>
                                     <SwiperSlide>
                                         <div className={styles.cardWrapper}>
-                                            <DeviceCard />
+                                            <DeviceCard/>
+                                        </div>
+                                    </SwiperSlide>
+                                    <SwiperSlide>
+                                        <div className={styles.cardWrapper}>
+                                            <DeviceCard/>
                                         </div>
                                     </SwiperSlide>
                                 </Swiper>

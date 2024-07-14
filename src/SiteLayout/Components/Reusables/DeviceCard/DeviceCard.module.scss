@@ -9,7 +9,7 @@
   border: 1px solid $green;
   position: relative;
   overflow: hidden;
-  background: linear-gradient(148deg, rgba(14, 240, 173, 0.05), rgba(0, 0, 0, 0) 100%);
+  background: linear-gradient(150deg, rgba(9, 9, 9, 0.5), rgba(0, 0, 0, 0.1) 100%);
   &:hover {
     .deviceOptions {
       right: 15px;
@@ -118,7 +118,7 @@
       span {
         font-size: 14px;
         text-decoration: line-through;
-        color: gray;
+        color: #b0b0b0;
       }
 
     }
@@ -131,6 +131,7 @@
       padding: 10px 15px;
       border-radius: 0 10px;
       font-size: 18px;
+      border: 1px solid $white;
       font-weight: 600;
       transition: transform $transition, color $transition;
       background: linear-gradient(110deg, rgba(14, 240, 173, 100), rgba(0, 0, 0, 0) 100%);
