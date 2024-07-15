@@ -10,6 +10,8 @@ import {SideMenu} from "../SideMenu/SideMenu.tsx";
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-expect-error
 import navData from '/public/data/NavData/navData.json';
+import {Basket} from "../Basket/Basket.tsx";
+import {useCallback, useState} from "react";
 
 interface NAV_DATA {
     id: string;
@@ -21,13 +23,21 @@ interface NAV_DATA {
 export const Header = () => {
 
     const location = useLocation();
+    const [basketOpen, setBasketOpen] = useState(false);
 
-    console.log(location.pathname)
+    const handleBasketOpen = useCallback(()=> {
+        setBasketOpen(true)
+    },[setBasketOpen])
+
 
     return (
         <>
             <SideMenu/>
             <header className={styles.headerWrapper}>
+                <Basket
+                    basketOpen={basketOpen}
+                    setBasketOpen={setBasketOpen}
+                />
                 <div className={styles.headerContent}>
                     <div className={styles.leftBlock}>
                         <Link to={"/"} className={styles.logoBlock}>
@@ -77,7 +87,8 @@ export const Header = () => {
                                             </div>
                                         </>
                                         :
-                                        <Link to={nav?.route} className={`${styles.entity} ${location.pathname === nav?.route ? styles.current : ''}`}>{nav?.name}</Link>
+                                        <Link to={nav?.route}
+                                              className={`${styles.entity} ${location.pathname === nav?.route ? styles.current : ''}`}>{nav?.name}</Link>
                                     }
                                 </div>
                             )
@@ -93,7 +104,7 @@ export const Header = () => {
                         <div className={styles.buttonBlock}>
                             <PersonOutlineIcon/>
                         </div>
-                        <div className={`${styles.buttonBlock} ${styles.cartButton}`}>
+                        <div className={`${styles.buttonBlock} ${styles.cartButton}`} onClick={handleBasketOpen}>
                             <ShoppingCartOutlinedIcon/>
                         </div>
                     </div>
