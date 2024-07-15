@@ -1,3 +1,5 @@
+@import "../Variables/Variables";
+
 @keyframes rotate {
   from {
     transform: rotate(0deg);
@@ -79,5 +81,17 @@
   100% {
     transform: scale(0.8, 0.8);
 
+  }
+}
+
+@keyframes textGlow {
+  0% {
+    text-shadow: 0 0 3px $green;
+  }
+  50% {
+    text-shadow: 0 0 15px $green;
+  }
+  100% {
+    text-shadow: 0 0 3px $green;
   }
 }

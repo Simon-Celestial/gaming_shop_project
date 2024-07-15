@@ -15,18 +15,22 @@
     position: relative;
     padding-left: 115px;
     overflow: hidden;
+
     .decoration {
       position: absolute;
+
       img {
         object-fit: cover;
         object-position: center;
       }
+
       &.planet {
         top: 180px;
         left: 100px;
         animation: rotate 15s linear infinite;
         z-index: 2;
       }
+
       &.joystick {
         left: 38.5%;
         top: 60px;
@@ -34,12 +38,14 @@
         animation: shake 15s linear infinite;
         z-index: 2;
       }
+
       &.controllers {
         left: 45%;
         transform: translateX(-45%);
         bottom: 75px;
         z-index: 2;
       }
+
       &.tubesSolid {
         display: flex;
         height: 120%;
@@ -51,13 +57,14 @@
 
         .wideTube {
           width: 300px;
-          height:100%;
+          height: 100%;
           background-color: $greenDark;
           animation: moveUpShort 15s linear 4s;
           transform-origin: bottom;
 
 
         }
+
         .thinTube {
           width: 20px;
           height: 100%;
@@ -67,55 +74,67 @@
 
         }
       }
+
       &.tubeTransparent {
         left: 12%;
         transform: rotate(18deg);
         bottom: -227px;
         height: 35%;
+
         .wideTube {
           animation: moveUp 15s linear infinite;
           background: linear-gradient(to top, #09926a, rgba(14, 240, 173, 0));
         }
+
         .thinTube {
           animation: moveUp 10s linear infinite;
           background: linear-gradient(to top, #09926a, rgba(14, 240, 173, 0));
         }
       }
+
       &.starsDefault {
         display: flex;
         width: 100px;
         height: 100px;
         animation: stretch 10s linear infinite;
+
         img {
           position: absolute;
           object-position: center;
           object-fit: cover;
+
           &:nth-child(1) {
             right: 0;
             bottom: 0;
           }
+
           &:nth-child(2) {
             left: 0;
             bottom: 0;
           }
+
           &:nth-child(3) {
             right: 0;
             top: 0;
           }
         }
+
         &.starsOne {
           left: calc(50% + 110px);
           bottom: calc(50% - 150px);
-          transform: translate(-50%,-50%);
+          transform: translate(-50%, -50%);
         }
+
         &.starsTwo {
           top: 15%;
           left: 15%;
         }
+
         &.starsThree {
           top: 15%;
           left: 2%;
         }
+
         &.starsFour {
           top: 30%;
           left: 5%;
@@ -132,6 +151,7 @@
       gap: 25px;
       align-items: center;
       z-index: 3;
+
       .titleContainer {
         display: flex;
         flex-direction: column;
@@ -159,7 +179,7 @@
           font-size: 24px;
           font-family: $interFont;
           color: $gray;
-          margin-bottom: 15px;
+          margin-bottom: 32px;
         }
       }
 
@@ -192,6 +212,7 @@
             margin-bottom: 5px;
           }
         }
+
         .swiperWrapper {
           .cardWrapper {
             padding-bottom: 50px;
@@ -199,6 +220,169 @@
         }
 
       }
+    }
+  }
+
+  .aboutSection {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    background-color: $background;
+
+    .sectionContent {
+      display: flex;
+      max-width: 1320px;
+      padding: 120px 15px;
+      width: 100%;
+      gap: 25px;
+      justify-content: space-between;
+      align-items: center;
+
+      .imageContainer {
+        display: flex;
+        width: 100%;
+        max-width: 650px;
+        position: relative;
+
+        .experienceBlock {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 16px;
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%);
+          z-index: 3;
+          border: 1px solid $green;
+          max-width: 350px;
+          width: 100%;
+          border-radius: 5px;
+
+          .experienceContent {
+            border-radius: 5px;
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            justify-content: center;
+            background: $green;
+            width: 100%;
+            padding: 32px 20px;
+            color: $black;
+
+            .number {
+              font-size: 56px;
+              font-weight: 700;
+              display: flex;
+              align-items: center;
+            }
+
+            .title {
+              font-size: 16px;
+              max-width: 80px;
+
+            }
+
+          }
+        }
+
+        img {
+          width: 100%;
+          object-fit: cover;
+          object-position: center;
+        }
+      }
+
+      .titleContainer {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        max-width: 550px;
+        width: 100%;
+        padding: 0 12px;
+
+        p {
+          font-size: 24px;
+          color: $white;
+          font-weight: 700;
+
+          span {
+            color: $green;
+            animation: textGlow 1s linear infinite;
+
+          }
+        }
+
+        h2 {
+          font-size: 40px;
+          font-weight: 700;
+
+          span {
+            color: $green;
+            animation: textGlow 1s linear infinite;
+          }
+        }
+
+        h5 {
+          color: $gray;
+          font-size: 16px;
+          font-weight: 400;
+          font-family: $interFont;
+        }
+
+        .infoContainers {
+          display: flex;
+          flex-wrap: wrap;
+          width: 100%;
+          gap: 15px;
+          margin-top: 25px;
+
+          .container {
+            max-width: 250px;
+            margin-bottom: 32px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+
+            &:after {
+              content: "";
+              bottom: 0;
+              left: 0;
+              height: 1px;
+              width: 100%;
+              max-width: 105px;
+              background: $green;
+              position: absolute;
+            }
+
+            span {
+              font-size: 32px;
+              color: $white;
+              display: inline-flex;
+              align-items: center;
+              font-weight: 700;
+
+              p {
+                font-size: 35px;
+                color: $green;
+                animation: textGlow 1s linear infinite;
+
+              }
+            }
+
+            > p {
+              font-size: 14px;
+              color: $gray;
+              font-weight: 400;
+              font-family: $interFont;
+              padding: 13px 0 20px 0;
+            }
+          }
+        }
+
+      }
+
     }
   }
 

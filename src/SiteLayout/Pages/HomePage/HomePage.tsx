@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useRef} from "react";
 import styles from "./HomePage.module.scss";
 import {Header} from "../../Components/Layout/Header/Header.tsx";
 import {Footer} from "../../Components/Layout/Footer/Footer.tsx";
@@ -9,6 +9,7 @@ import {Swiper, SwiperSlide} from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import {DefaultButton} from "../../Components/Reusables/DefaultButton/DefaultButton.tsx";
+import {Odometer} from "../../Components/Reusables/Odometer/Odometer.tsx";
 
 
 interface PaginationStyles {
@@ -30,11 +31,15 @@ const paginationStyles: PaginationStyles = {
 };
 
 export const HomePage = () => {
+
+    const odometerRef = useRef<HTMLDivElement | null>(null);
+
     return (
         <>
             <Header/>
             <main className={styles.homeWrapper}>
                 <section className={styles.bannerSection}>
+                    {/*DECORATIONS*/}
                     <div className={`${styles.decoration} ${styles.planet}`}>
                         <img src="https://pixner.net/gamestorm3/main/assets/images/abs-items/planet.png" alt="Planet"/>
                     </div>
@@ -86,7 +91,7 @@ export const HomePage = () => {
                     </div>
                     <div className={styles.sectionContent}>
                         <div className={styles.titleContainer}>
-                        <h4>Enjoy Gaming World</h4>
+                            <h4>Enjoy Gaming World</h4>
                             <h2>We Selling Devices</h2>
                             <TypeAnimation
                                 sequence={['Entertainment', 600, 'Quality', 600, 'Reliability', 600]}
@@ -95,7 +100,7 @@ export const HomePage = () => {
                             />
                             <p>Creating innovative, fun-filled gaming devices that bring vibrant colors to your gaming
                                 experience.</p>
-                            <DefaultButton title={'Explore Our Devices'} link={'/shop'}/>
+                            <DefaultButton title={'Explore Our Products'} link={'/shop'}/>
                         </div>
                         <div className={styles.swiperContainer}>
                             <div className={styles.swiperHead}>
@@ -134,6 +139,80 @@ export const HomePage = () => {
                                     </SwiperSlide>
                                 </Swiper>
                             </div>
+                        </div>
+                    </div>
+                </section>
+                <section className={styles.aboutSection} ref={odometerRef}>
+                    <div className={styles.sectionContent}>
+                        <div className={styles.imageContainer}>
+                            <div className={styles.experienceBlock}>
+                                <div className={styles.experienceContent}>
+                                    <div className={styles.number}><Odometer
+                                        currentRef={odometerRef}
+                                        stopValue={31}
+                                        latency={75}
+                                    />+
+                                    </div>
+                                    <div className={styles.title}>
+                                        Years Of Experience
+                                    </div>
+                                </div>
+                            </div>
+                            <img src="https://pixner.net/gamestorm3/main/assets/images/about-block-bg.png" alt="Users"/>
+                        </div>
+                        <div className={styles.titleContainer}>
+                            <p>Welcome To <span>GAMESTORM</span> Gaming Shop</p>
+                            <h2>Bringing People Together Through <span>The Power Of Play</span></h2>
+                            <h5>As Gamestorm, we continue to open doors to new worlds every day and we are
+                                working excitedly introduce new gaming devices!</h5>
+                            <div className={styles.infoContainers}>
+                                <div className={styles.container}>
+                                    <span>
+                                        <Odometer
+                                            currentRef={odometerRef}
+                                            stopValue={500}
+                                            latency={5}
+                                        />
+                                        M
+                                        <p>+</p></span>
+                                    <p>Sales, or 6% of the world’s population.</p>
+                                </div>
+                                <div className={styles.container}>
+                                    <span>
+                                        <Odometer
+                                            currentRef={odometerRef}
+                                            stopValue={2}
+                                            latency={1250}
+                                        />
+                                        M
+                                        <p>+</p>
+                                    </span>
+                                    <p>Our products have over 2 million unique daily customers.</p>
+                                </div>
+                                <div className={styles.container}>
+                                    <span>
+                                        <Odometer
+                                            currentRef={odometerRef}
+                                            stopValue={52}
+                                            latency={50}
+                                        />
+                                        <p>+</p>
+                                    </span>
+                                    <p>Experts collaborating to blow your mind in one place.</p>
+                                </div>
+                                <div className={styles.container}>
+                                    <span>
+                                        <Odometer
+                                            currentRef={odometerRef}
+                                            stopValue={100}
+                                            latency={25}
+                                        />
+                                        <p>%</p></span>
+                                    <p>Our devices gives you full experience.</p>
+                                </div>
+
+                            </div>
+                            <DefaultButton title={"Explore Out Product"} link={"/shop"}/>
                         </div>
                     </div>
                 </section>
