@@ -1,0 +1,854 @@
+{
+  "en": [
+    {
+      "action": [
+        {
+          "id": 1,
+          "name": "Call of Duty: Black Ops 4",
+          "poster": "/images/posters/cod.avif",
+          "link": "https://store.steampowered.com/app/2933620/Call_of_Duty_Black_Ops_6/",
+          "new": true,
+          "rating": 5,
+          "description": "Call of Duty®: Black Ops 6 is a worthy continuation of the Black Ops series, featuring an exciting single-player campaign, unique multiplayer features and the return of the Zombies mode with rounds.",
+          "release": "Oct 25, 2024",
+          "publisher": "Activision",
+          "tags": [
+            "Action",
+            "PC",
+            "First Person",
+            "Military"
+          ]
+        },
+        {
+          "id": 2,
+          "name": "Counter-Strike 2",
+          "poster": "/images/posters/striketwo.webp",
+          "link": "https://store.steampowered.com/app/730/CounterStrike_2/",
+          "new": false,
+          "rating": 5,
+          "description": "For more than two decades, Counter-Strike has exemplified the world's premier competitive gaming experience, driven by millions of players around the world. Now it's time for a new stage - Counter-Strike 2.",
+          "release": "Aug 21, 2012",
+          "publisher": "Valve",
+          "tags": [
+            "Action",
+            "PC",
+            "First Person",
+            "E-Sport"
+          ]
+        },
+        {
+          "id": 3,
+          "name": "PUBG: BATTLEGROUNDS",
+          "poster": "/images/posters/pubg.jpg",
+          "link": "https://store.steampowered.com/app/578080/PUBG_BATTLEGROUNDS/",
+          "new": false,
+          "rating": 5,
+          "description": "Play PUBG: BATTLEGROUNDS for free. Land in strategically important places, get weapons and supplies and try to survive and be the last team left on one of the many battlefields.",
+          "release": "21 Dec, 2017",
+          "publisher": "KRAFTON, Inc.",
+          "tags": [
+            "Action",
+            "PC",
+            "First Person",
+            "Multiplayer"
+          ]
+        },
+        {
+          "id": 4,
+          "name": "Ready or Not",
+          "poster": "/images/posters/readyornot.avif",
+          "link": "https://store.steampowered.com/app/1144200/Ready_or_Not/",
+          "new": true,
+          "rating": 4,
+          "description": "Los Suenos. Los Suenos police report a surge in crime in the city. SWAT teams are deployed to handle dangerous situations such as hostage situations, bomb threats and shootouts with suspects.",
+          "release": "13 Dec, 2023",
+          "publisher": "VOID Interactive",
+          "tags": [
+            "Action",
+            "PC",
+            "First Person",
+            "Team"
+          ]
+        }
+      ],
+      "racing": [
+        {
+          "id": 1,
+          "name": "Call of Duty: Black Ops 4",
+          "poster": "/images/cod.avif",
+          "link": "https://store.steampowered.com/app/2933620/Call_of_Duty_Black_Ops_6/",
+          "new": true,
+          "rating": 5,
+          "description": "Call of Duty®: Black Ops 6 is a worthy continuation of the Black Ops series, featuring an exciting single-player campaign, unique multiplayer features and the return of the Zombies mode with rounds.",
+          "release": "Oct 25, 2024",
+          "publisher": "Activision",
+          "tags": [
+            "Action",
+            "PC",
+            "First Person",
+            "Military"
+          ]
+        },
+        {
+          "id": 2,
+          "name": "Counter-Strike 2",
+          "poster": "/images/striketwo.webp",
+          "link": "https://store.steampowered.com/app/730/CounterStrike_2/",
+          "new": false,
+          "rating": 5,
+          "description": "For more than two decades, Counter-Strike has exemplified the world's premier competitive gaming experience, driven by millions of players around the world. Now it's time for a new stage - Counter-Strike 2.",
+          "release": "Aug 21, 2012",
+          "publisher": "Valve",
+          "tags": [
+            "Action",
+            "PC",
+            "First Person",
+            "E-Sport"
+          ]
+        },
+        {
+          "id": 3,
+          "name": "PUBG: BATTLEGROUNDS",
+          "poster": "/images/pubg.jpg",
+          "link": "https://store.steampowered.com/app/578080/PUBG_BATTLEGROUNDS/",
+          "new": false,
+          "rating": 5,
+          "description": "Play PUBG: BATTLEGROUNDS for free. Land in strategically important places, get weapons and supplies and try to survive and be the last team left on one of the many battlefields.",
+          "release": "21 Dec, 2017",
+          "publisher": "KRAFTON, Inc.",
+          "tags": [
+            "Action",
+            "PC",
+            "First Person",
+            "Multiplayer"
+          ]
+        },
+        {
+          "id": 4,
+          "name": "Ready or Not",
+          "poster": "/images/readyornot.avif",
+          "link": "https://store.steampowered.com/app/1144200/Ready_or_Not/",
+          "new": true,
+          "rating": 4.5,
+          "description": "Los Suenos. Los Suenos police report a surge in crime in the city. SWAT teams are deployed to handle dangerous situations such as hostage situations, bomb threats and shootouts with suspects.",
+          "release": "13 Dec, 2023",
+          "publisher": "VOID Interactive",
+          "tags": [
+            "Action",
+            "PC",
+            "First Person",
+            "Team"
+          ]
+        }
+      ],
+      "rpg": [
+        {
+          "id": 1,
+          "name": "Call of Duty: Black Ops 4",
+          "poster": "/images/cod.avif",
+          "link": "https://store.steampowered.com/app/2933620/Call_of_Duty_Black_Ops_6/",
+          "new": true,
+          "rating": 5,
+          "description": "Call of Duty®: Black Ops 6 is a worthy continuation of the Black Ops series, featuring an exciting single-player campaign, unique multiplayer features and the return of the Zombies mode with rounds.",
+          "release": "Oct 25, 2024",
+          "publisher": "Activision",
+          "tags": [
+            "Action",
+            "PC",
+            "First Person",
+            "Military"
+          ]
+        },
+        {
+          "id": 2,
+          "name": "Counter-Strike 2",
+          "poster": "/images/striketwo.webp",
+          "link": "https://store.steampowered.com/app/730/CounterStrike_2/",
+          "new": false,
+          "rating": 5,
+          "description": "For more than two decades, Counter-Strike has exemplified the world's premier competitive gaming experience, driven by millions of players around the world. Now it's time for a new stage - Counter-Strike 2.",
+          "release": "Aug 21, 2012",
+          "publisher": "Valve",
+          "tags": [
+            "Action",
+            "PC",
+            "First Person",
+            "E-Sport"
+          ]
+        },
+        {
+          "id": 3,
+          "name": "PUBG: BATTLEGROUNDS",
+          "poster": "/images/pubg.jpg",
+          "link": "https://store.steampowered.com/app/578080/PUBG_BATTLEGROUNDS/",
+          "new": false,
+          "rating": 5,
+          "description": "Play PUBG: BATTLEGROUNDS for free. Land in strategically important places, get weapons and supplies and try to survive and be the last team left on one of the many battlefields.",
+          "release": "21 Dec, 2017",
+          "publisher": "KRAFTON, Inc.",
+          "tags": [
+            "Action",
+            "PC",
+            "First Person",
+            "Multiplayer"
+          ]
+        },
+        {
+          "id": 4,
+          "name": "Ready or Not",
+          "poster": "/images/readyornot.avif",
+          "link": "https://store.steampowered.com/app/1144200/Ready_or_Not/",
+          "new": true,
+          "rating": 4.5,
+          "description": "Los Suenos. Los Suenos police report a surge in crime in the city. SWAT teams are deployed to handle dangerous situations such as hostage situations, bomb threats and shootouts with suspects.",
+          "release": "13 Dec, 2023",
+          "publisher": "VOID Interactive",
+          "tags": [
+            "Action",
+            "PC",
+            "First Person",
+            "Team"
+          ]
+        }
+      ],
+      "strategy": [
+        {
+          "id": 1,
+          "name": "Call of Duty: Black Ops 4",
+          "poster": "/images/cod.avif",
+          "link": "https://store.steampowered.com/app/2933620/Call_of_Duty_Black_Ops_6/",
+          "new": true,
+          "rating": 5,
+          "description": "Call of Duty®: Black Ops 6 is a worthy continuation of the Black Ops series, featuring an exciting single-player campaign, unique multiplayer features and the return of the Zombies mode with rounds.",
+          "release": "Oct 25, 2024",
+          "publisher": "Activision",
+          "tags": [
+            "Action",
+            "PC",
+            "First Person",
+            "Military"
+          ]
+        },
+        {
+          "id": 2,
+          "name": "Counter-Strike 2",
+          "poster": "/images/striketwo.webp",
+          "link": "https://store.steampowered.com/app/730/CounterStrike_2/",
+          "new": false,
+          "rating": 5,
+          "description": "For more than two decades, Counter-Strike has exemplified the world's premier competitive gaming experience, driven by millions of players around the world. Now it's time for a new stage - Counter-Strike 2.",
+          "release": "Aug 21, 2012",
+          "publisher": "Valve",
+          "tags": [
+            "Action",
+            "PC",
+            "First Person",
+            "E-Sport"
+          ]
+        },
+        {
+          "id": 3,
+          "name": "PUBG: BATTLEGROUNDS",
+          "poster": "/images/pubg.jpg",
+          "link": "https://store.steampowered.com/app/578080/PUBG_BATTLEGROUNDS/",
+          "new": false,
+          "rating": 5,
+          "description": "Play PUBG: BATTLEGROUNDS for free. Land in strategically important places, get weapons and supplies and try to survive and be the last team left on one of the many battlefields.",
+          "release": "21 Dec, 2017",
+          "publisher": "KRAFTON, Inc.",
+          "tags": [
+            "Action",
+            "PC",
+            "First Person",
+            "Multiplayer"
+          ]
+        },
+        {
+          "id": 4,
+          "name": "Ready or Not",
+          "poster": "/images/readyornot.avif",
+          "link": "https://store.steampowered.com/app/1144200/Ready_or_Not/",
+          "new": true,
+          "rating": 4.5,
+          "description": "Los Suenos. Los Suenos police report a surge in crime in the city. SWAT teams are deployed to handle dangerous situations such as hostage situations, bomb threats and shootouts with suspects.",
+          "release": "13 Dec, 2023",
+          "publisher": "VOID Interactive",
+          "tags": [
+            "Action",
+            "PC",
+            "First Person",
+            "Team"
+          ]
+        }
+      ]
+    }
+  ],
+  "ru": [
+    {
+      "action": [
+        {
+          "id": 1,
+          "name": "Call of Duty: Black Ops 4",
+          "poster": "/images/cod.avif",
+          "link": "https://store.steampowered.com/app/2933620/Call_of_Duty_Black_Ops_6/",
+          "new": true,
+          "rating": 5,
+          "description": "Call of Duty®: Black Ops 6 is a worthy continuation of the Black Ops series, featuring an exciting single-player campaign, unique multiplayer features and the return of the Zombies mode with rounds.",
+          "release": "Oct 25, 2024",
+          "publisher": "Activision",
+          "tags": [
+            "Action",
+            "PC",
+            "First Person",
+            "Military"
+          ]
+        },
+        {
+          "id": 2,
+          "name": "Counter-Strike 2",
+          "poster": "/images/striketwo.webp",
+          "link": "https://store.steampowered.com/app/730/CounterStrike_2/",
+          "new": false,
+          "rating": 5,
+          "description": "For more than two decades, Counter-Strike has exemplified the world's premier competitive gaming experience, driven by millions of players around the world. Now it's time for a new stage - Counter-Strike 2.",
+          "release": "Aug 21, 2012",
+          "publisher": "Valve",
+          "tags": [
+            "Action",
+            "PC",
+            "First Person",
+            "E-Sport"
+          ]
+        },
+        {
+          "id": 3,
+          "name": "PUBG: BATTLEGROUNDS",
+          "poster": "/images/pubg.jpg",
+          "link": "https://store.steampowered.com/app/578080/PUBG_BATTLEGROUNDS/",
+          "new": false,
+          "rating": 5,
+          "description": "Play PUBG: BATTLEGROUNDS for free. Land in strategically important places, get weapons and supplies and try to survive and be the last team left on one of the many battlefields.",
+          "release": "21 Dec, 2017",
+          "publisher": "KRAFTON, Inc.",
+          "tags": [
+            "Action",
+            "PC",
+            "First Person",
+            "Multiplayer"
+          ]
+        },
+        {
+          "id": 4,
+          "name": "Ready or Not",
+          "poster": "/images/readyornot.avif",
+          "link": "https://store.steampowered.com/app/1144200/Ready_or_Not/",
+          "new": true,
+          "rating": 4.5,
+          "description": "Los Suenos. Los Suenos police report a surge in crime in the city. SWAT teams are deployed to handle dangerous situations such as hostage situations, bomb threats and shootouts with suspects.",
+          "release": "13 Dec, 2023",
+          "publisher": "VOID Interactive",
+          "tags": [
+            "Action",
+            "PC",
+            "First Person",
+            "Team"
+          ]
+        }
+      ],
+      "racing": [
+        {
+          "id": 1,
+          "name": "Call of Duty: Black Ops 4",
+          "poster": "/images/cod.avif",
+          "link": "https://store.steampowered.com/app/2933620/Call_of_Duty_Black_Ops_6/",
+          "new": true,
+          "rating": 5,
+          "description": "Call of Duty®: Black Ops 6 is a worthy continuation of the Black Ops series, featuring an exciting single-player campaign, unique multiplayer features and the return of the Zombies mode with rounds.",
+          "release": "Oct 25, 2024",
+          "publisher": "Activision",
+          "tags": [
+            "Action",
+            "PC",
+            "First Person",
+            "Military"
+          ]
+        },
+        {
+          "id": 2,
+          "name": "Counter-Strike 2",
+          "poster": "/images/striketwo.webp",
+          "link": "https://store.steampowered.com/app/730/CounterStrike_2/",
+          "new": false,
+          "rating": 5,
+          "description": "For more than two decades, Counter-Strike has exemplified the world's premier competitive gaming experience, driven by millions of players around the world. Now it's time for a new stage - Counter-Strike 2.",
+          "release": "Aug 21, 2012",
+          "publisher": "Valve",
+          "tags": [
+            "Action",
+            "PC",
+            "First Person",
+            "E-Sport"
+          ]
+        },
+        {
+          "id": 3,
+          "name": "PUBG: BATTLEGROUNDS",
+          "poster": "/images/pubg.jpg",
+          "link": "https://store.steampowered.com/app/578080/PUBG_BATTLEGROUNDS/",
+          "new": false,
+          "rating": 5,
+          "description": "Play PUBG: BATTLEGROUNDS for free. Land in strategically important places, get weapons and supplies and try to survive and be the last team left on one of the many battlefields.",
+          "release": "21 Dec, 2017",
+          "publisher": "KRAFTON, Inc.",
+          "tags": [
+            "Action",
+            "PC",
+            "First Person",
+            "Multiplayer"
+          ]
+        },
+        {
+          "id": 4,
+          "name": "Ready or Not",
+          "poster": "/images/readyornot.avif",
+          "link": "https://store.steampowered.com/app/1144200/Ready_or_Not/",
+          "new": true,
+          "rating": 4.5,
+          "description": "Los Suenos. Los Suenos police report a surge in crime in the city. SWAT teams are deployed to handle dangerous situations such as hostage situations, bomb threats and shootouts with suspects.",
+          "release": "13 Dec, 2023",
+          "publisher": "VOID Interactive",
+          "tags": [
+            "Action",
+            "PC",
+            "First Person",
+            "Team"
+          ]
+        }
+      ],
+      "rpg": [
+        {
+          "id": 1,
+          "name": "Call of Duty: Black Ops 4",
+          "poster": "/images/cod.avif",
+          "link": "https://store.steampowered.com/app/2933620/Call_of_Duty_Black_Ops_6/",
+          "new": true,
+          "rating": 5,
+          "description": "Call of Duty®: Black Ops 6 is a worthy continuation of the Black Ops series, featuring an exciting single-player campaign, unique multiplayer features and the return of the Zombies mode with rounds.",
+          "release": "Oct 25, 2024",
+          "publisher": "Activision",
+          "tags": [
+            "Action",
+            "PC",
+            "First Person",
+            "Military"
+          ]
+        },
+        {
+          "id": 2,
+          "name": "Counter-Strike 2",
+          "poster": "/images/striketwo.webp",
+          "link": "https://store.steampowered.com/app/730/CounterStrike_2/",
+          "new": false,
+          "rating": 5,
+          "description": "For more than two decades, Counter-Strike has exemplified the world's premier competitive gaming experience, driven by millions of players around the world. Now it's time for a new stage - Counter-Strike 2.",
+          "release": "Aug 21, 2012",
+          "publisher": "Valve",
+          "tags": [
+            "Action",
+            "PC",
+            "First Person",
+            "E-Sport"
+          ]
+        },
+        {
+          "id": 3,
+          "name": "PUBG: BATTLEGROUNDS",
+          "poster": "/images/pubg.jpg",
+          "link": "https://store.steampowered.com/app/578080/PUBG_BATTLEGROUNDS/",
+          "new": false,
+          "rating": 5,
+          "description": "Play PUBG: BATTLEGROUNDS for free. Land in strategically important places, get weapons and supplies and try to survive and be the last team left on one of the many battlefields.",
+          "release": "21 Dec, 2017",
+          "publisher": "KRAFTON, Inc.",
+          "tags": [
+            "Action",
+            "PC",
+            "First Person",
+            "Multiplayer"
+          ]
+        },
+        {
+          "id": 4,
+          "name": "Ready or Not",
+          "poster": "/images/readyornot.avif",
+          "link": "https://store.steampowered.com/app/1144200/Ready_or_Not/",
+          "new": true,
+          "rating": 4.5,
+          "description": "Los Suenos. Los Suenos police report a surge in crime in the city. SWAT teams are deployed to handle dangerous situations such as hostage situations, bomb threats and shootouts with suspects.",
+          "release": "13 Dec, 2023",
+          "publisher": "VOID Interactive",
+          "tags": [
+            "Action",
+            "PC",
+            "First Person",
+            "Team"
+          ]
+        }
+      ],
+      "strategy": [
+        {
+          "id": 1,
+          "name": "Call of Duty: Black Ops 4",
+          "poster": "/images/cod.avif",
+          "link": "https://store.steampowered.com/app/2933620/Call_of_Duty_Black_Ops_6/",
+          "new": true,
+          "rating": 5,
+          "description": "Call of Duty®: Black Ops 6 is a worthy continuation of the Black Ops series, featuring an exciting single-player campaign, unique multiplayer features and the return of the Zombies mode with rounds.",
+          "release": "Oct 25, 2024",
+          "publisher": "Activision",
+          "tags": [
+            "Action",
+            "PC",
+            "First Person",
+            "Military"
+          ]
+        },
+        {
+          "id": 2,
+          "name": "Counter-Strike 2",
+          "poster": "/images/striketwo.webp",
+          "link": "https://store.steampowered.com/app/730/CounterStrike_2/",
+          "new": false,
+          "rating": 5,
+          "description": "For more than two decades, Counter-Strike has exemplified the world's premier competitive gaming experience, driven by millions of players around the world. Now it's time for a new stage - Counter-Strike 2.",
+          "release": "Aug 21, 2012",
+          "publisher": "Valve",
+          "tags": [
+            "Action",
+            "PC",
+            "First Person",
+            "E-Sport"
+          ]
+        },
+        {
+          "id": 3,
+          "name": "PUBG: BATTLEGROUNDS",
+          "poster": "/images/pubg.jpg",
+          "link": "https://store.steampowered.com/app/578080/PUBG_BATTLEGROUNDS/",
+          "new": false,
+          "rating": 5,
+          "description": "Play PUBG: BATTLEGROUNDS for free. Land in strategically important places, get weapons and supplies and try to survive and be the last team left on one of the many battlefields.",
+          "release": "21 Dec, 2017",
+          "publisher": "KRAFTON, Inc.",
+          "tags": [
+            "Action",
+            "PC",
+            "First Person",
+            "Multiplayer"
+          ]
+        },
+        {
+          "id": 4,
+          "name": "Ready or Not",
+          "poster": "/images/readyornot.avif",
+          "link": "https://store.steampowered.com/app/1144200/Ready_or_Not/",
+          "new": true,
+          "rating": 4.5,
+          "description": "Los Suenos. Los Suenos police report a surge in crime in the city. SWAT teams are deployed to handle dangerous situations such as hostage situations, bomb threats and shootouts with suspects.",
+          "release": "13 Dec, 2023",
+          "publisher": "VOID Interactive",
+          "tags": [
+            "Action",
+            "PC",
+            "First Person",
+            "Team"
+          ]
+        }
+      ]
+    }
+  ],
+  "tr": [
+    {
+      "action": [
+        {
+          "id": 1,
+          "name": "Call of Duty: Black Ops 4",
+          "poster": "/images/cod.avif",
+          "link": "https://store.steampowered.com/app/2933620/Call_of_Duty_Black_Ops_6/",
+          "new": true,
+          "rating": 5,
+          "description": "Call of Duty®: Black Ops 6 is a worthy continuation of the Black Ops series, featuring an exciting single-player campaign, unique multiplayer features and the return of the Zombies mode with rounds.",
+          "release": "Oct 25, 2024",
+          "publisher": "Activision",
+          "tags": [
+            "Action",
+            "PC",
+            "First Person",
+            "Military"
+          ]
+        },
+        {
+          "id": 2,
+          "name": "Counter-Strike 2",
+          "poster": "/images/striketwo.webp",
+          "link": "https://store.steampowered.com/app/730/CounterStrike_2/",
+          "new": false,
+          "rating": 5,
+          "description": "For more than two decades, Counter-Strike has exemplified the world's premier competitive gaming experience, driven by millions of players around the world. Now it's time for a new stage - Counter-Strike 2.",
+          "release": "Aug 21, 2012",
+          "publisher": "Valve",
+          "tags": [
+            "Action",
+            "PC",
+            "First Person",
+            "E-Sport"
+          ]
+        },
+        {
+          "id": 3,
+          "name": "PUBG: BATTLEGROUNDS",
+          "poster": "/images/pubg.jpg",
+          "link": "https://store.steampowered.com/app/578080/PUBG_BATTLEGROUNDS/",
+          "new": false,
+          "rating": 5,
+          "description": "Play PUBG: BATTLEGROUNDS for free. Land in strategically important places, get weapons and supplies and try to survive and be the last team left on one of the many battlefields.",
+          "release": "21 Dec, 2017",
+          "publisher": "KRAFTON, Inc.",
+          "tags": [
+            "Action",
+            "PC",
+            "First Person",
+            "Multiplayer"
+          ]
+        },
+        {
+          "id": 4,
+          "name": "Ready or Not",
+          "poster": "/images/readyornot.avif",
+          "link": "https://store.steampowered.com/app/1144200/Ready_or_Not/",
+          "new": true,
+          "rating": 4.5,
+          "description": "Los Suenos. Los Suenos police report a surge in crime in the city. SWAT teams are deployed to handle dangerous situations such as hostage situations, bomb threats and shootouts with suspects.",
+          "release": "13 Dec, 2023",
+          "publisher": "VOID Interactive",
+          "tags": [
+            "Action",
+            "PC",
+            "First Person",
+            "Team"
+          ]
+        }
+      ],
+      "racing": [
+        {
+          "id": 1,
+          "name": "Call of Duty: Black Ops 4",
+          "poster": "/images/cod.avif",
+          "link": "https://store.steampowered.com/app/2933620/Call_of_Duty_Black_Ops_6/",
+          "new": true,
+          "rating": 5,
+          "description": "Call of Duty®: Black Ops 6 is a worthy continuation of the Black Ops series, featuring an exciting single-player campaign, unique multiplayer features and the return of the Zombies mode with rounds.",
+          "release": "Oct 25, 2024",
+          "publisher": "Activision",
+          "tags": [
+            "Action",
+            "PC",
+            "First Person",
+            "Military"
+          ]
+        },
+        {
+          "id": 2,
+          "name": "Counter-Strike 2",
+          "poster": "/images/striketwo.webp",
+          "link": "https://store.steampowered.com/app/730/CounterStrike_2/",
+          "new": false,
+          "rating": 5,
+          "description": "For more than two decades, Counter-Strike has exemplified the world's premier competitive gaming experience, driven by millions of players around the world. Now it's time for a new stage - Counter-Strike 2.",
+          "release": "Aug 21, 2012",
+          "publisher": "Valve",
+          "tags": [
+            "Action",
+            "PC",
+            "First Person",
+            "E-Sport"
+          ]
+        },
+        {
+          "id": 3,
+          "name": "PUBG: BATTLEGROUNDS",
+          "poster": "/images/pubg.jpg",
+          "link": "https://store.steampowered.com/app/578080/PUBG_BATTLEGROUNDS/",
+          "new": false,
+          "rating": 5,
+          "description": "Play PUBG: BATTLEGROUNDS for free. Land in strategically important places, get weapons and supplies and try to survive and be the last team left on one of the many battlefields.",
+          "release": "21 Dec, 2017",
+          "publisher": "KRAFTON, Inc.",
+          "tags": [
+            "Action",
+            "PC",
+            "First Person",
+            "Multiplayer"
+          ]
+        },
+        {
+          "id": 4,
+          "name": "Ready or Not",
+          "poster": "/images/readyornot.avif",
+          "link": "https://store.steampowered.com/app/1144200/Ready_or_Not/",
+          "new": true,
+          "rating": 4.5,
+          "description": "Los Suenos. Los Suenos police report a surge in crime in the city. SWAT teams are deployed to handle dangerous situations such as hostage situations, bomb threats and shootouts with suspects.",
+          "release": "13 Dec, 2023",
+          "publisher": "VOID Interactive",
+          "tags": [
+            "Action",
+            "PC",
+            "First Person",
+            "Team"
+          ]
+        }
+      ],
+      "rpg": [
+        {
+          "id": 1,
+          "name": "Call of Duty: Black Ops 4",
+          "poster": "/images/cod.avif",
+          "link": "https://store.steampowered.com/app/2933620/Call_of_Duty_Black_Ops_6/",
+          "new": true,
+          "rating": 5,
+          "description": "Call of Duty®: Black Ops 6 is a worthy continuation of the Black Ops series, featuring an exciting single-player campaign, unique multiplayer features and the return of the Zombies mode with rounds.",
+          "release": "Oct 25, 2024",
+          "publisher": "Activision",
+          "tags": [
+            "Action",
+            "PC",
+            "First Person",
+            "Military"
+          ]
+        },
+        {
+          "id": 2,
+          "name": "Counter-Strike 2",
+          "poster": "/images/striketwo.webp",
+          "link": "https://store.steampowered.com/app/730/CounterStrike_2/",
+          "new": false,
+          "rating": 5,
+          "description": "For more than two decades, Counter-Strike has exemplified the world's premier competitive gaming experience, driven by millions of players around the world. Now it's time for a new stage - Counter-Strike 2.",
+          "release": "Aug 21, 2012",
+          "publisher": "Valve",
+          "tags": [
+            "Action",
+            "PC",
+            "First Person",
+            "E-Sport"
+          ]
+        },
+        {
+          "id": 3,
+          "name": "PUBG: BATTLEGROUNDS",
+          "poster": "/images/pubg.jpg",
+          "link": "https://store.steampowered.com/app/578080/PUBG_BATTLEGROUNDS/",
+          "new": false,
+          "rating": 5,
+          "description": "Play PUBG: BATTLEGROUNDS for free. Land in strategically important places, get weapons and supplies and try to survive and be the last team left on one of the many battlefields.",
+          "release": "21 Dec, 2017",
+          "publisher": "KRAFTON, Inc.",
+          "tags": [
+            "Action",
+            "PC",
+            "First Person",
+            "Multiplayer"
+          ]
+        },
+        {
+          "id": 4,
+          "name": "Ready or Not",
+          "poster": "/images/readyornot.avif",
+          "link": "https://store.steampowered.com/app/1144200/Ready_or_Not/",
+          "new": true,
+          "rating": 4.5,
+          "description": "Los Suenos. Los Suenos police report a surge in crime in the city. SWAT teams are deployed to handle dangerous situations such as hostage situations, bomb threats and shootouts with suspects.",
+          "release": "13 Dec, 2023",
+          "publisher": "VOID Interactive",
+          "tags": [
+            "Action",
+            "PC",
+            "First Person",
+            "Team"
+          ]
+        }
+      ],
+      "strategy": [
+        {
+          "id": 1,
+          "name": "Call of Duty: Black Ops 4",
+          "poster": "/images/cod.avif",
+          "link": "https://store.steampowered.com/app/2933620/Call_of_Duty_Black_Ops_6/",
+          "new": true,
+          "rating": 5,
+          "description": "Call of Duty®: Black Ops 6 is a worthy continuation of the Black Ops series, featuring an exciting single-player campaign, unique multiplayer features and the return of the Zombies mode with rounds.",
+          "release": "Oct 25, 2024",
+          "publisher": "Activision",
+          "tags": [
+            "Action",
+            "PC",
+            "First Person",
+            "Military"
+          ]
+        },
+        {
+          "id": 2,
+          "name": "Counter-Strike 2",
+          "poster": "/images/striketwo.webp",
+          "link": "https://store.steampowered.com/app/730/CounterStrike_2/",
+          "new": false,
+          "rating": 5,
+          "description": "For more than two decades, Counter-Strike has exemplified the world's premier competitive gaming experience, driven by millions of players around the world. Now it's time for a new stage - Counter-Strike 2.",
+          "release": "Aug 21, 2012",
+          "publisher": "Valve",
+          "tags": [
+            "Action",
+            "PC",
+            "First Person",
+            "E-Sport"
+          ]
+        },
+        {
+          "id": 3,
+          "name": "PUBG: BATTLEGROUNDS",
+          "poster": "/images/pubg.jpg",
+          "link": "https://store.steampowered.com/app/578080/PUBG_BATTLEGROUNDS/",
+          "new": false,
+          "rating": 5,
+          "description": "Play PUBG: BATTLEGROUNDS for free. Land in strategically important places, get weapons and supplies and try to survive and be the last team left on one of the many battlefields.",
+          "release": "21 Dec, 2017",
+          "publisher": "KRAFTON, Inc.",
+          "tags": [
+            "Action",
+            "PC",
+            "First Person",
+            "Multiplayer"
+          ]
+        },
+        {
+          "id": 4,
+          "name": "Ready or Not",
+          "poster": "/images/readyornot.avif",
+          "link": "https://store.steampowered.com/app/1144200/Ready_or_Not/",
+          "new": true,
+          "rating": 4.5,
+          "description": "Los Suenos. Los Suenos police report a surge in crime in the city. SWAT teams are deployed to handle dangerous situations such as hostage situations, bomb threats and shootouts with suspects.",
+          "release": "13 Dec, 2023",
+          "publisher": "VOID Interactive",
+          "tags": [
+            "Action",
+            "PC",
+            "First Person",
+            "Team"
+          ]
+        }
+      ]
+    }
+  ]
+}

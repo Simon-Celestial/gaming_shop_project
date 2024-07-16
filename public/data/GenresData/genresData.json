@@ -1,0 +1,18 @@
+[
+  {
+    "id" : "action",
+    "img" : "/images/pistol.png"
+  },
+  {
+    "id" : "racing",
+    "img" : "/images/racing.png"
+  },
+  {
+    "id" : "rpg",
+    "img" : "/images/rpg.png"
+  },
+  {
+    "id" : "strategy",
+    "img" : "/images/strategy.png"
+  }
+]

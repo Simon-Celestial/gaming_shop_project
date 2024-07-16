@@ -1,4 +1,4 @@
-import React, {useRef} from "react";
+import React, {useCallback, useMemo, useRef, useState} from "react";
 import styles from "./HomePage.module.scss";
 import {Header} from "../../Components/Layout/Header/Header.tsx";
 import {Footer} from "../../Components/Layout/Footer/Footer.tsx";
@@ -10,18 +10,18 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import {DefaultButton} from "../../Components/Reusables/DefaultButton/DefaultButton.tsx";
 import {Odometer} from "../../Components/Reusables/Odometer/Odometer.tsx";
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-expect-error
+import genresData from "/public/data/GenresData/genresData.json";
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-expect-error
+import gamesData from "/public/data/GamesData/gamesData.json";
+import {GENRES_TYPE, PAGINATION_STYLES_TYPE, GAME_TYPE} from "../../../Types/types.ts";
+import StarsIcon from '@mui/icons-material/Stars';
+import {Link} from "react-router-dom";
 
 
-interface PaginationStyles {
-    "--swiper-pagination-color": string;
-    "--swiper-pagination-bullet-inactive-color": string;
-    "--swiper-pagination-bullet-inactive-opacity": string;
-    "--swiper-pagination-bullet-size": string;
-    "--swiper-pagination-bullet-horizontal-gap": string;
-    "--swiper-pagination-bottom": string;
-}
-
-const paginationStyles: PaginationStyles = {
+const paginationStyles: PAGINATION_STYLES_TYPE = {
     "--swiper-pagination-color": "#0EF0AD",
     "--swiper-pagination-bullet-inactive-color": "#c5c5ca",
     "--swiper-pagination-bullet-inactive-opacity": "1",
@@ -31,8 +31,33 @@ const paginationStyles: PaginationStyles = {
 };
 
 export const HomePage = () => {
-
     const odometerRef = useRef<HTMLDivElement | null>(null);
+    const [selectedGenre, setSelectedGenre] = useState("action");
+    const handleSelectGenre = useCallback((genreID: string): void => {
+        setSelectedGenre(genreID)
+    }, [setSelectedGenre]);
+
+    const handleRatingColor = useCallback((rating: number): string => {
+        if (rating > 4) {
+            return "#0EF0AD"
+        } else if (rating >= 3 && rating <= 4) {
+            return "orange"
+        } else {
+            return "red"
+        }
+    }, []);
+
+    const filteredGames = useMemo(() => {
+        if (selectedGenre === "action") {
+            return gamesData.en[0].action
+        } else if (selectedGenre === "racing") {
+            return gamesData.en[0].racing
+        } else if (selectedGenre === "rpg") {
+            return gamesData.en[0].rpg
+        } else {
+            return gamesData.en[0].strategy
+        }
+    }, [selectedGenre])
 
     return (
         <>
@@ -213,6 +238,81 @@ export const HomePage = () => {
 
                             </div>
                             <DefaultButton title={"Explore Out Product"} link={"/shop"}/>
+                        </div>
+                    </div>
+                </section>
+                <section className={styles.gamesSection}>
+                    <div className={styles.sectionContent}>
+                        <div className={styles.topContainer}>
+                            <h4>Feel Unforgettable <span>Gaming Experience</span></h4>
+                            <h2><span>Our Products</span> Will Give You The Best Feelings During <span>GamePlay</span>
+                            </h2>
+                            <p>Our products are distinguished by reliability, low response time, and user-friendliness
+                                for better immersion in the game.</p>
+                            <div className={styles.genresContainer}>
+                                {genresData?.map((genre: GENRES_TYPE) => {
+                                    return (
+                                        <div key={genre?.id}
+                                             className={`${styles.genreBox} ${genre?.id === selectedGenre ? styles.active : ''}`}
+                                             onClick={() => handleSelectGenre(genre?.id)}>
+                                            <img src={genre?.img} alt={genre?.id}/>
+                                        </div>
+                                    )
+                                })}
+                            </div>
+                        </div>
+                        <div className={styles.gamesContainer}>
+                            {filteredGames?.map((game: GAME_TYPE) => {
+                                return (
+                                    <div key={game?.id} className={styles.gameBox}>
+                                        {
+                                            game?.new ?
+                                                <div className={styles.flag}>
+                                                    <p>new</p>
+                                                </div>
+                                                :
+                                                null
+                                        }
+                                        <div className={styles.imageBox}>
+                                            <img src={`${game?.poster}`} alt={game?.name} loading="lazy"/>
+                                        </div>
+                                        <div className={styles.titleBox}>
+                                            <h2>{game?.name}</h2>
+                                            <h3><span>Action</span> | <span>PC</span> | <span>First Person</span></h3>
+                                            <p>{game?.description}</p>
+                                            <div className={styles.infoBox}>
+                                                <div className={styles.infoItem}>
+                                                    <h2>{game?.release}</h2>
+                                                    <p>Release Date</p>
+                                                </div>
+                                                <div className={styles.infoItem}>
+                                                    <h3>
+                                                        <StarsIcon sx={{
+                                                            color: handleRatingColor(game?.rating)
+                                                        }}
+                                                        />
+                                                        {game?.rating}
+                                                    </h3>
+                                                    <p>
+                                                        Game Rating
+                                                    </p>
+                                                </div>
+                                                <div className={styles.infoItem}>
+                                                    <h3>{game?.publisher}</h3>
+                                                    <p>Publisher</p>
+                                                </div>
+                                            </div>
+                                            <Link to={game?.link} className={styles.linkBox} target={"_blank"}>
+                                                <img src="/images/steam.webp" alt="steam"/>
+                                                <div className={styles.blockTitle}>
+                                                    <p>Available at</p>
+                                                    <h2>STEAM</h2>
+                                                </div>
+                                            </Link>
+                                        </div>
+                                    </div>
+                                )
+                            })}
                         </div>
                     </div>
                 </section>
