@@ -287,279 +287,277 @@
         {
           "id": 1,
           "name": "Call of Duty: Black Ops 4",
-          "poster": "/images/cod.avif",
+          "poster": "/images/posters/cod.avif",
           "link": "https://store.steampowered.com/app/2933620/Call_of_Duty_Black_Ops_6/",
           "new": true,
           "rating": 5,
-          "description": "Call of Duty®: Black Ops 6 is a worthy continuation of the Black Ops series, featuring an exciting single-player campaign, unique multiplayer features and the return of the Zombies mode with rounds.",
-          "release": "Oct 25, 2024",
+          "description": "Call of Duty®: Black Ops 6 - достойное продолжение серии Black Ops, включающее захватывающую однопользовательскую кампанию, уникальные многопользовательские функции и возвращение режима Зомби с раундами.",
+          "release": "25 октября 2024 г.",
           "publisher": "Activision",
           "tags": [
-            "Action",
-            "PC",
-            "First Person",
-            "Military"
+            "Экшен",
+            "ПК",
+            "От первого лица",
+            "Военный"
           ]
         },
         {
           "id": 2,
           "name": "Counter-Strike 2",
-          "poster": "/images/striketwo.webp",
+          "poster": "/images/posters/striketwo.webp",
           "link": "https://store.steampowered.com/app/730/CounterStrike_2/",
           "new": false,
           "rating": 5,
-          "description": "For more than two decades, Counter-Strike has exemplified the world's premier competitive gaming experience, driven by millions of players around the world. Now it's time for a new stage - Counter-Strike 2.",
-          "release": "Aug 21, 2012",
+          "description": "Более двух десятилетий Counter-Strike олицетворяет собой лучший мировой опыт соревновательного гейминга, благодаря миллионам игроков по всему миру. Теперь настало время для нового этапа - Counter-Strike 2.",
+          "release": "21 августа 2012 г.",
           "publisher": "Valve",
           "tags": [
-            "Action",
-            "PC",
-            "First Person",
-            "E-Sport"
+            "Экшен",
+            "ПК",
+            "От первого лица",
+            "Киберспорт"
           ]
         },
         {
           "id": 3,
           "name": "PUBG: BATTLEGROUNDS",
-          "poster": "/images/pubg.jpg",
+          "poster": "/images/posters/pubg.jpg",
           "link": "https://store.steampowered.com/app/578080/PUBG_BATTLEGROUNDS/",
           "new": false,
           "rating": 5,
-          "description": "Play PUBG: BATTLEGROUNDS for free. Land in strategically important places, get weapons and supplies and try to survive and be the last team left on one of the many battlefields.",
-          "release": "21 Dec, 2017",
+          "description": "Играйте в PUBG: BATTLEGROUNDS бесплатно. Приземляйтесь в стратегически важных местах, получайте оружие и припасы и пытайтесь выжить, оставаясь последней оставшейся командой на одном из многих полей сражений.",
+          "release": "21 декабря 2017 г.",
           "publisher": "KRAFTON, Inc.",
           "tags": [
-            "Action",
-            "PC",
-            "First Person",
-            "Multiplayer"
+            "Экшен",
+            "ПК",
+            "От первого лица",
+            "Многопользовательский"
           ]
         },
         {
           "id": 4,
           "name": "Ready or Not",
-          "poster": "/images/readyornot.avif",
+          "poster": "/images/posters/readyornot.avif",
           "link": "https://store.steampowered.com/app/1144200/Ready_or_Not/",
           "new": true,
-          "rating": 4.5,
-          "description": "Los Suenos. Los Suenos police report a surge in crime in the city. SWAT teams are deployed to handle dangerous situations such as hostage situations, bomb threats and shootouts with suspects.",
-          "release": "13 Dec, 2023",
+          "rating": 4,
+          "description": "Лос Суэньюс. Полиция Лос Суэньюс сообщает о всплеске преступности в городе. Отряды SWAT направляются для решения опасных ситуаций, таких как захват заложников, угрозы взрывов и перестрелки с подозреваемыми.",
+          "release": "13 декабря 2023 г.",
           "publisher": "VOID Interactive",
           "tags": [
-            "Action",
-            "PC",
-            "First Person",
-            "Team"
+            "Экшен",
+            "ПК",
+            "От первого лица",
+            "Командный"
           ]
         }
       ],
       "racing": [
         {
           "id": 1,
-          "name": "Call of Duty: Black Ops 4",
-          "poster": "/images/cod.avif",
-          "link": "https://store.steampowered.com/app/2933620/Call_of_Duty_Black_Ops_6/",
-          "new": true,
+          "name": "Assetto Corsa",
+          "poster": "/images/posters/assetocorsa.webp",
+          "link": "https://store.steampowered.com/app/244210/Assetto_Corsa/",
+          "new": false,
           "rating": 5,
-          "description": "Call of Duty®: Black Ops 6 is a worthy continuation of the Black Ops series, featuring an exciting single-player campaign, unique multiplayer features and the return of the Zombies mode with rounds.",
-          "release": "Oct 25, 2024",
-          "publisher": "Activision",
+          "description": "Assetto Corsa v1.16 представляет новую лазерно-сканированную трассу Laguna-Seca, 7 новых автомобилей, среди которых долгожданный Alfa Romeo Giulia Quadrifoglio! Ознакомьтесь с журналом изменений для получения дополнительной информации!",
+          "release": "19 декабря 2014 г.",
+          "publisher": "Kunos Simulazioni",
           "tags": [
-            "Action",
-            "PC",
-            "First Person",
-            "Military"
+            "Гонки",
+            "ПК",
+            "Одиночная игра"
           ]
         },
         {
           "id": 2,
-          "name": "Counter-Strike 2",
-          "poster": "/images/striketwo.webp",
-          "link": "https://store.steampowered.com/app/730/CounterStrike_2/",
-          "new": false,
+          "name": "Forza Horizon 5",
+          "poster": "/images/posters/forzahorizon.jpg",
+          "link": "https://store.steampowered.com/app/1551360/Forza_Horizon_5/",
+          "new": true,
           "rating": 5,
-          "description": "For more than two decades, Counter-Strike has exemplified the world's premier competitive gaming experience, driven by millions of players around the world. Now it's time for a new stage - Counter-Strike 2.",
-          "release": "Aug 21, 2012",
-          "publisher": "Valve",
+          "description": "Исследуйте яркие открытые ландшафты Мексики с безграничным весельем и управлением лучшими машинами мира. Взрывайтесь в Forza Horizon 5: Hot Wheels или покоряйте Sierra Nueva в последнем приключении Horizon Rally. Требуется игра Forza Horizon 5, дополнение продается отдельно.",
+          "release": "9 ноября 2021 г.",
+          "publisher": "Xbox Studios",
           "tags": [
-            "Action",
-            "PC",
-            "First Person",
-            "E-Sport"
+            "Гонки",
+            "ПК",
+            "Многопользовательский",
+            "Киберспорт"
           ]
         },
         {
           "id": 3,
-          "name": "PUBG: BATTLEGROUNDS",
-          "poster": "/images/pubg.jpg",
-          "link": "https://store.steampowered.com/app/578080/PUBG_BATTLEGROUNDS/",
+          "name": "BeamNG.drive",
+          "poster": "/images/posters/beamngdrive.jpg",
+          "link": "https://store.steampowered.com/app/284160/BeamNGdrive/",
           "new": false,
           "rating": 5,
-          "description": "Play PUBG: BATTLEGROUNDS for free. Land in strategically important places, get weapons and supplies and try to survive and be the last team left on one of the many battlefields.",
-          "release": "21 Dec, 2017",
-          "publisher": "KRAFTON, Inc.",
+          "description": "BeamNG.drive - невероятно реалистичная игра о вождении с почти безграничными возможностями. Наш движок мягкотельной физики моделирует каждую составляющую автомобиля в реальном времени, что приводит к правдоподобному поведению. Годы тщательного дизайна, интенсивных исследований и опыта позволили создать симуляцию, которая достоверно воссоздает удовольствие от вождения в реальном мире.",
+          "release": "29 мая 2015 г.",
+          "publisher": "BeamNG",
           "tags": [
-            "Action",
-            "PC",
-            "First Person",
-            "Multiplayer"
+            "Гонки",
+            "ПК",
+            "Одиночная игра"
           ]
         },
         {
           "id": 4,
-          "name": "Ready or Not",
-          "poster": "/images/readyornot.avif",
-          "link": "https://store.steampowered.com/app/1144200/Ready_or_Not/",
+          "name": "GRID Legends",
+          "poster": "/images/posters/gridlegends.webp",
+          "link": "https://store.steampowered.com/app/1307710/GRID_Legends/",
           "new": true,
-          "rating": 4.5,
-          "description": "Los Suenos. Los Suenos police report a surge in crime in the city. SWAT teams are deployed to handle dangerous situations such as hostage situations, bomb threats and shootouts with suspects.",
-          "release": "13 Dec, 2023",
-          "publisher": "VOID Interactive",
+          "rating": 4,
+          "description": "GRID Legends предлагает захватывающее колесо-в-колесо действие в автоспорте. Создавайте мечты гоночных событий, погружайтесь в живые гонки, переживайте драматическую историю виртуальной постановки и ощущайте радость от зрелищных гонок.",
+          "release": "24 февраля 2022 г.",
+          "publisher": "Electronic Arts",
           "tags": [
-            "Action",
-            "PC",
-            "First Person",
-            "Team"
+            "Гонки",
+            "ПК",
+            "Многопользовательский",
+            "Кроссплатформенный"
           ]
         }
       ],
       "rpg": [
         {
           "id": 1,
-          "name": "Call of Duty: Black Ops 4",
-          "poster": "/images/cod.avif",
-          "link": "https://store.steampowered.com/app/2933620/Call_of_Duty_Black_Ops_6/",
+          "name": "ELDEN RING",
+          "poster": "/images/posters/eldenring.jpg",
+          "link": "https://store.steampowered.com/app/1245620/ELDEN_RING/",
           "new": true,
-          "rating": 5,
-          "description": "Call of Duty®: Black Ops 6 is a worthy continuation of the Black Ops series, featuring an exciting single-player campaign, unique multiplayer features and the return of the Zombies mode with rounds.",
-          "release": "Oct 25, 2024",
-          "publisher": "Activision",
+          "rating": 4,
+          "description": "НОВЫЙ ФАНТАСТИЧЕСКИЙ ЭКШЕН RPG. Восстань, Порочный, и следуй за благодатью, чтобы овладеть силой Elden Ring и стать Властелином Elden в Междуземье.",
+          "release": "25 февраля 2022 г.",
+          "publisher": "FromSoftware Inc.",
           "tags": [
-            "Action",
-            "PC",
-            "First Person",
-            "Military"
+            "РПГ",
+            "ПК",
+            "Одиночная игра",
+            "Многопользовательский"
           ]
         },
         {
           "id": 2,
-          "name": "Counter-Strike 2",
-          "poster": "/images/striketwo.webp",
-          "link": "https://store.steampowered.com/app/730/CounterStrike_2/",
+          "name": "Dota 2",
+          "poster": "/images/posters/dota.jpg",
+          "link": "https://store.steampowered.com/app/570/Dota_2/",
           "new": false,
           "rating": 5,
-          "description": "For more than two decades, Counter-Strike has exemplified the world's premier competitive gaming experience, driven by millions of players around the world. Now it's time for a new stage - Counter-Strike 2.",
-          "release": "Aug 21, 2012",
+          "description": "Каждый день миллионы игроков по всему миру вступают в бой в роли одного из более чем ста героев Dota. И не важно, играют ли они десятый час или тысячный, всегда найдется что-то новое для открытия. Благодаря регулярным обновлениям, которые обеспечивают постоянную эволюцию игрового процесса, функций и героев, Dota 2 обрела собственную жизнь.",
+          "release": "9 июля 2013 г.",
           "publisher": "Valve",
           "tags": [
-            "Action",
-            "PC",
-            "First Person",
-            "E-Sport"
+            "РПГ",
+            "ПК",
+            "Многопользовательский",
+            "Киберспорт"
           ]
         },
         {
           "id": 3,
-          "name": "PUBG: BATTLEGROUNDS",
-          "poster": "/images/pubg.jpg",
-          "link": "https://store.steampowered.com/app/578080/PUBG_BATTLEGROUNDS/",
-          "new": false,
+          "name": "Baldur's Gate 3",
+          "poster": "/images/posters/baldursgate.png",
+          "link": "https://store.steampowered.com/app/1086940/Baldurs_Gate_3/",
+          "new": true,
           "rating": 5,
-          "description": "Play PUBG: BATTLEGROUNDS for free. Land in strategically important places, get weapons and supplies and try to survive and be the last team left on one of the many battlefields.",
-          "release": "21 Dec, 2017",
-          "publisher": "KRAFTON, Inc.",
+          "description": "Baldur’s Gate 3 - насыщенная историями ролевая игра в жанре RPG, происходящая во вселенной Dungeons & Dragons, где ваши выборы формируют историю о товариществе и предательстве, выживании и жертвах, и соблазне абсолютной власти.",
+          "release": "3 августа 2023 г.",
+          "publisher": "Larian Studios",
           "tags": [
-            "Action",
-            "PC",
-            "First Person",
-            "Multiplayer"
+            "РПГ",
+            "ПК",
+            "Одиночная игра",
+            "Многопользовательский"
           ]
         },
         {
           "id": 4,
-          "name": "Ready or Not",
-          "poster": "/images/readyornot.avif",
-          "link": "https://store.steampowered.com/app/1144200/Ready_or_Not/",
-          "new": true,
-          "rating": 4.5,
-          "description": "Los Suenos. Los Suenos police report a surge in crime in the city. SWAT teams are deployed to handle dangerous situations such as hostage situations, bomb threats and shootouts with suspects.",
-          "release": "13 Dec, 2023",
-          "publisher": "VOID Interactive",
+          "name": "Fallout 76",
+          "poster": "/images/posters/fallout.jpg",
+          "link": "https://store.steampowered.com/app/1151340/Fallout_76/",
+          "new": false,
+          "rating": 5,
+          "description": "Bethesda Game Studios приветствует вас в Fallout 76. Через двадцать пять лет после падения бомб вы и ваши товарищи-обитатели убежища выходите на пост-нуклеарную Америку. Исследуйте огромную пустошь в этом многопользовательском дополнении к истории Fallout.",
+          "release": "14 апреля 2020 г.",
+          "publisher": "Bethesda Softworks",
           "tags": [
-            "Action",
-            "PC",
-            "First Person",
-            "Team"
+            "РПГ",
+            "ПК",
+            "От первого лица",
+            "Многопользовательский"
           ]
         }
       ],
       "strategy": [
         {
           "id": 1,
-          "name": "Call of Duty: Black Ops 4",
-          "poster": "/images/cod.avif",
-          "link": "https://store.steampowered.com/app/2933620/Call_of_Duty_Black_Ops_6/",
-          "new": true,
-          "rating": 5,
-          "description": "Call of Duty®: Black Ops 6 is a worthy continuation of the Black Ops series, featuring an exciting single-player campaign, unique multiplayer features and the return of the Zombies mode with rounds.",
-          "release": "Oct 25, 2024",
-          "publisher": "Activision",
+          "name": "Sid Meier’s Civilization® VI",
+          "poster": "/images/posters/cilivilization.avif",
+          "link": "https://store.steampowered.com/app/289070/Sid_Meiers_Civilization_VI/",
+          "new": false,
+          "rating": 4,
+          "description": "Civilization VI - новейшая часть в отмеченной наградами серии Civilization. Расширяйте свою империю, развивайте свою культуру и вступайте в схватку с величайшими лидерами истории. Выстоит ли ваша цивилизация проверку временем?",
+          "release": "21 октября 2016 г.",
+          "publisher": "Firaxis Games",
           "tags": [
-            "Action",
-            "PC",
-            "First Person",
-            "Military"
+            "Стратегия",
+            "ПК",
+            "Одиночная игра",
+            "Многопользовательский"
           ]
         },
         {
           "id": 2,
-          "name": "Counter-Strike 2",
-          "poster": "/images/striketwo.webp",
-          "link": "https://store.steampowered.com/app/730/CounterStrike_2/",
-          "new": false,
+          "name": "Total War: WARHAMMER III",
+          "poster": "/images/posters/warhammer.jpg",
+          "link": "https://store.steampowered.com/app/1142710/Total_War_WARHAMMER_III/",
+          "new": true,
           "rating": 5,
-          "description": "For more than two decades, Counter-Strike has exemplified the world's premier competitive gaming experience, driven by millions of players around the world. Now it's time for a new stage - Counter-Strike 2.",
-          "release": "Aug 21, 2012",
-          "publisher": "Valve",
+          "description": "Катастрофическое завершение трилогии Total War: WARHAMMER здесь. Соберите свои силы и шагните в Царство Хаоса, измерение ужаса, где решится судьба мира. Победите ли вы своих демонов… или подчините их?",
+          "release": "17 февраля 2022 г.",
+          "publisher": "SEGA",
           "tags": [
-            "Action",
-            "PC",
-            "First Person",
-            "E-Sport"
+            "Стратегия",
+            "ПК",
+            "Одиночная игра",
+            "Многопользовательский"
           ]
         },
         {
           "id": 3,
-          "name": "PUBG: BATTLEGROUNDS",
-          "poster": "/images/pubg.jpg",
-          "link": "https://store.steampowered.com/app/578080/PUBG_BATTLEGROUNDS/",
+          "name": "Crusader Kings III",
+          "poster": "/images/posters/crusaider.jpg",
+          "link": "https://store.steampowered.com/app/1158310/Crusader_Kings_III/",
           "new": false,
-          "rating": 5,
-          "description": "Play PUBG: BATTLEGROUNDS for free. Land in strategically important places, get weapons and supplies and try to survive and be the last team left on one of the many battlefields.",
-          "release": "21 Dec, 2017",
-          "publisher": "KRAFTON, Inc.",
+          "rating": 3.5,
+          "description": "Любите, сражайтесь, замышляйте и добивайтесь величия. Определите наследие своего благородного дома в обширной стратегической игре Crusader Kings III. Смерть - это только начало, когда вы ведете свою династию к славе в богатой и полной жизни симуляции Средневековья.",
+          "release": "1 сентября 2020 г.",
+          "publisher": "Paradox Interactive",
           "tags": [
-            "Action",
-            "PC",
-            "First Person",
-            "Multiplayer"
+            "Стратегия",
+            "ПК",
+            "Одиночная игра",
+            "Многопользовательский"
           ]
         },
         {
           "id": 4,
-          "name": "Ready or Not",
-          "poster": "/images/readyornot.avif",
-          "link": "https://store.steampowered.com/app/1144200/Ready_or_Not/",
-          "new": true,
-          "rating": 4.5,
-          "description": "Los Suenos. Los Suenos police report a surge in crime in the city. SWAT teams are deployed to handle dangerous situations such as hostage situations, bomb threats and shootouts with suspects.",
-          "release": "13 Dec, 2023",
-          "publisher": "VOID Interactive",
+          "name": "Age of Empires II",
+          "poster": "/images/posters/ageofempires.jpg",
+          "link": "https://store.steampowered.com/app/813780/Age_of_Empires_II_Definitive_Edition/",
+          "new": false,
+          "rating": 3,
+          "description": "Age of Empires II: Definitive Edition включает “Последние ханы” с 3 новыми кампаниями и 4 новыми цивилизациями. Частые обновления включают события, дополнительный контент, новые игровые режимы и улучшенные функции с недавним добавлением кооперативного режима!",
+          "release": "14 ноября 2019 г.",
+          "publisher": "Xbox Game Studios",
           "tags": [
-            "Action",
-            "PC",
-            "First Person",
-            "Team"
+            "Стратегия",
+            "ПК",
+            "Одиночная игра",
+            "Многопользовательский"
           ]
         }
       ]
@@ -571,282 +569,279 @@
         {
           "id": 1,
           "name": "Call of Duty: Black Ops 4",
-          "poster": "/images/cod.avif",
+          "poster": "/images/posters/cod.avif",
           "link": "https://store.steampowered.com/app/2933620/Call_of_Duty_Black_Ops_6/",
           "new": true,
           "rating": 5,
-          "description": "Call of Duty®: Black Ops 6 is a worthy continuation of the Black Ops series, featuring an exciting single-player campaign, unique multiplayer features and the return of the Zombies mode with rounds.",
-          "release": "Oct 25, 2024",
+          "description": "Call of Duty®: Black Ops 6, Black Ops serisinin devamı niteliğinde olup, sürükleyici bir tek oyunculu kampanya, benzersiz çok oyunculu özellikler ve turlarla Zombi modunun geri dönüşünü içeriyor.",
+          "release": "25 Ekim 2024",
           "publisher": "Activision",
           "tags": [
-            "Action",
+            "Aksiyon",
             "PC",
-            "First Person",
-            "Military"
+            "Birinci Şahıs",
+            "Askeri"
           ]
         },
         {
           "id": 2,
           "name": "Counter-Strike 2",
-          "poster": "/images/striketwo.webp",
+          "poster": "/images/posters/striketwo.webp",
           "link": "https://store.steampowered.com/app/730/CounterStrike_2/",
           "new": false,
           "rating": 5,
-          "description": "For more than two decades, Counter-Strike has exemplified the world's premier competitive gaming experience, driven by millions of players around the world. Now it's time for a new stage - Counter-Strike 2.",
-          "release": "Aug 21, 2012",
+          "description": "Dünyanın dört bir yanındaki milyonlarca oyuncuyla birlikte, yirmi yılı aşkın bir süredir en iyi rekabetçi oyun deneyimini temsil eden Counter-Strike serisi, şimdi yeni bir adım atıyor: Counter-Strike 2.",
+          "release": "21 Ağustos 2012",
           "publisher": "Valve",
           "tags": [
-            "Action",
+            "Aksiyon",
             "PC",
-            "First Person",
-            "E-Sport"
+            "Birinci Şahıs",
+            "e-Spor"
           ]
         },
         {
           "id": 3,
           "name": "PUBG: BATTLEGROUNDS",
-          "poster": "/images/pubg.jpg",
+          "poster": "/images/posters/pubg.jpg",
           "link": "https://store.steampowered.com/app/578080/PUBG_BATTLEGROUNDS/",
           "new": false,
           "rating": 5,
-          "description": "Play PUBG: BATTLEGROUNDS for free. Land in strategically important places, get weapons and supplies and try to survive and be the last team left on one of the many battlefields.",
-          "release": "21 Dec, 2017",
+          "description": "PUBG: BATTLEGROUNDS'u ücretsiz oynayın. Stratejik olarak önemli yerlere inin, silahlar ve malzemeler toplayın ve birçok savaş alanından birinde hayatta kalan son takım olmak için mücadele edin.",
+          "release": "21 Aralık 2017",
           "publisher": "KRAFTON, Inc.",
           "tags": [
-            "Action",
+            "Aksiyon",
             "PC",
-            "First Person",
-            "Multiplayer"
+            "Birinci Şahıs",
+            "Çok Oyunculu"
           ]
         },
         {
           "id": 4,
           "name": "Ready or Not",
-          "poster": "/images/readyornot.avif",
+          "poster": "/images/posters/readyornot.avif",
           "link": "https://store.steampowered.com/app/1144200/Ready_or_Not/",
           "new": true,
-          "rating": 4.5,
-          "description": "Los Suenos. Los Suenos police report a surge in crime in the city. SWAT teams are deployed to handle dangerous situations such as hostage situations, bomb threats and shootouts with suspects.",
-          "release": "13 Dec, 2023",
+          "rating": 4,
+          "description": "Los Suenos. Los Suenos Polis Departmanı, şehirdeki suç oranlarının arttığını bildirdi. SWAT ekipleri, rehin durumları, bomba tehditleri ve şüphelilerle çatışmalar gibi tehlikeli durumları çözmek için görevlendirildi.",
+          "release": "13 Aralık 2023",
           "publisher": "VOID Interactive",
           "tags": [
-            "Action",
+            "Aksiyon",
             "PC",
-            "First Person",
-            "Team"
+            "Birinci Şahıs",
+            "Ekip"
           ]
         }
       ],
       "racing": [
         {
           "id": 1,
-          "name": "Call of Duty: Black Ops 4",
-          "poster": "/images/cod.avif",
-          "link": "https://store.steampowered.com/app/2933620/Call_of_Duty_Black_Ops_6/",
-          "new": true,
+          "name": "Assetto Corsa",
+          "poster": "/images/posters/assetocorsa.webp",
+          "link": "https://store.steampowered.com/app/244210/Assetto_Corsa/",
+          "new": false,
           "rating": 5,
-          "description": "Call of Duty®: Black Ops 6 is a worthy continuation of the Black Ops series, featuring an exciting single-player campaign, unique multiplayer features and the return of the Zombies mode with rounds.",
-          "release": "Oct 25, 2024",
-          "publisher": "Activision",
+          "description": "Assetto Corsa v1.16, lazer taramalı yeni Laguna-Seca pistini, Alfa Romeo Giulia Quadrifoglio gibi çok beklenen araçları içeren 7 yeni arabayı tanıtıyor! Değişiklik günlüğüne göz atarak daha fazla bilgi edinin!",
+          "release": "19 Aralık 2014",
+          "publisher": "Kunos Simulazioni",
           "tags": [
-            "Action",
+            "Yarış",
             "PC",
-            "First Person",
-            "Military"
+            "Tek Oyunculu"
           ]
         },
         {
           "id": 2,
-          "name": "Counter-Strike 2",
-          "poster": "/images/striketwo.webp",
-          "link": "https://store.steampowered.com/app/730/CounterStrike_2/",
-          "new": false,
+          "name": "Forza Horizon 5",
+          "poster": "/images/posters/forzahorizon.jpg",
+          "link": "https://store.steampowered.com/app/1551360/Forza_Horizon_5/",
+          "new": true,
           "rating": 5,
-          "description": "For more than two decades, Counter-Strike has exemplified the world's premier competitive gaming experience, driven by millions of players around the world. Now it's time for a new stage - Counter-Strike 2.",
-          "release": "Aug 21, 2012",
-          "publisher": "Valve",
+          "description": "Meksika'nın canlı açık manzaralarını keşfedin, dünyanın en iyi arabalarıyla sonsuz eğlence yaşayın. Forza Horizon 5: Hot Wheels'e dalın veya en son Horizon Rally macerasında Sierra Nueva'yı fethedin. Forza Horizon 5 oyununu gerektirir, ek içerik ayrı satılır.",
+          "release": "9 Kasım 2021",
+          "publisher": "Xbox Studios",
           "tags": [
-            "Action",
+            "Yarış",
             "PC",
-            "First Person",
-            "E-Sport"
+            "Çok Oyunculu",
+            "e-Spor"
           ]
         },
         {
           "id": 3,
-          "name": "PUBG: BATTLEGROUNDS",
-          "poster": "/images/pubg.jpg",
-          "link": "https://store.steampowered.com/app/578080/PUBG_BATTLEGROUNDS/",
+          "name": "BeamNG.drive",
+          "poster": "/images/posters/beamngdrive.jpg",
+          "link": "https://store.steampowered.com/app/284160/BeamNGdrive/",
           "new": false,
           "rating": 5,
-          "description": "Play PUBG: BATTLEGROUNDS for free. Land in strategically important places, get weapons and supplies and try to survive and be the last team left on one of the many battlefields.",
-          "release": "21 Dec, 2017",
-          "publisher": "KRAFTON, Inc.",
+          "description": "BeamNG.drive, neredeyse sınırsız olanaklara sahip inanılmaz derecede gerçekçi bir sürüş oyunu. Yumuşak vücut fiziği motorumuz, arabanın her bileşenini gerçek zamanlı olarak simüle eder, bu da inandırıcı bir davranış sağlar. Yıllar süren dikkatli tasarım, yoğun araştırma ve deneyim, gerçek dünyada sürüş keyfini otantik olarak yeniden yaratan bir simülasyon yaratmamıza olanak tanıdı.",
+          "release": "29 Mayıs 2015",
+          "publisher": "BeamNG",
           "tags": [
-            "Action",
+            "Yarış",
             "PC",
-            "First Person",
-            "Multiplayer"
+            "Tek Oyunculu"
           ]
         },
         {
           "id": 4,
-          "name": "Ready or Not",
-          "poster": "/images/readyornot.avif",
-          "link": "https://store.steampowered.com/app/1144200/Ready_or_Not/",
+          "name": "GRID Legends",
+          "poster": "/images/posters/gridlegends.webp",
+          "link": "https://store.steampowered.com/app/1307710/GRID_Legends/",
           "new": true,
-          "rating": 4.5,
-          "description": "Los Suenos. Los Suenos police report a surge in crime in the city. SWAT teams are deployed to handle dangerous situations such as hostage situations, bomb threats and shootouts with suspects.",
-          "release": "13 Dec, 2023",
-          "publisher": "VOID Interactive",
+          "rating": 4,
+          "description": "GRID Legends, motorsporlarında heyecan verici tekerlek tekerleğe aksiyon sunar. Hayalinizdeki yarış etkinliklerini yaratın, canlı yarışların içine dalın, sanal bir sahne prodüksiyonunda dramatik hikayeyi yaşayın ve heyecan verici yarışların keyfini çıkarın.",
+          "release": "24 Şubat 2022",
+          "publisher": "Electronic Arts",
           "tags": [
-            "Action",
+            "Yarış",
             "PC",
-            "First Person",
-            "Team"
+            "Çok Oyunculu",
+            "Çapraz Platform"
           ]
         }
       ],
       "rpg": [
         {
           "id": 1,
-          "name": "Call of Duty: Black Ops 4",
-          "poster": "/images/cod.avif",
-          "link": "https://store.steampowered.com/app/2933620/Call_of_Duty_Black_Ops_6/",
+          "name": "ELDEN RING",
+          "poster": "/images/posters/eldenring.jpg",
+          "link": "https://store.steampowered.com/app/1245620/ELDEN_RING/",
           "new": true,
-          "rating": 5,
-          "description": "Call of Duty®: Black Ops 6 is a worthy continuation of the Black Ops series, featuring an exciting single-player campaign, unique multiplayer features and the return of the Zombies mode with rounds.",
-          "release": "Oct 25, 2024",
-          "publisher": "Activision",
+          "rating": 4,
+          "description": "YENİ FANTASTİK AKSİYON RPG. Kayıp, Elden Ring'in gücünü ele geçirip Elden Lordu olmak için lütfa uy ve Yüzükler Ülkesi'nde yol al.",
+          "release": "25 Şubat 2022",
+          "publisher": "FromSoftware Inc.",
           "tags": [
-            "Action",
+            "RPG",
             "PC",
-            "First Person",
-            "Military"
+            "Tek Oyunculu",
+            "Çok Oyunculu"
           ]
         },
         {
           "id": 2,
-          "name": "Counter-Strike 2",
-          "poster": "/images/striketwo.webp",
-          "link": "https://store.steampowered.com/app/730/CounterStrike_2/",
+          "name": "Dota 2",
+          "poster": "/images/posters/dota.jpg",
+          "link": "https://store.steampowered.com/app/570/Dota_2/",
           "new": false,
           "rating": 5,
-          "description": "For more than two decades, Counter-Strike has exemplified the world's premier competitive gaming experience, driven by millions of players around the world. Now it's time for a new stage - Counter-Strike 2.",
-          "release": "Aug 21, 2012",
+          "description": "Her gün, dünyanın dört bir yanındaki milyonlarca oyuncu, Dota'nın yüzün üzerinde kahramanından biri olarak savaşlara giriyor. İster onuncu saat ister bininci saat olsun, her zaman keşfedilecek yeni bir şeyler bulunur. Oynanış, özellikler ve kahramanların sürekli evrimini sağlayan düzenli güncellemeler sayesinde Dota 2 kendi hayatını kazandı.",
+          "release": "9 Temmuz 2013",
           "publisher": "Valve",
           "tags": [
-            "Action",
+            "RPG",
             "PC",
-            "First Person",
-            "E-Sport"
+            "Çok Oyunculu",
+            "e-Spor"
           ]
         },
         {
           "id": 3,
-          "name": "PUBG: BATTLEGROUNDS",
-          "poster": "/images/pubg.jpg",
-          "link": "https://store.steampowered.com/app/578080/PUBG_BATTLEGROUNDS/",
-          "new": false,
-          "rating": 5,
-          "description": "Play PUBG: BATTLEGROUNDS for free. Land in strategically important places, get weapons and supplies and try to survive and be the last team left on one of the many battlefields.",
-          "release": "21 Dec, 2017",
-          "publisher": "KRAFTON, Inc.",
+          "name": "Baldur's Gate 3",
+          "poster": "/images/posters/baldursgate.png",
+          "link": "https://store.steampowered.com/app/1086940/Baldurs_Gate_3/",
+          "new": true,
+          "rating": 4.5,
+          "description": "Baldur’s Gate 3, Dungeons & Dragons evreninde geçen, seçimlerinizin arkadaşlık ve ihanet, hayatta kalma ve fedakarlık, mutlak güç cazibesi hikayesini şekillendirdiği hikaye açısından zengin bir RPG'dir.",
+          "release": "3 Ağustos 2023",
+          "publisher": "Larian Studios",
           "tags": [
-            "Action",
+            "RPG",
             "PC",
-            "First Person",
-            "Multiplayer"
+            "Tek Oyunculu",
+            "Çok Oyunculu"
           ]
         },
         {
           "id": 4,
-          "name": "Ready or Not",
-          "poster": "/images/readyornot.avif",
-          "link": "https://store.steampowered.com/app/1144200/Ready_or_Not/",
-          "new": true,
-          "rating": 4.5,
-          "description": "Los Suenos. Los Suenos police report a surge in crime in the city. SWAT teams are deployed to handle dangerous situations such as hostage situations, bomb threats and shootouts with suspects.",
-          "release": "13 Dec, 2023",
-          "publisher": "VOID Interactive",
+          "name": "Fallout 76",
+          "poster": "/images/posters/fallout.jpg",
+          "link": "https://store.steampowered.com/app/1151340/Fallout_76/",
+          "new": false,
+          "rating": 5,
+          "description": "Bethesda Game Studios, Fallout 76'ya hoş geldiniz diyor. Bombaların düşmesinden yirmi beş yıl sonra, siz ve Vault arkadaşlarınız nükleer sonrası Amerika'ya çıkıyorsunuz. Fallout hikayesinin bu çok oyunculu ekinde geniş bozkırları keşfedin.",
+          "release": "14 Nisan 2020",
+          "publisher": "Bethesda Softworks",
           "tags": [
-            "Action",
+            "RPG",
             "PC",
-            "First Person",
-            "Team"
+            "Birinci Şahıs",
+            "Çok Oyunculu"
           ]
         }
       ],
       "strategy": [
         {
           "id": 1,
-          "name": "Call of Duty: Black Ops 4",
-          "poster": "/images/cod.avif",
-          "link": "https://store.steampowered.com/app/2933620/Call_of_Duty_Black_Ops_6/",
-          "new": true,
-          "rating": 5,
-          "description": "Call of Duty®: Black Ops 6 is a worthy continuation of the Black Ops series, featuring an exciting single-player campaign, unique multiplayer features and the return of the Zombies mode with rounds.",
-          "release": "Oct 25, 2024",
-          "publisher": "Activision",
+          "name": "Sid Meier’s Civilization® VI",
+          "poster": "/images/posters/cilivilization.avif",
+          "link": "https://store.steampowered.com/app/289070/Sid_Meiers_Civilization_VI/",
+          "new": false,
+          "rating": 4,
+          "description": "Civilization VI, ödüllü Civilization serisinin en yeni sürümüdür. İmparatorluğunuzu genişletin, kültürünüzü geliştirin ve tarihin en büyük liderleriyle çatışmaya girin. Medeniyetiniz zamanın testinden geçecek mi?",
+          "release": "21 Ekim 2016",
+          "publisher": "Firaxis Games",
           "tags": [
-            "Action",
+            "Strateji",
             "PC",
-            "First Person",
-            "Military"
+            "Tek Oyunculu",
+            "Çok Oyunculu"
           ]
         },
         {
           "id": 2,
-          "name": "Counter-Strike 2",
-          "poster": "/images/striketwo.webp",
-          "link": "https://store.steampowered.com/app/730/CounterStrike_2/",
-          "new": false,
+          "name": "Total War: WARHAMMER III",
+          "poster": "/images/posters/warhammer.jpg",
+          "link": "https://store.steampowered.com/app/1142710/Total_War_WARHAMMER_III/",
+          "new": true,
           "rating": 5,
-          "description": "For more than two decades, Counter-Strike has exemplified the world's premier competitive gaming experience, driven by millions of players around the world. Now it's time for a new stage - Counter-Strike 2.",
-          "release": "Aug 21, 2012",
-          "publisher": "Valve",
+          "description": "Total War: WARHAMMER üçlemesinin felaketle sonuçlanan finali burada. Güçlerinizi toplayın ve dünyanın kaderinin belirleneceği bir dehşet boyutu olan Kaos Alemine adım atın. İblislerinizi yenecek misiniz yoksa onları kontrol altına mı alacaksınız?",
+          "release": "17 Şubat 2022",
+          "publisher": "SEGA",
           "tags": [
-            "Action",
+            "Strateji",
             "PC",
-            "First Person",
-            "E-Sport"
+            "Tek Oyunculu",
+            "Çok Oyunculu"
           ]
         },
         {
           "id": 3,
-          "name": "PUBG: BATTLEGROUNDS",
-          "poster": "/images/pubg.jpg",
-          "link": "https://store.steampowered.com/app/578080/PUBG_BATTLEGROUNDS/",
+          "name": "Crusader Kings III",
+          "poster": "/images/posters/crusaider.jpg",
+          "link": "https://store.steampowered.com/app/1158310/Crusader_Kings_III/",
           "new": false,
-          "rating": 5,
-          "description": "Play PUBG: BATTLEGROUNDS for free. Land in strategically important places, get weapons and supplies and try to survive and be the last team left on one of the many battlefields.",
-          "release": "21 Dec, 2017",
-          "publisher": "KRAFTON, Inc.",
+          "rating": 3.5,
+          "description": "Sevin, savaşın, entrikalar çevirin ve büyüklüğe ulaşın. Crusader Kings III'te asil evinizin mirasını belirleyin. Orta Çağ'ın zengin ve yaşam dolu simülasyonunda hanedanınızı şöhrete götürürken ölüm sadece bir başlangıçtır.",
+          "release": "1 Eylül 2020",
+          "publisher": "Paradox Interactive",
           "tags": [
-            "Action",
+            "Strateji",
             "PC",
-            "First Person",
-            "Multiplayer"
+            "Tek Oyunculu",
+            "Çok Oyunculu"
           ]
         },
         {
           "id": 4,
-          "name": "Ready or Not",
-          "poster": "/images/readyornot.avif",
-          "link": "https://store.steampowered.com/app/1144200/Ready_or_Not/",
-          "new": true,
-          "rating": 4.5,
-          "description": "Los Suenos. Los Suenos police report a surge in crime in the city. SWAT teams are deployed to handle dangerous situations such as hostage situations, bomb threats and shootouts with suspects.",
-          "release": "13 Dec, 2023",
-          "publisher": "VOID Interactive",
+          "name": "Age of Empires II",
+          "poster": "/images/posters/ageofempires.jpg",
+          "link": "https://store.steampowered.com/app/813780/Age_of_Empires_II_Definitive_Edition/",
+          "new": false,
+          "rating": 3,
+          "description": "Age of Empires II: Definitive Edition, 3 yeni kampanya ve 4 yeni medeniyet içeren “Son Hanlar”ı içerir. Sık güncellemeler etkinlikleri, ek içerikleri, yeni oyun modlarını ve kooperatif modunun eklenmesiyle birlikte geliştirilmiş özellikleri içerir!",
+          "release": "14 Kasım 2019",
+          "publisher": "Xbox Game Studios",
           "tags": [
-            "Action",
+            "Strateji",
             "PC",
-            "First Person",
-            "Team"
+            "Tek Oyunculu",
+            "Çok Oyunculu"
           ]
         }
       ]
-    }
-  ]
+    }  ]
 }

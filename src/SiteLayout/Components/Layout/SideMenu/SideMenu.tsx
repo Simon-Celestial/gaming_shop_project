@@ -15,6 +15,7 @@ import ClearIcon from '@mui/icons-material/Clear';
 // @ts-expect-error
 import navData from '/public/data/NavData/navData.json';
 import {useCallback, useState} from "react";
+import {LanguageSelection} from "../../Reusables/LanguageSelection/LanguageSelection.tsx";
 
 interface NAV_DATA {
     id: string;
@@ -61,7 +62,7 @@ export const SideMenu = () => {
                     </Link>
                 </div>
                 <div className={styles.languageBox}>
-                    ENG
+                    <LanguageSelection />
                 </div>
 
             </div>

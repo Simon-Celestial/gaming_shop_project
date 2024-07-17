@@ -36,7 +36,9 @@ export const GameCard: React.FC<GAME_CARD_PROPS> = ({data}) => {
             </div>
             <div className={styles.titleBox}>
                 <h2>{data?.name}</h2>
-                <h3><span>Action</span> | <span>PC</span> | <span>First Person</span></h3>
+                <h3>
+                    {data?.tags?.map((tag,index) => <span key={index}>{tag}</span>)}
+                </h3>
                 <p>{data?.description}</p>
                 <div className={styles.infoBox}>
                     <div className={styles.infoItem}>
@@ -56,7 +58,7 @@ export const GameCard: React.FC<GAME_CARD_PROPS> = ({data}) => {
                         </p>
                     </div>
                     <div className={styles.infoItem}>
-                        <h3>{data?.publisher}</h3>
+                        <h4>{data?.publisher}</h4>
                         <p>Publisher</p>
                     </div>
                 </div>

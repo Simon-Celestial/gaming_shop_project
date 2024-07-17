@@ -18,6 +18,7 @@ import genresData from "/public/data/GenresData/genresData.json";
 import gamesData from "/public/data/GamesData/gamesData.json";
 import {GENRES_TYPE, PAGINATION_STYLES_TYPE, GAME_TYPE} from "../../../Types/types.ts";
 import {GameCard} from "../../Components/Reusables/GameCard/GameCard.tsx";
+import {useTranslation} from "react-i18next";
 
 
 const paginationStyles: PAGINATION_STYLES_TYPE = {
@@ -32,21 +33,39 @@ const paginationStyles: PAGINATION_STYLES_TYPE = {
 export const HomePage = () => {
     const odometerRef = useRef<HTMLDivElement | null>(null);
     const [selectedGenre, setSelectedGenre] = useState("action");
+
     const handleSelectGenre = useCallback((genreID: string): void => {
         setSelectedGenre(genreID)
     }, [setSelectedGenre]);
 
+    const {i18n} = useTranslation();
+
+    const translatedData = useMemo(() => {
+        if (i18n.language === "en") {
+            return gamesData.en[0];
+        } else if (i18n.language === "ru") {
+            return gamesData.ru[0];
+        } else {
+            return gamesData.tr[0]
+        }
+    }, [i18n.language]);
+
+    console.log(translatedData)
+
+
     const filteredGames = useMemo(() => {
         if (selectedGenre === "action") {
-            return gamesData.en[0].action
+            return translatedData.action
         } else if (selectedGenre === "racing") {
-            return gamesData.en[0].racing
+            return translatedData.racing
         } else if (selectedGenre === "rpg") {
-            return gamesData.en[0].rpg
+            return translatedData.rpg
         } else {
-            return gamesData.en[0].strategy
+            return translatedData.strategy
         }
-    }, [selectedGenre])
+    }, [selectedGenre, translatedData, translatedData, translatedData, translatedData]);
+    // console.log(filteredGames)
+
 
     return (
         <>
@@ -226,7 +245,7 @@ export const HomePage = () => {
                                 </div>
 
                             </div>
-                            <DefaultButton title={"Explore Out Product"} link={"/shop"}/>
+                            <DefaultButton title={"Explore Out Products"} link={"/shop"}/>
                         </div>
                     </div>
                 </section>
@@ -239,21 +258,27 @@ export const HomePage = () => {
                             <p>Our products are distinguished by reliability, low response time, and user-friendliness
                                 for better immersion in the game.</p>
                             <div className={styles.genresContainer}>
-                                {genresData?.map((genre: GENRES_TYPE) => {
-                                    return (
-                                        <div key={genre?.id}
-                                             className={`${styles.genreBox} ${genre?.id === selectedGenre ? styles.active : ''}`}
-                                             onClick={() => handleSelectGenre(genre?.id)}>
-                                            <img src={genre?.img} alt={genre?.id}/>
-                                        </div>
-                                    )
-                                })}
+                                <div className={styles.genresRow}>
+                                    {genresData?.map((genre: GENRES_TYPE) => {
+                                        return (
+                                            <div key={genre?.id}
+                                                 className={`${styles.genreBox} ${genre?.id === selectedGenre ? styles.active : ''}`}
+                                                 onClick={() => handleSelectGenre(genre?.id)}>
+                                                <img src={genre?.img} alt={genre?.id}/>
+                                            </div>
+                                        )
+                                    })}
+
+                                </div>
+                                <div className={styles.gameSearch}>
+                                    <input type="text" placeholder={"Type to search..."}/>
+                                </div>
                             </div>
                         </div>
                         <div className={styles.gamesContainer}>
                             {filteredGames?.map((game: GAME_TYPE) => {
                                 return (
-                                    <GameCard key={game?.id} data={game} />
+                                    <GameCard key={game?.id} data={game}/>
                                 )
                             })}
                         </div>

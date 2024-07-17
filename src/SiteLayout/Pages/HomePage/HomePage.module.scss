@@ -426,30 +426,58 @@
         }
         .genresContainer {
           display: flex;
-          gap: 15px;
           border: 1px solid rgba(128, 128, 128, 0.3);
-          border-radius: 2px;
+          border-radius: 5px;
           padding: 12px;
-          .genreBox {
+          gap: 15px;
+          flex-direction: column;
+          .genresRow {
+            display: flex;
+            gap: 15px;
+            .genreBox {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              background:  #303141;
+              border-radius: 10px;
+              padding: 10px;
+              cursor: pointer;
+              transition: background $transition;
+              &:hover {
+                background: $greenDark;
+              }
+              &.active {
+                background: $greenDark;
+                animation: rotateRight 0.5s linear;
+              }
+              img {
+                max-width: 80px;
+                width: 100%;
+                filter: invert(1);
+              }
+            }
+
+          }
+          .gameSearch {
             display: flex;
             align-items: center;
-            justify-content: center;
-            background:  #303141;
-            border-radius: 10px;
-            padding: 10px;
-            cursor: pointer;
-            transition: background $transition;
+            width: 100%;
+            border: 1px solid rgba(128, 128, 128, 0.3);
+            border-radius: 5px;
+            transition: border-color $transition;
             &:hover {
-              background: $greenDark;
+              border-color: $greenDark;
             }
-            &.active {
-              background: $greenDark;
-              animation: rotateRight 0.5s linear;
-            }
-            img {
-              max-width: 80px;
+            input {
               width: 100%;
-              filter: invert(1);
+              background: transparent;
+              outline: 0;
+              border: 0;
+              padding: 10px;
+              color: $white;
+              font-size: 20px;
+              font-family: $interFont;
+
             }
           }
         }
