@@ -497,13 +497,13 @@
 
 
           .imageBox {
-            max-width: 420px;
+            max-width: 400px;
             width: 100%;
-            height: 480px;
+            height: 420px;
             img{
               width: 100%;
               height: 100%;
-              object-position: center;
+              object-position: top;
               object-fit: cover;
               border-radius: 10px;
               border: 1px solid rgba(128, 128, 128, 0.3);

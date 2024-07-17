@@ -74,210 +74,208 @@
       "racing": [
         {
           "id": 1,
-          "name": "Call of Duty: Black Ops 4",
-          "poster": "/images/cod.avif",
-          "link": "https://store.steampowered.com/app/2933620/Call_of_Duty_Black_Ops_6/",
-          "new": true,
+          "name": "Assetto Corsa",
+          "poster": "/images/posters/assetocorsa.webp",
+          "link": "https://store.steampowered.com/app/244210/Assetto_Corsa/",
+          "new": false,
           "rating": 5,
-          "description": "Call of Duty®: Black Ops 6 is a worthy continuation of the Black Ops series, featuring an exciting single-player campaign, unique multiplayer features and the return of the Zombies mode with rounds.",
-          "release": "Oct 25, 2024",
-          "publisher": "Activision",
+          "description": "Assetto Corsa v1.16 introduces the new Laguna-Seca laser-scanned track, 7 new cars among which the eagerly awaited Alfa Romeo Giulia Quadrifoglio! Check the changelog for further info!",
+          "release": "19 Dec, 2014",
+          "publisher": "Kunos Simulazioni",
           "tags": [
-            "Action",
+            "Racing",
             "PC",
-            "First Person",
-            "Military"
+            "Single-player"
           ]
         },
         {
           "id": 2,
-          "name": "Counter-Strike 2",
-          "poster": "/images/striketwo.webp",
-          "link": "https://store.steampowered.com/app/730/CounterStrike_2/",
-          "new": false,
+          "name": "Forza Horizon 5",
+          "poster": "/images/posters/forzahorizon.jpg",
+          "link": "https://store.steampowered.com/app/1551360/Forza_Horizon_5/",
+          "new": true,
           "rating": 5,
-          "description": "For more than two decades, Counter-Strike has exemplified the world's premier competitive gaming experience, driven by millions of players around the world. Now it's time for a new stage - Counter-Strike 2.",
-          "release": "Aug 21, 2012",
-          "publisher": "Valve",
+          "description": "Explore the vibrant open world landscapes of Mexico with limitless, fun driving action in the world’s greatest cars. Blast off into Forza Horizon 5: Hot Wheels or Conquer the Sierra Nueva in the ultimate Horizon Rally Adventure experience. Requires Forza Horizon 5 game, expansion sold separately.",
+          "release": "9 Nov, 2021",
+          "publisher": "Xbox Studios",
           "tags": [
-            "Action",
+            "Racing",
             "PC",
-            "First Person",
+            "Multiplayer",
             "E-Sport"
           ]
         },
         {
           "id": 3,
-          "name": "PUBG: BATTLEGROUNDS",
-          "poster": "/images/pubg.jpg",
-          "link": "https://store.steampowered.com/app/578080/PUBG_BATTLEGROUNDS/",
+          "name": "BeamNG.drive",
+          "poster": "/images/posters/beamngdrive.jpg",
+          "link": "https://store.steampowered.com/app/284160/BeamNGdrive/",
           "new": false,
           "rating": 5,
-          "description": "Play PUBG: BATTLEGROUNDS for free. Land in strategically important places, get weapons and supplies and try to survive and be the last team left on one of the many battlefields.",
-          "release": "21 Dec, 2017",
-          "publisher": "KRAFTON, Inc.",
+          "description": "BeamNG.drive is an incredibly realistic driving game with near-limitless possibilities. Our soft-body physics engine simulates every component of a vehicle in real time, resulting in true-to-life behavior. With years of meticulous design, intensive research and experience, the simulation authentically recreates the excitement of real world driving.",
+          "release": "29 May, 2015",
+          "publisher": "BeamNG",
           "tags": [
-            "Action",
+            "Racing",
             "PC",
-            "First Person",
-            "Multiplayer"
+            "Single-player"
           ]
         },
         {
           "id": 4,
-          "name": "Ready or Not",
-          "poster": "/images/readyornot.avif",
-          "link": "https://store.steampowered.com/app/1144200/Ready_or_Not/",
+          "name": "GRID Legends",
+          "poster": "/images/posters/gridlegends.webp",
+          "link": "https://store.steampowered.com/app/1307710/GRID_Legends/",
           "new": true,
-          "rating": 4.5,
-          "description": "Los Suenos. Los Suenos police report a surge in crime in the city. SWAT teams are deployed to handle dangerous situations such as hostage situations, bomb threats and shootouts with suspects.",
-          "release": "13 Dec, 2023",
-          "publisher": "VOID Interactive",
+          "rating": 4,
+          "description": "GRID Legends delivers thrilling wheel-to-wheel motorsport action. Create dream race events, hop into live races, experience a dramatic virtual production story, and embrace the sensation of spectacular racing.",
+          "release": "24 Feb, 2022",
+          "publisher": "Electronic Arts",
           "tags": [
-            "Action",
+            "Racing",
             "PC",
-            "First Person",
-            "Team"
+            "Multiplayer",
+            "Cross-Platform"
           ]
         }
       ],
       "rpg": [
         {
           "id": 1,
-          "name": "Call of Duty: Black Ops 4",
-          "poster": "/images/cod.avif",
-          "link": "https://store.steampowered.com/app/2933620/Call_of_Duty_Black_Ops_6/",
+          "name": "ELDEN RING",
+          "poster": "/images/posters/eldenring.jpg",
+          "link": "https://store.steampowered.com/app/1245620/ELDEN_RING/",
           "new": true,
-          "rating": 5,
-          "description": "Call of Duty®: Black Ops 6 is a worthy continuation of the Black Ops series, featuring an exciting single-player campaign, unique multiplayer features and the return of the Zombies mode with rounds.",
-          "release": "Oct 25, 2024",
-          "publisher": "Activision",
+          "rating": 4,
+          "description": "THE NEW FANTASY ACTION RPG. Rise, Tarnished, and be guided by grace to brandish the power of the Elden Ring and become an Elden Lord in the Lands Between.",
+          "release": "25 Feb, 2022",
+          "publisher": "FromSoftware Inc.",
           "tags": [
-            "Action",
+            "Rpg",
             "PC",
-            "First Person",
-            "Military"
+            "Single-player",
+            "Multiplayer"
           ]
         },
         {
           "id": 2,
-          "name": "Counter-Strike 2",
-          "poster": "/images/striketwo.webp",
-          "link": "https://store.steampowered.com/app/730/CounterStrike_2/",
+          "name": "Dota 2",
+          "poster": "/images/posters/dota.jpg",
+          "link": "https://store.steampowered.com/app/570/Dota_2/",
           "new": false,
           "rating": 5,
-          "description": "For more than two decades, Counter-Strike has exemplified the world's premier competitive gaming experience, driven by millions of players around the world. Now it's time for a new stage - Counter-Strike 2.",
-          "release": "Aug 21, 2012",
+          "description": "Every day, millions of players worldwide enter battle as one of over a hundred Dota heroes. And no matter if it's their 10th hour of play or 1,000th, there's always something new to discover. With regular updates that ensure a constant evolution of gameplay, features, and heroes, Dota 2 has taken on a life of its own.",
+          "release": "9 Jul, 2013",
           "publisher": "Valve",
           "tags": [
-            "Action",
+            "Rpg",
             "PC",
-            "First Person",
+            "Multiplayer",
             "E-Sport"
           ]
         },
         {
           "id": 3,
-          "name": "PUBG: BATTLEGROUNDS",
-          "poster": "/images/pubg.jpg",
-          "link": "https://store.steampowered.com/app/578080/PUBG_BATTLEGROUNDS/",
-          "new": false,
+          "name": "Baldur's Gate 3",
+          "poster": "/images/posters/baldursgate.png",
+          "link": "https://store.steampowered.com/app/1086940/Baldurs_Gate_3/",
+          "new": true,
           "rating": 5,
-          "description": "Play PUBG: BATTLEGROUNDS for free. Land in strategically important places, get weapons and supplies and try to survive and be the last team left on one of the many battlefields.",
-          "release": "21 Dec, 2017",
-          "publisher": "KRAFTON, Inc.",
+          "description": "Baldur’s Gate 3 is a story-rich, party-based RPG set in the universe of Dungeons & Dragons, where your choices shape a tale of fellowship and betrayal, survival and sacrifice, and the lure of absolute power.",
+          "release": "3 Aug, 2023",
+          "publisher": "Larian Studios",
           "tags": [
-            "Action",
+            "Rpg",
             "PC",
-            "First Person",
+            "Single-player",
             "Multiplayer"
           ]
         },
         {
           "id": 4,
-          "name": "Ready or Not",
-          "poster": "/images/readyornot.avif",
-          "link": "https://store.steampowered.com/app/1144200/Ready_or_Not/",
-          "new": true,
-          "rating": 4.5,
-          "description": "Los Suenos. Los Suenos police report a surge in crime in the city. SWAT teams are deployed to handle dangerous situations such as hostage situations, bomb threats and shootouts with suspects.",
-          "release": "13 Dec, 2023",
-          "publisher": "VOID Interactive",
+          "name": "Fallout 76",
+          "poster": "/images/posters/fallout.jpg",
+          "link": "https://store.steampowered.com/app/1151340/Fallout_76/",
+          "new": false,
+          "rating": 5,
+          "description": "Bethesda Game Studios welcome you to Fallout 76. Twenty-five years after the bombs fall, you and your fellow Vault Dwellers emerge into post-nuclear America. Explore a vast wasteland in this open-world multiplayer addition to the Fallout story.",
+          "release": "14 Apr, 2020",
+          "publisher": "Bethesda Softworks",
           "tags": [
-            "Action",
+            "Rpg",
             "PC",
             "First Person",
-            "Team"
+            "Multiplayer"
           ]
         }
       ],
       "strategy": [
         {
           "id": 1,
-          "name": "Call of Duty: Black Ops 4",
-          "poster": "/images/cod.avif",
-          "link": "https://store.steampowered.com/app/2933620/Call_of_Duty_Black_Ops_6/",
-          "new": true,
-          "rating": 5,
-          "description": "Call of Duty®: Black Ops 6 is a worthy continuation of the Black Ops series, featuring an exciting single-player campaign, unique multiplayer features and the return of the Zombies mode with rounds.",
-          "release": "Oct 25, 2024",
-          "publisher": "Activision",
+          "name": "Sid Meier’s Civilization® VI",
+          "poster": "/images/posters/cilivilization.avif",
+          "link": "https://store.steampowered.com/app/289070/Sid_Meiers_Civilization_VI/",
+          "new": false,
+          "rating": 4,
+          "description": "Civilization VI is the newest installment in the award winning Civilization Franchise. Expand your empire, advance your culture and go head-to-head against history’s greatest leaders. Will your civilization stand the test of time?",
+          "release": "21 Oct, 2016",
+          "publisher": "Firaxis Games",
           "tags": [
-            "Action",
+            "Strategy",
             "PC",
-            "First Person",
-            "Military"
+            "Single-player",
+            "Multiplayer"
           ]
         },
         {
           "id": 2,
-          "name": "Counter-Strike 2",
-          "poster": "/images/striketwo.webp",
-          "link": "https://store.steampowered.com/app/730/CounterStrike_2/",
-          "new": false,
+          "name": "Total War: WARHAMMER III",
+          "poster": "/images/posters/warhammer.jpg",
+          "link": "https://store.steampowered.com/app/1142710/Total_War_WARHAMMER_III/",
+          "new": true,
           "rating": 5,
-          "description": "For more than two decades, Counter-Strike has exemplified the world's premier competitive gaming experience, driven by millions of players around the world. Now it's time for a new stage - Counter-Strike 2.",
-          "release": "Aug 21, 2012",
-          "publisher": "Valve",
+          "description": "The cataclysmic conclusion to the Total War: WARHAMMER trilogy is here. Rally your forces and step into the Realm of Chaos, a dimension of mind-bending horror where the very fate of the world will be decided. Will you conquer your Daemons… or command them?",
+          "release": "17 Feb, 2022",
+          "publisher": "SEGA",
           "tags": [
-            "Action",
+            "Strategy",
             "PC",
-            "First Person",
-            "E-Sport"
+            "Single-player",
+            "Multiplayer"
           ]
         },
         {
           "id": 3,
-          "name": "PUBG: BATTLEGROUNDS",
-          "poster": "/images/pubg.jpg",
-          "link": "https://store.steampowered.com/app/578080/PUBG_BATTLEGROUNDS/",
+          "name": "Crusader Kings III",
+          "poster": "/images/posters/crusaider.jpg",
+          "link": "https://store.steampowered.com/app/1158310/Crusader_Kings_III/",
           "new": false,
-          "rating": 5,
-          "description": "Play PUBG: BATTLEGROUNDS for free. Land in strategically important places, get weapons and supplies and try to survive and be the last team left on one of the many battlefields.",
-          "release": "21 Dec, 2017",
-          "publisher": "KRAFTON, Inc.",
+          "rating": 3.5,
+          "description": "Love, fight, scheme, and claim greatness. Determine your noble house’s legacy in the sprawling grand strategy of Crusader Kings III. Death is only the beginning as you guide your dynasty’s bloodline in the rich and larger-than-life simulation of the Middle Ages.",
+          "release": "1 Sep, 2020",
+          "publisher": "Paradox Interactive",
           "tags": [
-            "Action",
+            "Strategy",
             "PC",
-            "First Person",
+            "Single-player",
             "Multiplayer"
           ]
         },
         {
           "id": 4,
-          "name": "Ready or Not",
-          "poster": "/images/readyornot.avif",
-          "link": "https://store.steampowered.com/app/1144200/Ready_or_Not/",
-          "new": true,
-          "rating": 4.5,
-          "description": "Los Suenos. Los Suenos police report a surge in crime in the city. SWAT teams are deployed to handle dangerous situations such as hostage situations, bomb threats and shootouts with suspects.",
-          "release": "13 Dec, 2023",
-          "publisher": "VOID Interactive",
+          "name": "Age of Empires II",
+          "poster": "/images/posters/ageofempires.jpg",
+          "link": "https://store.steampowered.com/app/813780/Age_of_Empires_II_Definitive_Edition/",
+          "new": false,
+          "rating": 3,
+          "description": "Age of Empires II: Definitive Edition features “The Last Khans” with 3 new campaigns and 4 new Civilizations. Frequent updates include events, additional content, new game modes, and enhanced features with the recent addition of Co-Op mode!",
+          "release": "14 Nov, 2019",
+          "publisher": "Xbox Game Studios",
           "tags": [
-            "Action",
+            "Strategy",
             "PC",
-            "First Person",
-            "Team"
+            "Single-player",
+            "Multiplayer"
           ]
         }
       ]
