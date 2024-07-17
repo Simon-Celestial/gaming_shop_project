@@ -17,8 +17,7 @@ import genresData from "/public/data/GenresData/genresData.json";
 // @ts-expect-error
 import gamesData from "/public/data/GamesData/gamesData.json";
 import {GENRES_TYPE, PAGINATION_STYLES_TYPE, GAME_TYPE} from "../../../Types/types.ts";
-import StarsIcon from '@mui/icons-material/Stars';
-import {Link} from "react-router-dom";
+import {GameCard} from "../../Components/Reusables/GameCard/GameCard.tsx";
 
 
 const paginationStyles: PAGINATION_STYLES_TYPE = {
@@ -36,16 +35,6 @@ export const HomePage = () => {
     const handleSelectGenre = useCallback((genreID: string): void => {
         setSelectedGenre(genreID)
     }, [setSelectedGenre]);
-
-    const handleRatingColor = useCallback((rating: number): string => {
-        if (rating > 4) {
-            return "#0EF0AD"
-        } else if (rating >= 3 && rating <= 4) {
-            return "orange"
-        } else {
-            return "red"
-        }
-    }, []);
 
     const filteredGames = useMemo(() => {
         if (selectedGenre === "action") {
@@ -264,53 +253,7 @@ export const HomePage = () => {
                         <div className={styles.gamesContainer}>
                             {filteredGames?.map((game: GAME_TYPE) => {
                                 return (
-                                    <div key={game?.id} className={styles.gameBox}>
-                                        {
-                                            game?.new ?
-                                                <div className={styles.flag}>
-                                                    <p>new</p>
-                                                </div>
-                                                :
-                                                null
-                                        }
-                                        <div className={styles.imageBox}>
-                                            <img src={`${game?.poster}`} alt={game?.name} loading="lazy"/>
-                                        </div>
-                                        <div className={styles.titleBox}>
-                                            <h2>{game?.name}</h2>
-                                            <h3><span>Action</span> | <span>PC</span> | <span>First Person</span></h3>
-                                            <p>{game?.description}</p>
-                                            <div className={styles.infoBox}>
-                                                <div className={styles.infoItem}>
-                                                    <h2>{game?.release}</h2>
-                                                    <p>Release Date</p>
-                                                </div>
-                                                <div className={styles.infoItem}>
-                                                    <h3>
-                                                        <StarsIcon sx={{
-                                                            color: handleRatingColor(game?.rating)
-                                                        }}
-                                                        />
-                                                        {game?.rating}
-                                                    </h3>
-                                                    <p>
-                                                        Game Rating
-                                                    </p>
-                                                </div>
-                                                <div className={styles.infoItem}>
-                                                    <h3>{game?.publisher}</h3>
-                                                    <p>Publisher</p>
-                                                </div>
-                                            </div>
-                                            <Link to={game?.link} className={styles.linkBox} target={"_blank"}>
-                                                <img src="/images/steam.webp" alt="steam"/>
-                                                <div className={styles.blockTitle}>
-                                                    <p>Available at</p>
-                                                    <h2>STEAM</h2>
-                                                </div>
-                                            </Link>
-                                        </div>
-                                    </div>
+                                    <GameCard key={game?.id} data={game} />
                                 )
                             })}
                         </div>
