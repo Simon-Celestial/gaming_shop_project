@@ -1,4 +1,4 @@
-import React, {useCallback, useMemo, useRef, useState} from "react";
+import React, {useCallback, useEffect, useMemo, useRef, useState} from "react";
 import styles from "./HomePage.module.scss";
 import {Header} from "../../Components/Layout/Header/Header.tsx";
 import {Footer} from "../../Components/Layout/Footer/Footer.tsx";
@@ -33,38 +33,46 @@ const paginationStyles: PAGINATION_STYLES_TYPE = {
 export const HomePage = () => {
     const odometerRef = useRef<HTMLDivElement | null>(null);
     const [selectedGenre, setSelectedGenre] = useState("action");
+    const [translatedGames, setTranslatedGames] = useState(gamesData.en[0]);
+    const [inputValue, setInputValue] = useState("");
+
+    const {i18n} = useTranslation();
+
+    const handleInputSearch = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
+        setInputValue(e.target.value);
+    }, [setInputValue]);
+
+    useEffect(() => {
+        if (i18n.language === "en") {
+            setTranslatedGames(gamesData.en[0]);
+        } else if (i18n.language === "ru") {
+            setTranslatedGames(gamesData.ru[0]);
+        } else {
+            setTranslatedGames(gamesData.tr[0]);
+        }
+    }, [i18n.language]);
 
     const handleSelectGenre = useCallback((genreID: string): void => {
         setSelectedGenre(genreID)
     }, [setSelectedGenre]);
 
-    const {i18n} = useTranslation();
-
-    const translatedData = useMemo(() => {
-        if (i18n.language === "en") {
-            return gamesData.en[0];
-        } else if (i18n.language === "ru") {
-            return gamesData.ru[0];
-        } else {
-            return gamesData.tr[0]
-        }
-    }, [i18n.language]);
-
-    console.log(translatedData)
-
-
     const filteredGames = useMemo(() => {
-        if (selectedGenre === "action") {
-            return translatedData.action
-        } else if (selectedGenre === "racing") {
-            return translatedData.racing
-        } else if (selectedGenre === "rpg") {
-            return translatedData.rpg
-        } else {
-            return translatedData.strategy
+        const games = selectedGenre === "action"
+            ? translatedGames.action
+            : selectedGenre === "racing"
+                ? translatedGames.racing
+                : selectedGenre === "rpg"
+                    ? translatedGames.rpg
+                    : translatedGames.strategy;
+
+        if (inputValue) {
+            return games.filter((game: GAME_TYPE) =>
+                game.name.toLowerCase().includes(inputValue.toLowerCase())
+            );
         }
-    }, [selectedGenre, translatedData, translatedData, translatedData, translatedData]);
-    // console.log(filteredGames)
+
+        return games;
+    }, [selectedGenre, translatedGames, inputValue]);
 
 
     return (
@@ -271,7 +279,11 @@ export const HomePage = () => {
 
                                 </div>
                                 <div className={styles.gameSearch}>
-                                    <input type="text" placeholder={"Type to search..."}/>
+                                    <input type="text"
+                                           placeholder={"Type to search..."}
+                                           onChange={handleInputSearch}
+                                           value={inputValue}
+                                    />
                                 </div>
                             </div>
                         </div>
