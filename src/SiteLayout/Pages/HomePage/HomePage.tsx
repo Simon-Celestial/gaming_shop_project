@@ -57,23 +57,26 @@ export const HomePage = () => {
     }, [setSelectedGenre]);
 
     const filteredGames = useMemo(() => {
-        const games = selectedGenre === "action"
-            ? translatedGames.action
-            : selectedGenre === "racing"
-                ? translatedGames.racing
-                : selectedGenre === "rpg"
-                    ? translatedGames.rpg
-                    : translatedGames.strategy;
+        let games: GAME_TYPE[] = [];
+
+        if (selectedGenre === "action") {
+            games = translatedGames.action;
+        } else if (selectedGenre === "racing") {
+            games = translatedGames.racing;
+        } else if (selectedGenre === "rpg") {
+            games = translatedGames.rpg;
+        } else {
+            games = translatedGames.strategy;
+        }
 
         if (inputValue) {
             return games.filter((game: GAME_TYPE) =>
-                game.name.toLowerCase().includes(inputValue.toLowerCase())
+                game?.name?.toLowerCase().includes(inputValue?.toLowerCase())
             );
         }
 
         return games;
     }, [selectedGenre, translatedGames, inputValue]);
-
 
     return (
         <>
@@ -141,7 +144,7 @@ export const HomePage = () => {
                             />
                             <p>Creating innovative, fun-filled gaming devices that bring vibrant colors to your gaming
                                 experience.</p>
-                            <DefaultButton title={'Explore Our Products'} link={'/shop'}/>
+                            <DefaultButton title={'Explore Our Products'} link={'/shop'} grayBtn={false}/>
                         </div>
                         <div className={styles.swiperContainer}>
                             <div className={styles.swiperHead}>
@@ -253,11 +256,11 @@ export const HomePage = () => {
                                 </div>
 
                             </div>
-                            <DefaultButton title={"Explore Out Products"} link={"/shop"}/>
+                            <DefaultButton title={"Explore Out Products"} link={"/shop"} grayBtn={false}/>
                         </div>
                     </div>
                 </section>
-                <section className={styles.gamesSection}>
+                <section className={`${styles.gamesSection} ${filteredGames?.length === 0 ? styles.noJoysticks : ''}`}>
                     <div className={styles.sectionContent}>
                         <div className={styles.topContainer}>
                             <h4>Feel Unforgettable <span>Gaming Experience</span></h4>
@@ -288,11 +291,17 @@ export const HomePage = () => {
                             </div>
                         </div>
                         <div className={styles.gamesContainer}>
-                            {filteredGames?.map((game: GAME_TYPE) => {
-                                return (
-                                    <GameCard key={game?.id} data={game}/>
-                                )
-                            })}
+                            {
+                                filteredGames?.length > 0 ?
+                                    filteredGames?.map((game: GAME_TYPE) => {
+                                        return (
+                                            <GameCard key={game?.id} data={game}/>
+                                        )
+                                    })
+                                    :
+                                    <div className={styles.nothingFound}>Nothing found...</div>
+                            }
+
                         </div>
                     </div>
                 </section>

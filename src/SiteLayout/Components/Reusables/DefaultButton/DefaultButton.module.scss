@@ -9,7 +9,7 @@
   width: min-content;
   white-space: nowrap;
   padding: 12.5px 25px;
-  font-weight: 600;
+  font-weight: 800;
   border-radius: 15px;
   font-size: 16px;
   cursor: pointer;
@@ -17,6 +17,12 @@
   position: relative;
   z-index: 2;
   overflow: hidden;
+  &.grayBtn {
+    background: #303141;
+    border: 1px solid $greenDark;
+    color:$white;
+
+  }
   &:after {
     position: absolute;
     left: 0;

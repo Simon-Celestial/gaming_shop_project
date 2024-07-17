@@ -14,6 +14,8 @@
   transform: translateX(100%);
   pointer-events: none;
   transition: transform 0.6s ease;
+  flex-direction: column;
+  padding: 28px;
 
   &.active {
     pointer-events: auto;
@@ -25,17 +27,146 @@
     position: absolute;
     right: 15px;
     top: 15px;
+
     &:hover {
       svg {
         transform: rotate(360deg);
         color: $green;
       }
     }
+
     svg {
       font-size: 35px;
       color: $white;
-      transition: color $transition,transform $transition;
+      transition: color $transition, transform $transition;
     }
+
+  }
+
+  .basketHead {
+    width: 100%;
+    font-size: 24px;
+    font-weight: 700;
+    padding-right: 50px;
+  }
+
+  .basketProducts {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    margin-top: 25px;
+    gap: 20px;
+    height: 100%;
+
+    .productCard {
+      display: flex;
+      gap: 15px;
+      padding: 10px;
+      border: 1px solid rgba(128, 128, 128, 0.5);
+      border-radius: 5px;
+      position: relative;
+
+      .delete {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        cursor: pointer;
+
+        &:hover {
+          svg {
+            transform: rotate(360deg);
+            color: red;
+          }
+        }
+        svg {
+          font-size: 25px;
+          transition: transform $transition,color $transition;
+        }
+      }
+      .image {
+        max-width: 90px;
+        height: 90px;
+        width: 100%;
+        overflow: hidden;
+        border-radius: 5px;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-position: center;
+          object-fit: contain;
+        }
+      }
+
+      .details {
+        a {
+          font-size: 18px;
+          font-weight: 700;
+          transition: color $transition;
+
+          &:hover {
+            color: $green;
+          }
+        }
+        .price {
+          color: $gray;
+          margin-top: 5px;
+          font-family: $interFont;
+          font-size: 16px;
+        }
+        .counter {
+          display: flex;
+          align-items: center;
+          margin-top: 10px;
+          .counterBtn {
+            width: 32px;
+            height: 32px;
+            background-color: #81828b;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            border-radius: 50%;
+            transition: background-color $transition;
+            &:hover {
+              background-color: $greenDark;
+            }
+          }
+          .show {
+            font-size: 20px;
+            width: 50px;
+            text-align: center;
+            font-weight: 700;
+          }
+        }
+
+      }
+    }
+
+  }
+
+  .basketFooter {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 15px 0 0 0;
+    .priceInfo {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      justify-content: space-between;
+      gap: 25px;
+      font-size: 17px;
+      color: $white;
+    }
+    .buttonsBlock {
+      display: flex;
+      padding: 25px 0 0 0;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+    }
+
 
   }
 }

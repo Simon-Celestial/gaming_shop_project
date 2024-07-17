@@ -1,0 +1,55 @@
+@import "../../../../Variables/Variables";
+@import "../../../../Animations/Animations";
+
+
+.backToTop {
+  display: flex;
+  gap: 20px;
+  position: fixed;
+  color: $green;
+  align-items: center;
+  cursor: pointer;
+  z-index: 9;
+  transition: 0.8s ease;
+  bottom: 0;
+  right: 80px;
+  transform: rotate(0);
+  opacity: 0;
+  pointer-events: none;
+
+  &.show {
+    opacity: 1;
+    pointer-events: auto;
+    transform: rotate(-90deg);
+    right: -20px;
+    bottom: 100px;
+
+  }
+
+  p {
+    font-size: 20px;
+    animation: textGlow 1s linear infinite;
+  }
+
+  span {
+    background-color: $green;
+    width: 40px;
+    height: 1px;
+  }
+}
+
+@media screen and (max-width: 1440px) {
+  .backToTop {
+    &.show {
+      right: -50px;
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .backToTop {
+    &.show {
+      right: -60px;
+    }
+  }
+}
