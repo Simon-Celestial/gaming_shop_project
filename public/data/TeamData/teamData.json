@@ -1,0 +1,153 @@
+{
+  "en": [
+    {
+      "id": 1,
+      "name": "Alice Johnson",
+      "job": "Sales Specialist",
+      "image": "/images/team/member1.png"
+    },
+    {
+      "id": 2,
+      "name": "Diana Smith",
+      "job": "Customer Service",
+      "image": "/images/team/member2.png"
+    },
+    {
+      "id": 3,
+      "name": "Wendy Davis",
+      "job": "Marketing Strategist",
+      "image": "/images/team/member3.png"
+    },
+    {
+      "id": 4,
+      "name": "Desmond Williams",
+      "job": "Product Manager",
+      "image": "/images/team/member4.png"
+    },
+    {
+      "id": 5,
+      "name": "Edward Brown",
+      "job": "Sales Associate",
+      "image": "/images/team/member5.png"
+    },
+    {
+      "id": 6,
+      "name": "Frank Garcia",
+      "job": "Technical Support",
+      "image": "/images/team/member6.png"
+    },
+    {
+      "id": 7,
+      "name": "George Martinez",
+      "job": "Warehouse Manager",
+      "image": "/images/team/member7.png"
+    },
+    {
+      "id": 8,
+      "name": "Jimmy Doe",
+      "job": "E-commerce Manager",
+      "image": "/images/team/member8.png"
+    }
+  ],
+  "ru": [
+    {
+      "id": 1,
+      "name": "Элис Джонсон",
+      "job": "Специалист по продажам",
+      "image": "/images/team/member1.png"
+    },
+    {
+      "id": 2,
+      "name": "Диана Смит",
+      "job": "Обслуживание клиентов",
+      "image": "/images/team/member2.png"
+    },
+    {
+      "id": 3,
+      "name": "Венди Дэвис",
+      "job": "Стратег по маркетингу",
+      "image": "/images/team/member3.png"
+    },
+    {
+      "id": 4,
+      "name": "Десмонд Уильямс",
+      "job": "Менеджер по продукту",
+      "image": "/images/team/member4.png"
+    },
+    {
+      "id": 5,
+      "name": "Эдвард Браун",
+      "job": "Ассистент по продажам",
+      "image": "/images/team/member5.png"
+    },
+    {
+      "id": 6,
+      "name": "Фрэнк Гарсия",
+      "job": "Техническая поддержка",
+      "image": "/images/team/member6.png"
+    },
+    {
+      "id": 7,
+      "name": "Джордж Мартинес",
+      "job": "Менеджер склада",
+      "image": "/images/team/member7.png"
+    },
+    {
+      "id": 8,
+      "name": "Джимми Доу",
+      "job": "Менеджер по электронной коммерции",
+      "image": "/images/team/member8.png"
+    }
+  ],
+  "tr": [
+    {
+      "id": 1,
+      "name": "Alice Johnson",
+      "job": "Satış Uzmanı",
+      "image": "/images/team/member1.png"
+    },
+    {
+      "id": 2,
+      "name": "Diana Smith",
+      "job": "Müşteri Hizmetleri",
+      "image": "/images/team/member2.png"
+    },
+    {
+      "id": 3,
+      "name": "Wendy Davis",
+      "job": "Pazarlama Stratejisti",
+      "image": "/images/team/member3.png"
+    },
+    {
+      "id": 4,
+      "name": "Desmond Williams",
+      "job": "Ürün Müdürü",
+      "image": "/images/team/member4.png"
+    },
+    {
+      "id": 5,
+      "name": "Edward Brown",
+      "job": "Satış Temsilcisi",
+      "image": "/images/team/member5.png"
+    },
+    {
+      "id": 6,
+      "name": "Frank Garcia",
+      "job": "Teknik Destek",
+      "image": "/images/team/member6.png"
+    },
+    {
+      "id": 7,
+      "name": "George Martinez",
+      "job": "Depo Müdürü",
+      "image": "/images/team/member7.png"
+    },
+    {
+      "id": 8,
+      "name": "Jimmy Doe",
+      "job": "E-ticaret Müdürü",
+      "image": "/images/team/member8.png"
+    }
+  ]
+
+}

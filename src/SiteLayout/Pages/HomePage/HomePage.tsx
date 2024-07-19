@@ -12,11 +12,14 @@ import {DefaultButton} from "../../Components/Reusables/DefaultButton/DefaultBut
 import {Odometer} from "../../Components/Reusables/Odometer/Odometer.tsx";
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-expect-error
+import teamData from "/public/data/TeamData/teamData.json";
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-expect-error
 import genresData from "/public/data/GenresData/genresData.json";
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-expect-error
 import gamesData from "/public/data/GamesData/gamesData.json";
-import {GENRES_TYPE, PAGINATION_STYLES_TYPE, GAME_TYPE} from "../../../Types/types.ts";
+import {GENRES_TYPE, PAGINATION_STYLES_TYPE, GAME_TYPE,TEAM_DATA} from "../../../Types/types.ts";
 import {GameCard} from "../../Components/Reusables/GameCard/GameCard.tsx";
 import {useTranslation} from "react-i18next";
 
@@ -31,10 +34,13 @@ const paginationStyles: PAGINATION_STYLES_TYPE = {
 };
 
 export const HomePage = () => {
-    const odometerRef = useRef<HTMLDivElement | null>(null);
     const [selectedGenre, setSelectedGenre] = useState("action");
     const [translatedGames, setTranslatedGames] = useState(gamesData.en[0]);
+    const [translatedTeam,setTranslatedTeam] = useState(teamData.en);
     const [inputValue, setInputValue] = useState("");
+
+    const odometerRef = useRef<HTMLDivElement | null>(null);
+    const counterRef = useRef<HTMLDivElement | null>(null);
 
     const {i18n} = useTranslation();
 
@@ -45,10 +51,13 @@ export const HomePage = () => {
     useEffect(() => {
         if (i18n.language === "en") {
             setTranslatedGames(gamesData.en[0]);
+            setTranslatedTeam(teamData.en);
         } else if (i18n.language === "ru") {
             setTranslatedGames(gamesData.ru[0]);
+            setTranslatedTeam(teamData.ru);
         } else {
             setTranslatedGames(gamesData.tr[0]);
+            setTranslatedTeam(teamData.ru);
         }
     }, [i18n.language]);
 
@@ -205,10 +214,12 @@ export const HomePage = () => {
                             <img src="https://pixner.net/gamestorm3/main/assets/images/about-block-bg.png" alt="Users"/>
                         </div>
                         <div className={styles.titleContainer}>
-                            <p>Welcome To <span>GAMESTORM</span> Gaming Shop</p>
-                            <h2>Bringing People Together Through <span>The Power Of Play</span></h2>
-                            <h5>As Gamestorm, we continue to open doors to new worlds every day and we are
-                                working excitedly introduce new gaming devices!</h5>
+                            <div className={`${styles.pageHeading} ${styles.notCenteredText}`}>
+                                <h4>Welcome To <span>GAMESTORM</span> Gaming Shop</h4>
+                                <h2>Bringing People Together Through <span>The Power Of Play</span></h2>
+                                <p>As Gamestorm, we continue to open doors to new worlds every day and we are
+                                    working excitedly introduce new gaming devices!</p>
+                            </div>
                             <div className={styles.infoContainers}>
                                 <div className={styles.container}>
                                     <span>
@@ -263,11 +274,15 @@ export const HomePage = () => {
                 <section className={`${styles.gamesSection} ${filteredGames?.length === 0 ? styles.noJoysticks : ''}`}>
                     <div className={styles.sectionContent}>
                         <div className={styles.topContainer}>
-                            <h4>Feel Unforgettable <span>Gaming Experience</span></h4>
-                            <h2><span>Our Products</span> Will Give You The Best Feelings During <span>GamePlay</span>
-                            </h2>
-                            <p>Our products are distinguished by reliability, low response time, and user-friendliness
-                                for better immersion in the game.</p>
+                            <div className={styles.pageHeading}>
+                                <h4>Feel Unforgettable <span>Gaming Experience</span></h4>
+                                <h2><span>Our Products</span> Will Give You The Best Feelings
+                                    During <span>GamePlay</span>
+                                </h2>
+                                <p>Our products are distinguished by reliability, low response time, and
+                                    user-friendliness
+                                    for better immersion in the game.</p>
+                            </div>
                             <div className={styles.genresContainer}>
                                 <div className={styles.genresRow}>
                                     {genresData?.map((genre: GENRES_TYPE) => {
@@ -303,6 +318,106 @@ export const HomePage = () => {
                             }
 
                         </div>
+                    </div>
+                </section>
+                <section className={styles.teamSection}>
+                    <div className={styles.sectionContent}>
+                        <div className={styles.teamTitle}>
+                            <div className={`${styles.pageHeading}`}>
+                                <h4>We Have A Passion For <span>Gaming!</span></h4>
+                                <h2>Our Team Consists of Professionals. <span>And We're Proud Of It.</span></h2>
+                                <p>Our dynamic team blends tech-savvy sales professionals, knowledgeable customer
+                                    service representatives, innovative marketing strategists, and visionary product
+                                    managers.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div className={styles.teamSwiper}>
+                        <Swiper
+                            slidesPerView={4}
+                            breakpoints={{
+                                1100: {
+                                    slidesPerView: 4,
+                                },
+                                840: {
+                                    slidesPerView: 3,
+                                },
+                                550: {
+                                    slidesPerView: 2,
+                                },
+                                0: {
+                                    slidesPerView: 1,
+                                },
+                            }}
+                            spaceBetween={50}
+                            freeMode={true}
+                            loop={true}
+                        >
+                            {translatedTeam?.map((member : TEAM_DATA)=> {
+                                return (
+                                    <SwiperSlide key={member?.id}>
+                                        <div className={`${styles.teamSlide} ${member.id % 2 === 1 ? styles.margin : ''}`}>
+                                            <div className={styles.image}>
+                                                <img src={member?.image} alt={member?.name}/>
+                                            </div>
+                                            <div className={styles.title}>
+                                                <h2>{member?.name}</h2>
+                                                <p>{member?.job}</p>
+                                            </div>
+                                        </div>
+                                    </SwiperSlide>
+
+                                )
+                            })}
+                        </Swiper>
+
+                    </div>
+                </section>
+                <section className={styles.counterSection} ref={counterRef}>
+                    <div className={styles.sectionContent}>
+                        <div className={styles.informationContainer}>
+                            <div className={styles.box}>
+                                <p>Unique Daily Customers</p>
+                                <Odometer
+                                    currentRef={counterRef}
+                                    stopValue={500}
+                                    latency={5}
+                                />
+                                K
+                            </div>
+                            <div className={styles.box}>
+                                <p>Year of experience</p>
+                                <Odometer
+                                    currentRef={counterRef}
+                                    stopValue={20}
+                                    latency={50}
+                                />
+                                +
+                            </div>
+                            <div className={styles.box}>
+                                <p>Number of employees</p>
+                                <Odometer
+                                    currentRef={counterRef}
+                                    stopValue={1000}
+                                    latency={1}
+                                />
+                                +
+                            </div>
+                            <div className={styles.box}>
+                                <p>Branches around the world</p>
+                            <Odometer
+                                    currentRef={counterRef}
+                                    stopValue={250}
+                                    latency={10}
+                                />
+                                +
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section className={styles.servicesSection}>
+                    <div className={styles.sectionContent}>
+                        <h1>I am services section</h1>
                     </div>
                 </section>
             </main>

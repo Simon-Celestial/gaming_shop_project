@@ -30,3 +30,10 @@ export interface GAMES_DATA {
     strategy: GAME_TYPE[];
     rpg: GAME_TYPE[];
 }
+
+export interface TEAM_DATA {
+    id: number;
+    name: string;
+    image: string;
+    job: string;
+}
