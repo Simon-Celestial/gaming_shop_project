@@ -37,3 +37,11 @@ export interface TEAM_DATA {
     image: string;
     job: string;
 }
+
+export interface INFO_DATA {
+    id: number;
+    value: number;
+    prefix: string;
+    title: string;
+    delay: number;
+}

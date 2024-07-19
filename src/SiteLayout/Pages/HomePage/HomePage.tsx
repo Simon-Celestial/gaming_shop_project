@@ -19,7 +19,10 @@ import genresData from "/public/data/GenresData/genresData.json";
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-expect-error
 import gamesData from "/public/data/GamesData/gamesData.json";
-import {GENRES_TYPE, PAGINATION_STYLES_TYPE, GAME_TYPE,TEAM_DATA} from "../../../Types/types.ts";
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-expect-error
+import infoData from "/public/data/InfoData/infoData.json";
+import {GENRES_TYPE, PAGINATION_STYLES_TYPE, GAME_TYPE, TEAM_DATA, INFO_DATA,} from "../../../Types/types.ts";
 import {GameCard} from "../../Components/Reusables/GameCard/GameCard.tsx";
 import {useTranslation} from "react-i18next";
 
@@ -36,8 +39,10 @@ const paginationStyles: PAGINATION_STYLES_TYPE = {
 export const HomePage = () => {
     const [selectedGenre, setSelectedGenre] = useState("action");
     const [translatedGames, setTranslatedGames] = useState(gamesData.en[0]);
-    const [translatedTeam,setTranslatedTeam] = useState(teamData.en);
+    const [translatedTeam, setTranslatedTeam] = useState(teamData.en);
+    const [translatedInfo, setTranslatedInfo] = useState(infoData.en);
     const [inputValue, setInputValue] = useState("");
+    const [hoveredBox, setHoveredBox] = useState(1);
 
     const odometerRef = useRef<HTMLDivElement | null>(null);
     const counterRef = useRef<HTMLDivElement | null>(null);
@@ -52,12 +57,15 @@ export const HomePage = () => {
         if (i18n.language === "en") {
             setTranslatedGames(gamesData.en[0]);
             setTranslatedTeam(teamData.en);
+            setTranslatedInfo(infoData.en);
         } else if (i18n.language === "ru") {
             setTranslatedGames(gamesData.ru[0]);
             setTranslatedTeam(teamData.ru);
+            setTranslatedInfo(infoData.ru);
         } else {
             setTranslatedGames(gamesData.tr[0]);
-            setTranslatedTeam(teamData.ru);
+            setTranslatedTeam(teamData.tr);
+            setTranslatedInfo(infoData.tr);
         }
     }, [i18n.language]);
 
@@ -86,6 +94,10 @@ export const HomePage = () => {
 
         return games;
     }, [selectedGenre, translatedGames, inputValue]);
+
+    const handleHoverBox = useCallback((boxID: number) => {
+        setHoveredBox(boxID);
+    }, [setHoveredBox])
 
     return (
         <>
@@ -335,6 +347,8 @@ export const HomePage = () => {
                     <div className={styles.teamSwiper}>
                         <Swiper
                             slidesPerView={4}
+                            modules={[Autoplay]}
+                            autoplay={{delay: 2000}}
                             breakpoints={{
                                 1100: {
                                     slidesPerView: 4,
@@ -353,10 +367,11 @@ export const HomePage = () => {
                             freeMode={true}
                             loop={true}
                         >
-                            {translatedTeam?.map((member : TEAM_DATA)=> {
+                            {translatedTeam?.map((member: TEAM_DATA) => {
                                 return (
                                     <SwiperSlide key={member?.id}>
-                                        <div className={`${styles.teamSlide} ${member.id % 2 === 1 ? styles.margin : ''}`}>
+                                        <div
+                                            className={`${styles.teamSlide} ${member.id % 2 === 1 ? styles.margin : ''}`}>
                                             <div className={styles.image}>
                                                 <img src={member?.image} alt={member?.name}/>
                                             </div>
@@ -376,48 +391,104 @@ export const HomePage = () => {
                 <section className={styles.counterSection} ref={counterRef}>
                     <div className={styles.sectionContent}>
                         <div className={styles.informationContainer}>
-                            <div className={styles.box}>
-                                <p>Unique Daily Customers</p>
-                                <Odometer
-                                    currentRef={counterRef}
-                                    stopValue={500}
-                                    latency={5}
-                                />
-                                K
-                            </div>
-                            <div className={styles.box}>
-                                <p>Year of experience</p>
-                                <Odometer
-                                    currentRef={counterRef}
-                                    stopValue={20}
-                                    latency={50}
-                                />
-                                +
-                            </div>
-                            <div className={styles.box}>
-                                <p>Number of employees</p>
-                                <Odometer
-                                    currentRef={counterRef}
-                                    stopValue={1000}
-                                    latency={1}
-                                />
-                                +
-                            </div>
-                            <div className={styles.box}>
-                                <p>Branches around the world</p>
-                            <Odometer
-                                    currentRef={counterRef}
-                                    stopValue={250}
-                                    latency={10}
-                                />
-                                +
-                            </div>
+                            {translatedInfo?.map((data: INFO_DATA) => {
+                                return (
+                                    <div
+                                        key={data?.id}
+                                        className={`${styles.box} ${data?.id === hoveredBox ? styles.activeBox : ''}`}
+                                        onMouseEnter={() => handleHoverBox(data?.id)}>
+                                        <p>{data?.title}</p>
+                                        <Odometer
+                                            currentRef={counterRef}
+                                            stopValue={data?.value}
+                                            latency={data?.delay}
+                                        />
+                                        {data?.prefix}
+                                    </div>
+                                )
+                            })}
                         </div>
                     </div>
                 </section>
-                <section className={styles.servicesSection}>
+                <section className={styles.productsSection}>
                     <div className={styles.sectionContent}>
-                        <h1>I am services section</h1>
+                        <div className={styles.productsTitle}>
+                            <div className={`${styles.pageHeading}`}>
+                                <h4>Embrace the World of <span>Gaming!</span></h4>
+                                <h2>Our Dedicated Shop is Here for You. <span>Experience the Best.</span></h2>
+                                <p>Explore an extensive variety of gaming equipment and peripherals. We providing an
+                                    unparalleled gaming experience.</p>
+                            </div>
+
+                        </div>
+                        <div className={styles.productsSwiper}>
+                            <Swiper
+                                direction={'horizontal'}
+                                pagination={{
+                                    clickable: true,
+                                    dynamicBullets: true,
+                                }}
+                                modules={[EffectFade, Autoplay, Pagination]}
+                                style={paginationStyles as React.CSSProperties}
+                                slidesPerView={3}
+                                autoplay={{delay: 3000}}
+                                breakpoints={{
+                                    1100: {
+                                        slidesPerView: 3,
+                                    },
+                                    840: {
+                                        slidesPerView: 2,
+                                    },
+                                    550: {
+                                        slidesPerView: 1,
+                                    }
+                                }}
+                                spaceBetween={25}
+                                freeMode={true}
+                                loop={true}
+                            >
+                                <SwiperSlide>
+                                    <div className={styles.cardWrapper}>
+                                        <DeviceCard/>
+                                    </div>
+                                </SwiperSlide>
+                                <SwiperSlide>
+                                    <div className={styles.cardWrapper}>
+                                        <DeviceCard/>
+                                    </div>
+                                </SwiperSlide>
+                                <SwiperSlide>
+                                    <div className={styles.cardWrapper}>
+                                        <DeviceCard/>
+                                    </div>
+                                </SwiperSlide>
+                                <SwiperSlide>
+                                    <div className={styles.cardWrapper}>
+                                        <DeviceCard/>
+                                    </div>
+                                </SwiperSlide>
+                                <SwiperSlide>
+                                    <div className={styles.cardWrapper}>
+                                        <DeviceCard/>
+                                    </div>
+                                </SwiperSlide>
+                                <SwiperSlide>
+                                    <div className={styles.cardWrapper}>
+                                        <DeviceCard/>
+                                    </div>
+                                </SwiperSlide>
+                                <SwiperSlide>
+                                    <div className={styles.cardWrapper}>
+                                        <DeviceCard/>
+                                    </div>
+                                </SwiperSlide>
+                            </Swiper>
+                        </div>
+                    </div>
+                </section>
+                <section className={styles.lifeSection}>
+                    <div className={styles.sectionContent}>
+                        <h1>Hi, i am under development</h1>
                     </div>
                 </section>
             </main>

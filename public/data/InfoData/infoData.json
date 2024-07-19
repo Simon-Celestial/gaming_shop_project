@@ -1,0 +1,92 @@
+{
+  "en": [
+    {
+      "id": 1,
+      "value": 500,
+      "prefix": "K",
+      "title": "Unique Daily Customers",
+      "delay": 2
+    },
+    {
+      "id": 2,
+      "value": 20,
+      "prefix": "+",
+      "title": "Year of experience",
+      "delay": 120
+    },
+    {
+      "id": 3,
+      "value": 750,
+      "prefix": "+",
+      "title": "Number of employees",
+      "delay": 1
+    },
+    {
+      "id": 4,
+      "value": 150,
+      "prefix": "+",
+      "title": "Branches around the world",
+      "delay": 15
+    }
+  ],
+  "ru": [
+    {
+      "id": 1,
+      "value": 500,
+      "prefix": "K",
+      "title": "Уникальные клиенты",
+      "delay": 2
+    },
+    {
+      "id": 2,
+      "value": 20,
+      "prefix": "+",
+      "title": "Лет опыта",
+      "delay": 120
+    },
+    {
+      "id": 3,
+      "value": 750,
+      "prefix": "+",
+      "title": "Количество сотрудников",
+      "delay": 1
+    },
+    {
+      "id": 4,
+      "value": 150,
+      "prefix": "+",
+      "title": "Филиалы по миру",
+      "delay": 15
+    }
+  ],
+  "tr": [
+    {
+      "id": 1,
+      "value": 500,
+      "prefix": "K",
+      "title": "Günlük Müşteriler",
+      "delay": 2
+    },
+    {
+      "id": 2,
+      "value": 20,
+      "prefix": "+",
+      "title": "Yıllık deneyim",
+      "delay": 120
+    },
+    {
+      "id": 3,
+      "value": 750,
+      "prefix": "+",
+      "title": "Çalışan sayısı",
+      "delay": 1
+    },
+    {
+      "id": 4,
+      "value": 150,
+      "prefix": "+",
+      "title": "Dünya çapında şubeler",
+      "delay": 15
+    }
+  ]
+}
