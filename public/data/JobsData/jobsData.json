@@ -1,0 +1,154 @@
+{
+  "en": [
+    {
+      "id": 1,
+      "jobName": "Store Manager",
+      "jobLocation": "Al. Brucknera Aleksandra 63, Wrocław 51-410",
+      "category": "Management"
+    },
+    {
+      "id": 2,
+      "jobName": "Sales Associate",
+      "jobLocation": "Jana Pawła II 12, Kraków 31-000",
+      "category": "Sales"
+    },
+    {
+      "id": 3,
+      "jobName": "Technical Support Specialist",
+      "jobLocation": "Plac Wilsona 4, Warszawa 01-001",
+      "category": "Technical Support"
+    },
+    {
+      "id": 4,
+      "jobName": "Marketing Coordinator",
+      "jobLocation": "Marii Skłodowskiej-Curie 6, Poznań 60-000",
+      "category": "Marketing"
+    },
+    {
+      "id": 5,
+      "jobName": "Warehouse Manager",
+      "jobLocation": "Ul. Portowa 7, Gdańsk 80-000",
+      "category": "Logistics"
+    },
+    {
+      "id": 6,
+      "jobName": "Customer Service",
+      "jobLocation": "Al. Jana Pawła II 20, Łódź 90-001",
+      "category": "Customer Service"
+    },
+    {
+      "id": 7,
+      "jobName": "E-commerce Specialist",
+      "jobLocation": "Ul. Królewska 10, Lublin 20-000",
+      "category": "E-commerce"
+    },
+    {
+      "id": 8,
+      "jobName": "Product Manager",
+      "jobLocation": "Ul. Piotrkowska 120, Łódź 90-002",
+      "category": "Product Management"
+    }
+  ],
+  "ru": [
+    {
+      "id": 1,
+      "jobName": "Менеджер магазина",
+      "jobLocation": "ул. Брукнера Александра 63, Вроцлав 51-410",
+      "category": "Управление"
+    },
+    {
+      "id": 2,
+      "jobName": "Продавец-консультант",
+      "jobLocation": "ул. Яна Павла II 12, Краков 31-000",
+      "category": "Продажи"
+    },
+    {
+      "id": 3,
+      "jobName": "Техническая поддержка",
+      "jobLocation": "пл. Вильсона 4, Варшава 01-001",
+      "category": "Поддержка"
+    },
+    {
+      "id": 4,
+      "jobName": "Координатор по маркетингу",
+      "jobLocation": "ул. Марии Склодовской-Кюри 6, Познань 60-000",
+      "category": "Маркетинг"
+    },
+    {
+      "id": 5,
+      "jobName": "Менеджер склада",
+      "jobLocation": "ул. Портовая 7, Гданьск 80-000",
+      "category": "Логистика"
+    },
+    {
+      "id": 6,
+      "jobName": "Обслуживание клиентов",
+      "jobLocation": "ал. Яна Павла II 20, Лодзь 90-001",
+      "category": "Обслуживание"
+    },
+    {
+      "id": 7,
+      "jobName": "Электронная коммерция",
+      "jobLocation": "ул. Королевская 10, Люблин 20-000",
+      "category": "Коммерция"
+    },
+    {
+      "id": 8,
+      "jobName": "Менеджер по продукту",
+      "jobLocation": "ул. Пётрковская 120, Лодзь 90-002",
+      "category": "Управление"
+    }
+
+  ],
+  "tr": [
+    {
+      "id": 1,
+      "jobName": "Mağaza Müdürü",
+      "jobLocation": "Al. Brucknera Aleksandra 63, Wrocław 51-410",
+      "category": "Yönetim"
+    },
+    {
+      "id": 2,
+      "jobName": "Satış Danışmanı",
+      "jobLocation": "Jana Pawła II 12, Kraków 31-000",
+      "category": "Satış"
+    },
+    {
+      "id": 3,
+      "jobName": "Teknik Destek Uzmanı",
+      "jobLocation": "Plac Wilsona 4, Warszawa 01-001",
+      "category": "Teknik Destek"
+    },
+    {
+      "id": 4,
+      "jobName": "Pazarlama Koordinatörü",
+      "jobLocation": "Marii Skłodowskiej-Curie 6, Poznań 60-000",
+      "category": "Pazarlama"
+    },
+    {
+      "id": 5,
+      "jobName": "Depo Müdürü",
+      "jobLocation": "Ul. Portowa 7, Gdańsk 80-000",
+      "category": "Lojistik"
+    },
+    {
+      "id": 6,
+      "jobName": "Müşteri Hizmetleri",
+      "jobLocation": "Al. Jana Pawła II 20, Łódź 90-001",
+      "category": "Müşteri Hizmetleri"
+    },
+    {
+      "id": 7,
+      "jobName": "E-Ticaret Uzmanı",
+      "jobLocation": "Ul. Królewska 10, Lublin 20-000",
+      "category": "E-Ticaret"
+    },
+    {
+      "id": 8,
+      "jobName": "Ürün Müdürü",
+      "jobLocation": "Ul. Piotrkowska 120, Łódź 90-002",
+      "category": "Ürün Yönetimi"
+    }
+
+  ]
+}

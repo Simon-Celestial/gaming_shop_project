@@ -32,7 +32,7 @@ export const SideMenu = () => {
     }, []);
     return (
         <>
-            <div className={styles.sideMenuWrapper}>
+            <aside className={styles.sideMenuWrapper}>
                 <div className={styles.menuLogo} onClick={handleMenuOpen}>
                     {
                         menuState ?
@@ -64,8 +64,7 @@ export const SideMenu = () => {
                 <div className={styles.languageBox}>
                     <LanguageSelection />
                 </div>
-
-            </div>
+            </aside>
             <div className={`${styles.sideMenuContent} ${menuState ? styles.menuActive : ""}`}>
                 <nav className={styles.navigation}>
                     {navData?.map((nav: NAV_DATA) => {

@@ -45,3 +45,9 @@ export interface INFO_DATA {
     title: string;
     delay: number;
 }
+export interface JOBS_DATA {
+    id:number;
+    jobName: string;
+    jobLocation: string;
+    category: string;
+}

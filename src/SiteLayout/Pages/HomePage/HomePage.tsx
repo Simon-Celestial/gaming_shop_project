@@ -10,6 +10,12 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import {DefaultButton} from "../../Components/Reusables/DefaultButton/DefaultButton.tsx";
 import {Odometer} from "../../Components/Reusables/Odometer/Odometer.tsx";
+import Diversity2Icon from '@mui/icons-material/Diversity2';
+import WorkOutlineIcon from '@mui/icons-material/WorkOutline';
+import AccessTimeIcon from '@mui/icons-material/AccessTime';
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-expect-error
+import jobsData from "/public/data/JobsData/jobsData.json";
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-expect-error
 import teamData from "/public/data/TeamData/teamData.json";
@@ -22,7 +28,7 @@ import gamesData from "/public/data/GamesData/gamesData.json";
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-expect-error
 import infoData from "/public/data/InfoData/infoData.json";
-import {GENRES_TYPE, PAGINATION_STYLES_TYPE, GAME_TYPE, TEAM_DATA, INFO_DATA,} from "../../../Types/types.ts";
+import {GENRES_TYPE, PAGINATION_STYLES_TYPE, GAME_TYPE, TEAM_DATA, INFO_DATA,JOBS_DATA} from "../../../Types/types.ts";
 import {GameCard} from "../../Components/Reusables/GameCard/GameCard.tsx";
 import {useTranslation} from "react-i18next";
 
@@ -41,6 +47,7 @@ export const HomePage = () => {
     const [translatedGames, setTranslatedGames] = useState(gamesData.en[0]);
     const [translatedTeam, setTranslatedTeam] = useState(teamData.en);
     const [translatedInfo, setTranslatedInfo] = useState(infoData.en);
+    const [translatedJobs, setTranslatedJobs] = useState(jobsData.en)
     const [inputValue, setInputValue] = useState("");
     const [hoveredBox, setHoveredBox] = useState(1);
 
@@ -58,14 +65,17 @@ export const HomePage = () => {
             setTranslatedGames(gamesData.en[0]);
             setTranslatedTeam(teamData.en);
             setTranslatedInfo(infoData.en);
+            setTranslatedJobs(jobsData.en);
         } else if (i18n.language === "ru") {
             setTranslatedGames(gamesData.ru[0]);
             setTranslatedTeam(teamData.ru);
             setTranslatedInfo(infoData.ru);
+            setTranslatedJobs(jobsData.ru);
         } else {
             setTranslatedGames(gamesData.tr[0]);
             setTranslatedTeam(teamData.tr);
             setTranslatedInfo(infoData.tr);
+            setTranslatedJobs(jobsData.tr);
         }
     }, [i18n.language]);
 
@@ -488,7 +498,90 @@ export const HomePage = () => {
                 </section>
                 <section className={styles.lifeSection}>
                     <div className={styles.sectionContent}>
-                        <h1>Hi, i am under development</h1>
+                        <div className={styles.topTitle}>
+                            <div className={`${styles.pageHeading}`}>
+                                <h4>We're Part Of A <span>Big Family</span></h4>
+                                <h2>Get to know our staff <span>Better.</span></h2>
+                                <p>Experience the magic of gaming development with a look inside our studio. See the
+                                    art, science, and innovation at work.</p>
+                            </div>
+                        </div>
+                        <div className={styles.imagesContainer}>
+                            <div className={styles.imagesRow}>
+                                <div className={styles.bigImg}>
+                                    <img src="https://pixner.net/gamestorm3/main/assets/images/life-post-img-1.png"
+                                         alt="Office"/>
+                                </div>
+                                <div className={styles.bigImg}>
+                                    <img src="https://pixner.net/gamestorm3/main/assets/images/life-post-img-2.png"
+                                         alt="Office"/>
+                                </div>
+                            </div>
+                            <div className={styles.imagesRow}>
+                                <div className={styles.smallImg}>
+                                    <img src="https://pixner.net/gamestorm3/main/assets/images/life-post-img-3.png"
+                                         alt="Office"/>
+                                </div>
+                                <div className={styles.smallImg}>
+                                    <img src="https://pixner.net/gamestorm3/main/assets/images/life-post-img-4.png"
+                                         alt="Office"/>
+                                </div>
+                                <div className={styles.smallImg}>
+                                    <img src="https://pixner.net/gamestorm3/main/assets/images/life-post-img-5.png"
+                                         alt="Office"/>
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <div className={styles.joinContainer}>
+                            <h2>join us!</h2>
+                            <p>Still haven't found your dream job? Join Team Gamestorm and become the next Gamestorm of
+                                an ever-growing family!</p>
+                            <DefaultButton link={"/about"} title={"Check Open Positions"} grayBtn={false}/>
+                        </div>
+
+                    </div>
+                </section>
+                <section className={styles.jobsSection}>
+                    <div className={styles.sectionContent}>
+                        <div className={styles.topTitle}>
+                            <div className={`${styles.pageHeading}`}>
+                                <h4>We're Looking For <span>Talented Professionals</span></h4>
+                                <h2><span>Let's Build The Future</span> Of Gaming Industry Together!</h2>
+                                <p>Our belief is that being simple, honest, self-driven and motivated combined with the
+                                    constant pursuit of the ultimate company atmosphere can help grow a creative and
+                                    robust team.</p>
+                            </div>
+                        </div>
+                        <div className={styles.jobsContainer}>
+                            {translatedJobs?.map((job: JOBS_DATA) => {
+                                return (
+                                    <div key={job?.id} className={styles.jobBlock}>
+                                        <div className={styles.topRow}>
+                                            <div className={styles.iconBox}>
+                                                <Diversity2Icon/>
+                                            </div>
+                                            <div className={styles.jobNameColumn}>
+                                                <h2>{job?.jobName}</h2>
+                                                <p>{job?.jobLocation}</p>
+                                            </div>
+                                            <div className={styles.badgeBox}>
+                                                {job?.category}
+                                            </div>
+                                        </div>
+                                        <div className={styles.bottomRow}>
+                                            <div className={styles.timeBox}>
+                                                <WorkOutlineIcon/> <p>Full Time</p>
+                                            </div>
+                                            <div className={styles.timeBox}>
+                                                <AccessTimeIcon/> <p>Full Time</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                )
+                            })}
+                        </div>
                     </div>
                 </section>
             </main>
