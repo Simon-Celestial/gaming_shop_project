@@ -63,3 +63,11 @@ export interface COMMENTS_DATA {
     country: string;
     published: string;
 }
+
+export interface CONTACT_DEFAULTS {
+    nameInput: string,
+    emailInput : string,
+    subjectInput: string,
+    messageInput: string
+
+}

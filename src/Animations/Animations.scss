@@ -124,3 +124,31 @@
   }
 }
 
+@keyframes circleGrow {
+  0% {
+    width: 100px;
+    height: 100px;
+    opacity: 1;
+  }
+  25% {
+    width: 220px;
+    height: 220px;
+  }
+  50% {
+    width: 330px;
+    height: 330px;
+  }
+  75% {
+    width: 440px;
+    height: 440px;
+    opacity: 0.5;
+
+  }
+  100% {
+    width: 550px;
+    height: 550px;
+    opacity: 0;
+
+  }
+}
+

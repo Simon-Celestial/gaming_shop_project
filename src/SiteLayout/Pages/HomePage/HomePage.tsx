@@ -39,11 +39,15 @@ import {
     TEAM_DATA,
     INFO_DATA,
     JOBS_DATA,
-    COMMENTS_DATA
+    COMMENTS_DATA,
+    CONTACT_DEFAULTS
 } from "../../../Types/types.ts";
 import {GameCard} from "../../Components/Reusables/GameCard/GameCard.tsx";
 import {useTranslation} from "react-i18next";
 import {Rating} from "@mui/material";
+import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
+import EmailIcon from "@mui/icons-material/Email";
+import {Bounce, toast} from "react-toastify";
 
 
 const paginationStyles: PAGINATION_STYLES_TYPE = {
@@ -54,6 +58,12 @@ const paginationStyles: PAGINATION_STYLES_TYPE = {
     "--swiper-pagination-bullet-horizontal-gap": "6px",
     "--swiper-pagination-bottom": "10px",
 };
+const contactDefault : CONTACT_DEFAULTS = {
+    nameInput: "",
+    emailInput : "",
+    subjectInput: "",
+    messageInput: ""
+}
 
 export const HomePage = () => {
     const [selectedGenre, setSelectedGenre] = useState("action");
@@ -66,9 +76,49 @@ export const HomePage = () => {
     const [hoveredBox, setHoveredBox] = useState(1);
     const [activeIndex, setActiveIndex] = useState(0);
     const [animate, setAnimate] = useState(false);
+    const [contactInputs,setContactInputs] = useState<CONTACT_DEFAULTS>(contactDefault);
+
+    const handleContactInputs = useCallback((field: keyof CONTACT_DEFAULTS, value: string) => {
+        setContactInputs((prev : CONTACT_DEFAULTS) => ({
+            ...prev,
+            [field]: value,
+        }));
+    }, [setContactInputs]);
 
 
-    const handleChangeIndex = useCallback((index: number) => {
+    const handleSendMessage = useCallback(()=>{
+        if (
+            contactInputs.nameInput !== "" &&
+            contactInputs.emailInput !== "" &&
+            contactInputs.subjectInput !== "" &&
+            contactInputs.messageInput !== ""
+        )
+        {
+            toast.success(`Message sent successfully!`, {
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: true,
+                progress: undefined,
+                theme: 'dark',
+                transition: Bounce,
+            });
+            setContactInputs(contactDefault);
+        }
+        else {
+            toast.error(`Fields must not be empty!`, {
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: true,
+                progress: undefined,
+                theme: 'dark',
+                transition: Bounce,
+            });
+        }
+    },[contactInputs,setContactInputs]);
+    
+    const handleChangeIndex = useCallback((index: number) : void => {
         setActiveIndex(index + 1);
     }, [setActiveIndex]);
 
@@ -78,8 +128,6 @@ export const HomePage = () => {
 
         return () => clearTimeout(timer);
     }, [activeIndex]);
-
-
 
     const odometerRef = useRef<HTMLDivElement | null>(null);
     const counterRef = useRef<HTMLDivElement | null>(null);
@@ -140,7 +188,7 @@ export const HomePage = () => {
 
     const handleHoverBox = useCallback((boxID: number) => {
         setHoveredBox(boxID);
-    }, [setHoveredBox])
+    }, [setHoveredBox]);
 
     return (
         <>
@@ -623,7 +671,8 @@ export const HomePage = () => {
                     <div className={styles.sectionContent}>
                         <div className={styles.commentsSwiper}>
                             <div className={styles.monitoringBox}>
-                                <h2>{activeIndex} <span className={animate? styles.animated : ""}></span> <p>{translatedComments.length}</p></h2>
+                                <h2>{activeIndex} <span className={animate ? styles.animated : ""}></span>
+                                    <p>{translatedComments.length}</p></h2>
                             </div>
                             <Swiper
                                 direction={'horizontal'}
@@ -631,8 +680,7 @@ export const HomePage = () => {
                                     clickable: false,
                                     dynamicBullets: true,
                                 }}
-                                modules={[EffectFade, Autoplay, Pagination]}
-                                style={paginationStyles as React.CSSProperties}
+                                modules={[EffectFade, Autoplay]}
                                 slidesPerView={1}
                                 autoplay={{delay: 2500}}
                                 spaceBetween={25}
@@ -674,6 +722,127 @@ export const HomePage = () => {
                                     )
                                 })}
                             </Swiper>
+                        </div>
+                    </div>
+                </section>
+                <section className={styles.communitySection}>
+                    <div className={styles.sectionContent}>
+                        <div className={styles.imageBlock}>
+                            <img src="https://pixner.net/gamestorm3/main/assets/images/call-to-action-circle.png"
+                                 alt="Community Gamers"/>
+                            <span className={`${styles.decoration} ${styles.circleOne}`}></span>
+                            <span className={`${styles.decoration} ${styles.circleTwo}`}></span>
+                            <span className={`${styles.decoration} ${styles.circleThree}`}></span>
+                            <span className={`${styles.decoration} ${styles.circleFour}`}></span>
+                            <span className={`${styles.decoration} ${styles.circleFive}`}></span>
+                            <span className={`${styles.decoration} ${styles.circleSix}`}></span>
+                            <span className={`${styles.decoration} ${styles.circleSeven}`}></span>
+                            <span className={`${styles.decoration} ${styles.circleEight}`}></span>
+                            <span className={`${styles.decoration} ${styles.circleNine}`}></span>
+                            <span className={`${styles.decoration} ${styles.circleTen}`}></span>
+                        </div>
+                        <div className={styles.titleBlock}>
+                            <div className={`${styles.pageHeading} ${styles.notCenteredText}`}>
+                                <h4>Join Our <span>Community!</span></h4>
+                                <h2>Connect With <span>Gamers Worldwide</span></h2>
+                                <p>Join the revolution and immerse yourself in the ultimate gaming experience, where the
+                                    boundaries between reality and fantasy blur, and the only limit is your imagination.
+                                    Sign up now and be the first to play our latest game releases.</p>
+                            </div>
+                            <div className={styles.buttonsBlock}>
+                                <DefaultButton
+                                    title={"Explore Our Games"}
+                                    link={"/games"}
+                                    grayBtn={false}
+                                />
+                                <DefaultButton
+                                    title={"Join Our Community"}
+                                    link={"/about"}
+                                    grayBtn={true}
+                                />
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section className={styles.contactUsSection}>
+                    <div className={styles.sectionContent}>
+                        <div className={styles.titleBlock}>
+                            <div className={`${styles.pageHeading} ${styles.notCenteredText}`}>
+                                <h4>Have <span>Questions?</span></h4>
+                                <h2>We'd Love To <span>Hear From You!</span></h2>
+                                <p>Please fill out the form and let us know about your concerns.We will try our best to
+                                    provide optimized solutions.</p>
+                            </div>
+                            <div className={styles.infoRow}>
+                                <div className={styles.icon}>
+                                    <LocalPhoneIcon/>
+                                </div>
+                                <p>+(0) 123 - 456 - 789</p>
+                            </div>
+                            <div className={styles.infoRow}>
+                                <div className={styles.icon}>
+                                    <EmailIcon/>
+                                </div>
+                                <p>example@example.com</p>
+                            </div>
+                        </div>
+                        <div className={styles.formContainer}>
+                            <div className={styles.formBox}>
+                                <div className={styles.inputBox}>
+                                    Name
+                                    <input
+                                        className={styles.input}
+                                        name="nameInput"
+                                        type="text"
+                                        placeholder={"Enter Your Name"}
+                                        value={contactInputs.nameInput}
+                                        onChange={(e) => handleContactInputs('nameInput', e.target.value)}
+
+                                    />
+                                </div>
+                                <div className={styles.inputBox}>
+                                    Email
+                                    <input
+                                        className={styles.input}
+                                        name="emailInput"
+                                        type="email"
+                                        placeholder={"Enter your email"}
+                                        value={contactInputs.emailInput}
+                                        onChange={(e) => handleContactInputs('emailInput', e.target.value)}
+
+                                    />
+                                </div>
+                                <div className={styles.inputBox}>
+                                    Subject
+                                    <input
+                                        className={styles.input}
+                                        name="subjectInput"
+                                        type="text"
+                                        placeholder={"Enter Subject"}
+                                        value={contactInputs.subjectInput}
+                                        onChange={(e) => handleContactInputs('subjectInput', e.target.value)}
+
+                                    />
+                                </div>
+                                <div className={styles.inputBox}>
+                                    Leave us a message
+                                    <textarea
+                                        className={`${styles.input} ${styles.messageInput}`}
+                                        name="messageInput"
+                                        placeholder={"Please type your Message here..."}
+                                        value={contactInputs.messageInput}
+                                        onChange={(e) => handleContactInputs('messageInput', e.target.value)}
+
+                                    />
+                                </div>
+                                <div onClick={handleSendMessage}>
+                                    <DefaultButton
+                                        link={""}
+                                        grayBtn={false}
+                                        title={"Send Message"}
+                                    />
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </section>
