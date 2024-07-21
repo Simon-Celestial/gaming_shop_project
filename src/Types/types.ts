@@ -11,6 +11,7 @@ export interface PAGINATION_STYLES_TYPE {
     "--swiper-pagination-bullet-horizontal-gap": string;
     "--swiper-pagination-bottom": string;
 }
+
 export interface GAME_TYPE {
     id: number;
     name: string;
@@ -45,9 +46,20 @@ export interface INFO_DATA {
     title: string;
     delay: number;
 }
+
 export interface JOBS_DATA {
-    id:number;
+    id: number;
     jobName: string;
     jobLocation: string;
     category: string;
+}
+
+export interface COMMENTS_DATA {
+    id: number;
+    name: string;
+    image: string;
+    comment: string;
+    rating: number;
+    country: string;
+    published: string;
 }

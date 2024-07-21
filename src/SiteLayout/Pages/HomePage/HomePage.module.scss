@@ -715,12 +715,14 @@
         gap: 15px;
         margin-top: 25px;
         margin-bottom: 75px;
+
         .imagesRow {
           display: flex;
           width: 100%;
           gap: 15px;
           align-items: center;
           justify-content: space-between;
+
           img {
             object-position: center;
             object-fit: cover;
@@ -728,16 +730,19 @@
             border-bottom: 3px solid $green;
             border-radius: 5px 5px 0 0;
           }
+
           .bigImg {
             width: 100%;
             max-width: 636px;
           }
+
           .smallImg {
             width: 100%;
             max-width: 416px;
           }
         }
       }
+
       .joinContainer {
         display: flex;
         flex-direction: column;
@@ -745,10 +750,12 @@
         max-width: 550px;
         width: 100%;
         align-items: center;
+
         h2 {
           font-size: 52px;
           text-transform: uppercase;
         }
+
         p {
           margin-bottom: 10px;
           color: $white;
@@ -766,6 +773,7 @@
     width: 100%;
     justify-content: center;
     background: $background;
+
     .sectionContent {
       display: flex;
       flex-direction: column;
@@ -773,17 +781,20 @@
       width: 100%;
       max-width: 1320px;
       padding: 120px 15px;
+
       .topTitle {
         max-width: 700px;
         width: 100%;
 
       }
+
       .jobsContainer {
         display: flex;
         width: 100%;
         flex-wrap: wrap;
         gap: 25px;
         margin-top: 25px;
+
         .jobBlock {
           display: flex;
           width: 100%;
@@ -795,36 +806,43 @@
           overflow: hidden;
           flex-direction: column;
           gap: 35px;
+
           .topRow {
             display: flex;
             width: 100%;
             align-items: start;
             gap: 25px;
-            .iconBox{
+
+            .iconBox {
               display: flex;
               align-items: center;
               justify-content: center;
               border-radius: 5px;
               background: #4c4d5a;
               padding: 8px;
+
               svg {
                 font-size: 32px;
                 color: $green;
               }
             }
+
             .jobNameColumn {
               display: flex;
               flex-direction: column;
               gap: 5px;
+
               h2 {
                 font-size: 20px;
                 color: $white;
               }
+
               p {
                 color: $gray;
                 font-size: 14px;
               }
             }
+
             .badgeBox {
               margin-left: auto;
               font-size: 14px;
@@ -840,17 +858,20 @@
               text-align: center;
             }
           }
+
           .bottomRow {
             display: flex;
             width: 100%;
             align-items: center;
             gap: 25px;
             padding-left: 70px;
+
             .timeBox {
               display: flex;
               align-items: center;
               gap: 5px;
               color: $gray;
+
               p {
                 font-size: 14px;
               }
@@ -860,6 +881,156 @@
 
 
       }
+    }
+  }
+
+  .testimonialsSection {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    position: relative;
+    border-top: 1px solid $green;
+
+    .overlay {
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+      position: absolute;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        filter: brightness(50%);
+      }
+    }
+
+    .sectionContent {
+      max-width: 1320px;
+      flex-direction: column;
+      align-items: end;
+      width: 100%;
+      display: flex;
+      z-index: 3;
+      padding: 120px 15px 0 15px;
+
+      .commentsSwiper {
+        display: flex;
+        width: 100%;
+        max-width: 750px;
+        background: $black;
+        border: 5px solid $greenDark;
+        border-bottom: 0;
+        padding-bottom: 20px;
+        position: relative;
+
+        .monitoringBox {
+          position: absolute;
+          right: 15px;
+          top: 15px;
+
+          h2 {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: $green;
+
+            span {
+              background: $white;
+              height: 2px;
+              width: 100px;
+              position: relative;
+              &:after {
+                content: "";
+                width: 100%;
+                height: 100%;
+                background: $green;
+                position: absolute;
+                left: 0;
+                top: 0;
+              }
+              &.animated {
+                &:after {
+                  animation: widthAnim 2.5s linear;
+                }
+              }
+            }
+
+            p {
+              color: $gray
+            }
+          }
+        }
+
+        .commentBox {
+          padding: 50px 32px 60px 32px;
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+          gap: 25px;
+
+          .topBox {
+            display: flex;
+            width: 100%;
+            flex-direction: column;
+            gap: 10px;
+
+            .logoBox {
+              width: 80px;
+              height: 80px;
+              overflow: hidden;
+              border-radius: 50%;
+              border: 2px solid $greenDark;
+
+              img {
+                width: 100%;
+                height: 100%;
+                object-position: top;
+                object-fit: cover;
+              }
+            }
+          }
+
+          .midBox {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            font-size: 20px;
+            color: $gray;
+          }
+
+          .bottomBox {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            h2 {
+              font-size: 20px;
+              color: $white;
+            }
+
+            .countryDateBox {
+              display: inline-flex;
+              align-items: center;
+              font-size: 18px;
+              color: $green;
+
+              span {
+                margin: 0 15px;
+                color: $white;
+              }
+
+              p {
+                color: $white;
+              }
+            }
+          }
+
+        }
+      }
+
     }
   }
 }

@@ -28,9 +28,22 @@ import gamesData from "/public/data/GamesData/gamesData.json";
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-expect-error
 import infoData from "/public/data/InfoData/infoData.json";
-import {GENRES_TYPE, PAGINATION_STYLES_TYPE, GAME_TYPE, TEAM_DATA, INFO_DATA,JOBS_DATA} from "../../../Types/types.ts";
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-expect-error
+import commentsData from "/public/data/CommentsData/commentsData.json";
+
+import {
+    GENRES_TYPE,
+    PAGINATION_STYLES_TYPE,
+    GAME_TYPE,
+    TEAM_DATA,
+    INFO_DATA,
+    JOBS_DATA,
+    COMMENTS_DATA
+} from "../../../Types/types.ts";
 import {GameCard} from "../../Components/Reusables/GameCard/GameCard.tsx";
 import {useTranslation} from "react-i18next";
+import {Rating} from "@mui/material";
 
 
 const paginationStyles: PAGINATION_STYLES_TYPE = {
@@ -47,9 +60,26 @@ export const HomePage = () => {
     const [translatedGames, setTranslatedGames] = useState(gamesData.en[0]);
     const [translatedTeam, setTranslatedTeam] = useState(teamData.en);
     const [translatedInfo, setTranslatedInfo] = useState(infoData.en);
+    const [translatedComments, setTranslatedComments] = useState(commentsData.en);
     const [translatedJobs, setTranslatedJobs] = useState(jobsData.en)
     const [inputValue, setInputValue] = useState("");
     const [hoveredBox, setHoveredBox] = useState(1);
+    const [activeIndex, setActiveIndex] = useState(0);
+    const [animate, setAnimate] = useState(false);
+
+
+    const handleChangeIndex = useCallback((index: number) => {
+        setActiveIndex(index + 1);
+    }, [setActiveIndex]);
+
+    useEffect(() => {
+        setAnimate(true);
+        const timer = setTimeout(() => setAnimate(false), 2500);
+
+        return () => clearTimeout(timer);
+    }, [activeIndex]);
+
+
 
     const odometerRef = useRef<HTMLDivElement | null>(null);
     const counterRef = useRef<HTMLDivElement | null>(null);
@@ -66,16 +96,19 @@ export const HomePage = () => {
             setTranslatedTeam(teamData.en);
             setTranslatedInfo(infoData.en);
             setTranslatedJobs(jobsData.en);
+            setTranslatedComments(commentsData.en);
         } else if (i18n.language === "ru") {
             setTranslatedGames(gamesData.ru[0]);
             setTranslatedTeam(teamData.ru);
             setTranslatedInfo(infoData.ru);
             setTranslatedJobs(jobsData.ru);
+            setTranslatedComments(commentsData.ru);
         } else {
             setTranslatedGames(gamesData.tr[0]);
             setTranslatedTeam(teamData.tr);
             setTranslatedInfo(infoData.tr);
             setTranslatedJobs(jobsData.tr);
+            setTranslatedComments(commentsData.tr);
         }
     }, [i18n.language]);
 
@@ -391,7 +424,6 @@ export const HomePage = () => {
                                             </div>
                                         </div>
                                     </SwiperSlide>
-
                                 )
                             })}
                         </Swiper>
@@ -581,6 +613,67 @@ export const HomePage = () => {
                                     </div>
                                 )
                             })}
+                        </div>
+                    </div>
+                </section>
+                <section className={styles.testimonialsSection}>
+                    <div className={styles.overlay}>
+                        <img src="/images/office/office.jpg" alt="Office"/>
+                    </div>
+                    <div className={styles.sectionContent}>
+                        <div className={styles.commentsSwiper}>
+                            <div className={styles.monitoringBox}>
+                                <h2>{activeIndex} <span className={animate? styles.animated : ""}></span> <p>{translatedComments.length}</p></h2>
+                            </div>
+                            <Swiper
+                                direction={'horizontal'}
+                                pagination={{
+                                    clickable: false,
+                                    dynamicBullets: true,
+                                }}
+                                modules={[EffectFade, Autoplay, Pagination]}
+                                style={paginationStyles as React.CSSProperties}
+                                slidesPerView={1}
+                                autoplay={{delay: 2500}}
+                                spaceBetween={25}
+                                loop={true}
+                                allowTouchMove={false}
+                                onSlideChange={(swiper) => handleChangeIndex(swiper.realIndex)}
+
+                            >
+                                {translatedComments?.map((data: COMMENTS_DATA) => {
+                                    return (
+                                        <SwiperSlide key={data?.id}>
+                                            <div className={styles.commentBox}>
+                                                <div className={styles.topBox}>
+                                                    <div className={styles.logoBox}>
+                                                        <img src={data?.image} alt={data?.name}/>
+                                                    </div>
+                                                    <Rating
+                                                        name="read-only"
+                                                        value={data?.rating}
+                                                        readOnly
+                                                        sx={{
+                                                            '& .MuiRating-icon': {
+                                                                color: "#0EF0AD"
+                                                            }
+                                                        }}
+                                                    />
+                                                </div>
+                                                <div className={styles.midBox}>
+                                                    “{data?.comment}„
+                                                </div>
+                                                <div className={styles.bottomBox}>
+                                                    <h2>{data?.name}</h2>
+                                                    <div className={styles.countryDateBox}>
+                                                        {data?.country}<span>|</span><p>{data?.published}</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </SwiperSlide>
+                                    )
+                                })}
+                            </Swiper>
                         </div>
                     </div>
                 </section>

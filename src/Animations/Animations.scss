@@ -9,6 +9,16 @@
   }
 }
 
+@keyframes widthAnim {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+
 @keyframes shake {
   0% {
     transform: rotate(0) scale(1);

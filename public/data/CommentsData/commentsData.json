@@ -1,0 +1,224 @@
+{
+  "en": [
+    {
+      "id": 1,
+      "name": "Suzan Miles",
+      "image": "/images/users/2.png",
+      "comment": "Great gaming headset! The sound quality is amazing and it's very comfortable to wear for long gaming sessions",
+      "rating": 5,
+      "country": "United States",
+      "published": "Dec 17, 2023"
+    },
+    {
+      "id": 2,
+      "name": "John Smith",
+      "image": "/images/users/1.png",
+      "comment": "The gaming mouse I bought is super responsive and fits perfectly in my hand. Best purchase I've made this year!",
+      "rating": 5,
+      "country": "Canada",
+      "published": "Jan 05, 2024"
+    },
+    {
+      "id": 3,
+      "name": "Maria Garcia",
+      "image": "/images/users/4.png",
+      "comment": "I love my new gaming keyboard. The mechanical keys are satisfying to type on and the RGB lighting is a nice touch",
+      "rating": 4,
+      "country": "Spain",
+      "published": "Feb 12, 2024"
+    },
+    {
+      "id": 4,
+      "name": "Liam Brown",
+      "image": "/images/users/6.png",
+      "comment": "The customer service was fantastic. They helped me choose the perfect gaming monitor for my setup",
+      "rating": 5,
+      "country": "United Kingdom",
+      "published": "Mar 30, 2024"
+    },
+    {
+      "id": 5,
+      "name": "Sophia Nguyen",
+      "image": "/images/users/8.png",
+      "comment": "The delivery was quick and the product arrived in perfect condition. Very happy with my gaming chair!",
+      "rating": 4,
+      "country": "Australia",
+      "published": "Apr 18, 2024"
+    },
+    {
+      "id": 6,
+      "name": "James Wilson",
+      "image": "/images/users/5.png",
+      "comment": "Excellent quality! The VR headset I bought exceeded my expectations. Totally worth the money",
+      "rating": 5,
+      "country": "New Zealand",
+      "published": "May 10, 2024"
+    },
+    {
+      "id": 7,
+      "name": "Smith Johnson",
+      "image": "/images/users/7.png",
+      "comment": "The prices are unbeatable and the variety of products is impressive. I got everything I needed for my gaming setup",
+      "rating": 4,
+      "country": "Germany",
+      "published": "Jun 25, 2024"
+    },
+    {
+      "id": 8,
+      "name": "Michael Lee",
+      "image": "/images/users/3.png",
+      "comment": "I had a great experience buying from this company. The gaming console is amazing and the kids love it!",
+      "rating": 5,
+      "country": "South Korea",
+      "published": "Jul 15, 2024"
+    }
+  ],
+  "ru": [
+    {
+      "id": 1,
+      "name": "Сюзан Майлз",
+      "image": "/images/users/2.png",
+      "comment": "Отличная игровая гарнитура! Звук потрясающий, и её очень удобно носить во время долгих игровых сессий",
+      "rating": 5,
+      "country": "Соединенные Штаты",
+      "published": "17 Дек 2023"
+    },
+    {
+      "id": 2,
+      "name": "Джон Смит",
+      "image": "/images/users/1.png",
+      "comment": "Игровая мышь, которую я купил, очень отзывчивая и идеально лежит в руке. Лучшая покупка в этом году!",
+      "rating": 5,
+      "country": "Канада",
+      "published": "05 Янв 2024"
+    },
+    {
+      "id": 3,
+      "name": "Мария Гарсия",
+      "image": "/images/users/4.png",
+      "comment": "Мне очень нравится моя новая игровая клавиатура. Механические клавиши приятно нажимать, а RGB-подсветка - отличное дополнение",
+      "rating": 4,
+      "country": "Испания",
+      "published": "12 Фев 2024"
+    },
+    {
+      "id": 4,
+      "name": "Лиам Браун",
+      "image": "/images/users/6.png",
+      "comment": "Обслуживание клиентов было на высоте. Они помогли мне выбрать идеальный игровой монитор для моей установки",
+      "rating": 5,
+      "country": "Великобритания",
+      "published": "30 Мар 2024"
+    },
+    {
+      "id": 5,
+      "name": "София Нгуен",
+      "image": "/images/users/8.png",
+      "comment": "Доставка была быстрой, и товар прибыл в идеальном состоянии. Очень довольна своим игровым креслом!",
+      "rating": 4,
+      "country": "Австралия",
+      "published": "18 Апр 2024"
+    },
+    {
+      "id": 6,
+      "name": "Джеймс Уилсон",
+      "image": "/images/users/5.png",
+      "comment": "Отличное качество! VR-гарнитура, которую я купил, превзошла мои ожидания. Полностью стоит своих денег",
+      "rating": 5,
+      "country": "Новая Зеландия",
+      "published": "10 Май 2024"
+    },
+    {
+      "id": 7,
+      "name": "Смит Джонсон",
+      "image": "/images/users/7.png",
+      "comment": "Цены непобедимы, а разнообразие продуктов впечатляет. Я получил все, что нужно для моей игровой установки",
+      "rating": 4,
+      "country": "Германия",
+      "published": "25 Июн 2024"
+    },
+    {
+      "id": 8,
+      "name": "Майкл Ли",
+      "image": "/images/users/3.png",
+      "comment": "У меня был отличный опыт покупок в этой компании. Игровая консоль потрясающая, и детям она очень нравится!",
+      "rating": 5,
+      "country": "Южная Корея",
+      "published": "15 Июл 2024"
+    }
+  ],
+  "tr": [
+    {
+      "id": 1,
+      "name": "Suzan Miles",
+      "image": "/images/users/2.png",
+      "comment": "Harika bir oyun kulaklığı! Ses kalitesi muhteşem ve uzun oyun seansları için çok rahat",
+      "rating": 5,
+      "country": "Amerika Birleşik Devletleri",
+      "published": "17 Ara 2023"
+    },
+    {
+      "id": 2,
+      "name": "John Smith",
+      "image": "/images/users/1.png",
+      "comment": "Aldığım oyun faresi çok hassas ve elime mükemmel oturuyor. Bu yıl yaptığım en iyi satın alma!",
+      "rating": 5,
+      "country": "Kanada",
+      "published": "05 Oca 2024"
+    },
+    {
+      "id": 3,
+      "name": "Maria Garcia",
+      "image": "/images/users/4.png",
+      "comment": "Yeni oyun klavyemi çok seviyorum. Mekanik tuşlar basması çok tatmin edici ve RGB aydınlatma güzel bir dokunuş",
+      "rating": 4,
+      "country": "İspanya",
+      "published": "12 Şub 2024"
+    },
+    {
+      "id": 4,
+      "name": "Liam Brown",
+      "image": "/images/users/6.png",
+      "comment": "Müşteri hizmetleri harikaydı. Kurulumum için mükemmel oyun monitörünü seçmemde bana yardımcı oldular",
+      "rating": 5,
+      "country": "Birleşik Krallık",
+      "published": "30 Mar 2024"
+    },
+    {
+      "id": 5,
+      "name": "Sophia Nguyen",
+      "image": "/images/users/8.png",
+      "comment": "Teslimat hızlıydı ve ürün mükemmel durumda geldi. Oyun koltuğumdan çok memnunum!",
+      "rating": 4,
+      "country": "Avustralya",
+      "published": "18 Nis 2024"
+    },
+    {
+      "id": 6,
+      "name": "James Wilson",
+      "image": "/images/users/5.png",
+      "comment": "Mükemmel kalite! Satın aldığım VR kulaklık beklentilerimi aştı. Kesinlikle paraya değer",
+      "rating": 5,
+      "country": "Yeni Zelanda",
+      "published": "10 May 2024"
+    },
+    {
+      "id": 7,
+      "name": "Smith Johnson",
+      "image": "/images/users/7.png",
+      "comment": "Fiyatlar yenilmez ve ürün çeşitliliği etkileyici. Oyun kurulumum için ihtiyacım olan her şeyi aldım",
+      "rating": 4,
+      "country": "Almanya",
+      "published": "25 Haz 2024"
+    },
+    {
+      "id": 8,
+      "name": "Michael Lee",
+      "image": "/images/users/3.png",
+      "comment": "Bu şirketten alışveriş yapmak harika bir deneyimdi. Oyun konsolu muhteşem ve çocuklar bayıldı!",
+      "rating": 5,
+      "country": "Güney Kore",
+      "published": "15 Tem 2024"
+    }
+  ]
+}
