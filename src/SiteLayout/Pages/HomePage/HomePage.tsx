@@ -1,7 +1,7 @@
 import React, {useCallback, useEffect, useMemo, useRef, useState} from "react";
 import styles from "./HomePage.module.scss";
 import {Header} from "../../Components/Layout/Header/Header.tsx";
-import {Footer} from "../../Components/Layout/Footer/Footer.tsx";
+import {FooterOne} from "../../Components/Layout/FooterOne/FooterOne.tsx";
 import {TypeAnimation} from "react-type-animation";
 import {Autoplay, EffectFade, Pagination} from 'swiper/modules';
 import {DeviceCard} from "../../Components/Reusables/DeviceCard/DeviceCard.tsx";
@@ -847,7 +847,7 @@ export const HomePage = () => {
                     </div>
                 </section>
             </main>
-            <Footer/>
+            <FooterOne/>
         </>
     );
 };
