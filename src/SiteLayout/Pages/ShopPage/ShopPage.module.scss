@@ -1,0 +1,9 @@
+@import "../../../Variables/Variables";
+@import "../../../Animations/Animations";
+@import "../../../CommonStyles/PageHeadingStyles/PageHeadingStyles.module";
+
+.shopWrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}

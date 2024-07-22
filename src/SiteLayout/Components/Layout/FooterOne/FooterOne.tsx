@@ -130,7 +130,7 @@ export const FooterOne = () => {
                         <p>Want to be the first to know freshest news? Subscribe out newsletter!</p>
                         <div className={styles.inputBox}>
                             <input
-                                type="text"
+                                type="email"
                                 name={"mailInput"}
                                 placeholder={"Enter Your Email..."}
                                 value={mailInput}

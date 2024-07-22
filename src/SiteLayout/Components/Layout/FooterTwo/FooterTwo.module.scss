@@ -1,0 +1,165 @@
+@import "../../../../Variables/Variables";
+
+.footerWrapper {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+
+  .footerContent {
+    display: flex;
+    width: 100%;
+    max-width: 1320px;
+    padding: 0 15px;
+    flex-direction: column;
+
+    .footerTitle {
+      display: flex;
+      width: 100%;
+      padding: 120px 0;
+      justify-content: space-between;
+      gap: 25px;
+      align-items: center;
+      .titleLeft {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        h2 {
+          font-size: 55px;
+        }
+        p {
+          font-size: 16px;
+          font-family: $interFont;
+          a {
+            color: $green;
+            transition: color $transition;
+            &:hover {
+              color: $greenDark;
+            }
+          }
+        }
+      }
+      .titleRight {
+        display: flex;
+        padding: 60px 32px;
+        border: 1px solid $white;
+        border-radius: 10px;
+        width: 100%;
+        max-width: 550px;
+        background:$greenDark;
+        .inputWrapper {
+          display: flex;
+          align-items: center;
+          border: 1px solid $white;
+          padding: 16px;
+          width: 100%;
+          border-radius: 10px;
+          justify-content: space-between;
+          input {
+            background: transparent;
+            padding: 0 15px 0 0;
+            outline: 0;
+            border: 0;
+            font-size: 18px;
+            width: 100%;
+            color: $white;
+            &::placeholder {
+              color: rgba(12, 12, 12, 0.5);
+            }
+          }
+
+        }
+      }
+    }
+    .footerInfo {
+      display: flex;
+      width: 100%;
+      align-items: center;
+      padding-bottom: 120px;
+      .infoBox {
+        width: 25%;
+        display: flex;
+        flex-direction: column;
+        padding-right: 12px;
+        &:last-child {
+          padding-right: 0;
+        }
+
+        h2 {
+          margin-bottom: 16px;
+          font-size: 24px;
+        }
+        .infoContent {
+          display: flex;
+          gap: 20px;
+          align-items: center;
+          .iconBox {
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: $grayFill;
+            border-radius: 50%;
+            color: $green;
+            svg {
+              font-size: 24px;
+            }
+          }
+          .title {
+            display: flex;
+            flex-direction: column;
+            max-width: 225px;
+            width: 100%;
+            gap: 5px;
+            h3 {
+              font-size: 20px;
+            }
+            p {
+              font-size: 16px;
+              color: $gray;
+            }
+          }
+        }
+
+
+      }
+    }
+    .footerCopyright {
+      display: flex;
+      align-items: center;
+      padding: 32px 15px;
+      border-radius: 15px 15px 0 0;
+      background: $grayFill;
+      justify-content: space-between;
+      gap: 25px;
+      p {
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        font-size: 16px;
+        color: $gray;
+        a {
+          transition: color $transition;
+          color: $green;
+          &:hover {
+            color: $greenDark;
+          }
+        }
+      }
+      span {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 16px;
+        color: $white;
+        a {
+          transition: color $transition;
+          &:hover {
+            color: $green;
+          }
+        }
+      }
+
+    }
+  }
+}

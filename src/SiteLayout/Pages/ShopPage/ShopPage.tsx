@@ -1,10 +1,13 @@
 import {Header} from "../../Components/Layout/Header/Header.tsx";
+import {FooterTwo} from "../../Components/Layout/FooterTwo/FooterTwo.tsx";
+import styles from "./ShopPage.module.scss";
 
 export const ShopPage = () => {
     return (
         <>
             <Header/>
-            <h1>Shop PAGE</h1>
+            <main className={styles.shopWrapper}>Shop PAGE</main>
+            <FooterTwo />
         </>
     );
 };
