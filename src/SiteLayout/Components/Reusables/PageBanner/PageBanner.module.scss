@@ -1,0 +1,112 @@
+@import "../../../../Variables/Variables";
+@import "../../../../Animations/Animations";
+
+.bannerSection {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  &.shop {
+    background-image: url("https://pixner.net/gamestorm3/main/assets/images/pricing-plan-banner-illus.png");
+    background-position: bottom right;
+    background-repeat: no-repeat;
+  }
+  &.about {
+    background-image: url("https://pixner.net/gamestorm3/main/assets/images/about-banner-illus.png");
+    background-position: bottom right;
+    background-repeat: no-repeat;
+  }
+  &.blog {
+    background-image: url("https://pixner.net/gamestorm3/main/assets/images/store-banner-illus.png");
+    background-size: cover;
+  }
+  &.contact {
+    background-image: url("https://pixner.net/gamestorm3/main/assets/images/store-banner-illus.png");
+    background-size: cover;
+  }
+  &.services {
+    background-image: url("https://pixner.net/gamestorm3/main/assets/images/store-banner-illus.png");
+    background-size: cover;
+  }
+  &.games {
+    background-image: url("https://pixner.net/gamestorm3/main/assets/images/game-banner-illus.png");
+    background-repeat: no-repeat;
+    background-position: bottom right;
+  }
+  .decoration {
+    position: absolute;
+    animation: rotate 35s linear infinite;
+
+    &.decorationShape {
+      top: 30%;
+      left: 5%;
+    }
+
+    &.decorationBubbles {
+      top: -10%;
+      left: 20%;
+    }
+
+  }
+
+  .bannerContent {
+    display: flex;
+    padding: 210px 15px 130px 15px;
+    max-width: 1320px;
+    width: 100%;
+    position: relative;
+
+    .pageLocation {
+      display: flex;
+      align-items: center;
+      padding: 10px 32px;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      background: $grayFill;
+      border-radius: 10px 10px 0 0;
+      gap: 5px;
+      border: 1px solid $green;
+      border-bottom: 0;
+      a {
+        font-size: 16px;
+        text-transform: uppercase;
+      }
+      p {
+        color: $green;
+        text-transform: uppercase;
+        font-size: 16px;
+      }
+    }
+
+    .bannerTitle {
+      display: flex;
+      flex-direction: column;
+      max-width: 660px;
+      width: 100%;
+
+      .coloredText {
+        margin-bottom: 24px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        h2 {
+          font-size: 56px;
+        }
+
+        h3 {
+          font-size: 56px;
+          color: $green;
+        }
+      }
+
+      .solidText {
+        font-size: 24px;
+        color: $gray;
+      }
+
+    }
+  }
+}

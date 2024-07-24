@@ -6,4 +6,177 @@
   display: flex;
   flex-direction: column;
   width: 100%;
+
+  .productsSection {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    background: $grayFill;
+    padding: 50px 15px;
+
+    .sectionContent {
+      display: flex;
+      width: 100%;
+      max-width: 1400px;
+      gap: 10px;
+
+      .allFilters {
+        max-width: 300px;
+        width: 100%;
+        padding: 0 15px;
+
+        > h2 {
+          font-size: 24px;
+          color: $white;
+          border-bottom: 1px solid $green;
+          padding-bottom: 10px;
+        }
+
+        .filterBox {
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+          color: $white;
+          margin-top: 25px;
+          border-bottom: 1px solid $green;
+          padding-bottom: 15px;
+
+          &:last-child {
+            border-bottom: 0;
+          }
+
+          h2 {
+            font-size: 18px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+          }
+
+          .filterOptions {
+            display: flex;
+            width: 100%;
+            align-items: center;
+            padding: 10px 0;
+            justify-content: space-between;
+            cursor: pointer;
+            transition: color $transition;
+
+            &:hover {
+              color: $green;
+            }
+
+          }
+
+          .priceSlider {
+            display: flex;
+            flex-direction: column;
+
+            .sliderWrapper {
+              padding: 0 8px;
+              margin-bottom: 20px;
+            }
+
+            .buttonsBox {
+              display: flex;
+              align-items: center;
+              gap: 15px;
+              margin-bottom: 20px;
+
+              .btn {
+                text-transform: uppercase;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background: $green;
+                color: $black;
+                font-size: 20px;
+                font-weight: bold;
+                padding: 6px 12.5px;
+                border-radius: 10px;
+                width: 50%;
+                cursor: pointer;
+                transition: background $transition, color $transition;
+
+                &:nth-child(1) {
+                  &:hover {
+                    background: $greenDark;
+                    color: $white;
+                  }
+                }
+
+                &:nth-child(2) {
+                  &:hover {
+                    background: $gray;
+                    color: $black;
+                  }
+                }
+
+              }
+            }
+
+            .sliderValue {
+              display: inline-flex;
+              align-items: center;
+              gap: 8px;
+              padding-bottom: 10px;
+            }
+          }
+        }
+
+      }
+
+      .productsContainer {
+        display: flex;
+        flex-direction: column;
+        padding: 0 15px;
+        width: 100%;
+        max-width: 1070px;
+
+        .sortingContainer {
+          display: flex;
+          align-items: center;
+          width: 100%;
+          justify-content: space-between;
+
+          p {
+            color: $gray;
+          }
+
+          .sort {
+            select {
+              background: transparent;
+              color: $gray;
+              border: 0;
+              outline: 0;
+
+              &:focus {
+                color: $green;
+                background: $grayFill;
+              }
+
+
+            }
+          }
+        }
+
+        .allProducts {
+          display: flex;
+          flex-wrap: wrap;
+          width: 100%;
+          gap: 25px;
+          margin-top: 20px;
+
+          .productCard {
+            width: 100%;
+            max-width: 330px;
+          }
+        }
+
+        .pagination {
+          margin-top: 25px;
+        }
+
+      }
+
+    }
+  }
 }
