@@ -1,4 +1,4 @@
-import React, {useCallback, useEffect, useMemo, useRef, useState} from "react";
+import React, {useCallback, useContext, useEffect, useMemo, useRef, useState} from "react";
 import styles from "./HomePage.module.scss";
 import {Header} from "../../Components/Layout/Header/Header.tsx";
 import {FooterOne} from "../../Components/Layout/FooterOne/FooterOne.tsx";
@@ -48,6 +48,7 @@ import {Rating} from "@mui/material";
 import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
 import EmailIcon from "@mui/icons-material/Email";
 import {Bounce, toast} from "react-toastify";
+import {DataContext} from "../../../Context/DataContext/DataContext.tsx";
 
 
 const paginationStyles: PAGINATION_STYLES_TYPE = {
@@ -66,6 +67,10 @@ const contactDefault : CONTACT_DEFAULTS = {
 }
 
 export const HomePage = () => {
+    const {
+        productsData
+    } = useContext(DataContext);
+
     const [selectedGenre, setSelectedGenre] = useState("action");
     const [translatedGames, setTranslatedGames] = useState(gamesData.en[0]);
     const [translatedTeam, setTranslatedTeam] = useState(teamData.en);
@@ -278,21 +283,15 @@ export const HomePage = () => {
                                     autoplay={{delay: 3000}}
                                     style={paginationStyles as React.CSSProperties}
                                 >
-                                    <SwiperSlide>
-                                        <div className={styles.cardWrapper}>
-                                            <DeviceCard/>
-                                        </div>
-                                    </SwiperSlide>
-                                    <SwiperSlide>
-                                        <div className={styles.cardWrapper}>
-                                            <DeviceCard/>
-                                        </div>
-                                    </SwiperSlide>
-                                    <SwiperSlide>
-                                        <div className={styles.cardWrapper}>
-                                            <DeviceCard/>
-                                        </div>
-                                    </SwiperSlide>
+                                    {productsData?.map((product) => {
+                                        return (
+                                            <SwiperSlide key={product?.id}>
+                                                <div className={styles.cardWrapper}>
+                                                    <DeviceCard data={product}/>
+                                                </div>
+                                            </SwiperSlide>
+                                        )
+                                    })}
                                 </Swiper>
                             </div>
                         </div>
@@ -537,41 +536,15 @@ export const HomePage = () => {
                                 freeMode={true}
                                 loop={true}
                             >
-                                <SwiperSlide>
-                                    <div className={styles.cardWrapper}>
-                                        <DeviceCard/>
-                                    </div>
-                                </SwiperSlide>
-                                <SwiperSlide>
-                                    <div className={styles.cardWrapper}>
-                                        <DeviceCard/>
-                                    </div>
-                                </SwiperSlide>
-                                <SwiperSlide>
-                                    <div className={styles.cardWrapper}>
-                                        <DeviceCard/>
-                                    </div>
-                                </SwiperSlide>
-                                <SwiperSlide>
-                                    <div className={styles.cardWrapper}>
-                                        <DeviceCard/>
-                                    </div>
-                                </SwiperSlide>
-                                <SwiperSlide>
-                                    <div className={styles.cardWrapper}>
-                                        <DeviceCard/>
-                                    </div>
-                                </SwiperSlide>
-                                <SwiperSlide>
-                                    <div className={styles.cardWrapper}>
-                                        <DeviceCard/>
-                                    </div>
-                                </SwiperSlide>
-                                <SwiperSlide>
-                                    <div className={styles.cardWrapper}>
-                                        <DeviceCard/>
-                                    </div>
-                                </SwiperSlide>
+                                {productsData?.map((product)=> {
+                                    return(
+                                        <SwiperSlide key={product?.id}>
+                                            <div className={styles.cardWrapper}>
+                                                <DeviceCard data={product}/>
+                                            </div>
+                                        </SwiperSlide>
+                                    )
+                                })}
                             </Swiper>
                         </div>
                     </div>

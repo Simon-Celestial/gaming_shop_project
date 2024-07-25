@@ -29,7 +29,6 @@ export const DataContextProvider: React.FC<DataContextProviderProps> = ({childre
         setDataUpdate(Date.now());
     }, []);
 
-
     useEffect(() => {
         (async () => {
             setProductsLoading(true);
@@ -43,8 +42,6 @@ export const DataContextProvider: React.FC<DataContextProviderProps> = ({childre
             }
         })();
     }, [dataUpdate]);
-
-
 
     const value = useMemo(() => ({
             productsData,
