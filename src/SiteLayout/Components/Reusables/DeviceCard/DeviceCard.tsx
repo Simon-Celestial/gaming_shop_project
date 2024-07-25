@@ -2,8 +2,13 @@ import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import RemoveRedEyeOutlinedIcon from "@mui/icons-material/RemoveRedEyeOutlined";
 import {Link} from "react-router-dom";
 import styles from "./DeviceCard.module.scss";
+import {PRODUCTS_DATA} from "../../../../Types/types.ts";
+import React from "react";
 
-export const DeviceCard = () => {
+interface DeviceCardProps {
+    data: PRODUCTS_DATA
+}
+export const DeviceCard: React.FC<DeviceCardProps> = ({data}) => {
     return (
         <div className={styles.deviceCard}>
             <div className={styles.deviceOptions}>
@@ -19,18 +24,18 @@ export const DeviceCard = () => {
                 <div className={styles.offer}>
                     Offer
                 </div>
-                <Link to={""}>PC Master Series X-9700K Gaming Core i7 Mid Tower cpu</Link>
-                <p>Gaming, Best seller, E-sports</p>
+                <Link to={""}>{data?.name}</Link>
+                <p>{data?.brand}</p>
             </div>
             <div className={styles.cardImage}>
                 <img
-                    src="https://themes.workdo.io/wordpress/toaster/gaming/wp-content/uploads/2022/03/1-2.png"
-                    alt="Device"/>
+                    src={data?.image}
+                    alt={data?.name}/>
             </div>
             <div className={styles.cardBottom}>
                 <div className={styles.price}>
-                    <p>$ 449.00</p>
-                    <span>$ 500.00</span>
+                    <p>$ {data?.salePrice?.toFixed(2)}</p>
+                    {data?.regularPrice ? <span>$ {data?.regularPrice?.toFixed(2)}</span> : null}
                 </div>
                 <div className={styles.addBtn}>
                     add to card

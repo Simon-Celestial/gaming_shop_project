@@ -2,12 +2,16 @@ import {Header} from "../../Components/Layout/Header/Header.tsx";
 import {FooterTwo} from "../../Components/Layout/FooterTwo/FooterTwo.tsx";
 import styles from "./ShopPage.module.scss";
 import {PageBanner} from "../../Components/Reusables/PageBanner/PageBanner.tsx";
-import React, {useCallback, useState} from "react";
+import React, {useCallback, useContext, useState} from "react";
 import {Rating, Slider, Stack} from "@mui/material";
 import {DeviceCard} from "../../Components/Reusables/DeviceCard/DeviceCard.tsx";
 import Pagination from '@mui/material/Pagination';
+import {DataContext} from "../../../Context/DataContext/DataContext.tsx";
 
 export const ShopPage = () => {
+    const {
+        productsData
+    } = useContext(DataContext);
     const [value, setValue] = useState<number[]>([0, 1000]);
     const [sortOption, setSortOption] = useState("default");
 
@@ -236,35 +240,14 @@ export const ShopPage = () => {
                                 </div>
                             </div>
                             <div className={styles.allProducts}>
-                                <div className={styles.productCard}>
-                                    <DeviceCard/>
-                                </div>
-                                <div className={styles.productCard}>
-                                    <DeviceCard/>
-                                </div>
-                                <div className={styles.productCard}>
-                                    <DeviceCard/>
-                                </div>
-                                <div className={styles.productCard}>
-                                    <DeviceCard/>
-                                </div>
-                                <div className={styles.productCard}>
-                                    <DeviceCard/>
-                                </div>
-                                <div className={styles.productCard}>
-                                    <DeviceCard/>
-                                </div>
-                                <div className={styles.productCard}>
-                                    <DeviceCard/>
-                                </div>
-                                <div className={styles.productCard}>
-                                    <DeviceCard/>
-                                </div>
-                                <div className={styles.productCard}>
-                                    <DeviceCard/>
-                                </div>
+                                {productsData?.map((product) => {
+                                    return (
+                                        <div key={product?.id} className={styles.productCard}>
+                                            <DeviceCard data={product}/>
+                                        </div>
 
-
+                                    )
+                                })}
                             </div>
                             <div className={styles.pagination}>
                                 <Stack spacing={2}>

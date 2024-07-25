@@ -69,5 +69,23 @@ export interface CONTACT_DEFAULTS {
     emailInput : string,
     subjectInput: string,
     messageInput: string
-
+}
+export interface PRODUCTS_DATA {
+    id: number;
+    name: string;
+    image: string;
+    category: string;
+    brand: string;
+    offer: string;
+    salePrice: number;
+    regularPrice: number | null;
+    colors: string[];
+    rating: number;
+    quantity: number;
+    description: string;
+    dimension: string;
+    weight: string;
+    warranty: string;
+    material: string;
+    rgb: true
 }
