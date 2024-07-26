@@ -49,6 +49,7 @@ import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
 import EmailIcon from "@mui/icons-material/Email";
 import {Bounce, toast} from "react-toastify";
 import {DataContext} from "../../../Context/DataContext/DataContext.tsx";
+import {Loader} from "../../Components/Reusables/Loader/Loader.tsx";
 
 
 const paginationStyles: PAGINATION_STYLES_TYPE = {
@@ -59,16 +60,17 @@ const paginationStyles: PAGINATION_STYLES_TYPE = {
     "--swiper-pagination-bullet-horizontal-gap": "6px",
     "--swiper-pagination-bottom": "10px",
 };
-const contactDefault : CONTACT_DEFAULTS = {
+const contactDefault: CONTACT_DEFAULTS = {
     nameInput: "",
-    emailInput : "",
+    emailInput: "",
     subjectInput: "",
     messageInput: ""
 }
 
 export const HomePage = () => {
     const {
-        productsData
+        productsData,
+        productsLoading
     } = useContext(DataContext);
 
     const [selectedGenre, setSelectedGenre] = useState("action");
@@ -81,24 +83,23 @@ export const HomePage = () => {
     const [hoveredBox, setHoveredBox] = useState(1);
     const [activeIndex, setActiveIndex] = useState(0);
     const [animate, setAnimate] = useState(false);
-    const [contactInputs,setContactInputs] = useState<CONTACT_DEFAULTS>(contactDefault);
+    const [contactInputs, setContactInputs] = useState<CONTACT_DEFAULTS>(contactDefault);
 
     const handleContactInputs = useCallback((field: keyof CONTACT_DEFAULTS, value: string) => {
-        setContactInputs((prev : CONTACT_DEFAULTS) => ({
+        setContactInputs((prev: CONTACT_DEFAULTS) => ({
             ...prev,
             [field]: value,
         }));
     }, [setContactInputs]);
 
 
-    const handleSendMessage = useCallback(()=>{
+    const handleSendMessage = useCallback(() => {
         if (
             contactInputs.nameInput !== "" &&
             contactInputs.emailInput !== "" &&
             contactInputs.subjectInput !== "" &&
             contactInputs.messageInput !== ""
-        )
-        {
+        ) {
             toast.success(`Message sent successfully!`, {
                 hideProgressBar: false,
                 closeOnClick: true,
@@ -109,8 +110,7 @@ export const HomePage = () => {
                 transition: Bounce,
             });
             setContactInputs(contactDefault);
-        }
-        else {
+        } else {
             toast.error(`Fields must not be empty!`, {
                 hideProgressBar: false,
                 closeOnClick: true,
@@ -121,9 +121,9 @@ export const HomePage = () => {
                 transition: Bounce,
             });
         }
-    },[contactInputs,setContactInputs]);
-    
-    const handleChangeIndex = useCallback((index: number) : void => {
+    }, [contactInputs, setContactInputs]);
+
+    const handleChangeIndex = useCallback((index: number): void => {
         setActiveIndex(index + 1);
     }, [setActiveIndex]);
 
@@ -197,6 +197,10 @@ export const HomePage = () => {
 
     return (
         <>
+            {
+                productsLoading &&
+                <Loader/>
+            }
             <Header/>
             <main className={styles.homeWrapper}>
                 <section className={styles.bannerSection}>
@@ -536,8 +540,8 @@ export const HomePage = () => {
                                 freeMode={true}
                                 loop={true}
                             >
-                                {productsData?.map((product)=> {
-                                    return(
+                                {productsData?.map((product) => {
+                                    return (
                                         <SwiperSlide key={product?.id}>
                                             <div className={styles.cardWrapper}>
                                                 <DeviceCard data={product}/>

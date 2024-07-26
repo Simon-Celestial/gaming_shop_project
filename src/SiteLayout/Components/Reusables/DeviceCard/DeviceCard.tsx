@@ -29,8 +29,10 @@ export const DeviceCard: React.FC<DeviceCardProps> = ({data}) => {
             </div>
             <div className={styles.cardImage}>
                 <img
-                    src={data?.image}
-                    alt={data?.name}/>
+                    src={data?.image[0]}
+                    alt={data?.name}
+                    loading={"lazy"}
+                />
             </div>
             <div className={styles.cardBottom}>
                 <div className={styles.price}>

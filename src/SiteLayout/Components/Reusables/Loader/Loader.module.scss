@@ -1,0 +1,12 @@
+@import "../../../../Variables/Variables";
+
+.loaderWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  background-color: $background;
+  width: 100vw;
+  min-height: 100vh;
+  z-index: 99999;
+}
