@@ -216,8 +216,10 @@
           h2 {
             color: $green;
           }
-          p {
+          >p {
             color: $gray;
+            min-height: 85px;
+            margin-top: 10px;
           }
           .bottomRow {
             display: flex;
@@ -227,7 +229,6 @@
 
             .userInfo {
               display: flex;
-              align-items: center;
               justify-content: space-between;
               gap: 15px;
               .userImg {

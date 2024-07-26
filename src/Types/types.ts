@@ -66,10 +66,11 @@ export interface COMMENTS_DATA {
 
 export interface CONTACT_DEFAULTS {
     nameInput: string,
-    emailInput : string,
+    emailInput: string,
     subjectInput: string,
     messageInput: string
 }
+
 export interface PRODUCTS_DATA {
     id: number;
     name: string;
@@ -88,4 +89,14 @@ export interface PRODUCTS_DATA {
     warranty: string;
     material: string;
     rgb: true
+}
+
+export interface CUSTOMERS_COMMENTS_DATA {
+    id: number;
+    product: string;
+    image: string;
+    userImage: null | string;
+    comment: string;
+    user: string;
+    rating: number;
 }

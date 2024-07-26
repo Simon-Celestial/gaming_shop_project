@@ -1,0 +1,224 @@
+{
+  "en": [
+    {
+      "id": 1,
+      "product": "Alienware Curved 22-inch",
+      "image": "/images/products/AlienwareCurved.webp",
+      "userImage": null,
+      "comment": "The Alienware Curved 22-inch monitor offers an immersive experience with its excellent color accuracy and wide viewing angles. Perfect for gaming and professional work.",
+      "user": "Alex Johnson",
+      "rating": 4.5
+    },
+    {
+      "id": 2,
+      "product": "Alienware NZ-1000",
+      "image": "/images/products/AlienwareNZ1000.webp",
+      "userImage": null,
+      "comment": "The Alienware NZ-1000 is a powerhouse for gaming. It runs smoothly even with the most demanding games. The design is sleek and futuristic.",
+      "user": "Jessica Lee",
+      "rating": 5
+    },
+    {
+      "id": 3,
+      "product": "HyperX Console Joysticks",
+      "image": "/images/products/HyperXConsoleJoysticks.webp",
+      "userImage": null,
+      "comment": "These HyperX console joysticks provide excellent grip and precision. They have improved my gaming performance significantly.",
+      "user": "Michael Chen",
+      "rating": 4.7
+    },
+    {
+      "id": 4,
+      "product": "HyperX Headphones",
+      "image": "/images/products/HyperXHeadphones.webp",
+      "userImage": null,
+      "comment": "HyperX Headphones deliver incredible sound quality and comfort. Perfect for long gaming sessions and music listening.",
+      "user": "Sophia Kim",
+      "rating": 4.8
+    },
+    {
+      "id": 5,
+      "product": "HyperX Keyboard",
+      "image": "/images/products/HyperXKeyboard.webp",
+      "userImage": null,
+      "comment": "The HyperX Keyboard offers responsive keys with customizable RGB lighting. It's a fantastic choice for both gamers and programmers.",
+      "user": "David Brown",
+      "rating": 4.6
+    },
+    {
+      "id": 6,
+      "product": "Radeon RX-120",
+      "image": "/images/products/RadeonRX120.webp",
+      "userImage": null,
+      "comment": "The Radeon RX-120 graphics card boosts performance significantly. Games run smoothly with excellent graphics quality.",
+      "user": "Emily White",
+      "rating": 4.4
+    },
+    {
+      "id": 7,
+      "product": "Razer Gaming RGB Chair",
+      "image": "/images/products/RazerGamingRGB.webp",
+      "userImage": null,
+      "comment": "This Razer Gaming RGB chair is extremely comfortable with great support for long gaming hours. The RGB lighting adds a cool aesthetic.",
+      "user": "Jack Thompson",
+      "rating": 4.9
+    },
+    {
+      "id": 8,
+      "product": "Xbox Series S",
+      "image": "/images/products/Xbox.webp",
+      "userImage": null,
+      "comment": "The Xbox Series S is a compact and powerful gaming console. It offers excellent performance at a reasonable price.",
+      "user": "Lucas Martinez",
+      "rating": 4.7
+    }
+  ],
+  "ru": [
+    {
+      "id": 1,
+      "product": "Изогнутый монитор Alienware 22 дюйма",
+      "image": "/images/products/AlienwareCurved.webp",
+      "userImage": null,
+      "comment": "Изогнутый монитор Alienware 22 дюйма обеспечивает захватывающий опыт благодаря своей отличной цветопередаче и широким углам обзора. Идеально подходит для игр и профессиональной работы.",
+      "user": "Алекс Джонсон",
+      "rating": 4.5
+    },
+    {
+      "id": 2,
+      "product": "Alienware NZ-1000",
+      "image": "/images/products/AlienwareNZ1000.webp",
+      "userImage": null,
+      "comment": "Alienware NZ-1000 - это настоящая мощь для игр. Работает плавно даже с самыми требовательными играми. Дизайн стильный и футуристичный.",
+      "user": "Джессика Ли",
+      "rating": 5
+    },
+    {
+      "id": 3,
+      "product": "Джойстики HyperX Console",
+      "image": "/images/products/HyperXConsoleJoysticks.webp",
+      "userImage": null,
+      "comment": "Эти джойстики HyperX обеспечивают отличное сцепление и точность. Они значительно улучшили мою игровую производительность.",
+      "user": "Майкл Чен",
+      "rating": 4.7
+    },
+    {
+      "id": 4,
+      "product": "Наушники HyperX",
+      "image": "/images/products/HyperXHeadphones.webp",
+      "userImage": null,
+      "comment": "Наушники HyperX обеспечивают невероятное качество звука и комфорт. Идеально подходят для долгих игровых сессий и прослушивания музыки.",
+      "user": "София Ким",
+      "rating": 4.8
+    },
+    {
+      "id": 5,
+      "product": "Клавиатура HyperX",
+      "image": "/images/products/HyperXKeyboard.webp",
+      "userImage": null,
+      "comment": "Клавиатура HyperX предлагает отзывчивые клавиши с настраиваемой RGB-подсветкой. Это отличный выбор как для геймеров, так и для программистов.",
+      "user": "Дэвид Браун",
+      "rating": 4.6
+    },
+    {
+      "id": 6,
+      "product": "Видеокарта Radeon RX-120",
+      "image": "/images/products/RadeonRX120.webp",
+      "userImage": null,
+      "comment": "Видеокарта Radeon RX-120 значительно улучшает производительность. Игры работают плавно с отличным качеством графики.",
+      "user": "Эмили Уайт",
+      "rating": 4.4
+    },
+    {
+      "id": 7,
+      "product": "Игровое кресло Razer с RGB",
+      "image": "/images/products/RazerGamingRGB.webp",
+      "userImage": null,
+      "comment": "Это игровое кресло Razer с RGB очень удобное и обеспечивает отличную поддержку для долгих игровых часов. RGB-подсветка добавляет крутой эстетический вид.",
+      "user": "Джек Томпсон",
+      "rating": 4.9
+    },
+    {
+      "id": 8,
+      "product": "Xbox Series S",
+      "image": "/images/products/Xbox.webp",
+      "userImage": null,
+      "comment": "Xbox Series S - это компактная и мощная игровая консоль. Она обеспечивает отличную производительность по разумной цене.",
+      "user": "Лукас Мартинес",
+      "rating": 4.7
+    }
+  ],
+  "tr": [
+    {
+      "id": 1,
+      "product": "Alienware Kavisli 22-inç",
+      "image": "/images/products/AlienwareCurved.webp",
+      "userImage": null,
+      "comment": "Alienware Kavisli 22-inç monitör, mükemmel renk doğruluğu ve geniş izleme açıları ile etkileyici bir deneyim sunar. Oyun ve profesyonel işler için mükemmel.",
+      "user": "Alex Johnson",
+      "rating": 4.5
+    },
+    {
+      "id": 2,
+      "product": "Alienware NZ-1000",
+      "image": "/images/products/AlienwareNZ1000.webp",
+      "userImage": null,
+      "comment": "Alienware NZ-1000, oyun için bir güç merkezi. En zorlu oyunlarda bile sorunsuz çalışır. Tasarım şık ve fütüristik.",
+      "user": "Jessica Lee",
+      "rating": 5
+    },
+    {
+      "id": 3,
+      "product": "HyperX Konsol Joystickleri",
+      "image": "/images/products/HyperXConsoleJoysticks.webp",
+      "userImage": null,
+      "comment": "Bu HyperX konsol joystickleri mükemmel tutuş ve hassasiyet sağlar. Oyun performansımı önemli ölçüde artırdı.",
+      "user": "Michael Chen",
+      "rating": 4.7
+    },
+    {
+      "id": 4,
+      "product": "HyperX Kulaklık",
+      "image": "/images/products/HyperXHeadphones.webp",
+      "userImage": null,
+      "comment": "HyperX kulaklıklar inanılmaz ses kalitesi ve konfor sunar. Uzun oyun oturumları ve müzik dinlemek için mükemmel.",
+      "user": "Sophia Kim",
+      "rating": 4.8
+    },
+    {
+      "id": 5,
+      "product": "HyperX Klavye",
+      "image": "/images/products/HyperXKeyboard.webp",
+      "userImage": null,
+      "comment": "HyperX klavye, duyarlı tuşlar ve özelleştirilebilir RGB aydınlatma sunar. Hem oyuncular hem de programcılar için harika bir seçim.",
+      "user": "David Brown",
+      "rating": 4.6
+    },
+    {
+      "id": 6,
+      "product": "Radeon RX-120",
+      "image": "/images/products/RadeonRX120.webp",
+      "userImage": null,
+      "comment": "Radeon RX-120 ekran kartı performansı önemli ölçüde artırır. Oyunlar mükemmel grafik kalitesiyle sorunsuz çalışır.",
+      "user": "Emily White",
+      "rating": 4.4
+    },
+    {
+      "id": 7,
+      "product": "Razer RGB Oyun Koltuğu",
+      "image": "/images/products/RazerGamingRGB.webp",
+      "userImage": null,
+      "comment": "Bu Razer RGB oyun koltuğu son derece rahat ve uzun oyun saatleri için harika destek sağlar. RGB aydınlatma havalı bir estetik katıyor.",
+      "user": "Jack Thompson",
+      "rating": 4.9
+    },
+    {
+      "id": 8,
+      "product": "Xbox Series S",
+      "image": "/images/products/Xbox.webp",
+      "userImage": null,
+      "comment": "Xbox Series S, kompakt ve güçlü bir oyun konsolu. Makul bir fiyata mükemmel performans sunar.",
+      "user": "Lucas Martinez",
+      "rating": 4.7
+    }
+  ]
+}

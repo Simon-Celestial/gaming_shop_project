@@ -2,7 +2,7 @@ import {Header} from "../../Components/Layout/Header/Header.tsx";
 import {FooterTwo} from "../../Components/Layout/FooterTwo/FooterTwo.tsx";
 import styles from "./ShopPage.module.scss";
 import {PageBanner} from "../../Components/Reusables/PageBanner/PageBanner.tsx";
-import React, {useCallback, useContext, useState} from "react";
+import React, {useCallback, useContext, useEffect, useState} from "react";
 import {Rating, Slider, Stack} from "@mui/material";
 import {DeviceCard} from "../../Components/Reusables/DeviceCard/DeviceCard.tsx";
 import Pagination from '@mui/material/Pagination';
@@ -10,6 +10,11 @@ import {DataContext} from "../../../Context/DataContext/DataContext.tsx";
 import {Loader} from "../../Components/Reusables/Loader/Loader.tsx";
 import {Swiper, SwiperSlide} from "swiper/react";
 import {Autoplay, EffectFade} from "swiper/modules";
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-expect-error
+import customersCommentsData from "/public/data/CommentsData/customersCommentsData.json";
+import {useTranslation} from "react-i18next";
+import {CUSTOMERS_COMMENTS_DATA} from "../../../Types/types.ts";
 
 export const ShopPage = () => {
     const {
@@ -17,7 +22,9 @@ export const ShopPage = () => {
         productsLoading
     } = useContext(DataContext);
     const [value, setValue] = useState<number[]>([0, 1000]);
+    const [translatedComments,setTranslatedComments] = useState(customersCommentsData.en)
     const [sortOption, setSortOption] = useState("default");
+    const {i18n} = useTranslation();
 
     const handleChange = useCallback((_event: Event, newValue: number | number[]) => {
         setValue(newValue as number[]);
@@ -26,6 +33,18 @@ export const ShopPage = () => {
     const handleChangeSorting = useCallback((event: React.ChangeEvent<HTMLSelectElement>) => {
         setSortOption(event.target.value);
     }, [setSortOption])
+
+    useEffect(() => {
+        if (i18n.language === "en") {
+            setTranslatedComments(customersCommentsData.en);
+        } else if (i18n.language === "ru") {
+            setTranslatedComments(customersCommentsData.ru);
+        } else {
+            setTranslatedComments(customersCommentsData.tr);
+        }
+    }, [i18n.language]);
+
+    console.log(translatedComments)
 
 
     return (
@@ -294,211 +313,47 @@ export const ShopPage = () => {
                             freeMode={true}
                             loop={true}
                         >
-                            <SwiperSlide>
-                                <div className={styles.commentBox}>
-                                    <div className={styles.imageBox}>
-                                        <img src="/images/products/HyperXKeyboard.webp" alt="name"/>
-                                    </div>
-                                    <div className={styles.title}>
-                                        <h2>Product Name</h2>
-                                        <p>I also love the challenge of trying to beat a difficult game or master a new
-                                            skill.
-                                            Gaming has taught me a lot about perseverance and determination, and it's
-                                            helped me
-                                            to develop my problem-solving skills.</p>
-                                        <div className={styles.bottomRow}>
-                                            <div className={styles.userInfo}>
-                                                <div className={styles.userImg}>
-                                                    <img src="/images/user.png" alt="user"/>
-                                                </div>
-                                                <div className={styles.name}>
-                                                    <h2>Alex Tompson</h2>
-                                                    <p>Client</p>
+                            {translatedComments?.map((data : CUSTOMERS_COMMENTS_DATA)=> {
+                                return (
+                                    <SwiperSlide key={data?.id}>
+                                        <div className={styles.commentBox}>
+                                            <div className={styles.imageBox}>
+                                                <img src={data?.image} alt={data?.product}/>
+                                            </div>
+                                            <div className={styles.title}>
+                                                <h2>{data?.product}</h2>
+                                                <p>{data?.comment}</p>
+                                                <div className={styles.bottomRow}>
+                                                    <div className={styles.userInfo}>
+                                                        <div className={styles.userImg}>
+                                                            <img src={data?.userImage !== null? data?.userImage : "/images/user.png"} alt={data?.user}/>
+                                                        </div>
+                                                        <div className={styles.name}>
+                                                            <h2>{data?.user}</h2>
+                                                            <p>Client</p>
+                                                        </div>
+                                                    </div>
+                                                    <div className={styles.rating}>
+                                                        <p>{data?.rating} / 5.0</p>
+                                                        <Rating
+                                                            name="read-only"
+                                                            value={data?.rating}
+                                                            readOnly
+                                                            sx={{
+                                                                '& .MuiRating-icon': {
+                                                                    color: "#0EF0AD"
+                                                                }
+                                                            }}
+                                                        />
+                                                    </div>
                                                 </div>
                                             </div>
-                                            <div className={styles.rating}>
-                                                <p>4.0 / 5.0</p>
-                                                <Rating
-                                                    name="read-only"
-                                                    value={4}
-                                                    readOnly
-                                                    sx={{
-                                                        '& .MuiRating-icon': {
-                                                            color: "#0EF0AD"
-                                                        }
-                                                    }}
-                                                />
-                                            </div>
+
+
                                         </div>
-                                    </div>
-
-
-                                </div>
-                            </SwiperSlide>
-                            <SwiperSlide>
-                                <div className={styles.commentBox}>
-                                    <div className={styles.imageBox}>
-                                        <img src="/images/products/HyperXKeyboard.webp" alt="name"/>
-                                    </div>
-                                    <div className={styles.title}>
-                                        <h2>Product Name</h2>
-                                        <p>I also love the challenge of trying to beat a difficult game or master a new
-                                            skill.
-                                            Gaming has taught me a lot about perseverance and determination, and it's
-                                            helped me
-                                            to develop my problem-solving skills.</p>
-                                        <div className={styles.bottomRow}>
-                                            <div className={styles.userInfo}>
-                                                <div className={styles.userImg}>
-                                                    <img src="/images/user.png" alt="user"/>
-                                                </div>
-                                                <div className={styles.name}>
-                                                    <h2>Alex Tompson</h2>
-                                                    <p>Client</p>
-                                                </div>
-                                            </div>
-                                            <div className={styles.rating}>
-                                                <p>4.0 / 5.0</p>
-                                                <Rating
-                                                    name="read-only"
-                                                    value={4}
-                                                    readOnly
-                                                    sx={{
-                                                        '& .MuiRating-icon': {
-                                                            color: "#0EF0AD"
-                                                        }
-                                                    }}
-                                                />
-                                            </div>
-                                        </div>
-                                    </div>
-
-
-                                </div>
-                            </SwiperSlide>
-                            <SwiperSlide>
-                                <div className={styles.commentBox}>
-                                    <div className={styles.imageBox}>
-                                        <img src="/images/products/HyperXKeyboard.webp" alt="name"/>
-                                    </div>
-                                    <div className={styles.title}>
-                                        <h2>Product Name</h2>
-                                        <p>I also love the challenge of trying to beat a difficult game or master a new
-                                            skill.
-                                            Gaming has taught me a lot about perseverance and determination, and it's
-                                            helped me
-                                            to develop my problem-solving skills.</p>
-                                        <div className={styles.bottomRow}>
-                                            <div className={styles.userInfo}>
-                                                <div className={styles.userImg}>
-                                                    <img src="/images/user.png" alt="user"/>
-                                                </div>
-                                                <div className={styles.name}>
-                                                    <h2>Alex Tompson</h2>
-                                                    <p>Client</p>
-                                                </div>
-                                            </div>
-                                            <div className={styles.rating}>
-                                                <p>4.0 / 5.0</p>
-                                                <Rating
-                                                    name="read-only"
-                                                    value={4}
-                                                    readOnly
-                                                    sx={{
-                                                        '& .MuiRating-icon': {
-                                                            color: "#0EF0AD"
-                                                        }
-                                                    }}
-                                                />
-                                            </div>
-                                        </div>
-                                    </div>
-
-
-                                </div>
-                            </SwiperSlide>
-                            <SwiperSlide>
-                                <div className={styles.commentBox}>
-                                    <div className={styles.imageBox}>
-                                        <img src="/images/products/HyperXKeyboard.webp" alt="name"/>
-                                    </div>
-                                    <div className={styles.title}>
-                                        <h2>Product Name</h2>
-                                        <p>I also love the challenge of trying to beat a difficult game or master a new
-                                            skill.
-                                            Gaming has taught me a lot about perseverance and determination, and it's
-                                            helped me
-                                            to develop my problem-solving skills.</p>
-                                        <div className={styles.bottomRow}>
-                                            <div className={styles.userInfo}>
-                                                <div className={styles.userImg}>
-                                                    <img src="/images/user.png" alt="user"/>
-                                                </div>
-                                                <div className={styles.name}>
-                                                    <h2>Alex Tompson</h2>
-                                                    <p>Client</p>
-                                                </div>
-                                            </div>
-                                            <div className={styles.rating}>
-                                                <p>4.0 / 5.0</p>
-                                                <Rating
-                                                    name="read-only"
-                                                    value={4}
-                                                    readOnly
-                                                    sx={{
-                                                        '& .MuiRating-icon': {
-                                                            color: "#0EF0AD"
-                                                        }
-                                                    }}
-                                                />
-                                            </div>
-                                        </div>
-                                    </div>
-
-
-                                </div>
-                            </SwiperSlide>
-                            <SwiperSlide>
-                                <div className={styles.commentBox}>
-                                    <div className={styles.imageBox}>
-                                        <img src="/images/products/HyperXKeyboard.webp" alt="name"/>
-                                    </div>
-                                    <div className={styles.title}>
-                                        <h2>Product Name</h2>
-                                        <p>I also love the challenge of trying to beat a difficult game or master a new
-                                            skill.
-                                            Gaming has taught me a lot about perseverance and determination, and it's
-                                            helped me
-                                            to develop my problem-solving skills.</p>
-                                        <div className={styles.bottomRow}>
-                                            <div className={styles.userInfo}>
-                                                <div className={styles.userImg}>
-                                                    <img src="/images/user.png" alt="user"/>
-                                                </div>
-                                                <div className={styles.name}>
-                                                    <h2>Alex Tompson</h2>
-                                                    <p>Client</p>
-                                                </div>
-                                            </div>
-                                            <div className={styles.rating}>
-                                                <p>4.0 / 5.0</p>
-                                                <Rating
-                                                    name="read-only"
-                                                    value={4}
-                                                    readOnly
-                                                    sx={{
-                                                        '& .MuiRating-icon': {
-                                                            color: "#0EF0AD"
-                                                        }
-                                                    }}
-                                                />
-                                            </div>
-                                        </div>
-                                    </div>
-
-
-                                </div>
-                            </SwiperSlide>
+                                    </SwiperSlide>
+                                )
+                            })}
                         </Swiper>
                     </div>
                 </section>
