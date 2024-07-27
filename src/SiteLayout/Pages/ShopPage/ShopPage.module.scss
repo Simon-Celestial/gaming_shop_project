@@ -50,7 +50,27 @@
             text-transform: uppercase;
             margin-bottom: 10px;
           }
-
+          .searchContainer {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            border: 1px solid $green;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+            svg {
+              color: $green;
+            }
+            input {
+              background: transparent;
+              outline: 0;
+              border: 0;
+              width: 100%;
+              padding: 0 8px;
+              color: $green;
+              font-family: $interFont;
+            }
+          }
           .filterOptions {
             display: flex;
             width: 100%;
@@ -61,7 +81,7 @@
             transition: color $transition;
 
             &:hover {
-              color: $green;
+              color: $greenDark;
             }
 
           }

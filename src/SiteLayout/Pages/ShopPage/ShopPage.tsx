@@ -2,7 +2,7 @@ import {Header} from "../../Components/Layout/Header/Header.tsx";
 import {FooterTwo} from "../../Components/Layout/FooterTwo/FooterTwo.tsx";
 import styles from "./ShopPage.module.scss";
 import {PageBanner} from "../../Components/Reusables/PageBanner/PageBanner.tsx";
-import React, {useCallback, useContext, useEffect, useState} from "react";
+import React, {useCallback, useContext, useEffect, useMemo, useState} from "react";
 import {Rating, Slider, Stack} from "@mui/material";
 import {DeviceCard} from "../../Components/Reusables/DeviceCard/DeviceCard.tsx";
 import Pagination from '@mui/material/Pagination';
@@ -10,6 +10,7 @@ import {DataContext} from "../../../Context/DataContext/DataContext.tsx";
 import {Loader} from "../../Components/Reusables/Loader/Loader.tsx";
 import {Swiper, SwiperSlide} from "swiper/react";
 import {Autoplay, EffectFade} from "swiper/modules";
+import SearchIcon from '@mui/icons-material/Search';
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-expect-error
 import customersCommentsData from "/public/data/CommentsData/customersCommentsData.json";
@@ -21,10 +22,96 @@ export const ShopPage = () => {
         productsData,
         productsLoading
     } = useContext(DataContext);
+
     const [value, setValue] = useState<number[]>([0, 1000]);
-    const [translatedComments,setTranslatedComments] = useState(customersCommentsData.en)
+    const [translatedComments, setTranslatedComments] = useState(customersCommentsData.en)
     const [sortOption, setSortOption] = useState("default");
+    const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
+    const [selectedBrands, setSelectedBrands] = useState<string[]>([]);
+
+    const [selectedColors, setSelectedColors] = useState<string[]>([]);
+    const [searchTerm, setSearchTerm] = useState("");
+    const ALL_CATEGORIES = useMemo(() => Array.from(new Set(productsData?.map(it => it.category))), [productsData]);
+    const ALL_COLORS = useMemo(() => {
+        const colorsArray = productsData?.flatMap(it => it.colors) || [];
+        return Array.from(new Set(colorsArray));
+    }, [productsData]);
+    const ALL_BRANDS = useMemo(() => Array.from(new Set(productsData?.map(it => it.brand))), [productsData]);
+
     const {i18n} = useTranslation();
+
+    // 1) DATA FILTERED WITH SEARCH PARAMETERS
+    const filteredBySearchData = useMemo(() => {
+        return productsData?.filter(it => it?.name.toLowerCase().includes(searchTerm.toLowerCase()));
+    }, [productsData, searchTerm]);
+
+    // 2) DATA FILTERED BY CATEGORIES
+    const filteredByCategoryData = useMemo(() => {
+        if (selectedCategories.length === 0) {
+            return filteredBySearchData;
+        } else {
+            return filteredBySearchData.filter(product =>
+                selectedCategories.some(category => product?.category.toLowerCase() === category?.toLowerCase())
+            );
+        }
+    }, [filteredBySearchData, selectedCategories])
+
+    // 3) DATA FILTERED BY COLORS
+    const filteredByColorsData = useMemo(() => {
+        if (selectedColors.length === 0) {
+            return filteredByCategoryData;
+        } else {
+            return filteredByCategoryData?.filter(product =>
+                selectedColors.some(color => product?.colors.includes(color))
+            );
+        }
+    }, [filteredByCategoryData, selectedColors])
+
+    // 4) DATA FILTERED BY BRANDS
+    const filteredByBrandsData = useMemo(() => {
+        if (selectedBrands.length === 0) {
+            return filteredByColorsData;
+        } else {
+            return filteredByColorsData?.filter(product =>
+                selectedBrands.some(brand => product?.brand === brand)
+            );
+        }
+    }, [filteredByColorsData, selectedBrands])
+
+
+
+    // FUNCTION TO UPDATE "searchTerm" WITH SEARCH PARAMETERS
+    const handleSearchProducts = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
+        setSearchTerm(e.target.value);
+    }, [setSearchTerm]);
+
+    // FUNCTION TO SELECT CATEGORY, AND ADD IT TO "selectedCategory"
+    const handleCategorySelection = useCallback((category: string) => {
+        setSelectedCategories(prevState =>
+            prevState.includes(category)
+                ? prevState.filter(it => it !== category)
+                : [...prevState, category]
+        );
+    }, [setSelectedCategories]);
+
+    // FUNCTION TO SELECT COLOR, AND ADD IT TO "selectedColors"
+    const handleColorSelection = useCallback((color: string) => {
+        setSelectedColors(prevState =>
+            prevState.includes(color)
+                ? prevState.filter(it => it !== color)
+                : [...prevState, color]
+        );
+    }, [setSelectedColors]);
+
+    // FUNCTION TO SELECT BRAND, AND ADD IT TO "selectedBrands"
+    const handleBrandSelection = useCallback((brand: string) => {
+        setSelectedBrands(prevState =>
+            prevState.includes(brand)
+                ? prevState.filter(it => it !== brand)
+                : [...prevState, brand]
+        );
+    }, [setSelectedBrands]);
+
 
     const handleChange = useCallback((_event: Event, newValue: number | number[]) => {
         setValue(newValue as number[]);
@@ -34,6 +121,7 @@ export const ShopPage = () => {
         setSortOption(event.target.value);
     }, [setSortOption])
 
+    // useEffect TO CHANGE LANGUAGE
     useEffect(() => {
         if (i18n.language === "en") {
             setTranslatedComments(customersCommentsData.en);
@@ -43,9 +131,6 @@ export const ShopPage = () => {
             setTranslatedComments(customersCommentsData.tr);
         }
     }, [i18n.language]);
-
-    console.log(translatedComments)
-
 
     return (
         <>
@@ -60,46 +145,57 @@ export const ShopPage = () => {
                         <div className={styles.allFilters}>
                             <h2>Filter</h2>
                             <div className={styles.filterBox}>
-                                <h2>category</h2>
-                                <div className={styles.filterOptions}>
-                                    <p>GPU</p> <p>(1)</p>
-                                </div>
-                                <div className={styles.filterOptions}>
-                                    <p>CPU</p> <p>(6)</p>
-                                </div>
-                                <div className={styles.filterOptions}>
-                                    <p>Headset</p> <p>(4)</p>
-                                </div>
-                                <div className={styles.filterOptions}>
-                                    <p>Keyboard</p> <p>(3)</p>
-                                </div>
-                                <div className={styles.filterOptions}>
-                                    <p>Speakers</p> <p>(0)</p>
-                                </div>
-                                <div className={styles.filterOptions}>
-                                    <p>Uncategorized</p> <p>(2)</p>
+                                <h2>search</h2>
+                                <div className={styles.searchContainer}>
+                                    <SearchIcon/>
+                                    <input
+                                        value={searchTerm}
+                                        onChange={handleSearchProducts}
+                                        type="text"
+                                        placeholder={"Type to search..."}
+                                    />
                                 </div>
                             </div>
                             <div className={styles.filterBox}>
+                                <h2>category</h2>
+                                {ALL_CATEGORIES?.map((category: string) => {
+                                    const filtered = productsData?.filter(it => it?.category === category)?.length || 0;
+                                    return (
+                                        <div key={category}
+                                             className={styles.filterOptions}
+                                             onClick={() => handleCategorySelection(category)}
+                                             style={{
+                                                 color: selectedCategories.includes(category) ? "#0EF0AD" : "",
+                                             }}
+                                        >
+                                            <p>{category}</p> <p>({filtered})</p>
+                                        </div>
+
+                                    )
+                                })}
+                            </div>
+                            <div className={styles.filterBox}>
                                 <h2>color</h2>
-                                <div className={styles.filterOptions}>
-                                    <p>Black</p> <p>(1)</p>
-                                </div>
-                                <div className={styles.filterOptions}>
-                                    <p>White</p> <p>(6)</p>
-                                </div>
-                                <div className={styles.filterOptions}>
-                                    <p>Brown</p> <p>(4)</p>
-                                </div>
-                                <div className={styles.filterOptions}>
-                                    <p>Gray</p> <p>(3)</p>
-                                </div>
-                                <div className={styles.filterOptions}>
-                                    <p>Green</p> <p>(0)</p>
-                                </div>
-                                <div className={styles.filterOptions}>
-                                    <p>Red</p> <p>(2)</p>
-                                </div>
+                                {ALL_COLORS?.map((color: string) => {
+                                    const filtered = productsData?.filter(it => it?.colors?.includes(color))?.length || 0;
+                                    return (
+                                        <div
+                                            key={color}
+                                            className={styles.filterOptions}
+                                            onClick={() => handleColorSelection(color)}
+                                            style={{
+                                                color: selectedColors.includes(color) ? "#0EF0AD" : "",
+                                            }}
+                                        >
+                                            <p
+                                                style={{
+                                                    textTransform: "uppercase"
+                                                }}
+                                            >{color}
+                                            </p> <p>({filtered})</p>
+                                        </div>
+                                    )
+                                })}
                             </div>
                             <div className={styles.filterBox}>
                                 <h2>price</h2>
@@ -134,21 +230,23 @@ export const ShopPage = () => {
                             </div>
                             <div className={styles.filterBox}>
                                 <h2>brand</h2>
-                                <div className={styles.filterOptions}>
-                                    <p>Asus</p> <p>(1)</p>
-                                </div>
-                                <div className={styles.filterOptions}>
-                                    <p>Logitech</p> <p>(6)</p>
-                                </div>
-                                <div className={styles.filterOptions}>
-                                    <p>A4tech</p> <p>(4)</p>
-                                </div>
-                                <div className={styles.filterOptions}>
-                                    <p>Zowie</p> <p>(3)</p>
-                                </div>
-                                <div className={styles.filterOptions}>
-                                    <p>Razer</p> <p>(0)</p>
-                                </div>
+                                {
+                                    ALL_BRANDS?.map((brand: string) => {
+                                        const filtered = productsData?.filter(it => it?.brand === brand)?.length || 0;
+                                        return (
+                                            <div
+                                                key={brand}
+                                                className={styles.filterOptions}
+                                                onClick={()=>handleBrandSelection(brand)}
+                                                style={{
+                                                    color: selectedBrands.includes(brand) ? "#0EF0AD" : "",
+                                                }}
+                                            >
+                                                <p>{brand}</p> <p>({filtered})</p>
+                                            </div>
+                                        )
+                                    })
+                                }
                             </div>
                             <div className={styles.filterBox}>
                                 <h2>rating</h2>
@@ -266,18 +364,17 @@ export const ShopPage = () => {
                                 </div>
                             </div>
                             <div className={styles.allProducts}>
-                                {productsData?.map((product) => {
+                                {filteredByBrandsData?.map((product) => {
                                     return (
                                         <div key={product?.id} className={styles.productCard}>
                                             <DeviceCard data={product}/>
                                         </div>
-
                                     )
                                 })}
                             </div>
                             <div className={styles.pagination}>
                                 <Stack spacing={2}>
-                                    <Pagination
+                                <Pagination
                                         count={10}
                                         size="large"
                                         sx={{
@@ -306,14 +403,12 @@ export const ShopPage = () => {
                             modules={[EffectFade, Autoplay]}
                             slidesPerView={2}
                             autoplay={{delay: 2500}}
-                            breakpoints={{
-
-                            }}
-                            spaceBetween={10}
+                            breakpoints={{}}
+                            spaceBetween={15}
                             freeMode={true}
                             loop={true}
                         >
-                            {translatedComments?.map((data : CUSTOMERS_COMMENTS_DATA)=> {
+                            {translatedComments?.map((data: CUSTOMERS_COMMENTS_DATA) => {
                                 return (
                                     <SwiperSlide key={data?.id}>
                                         <div className={styles.commentBox}>
@@ -326,7 +421,9 @@ export const ShopPage = () => {
                                                 <div className={styles.bottomRow}>
                                                     <div className={styles.userInfo}>
                                                         <div className={styles.userImg}>
-                                                            <img src={data?.userImage !== null? data?.userImage : "/images/user.png"} alt={data?.user}/>
+                                                            <img
+                                                                src={data?.userImage !== null ? data?.userImage : "/images/user.png"}
+                                                                alt={data?.user}/>
                                                         </div>
                                                         <div className={styles.name}>
                                                             <h2>{data?.user}</h2>
