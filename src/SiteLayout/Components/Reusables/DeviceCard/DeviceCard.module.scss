@@ -5,7 +5,7 @@
   border-radius: 0 10px;
   display: flex;
   flex-direction: column;
-  padding: 15px;
+  padding: 15px 15px 35px 15px;
   border: 1px solid $green;
   position: relative;
   overflow: hidden;
@@ -63,38 +63,43 @@
       -webkit-box-orient: vertical;
       font-weight: 500;
       white-space: nowrap;
-      width: 90%;
+      width: 100%;
+      padding-right: 35px;
       margin-top: 30px;
       transition: color $transition;
+      padding-bottom: 5px;
       &:hover {
         color: $green;
       }
     }
 
-    .offer {
+    .flag {
       position: absolute;
-      top: 0;
-      left: 0;
       font-size: 14px;
       border-radius: 5px;
       padding: 2px 8px;
       letter-spacing: 1px;
       font-weight: 600;
+      top: 0;
       background: linear-gradient(90deg, $green 0%, rgba(0, 152, 255, 0) 100%);
-
+      &.offer {
+        left: 0;
+      }
     }
 
     p {
       font-size: 12px;
       color: #b0b0b0;
       text-transform: uppercase;
-      margin-top: 5px;
+      margin-top: 10px;
     }
 
   }
   .cardImage {
     width: 100%;
     overflow: hidden;
+    min-height: 298px;
+    padding: 15px;
     img {
       transition: transform $transition;
       width: 100%;

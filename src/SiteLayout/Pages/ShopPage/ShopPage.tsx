@@ -17,19 +17,28 @@ import customersCommentsData from "/public/data/CommentsData/customersCommentsDa
 import {useTranslation} from "react-i18next";
 import {CUSTOMERS_COMMENTS_DATA} from "../../../Types/types.ts";
 
+// PAGINATION
+const itemsPerPage = 9;
+
+
 export const ShopPage = () => {
     const {
         productsData,
         productsLoading
     } = useContext(DataContext);
 
-    const [value, setValue] = useState<number[]>([0, 1000]);
-    const [translatedComments, setTranslatedComments] = useState(customersCommentsData.en)
+    const PRODUCT_MAX_PRICE = useMemo(() => {
+        return productsData.length > 0 ? Math.max(...productsData.map((product) => product?.salePrice)) : 0;
+    }, [productsData]);
+    const [priceRange, setPriceRange] = useState<number[]>([0, PRODUCT_MAX_PRICE]);
+    const [filteredPriceRange, setFilteredPriceRange] = useState<number[]>([0, PRODUCT_MAX_PRICE]);
+    const [translatedComments, setTranslatedComments] = useState(customersCommentsData.en);
     const [sortOption, setSortOption] = useState("default");
     const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
     const [selectedBrands, setSelectedBrands] = useState<string[]>([]);
-
+    const [selectedRating, setSelectedRating] = useState<number[]>([]);
     const [selectedColors, setSelectedColors] = useState<string[]>([]);
+    const [currentPage, setCurrentPage] = useState(1);
     const [searchTerm, setSearchTerm] = useState("");
     const ALL_CATEGORIES = useMemo(() => Array.from(new Set(productsData?.map(it => it.category))), [productsData]);
     const ALL_COLORS = useMemo(() => {
@@ -37,8 +46,20 @@ export const ShopPage = () => {
         return Array.from(new Set(colorsArray));
     }, [productsData]);
     const ALL_BRANDS = useMemo(() => Array.from(new Set(productsData?.map(it => it.brand))), [productsData]);
+    const ALL_RATINGS = useMemo(() => Array.from(new Set(productsData?.map(it => it.rating))), [productsData]);
 
     const {i18n} = useTranslation();
+
+    const onApply = useCallback(() => {
+        setFilteredPriceRange(priceRange);
+    }, [priceRange]);
+
+    // TO SET MAX PRICE VALUE WHEN PAGE LOADED
+    useEffect(() => {
+        setPriceRange([0, PRODUCT_MAX_PRICE]);
+        setFilteredPriceRange([0, PRODUCT_MAX_PRICE]);
+    }, [PRODUCT_MAX_PRICE]);
+
 
     // 1) DATA FILTERED WITH SEARCH PARAMETERS
     const filteredBySearchData = useMemo(() => {
@@ -54,7 +75,7 @@ export const ShopPage = () => {
                 selectedCategories.some(category => product?.category.toLowerCase() === category?.toLowerCase())
             );
         }
-    }, [filteredBySearchData, selectedCategories])
+    }, [filteredBySearchData, selectedCategories]);
 
     // 3) DATA FILTERED BY COLORS
     const filteredByColorsData = useMemo(() => {
@@ -65,7 +86,7 @@ export const ShopPage = () => {
                 selectedColors.some(color => product?.colors.includes(color))
             );
         }
-    }, [filteredByCategoryData, selectedColors])
+    }, [filteredByCategoryData, selectedColors]);
 
     // 4) DATA FILTERED BY BRANDS
     const filteredByBrandsData = useMemo(() => {
@@ -76,10 +97,44 @@ export const ShopPage = () => {
                 selectedBrands.some(brand => product?.brand === brand)
             );
         }
-    }, [filteredByColorsData, selectedBrands])
+    }, [filteredByColorsData, selectedBrands]);
 
+    // 5) DATA FILTERED BY RATING
+    const filteredByRating = useMemo(() => {
+        if (selectedRating.length === 0) {
+            return filteredByBrandsData;
+        } else {
+            return filteredByBrandsData?.filter(product =>
+                selectedRating.some(rating => product?.rating === rating)
+            );
+        }
+    }, [filteredByBrandsData, selectedRating])
 
+    // 6) DATA FILTERED BY PRICE
+    const filteredByPrice = useMemo(() => {
+        return filteredByRating?.filter(product =>
+            product.salePrice >= filteredPriceRange[0] && product.salePrice <= filteredPriceRange[1]
+        );
+    }, [filteredByRating, filteredPriceRange]);
 
+    // DATA SORTED BY SELECTED OPTION
+    const sortedProducts = useMemo(() => {
+        let sortedProducts = [...filteredByPrice];
+
+        if (sortOption === "low-high") {
+            sortedProducts = sortedProducts.sort((a, b) => a.salePrice - b.salePrice);
+        } else if (sortOption === "high-low") {
+            sortedProducts = sortedProducts.sort((a, b) => b.salePrice - a.salePrice);
+        } else if (sortOption === "rating-high-low") {
+            sortedProducts = sortedProducts.sort((a, b) => b.rating - a.rating);
+        } else if (sortOption === "rating-low-high") {
+            sortedProducts = sortedProducts.sort((a, b) => a.rating - b.rating);
+        }
+
+        return sortedProducts;
+    }, [filteredByPrice, sortOption]);
+
+    
     // FUNCTION TO UPDATE "searchTerm" WITH SEARCH PARAMETERS
     const handleSearchProducts = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
         setSearchTerm(e.target.value);
@@ -112,14 +167,26 @@ export const ShopPage = () => {
         );
     }, [setSelectedBrands]);
 
+    // FUNCTION TO SELECT RATING, AND ADD IT TO "selectedRating"
+    const handleRatingSelection = useCallback((rating: number) => {
+        setSelectedRating(prevState =>
+            prevState.includes(rating)
+                ? prevState.filter(it => it !== rating)
+                : [...prevState, rating]
+        );
+    }, [setSelectedRating]);
 
-    const handleChange = useCallback((_event: Event, newValue: number | number[]) => {
-        setValue(newValue as number[]);
-    }, [setValue]);
 
+    // FUNCTION TO UPDATE SORTING OPTION
     const handleChangeSorting = useCallback((event: React.ChangeEvent<HTMLSelectElement>) => {
         setSortOption(event.target.value);
     }, [setSortOption])
+
+
+    const handleChange = useCallback((_event: Event, newValue: number | number[]) => {
+        setPriceRange(newValue as number[]);
+    }, [setPriceRange]);
+
 
     // useEffect TO CHANGE LANGUAGE
     useEffect(() => {
@@ -131,6 +198,50 @@ export const ShopPage = () => {
             setTranslatedComments(customersCommentsData.tr);
         }
     }, [i18n.language]);
+
+    // FUNCTION TO RESET ALL FILTERS
+    const handleResetFilters = useCallback(() => {
+        setPriceRange([0, PRODUCT_MAX_PRICE]);
+        setFilteredPriceRange([0,PRODUCT_MAX_PRICE]);
+        setSelectedCategories([]);
+        setSelectedRating([]);
+        setSelectedBrands([]);
+        setSearchTerm("");
+        setSelectedColors([]);
+        setSortOption("default");
+    }, [
+        PRODUCT_MAX_PRICE,
+        setPriceRange,
+        setSelectedCategories, setSelectedRating,
+        setSelectedBrands,
+        setSearchTerm,
+        setSelectedColors,
+        setFilteredPriceRange,
+        setSortOption
+    ]);
+
+    // PAGINATION
+    const startIndex = useMemo(() => (currentPage - 1) * itemsPerPage,
+        [currentPage]);
+    const endIndex = useMemo(() => startIndex + itemsPerPage, [startIndex]);
+
+    const handlePageChange = useCallback(
+        (_event: React.ChangeEvent<unknown>, page: number) => {
+            setCurrentPage(page);
+        },
+        [setCurrentPage]
+    );
+
+    const currentProducts = useMemo(() => {
+        return sortedProducts?.slice(startIndex, endIndex);
+    }, [sortedProducts, startIndex, endIndex]);
+
+    useEffect(() => {
+        if (sortedProducts && sortedProducts.length > 0 && endIndex > sortedProducts.length - 1) {
+            setCurrentPage(Math.ceil(sortedProducts?.length / itemsPerPage));
+        }
+
+    }, [endIndex, sortedProducts, setCurrentPage]);
 
     return (
         <>
@@ -170,7 +281,6 @@ export const ShopPage = () => {
                                         >
                                             <p>{category}</p> <p>({filtered})</p>
                                         </div>
-
                                     )
                                 })}
                             </div>
@@ -203,9 +313,9 @@ export const ShopPage = () => {
                                     <div className={styles.sliderWrapper}>
                                         <Slider
                                             min={0}
-                                            max={1000}
+                                            max={PRODUCT_MAX_PRICE}
                                             step={5}
-                                            value={value}
+                                            value={priceRange}
                                             onChange={handleChange}
                                             sx={{
                                                 '&.MuiSlider-root': {
@@ -215,16 +325,22 @@ export const ShopPage = () => {
                                         />
                                     </div>
                                     <div className={styles.buttonsBox}>
-                                        <div className={styles.btn}>
+                                        <div
+                                            className={styles.btn}
+                                            onClick={onApply}
+                                        >
                                             Filter
                                         </div>
-                                        <div className={styles.btn}>
+                                        <div
+                                            className={styles.btn}
+                                            onClick={handleResetFilters}
+                                        >
                                             Reset
                                         </div>
 
                                     </div>
                                     <div className={styles.sliderValue}>
-                                        <p>Price: </p>${value[0].toFixed(2)} <p> — </p> ${value[1].toFixed(2)}
+                                        <p>Price: </p>${priceRange[0].toFixed(2)} <p> — </p> ${priceRange[1].toFixed(2)}
                                     </div>
                                 </div>
                             </div>
@@ -237,7 +353,7 @@ export const ShopPage = () => {
                                             <div
                                                 key={brand}
                                                 className={styles.filterOptions}
-                                                onClick={()=>handleBrandSelection(brand)}
+                                                onClick={() => handleBrandSelection(brand)}
                                                 style={{
                                                     color: selectedBrands.includes(brand) ? "#0EF0AD" : "",
                                                 }}
@@ -250,103 +366,37 @@ export const ShopPage = () => {
                             </div>
                             <div className={styles.filterBox}>
                                 <h2>rating</h2>
-                                <div className={styles.filterOptions}>
-                                    <div className={styles.rating}>
-                                        <Rating
-                                            name="read-only"
-                                            value={5}
-                                            readOnly
-                                            sx={{
-                                                '& .MuiRating-icon': {
-                                                    color: "#0EF0AD"
-                                                }
+                                {ALL_RATINGS?.map((rating: number) => {
+                                    const filtered = productsData?.filter(it => it?.rating === rating)?.length || 0;
+                                    return (
+                                        <div
+                                            key={rating}
+                                            className={styles.filterOptions}
+                                            onClick={() => handleRatingSelection(rating)}
+                                            style={{
+                                                color: selectedRating.includes(rating) ? "#0EF0AD" : "",
                                             }}
-                                        />
-                                    </div>
-                                    <p>(5)</p>
-                                </div>
-                                <div className={styles.filterOptions}>
-                                    <div className={styles.rating}>
-                                        <Rating
-                                            name="read-only"
-                                            value={4}
-                                            readOnly
-                                            sx={{
-                                                '& .MuiRating-icon': {
-                                                    color: "#0EF0AD"
-                                                }
-                                            }}
-                                        />
-                                    </div>
-                                    <p>(4)</p>
-                                </div>
-                                <div className={styles.filterOptions}>
-                                    <div className={styles.rating}>
-                                        <Rating
-                                            name="read-only"
-                                            value={3}
-                                            readOnly
-                                            sx={{
-                                                '& .MuiRating-icon': {
-                                                    color: "#0EF0AD"
-                                                }
-                                            }}
-                                        />
-                                    </div>
-                                    <p>(3)</p>
-                                </div>
-                                <div className={styles.filterOptions}>
-                                    <div className={styles.rating}>
-                                        <Rating
-                                            name="read-only"
-                                            value={2}
-                                            readOnly
-                                            sx={{
-                                                '& .MuiRating-icon': {
-                                                    color: "#0EF0AD"
-                                                }
-                                            }}
-                                        />
-                                    </div>
-                                    <p>(2)</p>
-                                </div>
-                                <div className={styles.filterOptions}>
-                                    <div className={styles.rating}>
-                                        <Rating
-                                            name="read-only"
-                                            value={1}
-                                            readOnly
-                                            sx={{
-                                                '& .MuiRating-icon': {
-                                                    color: "#0EF0AD"
-                                                }
-                                            }}
-                                        />
-                                    </div>
-                                    <p>(1)</p>
-                                </div>
-                                <div className={styles.filterOptions}>
-                                    <div className={styles.rating}>
-                                        <Rating
-                                            name="read-only"
-                                            value={0}
-                                            readOnly
-                                            sx={{
-                                                '& .MuiRating-icon': {
-                                                    color: "#0EF0AD"
-                                                }
-                                            }}
-                                        />
-                                    </div>
-                                    <p>(0)</p>
-                                </div>
 
-
+                                        >
+                                            <Rating
+                                                name="read-only"
+                                                value={rating}
+                                                readOnly
+                                                sx={{
+                                                    '& .MuiRating-icon': {
+                                                        color: selectedRating.includes(rating) ? "#0EF0AD!important" : "rgb(197, 197, 202)"
+                                                    }
+                                                }}
+                                            />
+                                            <p>({filtered})</p>
+                                        </div>
+                                    )
+                                })}
                             </div>
                         </div>
                         <div className={styles.productsContainer}>
                             <div className={styles.sortingContainer}>
-                                <p>Showing all 9 results</p>
+                                <p>Showing all {filteredByPrice?.length} results</p>
                                 <div className={styles.sort}>
                                     <select
                                         value={sortOption}
@@ -355,16 +405,16 @@ export const ShopPage = () => {
                                         <option value="default" disabled>
                                             Default sorting
                                         </option>
-                                        <option value="latest">Sort latest</option>
-                                        <option value="rating">Sort rating</option>
-                                        <option value="low-high">Sort price : low-high</option>
-                                        <option value="high-low">Sort price : high-low</option>
+                                        <option value="rating-high-low">By rating: high-low</option>
+                                        <option value="rating-low-high">By rating: low-high</option>
+                                        <option value="low-high">By price : low-high</option>
+                                        <option value="high-low">By price : high-low</option>
                                     </select>
 
                                 </div>
                             </div>
                             <div className={styles.allProducts}>
-                                {filteredByBrandsData?.map((product) => {
+                                {currentProducts?.map((product) => {
                                     return (
                                         <div key={product?.id} className={styles.productCard}>
                                             <DeviceCard data={product}/>
@@ -374,9 +424,11 @@ export const ShopPage = () => {
                             </div>
                             <div className={styles.pagination}>
                                 <Stack spacing={2}>
-                                <Pagination
-                                        count={10}
+                                    <Pagination
+                                        count={Math.ceil(sortedProducts?.length / itemsPerPage)}
                                         size="large"
+                                        page={currentPage}
+                                        onChange={handlePageChange}
                                         sx={{
                                             '& .MuiPaginationItem-root': {
                                                 color: '#0EF0AD',
@@ -389,7 +441,6 @@ export const ShopPage = () => {
                                                 },
                                             },
                                         }}
-
                                     />
                                 </Stack>
                             </div>

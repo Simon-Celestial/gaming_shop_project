@@ -79,11 +79,15 @@
             justify-content: space-between;
             cursor: pointer;
             transition: color $transition;
-
+            span {
+              transition: $transition!important;
+            }
             &:hover {
               color: $greenDark;
+              span {
+                color: $greenDark;
+              }
             }
-
           }
 
           .priceSlider {

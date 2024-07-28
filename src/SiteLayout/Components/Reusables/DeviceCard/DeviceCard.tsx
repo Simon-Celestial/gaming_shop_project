@@ -4,6 +4,7 @@ import {Link} from "react-router-dom";
 import styles from "./DeviceCard.module.scss";
 import {PRODUCTS_DATA} from "../../../../Types/types.ts";
 import React from "react";
+import {Rating} from "@mui/material";
 
 interface DeviceCardProps {
     data: PRODUCTS_DATA
@@ -21,10 +22,32 @@ export const DeviceCard: React.FC<DeviceCardProps> = ({data}) => {
 
             </div>
             <div className={styles.cardTitle}>
-                <div className={styles.offer}>
-                    Offer
-                </div>
-                <Link to={""}>{data?.name}</Link>
+                {
+                    data.regularPrice ?
+                        <div className={`${styles.flag} ${styles.offer}`}>
+                            {(((data.regularPrice - data.salePrice) / data?.regularPrice) * 100)?.toFixed(1)} %
+                        </div>
+                        :
+                        null
+                }
+
+                <Link
+                    to={""}
+                >
+                    {data?.name}
+                </Link>
+                <Rating
+                    name="read-only"
+                    value={data?.rating}
+                    readOnly
+                    sx={{
+                        '& .MuiRating-icon': {
+                            color: "#0EF0AD"
+                        }
+                    }}
+
+                />
+
                 <p>{data?.brand}</p>
             </div>
             <div className={styles.cardImage}>
