@@ -11,7 +11,8 @@ import {SideMenu} from "../SideMenu/SideMenu.tsx";
 // @ts-expect-error
 import navData from '/public/data/NavData/navData.json';
 import {Basket} from "../Basket/Basket.tsx";
-import {useCallback, useState} from "react";
+import {useCallback, useContext, useState} from "react";
+import {BasketContext} from "../../../../Context/BasketContext/BasketContext.tsx";
 
 interface NAV_DATA {
     id: string;
@@ -21,13 +22,15 @@ interface NAV_DATA {
 
 
 export const Header = () => {
-
+    const {
+        cartItems
+    } = useContext(BasketContext)
     const location = useLocation();
     const [basketOpen, setBasketOpen] = useState(false);
 
-    const handleBasketOpen = useCallback(()=> {
+    const handleBasketOpen = useCallback(() => {
         setBasketOpen(true)
-    },[setBasketOpen])
+    }, [setBasketOpen])
 
 
     return (
@@ -104,7 +107,13 @@ export const Header = () => {
                         <div className={styles.buttonBlock}>
                             <PersonOutlineIcon/>
                         </div>
-                        <div className={`${styles.buttonBlock} ${styles.cartButton}`} onClick={handleBasketOpen}>
+                        <div
+                            className={`${styles.buttonBlock} ${styles.cartButton}`}
+                            onClick={handleBasketOpen}
+                        >
+                            <div className={`${styles.circle} ${cartItems?.length > 9 ? styles.wideCircle : ""}`}>
+                                {cartItems?.length}
+                            </div>
                             <ShoppingCartOutlinedIcon/>
                         </div>
                     </div>

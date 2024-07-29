@@ -1,11 +1,11 @@
 import styles from './Basket.module.scss';
-import React, {useCallback} from "react";
+import React, {useCallback, useContext} from "react";
 import CloseIcon from '@mui/icons-material/Close';
 import {Link} from "react-router-dom";
 import RemoveIcon from '@mui/icons-material/Remove';
 import AddIcon from '@mui/icons-material/Add';
 import DeleteIcon from '@mui/icons-material/Delete';
-import {DefaultButton} from "../../Reusables/DefaultButton/DefaultButton.tsx";
+import {BasketContext} from "../../../../Context/BasketContext/BasketContext.tsx";
 
 interface BasketProps {
     basketOpen: boolean;
@@ -13,6 +13,15 @@ interface BasketProps {
 }
 
 export const Basket: React.FC<BasketProps> = ({basketOpen, setBasketOpen}) => {
+
+    const {
+        cartItems,
+        removeFromCart,
+        calculateSubtotal,
+        increaseQuantity,
+        decreaseQuantity
+    } = useContext(BasketContext);
+
 
     const handleCloseBasket = useCallback(() => {
         setBasketOpen(false);
@@ -23,131 +32,76 @@ export const Basket: React.FC<BasketProps> = ({basketOpen, setBasketOpen}) => {
             <div className={styles.closeMenu} onClick={handleCloseBasket}>
                 <CloseIcon/>
             </div>
-            <div className={styles.basketHead}>
-                Your Shopper
-            </div>
-            <div className={styles.basketProducts}>
-                <div className={styles.productCard}>
-                    <div className={styles.image}>
-                        <img
-                            src="https://pixner.net/gamestorm3/main/assets/images/product-img-1.png"
-                            alt="Product"/>
-                    </div>
-                    <div className={styles.details}>
-                        <Link to={"/"}>USB Gaming Keyboard</Link>
-                        <div className={styles.price}>
-                            $45.00
+            {
+                cartItems?.length > 0 ?
+                    <>
+                        <div className={styles.basketHead}>
+                            Your Shopper
                         </div>
-                        <div className={styles.counter}>
-                            <div className={styles.counterBtn}>
-                                <RemoveIcon/>
-                            </div>
-                            <div className={styles.show}>1</div>
-                            <div className={styles.counterBtn}>
-                                <AddIcon/>
-                            </div>
+                        <div className={styles.basketProducts}>
+                            {cartItems?.map((product) => {
+                                return (
+                                    <div
+                                        key={product?.id}
+                                        className={styles.productCard}
+                                    >
+                                        <div className={styles.color}>
+                                            color: {product?.selectedColor}
+                                        </div>
+                                        <div className={styles.image}>
+                                            <img
+                                                src={product?.image[0]}
+                                                alt={product?.name}/>
+                                        </div>
+                                        <div className={styles.details}>
+                                            <Link to={"/"}>USB Gaming Keyboard</Link>
+                                            <div className={styles.price}>
+                                                ${product?.salePrice?.toFixed(2)}
+                                            </div>
+                                            <div className={styles.counter}>
+                                                <div
+                                                    className={styles.counterBtn}
+                                                    onClick={() => decreaseQuantity(product?.id, product?.selectedColor)}
+                                                >
+                                                    <RemoveIcon/>
+                                                </div>
+                                                <div className={styles.show}>{product?.count}</div>
+                                                <div
+                                                    className={styles.counterBtn}
+                                                    onClick={() => increaseQuantity(product?.id, product?.selectedColor)}
+                                                >
+                                                    <AddIcon/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div
+                                            onClick={() => removeFromCart(product?.id, product?.name, product?.selectedColor)}
+                                            className={styles.delete}
+                                        >
+                                            <DeleteIcon/>
+                                        </div>
 
+                                    </div>
+                                )
+                            })}
                         </div>
-                    </div>
-                    <div className={styles.delete}>
-                        <DeleteIcon/>
-                    </div>
-
-                </div>
-                <div className={styles.productCard}>
-                    <div className={styles.image}>
-                        <img
-                            src="https://pixner.net/gamestorm3/main/assets/images/product-img-1.png"
-                            alt="Product"/>
-                    </div>
-                    <div className={styles.details}>
-                        <Link to={"/"}>USB Gaming Keyboard</Link>
-                        <div className={styles.price}>
-                            $45.00
-                        </div>
-                        <div className={styles.counter}>
-                            <div className={styles.counterBtn}>
-                                <RemoveIcon/>
+                        <div className={styles.basketFooter}>
+                            <div className={styles.priceInfo}>
+                                <p>Products: {cartItems?.length} items</p>
+                                <p>Sub Total: ${calculateSubtotal?.toFixed(2)}</p>
                             </div>
-                            <div className={styles.show}>1</div>
-                            <div className={styles.counterBtn}>
-                                <AddIcon/>
+                            <div className={styles.buttonsBlock}>
+                                <Link to={"/cart"}>Visit Cart</Link>
+                                <Link to={"/checkout"}>Checkout</Link>
                             </div>
-
                         </div>
+                    </>
+                    :
+                    <div className={styles.emptyShopper}>
+                        <img src="/images/empty.png" alt="empty shopper"/>
+                        <p>Your shopper is empty...</p>
                     </div>
-                    <div className={styles.delete}>
-                        <DeleteIcon/>
-                    </div>
-
-                </div>
-                <div className={styles.productCard}>
-                    <div className={styles.image}>
-                        <img
-                            src="https://pixner.net/gamestorm3/main/assets/images/product-img-1.png"
-                            alt="Product"/>
-                    </div>
-                    <div className={styles.details}>
-                        <Link to={"/"}>USB Gaming Keyboard</Link>
-                        <div className={styles.price}>
-                            $45.00
-                        </div>
-                        <div className={styles.counter}>
-                            <div className={styles.counterBtn}>
-                                <RemoveIcon/>
-                            </div>
-                            <div className={styles.show}>1</div>
-                            <div className={styles.counterBtn}>
-                                <AddIcon/>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div className={styles.delete}>
-                        <DeleteIcon/>
-                    </div>
-
-                </div>
-                <div className={styles.productCard}>
-                    <div className={styles.image}>
-                        <img
-                            src="https://pixner.net/gamestorm3/main/assets/images/product-img-1.png"
-                            alt="Product"/>
-                    </div>
-                    <div className={styles.details}>
-                        <Link to={"/"}>USB Gaming Keyboard</Link>
-                        <div className={styles.price}>
-                            $45.00
-                        </div>
-                        <div className={styles.counter}>
-                            <div className={styles.counterBtn}>
-                                <RemoveIcon/>
-                            </div>
-                            <div className={styles.show}>1</div>
-                            <div className={styles.counterBtn}>
-                                <AddIcon/>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div className={styles.delete}>
-                        <DeleteIcon/>
-                    </div>
-
-                </div>
-            </div>
-            <div className={styles.basketFooter}>
-                <div className={styles.priceInfo}>
-                    <p>Products: 17 items</p>
-                    <p>Sub Total: $500.00</p>
-                </div>
-                <div className={styles.buttonsBlock}>
-                    <DefaultButton title={"Visit Card"} link={"/cart"} grayBtn={false} />
-                    <DefaultButton title={"Check Out"} link={"/checkout"} grayBtn={true} />
-                </div>
-            </div>
-
-
+            }
         </div>
     );
 };

@@ -89,6 +89,8 @@ export interface PRODUCTS_DATA {
     warranty: string;
     material: string;
     rgb: true
+    count: number;
+    selectedColor: string;
 }
 
 export interface CUSTOMERS_COMMENTS_DATA {

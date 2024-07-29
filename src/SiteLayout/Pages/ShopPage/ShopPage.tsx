@@ -134,7 +134,7 @@ export const ShopPage = () => {
         return sortedProducts;
     }, [filteredByPrice, sortOption]);
 
-    
+
     // FUNCTION TO UPDATE "searchTerm" WITH SEARCH PARAMETERS
     const handleSearchProducts = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
         setSearchTerm(e.target.value);
@@ -202,7 +202,7 @@ export const ShopPage = () => {
     // FUNCTION TO RESET ALL FILTERS
     const handleResetFilters = useCallback(() => {
         setPriceRange([0, PRODUCT_MAX_PRICE]);
-        setFilteredPriceRange([0,PRODUCT_MAX_PRICE]);
+        setFilteredPriceRange([0, PRODUCT_MAX_PRICE]);
         setSelectedCategories([]);
         setSelectedRating([]);
         setSelectedBrands([]);
@@ -414,36 +414,47 @@ export const ShopPage = () => {
                                 </div>
                             </div>
                             <div className={styles.allProducts}>
-                                {currentProducts?.map((product) => {
-                                    return (
-                                        <div key={product?.id} className={styles.productCard}>
-                                            <DeviceCard data={product}/>
-                                        </div>
-                                    )
-                                })}
+                                {currentProducts?.length !== 0 ?
+                                    currentProducts?.map((product) => {
+                                        return (
+                                            <div key={product?.id} className={styles.productCard}>
+                                                <DeviceCard data={product}/>
+                                            </div>
+                                        )
+                                    })
+                                    :
+                                    <div className={styles.noProducts}>
+                                        No products found...
+                                    </div>
+                                }
                             </div>
-                            <div className={styles.pagination}>
-                                <Stack spacing={2}>
-                                    <Pagination
-                                        count={Math.ceil(sortedProducts?.length / itemsPerPage)}
-                                        size="large"
-                                        page={currentPage}
-                                        onChange={handlePageChange}
-                                        sx={{
-                                            '& .MuiPaginationItem-root': {
-                                                color: '#0EF0AD',
-                                                '&.Mui-selected': {
-                                                    backgroundColor: '#0EF0AD',
-                                                    color: '#222434',
-                                                    '&:hover': {
-                                                        backgroundColor: '#09926a',
+                            {
+                                currentProducts?.length !== 0 ?
+                                    <div className={styles.pagination}>
+                                        <Stack spacing={2}>
+                                            <Pagination
+                                                count={Math.ceil(sortedProducts?.length / itemsPerPage)}
+                                                size="large"
+                                                page={currentPage}
+                                                onChange={handlePageChange}
+                                                sx={{
+                                                    '& .MuiPaginationItem-root': {
+                                                        color: '#0EF0AD',
+                                                        '&.Mui-selected': {
+                                                            backgroundColor: '#0EF0AD',
+                                                            color: '#222434',
+                                                            '&:hover': {
+                                                                backgroundColor: '#09926a',
+                                                            },
+                                                        },
                                                     },
-                                                },
-                                            },
-                                        }}
-                                    />
-                                </Stack>
-                            </div>
+                                                }}
+                                            />
+                                        </Stack>
+                                    </div>
+                                    :
+                                    null
+                            }
                         </div>
                     </div>
                 </section>

@@ -5,7 +5,7 @@
   border-radius: 0 10px;
   display: flex;
   flex-direction: column;
-  padding: 15px 15px 35px 15px;
+  padding: 15px;
   border: 1px solid $green;
   position: relative;
   overflow: hidden;
@@ -34,6 +34,7 @@
     z-index: 3;
     opacity: 0;
     pointer-events: none;
+    align-items: center;
     .option {
       &:hover {
         svg {
@@ -44,6 +45,18 @@
       svg {
         transition: color $transition,transform $transition;
         font-size: 25px;
+        cursor: pointer;
+
+      }
+    }
+    .colorsBox{
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      .color {
+        width: 23px;
+        height: 23px;
+        border-radius: 50%;
         cursor: pointer;
 
       }

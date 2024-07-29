@@ -3,13 +3,25 @@ import RemoveRedEyeOutlinedIcon from "@mui/icons-material/RemoveRedEyeOutlined";
 import {Link} from "react-router-dom";
 import styles from "./DeviceCard.module.scss";
 import {PRODUCTS_DATA} from "../../../../Types/types.ts";
-import React from "react";
+import React, {useCallback, useContext, useState} from "react";
 import {Rating} from "@mui/material";
+import {BasketContext} from "../../../../Context/BasketContext/BasketContext.tsx";
 
 interface DeviceCardProps {
     data: PRODUCTS_DATA
 }
+
 export const DeviceCard: React.FC<DeviceCardProps> = ({data}) => {
+
+    const {addToCart} = useContext(BasketContext);
+
+    const [selectedColor, setSelectedColor] = useState(data?.colors[0]);
+
+    // SELECT PRODUCT COLOR
+    const handleSelectColor = useCallback((color: string): void => {
+        setSelectedColor(color)
+    }, [setSelectedColor]);
+
     return (
         <div className={styles.deviceCard}>
             <div className={styles.deviceOptions}>
@@ -19,18 +31,29 @@ export const DeviceCard: React.FC<DeviceCardProps> = ({data}) => {
                 <div className={styles.option}>
                     <RemoveRedEyeOutlinedIcon/>
                 </div>
+                <div className={styles.colorsBox}>
+                    {data?.colors?.map((color) => {
+                        return (
+                            <div
+                                onClick={() => handleSelectColor(color)}
+                                style={{
+                                    backgroundColor: color,
+                                    border: selectedColor == color ? `2px solid #0EF0AD` : '1px solid transparent',
+                                }}
+                                key={color}
+                                className={styles.color}>
+                            </div>
+                        )
+                    })}
+                </div>
 
             </div>
             <div className={styles.cardTitle}>
-                {
-                    data.regularPrice ?
-                        <div className={`${styles.flag} ${styles.offer}`}>
-                            {(((data.regularPrice - data.salePrice) / data?.regularPrice) * 100)?.toFixed(1)} %
-                        </div>
-                        :
-                        null
-                }
-
+                <div className={`${styles.flag} ${styles.offer}`}>
+                    {data.regularPrice
+                        ? `${(((data.regularPrice - data.salePrice) / data.regularPrice) * 100).toFixed(1)} %`
+                        : 'offer'}
+                </div>
                 <Link
                     to={""}
                 >
@@ -47,7 +70,6 @@ export const DeviceCard: React.FC<DeviceCardProps> = ({data}) => {
                     }}
 
                 />
-
                 <p>{data?.brand}</p>
             </div>
             <div className={styles.cardImage}>
@@ -62,7 +84,10 @@ export const DeviceCard: React.FC<DeviceCardProps> = ({data}) => {
                     <p>$ {data?.salePrice?.toFixed(2)}</p>
                     {data?.regularPrice ? <span>$ {data?.regularPrice?.toFixed(2)}</span> : null}
                 </div>
-                <div className={styles.addBtn}>
+                <div
+                    className={styles.addBtn}
+                    onClick={() => addToCart(data, selectedColor)}
+                >
                     add to card
                 </div>
             </div>
