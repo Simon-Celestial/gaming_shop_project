@@ -1,19 +1,21 @@
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import RemoveRedEyeOutlinedIcon from "@mui/icons-material/RemoveRedEyeOutlined";
+import FavoriteIcon from '@mui/icons-material/Favorite';
 import {Link} from "react-router-dom";
 import styles from "./DeviceCard.module.scss";
 import {PRODUCTS_DATA} from "../../../../Types/types.ts";
 import React, {useCallback, useContext, useState} from "react";
 import {Rating} from "@mui/material";
 import {BasketContext} from "../../../../Context/BasketContext/BasketContext.tsx";
+import {WishlistContext} from "../../../../Context/WishlishContext/WishlistContext.tsx";
 
 interface DeviceCardProps {
     data: PRODUCTS_DATA
 }
 
 export const DeviceCard: React.FC<DeviceCardProps> = ({data}) => {
-
     const {addToCart} = useContext(BasketContext);
+    const {addToWishlist, wishlistItems} = useContext(WishlistContext);
 
     const [selectedColor, setSelectedColor] = useState(data?.colors[0]);
 
@@ -22,11 +24,32 @@ export const DeviceCard: React.FC<DeviceCardProps> = ({data}) => {
         setSelectedColor(color)
     }, [setSelectedColor]);
 
+    // CHECK PRODUCT IN WISH LIST
+    const isInWishlist = useCallback((productId: number) => {
+        return wishlistItems.some(item => item?.id === productId);
+    }, [wishlistItems]);
+
+
     return (
         <div className={styles.deviceCard}>
             <div className={styles.deviceOptions}>
-                <div className={styles.option}>
-                    <FavoriteBorderIcon/>
+                <div
+                    className={styles.option}
+                    onClick={() => addToWishlist(data)}
+                >
+                    {isInWishlist(data?.id) ?
+                        <FavoriteIcon
+                            sx={{
+                                color: "#0EF0AD"
+                            }}
+                        />
+                        :
+                        <FavoriteBorderIcon
+                            sx={{
+                                color: "#F5F5F5"
+                            }}
+                        />
+                    }
                 </div>
                 <div className={styles.option}>
                     <RemoveRedEyeOutlinedIcon/>
@@ -75,6 +98,11 @@ export const DeviceCard: React.FC<DeviceCardProps> = ({data}) => {
             <div className={styles.cardImage}>
                 <img
                     src={data?.image[0]}
+                    alt={data?.name}
+                    loading={"lazy"}
+                />
+                <img
+                    src={data?.image[1]}
                     alt={data?.name}
                     loading={"lazy"}
                 />
