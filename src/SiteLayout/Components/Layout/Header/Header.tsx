@@ -67,8 +67,8 @@ export const Header = () => {
                                                     <Link to={"/basket"}>
                                                         Basket
                                                     </Link>
-                                                    <Link to={"/"}>
-                                                        Option 3
+                                                    <Link to={"/checkout"}>
+                                                        Checkout
                                                     </Link>
                                                     <Link to={"/"}>
                                                         Option 4

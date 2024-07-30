@@ -1,15 +1,16 @@
 import React, {useCallback, useContext, useState} from 'react';
 import styles from './CheckoutPage.module.scss';
-import {Header} from "../../Components/Header/Header.jsx";
-import {Footer} from "../../Components/Footer/Footer.jsx";
-import {BasketContext} from "../../../Context/BasketContext.jsx";
 import {Link, useNavigate} from "react-router-dom";
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select, {SelectChangeEvent} from '@mui/material/Select';
-import {ProductDetail} from "../../../types.ts";
 import {Bounce, toast} from "react-toastify";
+import {BasketContext} from "../../../Context/BasketContext/BasketContext.tsx";
+import {Header} from "../../Components/Layout/Header/Header.tsx";
+import {FooterOne} from "../../Components/Layout/FooterOne/FooterOne.tsx";
+import {PageBanner} from "../../Components/Reusables/PageBanner/PageBanner.tsx";
+import {DefaultButton} from "../../Components/Reusables/DefaultButton/DefaultButton.tsx";
 
 
 type FormFields = {
@@ -129,17 +130,18 @@ export const CheckoutPage = () => {
         <>
             <Header/>
             <main className={styles.checkoutMain}>
+                <PageBanner greenText={""} whiteText={"Checkout"} smallText={"Ready to make them yours?"}/>
                 {
                     cartItems.length < 1 ?
                         <div className={styles.checkoutEmpty}>
-                            <img src="/images/emptyCart.png" alt="Cart Empty"/>
-                            <p>Your basket is empty</p>
-                            <p>Add products to basket first</p>
-                            <div className={styles.container}>
-                            <Link to="/menu" className={`${styles.button} ${styles.blackBtn}`}>
-                                Return to Menu
-                            </Link>
-                            </div>
+                            <img src="/images/empty.png" alt="Cart Empty"/>
+                            <p>Choose product to buy first</p>
+                            <DefaultButton
+                            wide={false}
+                            grayBtn={false}
+                            link={"/shop"}
+                            title={"Return to Shop"}
+                            />
                         </div>
                         :
                         <section className={styles.checkoutSection}>
@@ -265,9 +267,8 @@ export const CheckoutPage = () => {
                                             {/* TOTAL AND SUBTOTAL PRICE HERE */}
                                             {cartItems?.map((cartProduct) => {
                                                 return (
-                                                    <div key={cartProduct.id} className={styles.orderRow}>
-                                                        <p>{cartProduct.title} <span> × {cartProduct?.count}</span>
-                                                        </p>
+                                                    <div key={cartProduct?.id} className={styles.orderRow}>
+                                                        <p>{cartProduct?.name} <span> × {cartProduct?.count}</span></p>
                                                         <p>$ {(cartProduct?.salePrice * cartProduct?.count)?.toFixed(2)}</p>
                                                     </div>
 
@@ -355,7 +356,7 @@ export const CheckoutPage = () => {
                         </section>
                 }
             </main>
-            <Footer/>
+            <FooterOne/>
         </>
     );
 };

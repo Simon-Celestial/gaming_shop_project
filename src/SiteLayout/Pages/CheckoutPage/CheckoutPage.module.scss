@@ -1,13 +1,7 @@
-@import "../../../Variables/Variables.module";
-@import "../../../CommonStyles/CommonStyles.modules.scss";
+@import "../../../Variables/Variables";
 
 .css-1jy569b-MuiFormLabel-root-MuiInputLabel-root.Mui-focused {
-  color: orangered!important;
-}
-h3 {
-  font-size: 35px;
-  margin-bottom: 25px;
-  font-weight: 600;
+  color: orangered !important;
 }
 
 .checkoutEmpty {
@@ -15,349 +9,361 @@ h3 {
   flex-direction: column;
   gap: 15px;
   width: 100%;
-  max-width: 300px;
+  max-width: 500px;
   margin: auto;
   align-items: center;
+  color: $white;
+  padding: 200px 0;
 
   img {
-    max-width: 100px;
+    max-width: 80px;
     width: 100%;
     object-fit: cover;
     object-position: center;
     margin: 0 auto;
+    filter: invert(0.9);
   }
 
   p {
     font-size: 25px;
     text-align: center;
+    margin-bottom: 5px;
   }
-.container {
-  display: flex;
-  align-items: end;
-  height: 55px;
-}
 }
 
 
 .checkoutMain {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  background: $background;
+  min-height: 100vh;
+
+
+  h3 {
+    font-size: 35px;
+    margin-bottom: 25px;
+    font-weight: 600;
+  }
+
+
+  .checkoutSection {
     display: flex;
     width: 100%;
+    max-width: 1320px;
     flex-direction: column;
-    align-items: center;
-    padding: 165px 15px 75px 15px;
-    background: $cream;
-    min-height: 100vh;
+    padding: 50px 15px 100px 15px;
 
-    .checkoutSection {
+    .emptyCart {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      align-items: center;
+      gap: 50px;
+
+      p {
+        font-size: 17px;
+      }
+    }
+
+    .checkoutContent {
       display: flex;
       width: 100%;
-      max-width: 1290px;
       flex-direction: column;
+      align-items: center;
 
-      .emptyCart {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        align-items: center;
-        gap: 50px;
-
-        p {
-          font-size: 17px;
-        }
-      }
-
-      .checkoutContent {
+      .checkoutForm {
         display: flex;
         width: 100%;
-        flex-direction: column;
-        align-items: center;
+        justify-content: space-between;
 
-        .checkoutForm {
+        //LEFT
+        .checkoutLeft {
           display: flex;
           width: 100%;
-          justify-content: space-between;
+          max-width: 635px;
+          flex-direction: column;
+          padding: 50px;
+          background-color: $grayFill;
+          box-shadow: 0 0 5px $black;
+          height: min-content;
+          border: 1px solid $green;
 
-          //LEFT
-          .checkoutLeft {
+
+          .formRow {
             display: flex;
             width: 100%;
-            max-width: 634px;
-            flex-direction: column;
-            padding: 50px;
-            background-color: $yellow;
-            box-shadow: 0 0 5px $black;
-            height: min-content;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 45px;
+            gap: 50px;
 
-            .formRow {
+            .formShortBlock {
               display: flex;
+              flex-direction: column;
               width: 100%;
-              justify-content: space-between;
-              align-items: center;
-              padding-bottom: 45px;
-              gap: 50px;
+              max-width: 302px;
 
-              .formShortBlock {
-                display: flex;
-                flex-direction: column;
-                width: 100%;
-                max-width: 302px;
+              p {
+                font-size: 18px;
+                margin-bottom: 15px;
 
-                p {
-                  font-size: 18px;
-                  margin-bottom: 15px;
-
-                  span {
-                    font-size: 22px;
-                    color: red;
-                  }
-                }
-
-                input {
-                  width: 100%;
-                  padding: 8px 0;
-                  background-color: transparent;
-                  border: 0;
-                  outline: 0;
-                  border-bottom: 1px solid $black;
+                span {
+                  font-size: 22px;
+                  color: red;
                 }
               }
 
-              .formLongBlock {
-                display: flex;
+              input {
                 width: 100%;
-                flex-direction: column;
-
-                p {
-                  font-size: 18px;
-                  margin-bottom: 15px;
-
-                  span {
-                    font-size: 22px;
-                    color: red;
-
-                  }
-                }
-
-                select {
-                  width: 100%;
-                  padding: 8px 0;
-                  border: 0;
-                  outline: 0;
-                  border-bottom: 1px solid $black;
-                  font-size: 15px;
-                  background: transparent;
-
-                }
-
-                input {
-                  width: 100%;
-                  padding: 8px 0;
-                  background-color: transparent;
-                  border: 0;
-                  outline: 0;
-                  border-bottom: 1px solid $black;
-
-                  &::placeholder {
-                    color: rgba(0, 0, 0, 0.5);
-                  }
-                }
+                padding: 8px 0;
+                background-color: transparent;
+                border: 0;
+                outline: 0;
+                border-bottom: 1px solid $black;
               }
             }
 
-            .additionalInfo {
+            .formLongBlock {
               display: flex;
+              width: 100%;
               flex-direction: column;
 
-
-              label {
-                display: flex;
-                width: 100%;
-                flex-direction: column;
+              p {
                 font-size: 18px;
-                gap: 10px;
+                margin-bottom: 15px;
 
-                textarea {
-                  height: 140px;
-                  padding: 8px 0;
-                  border: 0;
-                  outline: 0;
-                  background-color: transparent;
-                  border-bottom: 1px solid $black;
-                  font-size: 15px;
-                  resize: none;
+                span {
+                  font-size: 22px;
+                  color: red;
 
-                  &::placeholder {
-                    color: rgba(0, 0, 0, 0.5);
-                  }
                 }
+              }
 
+              select {
+                width: 100%;
+                padding: 8px 0;
+                border: 0;
+                outline: 0;
+                border-bottom: 1px solid $black;
+                font-size: 15px;
+                background: transparent;
+
+              }
+
+              input {
+                width: 100%;
+                padding: 8px 0;
+                background-color: transparent;
+                border: 0;
+                outline: 0;
+                border-bottom: 1px solid $black;
+
+                &::placeholder {
+                  color: rgba(0, 0, 0, 0.5);
+                }
               }
             }
           }
 
-          //RIGHT
-          .checkoutRight {
+          .additionalInfo {
             display: flex;
-            width: 100%;
-            max-width: 600px;
             flex-direction: column;
-            gap: 50px;
 
 
-            .orderContainer {
+            label {
               display: flex;
               width: 100%;
               flex-direction: column;
-              padding: 50px;
-              background-color: $yellow;
-              box-shadow: 0 0 5px $black;
+              font-size: 18px;
+              gap: 10px;
 
-
-              .orderRow {
-                display: flex;
-                width: 100%;
-                justify-content: space-between;
-                font-size: 18px;
+              textarea {
+                height: 140px;
+                padding: 8px 0;
+                border: 0;
+                outline: 0;
+                background-color: transparent;
                 border-bottom: 1px solid $black;
-                padding: 25px 0;
-                font-weight: 400;
+                font-size: 15px;
+                resize: none;
 
-                p {
-                  display: inline-flex;
-                  gap: 5px;
+                &::placeholder {
+                  color: rgba(0, 0, 0, 0.5);
                 }
+              }
+
+            }
+          }
+        }
+
+        //RIGHT
+        .checkoutRight {
+          display: flex;
+          width: 100%;
+          max-width: 600px;
+          flex-direction: column;
+          gap: 50px;
+
+
+          .orderContainer {
+            display: flex;
+            width: 100%;
+            flex-direction: column;
+            padding: 50px;
+            background-color: $grayFill;
+            box-shadow: 0 0 5px $black;
+            border: 1px solid $green;
+
+
+
+            .orderRow {
+              display: flex;
+              width: 100%;
+              justify-content: space-between;
+              font-size: 18px;
+              border-bottom: 1px solid $black;
+              padding: 25px 0;
+              font-weight: 400;
+
+              p {
+                display: inline-flex;
+                gap: 5px;
+              }
+            }
+          }
+
+          .paymentContainer {
+            display: flex;
+            width: 100%;
+            flex-direction: column;
+            padding: 67px 50px;
+            box-shadow: 0 0 5px $black;
+            background-color: $grayFill;
+            border: 1px solid $green;
+
+            .paymentTypeRow {
+              display: flex;
+              flex-direction: column;
+              width: 100%;
+              gap: 5px;
+              padding: 23px 0;
+              border-bottom: 1px solid $black;
+
+              b {
+                margin-bottom: 15px;
+                font-size: 20px;
               }
             }
 
-            .paymentContainer {
+            .paymentPrivacyPolicy {
               display: flex;
               width: 100%;
               flex-direction: column;
-              padding: 67px 50px;
-              box-shadow: 0 0 5px $black;
-              background-color: $yellow;
+              padding: 23px 0;
 
-              .paymentTypeRow {
-                display: flex;
-                flex-direction: column;
-                width: 100%;
-                gap: 5px;
-                padding: 23px 0;
-                border-bottom: 1px solid $black;
-                b {
-                  margin-bottom: 15px;
-                  font-size: 20px;
-                }
-              }
+              p {
+                font-size: 14px;
+                margin-bottom: 25px;
+                line-height: 24px;
 
-              .paymentPrivacyPolicy {
-                display: flex;
-                width: 100%;
-                flex-direction: column;
-                padding: 23px 0;
+                a {
+                  position: relative;
 
-                p {
-                  font-size: 14px;
-                  margin-bottom: 25px;
-                  line-height: 24px;
-
-                  a {
-                    position: relative;
-
-                    &:after {
-                      content: "";
-                      position: absolute;
-                      height: 1px;
-                      width: 100%;
-                      bottom: -2px;
-                      left: 0;
-                    }
+                  &:after {
+                    content: "";
+                    position: absolute;
+                    height: 1px;
+                    width: 100%;
+                    bottom: -2px;
+                    left: 0;
                   }
-
                 }
+
+              }
 
               .container {
                 display: flex;
                 align-items: end;
                 height: 55px;
               }
-              }
             }
           }
-
         }
+
       }
     }
   }
+}
 
 @media screen and (max-width: 1440px) {
-    .checkoutMain {
-      .checkoutSection {
-        .checkoutContent {
-          .checkoutForm {
-            gap: 25px;
-          }
+  .checkoutMain {
+    .checkoutSection {
+      .checkoutContent {
+        .checkoutForm {
+          gap: 25px;
         }
       }
     }
   }
+}
 
 @media screen and (max-width: 1200px) {
   h3 {
     font-size: 30px;
   }
-    .checkoutMain {
-      .checkoutSection {
-        .checkoutContent {
-          .checkoutForm {
-            .checkoutLeft {
+  .checkoutMain {
+    .checkoutSection {
+      .checkoutContent {
+        .checkoutForm {
+          .checkoutLeft {
+            padding: 50px 25px;
+          }
+
+          .checkoutRight {
+            .orderContainer {
+              padding: 50px 25px;
+
+              > h3 {
+                text-align: end;
+              }
+
+              .orderRow {
+                flex-direction: column;
+                align-items: end;
+                gap: 15px;
+
+              }
+            }
+
+            .paymentContainer {
               padding: 50px 25px;
             }
-
-            .checkoutRight {
-              .orderContainer {
-                padding: 50px 25px;
-
-                > h3 {
-                  text-align: end;
-                }
-
-                .orderRow {
-                  flex-direction: column;
-                  align-items: end;
-                  gap: 15px;
-
-                }
-              }
-
-              .paymentContainer {
-                padding: 50px 25px;
-              }
-            }
           }
         }
       }
     }
   }
+}
 
 @media screen and (max-width: 1024px) {
-    .checkoutMain {
-      .checkoutSection {
-        .checkoutContent {
-          .checkoutForm {
-            .checkoutLeft {
-              .formRow {
-                gap: 25px;
-              }
+  .checkoutMain {
+    .checkoutSection {
+      .checkoutContent {
+        .checkoutForm {
+          .checkoutLeft {
+            .formRow {
+              gap: 25px;
             }
+          }
 
-            .checkoutRight {
-              .paymentContainer {
-                .paymentPrivacyPolicy {
-                  button {
-                    max-width: unset;
-                    width: 100%;
-                  }
+          .checkoutRight {
+            .paymentContainer {
+              .paymentPrivacyPolicy {
+                button {
+                  max-width: unset;
+                  width: 100%;
                 }
               }
             }
@@ -366,88 +372,91 @@ h3 {
       }
     }
   }
+}
 
 @media screen and (max-width: 800px) {
   .checkoutEmpty {
     gap: 10px;
+
     img {
       max-width: 80px
     }
+
     .container {
       height: 45px;
     }
   }
-    .checkoutMain {
-      padding: 100px 15px 50px 15px;
-      .checkoutSection {
-        .checkoutContent {
-          .checkoutForm {
-            flex-direction: column;
-            margin-top: 25px;
+  .checkoutMain {
+    padding: 100px 15px 50px 15px;
 
-            .checkoutLeft {
-              max-width: unset;
+    .checkoutSection {
+      .checkoutContent {
+        .checkoutForm {
+          flex-direction: column;
+          margin-top: 25px;
 
-              .formRow {
-                padding-bottom: 15px;
+          .checkoutLeft {
+            max-width: unset;
 
-                .formShortBlock {
-                  max-width: 50%;
+            .formRow {
+              padding-bottom: 15px;
 
-                  p {
-                    font-size: 16px;
-                  }
-                }
+              .formShortBlock {
+                max-width: 50%;
 
-                .formLongBlock {
-                  p {
-                    font-size: 16px;
-                  }
+                p {
+                  font-size: 16px;
                 }
               }
 
-              .additionalInfo {
-                margin-top: 15px;
-
-                label {
+              .formLongBlock {
+                p {
                   font-size: 16px;
-
-                  textarea {
-                    height: 85px;
-                  }
                 }
               }
             }
 
-            .checkoutRight {
-              max-width: unset;
-              gap: 25px;
+            .additionalInfo {
+              margin-top: 15px;
 
-              .orderContainer {
-                > h3 {
-                  text-align: start;
+              label {
+                font-size: 16px;
+
+                textarea {
+                  height: 85px;
                 }
+              }
+            }
+          }
 
-                .orderRow {
-                  align-items: start;
+          .checkoutRight {
+            max-width: unset;
+            gap: 25px;
+
+            .orderContainer {
+              > h3 {
+                text-align: start;
+              }
+
+              .orderRow {
+                align-items: start;
+              }
+            }
+
+            .paymentContainer {
+              .paymentTypeRow {
+                p {
+                  font-size: 16px;
                 }
               }
 
-              .paymentContainer {
-                .paymentTypeRow {
-                  p {
-                    font-size: 16px;
-                  }
-                }
+              .paymentPrivacyPolicy {
+                align-items: center;
 
-                .paymentPrivacyPolicy {
-                  align-items: center;
-
-                  button {
-                    width: 250px;
-                    height: 40px;
-                    font-size: 16px;
-                  }
+                button {
+                  width: 250px;
+                  height: 40px;
+                  font-size: 16px;
                 }
               }
             }
@@ -456,32 +465,32 @@ h3 {
       }
     }
   }
+}
 
 @media screen and (max-width: 550px) {
-    .checkoutMain {
-      .checkoutSection {
-        .checkoutContent {
-          .headingDropdown {
-            padding-bottom: 0;
-          }
+  .checkoutMain {
+    .checkoutSection {
+      .checkoutContent {
+        .headingDropdown {
+          padding-bottom: 0;
+        }
 
-          .checkoutForm {
-            .checkoutRight {
-              .orderContainer {
-                .orderRow {
-                  padding: 10px 0;
+        .checkoutForm {
+          .checkoutRight {
+            .orderContainer {
+              .orderRow {
+                padding: 10px 0;
 
-                  p {
-                    font-size: 16px;
-                  }
+                p {
+                  font-size: 16px;
                 }
               }
+            }
 
-              .paymentContainer {
-                .paymentPrivacyPolicy {
-                  button {
-                    width: 100%;
-                  }
+            .paymentContainer {
+              .paymentPrivacyPolicy {
+                button {
+                  width: 100%;
                 }
               }
             }
@@ -490,3 +499,4 @@ h3 {
       }
     }
   }
+}

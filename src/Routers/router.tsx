@@ -5,6 +5,7 @@ import {NotFoundPage} from "../SiteLayout/Pages/NotFoundPage/NotFoundPage.tsx";
 import {ShopPage} from "../SiteLayout/Pages/ShopPage/ShopPage.tsx";
 import {WishlistPage} from "../SiteLayout/Pages/WishlistPage/WishlistPage.tsx";
 import {BasketPage} from "../SiteLayout/Pages/BasketPage/BasketPage.tsx";
+import {CheckoutPage} from "../SiteLayout/Pages/CheckoutPage/CheckoutPage.tsx";
 
 const router = () => createBrowserRouter([
     {
@@ -31,6 +32,10 @@ const router = () => createBrowserRouter([
             {
                 path: 'basket',
                 element: <BasketPage />
+            },
+            {
+                path: "checkout",
+                element: <CheckoutPage/>
             }
         ],
     }
