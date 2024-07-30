@@ -91,7 +91,7 @@ export const Basket: React.FC<BasketProps> = ({basketOpen, setBasketOpen}) => {
                                 <p>Sub Total: ${calculateSubtotal?.toFixed(2)}</p>
                             </div>
                             <div className={styles.buttonsBlock}>
-                                <Link to={"/cart"}>Visit Cart</Link>
+                                <Link to={"/basket"}>Visit Cart</Link>
                                 <Link to={"/checkout"}>Checkout</Link>
                             </div>
                         </div>

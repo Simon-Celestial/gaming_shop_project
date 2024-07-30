@@ -1,10 +1,12 @@
 import {useContext} from 'react';
 import styles from "./BasketPage.module.scss";
-import {Header} from '../../Components/Header/Header.tsx';
-import {Footer} from '../../Components/Footer/Footer.tsx';
-import {Trash} from "@phosphor-icons/react";
 import {Link} from 'react-router-dom';
-import {BasketContext} from '../../../Context/BasketContext';
+import {BasketContext} from "../../../Context/BasketContext/BasketContext.tsx";
+import {Header} from "../../Components/Layout/Header/Header.tsx";
+import {FooterOne} from "../../Components/Layout/FooterOne/FooterOne.tsx";
+import {DefaultButton} from "../../Components/Reusables/DefaultButton/DefaultButton.tsx";
+import DeleteIcon from '@mui/icons-material/Delete';
+import {PageBanner} from "../../Components/Reusables/PageBanner/PageBanner.tsx";
 
 
 export const BasketPage = () => {
@@ -21,16 +23,18 @@ export const BasketPage = () => {
         <>
             <Header/>
             <main className={styles.basketMain}>
+                <PageBanner greenText={""} whiteText={"Your basket"} smallText={"Ready to make them yours?"}/>
                 {
                     cartItems?.length < 1 ?
                         <div className={styles.cartEmpty}>
-                            <img src="/images/emptyCart.png" alt="Cart Empty"/>
-                            <p>Your Cart is Empty</p>
-                            <div className={styles.container}>
-                                <Link className={`${styles.button} ${styles.blackBtn}`} to="/menu">
-                                    Return To Menu
-                                </Link>
-                            </div>
+                            <img src="/images/empty.png" alt="Cart Empty"/>
+                            <p>Your basket is currently empty</p>
+                            <DefaultButton
+                                grayBtn={false}
+                                link={"/shop"}
+                                title={"Return To Shop"}
+                                wide={false}
+                            />
                         </div>
                         :
                         <div className={styles.basketContent}>
@@ -56,9 +60,9 @@ export const BasketPage = () => {
                                     return (
                                         <div key={product?.id} className={`${styles.tableRow} ${styles.bottomRow}`}>
                                             <div className={`${styles.product} ${styles.cell}`}>
-                                                <img src={product?.image} alt={product?.title}/>
+                                                <img src={product?.image[0]} alt={product?.name}/>
                                                 <Link to={`/single-product/${product?.id}`}>
-                                                    {product?.title}
+                                                    {product?.name}
                                                 </Link>
                                             </div>
                                             <div className={`${styles.price} ${styles.cell}`}>
@@ -67,14 +71,14 @@ export const BasketPage = () => {
                                             <div className={`${styles.quantity} ${styles.cell}`}>
                                                 <div className={styles.basketButton}>
                                                     <div className={styles.controlBtn}
-                                                         onClick={() => decreaseQuantity(product?.id)}>
+                                                         onClick={() => decreaseQuantity(product?.id, product?.selectedColor)}>
                                                         -
                                                     </div>
                                                     <div className={styles.controlBtn}>
                                                         {product?.count}
                                                     </div>
                                                     <div className={styles.controlBtn}
-                                                         onClick={() => increaseQuantity(product?.id)}>
+                                                         onClick={() => increaseQuantity(product?.id, product?.selectedColor)}>
                                                         +
                                                     </div>
                                                 </div>
@@ -85,18 +89,21 @@ export const BasketPage = () => {
                                             </div>
                                             <div className={`${styles.delete} ${styles.cell}`}>
                                                 <div className={styles.deleteBtn}
-                                                     onClick={() => removeFromCart(product.id)}>
-                                                    <Trash/>
+                                                     onClick={() => removeFromCart(product.id, product?.name, product?.selectedColor)}>
+                                                    <DeleteIcon/>
                                                 </div>
                                             </div>
                                         </div>
                                     )
                                 })}
-                                <div className={styles.container}>
-                                    <div className={`${styles.button} ${styles.blackBtn}`} onClick={emptyCart}>Empty
-                                        cart
+                                    <div className={styles.btnWrapper} onClick={emptyCart}>
+                                        <DefaultButton
+                                            grayBtn={false}
+                                            title={"Empty Cart"}
+                                            link={""}
+                                            wide={true}
+                                        />
                                     </div>
-                                </div>
                             </div>
                             <div className={styles.basketRight}>
                                 <div className={styles.rightContainer}>
@@ -114,16 +121,18 @@ export const BasketPage = () => {
                                     <h1>Total</h1>
                                     <p>$ {calculateSubtotal?.toFixed(2)}</p>
                                 </div>
-                                <div className={styles.container}>
-                                    <Link to={"/checkout"} className={`${styles.button} ${styles.blackToWhiteBtn}`}>
-                                        PROCEED TO CHECKOUT
-                                    </Link>
+                                <div className={styles.btnWrapper}>
+                                    <DefaultButton
+                                        wide={true}
+                                        link={"/checkout"}
+                                        title={"Proceed to Checkout"}
+                                        grayBtn={false}/>
                                 </div>
                             </div>
                         </div>
                 }
             </main>
-            <Footer/>
+            <FooterOne/>
         </>
     );
 };

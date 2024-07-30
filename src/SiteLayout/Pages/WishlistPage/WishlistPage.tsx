@@ -31,14 +31,18 @@ export const WishlistPage = () => {
         <>
             <Header/>
             <main className={styles.wishlistMain}>
-                <PageBanner greenText={""} whiteText={"Wishlist"} smallText={"Your favorite products"}/>
+                <PageBanner greenText={""} whiteText={"Your wishlist"} smallText={"Your favorite products"}/>
                 {wishlistItems?.length < 1 ?
                     <div className={styles.wishlistEmpty}>
                         <img src="/images/empty.png" alt="Empty"/>
                         <p>Your wishlist is currently empty.</p>
                         <div className={styles.container}>
-                            <DefaultButton grayBtn={false} link={"/shop"} title={"Return to Shop"}/>
-
+                            <DefaultButton
+                                grayBtn={false}
+                                link={"/shop"}
+                                title={"Return to Shop"}
+                                wide={false}
+                            />
                         </div>
                     </div>
                     :

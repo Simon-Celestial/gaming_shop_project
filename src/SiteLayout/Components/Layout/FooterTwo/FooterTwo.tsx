@@ -26,7 +26,12 @@ export const FooterTwo = () => {
                                 border: "1px dashed #F5F5F5",
                                 borderRadius: "16px"
                             }}>
-                                <DefaultButton link={""} title={"Subscribe"} grayBtn={false}/>
+                                <DefaultButton
+                                    link={""}
+                                    title={"Subscribe"}
+                                    grayBtn={false}
+                                    wide={false}
+                                />
                             </div>
                         </div>
                     </div>

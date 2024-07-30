@@ -64,8 +64,8 @@ export const Header = () => {
                                                     <Link to={"/wishlist"}>
                                                         Wishlist
                                                     </Link>
-                                                    <Link to={"/"}>
-                                                        Option 2
+                                                    <Link to={"/basket"}>
+                                                        Basket
                                                     </Link>
                                                     <Link to={"/"}>
                                                         Option 3

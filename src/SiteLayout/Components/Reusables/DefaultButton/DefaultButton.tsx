@@ -6,18 +6,30 @@ interface DefaultButtonProps {
     title: string;
     link?: string;
     grayBtn: boolean;
+    wide: boolean;
 }
 
-export const DefaultButton : React.FC<DefaultButtonProps> = ({title, link,grayBtn}) => {
+export const DefaultButton : React.FC<DefaultButtonProps> = ({title, link,grayBtn,wide}) => {
 
     return (
         <>
             {link ?
-                <Link to={link} className={`${styles.buttonWrapper} ${grayBtn ? styles.grayBtn : ''}`}>
+                <Link
+                    to={link}
+                    className={`${styles.buttonWrapper} ${grayBtn ? styles.grayBtn : ''}`}
+                    style={{
+                        width: wide ? "100%" : ""
+                    }}
+                >
                     {title}
                 </Link>
                 :
-                <div className={`${styles.buttonWrapper} ${grayBtn ? styles.grayBtn : ''}`}>
+                <div
+                    className={`${styles.buttonWrapper} ${grayBtn ? styles.grayBtn : ''}`}
+                    style={{
+                        width: wide ? "100%" : ""
+                    }}
+                >
                     {title}
                 </div>
             }

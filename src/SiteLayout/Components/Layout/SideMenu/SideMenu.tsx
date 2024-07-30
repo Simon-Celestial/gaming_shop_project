@@ -75,11 +75,11 @@ export const SideMenu = () => {
                                         <p className={`${styles.item}`}>{nav?.name}<ExpandLessOutlinedIcon/></p>
                                         <div className={styles.navDropDown}>
                                             <div className={styles.dropDownContent}>
-                                                <Link to={"/"}>
-                                                    Option 1
+                                                <Link to={"/wishlist"}>
+                                                    Wishlist
                                                 </Link>
-                                                <Link to={"/"}>
-                                                    Option 2
+                                                <Link to={"/basket"}>
+                                                    Basket
                                                 </Link>
                                                 <Link to={"/"}>
                                                     Option 3

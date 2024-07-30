@@ -137,7 +137,12 @@ export const FooterOne = () => {
                                 onChange={handleMessageValue}
                             />
                             <div onClick={handleSendMessage}>
-                                <DefaultButton link={""} title={"Send Message"} grayBtn={false}/>
+                                <DefaultButton
+                                    link={""}
+                                    title={"Send Message"}
+                                    grayBtn={false}
+                                    wide={false}
+                                />
                             </div>
                         </div>
                         <div className={styles.postBox}>

@@ -1,5 +1,4 @@
-@import "../../../Variables/Variables.module.scss";
-@import "../../../CommonStyles/CommonStyles.modules";
+@import "../../../Variables/Variables";
 
 .basketMain {
   width: 100%;
@@ -7,8 +6,8 @@
   flex-direction: column;
   align-items: center;
   min-height: 100vh;
-  padding: 165px 15px;
-  background: $cream;
+  padding: 0 15px;
+  background: $background;
 
   .cartEmpty {
     display: flex;
@@ -17,24 +16,20 @@
     align-items: center;
     margin: auto;
     gap: 25px;
+    color: $white;
+    padding: 200px 15px;
+    border-top: 1px solid rgba(128, 128, 128, 0.3);
 
     img {
       max-width: 80px;
       object-fit: cover;
       object-position: center;
       width: 100%;
+      filter: invert(0.9);
     }
-
     p {
       font-size: 25px;
     }
-
-    .container {
-      display: flex;
-      align-items: end;
-      height: 55px;
-    }
-
   }
 
   .basketContent {
@@ -42,6 +37,8 @@
     width: 100%;
     display: flex;
     gap: 20px;
+    padding: 50px 0 100px 0;
+
 
     .basketCardsWrapper {
       display: flex;
@@ -49,7 +46,6 @@
       width: 100%;
       flex-direction: column;
       gap: 40px;
-
       .tableRow {
         display: flex;
         width: 100%;
@@ -57,6 +53,7 @@
         justify-content: space-between;
 
         &.topRow {
+          border-bottom: 1px solid $green;
           .cell {
             font-weight: 700;
           }
@@ -87,20 +84,20 @@
           }
 
           a {
-            font-size: 25px;
+            font-size: 23px;
             transition: color $transition;
 
             &:hover {
-              color: red;
+              color: $green;
             }
           }
         }
 
         .price {
-          max-width: 100px;
+          max-width: 120px;
 
           b {
-            font-size: 25px;
+            font-size: 23px;
             font-weight: 400;
           }
         }
@@ -117,7 +114,7 @@
             margin-top: 10px;
             background-color: rgba(128, 128, 128, 0.2);
             margin-bottom: 10px;
-            border: 1px solid $yellow;
+            border: 1px solid $green;
 
             .controlBtn {
               display: flex;
@@ -137,23 +134,23 @@
         }
 
         .subtotal {
-          max-width: 100px;
+          max-width: 120px;
 
           b {
             font-weight: 400;
-            font-size: 25px;
+            font-size: 23px;
           }
         }
 
         .delete {
-          max-width: 115px;
+          max-width: 80px;
           justify-content: end;
 
           .deleteBtn {
             cursor: pointer;
             border-radius: 10px;
             background: $black;
-            color: $yellow;
+            color: $green;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -163,7 +160,7 @@
 
             &:hover {
               transform: rotate(360deg);
-              color: red;
+              color: $greenDark;
             }
 
             svg {
@@ -172,17 +169,8 @@
           }
         }
       }
-
-      .container {
-        display: flex;
-        align-items: end;
-        height: 55px;
+      .btnWrapper {
         max-width: 250px;
-        width: 100%;
-
-        .button {
-          width: 100%;
-        }
       }
     }
 
@@ -190,8 +178,8 @@
       display: flex;
       max-width: 420px;
       width: 100%;
-      border: 2px solid $black;
-      background: $yellow;
+      border: 2px solid $green;
+      background: $grayFill;
       justify-content: center;
       padding: 30px;
       flex-direction: column;
@@ -209,17 +197,6 @@
           font-size: 18px;
         }
       }
-
-      .container {
-        display: flex;
-        align-items: end;
-        height: 45px;
-        width: 100%;
-        .button {
-          width: 100%;
-        }
-      }
-
     }
   }
 

@@ -265,7 +265,12 @@ export const HomePage = () => {
                             />
                             <p>Creating innovative, fun-filled gaming devices that bring vibrant colors to your gaming
                                 experience.</p>
-                            <DefaultButton title={'Explore Our Products'} link={'/shop'} grayBtn={false}/>
+                            <DefaultButton
+                                title={'Explore Our Products'}
+                                link={'/shop'}
+                                grayBtn={false}
+                                wide={false}
+                            />
                         </div>
                         <div className={styles.swiperContainer}>
                             <div className={styles.swiperHead}>
@@ -373,7 +378,12 @@ export const HomePage = () => {
                                 </div>
 
                             </div>
-                            <DefaultButton title={"Explore Out Products"} link={"/shop"} grayBtn={false}/>
+                            <DefaultButton
+                                title={"Explore Out Products"}
+                                link={"/shop"}
+                                grayBtn={false}
+                                wide={false}
+                            />
                         </div>
                     </div>
                 </section>
@@ -595,7 +605,12 @@ export const HomePage = () => {
                             <h2>join us!</h2>
                             <p>Still haven't found your dream job? Join Team Gamestorm and become the next Gamestorm of
                                 an ever-growing family!</p>
-                            <DefaultButton link={"/about"} title={"Check Open Positions"} grayBtn={false}/>
+                            <DefaultButton
+                                link={"/about"}
+                                title={"Check Open Positions"}
+                                grayBtn={false}
+                                wide={false}
+                            />
                         </div>
 
                     </div>
@@ -731,11 +746,13 @@ export const HomePage = () => {
                                     title={"Explore Our Games"}
                                     link={"/games"}
                                     grayBtn={false}
+                                    wide={false}
                                 />
                                 <DefaultButton
                                     title={"Join Our Community"}
                                     link={"/about"}
                                     grayBtn={true}
+                                    wide={false}
                                 />
                             </div>
                         </div>
@@ -817,6 +834,7 @@ export const HomePage = () => {
                                         link={""}
                                         grayBtn={false}
                                         title={"Send Message"}
+                                        wide={false}
                                     />
                                 </div>
                             </div>
