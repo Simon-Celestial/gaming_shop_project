@@ -12,10 +12,15 @@
     background-position: bottom right;
     background-repeat: no-repeat;
   }
+
   &.about {
     background-image: url("https://pixner.net/gamestorm3/main/assets/images/about-banner-illus.png");
     background-position: bottom right;
     background-repeat: no-repeat;
+  }
+  &.wishlist {
+    background-image: url("https://pixner.net/gamestorm3/main/assets/images/store-banner-illus.png");
+    background-size: cover;
   }
   &.blog {
     background-image: url("https://pixner.net/gamestorm3/main/assets/images/store-banner-illus.png");
@@ -89,16 +94,17 @@
       .coloredText {
         margin-bottom: 24px;
         display: flex;
-        align-items: center;
+        align-items: start;
         gap: 10px;
+        flex-direction: column;
 
         h2 {
           font-size: 56px;
+          color: $green;
         }
 
         h3 {
           font-size: 56px;
-          color: $green;
         }
       }
 

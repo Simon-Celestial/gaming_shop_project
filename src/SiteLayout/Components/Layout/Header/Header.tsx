@@ -61,8 +61,8 @@ export const Header = () => {
                                             <p className={`${styles.entity}`}>{nav?.name}<ExpandLessOutlinedIcon/></p>
                                             <div className={styles.navDropDown}>
                                                 <div className={styles.dropDownContent}>
-                                                    <Link to={"/"}>
-                                                        Option 1
+                                                    <Link to={"/wishlist"}>
+                                                        Wishlist
                                                     </Link>
                                                     <Link to={"/"}>
                                                         Option 2

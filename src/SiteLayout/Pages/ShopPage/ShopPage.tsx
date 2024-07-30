@@ -250,7 +250,7 @@ export const ShopPage = () => {
             }
             <Header/>
             <main className={styles.shopWrapper}>
-                <PageBanner greenText={"Shop"} whiteText={""} smallText={"Play · Improve · Win"}/>
+                <PageBanner greenText={""} whiteText={"Shop"} smallText={"Play · Improve · Win"}/>
                 <section className={styles.productsSection}>
                     <div className={styles.sectionContent}>
                         <div className={styles.allFilters}>
@@ -507,8 +507,6 @@ export const ShopPage = () => {
                                                     </div>
                                                 </div>
                                             </div>
-
-
                                         </div>
                                     </SwiperSlide>
                                 )

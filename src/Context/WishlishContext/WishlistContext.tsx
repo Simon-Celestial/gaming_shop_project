@@ -5,8 +5,8 @@ import {PRODUCTS_DATA} from "../../Types/types.ts";
 
 interface WishlistContextType {
     wishlistItems: PRODUCTS_DATA[];
-    addToWishlist: (product: PRODUCTS_DATA) => void;
-    removeFromWishlist: (productId: number,productName : string) => void;
+    addToWishlist: (product: PRODUCTS_DATA, color: string) => void;
+    removeFromWishlist: (productId: number, productName: string, color: string, alert: boolean) => void;
 }
 
 const initialContextValue: WishlistContextType = {
@@ -27,34 +27,40 @@ export const WishlistContextProvider: React.FC<WishlistContextProviderProps> = (
     const initialItems: PRODUCTS_DATA[] = JSON.parse(localStorage.getItem("wishlist") || "[]");
     const [wishlistItems, setWishlistItems] = useState<PRODUCTS_DATA[]>(initialItems);
 
+
     useEffect(() => {
         localStorage.setItem("wishlist", JSON.stringify(wishlistItems));
     }, [wishlistItems]);
 
-    const addToWishlist = useCallback((product: PRODUCTS_DATA) => {
-        setWishlistItems(prev => {
-            const isExistingIndex = prev.findIndex(item => item?.id === product.id);
+    const addToWishlist = useCallback((product: PRODUCTS_DATA, color: string) => {
+        setWishlistItems((prev) => {
+            const isExistingIndex = prev.findIndex(
+                (item) => item?.id === product?.id && item?.selectedColor === color
+            );
+
             if (isExistingIndex === -1) {
-                toast.success(`${product?.name} added to wishlist`, {
+                toast.success(`${product?.name} (${color}) added to wishlist`, {
                     hideProgressBar: false,
                     closeOnClick: true,
                     pauseOnHover: false,
                     draggable: true,
                     progress: undefined,
-                    theme: "dark",
+                    theme: 'dark',
                     transition: Bounce,
                 });
-                return [...prev, product];
+
+                return [...prev, {...product, selectedColor: color}];
             } else {
-                toast.error(`${product?.name} removed from wishlist!`, {
+                toast.error(`${product?.name} (${color}) removed from wishlist!`, {
                     hideProgressBar: false,
                     closeOnClick: true,
                     pauseOnHover: false,
                     draggable: true,
                     progress: undefined,
-                    theme: "dark",
+                    theme: 'dark',
                     transition: Bounce,
                 });
+
                 const updatedWishlist = [...prev];
                 updatedWishlist.splice(isExistingIndex, 1);
                 return updatedWishlist;
@@ -62,18 +68,27 @@ export const WishlistContextProvider: React.FC<WishlistContextProviderProps> = (
         });
     }, []);
 
-    const removeFromWishlist = useCallback((productId: number,productName: string) => {
-        toast.success(`${productName} removed from wishlist`, {
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: false,
-            draggable: true,
-            progress: undefined,
-            theme: "dark",
-            transition: Bounce
-        });
-        setWishlistItems(prev => prev.filter(item => item?.id !== productId));
-    }, []);
+    const removeFromWishlist = useCallback(
+        (productId: number, productName: string, color: string, alert: boolean) => {
+            if (alert) {
+                toast.error(`${productName} (${color}) removed from wishlist`, {
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: false,
+                    draggable: true,
+                    progress: undefined,
+                    theme: 'dark',
+                    transition: Bounce,
+                });
+            }
+            setWishlistItems((prev) =>
+                prev.filter(
+                    (item) => !(item?.id === productId && item?.selectedColor === color)
+                )
+            );
+        },
+        []
+    );
 
     const contextValue = useMemo(() => ({
         wishlistItems,

@@ -25,9 +25,14 @@ export const DeviceCard: React.FC<DeviceCardProps> = ({data}) => {
     }, [setSelectedColor]);
 
     // CHECK PRODUCT IN WISH LIST
-    const isInWishlist = useCallback((productId: number) => {
-        return wishlistItems.some(item => item?.id === productId);
-    }, [wishlistItems]);
+    const isInWishlist = useCallback(
+        (productId: number, color: string): boolean => {
+            return wishlistItems.some(
+                (item) => item?.id === productId && item?.selectedColor === color
+            );
+        },
+        [wishlistItems]
+    );
 
 
     return (
@@ -35,9 +40,9 @@ export const DeviceCard: React.FC<DeviceCardProps> = ({data}) => {
             <div className={styles.deviceOptions}>
                 <div
                     className={styles.option}
-                    onClick={() => addToWishlist(data)}
+                    onClick={() => addToWishlist(data, selectedColor)}
                 >
-                    {isInWishlist(data?.id) ?
+                    {isInWishlist(data?.id, selectedColor) ?
                         <FavoriteIcon
                             sx={{
                                 color: "#0EF0AD"
