@@ -143,7 +143,7 @@ export const CheckoutPage = () => {
 
         try {
             setPostLoading(true);
-            const response = await axios.post('http://localhost:8000/orders', orderData);
+            const response = await axios.post('https://gaming-shop-server.vercel.app/orders', orderData);
             if (response.status === 201 || response.status === 200) {
                 toast.success('Order placed successfully!', {
                     hideProgressBar: false,
