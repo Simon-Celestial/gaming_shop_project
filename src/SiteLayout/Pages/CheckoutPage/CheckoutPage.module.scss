@@ -1,9 +1,5 @@
 @import "../../../Variables/Variables";
 
-.css-1jy569b-MuiFormLabel-root-MuiInputLabel-root.Mui-focused {
-  color: orangered !important;
-}
-
 .checkoutEmpty {
   display: flex;
   flex-direction: column;
@@ -53,7 +49,7 @@
     width: 100%;
     max-width: 1320px;
     flex-direction: column;
-    padding: 50px 15px 100px 15px;
+    padding:50px 15px 100px 15px;
 
     .emptyCart {
       display: flex;
@@ -111,7 +107,7 @@
 
                 span {
                   font-size: 22px;
-                  color: red;
+                  color: $greenDark;
                 }
               }
 
@@ -121,7 +117,8 @@
                 background-color: transparent;
                 border: 0;
                 outline: 0;
-                border-bottom: 1px solid $black;
+                border-bottom: 1px solid $green;
+                color: $white;
               }
             }
 
@@ -136,7 +133,7 @@
 
                 span {
                   font-size: 22px;
-                  color: red;
+                  color: $greenDark;
 
                 }
               }
@@ -146,9 +143,13 @@
                 padding: 8px 0;
                 border: 0;
                 outline: 0;
-                border-bottom: 1px solid $black;
+                border-bottom: 1px solid $green;
                 font-size: 15px;
                 background: transparent;
+                color: $gray;
+                option {
+                  background: $black;
+                }
 
               }
 
@@ -158,10 +159,11 @@
                 background-color: transparent;
                 border: 0;
                 outline: 0;
-                border-bottom: 1px solid $black;
+                border-bottom: 1px solid $green;
+                color: $white;
 
                 &::placeholder {
-                  color: rgba(0, 0, 0, 0.5);
+                  color: rgba(255, 255, 255, 0.5);
                 }
               }
             }
@@ -185,12 +187,13 @@
                 border: 0;
                 outline: 0;
                 background-color: transparent;
-                border-bottom: 1px solid $black;
+                border-bottom: 1px solid $green;
                 font-size: 15px;
                 resize: none;
+                color: $white;
 
                 &::placeholder {
-                  color: rgba(0, 0, 0, 0.5);
+                  color: rgba(255, 255, 255, 0.5);
                 }
               }
 
@@ -223,13 +226,21 @@
               width: 100%;
               justify-content: space-between;
               font-size: 18px;
-              border-bottom: 1px solid $black;
+              border-bottom: 1px solid $green;
               padding: 25px 0;
               font-weight: 400;
+              align-items: center;
+              &:last-child {
+                padding: 0 0 25px 0;
+              }
 
               p {
                 display: inline-flex;
-                gap: 5px;
+                gap: 10px;
+                align-items: center;
+                img {
+                  max-width: 60px;
+                }
               }
             }
           }
@@ -249,7 +260,7 @@
               width: 100%;
               gap: 5px;
               padding: 23px 0;
-              border-bottom: 1px solid $black;
+              border-bottom: 1px solid $green;
 
               b {
                 margin-bottom: 15px;
@@ -262,7 +273,6 @@
               width: 100%;
               flex-direction: column;
               padding: 23px 0;
-
               p {
                 font-size: 14px;
                 margin-bottom: 25px;
@@ -282,11 +292,11 @@
                 }
 
               }
-
-              .container {
-                display: flex;
-                align-items: end;
-                height: 55px;
+              .postBtn {
+                &.loading {
+                  opacity: 0.5;
+                  pointer-events: none;
+                }
               }
             }
           }
@@ -380,10 +390,6 @@
 
     img {
       max-width: 80px
-    }
-
-    .container {
-      height: 45px;
     }
   }
   .checkoutMain {
@@ -486,7 +492,6 @@
                 }
               }
             }
-
             .paymentContainer {
               .paymentPrivacyPolicy {
                 button {
