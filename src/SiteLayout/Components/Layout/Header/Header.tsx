@@ -13,6 +13,7 @@ import navData from '/public/data/NavData/navData.json';
 import {Basket} from "../Basket/Basket.tsx";
 import {useCallback, useContext, useState} from "react";
 import {BasketContext} from "../../../../Context/BasketContext/BasketContext.tsx";
+import {SearchPanel} from "../SearchPanel/SearchPanel.tsx";
 
 interface NAV_DATA {
     id: string;
@@ -27,6 +28,11 @@ export const Header = () => {
     } = useContext(BasketContext)
     const location = useLocation();
     const [basketOpen, setBasketOpen] = useState(false);
+    const [searchPanelOpen, setSearchPanelOpen] = useState(false);
+
+    const handleOpenSearchPanel = useCallback(() => {
+        setSearchPanelOpen(true);
+    }, []);
 
     const handleBasketOpen = useCallback(() => {
         setBasketOpen(true)
@@ -37,6 +43,10 @@ export const Header = () => {
         <>
             <SideMenu/>
             <header className={styles.headerWrapper}>
+                <SearchPanel
+                    searchPanelOpen={searchPanelOpen}
+                    setSearchPanelOpen={setSearchPanelOpen}
+                />
                 <Basket
                     basketOpen={basketOpen}
                     setBasketOpen={setBasketOpen}
@@ -98,7 +108,10 @@ export const Header = () => {
                         })}
                     </nav>
                     <div className={styles.rightBlock}>
-                        <div className={styles.buttonBlock}>
+                        <div
+                            className={styles.buttonBlock}
+                            onClick={handleOpenSearchPanel}
+                        >
                             <SearchSharpIcon/>
                         </div>
                         <div className={styles.buttonBlock}>
