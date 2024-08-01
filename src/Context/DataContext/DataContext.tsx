@@ -33,7 +33,7 @@ export const DataContextProvider: React.FC<DataContextProviderProps> = ({childre
         (async () => {
             setProductsLoading(true);
             try {
-                const response = await axios.get("https://gaming-shop-server.vercel.app/products");
+                const response = await axios.get("http://localhost:8000/products");
                 setProductsData(response.data);
             } catch (error) {
                 console.error('Axios error:', error);

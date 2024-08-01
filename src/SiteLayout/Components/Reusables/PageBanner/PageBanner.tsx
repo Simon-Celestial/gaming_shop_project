@@ -9,7 +9,7 @@ interface PageBannerProps {
     smallText: string;
 }
 
-export const PageBanner: React.FC<PageBannerProps> = ({greenText,whiteText,smallText}) => {
+export const PageBanner: React.FC<PageBannerProps> = ({greenText, whiteText, smallText}) => {
 
     const location = useLocation();
 
@@ -36,7 +36,9 @@ export const PageBanner: React.FC<PageBannerProps> = ({greenText,whiteText,small
                 </div>
                 <div className={styles.bannerTitle}>
                     <div className={styles.coloredText}>
-                        {whiteText?<h2>{whiteText}</h2> : ''} {greenText? <h3 style={{marginBottom: "0"}}>{greenText}</h3> : ''}
+                        {whiteText && !greenText ? <h2>{whiteText}</h2> : null}
+                        {greenText && !whiteText ? <h3 style={{margin: 0}}>{greenText}</h3> : null}
+                        {greenText && whiteText?  <h2>{whiteText} <span>{greenText}</span></h2> : null}
                     </div>
                     <div className={styles.solidText}>
                         {smallText}

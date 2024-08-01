@@ -83,7 +83,7 @@ export const DeviceCard: React.FC<DeviceCardProps> = ({data}) => {
                         : 'offer'}
                 </div>
                 <Link
-                    to={""}
+                    to={`/product-details/${data?.id.toString()}`}
                 >
                     {data?.name}
                 </Link>

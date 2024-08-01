@@ -1,1 +1,68 @@
 @import "../../../Variables/Variables";
+
+.pageWrapper {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  background: $background;
+  .pageContent {
+    display: flex;
+    max-width: 1100px;
+    width: 100%;
+    flex-direction: column;
+    padding: 75px 15px 0 15px;
+    .privacyTitle {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 25px;
+      color: $gray;
+      >h2 {
+        font-size: 24px;
+        color: $white;
+        text-transform: uppercase;
+        margin-bottom: 30px;
+      }
+      p {
+        margin-bottom: 30px;
+        font-size: 16px;
+      }
+      ul {
+        list-style: none;
+        margin-bottom: 30px;
+        font-size: 18px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      ol {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        font-size: 18px;
+        margin-bottom: 25px;
+        li {
+          padding-left: 10px;
+
+        }
+      }
+    }
+  }
+  .sliderWrapper {
+    display: flex;
+    width: 100%;
+    margin-top: 25px;
+    align-items: center;
+    .slideBox {
+      display: flex;
+      width: 100%;
+      max-height: 330px;
+      img {
+        width: 100%;
+        object-fit: cover;
+        object-position: center;
+      }
+    }
+  }
+
+}

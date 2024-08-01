@@ -21,6 +21,13 @@
     background-position: bottom right;
     background-repeat: no-repeat;
   }
+  &.privacy-policy {
+    background-image: url("https://pixner.net/gamestorm3/main/assets/images/about-banner-illus.png");
+    background-position: bottom right;
+    background-repeat: no-repeat;
+    background-color: #222434;
+  }
+
   &.wishlist {
     background-image: url("https://pixner.net/gamestorm3/main/assets/images/store-banner-illus.png");
     background-size: cover;
@@ -112,6 +119,9 @@
         h2 {
           font-size: 56px;
           color: $white;
+          span {
+            color: $green;
+          }
         }
 
         h3 {

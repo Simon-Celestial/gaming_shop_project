@@ -9,9 +9,10 @@ import {CheckoutPage} from "../SiteLayout/Pages/CheckoutPage/CheckoutPage.tsx";
 import {CompletedPage} from "../SiteLayout/Pages/CompletedPage/CompletedPage.tsx";
 import {LoginPage} from "../SiteLayout/Pages/LoginAndRegisterPages/LoginPage/LoginPage.tsx";
 import {RegisterPage} from "../SiteLayout/Pages/LoginAndRegisterPages/RegisterPage/RegisterPage.tsx";
-import {AuthContext} from "../Context/AuthContext/AuthContext.tsx";
-import {useContext} from "react";
 import {PrivacyPolicyPage} from "../SiteLayout/Pages/PrivacyPolicyPage/PrivacyPolicyPage.tsx";
+import {ProductDetailsPage} from "../SiteLayout/Pages/ProductDetailsPage/ProductDetailsPage.tsx";
+import {AuthContext} from "../Context/AuthContext/AuthContext.tsx";
+import React, {useContext} from "react";
 
 interface UserData {
     email: string;
@@ -72,13 +73,17 @@ const router = ({userData, token}: RouterProps) => createBrowserRouter([
                 {
                     path: "privacy-policy",
                     element: <PrivacyPolicyPage/>,
+                },
+                {
+                    path: "product-details/:id",
+                    element: <ProductDetailsPage />,
                 }
             ],
         }
     ])
 ;
 
-export const MainRouter = () => {
+export const MainRouter:React.FC = () => {
     const {token, userData} = useContext(AuthContext);
     return <RouterProvider router={router({token, userData})}/>;
 };
