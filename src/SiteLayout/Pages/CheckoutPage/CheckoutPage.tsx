@@ -1,6 +1,6 @@
 import React, {useCallback, useContext, useState} from 'react';
 import styles from './CheckoutPage.module.scss';
-import {useNavigate} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
@@ -55,7 +55,7 @@ export const CheckoutPage = () => {
     } = useContext(BasketContext);
 
     const [formFields, setFormFields] = useState(defaults);
-    const [postLoading,setPostLoading] = useState(false);
+    const [postLoading, setPostLoading] = useState(false);
     const [paymentMethod, setPaymentMethod] = React.useState<string | undefined>('');
     const [open, setOpen] = React.useState(false);
 
@@ -182,7 +182,8 @@ export const CheckoutPage = () => {
         <>
             <Header/>
             <main className={styles.checkoutMain}>
-                <PageBanner greenText={"Checkout"} whiteText={""} smallText={"Your journey to ultimate entertainment starts now!"}/>
+                <PageBanner greenText={"Checkout"} whiteText={""}
+                            smallText={"Your journey to ultimate entertainment starts now!"}/>
                 {
                     cartItems.length < 1 ?
                         <div className={styles.checkoutEmpty}>
@@ -318,7 +319,8 @@ export const CheckoutPage = () => {
                                             {cartItems?.map((cartProduct) => {
                                                 return (
                                                     <div key={cartProduct?.id} className={styles.orderRow}>
-                                                        <p><img src={cartProduct?.image[0]} alt=""/> {cartProduct?.name} ({cartProduct?.selectedColor})
+                                                        <p><img src={cartProduct?.image[0]}
+                                                                alt=""/> {cartProduct?.name} ({cartProduct?.selectedColor})
                                                             <span> × {cartProduct?.count}</span></p>
                                                         <p>$ {(cartProduct?.salePrice * cartProduct?.count)?.toFixed(2)}</p>
                                                     </div>
@@ -407,17 +409,15 @@ export const CheckoutPage = () => {
                                                     experience throughout this website, and for other purposes
                                                     described in
                                                     our {' '}
-                                                    <a style={{
-                                                        color: "#0EF0AD",
-                                                        textDecoration: "underline"
-                                                    }}
-                                                       href="#"
-                                                       className="woocommerce-privacy-policy-link"
-                                                       target="_blank"
-                                                       rel="noopener noreferrer"
+                                                    <Link to={"/privacy-policy"}
+                                                          style={{
+                                                              color: "#0EF0AD",
+                                                              textDecoration: "underline"
+                                                          }}
+                                                          target="_blank"
                                                     >
                                                         privacy policy
-                                                    </a>
+                                                    </Link>
                                                 </p>
                                                 {/* PLACE ORDER BUTTON */}
                                                 <div

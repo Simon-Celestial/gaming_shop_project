@@ -4,23 +4,26 @@ import 'react-toastify/dist/ReactToastify.min.css';
 import {DataContextProvider} from "./Context/DataContext/DataContext.tsx";
 import {BasketContextProvider} from "./Context/BasketContext/BasketContext.tsx";
 import {WishlistContextProvider} from "./Context/WishlishContext/WishlistContext.tsx";
+import {AuthContextProvider} from "./Context/AuthContext/AuthContext.tsx";
 
 
 export const App = () => {
 
     return (
         <>
-            <WishlistContextProvider>
-                <BasketContextProvider>
-                    <DataContextProvider>
-                        <MainRouter/>
-                        <ToastContainer
-                            position="top-center"
-                            autoClose={3000}
-                        />
-                    </DataContextProvider>
-                </BasketContextProvider>
-            </WishlistContextProvider>
+            <AuthContextProvider>
+                <WishlistContextProvider>
+                    <BasketContextProvider>
+                        <DataContextProvider>
+                            <MainRouter/>
+                            <ToastContainer
+                                position="top-center"
+                                autoClose={3000}
+                            />
+                        </DataContextProvider>
+                    </BasketContextProvider>
+                </WishlistContextProvider>
+            </AuthContextProvider>
         </>
     )
 }

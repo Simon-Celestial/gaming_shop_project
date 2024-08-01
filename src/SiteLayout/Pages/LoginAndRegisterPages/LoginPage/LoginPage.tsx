@@ -1,4 +1,4 @@
-import React, {useState, useCallback} from 'react';
+import React, {useState, useCallback, useContext} from 'react';
 import styles from "../LoginAndRegister.module.scss";
 import {Link, useNavigate} from 'react-router-dom';
 import {Bounce, toast} from 'react-toastify';
@@ -8,22 +8,27 @@ import VisibilityIcon from '@mui/icons-material/Visibility';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 import {Header} from "../../../Components/Layout/Header/Header.tsx";
 import {PageBanner} from "../../../Components/Reusables/PageBanner/PageBanner.tsx";
+import {AuthContext} from "../../../../Context/AuthContext/AuthContext.tsx";
 
-interface UserLoginState {
-    userLoginEmail: string;
-    userLoginPassword: string;
+// I DONT HAVE A NORMAL BACKEND WITH JWT TOKEN, SO THIS IS TEMPORARY DECISION
+const token: string = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiJiNTdkOTRlMC01MDFiLTExZWYtYTEzNC1hYjE4MzQzN2NiNWYiLCJpYXQiOjE3MjI1MjY2MjIsImV4cCI6MTcyMjYxMzAyMn0.TWRTsf3n57Vii3TISjw2Mbk_AbW7DZoFs9UeLwlYYDw";
+
+interface USER_LOGIN {
+    userEmail: string;
+    userPassword: string;
+}
+
+const userDefault: USER_LOGIN = {
+    userEmail: "",
+    userPassword: ""
 }
 
 export const LoginPage: React.FC = () => {
-
-    const [userLogin, setUserLogin] = useState<UserLoginState>({
-        userLoginEmail: "",
-        userLoginPassword: ""
-    });
-
-
+    const {setToken} = useContext(AuthContext);
+    const [userLogin, setUserLogin] = useState<USER_LOGIN>(userDefault);
     const [viewPassword, setViewPassword] = useState<boolean>(false);
     const [loginLoading, setLoginLoading] = useState(false);
+
     const handlePassView = useCallback(() => {
         setViewPassword((prevState) => !prevState);
     }, [setViewPassword]);
@@ -38,17 +43,22 @@ export const LoginPage: React.FC = () => {
                 const response = await axios.get("https://gaming-shop-server.vercel.app/users");
                 const users = response.data;
 
-                const userWithEmail = users.find(
-                    (userData: { userEmail: string }) =>
-                        userData.userEmail === userLogin.userLoginEmail
+                const user = users.find((userData: { userEmail: string, userPassword: string }) =>
+                    userData.userEmail === userLogin.userEmail &&
+                    userData.userPassword === userLogin.userPassword
                 );
-                const userPassword = users.find(
-                    (userData: { userPassword: string }) =>
-                        userData.userPassword === userLogin.userLoginPassword
-                );
-
-                if (userWithEmail && userPassword) {
-                    localStorage.setItem("user", JSON.stringify({email: userWithEmail.userEmail}));
+                if (user) {
+                    localStorage.setItem("userData", JSON.stringify({
+                        username: user.userName,
+                        email: user.userEmail,
+                        registerDate: user.registerDate,
+                        phone: user.userPhone,
+                        userID: user.id
+                    }));
+                    localStorage.setItem("token", JSON.stringify({
+                        token
+                    }));
+                    setToken(token);
                     toast.success(`You have successfully logged into your account`, {
                         hideProgressBar: false,
                         closeOnClick: true,
@@ -59,7 +69,9 @@ export const LoginPage: React.FC = () => {
                         transition: Bounce,
                     });
                     navigate("/");
-                } else if (!userWithEmail) {
+                    window.location.reload();
+                } else if (!users.find((userData: { userEmail: string }) =>
+                    userData.userEmail === userLogin.userEmail)) {
                     toast.error(`No such account exists`, {
                         hideProgressBar: false,
                         closeOnClick: true,
@@ -69,7 +81,7 @@ export const LoginPage: React.FC = () => {
                         theme: "dark",
                         transition: Bounce,
                     });
-                } else if (!userPassword) {
+                } else {
                     toast.error(`The password for this account is incorrect`, {
                         hideProgressBar: false,
                         closeOnClick: true,
@@ -86,9 +98,8 @@ export const LoginPage: React.FC = () => {
                 setLoginLoading(false);
             }
         },
-        [userLogin, navigate]
+        [userLogin.userEmail, userLogin.userPassword, setToken, navigate]
     );
-
     return (
         <>
             <Header/>
@@ -103,8 +114,8 @@ export const LoginPage: React.FC = () => {
                                     type="email"
                                     required
                                     placeholder="Enter your email"
-                                    onChange={(e) => setUserLogin({...userLogin, userLoginEmail: e.target.value})}
-                                    value={userLogin.userLoginEmail}
+                                    onChange={(e) => setUserLogin({...userLogin, userEmail: e.target.value})}
+                                    value={userLogin.userEmail}
                                 />
                             </div>
                             <div className={styles.inputContainer}>
@@ -122,9 +133,9 @@ export const LoginPage: React.FC = () => {
                                         placeholder="Enter your password"
                                         onChange={(e) => setUserLogin({
                                             ...userLogin,
-                                            userLoginPassword: e.target.value
+                                            userPassword: e.target.value
                                         })}
-                                        value={userLogin.userLoginPassword}
+                                        value={userLogin.userPassword}
                                     />
                                 </div>
                             </div>

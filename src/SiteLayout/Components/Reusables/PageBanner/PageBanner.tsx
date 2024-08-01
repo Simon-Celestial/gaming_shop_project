@@ -27,7 +27,7 @@ export const PageBanner: React.FC<PageBannerProps> = ({greenText,whiteText,small
             </div>
 
             <div className={styles.bannerContent}>
-                <div className={styles.pageLocation}>
+                <div className={`${styles.pageLocation} ${location.pathname === "/shop" ? styles.shopPage : ''}`}>
                     <Link to={"/"}>
                         Home
                     </Link>

@@ -9,55 +9,77 @@ import {CheckoutPage} from "../SiteLayout/Pages/CheckoutPage/CheckoutPage.tsx";
 import {CompletedPage} from "../SiteLayout/Pages/CompletedPage/CompletedPage.tsx";
 import {LoginPage} from "../SiteLayout/Pages/LoginAndRegisterPages/LoginPage/LoginPage.tsx";
 import {RegisterPage} from "../SiteLayout/Pages/LoginAndRegisterPages/RegisterPage/RegisterPage.tsx";
+import {AuthContext} from "../Context/AuthContext/AuthContext.tsx";
+import {useContext} from "react";
+import {PrivacyPolicyPage} from "../SiteLayout/Pages/PrivacyPolicyPage/PrivacyPolicyPage.tsx";
 
-const router = () => createBrowserRouter([
-    {
-        path: '/',
-        element: <MainLayout/>,
-        children: [
-            {
-                path: "*",
-                element: <NotFoundPage/>
-            },
+interface UserData {
+    email: string;
+    username: string;
+    registerDate: string;
+    phone: string;
+    userID: string;
+}
 
-            {
-                path: '/',
-                element: <HomePage/>,
-            },
-            {
-                path: 'shop',
-                element: <ShopPage/>
-            },
-            {
-                path: 'wishlist',
-                element: <WishlistPage/>
-            },
-            {
-                path: 'basket',
-                element: <BasketPage/>
-            },
-            {
-                path: "checkout",
-                element: <CheckoutPage/>
-            },
-            {
-                path: "completed",
-                element: <CompletedPage/>
-            },
-            {
-                path: "login",
-                element: <LoginPage/>
-            },
-            {
-                path: "register",
-                element: <RegisterPage/>
-            }
+interface RouterProps {
+    userData: UserData | undefined;
+    token: string | undefined;
+}
 
-        ],
-    }
-]);
+
+const router = ({userData, token}: RouterProps) => createBrowserRouter([
+        {
+            path: '/',
+            element: <MainLayout/>,
+            children: [
+                {
+                    path: "*",
+                    element: <NotFoundPage/>
+                },
+
+                {
+                    path: '/',
+                    element: <HomePage/>,
+                },
+                {
+                    path: 'shop',
+                    element: <ShopPage/>
+                },
+                {
+                    path: 'wishlist',
+                    element: <WishlistPage/>
+                },
+                {
+                    path: 'basket',
+                    element: <BasketPage/>
+                },
+                {
+                    path: "checkout",
+                    element: <CheckoutPage/>
+                },
+                {
+                    path: "completed",
+                    element: <CompletedPage/>
+                },
+                {
+                    path: "login",
+                    element: token && userData ? <HomePage/> : <LoginPage/>,
+                },
+                {
+                    path: "register",
+                    element: token && userData ? <HomePage/> : <RegisterPage/>,
+                },
+                {
+                    path: "privacy-policy",
+                    element: <PrivacyPolicyPage/>,
+                }
+            ],
+        }
+    ])
+;
 
 export const MainRouter = () => {
-    return <RouterProvider router={router()}/>;
+    const {token, userData} = useContext(AuthContext);
+    return <RouterProvider router={router({token, userData})}/>;
 };
 

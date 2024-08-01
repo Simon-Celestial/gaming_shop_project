@@ -81,23 +81,17 @@ export const SideMenu = () => {
                                                 <Link to={"/basket"}>
                                                     Basket
                                                 </Link>
-                                                <Link to={"/"}>
-                                                    Option 3
+                                                <Link to={"/checkout"}>
+                                                    Checkout
                                                 </Link>
-                                                <Link to={"/"}>
-                                                    Option 4
+                                                <Link to={"/login"}>
+                                                    Login
                                                 </Link>
-                                                <Link to={"/"}>
-                                                    Option 5
+                                                <Link to={"/register"}>
+                                                    Register
                                                 </Link>
-                                                <Link to={"/"}>
-                                                    Option 6
-                                                </Link>
-                                                <Link to={"/"}>
-                                                    Option 7
-                                                </Link>
-                                                <Link to={"/"}>
-                                                    Option 8
+                                                <Link to={"/privacy-policy"}>
+                                                    Privacy Policy
                                                 </Link>
                                             </div>
 

@@ -2,7 +2,6 @@ import styles from './Header.module.scss';
 import PhoneAndroidSharpIcon from '@mui/icons-material/PhoneAndroidSharp';
 import SearchSharpIcon from '@mui/icons-material/SearchSharp';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
-import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import ExpandLessOutlinedIcon from '@mui/icons-material/ExpandLessOutlined';
 import {Link, useLocation} from "react-router-dom";
@@ -14,6 +13,9 @@ import {Basket} from "../Basket/Basket.tsx";
 import React, {useCallback, useContext, useEffect, useState} from "react";
 import {BasketContext} from "../../../../Context/BasketContext/BasketContext.tsx";
 import {SearchPanel} from "../SearchPanel/SearchPanel.tsx";
+import {AuthContext} from "../../../../Context/AuthContext/AuthContext.tsx";
+import LogoutIcon from '@mui/icons-material/Logout';
+import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
 
 interface NAV_DATA {
     id: string;
@@ -25,11 +27,16 @@ interface NAV_DATA {
 export const Header = () => {
     const {
         cartItems
-    } = useContext(BasketContext)
+    } = useContext(BasketContext);
+    const {
+        userData,
+        logOut,
+        token
+    } = useContext(AuthContext);
     const location = useLocation();
     const [basketOpen, setBasketOpen] = useState(false);
     const [searchPanelOpen, setSearchPanelOpen] = useState(false);
-    const [accountOpen,setAccountOpen] = useState(false);
+    const [accountOpen, setAccountOpen] = useState(false);
 
     const handleOpenAccount = useCallback((e: React.MouseEvent) => {
         e.stopPropagation();
@@ -51,7 +58,7 @@ export const Header = () => {
 
     const handleBasketOpen = useCallback(() => {
         setBasketOpen(true)
-    }, [setBasketOpen])
+    }, [setBasketOpen]);
 
 
     return (
@@ -104,14 +111,8 @@ export const Header = () => {
                                                     <Link to={"/register"}>
                                                         Register
                                                     </Link>
-                                                    <Link to={"/"}>
-                                                        Option 6
-                                                    </Link>
-                                                    <Link to={"/"}>
-                                                        Option 7
-                                                    </Link>
-                                                    <Link to={"/"}>
-                                                        Option 8
+                                                    <Link to={"/privacy-policy"}>
+                                                        Privacy Policy
                                                     </Link>
                                                 </div>
 
@@ -146,8 +147,17 @@ export const Header = () => {
                                 className={`${styles.accountDropdown} ${accountOpen ? styles.accountVisible : ''}`}
                                 onClick={ev => ev.stopPropagation()}
                             >
-                                <Link to={"/login"}>Login into account</Link>
-                                <Link to={"/register"}>Create an account</Link>
+                                {userData && token ? (
+                                    <>
+                                        <span><PersonOutlineIcon /> Hello, <p>{userData.username}</p></span>
+                                        <span onClick={logOut}><LogoutIcon /> Log off</span>
+                                    </>
+                                ) : (
+                                    <>
+                                        <Link to="/login">Login into account</Link>
+                                        <Link to="/register">Create an account</Link>
+                                    </>
+                                )}
                             </div>
                         </div>
                         <div

@@ -107,7 +107,7 @@
             flex-direction: column;
             background-color: black;
             padding: 10px;
-            min-width: 160px;
+            min-width: 180px;
             border-radius: 5px;
             gap: 10px;
             transition: transform 0.4s ease;
@@ -167,17 +167,21 @@
         &:hover {
           .entity {
             color: $green;
+
             &:after {
               opacity: 1;
               transform: rotate(-45deg);
             }
+
             svg {
               transform: rotate(0);
             }
           }
+
           .navDropDown {
             opacity: 1;
             pointer-events: auto;
+
             .dropDownContent {
               transform: translateY(0);
             }
@@ -201,8 +205,10 @@
         height: 32px;
         cursor: pointer;
         transition: border-color $transition;
+
         &.accountBtn {
           position: relative;
+
           .accountDropdown {
             position: absolute;
             top: 0;
@@ -216,17 +222,39 @@
             opacity: 0;
             pointer-events: none;
             transition: opacity $transition, top $transition;
+
             &.accountVisible {
               pointer-events: auto;
               opacity: 1;
               top: 58px;
             }
+
             a {
               white-space: nowrap;
               transition: color $transition;
-             &:hover {
-               color: $green;
-             }
+
+              &:hover {
+                color: $green;
+              }
+            }
+
+            > span {
+              display: inline-flex;
+              align-items: center;
+              gap: 5px;
+              &:nth-child(1) {
+                cursor: default;
+              }
+              &:nth-child(2) {
+                transition: color $transition;
+                &:hover {
+                  cursor: pointer;
+                  color: $green;
+                }
+              }
+              p {
+                text-transform: capitalize;
+              }
             }
 
           }
@@ -235,7 +263,7 @@
         &:hover {
           border-color: $green;
 
-          svg {
+          > svg {
             color: $green;
             transform: rotate(360deg);
           }
@@ -250,6 +278,7 @@
           margin-left: 100px;
           border: 0;
           position: relative;
+
           .circle {
             display: flex;
             align-items: center;
@@ -267,6 +296,7 @@
             height: 15px;
             border: 1px solid $white;
             font-size: 12px;
+
             &.wideCircle {
               width: 18px;
               height: 18px;
