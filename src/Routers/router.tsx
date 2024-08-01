@@ -7,6 +7,8 @@ import {WishlistPage} from "../SiteLayout/Pages/WishlistPage/WishlistPage.tsx";
 import {BasketPage} from "../SiteLayout/Pages/BasketPage/BasketPage.tsx";
 import {CheckoutPage} from "../SiteLayout/Pages/CheckoutPage/CheckoutPage.tsx";
 import {CompletedPage} from "../SiteLayout/Pages/CompletedPage/CompletedPage.tsx";
+import {LoginPage} from "../SiteLayout/Pages/LoginAndRegisterPages/LoginPage/LoginPage.tsx";
+import {RegisterPage} from "../SiteLayout/Pages/LoginAndRegisterPages/RegisterPage/RegisterPage.tsx";
 
 const router = () => createBrowserRouter([
     {
@@ -41,6 +43,14 @@ const router = () => createBrowserRouter([
             {
                 path: "completed",
                 element: <CompletedPage/>
+            },
+            {
+                path: "login",
+                element: <LoginPage/>
+            },
+            {
+                path: "register",
+                element: <RegisterPage/>
             }
 
         ],

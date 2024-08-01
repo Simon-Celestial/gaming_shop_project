@@ -182,7 +182,7 @@ export const CheckoutPage = () => {
         <>
             <Header/>
             <main className={styles.checkoutMain}>
-                <PageBanner greenText={""} whiteText={"Checkout"} smallText={"Ready to make them yours?"}/>
+                <PageBanner greenText={"Checkout"} whiteText={""} smallText={"Your journey to ultimate entertainment starts now!"}/>
                 {
                     cartItems.length < 1 ?
                         <div className={styles.checkoutEmpty}>

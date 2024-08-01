@@ -36,7 +36,7 @@ export const PageBanner: React.FC<PageBannerProps> = ({greenText,whiteText,small
                 </div>
                 <div className={styles.bannerTitle}>
                     <div className={styles.coloredText}>
-                        {whiteText?<h2>{whiteText}</h2> : ''} {greenText? <h3>{greenText}</h3> : ''}
+                        {whiteText?<h2>{whiteText}</h2> : ''} {greenText? <h3 style={{marginBottom: "0"}}>{greenText}</h3> : ''}
                     </div>
                     <div className={styles.solidText}>
                         {smallText}

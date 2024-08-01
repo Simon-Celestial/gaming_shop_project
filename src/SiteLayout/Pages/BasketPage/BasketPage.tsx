@@ -23,7 +23,7 @@ export const BasketPage = () => {
         <>
             <Header/>
             <main className={styles.basketMain}>
-                <PageBanner greenText={""} whiteText={"Your basket"} smallText={"Ready to make them yours?"}/>
+                <PageBanner greenText={"Your basket"} whiteText={""} smallText={"Ready to make them yours?"}/>
                 {
                     cartItems?.length < 1 ?
                         <div className={styles.cartEmpty}>

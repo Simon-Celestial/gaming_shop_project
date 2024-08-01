@@ -11,7 +11,7 @@ import {SideMenu} from "../SideMenu/SideMenu.tsx";
 // @ts-expect-error
 import navData from '/public/data/NavData/navData.json';
 import {Basket} from "../Basket/Basket.tsx";
-import {useCallback, useContext, useState} from "react";
+import React, {useCallback, useContext, useEffect, useState} from "react";
 import {BasketContext} from "../../../../Context/BasketContext/BasketContext.tsx";
 import {SearchPanel} from "../SearchPanel/SearchPanel.tsx";
 
@@ -29,6 +29,21 @@ export const Header = () => {
     const location = useLocation();
     const [basketOpen, setBasketOpen] = useState(false);
     const [searchPanelOpen, setSearchPanelOpen] = useState(false);
+    const [accountOpen,setAccountOpen] = useState(false);
+
+    const handleOpenAccount = useCallback((e: React.MouseEvent) => {
+        e.stopPropagation();
+        setAccountOpen((prev) => !prev);
+    }, []);
+
+    useEffect(() => {
+        const handleCloseAccount = () => setAccountOpen(false);
+        document.addEventListener("click", handleCloseAccount);
+        return () => {
+            document.removeEventListener("click", handleCloseAccount);
+        };
+    }, []);
+
 
     const handleOpenSearchPanel = useCallback(() => {
         setSearchPanelOpen(true);
@@ -42,7 +57,10 @@ export const Header = () => {
     return (
         <>
             <SideMenu/>
-            <header className={styles.headerWrapper}>
+            <header
+                className={styles.headerWrapper}
+                style={{zIndex: searchPanelOpen ? "12" : ""}}
+            >
                 <SearchPanel
                     searchPanelOpen={searchPanelOpen}
                     setSearchPanelOpen={setSearchPanelOpen}
@@ -80,11 +98,11 @@ export const Header = () => {
                                                     <Link to={"/checkout"}>
                                                         Checkout
                                                     </Link>
-                                                    <Link to={"/"}>
-                                                        Option 4
+                                                    <Link to={"/login"}>
+                                                        Login
                                                     </Link>
-                                                    <Link to={"/"}>
-                                                        Option 5
+                                                    <Link to={"/register"}>
+                                                        Register
                                                     </Link>
                                                     <Link to={"/"}>
                                                         Option 6
@@ -114,11 +132,23 @@ export const Header = () => {
                         >
                             <SearchSharpIcon/>
                         </div>
-                        <div className={styles.buttonBlock}>
+                        <Link to={"/wishlist"} className={styles.buttonBlock}>
                             <FavoriteBorderIcon/>
-                        </div>
-                        <div className={styles.buttonBlock}>
+                        </Link>
+                        <div
+                            className={`${styles.buttonBlock} ${styles.accountBtn}`}
+                            onClick={handleOpenAccount}
+
+
+                        >
                             <PersonOutlineIcon/>
+                            <div
+                                className={`${styles.accountDropdown} ${accountOpen ? styles.accountVisible : ''}`}
+                                onClick={ev => ev.stopPropagation()}
+                            >
+                                <Link to={"/login"}>Login into account</Link>
+                                <Link to={"/register"}>Create an account</Link>
+                            </div>
                         </div>
                         <div
                             className={`${styles.buttonBlock} ${styles.cartButton}`}

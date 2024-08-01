@@ -8,18 +8,14 @@
   align-items: center;
   position: relative;
   border-bottom: 1px solid rgba(128, 128, 128, 0.3);
-  &.shop {
-    background-image: url("https://pixner.net/gamestorm3/main/assets/images/pricing-plan-banner-illus.png");
-    background-position: bottom right;
-    background-repeat: no-repeat;
-  }
+  &.shop,
+  &.login,
+  &.register,
   &.checkout {
     background-image: url("https://pixner.net/gamestorm3/main/assets/images/pricing-plan-banner-illus.png");
     background-position: bottom right;
     background-repeat: no-repeat;
   }
-
-
   &.about {
     background-image: url("https://pixner.net/gamestorm3/main/assets/images/about-banner-illus.png");
     background-position: bottom right;
@@ -112,11 +108,12 @@
 
         h2 {
           font-size: 56px;
-          color: $green;
+          color: $white;
         }
 
         h3 {
           font-size: 56px;
+          color: $green;
         }
       }
 
