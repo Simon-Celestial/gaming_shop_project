@@ -74,7 +74,7 @@ export interface CONTACT_DEFAULTS {
 export interface PRODUCTS_DATA {
     id: number;
     name: string;
-    image: string;
+    image: string[];
     category: string;
     brand: string;
     offer: string;

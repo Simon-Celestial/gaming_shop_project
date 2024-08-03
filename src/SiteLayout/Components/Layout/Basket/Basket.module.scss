@@ -71,7 +71,14 @@
     flex-direction: column;
     margin-top: 25px;
     gap: 20px;
-    height: 100%;
+    overflow-y: auto;
+    padding-bottom: 20px;
+    &::-webkit-scrollbar {
+      width: 0;
+      background: $green;
+    }
+
+
 
     .productCard {
       display: flex;
@@ -177,6 +184,7 @@
     flex-direction: column;
     padding: 20px 0 0 0;
     position: relative;
+    margin-top: auto;
     &:after {
       content: "";
       top: 0;

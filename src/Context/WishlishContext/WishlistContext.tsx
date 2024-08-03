@@ -7,6 +7,7 @@ interface WishlistContextType {
     wishlistItems: PRODUCTS_DATA[];
     addToWishlist: (product: PRODUCTS_DATA, color: string) => void;
     removeFromWishlist: (productId: number, productName: string, color: string, alert: boolean) => void;
+    isInWishlist: (productId: number, color: string) => boolean;
 }
 
 const initialContextValue: WishlistContextType = {
@@ -15,6 +16,7 @@ const initialContextValue: WishlistContextType = {
     },
     removeFromWishlist: () => {
     },
+    isInWishlist: () => false,
 };
 
 export const WishlistContext = React.createContext<WishlistContextType>(initialContextValue);
@@ -90,14 +92,27 @@ export const WishlistContextProvider: React.FC<WishlistContextProviderProps> = (
         []
     );
 
+    // CHECK PRODUCT IN WISH LIST
+    const isInWishlist = useCallback(
+        (productId: number, color: string): boolean => {
+            return wishlistItems.some(
+                (item) => item?.id === productId && item?.selectedColor === color
+            );
+        },
+        [wishlistItems]
+    );
+
+
     const contextValue = useMemo(() => ({
         wishlistItems,
         addToWishlist,
-        removeFromWishlist
+        removeFromWishlist,
+        isInWishlist
     }), [
         wishlistItems,
         addToWishlist,
-        removeFromWishlist
+        removeFromWishlist,
+        isInWishlist
     ]);
 
     return (

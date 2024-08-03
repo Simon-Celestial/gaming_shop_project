@@ -6,6 +6,7 @@ import RemoveIcon from '@mui/icons-material/Remove';
 import AddIcon from '@mui/icons-material/Add';
 import DeleteIcon from '@mui/icons-material/Delete';
 import {BasketContext} from "../../../../Context/BasketContext/BasketContext.tsx";
+import {PRODUCTS_DATA} from "../../../../Types/types.ts";
 
 interface BasketProps {
     basketOpen: boolean;
@@ -39,7 +40,7 @@ export const Basket: React.FC<BasketProps> = ({basketOpen, setBasketOpen}) => {
                             Your Shopper
                         </div>
                         <div className={styles.basketProducts}>
-                            {cartItems?.map((product) => {
+                            {cartItems?.map((product: PRODUCTS_DATA) => {
                                 return (
                                     <div
                                         key={product?.id}
@@ -54,7 +55,7 @@ export const Basket: React.FC<BasketProps> = ({basketOpen, setBasketOpen}) => {
                                                 alt={product?.name}/>
                                         </div>
                                         <div className={styles.details}>
-                                            <Link to={"/"}>USB Gaming Keyboard</Link>
+                                            <Link to={`/product-details/${product?.id}`}>{product?.name}</Link>
                                             <div className={styles.price}>
                                                 ${product?.salePrice?.toFixed(2)}
                                             </div>

@@ -15,7 +15,7 @@ interface DeviceCardProps {
 
 export const DeviceCard: React.FC<DeviceCardProps> = ({data}) => {
     const {addToCart} = useContext(BasketContext);
-    const {addToWishlist, wishlistItems} = useContext(WishlistContext);
+    const {addToWishlist,isInWishlist} = useContext(WishlistContext);
 
     const [selectedColor, setSelectedColor] = useState(data?.colors[0]);
 
@@ -23,17 +23,6 @@ export const DeviceCard: React.FC<DeviceCardProps> = ({data}) => {
     const handleSelectColor = useCallback((color: string): void => {
         setSelectedColor(color)
     }, [setSelectedColor]);
-
-    // CHECK PRODUCT IN WISH LIST
-    const isInWishlist = useCallback(
-        (productId: number, color: string): boolean => {
-            return wishlistItems.some(
-                (item) => item?.id === productId && item?.selectedColor === color
-            );
-        },
-        [wishlistItems]
-    );
-
 
     return (
         <div className={styles.deviceCard}>

@@ -2,6 +2,7 @@ import React, {useState, useEffect, useCallback, useMemo} from "react";
 import {Bounce, toast} from 'react-toastify';
 import {PRODUCTS_DATA} from "../../Types/types.ts";
 
+
 interface BasketContextType {
     addToCart: (product: PRODUCTS_DATA, color: string) => void;
     removeFromCart: (productId: number, productName: string, color: string) => void;
@@ -58,7 +59,7 @@ export const BasketContextProvider: React.FC<BasketContextProviderProps> = ({chi
                         ? {...item, count: item?.count + 1}
                         : item
                 );
-            } else if (product.quantity < 1) {
+            } else if (product?.quantity < 1) {
                 toast.error(`Product is out of stock!`, {
                     hideProgressBar: false,
                     closeOnClick: true,
@@ -84,20 +85,35 @@ export const BasketContextProvider: React.FC<BasketContextProviderProps> = ({chi
         });
     }, []);
 
+
     const removeFromCart = useCallback((productId: number, productName: string, color: string) => {
-        toast.success(`${productName} (${color}) removed from basket`, {
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: false,
-            draggable: true,
-            progress: undefined,
-            theme: "dark",
-            transition: Bounce,
+        setCartItems((prev) => {
+            const updatedCart = prev.filter(item => item.id !== productId || item.selectedColor !== color);
+            if (updatedCart.length < prev.length) {
+                toast.success(`${productName} (${color}) removed from basket!`, {
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: false,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "dark",
+                    transition: Bounce,
+                });
+            } else {
+                toast.error(`Failed to remove ${productName} (${color}) from basket!`, {
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: false,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "dark",
+                    transition: Bounce,
+                });
+            }
+            return updatedCart;
         });
-        setCartItems((prev) =>
-            prev?.filter((item) => !(item?.id === productId && item?.selectedColor === color))
-        );
     }, []);
+
 
     const increaseQuantity = useCallback((productId: number, color: string) => {
         setCartItems(prev => prev?.map(item =>
