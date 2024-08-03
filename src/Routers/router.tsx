@@ -13,6 +13,7 @@ import {PrivacyPolicyPage} from "../SiteLayout/Pages/PrivacyPolicyPage/PrivacyPo
 import {ProductDetailsPage} from "../SiteLayout/Pages/ProductDetailsPage/ProductDetailsPage.tsx";
 import {AuthContext} from "../Context/AuthContext/AuthContext.tsx";
 import React, {useContext} from "react";
+import {GamesPage} from "../SiteLayout/Pages/GamesPage/GamesPage.tsx";
 
 interface UserData {
     email: string;
@@ -45,6 +46,10 @@ const router = ({userData, token}: RouterProps) => createBrowserRouter([
                 {
                     path: 'shop',
                     element: <ShopPage/>
+                },
+                {
+                  path: 'games',
+                  element: <GamesPage/>
                 },
                 {
                     path: 'wishlist',
