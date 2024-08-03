@@ -15,7 +15,7 @@ interface DeviceCardProps {
 
 export const DeviceCard: React.FC<DeviceCardProps> = ({data}) => {
     const {addToCart} = useContext(BasketContext);
-    const {addToWishlist,isInWishlist} = useContext(WishlistContext);
+    const {addToWishlist, isInWishlist} = useContext(WishlistContext);
 
     const [selectedColor, setSelectedColor] = useState(data?.colors[0]);
 
@@ -25,7 +25,13 @@ export const DeviceCard: React.FC<DeviceCardProps> = ({data}) => {
     }, [setSelectedColor]);
 
     return (
-        <div className={styles.deviceCard}>
+        <div
+            className={styles.deviceCard}
+            style={{
+                filter: data?.quantity < 1 ? "grayscale(0.9) blur(1px)" : ""
+            }}
+
+        >
             <div className={styles.deviceOptions}>
                 <div
                     className={styles.option}
@@ -90,6 +96,14 @@ export const DeviceCard: React.FC<DeviceCardProps> = ({data}) => {
                 <p>{data?.brand}</p>
             </div>
             <div className={styles.cardImage}>
+                {
+                    data?.quantity < 1 ?
+                        <div className={styles.outOfStock}>
+                            Out of stock
+                        </div>
+                        :
+                        null
+                }
                 <img
                     src={data?.image[0]}
                     alt={data?.name}

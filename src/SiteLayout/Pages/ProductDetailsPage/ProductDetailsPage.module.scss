@@ -8,15 +8,18 @@
   background: $background;
 
   .pageContent {
-    max-width: 1400px;
     width: 100%;
-    padding: 150px 15px 100px 15px;
+    padding: 150px 15px 0 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
-    .mainProductContainer {
+    .mainProductSection {
       display: flex;
       width: 100%;
       gap: 30px;
-
+      max-width: 1400px;
+      padding-bottom: 75px;
       .productTitle {
         display: flex;
         width: 100%;
@@ -134,7 +137,7 @@
       .productImage {
         display: flex;
         width: 100%;
-        max-width: 680px;
+        max-width: 710px;
         gap: 15px;
 
         .imagesColumn {
@@ -170,7 +173,7 @@
 
         .mainImage {
           width: 100%;
-          max-width: 540px;
+          max-width: 568px;
           border: 1px solid $greenDark;
           display: flex;
           align-items: center;
@@ -208,6 +211,79 @@
         }
       }
 
+    }
+    .additionalSection {
+      display: flex;
+      width: 100%;
+      justify-content: center;
+      padding: 75px 0 50px 0;
+      background-color: $grayFill;
+      .sectionContent {
+        display: flex;
+        max-width: 1400px;
+        flex-direction: column;
+        width: 100%;
+        >h2 {
+          font-size: 35px;
+          color: $white;
+          margin-bottom: 25px;
+        }
+        .infoTable {
+          display: flex;
+          flex-direction: column;
+          border: 1px solid $gray;
+          border-radius: 10px;
+          width: 100%;
+          .tableRow {
+            display: flex;
+            gap: 5px;
+            border-bottom: 1px solid $gray;
+            &:last-child {
+              border-bottom: 0;
+            }
+            .cell {
+              display: flex;
+              align-items: center;
+              padding: 10px;
+              width: 100%;
+              &:nth-child(1) {
+                border-right: 1px solid $gray;
+                max-width: 150px;
+              }
+            }
+
+          }
+        }
+      }
+    }
+    .mayLikeSection {
+      display: flex;
+      width: 100%;
+      padding: 0 0 75px 0;
+      justify-content: center;
+      background: $grayFill;
+      border-bottom: 2px solid $background;
+      .sectionContent {
+        display: flex;
+        width: 100%;
+        max-width: 1400px;
+        flex-direction: column;
+        >h2 {
+          font-size: 35px;
+          color: $white;
+          margin-bottom: 25px;
+        }
+        .productsSwiper {
+          display: flex;
+          width: 100%;
+          align-items: center;
+          .cardWrapper {
+            max-width: 450px;
+            width: 100%;
+          }
+        }
+
+      }
     }
   }
 }
