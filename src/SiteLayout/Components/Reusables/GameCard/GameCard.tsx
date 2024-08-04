@@ -63,7 +63,7 @@ export const GameCard: React.FC<GAME_CARD_PROPS> = ({data}) => {
                     </div>
                 </div>
                 <Link to={data?.link} className={styles.linkBox} target={"_blank"}>
-                    <img src="/images/steam.webp" alt="steam"/>
+                    <img src="/images/icons/steam.webp" alt="steam"/>
                     <div className={styles.blockTitle}>
                         <p>Available at</p>
                         <h2>STEAM</h2>

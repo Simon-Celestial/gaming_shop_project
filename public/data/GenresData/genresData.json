@@ -1,18 +1,18 @@
 [
   {
     "id" : "action",
-    "img" : "/images/pistol.png"
+    "img" : "/images/icons/pistol.png"
   },
   {
     "id" : "racing",
-    "img" : "/images/racing.png"
+    "img" : "/images/icons/racing.png"
   },
   {
     "id" : "rpg",
-    "img" : "/images/rpg.png"
+    "img" : "/images/icons/rpg.png"
   },
   {
     "id" : "strategy",
-    "img" : "/images/strategy.png"
+    "img" : "/images/icons/strategy.png"
   }
 ]

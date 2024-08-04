@@ -1,0 +1,18 @@
+@import "../../../../Variables/Variables";
+
+.sliderSection {
+  display: flex;
+  width: 100%;
+  padding: 50px 0;
+  align-items: center;
+  .slideBox {
+    display: flex;
+    width: 100%;
+    max-height: 330px;
+    img {
+      width: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+}

@@ -99,7 +99,7 @@ export const Basket: React.FC<BasketProps> = ({basketOpen, setBasketOpen}) => {
                     </>
                     :
                     <div className={styles.emptyShopper}>
-                        <img src="/images/empty.png" alt="empty shopper"/>
+                        <img src="/images/icons/empty.png" alt="empty shopper"/>
                         <p>Your shopper is empty...</p>
                     </div>
             }

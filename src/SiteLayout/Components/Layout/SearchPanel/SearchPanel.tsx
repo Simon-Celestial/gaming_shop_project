@@ -42,7 +42,7 @@ export const SearchPanel: React.FC<SearchPanelProps> = ({searchPanelOpen, setSea
               ${filteredData?.length > 0? styles.fullScreen : ''}`}>
             <div className={styles.topRow}>
                 <div className={styles.logoBlock}>
-                    <img src="/images/siteLogo.png" alt="Project Logo"/>
+                    <img src="/images/icons/siteLogo.png" alt="Project Logo"/>
                     <p>game<span>storm</span></p>
                 </div>
                 <div

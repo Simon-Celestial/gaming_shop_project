@@ -12,12 +12,49 @@
     display: flex;
     width: 100%;
     justify-content: center;
+    position: relative;
+
+    .decoration {
+      position: absolute;
+      max-width: 150px;
+
+      img {
+        width: 100%;
+        object-position: center;
+        object-fit: cover;
+        z-index: 5;
+      }
+
+      &.cube {
+        top: 8%;
+        left: 7%;
+        animation: rotate 15s linear infinite;
+      }
+
+      &.diamond {
+        right: 5%;
+        top: 7%;
+        animation: shake 1s linear infinite;
+      }
+
+      &.xmark {
+        bottom: 0;
+        left: 7%;
+        animation: rotate 15s linear infinite;
+      }
+
+      &.coin {
+        bottom: 0;
+        right: 5%;
+        animation: rotate 15s linear infinite;
+      }
+    }
 
     .sectionContent {
       display: flex;
       width: 100%;
       max-width: 1320px;
-      padding: 100px 15px;
+      padding: 100px 15px 120px 15px;
       flex-direction: column;
       align-items: center;
 
@@ -28,16 +65,19 @@
         text-align: center;
         text-transform: capitalize;
         margin-bottom: 25px;
+
         span {
           color: $green;
           animation: textGlow 2s ease infinite;
         }
       }
+
       .keysContainer {
         display: flex;
         width: 100%;
         flex-wrap: wrap;
         gap: 24px;
+
         .keyBox {
           max-width: 633px;
           display: flex;
@@ -46,6 +86,7 @@
           border-radius: 12px;
           gap: 25px;
           width: 100%;
+
           .circle {
             display: flex;
             align-items: center;
@@ -56,23 +97,28 @@
             width: 80px;
             height: 80px;
             border: 1px solid $green;
+
             &:hover {
               svg {
                 transform: rotate(360deg) scale(1.1);
               }
             }
+
             svg {
               font-size: 32px;
               transition: transform 0.4s ease;
             }
           }
+
           .title {
             max-width: 476px;
             width: 100%;
+
             h3 {
               font-size: 20px;
               margin-bottom: 10px;
             }
+
             p {
               font-size: 16px;
             }
@@ -81,6 +127,219 @@
         }
       }
 
+    }
+  }
+
+  .communitySection {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+
+    .background {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+
+      video {
+        width: 100%;
+        height: 100%;
+        object-position: center;
+        object-fit: cover;
+      }
+    }
+
+    .sectionContent {
+      display: flex;
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+      padding: 120px 15px;
+      z-index: 3;
+
+      .circleContainer {
+        width: 525px;
+        height: 525px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        background: #EDCB50;
+        color: $black;
+        gap: 25px;
+        flex-direction: column;
+
+        p {
+          font-size: 24px;
+          font-family: $interFont;
+          max-width: 500px;
+        }
+
+        h2 {
+          font-size: 72px;
+        }
+      }
+
+    }
+  }
+
+  .contactSection {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    position: relative;
+    background-image: url("https://pixner.net/gamestorm3/main/assets/images/call-to-action-object.png"),
+    url("https://pixner.net/gamestorm3/main/assets/images/call-to-action-object-2.png");
+    background-position: center left, center right;
+    background-repeat: no-repeat;
+    padding: 120px 15px;
+
+    .sectionContent {
+      max-width: 1320px;
+      display: flex;
+      width: 100%;
+      background-color: $green;
+      align-items: center;
+      padding: 120px;
+      justify-content: space-between;
+      gap: 50px;
+      border-radius: 25px;
+      overflow: hidden;
+
+      .title {
+        display: flex;
+        width: 100%;
+        max-width: 550px;
+        color: $black;
+        flex-direction: column;
+
+        p {
+          font-size: 24px;
+          font-weight: 800;
+          margin-bottom: 24px;
+        }
+
+        h2 {
+          font-size: 40px;
+          line-height: 45px;
+          margin-bottom: 24px;
+        }
+
+        a {
+          font-size: 16px;
+          background-color: $black;
+          color: $white;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 100%;
+          max-width: 200px;
+          padding: 14px 0;
+          border-radius: 10px;
+          font-family: $interFont;
+          font-weight: 600;
+          transition: color $transition, background-color $transition, border-color $transition;
+          border: 2px solid transparent;
+
+          &:hover {
+            border-color: $black;
+            color: $white;
+            background-color: $greenDark;
+          }
+        }
+      }
+
+      .animatedBox {
+        width: 100%;
+        flex-direction: column;
+        display: flex;
+        max-width: 250px;
+        background-color: $grayFill;
+        align-items: center;
+        justify-content: center;
+        height: 250px;
+        border-radius: 50%;
+        gap: 12px;
+        position: relative;
+        .decoration {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          width: 110px;
+          height: 110px;
+          border-radius: 50%;
+          border: 4px solid $black;
+          transform: translate(-50%, -50%);
+          animation: circleGrow 5s linear infinite;
+
+          &.circleOne {
+            animation-delay: 0s;
+          }
+
+          &.circleTwo {
+            animation-delay: 0.5s;
+          }
+
+          &.circleThree {
+            animation-delay: 1s;
+          }
+
+          &.circleFour {
+            animation-delay: 1.5s;
+          }
+
+          &.circleFive {
+            animation-delay: 2s;
+          }
+
+          &.circleSix {
+            animation-delay: 2.5s;
+          }
+
+          &.circleSeven {
+            animation-delay: 3s;
+          }
+
+          &.circleEight {
+            animation-delay: 3.5s;
+          }
+
+          &.circleNine {
+            animation-delay: 4s;
+          }
+
+          &.circleTen {
+            animation-delay: 4.5s;
+          }
+        }
+
+        .row {
+          display: flex;
+          align-items: center;
+          gap: 5px;
+          z-index: 3;
+
+          span {
+            font-size: 16px;
+            font-family: $interFont;
+            font-weight: 600;
+
+          }
+
+          svg {
+            font-size: 25px;
+            color: $green;
+          }
+
+          h2 {
+            color: $green;
+          }
+        }
+      }
     }
   }
 }

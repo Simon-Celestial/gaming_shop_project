@@ -7,7 +7,7 @@ import {Header} from "../../Components/Layout/Header/Header.tsx";
 import {PRODUCTS_DATA} from "../../../Types/types.ts";
 import {FooterOne} from "../../Components/Layout/FooterOne/FooterOne.tsx";
 import DeleteIcon from '@mui/icons-material/Delete';
-import {PageBanner} from "../../Components/Reusables/PageBanner/PageBanner.tsx";
+import {PageBanner} from "../../Components/Layout/PageBanner/PageBanner.tsx";
 import {DefaultButton} from "../../Components/Reusables/DefaultButton/DefaultButton.tsx";
 
 export const WishlistPage = () => {
@@ -34,7 +34,7 @@ export const WishlistPage = () => {
                 <PageBanner greenText={"Your wishlist"} whiteText={""} smallText={"Your favorite products"}/>
                 {wishlistItems?.length < 1 ?
                     <div className={styles.wishlistEmpty}>
-                        <img src="/images/empty.png" alt="Empty"/>
+                        <img src="/images/icons/empty.png" alt="Empty"/>
                         <p>Your wishlist is currently empty.</p>
                         <div className={styles.container}>
                             <DefaultButton

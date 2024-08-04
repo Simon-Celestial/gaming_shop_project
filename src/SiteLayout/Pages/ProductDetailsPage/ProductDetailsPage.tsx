@@ -29,9 +29,10 @@ export const ProductDetailsPage: React.FC = () => {
 
     const similarProducts = useMemo(() => {
         return productsData?.filter(item =>
-            item?.category === product?.category || item?.brand === product?.brand);
-    }, [product?.brand, product?.category, productsData])
-
+            (item?.category === product?.category || item?.brand === product?.brand) &&
+            item?.id !== product?.id
+        );
+    }, [product?.brand, product?.category, product?.id, productsData]);
 
     useEffect(() => {
         if (product) {
@@ -126,9 +127,7 @@ export const ProductDetailsPage: React.FC = () => {
             });
         }
     }, [product, handleAddToWishlist, selectedColor]);
-
-    console.log(similarProducts)
-
+    
     return (
         <>
             <Header/>

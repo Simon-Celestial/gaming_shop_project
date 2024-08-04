@@ -4,7 +4,7 @@ import {Link, useNavigate} from 'react-router-dom';
 import {Bounce, toast} from 'react-toastify';
 import axios from 'axios';
 import {Header} from "../../../Components/Layout/Header/Header";
-import {PageBanner} from "../../../Components/Reusables/PageBanner/PageBanner";
+import {PageBanner} from "../../../Components/Layout/PageBanner/PageBanner";
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 import {FooterTwo} from "../../../Components/Layout/FooterTwo/FooterTwo";

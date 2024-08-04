@@ -1,7 +1,7 @@
 import {Header} from "../../Components/Layout/Header/Header.tsx";
 import {FooterTwo} from "../../Components/Layout/FooterTwo/FooterTwo.tsx";
 import styles from "./ShopPage.module.scss";
-import {PageBanner} from "../../Components/Reusables/PageBanner/PageBanner.tsx";
+import {PageBanner} from "../../Components/Layout/PageBanner/PageBanner.tsx";
 import React, {useCallback, useContext, useEffect, useMemo, useState} from "react";
 import {Rating, Slider, Stack} from "@mui/material";
 import {DeviceCard} from "../../Components/Reusables/DeviceCard/DeviceCard.tsx";
@@ -484,7 +484,7 @@ export const ShopPage = () => {
                                                     <div className={styles.userInfo}>
                                                         <div className={styles.userImg}>
                                                             <img
-                                                                src={data?.userImage !== null ? data?.userImage : "/images/user.png"}
+                                                                src={data?.userImage !== null ? data?.userImage : "/images/icons/user.png"}
                                                                 alt={data?.user}/>
                                                         </div>
                                                         <div className={styles.name}>

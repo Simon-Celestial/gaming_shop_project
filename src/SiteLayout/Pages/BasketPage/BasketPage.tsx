@@ -6,7 +6,7 @@ import {Header} from "../../Components/Layout/Header/Header.tsx";
 import {FooterOne} from "../../Components/Layout/FooterOne/FooterOne.tsx";
 import {DefaultButton} from "../../Components/Reusables/DefaultButton/DefaultButton.tsx";
 import DeleteIcon from '@mui/icons-material/Delete';
-import {PageBanner} from "../../Components/Reusables/PageBanner/PageBanner.tsx";
+import {PageBanner} from "../../Components/Layout/PageBanner/PageBanner.tsx";
 
 
 export const BasketPage = () => {
@@ -27,7 +27,7 @@ export const BasketPage = () => {
                 {
                     cartItems?.length < 1 ?
                         <div className={styles.cartEmpty}>
-                            <img src="/images/empty.png" alt="Cart Empty"/>
+                            <img src="/images/icons/empty.png" alt="Cart Empty"/>
                             <p>Your basket is currently empty</p>
                             <DefaultButton
                                 grayBtn={false}

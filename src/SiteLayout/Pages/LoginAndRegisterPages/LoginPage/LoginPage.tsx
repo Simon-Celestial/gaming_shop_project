@@ -7,7 +7,7 @@ import {FooterTwo} from "../../../Components/Layout/FooterTwo/FooterTwo.tsx";
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 import {Header} from "../../../Components/Layout/Header/Header.tsx";
-import {PageBanner} from "../../../Components/Reusables/PageBanner/PageBanner.tsx";
+import {PageBanner} from "../../../Components/Layout/PageBanner/PageBanner.tsx";
 import {AuthContext} from "../../../../Context/AuthContext/AuthContext.tsx";
 
 // I DONT HAVE A NORMAL BACKEND WITH JWT TOKEN, SO THIS IS TEMPORARY DECISION

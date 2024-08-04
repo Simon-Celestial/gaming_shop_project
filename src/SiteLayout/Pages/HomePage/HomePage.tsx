@@ -1,4 +1,4 @@
-import React, {useCallback, useContext, useEffect, useMemo, useRef, useState} from "react";
+import React, {useCallback, useContext, useEffect, useRef, useState} from "react";
 import styles from "./HomePage.module.scss";
 import {Header} from "../../Components/Layout/Header/Header.tsx";
 import {FooterOne} from "../../Components/Layout/FooterOne/FooterOne.tsx";
@@ -21,28 +21,19 @@ import jobsData from "/public/data/JobsData/jobsData.json";
 import teamData from "/public/data/TeamData/teamData.json";
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-expect-error
-import genresData from "/public/data/GenresData/genresData.json";
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-expect-error
-import gamesData from "/public/data/GamesData/gamesData.json";
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-expect-error
 import infoData from "/public/data/InfoData/infoData.json";
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-expect-error
 import commentsData from "/public/data/CommentsData/commentsData.json";
 
 import {
-    GENRES_TYPE,
     PAGINATION_STYLES_TYPE,
-    GAME_TYPE,
     TEAM_DATA,
     INFO_DATA,
     JOBS_DATA,
     COMMENTS_DATA,
     CONTACT_DEFAULTS
 } from "../../../Types/types.ts";
-import {GameCard} from "../../Components/Reusables/GameCard/GameCard.tsx";
 import {useTranslation} from "react-i18next";
 import {Rating} from "@mui/material";
 import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
@@ -50,6 +41,7 @@ import EmailIcon from "@mui/icons-material/Email";
 import {Bounce, toast} from "react-toastify";
 import {DataContext} from "../../../Context/DataContext/DataContext.tsx";
 import {Loader} from "../../Components/Reusables/Loader/Loader.tsx";
+import {GamesSection} from "../../Components/Sections/GamesSection/GamesSection.tsx";
 
 
 const paginationStyles: PAGINATION_STYLES_TYPE = {
@@ -73,13 +65,10 @@ export const HomePage = () => {
         productsLoading
     } = useContext(DataContext);
 
-    const [selectedGenre, setSelectedGenre] = useState("action");
-    const [translatedGames, setTranslatedGames] = useState(gamesData.en[0]);
     const [translatedTeam, setTranslatedTeam] = useState(teamData.en);
     const [translatedInfo, setTranslatedInfo] = useState(infoData.en);
     const [translatedComments, setTranslatedComments] = useState(commentsData.en);
     const [translatedJobs, setTranslatedJobs] = useState(jobsData.en)
-    const [inputValue, setInputValue] = useState("");
     const [hoveredBox, setHoveredBox] = useState(1);
     const [activeIndex, setActiveIndex] = useState(0);
     const [animate, setAnimate] = useState(false);
@@ -139,25 +128,19 @@ export const HomePage = () => {
 
     const {i18n} = useTranslation();
 
-    const handleInputSearch = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
-        setInputValue(e.target.value);
-    }, [setInputValue]);
 
     useEffect(() => {
         if (i18n.language === "en") {
-            setTranslatedGames(gamesData.en[0]);
             setTranslatedTeam(teamData.en);
             setTranslatedInfo(infoData.en);
             setTranslatedJobs(jobsData.en);
             setTranslatedComments(commentsData.en);
         } else if (i18n.language === "ru") {
-            setTranslatedGames(gamesData.ru[0]);
             setTranslatedTeam(teamData.ru);
             setTranslatedInfo(infoData.ru);
             setTranslatedJobs(jobsData.ru);
             setTranslatedComments(commentsData.ru);
         } else {
-            setTranslatedGames(gamesData.tr[0]);
             setTranslatedTeam(teamData.tr);
             setTranslatedInfo(infoData.tr);
             setTranslatedJobs(jobsData.tr);
@@ -165,31 +148,6 @@ export const HomePage = () => {
         }
     }, [i18n.language]);
 
-    const handleSelectGenre = useCallback((genreID: string): void => {
-        setSelectedGenre(genreID)
-    }, [setSelectedGenre]);
-
-    const filteredGames = useMemo(() => {
-        let games: GAME_TYPE[] = [];
-
-        if (selectedGenre === "action") {
-            games = translatedGames.action;
-        } else if (selectedGenre === "racing") {
-            games = translatedGames.racing;
-        } else if (selectedGenre === "rpg") {
-            games = translatedGames.rpg;
-        } else {
-            games = translatedGames.strategy;
-        }
-
-        if (inputValue) {
-            return games.filter((game: GAME_TYPE) =>
-                game?.name?.toLowerCase().includes(inputValue?.toLowerCase())
-            );
-        }
-
-        return games;
-    }, [selectedGenre, translatedGames, inputValue]);
 
     const handleHoverBox = useCallback((boxID: number) => {
         setHoveredBox(boxID);
@@ -274,7 +232,7 @@ export const HomePage = () => {
                         </div>
                         <div className={styles.swiperContainer}>
                             <div className={styles.swiperHead}>
-                                <img src="/images/bottomArrow.png" alt="arrow bottom"/>
+                                <img src="/images/icons/bottomArrow.png" alt="arrow bottom"/>
                                 <p>Featured Device</p>
                             </div>
                             <div className={styles.swiperWrapper}>
@@ -387,55 +345,7 @@ export const HomePage = () => {
                         </div>
                     </div>
                 </section>
-                <section className={`${styles.gamesSection} ${filteredGames?.length === 0 ? styles.noJoysticks : ''}`}>
-                    <div className={styles.sectionContent}>
-                        <div className={styles.topContainer}>
-                            <div className={styles.pageHeading}>
-                                <h4>Feel Unforgettable <span>Gaming Experience</span></h4>
-                                <h2><span>Our Products</span> Will Give You The Best Feelings
-                                    During <span>GamePlay</span>
-                                </h2>
-                                <p>Our products are distinguished by reliability, low response time, and
-                                    user-friendliness
-                                    for better immersion in the game.</p>
-                            </div>
-                            <div className={styles.genresContainer}>
-                                <div className={styles.genresRow}>
-                                    {genresData?.map((genre: GENRES_TYPE) => {
-                                        return (
-                                            <div key={genre?.id}
-                                                 className={`${styles.genreBox} ${genre?.id === selectedGenre ? styles.active : ''}`}
-                                                 onClick={() => handleSelectGenre(genre?.id)}>
-                                                <img src={genre?.img} alt={genre?.id}/>
-                                            </div>
-                                        )
-                                    })}
-
-                                </div>
-                                <div className={styles.gameSearch}>
-                                    <input type="text"
-                                           placeholder={"Type to search..."}
-                                           onChange={handleInputSearch}
-                                           value={inputValue}
-                                    />
-                                </div>
-                            </div>
-                        </div>
-                        <div className={styles.gamesContainer}>
-                            {
-                                filteredGames?.length > 0 ?
-                                    filteredGames?.map((game: GAME_TYPE) => {
-                                        return (
-                                            <GameCard key={game?.id} data={game}/>
-                                        )
-                                    })
-                                    :
-                                    <div className={styles.nothingFound}>Nothing found...</div>
-                            }
-
-                        </div>
-                    </div>
-                </section>
+                <GamesSection />
                 <section className={styles.teamSection}>
                     <div className={styles.sectionContent}>
                         <div className={styles.teamTitle}>

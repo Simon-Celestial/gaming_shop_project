@@ -48,21 +48,4 @@
       }
     }
   }
-  .sliderWrapper {
-    display: flex;
-    width: 100%;
-    margin-top: 25px;
-    align-items: center;
-    .slideBox {
-      display: flex;
-      width: 100%;
-      max-height: 330px;
-      img {
-        width: 100%;
-        object-fit: cover;
-        object-position: center;
-      }
-    }
-  }
-
 }

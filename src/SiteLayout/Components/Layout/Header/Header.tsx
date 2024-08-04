@@ -79,7 +79,7 @@ export const Header = () => {
                 <div className={styles.headerContent}>
                     <div className={styles.leftBlock}>
                         <Link to={"/"} className={styles.logoBlock}>
-                            <img src="/images/siteLogo.png" alt="Project Logo"/>
+                            <img src="/images/icons/siteLogo.png" alt="Project Logo"/>
                             <p>game<span>storm</span></p>
                         </Link>
                         <div className={styles.phoneBlock}>

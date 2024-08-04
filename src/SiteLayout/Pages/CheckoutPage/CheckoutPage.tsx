@@ -9,7 +9,7 @@ import {Bounce, toast} from "react-toastify";
 import {BasketContext} from "../../../Context/BasketContext/BasketContext.tsx";
 import {Header} from "../../Components/Layout/Header/Header.tsx";
 import {FooterOne} from "../../Components/Layout/FooterOne/FooterOne.tsx";
-import {PageBanner} from "../../Components/Reusables/PageBanner/PageBanner.tsx";
+import {PageBanner} from "../../Components/Layout/PageBanner/PageBanner.tsx";
 import {DefaultButton} from "../../Components/Reusables/DefaultButton/DefaultButton.tsx";
 import {PRODUCTS_DATA} from "../../../Types/types.ts";
 import axios from "axios";
@@ -187,7 +187,7 @@ export const CheckoutPage = () => {
                 {
                     cartItems.length < 1 ?
                         <div className={styles.checkoutEmpty}>
-                            <img src="/images/empty.png" alt="Cart Empty"/>
+                            <img src="/images/icons/empty.png" alt="Cart Empty"/>
                             <p>Choose product to buy first</p>
                             <DefaultButton
                                 wide={false}

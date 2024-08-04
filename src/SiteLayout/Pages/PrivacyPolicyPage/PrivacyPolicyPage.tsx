@@ -1,20 +1,9 @@
 import styles from './PrivacyPolicyPage.module.scss';
 import {Header} from "../../Components/Layout/Header/Header.tsx";
 import {FooterTwo} from "../../Components/Layout/FooterTwo/FooterTwo.tsx";
-import {PageBanner} from "../../Components/Reusables/PageBanner/PageBanner.tsx";
-import {Swiper, SwiperSlide} from 'swiper/react';
-import {Autoplay} from "swiper/modules";
+import {PageBanner} from "../../Components/Layout/PageBanner/PageBanner.tsx";
 import React from "react";
-import 'swiper/css';
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-expect-error
-import policyData from '/public/data/PrivacyPolicyData/privacyPolicyData.json';
-
-interface PolicyData {
-    id: number;
-    image: string;
-}
-
+import {SliderSection} from "../../Components/Sections/SliderSection/SliderSection.tsx";
 
 export const PrivacyPolicyPage: React.FC = () => {
     return (
@@ -123,29 +112,8 @@ export const PrivacyPolicyPage: React.FC = () => {
                         </p>
                     </div>
                 </div>
-                <div className={styles.sliderWrapper}>
-                    <Swiper
-                        slidesPerView={6}
-                        modules={[Autoplay]}
-                        autoplay={{delay: 2500}}
-                        breakpoints={{
-                        }}
-                        spaceBetween={10}
-                        freeMode={true}
-                        loop={true}
-                    >
-                        {policyData?.map((data : PolicyData) => {
-                            return (
-                                <SwiperSlide key={data?.id}>
-                                    <div className={styles.slideBox}>
-                                        <img src={data?.image}
-                                             alt="Privacy Policy"/>
-                                    </div>
-                                </SwiperSlide>
-                            )
-                        })}
-                    </Swiper>
-                </div>
+                {/*IMAGES SLIDER SECTION*/}
+                <SliderSection />
             </main>
             <FooterTwo/>
         </>
