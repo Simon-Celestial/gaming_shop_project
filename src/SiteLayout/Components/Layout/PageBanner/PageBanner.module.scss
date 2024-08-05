@@ -8,6 +8,7 @@
   align-items: center;
   position: relative;
   border-bottom: 1px solid rgba(128, 128, 128, 0.3);
+
   &.shop,
   &.login,
   &.register,
@@ -16,11 +17,13 @@
     background-position: bottom right;
     background-repeat: no-repeat;
   }
+
   &.about {
     background-image: url("https://pixner.net/gamestorm3/main/assets/images/about-banner-illus.png");
     background-position: bottom right;
     background-repeat: no-repeat;
   }
+
   &.privacy-policy {
     background-image: url("https://pixner.net/gamestorm3/main/assets/images/about-banner-illus.png");
     background-position: bottom right;
@@ -32,6 +35,7 @@
     background-image: url("https://pixner.net/gamestorm3/main/assets/images/store-banner-illus.png");
     background-size: cover;
   }
+
   &.basket {
     background-image: url("https://pixner.net/gamestorm3/main/assets/images/store-banner-illus.png");
     background-size: cover;
@@ -41,20 +45,26 @@
     background-image: url("https://pixner.net/gamestorm3/main/assets/images/store-banner-illus.png");
     background-size: cover;
   }
+
   &.contact {
     background-image: url("https://pixner.net/gamestorm3/main/assets/images/store-banner-illus.png");
     background-size: cover;
   }
+
   &.services {
-    background-image: url("https://pixner.net/gamestorm3/main/assets/images/store-banner-illus.png");
-    background-size: cover;
+    background-image: url("https://pixner.net/gamestorm3/main/assets/images/services-banner-illus.png");
+    background-position: bottom right;
+    background-repeat: no-repeat;
+    background-color: $grayFill;
   }
+
   &.games {
     background-image: url("https://pixner.net/gamestorm3/main/assets/images/game-banner-illus.png");
     background-repeat: no-repeat;
     background-position: bottom right;
     background-color: $grayFill;
   }
+
   .decoration {
     position: absolute;
     animation: rotate 35s linear infinite;
@@ -90,13 +100,16 @@
       gap: 5px;
       border: 1px solid $green;
       border-bottom: 0;
+
       &.shopPage {
         right: 0;
       }
+
       a {
         font-size: 16px;
         text-transform: uppercase;
       }
+
       p {
         color: $green;
         text-transform: uppercase;
@@ -120,6 +133,7 @@
         h2 {
           font-size: 56px;
           color: $white;
+
           span {
             color: $green;
           }

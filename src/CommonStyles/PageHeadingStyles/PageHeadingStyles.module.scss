@@ -8,9 +8,12 @@
   &.notCenteredText {
     h4 {
       text-align: start;
+      text-transform: capitalize;
+
     }
     h2 {
       text-align: start;
+      text-transform: capitalize;
     }
     p {
       text-align: start;
@@ -19,23 +22,25 @@
   span {
     color: $green;
     animation: textGlow 1s linear infinite;
+    text-transform: capitalize;
   }
-
   h4 {
     font-size: 24px;
     text-align: center;
+    text-transform: capitalize;
   }
 
   h2 {
     font-size: 40px;
     text-align: center;
+    text-transform: capitalize;
   }
-
   p {
     color: $gray;
     font-size: 18px;
     text-align: center;
     font-family: $interFont;
     margin: 10px 0;
+    line-height: 28px;
   }
 }

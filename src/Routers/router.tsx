@@ -14,6 +14,7 @@ import {ProductDetailsPage} from "../SiteLayout/Pages/ProductDetailsPage/Product
 import {AuthContext} from "../Context/AuthContext/AuthContext.tsx";
 import React, {useContext} from "react";
 import {GamesPage} from "../SiteLayout/Pages/GamesPage/GamesPage.tsx";
+import {ServicesPage} from "../SiteLayout/Pages/ServicesPage/ServicesPage.tsx";
 
 interface UserData {
     email: string;
@@ -38,7 +39,6 @@ const router = ({userData, token}: RouterProps) => createBrowserRouter([
                     path: "*",
                     element: <NotFoundPage/>
                 },
-
                 {
                     path: '/',
                     element: <HomePage/>,
@@ -50,6 +50,10 @@ const router = ({userData, token}: RouterProps) => createBrowserRouter([
                 {
                   path: 'games',
                   element: <GamesPage/>
+                },
+                {
+                    path: 'services',
+                    element: <ServicesPage/>
                 },
                 {
                     path: 'wishlist',

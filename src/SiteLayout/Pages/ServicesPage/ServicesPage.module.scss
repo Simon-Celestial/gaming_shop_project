@@ -1,0 +1,374 @@
+@import '../../../Variables/Variables';
+@import '../../../Animations/Animations';
+@import '../../../CommonStyles/PageHeadingStyles/PageHeadingStyles.module';
+
+.pageWrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  position: relative;
+
+  .videoScreen {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 25;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.6s ease;
+
+    &.videoOpened {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .container {
+      max-width: 900px;
+      width: 100%;
+      height: 500px;
+      border: 2px solid $green;
+      position: relative;
+
+      .closeBtn {
+        position: absolute;
+        cursor: pointer;
+        top: -45px;
+        right: -45px;
+
+        &:hover {
+          svg {
+            color: $greenDark;
+            transform: scale(1.1) rotate(180deg);
+          }
+        }
+
+        svg {
+          transition: color $transition, transform $transition;
+          color: $green;
+          font-size: 42px;
+        }
+      }
+
+      .iframe {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+  .servicesSection {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    background-color: $background;
+
+    .sectionContent {
+      display: flex;
+      width: 100%;
+      flex-direction: column;
+      max-width: 1320px;
+      padding: 120px 0;
+
+      .titleBlock {
+        max-width: 700px;
+        margin: 0 auto;
+      }
+
+      .containersBlock {
+        display: flex;
+        width: 100%;
+        max-width: 1320px;
+        flex-wrap: wrap;
+        gap: 25px;
+        margin-top: 25px;
+
+        .container {
+          max-width: 423px;
+          width: 100%;
+          padding: 0 12px;
+          height: 470px;
+          background-color: $grayFill;
+          background-size: cover;
+          background-position: center;
+          position: relative;
+          border-bottom: 3px solid $green;
+          border-radius: 10px 10px 0 0;
+          overflow: hidden;
+
+          &:hover {
+            .cover {
+              top: -100%;
+            }
+
+            .text {
+              opacity: 0;
+            }
+          }
+
+          .findOut {
+            border-radius: 50%;
+            background-color: $green;
+            color: $black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 5px;
+            width: 100px;
+            height: 100px;
+            left: 15px;
+            bottom: 15px;
+            transition: color $transition, background-color $transition;
+            position: absolute;
+            border: 3px solid $white;
+
+            &:hover {
+              background-color: $greenDark;
+              color: $white;
+            }
+
+            p {
+              font-weight: 800;
+            }
+
+          }
+
+          .cover {
+            position: absolute;
+            left: 0;
+            top: 0;
+            transition: top 0.6s ease;
+            width: 100%;
+            height: 100%;
+            background-color: $grayFill;
+          }
+
+          .text {
+            transition: opacity 0.6s ease;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            color: $white;
+            font-size: 32px;
+            font-weight: 800;
+            width: 100%;
+            text-align: center;
+          }
+
+
+        }
+      }
+    }
+  }
+
+  .ourFocusSection {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    background-color: $grayFill;
+    position: relative;
+    flex-direction: column;
+
+    .decoration {
+      position: absolute;
+
+      &.square {
+        left: 13%;
+        top: 25%;
+        animation: rotate 25s linear infinite;
+      }
+
+      &.spring {
+        top: 5%;
+        right: 12%;
+        animation: shake 3s linear infinite;
+
+      }
+
+      img {
+        object-fit: cover;
+        object-position: center;
+      }
+    }
+
+    .sectionContent {
+      display: flex;
+      width: 100%;
+      max-width: 1320px;
+      padding: 120px 15px;
+
+      .achievementContainer {
+        display: flex;
+        width: 100%;
+        align-items: center;
+        margin-bottom: 25px;
+        flex-wrap: wrap;
+
+        .container {
+          display: flex;
+          justify-content: center;
+          max-width: 322px;
+          width: 100%;
+          align-items: center;
+
+          .title {
+            display: flex;
+            flex-direction: column;
+
+            h2 {
+              font-size: 80px;
+              color: $green;
+              display: flex;
+            }
+
+            p {
+              font-size: 16px;
+              color: $gray;
+            }
+
+          }
+        }
+      }
+
+    }
+
+    .videoContainer {
+      display: flex;
+      width: 100%;
+      justify-content: center;
+      position: relative;
+
+      &:before {
+        content: "";
+        position: absolute;
+        height: 60%;
+        width: 100%;
+        bottom: 0;
+        left: 0;
+        background-color: $background;
+      }
+
+      .videoBox {
+        max-width: 1320px;
+        width: 100%;
+        padding: 0 15px;
+        position: relative;
+
+        .play {
+          border-radius: 50%;
+          background-color: $green;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          position: absolute;
+          left: 50%;
+          width: 115px;
+          height: 115px;
+          top: 50%;
+          transition: background-color $transition;
+          transform: translate(-50%, -50%);
+          cursor: pointer;
+
+          &:hover {
+            background-color: $greenDark;
+            color: $white;
+
+            p {
+              transform: rotate(360deg);
+              color: $white;
+            }
+
+          }
+
+          p {
+            font-size: 20px;
+            color: $black;
+            text-transform: uppercase;
+            font-weight: 600;
+            transition: transform 0.5s ease, color $transition;
+          }
+        }
+
+        img {
+          width: 100%;
+          object-position: center;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+
+  .howItWorksSection {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+
+    .sectionContent {
+      display: flex;
+      width: 100%;
+      flex-direction: column;
+      max-width: 1320px;
+      padding: 120px 15px;
+      background-color: $background;
+
+      .titleBlock {
+        max-width: 700px;
+        margin: 0 auto 50px auto;
+
+      }
+
+      .boxesRow {
+        display: flex;
+        width: 100%;
+        flex-wrap: wrap;
+        gap: 25px;
+        align-items: center;
+
+        .box {
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+          max-width: 300px;
+          border-radius: 15px;
+          background: $grayFill;
+          align-items: center;
+          padding: 40px 30px;
+
+          .circle {
+            width: 80px;
+            height: 80px;
+            align-items: center;
+            justify-content: center;
+            background: #303141;
+            border-radius: 50%;
+            display: flex;
+            margin-bottom: 20px;
+            svg {
+              color: $green;
+              font-size: 32px;
+            };
+          }
+          h2 {
+            font-size: 24px;
+            margin-bottom: 15px;
+          }
+          p {
+            color: $gray;
+            font-size: 16px;
+            text-align: center;
+            line-height: 25px;
+            font-family: $interFont;
+          }
+        }
+      }
+
+    }
+  }
+}

@@ -1,0 +1,116 @@
+{
+  "en": [
+    {
+      "id": 1,
+      "title": "Game Art",
+      "link": "/somewhere",
+      "image": "url(/images/posters/services-img-1.png)"
+    },
+    {
+      "id": 2,
+      "title": "Game Development",
+      "link": "/somewhere",
+      "image": "url(/images/posters/services-img-2.png)"
+    },
+    {
+      "id": 3,
+      "title": "Game Animation",
+      "link": "/somewhere",
+      "image": "url(/images/posters/services-img-3.png)"
+    },
+    {
+      "id": 4,
+      "title": "Game QA Testing",
+      "link": "/somewhere",
+      "image": "url(/images/posters/services-img-4.png)"
+    },
+    {
+      "id": 5,
+      "title": "Our Staffing",
+      "link": "/somewhere",
+      "image": "url(/images/posters/services-img-5.png)"
+    },
+    {
+      "id": 6,
+      "title": "Our UX/UI",
+      "link": "/somewhere",
+      "image": "url(/images/posters/services-img-6.png)"
+    }
+  ],
+  "ru": [
+    {
+      "id": 1,
+      "title": "Игровое искусство",
+      "link": "/somewhere",
+      "image": "url(/images/posters/services-img-1.png)"
+    },
+    {
+      "id": 2,
+      "title": "Разработка игр",
+      "link": "/somewhere",
+      "image": "url(/images/posters/services-img-2.png)"
+    },
+    {
+      "id": 3,
+      "title": "Игровая анимация",
+      "link": "/somewhere",
+      "image": "url(/images/posters/services-img-3.png)"
+    },
+    {
+      "id": 4,
+      "title": "Тестирование игр",
+      "link": "/somewhere",
+      "image": "url(/images/posters/services-img-4.png)"
+    },
+    {
+      "id": 5,
+      "title": "Наш персонал",
+      "link": "/somewhere",
+      "image": "url(/images/posters/services-img-5.png)"
+    },
+    {
+      "id": 6,
+      "title": "Наш UX/UI",
+      "link": "/somewhere",
+      "image": "url(/images/posters/services-img-6.png)"
+    }
+  ],
+  "tr": [
+    {
+      "id": 1,
+      "title": "Oyun Sanatı",
+      "link": "/somewhere",
+      "image": "url(/images/posters/services-img-1.png)"
+    },
+    {
+      "id": 2,
+      "title": "Oyun Geliştirme",
+      "link": "/somewhere",
+      "image": "url(/images/posters/services-img-2.png)"
+    },
+    {
+      "id": 3,
+      "title": "Oyun Animasyonu",
+      "link": "/somewhere",
+      "image": "url(/images/posters/services-img-3.png)"
+    },
+    {
+      "id": 4,
+      "title": "Oyun QA Testi",
+      "link": "/somewhere",
+      "image": "url(/images/posters/services-img-4.png)"
+    },
+    {
+      "id": 5,
+      "title": "Personelimiz",
+      "link": "/somewhere",
+      "image": "url(/images/posters/services-img-5.png)"
+    },
+    {
+      "id": 6,
+      "title": "Bizim UX/UI",
+      "link": "/somewhere",
+      "image": "url(/images/posters/services-img-6.png)"
+    }
+  ]
+}
