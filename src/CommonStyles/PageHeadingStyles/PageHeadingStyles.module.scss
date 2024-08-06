@@ -5,25 +5,30 @@
   flex-direction: column;
   gap: 15px;
   width: 100%;
+
   &.notCenteredText {
     h4 {
       text-align: start;
       text-transform: capitalize;
 
     }
+
     h2 {
       text-align: start;
       text-transform: capitalize;
     }
+
     p {
       text-align: start;
     }
   }
+
   span {
     color: $green;
     animation: textGlow 1s linear infinite;
     text-transform: capitalize;
   }
+
   h4 {
     font-size: 24px;
     text-align: center;
@@ -35,12 +40,13 @@
     text-align: center;
     text-transform: capitalize;
   }
+
   p {
     color: $gray;
-    font-size: 18px;
+    font-size: 16px;
     text-align: center;
     font-family: $interFont;
-    margin: 10px 0;
-    line-height: 28px;
+    margin: 0 0 10px 0;
+    line-height: 25px;
   }
 }

@@ -157,7 +157,7 @@
           margin-top: 24px;
           padding: 16px;
           align-items: center;
-          border: 1px solid $grayFill;
+          border: 1px solid rgba(128, 128, 128, 0.3);
           border-radius: 10px ;
           input {
             width: 100%;
@@ -169,7 +169,7 @@
             outline: 0;
             color: $white;
             &::placeholder {
-              color: #40425e;
+              color: rgba(128, 128, 128, 0.3);
             }
 
           }

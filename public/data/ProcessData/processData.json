@@ -1,0 +1,82 @@
+{
+  "en": [
+    {
+      "id": 1,
+      "title": "Script Writing",
+      "description": "We start by sketching the script using your instructions as a guide, and we then wait for your approval before moving.",
+      "icon": "BorderColorIcon"
+    },
+    {
+      "id": 2,
+      "title": "Story Board",
+      "description": "We draw a representation of your work that shows the camera angles and the script.",
+      "icon": "BurstModeIcon"
+    },
+    {
+      "id": 3,
+      "title": "3D Modeling",
+      "description": "We create the objects, people, settings, and other things that go into creating your video.",
+      "icon": "ViewInArIcon"
+    },
+    {
+      "id": 4,
+      "title": "Animation",
+      "description": "After creating the animations and adding voice overs and sound effects, we turn the project over.",
+      "icon": "AutoAwesomeMotionIcon"
+    }
+  ],
+  "ru": [
+    {
+      "id": 1,
+      "title": "Написание сценария",
+      "description": "Мы начинаем с создания сценария, используя ваши инструкции в качестве руководства, и затем ждем вашего одобрения, прежде чем двигаться дальше.",
+      "icon": "BorderColorIcon"
+    },
+    {
+      "id": 2,
+      "title": "Раскадровка",
+      "description": "Мы создаем представление вашей работы, показывающее углы камеры и сценарий.",
+      "icon": "BurstModeIcon"
+    },
+    {
+      "id": 3,
+      "title": "3D моделирование",
+      "description": "Мы создаем объекты, людей, декорации и другие элементы, которые участвуют в создании вашего видео.",
+      "icon": "ViewInArIcon"
+    },
+    {
+      "id": 4,
+      "title": "Анимация",
+      "description": "После создания анимаций и добавления голосовых озвучек и звуковых эффектов мы передаем проект.",
+      "icon": "AutoAwesomeMotionIcon"
+    }
+
+  ],
+  "tr": [
+    {
+      "id": 1,
+      "title": "Senaryo Yazımı",
+      "description": "Talimatlarınızı rehber olarak kullanarak senaryoyu tasarlamaya başlıyoruz ve ilerlemeden önce onayınızı bekliyoruz.",
+      "icon": "BorderColorIcon"
+    },
+    {
+      "id": 2,
+      "title": "Hikaye Tahtası",
+      "description": "Kamera açılarını ve senaryoyu gösteren çalışmanızın bir temsilini çiziyoruz.",
+      "icon": "BurstModeIcon"
+    },
+    {
+      "id": 3,
+      "title": "3D Modelleme",
+      "description": "Videonuzu oluşturmak için gereken nesneleri, insanları, ortamları ve diğer öğeleri oluşturuyoruz.",
+      "icon": "ViewInArIcon"
+    },
+    {
+      "id": 4,
+      "title": "Animasyon",
+      "description": "Animasyonları oluşturduktan ve seslendirmeler ile ses efektleri ekledikten sonra projeyi teslim ediyoruz.",
+      "icon": "AutoAwesomeMotionIcon"
+    }
+
+  ]
+}

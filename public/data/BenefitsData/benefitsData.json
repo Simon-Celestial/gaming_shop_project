@@ -1,0 +1,80 @@
+{
+  "en": [
+    {
+      "id": 1,
+      "title": "Customized Game Art And Development",
+      "description": "All our services, from art creation to a full-fledged game, are implemented using flexible methodologies and taking into account all client requirements for an effective result.",
+      "icon": "SportsEsportsIcon"
+    },
+    {
+      "id": 2,
+      "title": "Transparent & Reliable Communication",
+      "description": "The client has constant access & the ability to control entire workflow & receive instant feedback on any aspect of their interest, which ensures repeat business in 90% of cases.",
+      "icon": "SearchIcon"
+    },
+    {
+      "id": 3,
+      "title": "Commitment To Global Quality Standards",
+      "description": "Whether it's quality or security standards, our customers don't have to worry: we follow the latest innovations in data protection and always adhere to global quality standards for world-class products.",
+      "icon": "VerifiedIcon"
+    },
+    {
+      "id": 4,
+      "title": "Proven Track Record In Different Styles",
+      "description": "A team of 350+ professional artists and developers with extensive experience in both casual and AAA projects of various styles and genres can cover the volume of almost any project.",
+      "icon": "MilitaryTechIcon"
+    }
+  ],
+  "ru": [
+    {
+      "id": 1,
+      "title": "Индивидуальный художественный дизайн и разработка игр",
+      "description": "Все наши услуги, от создания искусства до полноценной игры, реализуются с использованием гибких методологий и с учетом всех требований клиента для достижения эффективного результата.",
+      "icon": "SportsEsportsIcon"
+    },
+    {
+      "id": 2,
+      "title": "Прозрачная и надежная коммуникация",
+      "description": "Клиент имеет постоянный доступ и возможность контролировать весь рабочий процесс и получать мгновенную обратную связь по любому аспекту, который его интересует, что обеспечивает повторный бизнес в 90% случаев.",
+      "icon": "SearchIcon"
+    },
+    {
+      "id": 3,
+      "title": "Приверженность мировым стандартам качества",
+      "description": "Будь то стандарты качества или безопасности, нашим клиентам не о чем беспокоиться: мы следуем последним инновациям в области защиты данных и всегда придерживаемся мировых стандартов качества для продукции мирового класса.",
+      "icon": "VerifiedIcon"
+    },
+    {
+      "id": 4,
+      "title": "Подтвержденный опыт работы в различных стилях",
+      "description": "Команда из более чем 350 профессиональных художников и разработчиков с обширным опытом работы в проектах как казуального, так и AAA уровня различных стилей и жанров может покрыть объем практически любого проекта.",
+      "icon": "MilitaryTechIcon"
+    }
+  ],
+  "tr": [
+    {
+      "id": 1,
+      "title": "Özelleştirilmiş Oyun Sanatı ve Geliştirme",
+      "description": "Sanat yaratımından tam teşekküllü bir oyuna kadar tüm hizmetlerimiz, esnek metodolojiler kullanılarak ve etkili bir sonuç için tüm müşteri gereksinimlerini dikkate alarak uygulanmaktadır.",
+      "icon": "SportsEsportsIcon"
+    },
+    {
+      "id": 2,
+      "title": "Şeffaf ve Güvenilir İletişim",
+      "description": "Müşteri, ilgi duydukları herhangi bir konuyla ilgili iş akışını kontrol etme ve anında geri bildirim alma yeteneği ile sürekli erişime sahiptir ve bu da vakaların %90'ında tekrarlanan işlerin sağlanmasını garanti eder.",
+      "icon": "SearchIcon"
+    },
+    {
+      "id": 3,
+      "title": "Küresel Kalite Standartlarına Bağlılık",
+      "description": "İster kalite ister güvenlik standartları olsun, müşterilerimizin endişelenmesine gerek yoktur: veri korumadaki en son yenilikleri takip ediyor ve dünya çapındaki ürünler için küresel kalite standartlarına her zaman bağlı kalıyoruz.",
+      "icon": "VerifiedIcon"
+    },
+    {
+      "id": 4,
+      "title": "Farklı Tarzlarda Kanıtlanmış Geçmiş Performans",
+      "description": "Çeşitli tarzlarda ve türlerde hem gündelik hem de AAA projelerinde geniş deneyime sahip 350'den fazla profesyonel sanatçı ve geliştiriciden oluşan bir ekip, neredeyse her türlü projenin hacmini karşılayabilir.",
+      "icon": "MilitaryTechIcon"
+    }
+  ]
+}
