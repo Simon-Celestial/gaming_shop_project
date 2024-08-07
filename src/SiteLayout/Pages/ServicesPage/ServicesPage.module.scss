@@ -726,12 +726,150 @@
     width: 100%;
     justify-content: center;
     background-color: $background;
+    background-image: url("https://pixner.net/gamestorm3/main/assets/images/contact-us-obj.png"),
+    url("https://pixner.net/gamestorm3/main/assets/images/contact-us-object-2.png");
+    background-position: center left, center right;
+    background-repeat: no-repeat;
+
     .sectionContent {
       max-width: 1320px;
       width: 100%;
       display: flex;
-      flex-direction: column;
-      padding: 120px 15px;
+      padding: 120px 15px 60px 15px;
+      gap: 50px;
+      align-items: center;
+      justify-content: space-between;
+
+      .leftContainer {
+        display: flex;
+        width: 100%;
+        max-width: 525px;
+        flex-direction: column;
+
+        .titleBlock {
+          max-width: 300px;
+        }
+
+        > p {
+          margin: 20px 0;
+          color: $gray;
+          font-size: 16px;
+          font-family: $interFont;
+        }
+
+        .contactRow {
+          display: flex;
+          align-items: center;
+          margin-top: 20px;
+          font-family: $interFont;
+
+          .circle {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(128, 128, 128, 0.3);
+            border-radius: 50%;
+            margin-right: 10px;
+            transition: background-color $transition;
+
+            &:hover {
+              background-color: $greenDark;
+
+              svg {
+                transform: rotate(360deg);
+                color: $white;
+              }
+            }
+
+            svg {
+              color: $green;
+              transition: transform 0.5s ease, color $transition;
+            }
+          }
+        }
+      }
+
+      .rightContainer {
+        display: flex;
+        max-width: 525px;
+        width: 100%;
+        border-radius: 15px;
+        background-color: #303141;
+        padding: 15px;
+        margin-right: 75px;
+
+        .formWrapper {
+          display: flex;
+          width: 100%;
+          flex-direction: column;
+          background-color: #222434;
+          border-radius: 15px;
+          border: 1px solid rgba(128, 128, 128, 0.3);
+          padding: 25px 20px;
+          gap: 15px;
+
+          .inputWrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            border-radius: 15px;
+            color: $gray;
+            font-family: $interFont;
+
+            input {
+              border: 1px solid rgba(128, 128, 128, 0.3);
+              padding: 20px;
+              background: transparent;
+              border-radius: 10px;
+              outline: 0;
+              color: $white;
+              font-size: 16px;
+              font-family: $interFont;
+              transition: border-color $transition;
+
+              &::placeholder {
+                color: #4c4d5a;
+              }
+
+              &:focus {
+                border-color: $green;
+              }
+
+            }
+
+            textarea {
+              outline: 0;
+              resize: none;
+              color: $white;
+              height: 150px;
+              padding: 15px 20px;
+              background: transparent;
+              border-radius: 15px;
+              border: 1px solid rgba(128, 128, 128, 0.3);
+              font-size: 16px;
+              font-family: $interFont;
+              transition: border-color $transition;
+
+              &::placeholder {
+                color: #4c4d5a;
+              }
+
+              &:focus {
+                border-color: $green;
+              }
+
+            }
+          }
+
+          .btnWrapper {
+            margin-top: 25px;
+          }
+
+
+        }
+      }
     }
   }
 }

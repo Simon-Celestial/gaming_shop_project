@@ -19,7 +19,7 @@ import gameDevelopmentData from "/public/data/GameDevelopmentData/gameDevelopmen
 import {Link} from "react-router-dom";
 import SubdirectoryArrowRightIcon from '@mui/icons-material/SubdirectoryArrowRight';
 import {Odometer} from "../../Components/Reusables/Odometer/Odometer.tsx";
-import {useCallback, useEffect, useRef, useState} from "react";
+import React, {useCallback, useEffect, useRef, useState} from "react";
 import {useTranslation} from "react-i18next";
 import HighlightOffIcon from '@mui/icons-material/HighlightOff';
 import BorderColorIcon from '@mui/icons-material/BorderColor';
@@ -36,6 +36,10 @@ import {Swiper, SwiperSlide} from "swiper/react";
 import {Autoplay, EffectFade} from "swiper/modules";
 import {TestimonialsSection} from "../../Components/Sections/TestimonialsSection/TestimonialsSection.tsx";
 import {SliderSection} from "../../Components/Sections/SliderSection/SliderSection.tsx";
+import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
+import EmailIcon from '@mui/icons-material/Email';
+import {DefaultButton} from "../../Components/Reusables/DefaultButton/DefaultButton.tsx";
+import {Bounce, toast} from "react-toastify";
 
 interface GAME_DEVELOPMENT_DATA {
     id: number;
@@ -65,7 +69,6 @@ interface BENEFITS_DATA {
     icon: string;
 }
 
-
 const getIconComponent = (iconName: string) => {
     switch (iconName) {
         case 'BorderColorIcon':
@@ -89,6 +92,19 @@ const getIconComponent = (iconName: string) => {
     }
 };
 
+interface INPUT_TYPE {
+    name: string;
+    email: string;
+    subject: string;
+    message: string;
+}
+
+const defaults: INPUT_TYPE = {
+    name: "",
+    email: "",
+    subject: "",
+    message: ""
+}
 
 export const ServicesPage = () => {
     const focusRef = useRef<HTMLDivElement | null>(null);
@@ -98,7 +114,8 @@ export const ServicesPage = () => {
     const [translatedBenefits, setTranslatedBenefits] = useState([benefitsData?.en]);
     const [activeIndex, setActiveIndex] = useState(0);
     const [animate, setAnimate] = useState(false);
-    const [translatedGameDevelopment,setTranslatedGameDevelopment] = useState([gameDevelopmentData?.en])
+    const [translatedGameDevelopment, setTranslatedGameDevelopment] = useState([gameDevelopmentData?.en])
+    const [inputState, setInputState] = useState(defaults);
 
     const handleOpenVideo = useCallback(() => {
         setVideoVisible(true);
@@ -142,6 +159,58 @@ export const ServicesPage = () => {
             setTranslatedGameDevelopment(gameDevelopmentData?.tr);
         }
     }, [i18n.language]);
+
+    const handleInputChange = useCallback(
+        (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+            const {name, value} = event.target;
+            setInputState((prevState) => ({
+                ...prevState,
+                [name]: value,
+            }));
+        },
+        []
+    );
+
+    const handleSendMessage = useCallback(() => {
+        const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        if (
+            inputState?.name === '' ||
+            inputState?.email === '' ||
+            inputState?.subject === '' ||
+            inputState?.message === ''
+        ) {
+            toast.error('Please fill all fields!', {
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: true,
+                progress: undefined,
+                theme: 'dark',
+                transition: Bounce,
+            });
+        } else if (!emailPattern.test(inputState?.email)) {
+            toast.error('Please enter a valid email address!', {
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: true,
+                progress: undefined,
+                theme: 'dark',
+                transition: Bounce,
+            });
+        } else {
+            toast.success('Your message has been sent successfully!', {
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: true,
+                progress: undefined,
+                theme: 'dark',
+                transition: Bounce,
+            });
+            setInputState(defaults);
+        }
+    }, [inputState?.email, inputState?.message, inputState?.name, inputState?.subject]);
 
 
     return (
@@ -309,7 +378,7 @@ export const ServicesPage = () => {
                             </div>
                         </div>
                         <div className={styles.benefitsContainer}>
-                            {translatedBenefits?.map((data : BENEFITS_DATA) => {
+                            {translatedBenefits?.map((data: BENEFITS_DATA) => {
                                 return (
                                     <div key={data?.id} className={styles.box}>
                                         <div className={styles.circle}>
@@ -337,8 +406,8 @@ export const ServicesPage = () => {
                                 </div>
                             </div>
                             <Link to={"/games"} className={styles.viewAll}>
-                               <p>View All Games</p>
-                                <CallMadeIcon />
+                                <p>View All Games</p>
+                                <CallMadeIcon/>
                             </Link>
                         </div>
                         <div className={styles.swiperContainer}>
@@ -349,21 +418,21 @@ export const ServicesPage = () => {
                                 </div>
                                 <div className={styles.customPagination}>
                                     <div className={styles.circle}
-                                    style={{
-                                        backgroundColor: activeIndex === 1? "#0EF0AD" : '',
-                                        transform: activeIndex === 1? 'scale(1.3)': ''
+                                         style={{
+                                             backgroundColor: activeIndex === 1 ? "#0EF0AD" : '',
+                                             transform: activeIndex === 1 ? 'scale(1.3)' : ''
 
-                                    }}></div>
+                                         }}></div>
                                     <div className={styles.circle}
-                                    style={{
-                                        backgroundColor: activeIndex === 2? "#0EF0AD" : '',
-                                        transform: activeIndex === 2? 'scale(1.3)': ''
-                                        }}></div>
+                                         style={{
+                                             backgroundColor: activeIndex === 2 ? "#0EF0AD" : '',
+                                             transform: activeIndex === 2 ? 'scale(1.3)' : ''
+                                         }}></div>
                                     <div className={styles.circle}
-                                    style={{
-                                        backgroundColor: activeIndex === 3? "#0EF0AD" : '',
-                                        transform: activeIndex === 3? 'scale(1.3)': ''
-                                    }}></div>
+                                         style={{
+                                             backgroundColor: activeIndex === 3 ? "#0EF0AD" : '',
+                                             transform: activeIndex === 3 ? 'scale(1.3)' : ''
+                                         }}></div>
                                 </div>
 
                             </div>
@@ -380,11 +449,12 @@ export const ServicesPage = () => {
                                 {translatedGameDevelopment?.map((data: GAME_DEVELOPMENT_DATA) => (
                                     <SwiperSlide key={data.id}>
                                         <div className={styles.sliderBox}>
-                                            <div className={`${styles.titleContainer} ${activeIndex === data?.id ? styles.visible : ''}`}>
+                                            <div
+                                                className={`${styles.titleContainer} ${activeIndex === data?.id ? styles.visible : ''}`}>
                                                 <h2>{data?.title}</h2>
                                                 <p>{data?.description}</p>
                                                 <Link to={"/games"}>
-                                                    <CallMadeIcon />
+                                                    <CallMadeIcon/>
                                                 </Link>
                                             </div>
                                             <img src={data.image} alt="Gamestorm Office"/>
@@ -396,15 +466,93 @@ export const ServicesPage = () => {
                     </div>
                 </section>
                 {/*TESTIMONIALS SECTION*/}
-                <TestimonialsSection />
+                <TestimonialsSection/>
                 <section className={styles.contactUsSection}>
                     <div className={styles?.sectionContent}>
+                        <div className={styles.leftContainer}>
+                            <div className={styles.titleBlock}>
+                                <div className={`${styles.pageHeading} ${styles.notCenteredText}`}>
+                                    <h4>Have <span> Questions?</span></h4>
+                                    <h2>We'd Love To, <span> Hear From You</span></h2>
+                                </div>
+                            </div>
+                            <p>Please fill out the form and let us know about your concerns.We will try our best to
+                                provide optimized solutions.</p>
+                            <div className={styles.contactRow}>
+                                <div className={styles.circle}>
+                                    <LocalPhoneIcon/>
+                                </div>
+                                <span>+(2) 578 - 365 - 379</span>
+                            </div>
+                            <div className={styles.contactRow}>
+                                <div className={styles.circle}>
+                                    <EmailIcon/>
+                                </div>
+                                <span>gamestorm@info.com</span>
+                            </div>
+
+                        </div>
+                        <div className={styles.rightContainer}>
+                            <div className={styles.formWrapper}>
+                                <div className={styles.inputWrapper}>
+                                    Name
+                                    <input
+                                        onChange={handleInputChange}
+                                        value={inputState?.name}
+                                        type="text"
+                                        name={"name"}
+                                        placeholder={"Enter your name"}
+                                    />
+                                </div>
+                                <div className={styles.inputWrapper}>
+                                    Email
+                                    <input
+                                        onChange={handleInputChange}
+                                        value={inputState?.email}
+                                        type="email"
+                                        name={"email"}
+                                        placeholder={"Enter your email"}
+                                    />
+                                </div>
+                                <div className={styles.inputWrapper}>
+                                    Subject
+                                    <input
+                                        onChange={handleInputChange}
+                                        value={inputState?.subject}
+                                        type="text"
+                                        name={"subject"}
+                                        placeholder={"Enter subject"}
+                                    />
+                                </div>
+                                <div className={styles.inputWrapper}>
+                                    Leave us message
+                                    <textarea
+                                        onChange={handleInputChange}
+                                        value={inputState?.message}
+                                        name={"message"}
+                                        placeholder={"Please type your message here..."}
+                                    />
+                                </div>
+                                <div
+                                    className={styles.btnWrapper}
+                                    onClick={handleSendMessage}
+                                >
+                                    <DefaultButton
+                                        title={"Send Message"}
+                                        link={""}
+                                        grayBtn={false}
+                                        wide={false}
+                                    />
+                                </div>
+
+
+                            </div>
+                        </div>
 
                     </div>
                 </section>
-
                 {/*SLIDER SECTION*/}
-                <SliderSection />
+                <SliderSection/>
             </main>
             <FooterOne/>
         </>
