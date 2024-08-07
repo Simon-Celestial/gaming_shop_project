@@ -1,0 +1,14 @@
+@import '../../../Variables/Variables';
+@import '../../../Animations/Animations';
+
+.pageWrapper {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  .pageContent {
+    display: flex;
+    width: 100%;
+    max-width: 1320px;
+  }
+
+}

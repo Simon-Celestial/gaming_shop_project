@@ -15,6 +15,7 @@ import {AuthContext} from "../Context/AuthContext/AuthContext.tsx";
 import React, {useContext} from "react";
 import {GamesPage} from "../SiteLayout/Pages/GamesPage/GamesPage.tsx";
 import {ServicesPage} from "../SiteLayout/Pages/ServicesPage/ServicesPage.tsx";
+import {AboutPage} from "../SiteLayout/Pages/AboutPage/AboutPage.tsx";
 
 interface UserData {
     email: string;
@@ -48,13 +49,18 @@ const router = ({userData, token}: RouterProps) => createBrowserRouter([
                     element: <ShopPage/>
                 },
                 {
-                  path: 'games',
-                  element: <GamesPage/>
+                    path: 'games',
+                    element: <GamesPage/>
                 },
                 {
                     path: 'services',
                     element: <ServicesPage/>
                 },
+                {
+                    path: 'about',
+                    element: <AboutPage/>
+                },
+
                 {
                     path: 'wishlist',
                     element: <WishlistPage/>
@@ -85,14 +91,14 @@ const router = ({userData, token}: RouterProps) => createBrowserRouter([
                 },
                 {
                     path: "product-details/:id",
-                    element: <ProductDetailsPage />,
+                    element: <ProductDetailsPage/>,
                 }
             ],
         }
     ])
 ;
 
-export const MainRouter:React.FC = () => {
+export const MainRouter: React.FC = () => {
     const {token, userData} = useContext(AuthContext);
     return <RouterProvider router={router({token, userData})}/>;
 };
