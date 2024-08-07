@@ -1,0 +1,154 @@
+@import "../../../../Variables/Variables";
+@import "../../../../CommonStyles/PageHeadingStyles/PageHeadingStyles.module";
+@import "../../../../Animations/Animations";
+
+.testimonialsSection {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  position: relative;
+  border-top: 1px solid $green;
+
+  .overlay {
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    position: absolute;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      filter: brightness(50%);
+    }
+  }
+
+  .sectionContent {
+    max-width: 1320px;
+    flex-direction: column;
+    align-items: end;
+    width: 100%;
+    display: flex;
+    z-index: 3;
+    padding: 120px 15px 0 15px;
+
+    .commentsSwiper {
+      display: flex;
+      width: 100%;
+      max-width: 750px;
+      background: $black;
+      border: 5px solid $greenDark;
+      border-bottom: 0;
+      position: relative;
+
+      .monitoringBox {
+        position: absolute;
+        right: 20px;
+        top: 15px;
+
+        h2 {
+          display: inline-flex;
+          align-items: center;
+          gap: 10px;
+          color: $green;
+
+          span {
+            background: $white;
+            height: 2px;
+            width: 100px;
+            position: relative;
+
+            &:after {
+              content: "";
+              width: 100%;
+              height: 100%;
+              background: $green;
+              position: absolute;
+              left: 0;
+              top: 0;
+            }
+
+            &.animated {
+              &:after {
+                animation: widthAnim 2.5s linear;
+              }
+            }
+          }
+
+          p {
+            color: $gray
+          }
+        }
+      }
+
+      .commentBox {
+        padding: 50px 32px 50px 32px;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 25px;
+
+        .topBox {
+          display: flex;
+          width: 100%;
+          flex-direction: column;
+          gap: 10px;
+
+          .logoBox {
+            width: 80px;
+            height: 80px;
+            overflow: hidden;
+            border-radius: 50%;
+            border: 2px solid $greenDark;
+
+            img {
+              width: 100%;
+              height: 100%;
+              object-position: top;
+              object-fit: cover;
+            }
+          }
+        }
+
+        .midBox {
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+          font-size: 20px;
+          color: $gray;
+        }
+
+        .bottomBox {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+
+          h2 {
+            font-size: 20px;
+            color: $white;
+          }
+
+          .countryDateBox {
+            display: inline-flex;
+            align-items: center;
+            font-size: 18px;
+            color: $green;
+
+            span {
+              margin: 0 15px;
+              color: $white;
+            }
+
+            p {
+              color: $white;
+            }
+          }
+        }
+
+      }
+    }
+
+  }
+}

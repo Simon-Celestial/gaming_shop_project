@@ -1,0 +1,62 @@
+{
+  "en": [
+    {
+      "id": 1,
+      "image": "/images/posters/recently-completed-img-1.png",
+      "title": "Game Development",
+      "description": "Join our Game Development team and help create exciting games. Whether you're skilled in C++, C#, or Python, your expertise is needed to develop captivating gaming experiences. Be part of crafting the next big hit!"
+    },
+    {
+      "id": 2,
+      "image": "/images/posters/recently-completed-img-2.png",
+      "title": "Game Art",
+      "description": "Our Game Art team needs talented artists to create stunning visuals. If you excel at designing characters and landscapes, we want to see your creativity in action. Let's bring game worlds to life together."
+    },
+    {
+      "id": 3,
+      "image": "/images/posters/recently-completed-img-3.png",
+      "title": "Game Animation",
+      "description": "Animate characters and environments with our team. If you're passionate about storytelling through movement, join us to create animations that enhance gameplay and engage players."
+    }
+  ],
+  "ru": [
+    {
+      "id": 1,
+      "image": "/images/posters/recently-completed-img-1.png",
+      "title": "Разработка Игр",
+      "description": "Присоединяйтесь к нашей команде разработки игр и создавайте захватывающие игры. Если вы владеете C++, C# или Python, ваш опыт поможет разрабатывать увлекательные игровые процессы. Станьте частью создания следующего хита!"
+    },
+    {
+      "id": 2,
+      "image": "/images/posters/recently-completed-img-2.png",
+      "title": "Игровое Искусство",
+      "description": "Наша команда игровых художников ищет талантливых мастеров для создания удивительных визуальных эффектов. Если вы талантливы в дизайне персонажей и пейзажей, покажите нам свою креативность в действии. Давайте вместе оживим миры игр."
+    },
+    {
+      "id": 3,
+      "image": "/images/posters/recently-completed-img-3.png",
+      "title": "Анимация Игр",
+      "description": "Оживите персонажей и окружение вместе с нашей командой. Если вы увлечены повествованием через движения, присоединяйтесь к нам, чтобы создавать анимации, которые улучшат игровой процесс и заинтересуют игроков."
+    }
+  ],
+  "tr": [
+    {
+      "id": 1,
+      "image": "/images/posters/recently-completed-img-1.png",
+      "title": "Oyun Geliştirme",
+      "description": "Oyun Geliştirme ekibimize katılın ve heyecan verici oyunlar yaratın. C++, C# veya Python konusunda yetenekliyseniz, ilgi çekici oyun deneyimleri geliştirmek için uzmanlığınıza ihtiyacımız var. Bir sonraki büyük hitin parçası olun!"
+    },
+    {
+      "id": 2,
+      "image": "/images/posters/recently-completed-img-2.png",
+      "title": "Oyun Sanatı",
+      "description": "Oyun Sanatı ekibimiz, çarpıcı görseller oluşturmak için yetenekli sanatçılar arıyor. Karakter ve manzara tasarımında ustaysanız, yaratıcılığınızı harekete geçirmek istiyoruz. Oyun dünyalarını birlikte hayata geçirelim."
+    },
+    {
+      "id": 3,
+      "image": "/images/posters/recently-completed-img-3.png",
+      "title": "Oyun Animasyonu",
+      "description": "Ekibimizle karakterleri ve ortamları canlandırın. Hareketle hikaye anlatımına tutkuluysanız, oynanışı geliştiren ve oyuncuları etkileyen animasyonlar yaratmak için bize katılın."
+    }
+  ]
+}

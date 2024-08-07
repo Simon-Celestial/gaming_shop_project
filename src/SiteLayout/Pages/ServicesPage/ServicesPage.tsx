@@ -11,6 +11,11 @@ import processData from "/public/data/ProcessData/processData.json";
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-expect-error
 import benefitsData from "/public/data/BenefitsData/benefitsData.json";
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-expect-error
+import gameDevelopmentData from "/public/data/GameDevelopmentData/gameDevelopmentData.json";
+
+
 import {Link} from "react-router-dom";
 import SubdirectoryArrowRightIcon from '@mui/icons-material/SubdirectoryArrowRight';
 import {Odometer} from "../../Components/Reusables/Odometer/Odometer.tsx";
@@ -27,6 +32,17 @@ import SearchIcon from '@mui/icons-material/Search';
 import VerifiedIcon from '@mui/icons-material/Verified';
 import MilitaryTechIcon from '@mui/icons-material/MilitaryTech';
 import CallMadeIcon from '@mui/icons-material/CallMade';
+import {Swiper, SwiperSlide} from "swiper/react";
+import {Autoplay, EffectFade} from "swiper/modules";
+import {TestimonialsSection} from "../../Components/Sections/TestimonialsSection/TestimonialsSection.tsx";
+import {SliderSection} from "../../Components/Sections/SliderSection/SliderSection.tsx";
+
+interface GAME_DEVELOPMENT_DATA {
+    id: number;
+    image: string;
+    title: string;
+    description: string;
+}
 
 interface SERVICES_DATA {
     id: number;
@@ -80,12 +96,29 @@ export const ServicesPage = () => {
     const [translatedServices, setTranslatedServices] = useState([servicesData?.en]);
     const [translatedProcess, setTranslatedProcess] = useState([processData?.en]);
     const [translatedBenefits, setTranslatedBenefits] = useState([benefitsData?.en]);
+    const [activeIndex, setActiveIndex] = useState(0);
+    const [animate, setAnimate] = useState(false);
+    const [translatedGameDevelopment,setTranslatedGameDevelopment] = useState([gameDevelopmentData?.en])
+
     const handleOpenVideo = useCallback(() => {
         setVideoVisible(true);
-    }, [])
+    }, []);
+
     const handleCloseVideo = useCallback(() => {
         setVideoVisible(false);
-    }, [])
+    }, []);
+
+    const handleChangeIndex = useCallback((index: number): void => {
+        setActiveIndex(index + 1);
+    }, [setActiveIndex]);
+
+    useEffect(() => {
+        setAnimate(true);
+        const timer = setTimeout(() => setAnimate(false), 3000);
+
+        return () => clearTimeout(timer);
+    }, [activeIndex]);
+
 
     const {i18n} = useTranslation();
 
@@ -94,16 +127,19 @@ export const ServicesPage = () => {
             setTranslatedServices(servicesData?.en);
             setTranslatedProcess(processData?.en);
             setTranslatedBenefits(benefitsData?.en);
+            setTranslatedGameDevelopment(gameDevelopmentData?.en);
 
         } else if (i18n.language === "ru") {
             setTranslatedServices(servicesData?.ru);
             setTranslatedProcess(processData?.ru);
             setTranslatedBenefits(benefitsData?.ru);
+            setTranslatedGameDevelopment(gameDevelopmentData?.ru);
 
         } else {
             setTranslatedServices(servicesData?.tr);
             setTranslatedProcess(processData?.tr);
             setTranslatedBenefits(benefitsData?.tr);
+            setTranslatedGameDevelopment(gameDevelopmentData?.tr);
         }
     }, [i18n.language]);
 
@@ -305,9 +341,70 @@ export const ServicesPage = () => {
                                 <CallMadeIcon />
                             </Link>
                         </div>
+                        <div className={styles.swiperContainer}>
+                            <div className={styles.animatedBlock}>
+                                <div className={styles.monitoringBox}>
+                                    <h2>{activeIndex} <span className={animate ? styles.animated : ""}></span>
+                                        <p>{translatedGameDevelopment?.length}</p></h2>
+                                </div>
+                                <div className={styles.customPagination}>
+                                    <div className={styles.circle}
+                                    style={{
+                                        backgroundColor: activeIndex === 1? "#0EF0AD" : '',
+                                        transform: activeIndex === 1? 'scale(1.3)': ''
+
+                                    }}></div>
+                                    <div className={styles.circle}
+                                    style={{
+                                        backgroundColor: activeIndex === 2? "#0EF0AD" : '',
+                                        transform: activeIndex === 2? 'scale(1.3)': ''
+                                        }}></div>
+                                    <div className={styles.circle}
+                                    style={{
+                                        backgroundColor: activeIndex === 3? "#0EF0AD" : '',
+                                        transform: activeIndex === 3? 'scale(1.3)': ''
+                                    }}></div>
+                                </div>
+
+                            </div>
+                            <Swiper
+                                direction={'horizontal'}
+                                modules={[EffectFade, Autoplay]}
+                                slidesPerView={1}
+                                autoplay={{delay: 3000}}
+                                spaceBetween={25}
+                                loop={true}
+                                allowTouchMove={false}
+                                onSlideChange={(swiper) => handleChangeIndex(swiper.realIndex)}
+                            >
+                                {translatedGameDevelopment?.map((data: GAME_DEVELOPMENT_DATA) => (
+                                    <SwiperSlide key={data.id}>
+                                        <div className={styles.sliderBox}>
+                                            <div className={`${styles.titleContainer} ${activeIndex === data?.id ? styles.visible : ''}`}>
+                                                <h2>{data?.title}</h2>
+                                                <p>{data?.description}</p>
+                                                <Link to={"/games"}>
+                                                    <CallMadeIcon />
+                                                </Link>
+                                            </div>
+                                            <img src={data.image} alt="Gamestorm Office"/>
+                                        </div>
+                                    </SwiperSlide>
+                                ))}
+                            </Swiper>
+                        </div>
+                    </div>
+                </section>
+                {/*TESTIMONIALS SECTION*/}
+                <TestimonialsSection />
+                <section className={styles.contactUsSection}>
+                    <div className={styles?.sectionContent}>
 
                     </div>
                 </section>
+
+                {/*SLIDER SECTION*/}
+                <SliderSection />
             </main>
             <FooterOne/>
         </>
