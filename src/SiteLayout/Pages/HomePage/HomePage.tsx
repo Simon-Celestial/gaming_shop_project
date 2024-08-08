@@ -1,4 +1,4 @@
-import React, {useCallback, useContext, useEffect, useRef, useState} from "react";
+import React, {useCallback, useContext, useEffect, useState} from "react";
 import styles from "./HomePage.module.scss";
 import {Header} from "../../Components/Layout/Header/Header.tsx";
 import {FooterOne} from "../../Components/Layout/FooterOne/FooterOne.tsx";
@@ -9,27 +9,19 @@ import {Swiper, SwiperSlide} from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import {DefaultButton} from "../../Components/Reusables/DefaultButton/DefaultButton.tsx";
-import {Odometer} from "../../Components/Reusables/Odometer/Odometer.tsx";
 import Diversity2Icon from '@mui/icons-material/Diversity2';
 import WorkOutlineIcon from '@mui/icons-material/WorkOutline';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-expect-error
 import jobsData from "/public/data/JobsData/jobsData.json";
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-expect-error
-import teamData from "/public/data/TeamData/teamData.json";
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-expect-error
-import infoData from "/public/data/InfoData/infoData.json";
 
 import {
     PAGINATION_STYLES_TYPE,
-    TEAM_DATA,
-    INFO_DATA,
     JOBS_DATA,
     CONTACT_DEFAULTS
 } from "../../../Types/types.ts";
+
 import {useTranslation} from "react-i18next";
 import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
 import EmailIcon from "@mui/icons-material/Email";
@@ -38,6 +30,9 @@ import {DataContext} from "../../../Context/DataContext/DataContext.tsx";
 import {Loader} from "../../Components/Reusables/Loader/Loader.tsx";
 import {GamesSection} from "../../Components/Sections/GamesSection/GamesSection.tsx";
 import {TestimonialsSection} from "../../Components/Sections/TestimonialsSection/TestimonialsSection.tsx";
+import {AboutSection} from "../../Components/Sections/AboutSection/AboutSection.tsx";
+import {TeamSection} from "../../Components/Sections/TeamSection/TeamSection.tsx";
+import {CounterSection} from "../../Components/Sections/CounterSection/CounterSection.tsx";
 
 
 const paginationStyles: PAGINATION_STYLES_TYPE = {
@@ -61,10 +56,7 @@ export const HomePage = () => {
         productsLoading
     } = useContext(DataContext);
 
-    const [translatedTeam, setTranslatedTeam] = useState(teamData.en);
-    const [translatedInfo, setTranslatedInfo] = useState(infoData.en);
     const [translatedJobs, setTranslatedJobs] = useState(jobsData.en)
-    const [hoveredBox, setHoveredBox] = useState(1);
     const [contactInputs, setContactInputs] = useState<CONTACT_DEFAULTS>(contactDefault);
 
     const handleContactInputs = useCallback((field: keyof CONTACT_DEFAULTS, value: string) => {
@@ -107,32 +99,19 @@ export const HomePage = () => {
 
 
 
-    const odometerRef = useRef<HTMLDivElement | null>(null);
-    const counterRef = useRef<HTMLDivElement | null>(null);
 
     const {i18n} = useTranslation();
 
 
     useEffect(() => {
         if (i18n.language === "en") {
-            setTranslatedTeam(teamData.en);
-            setTranslatedInfo(infoData.en);
             setTranslatedJobs(jobsData.en);
         } else if (i18n.language === "ru") {
-            setTranslatedTeam(teamData.ru);
-            setTranslatedInfo(infoData.ru);
             setTranslatedJobs(jobsData.ru);
         } else {
-            setTranslatedTeam(teamData.tr);
-            setTranslatedInfo(infoData.tr);
             setTranslatedJobs(jobsData.tr);
         }
     }, [i18n.language]);
-
-
-    const handleHoverBox = useCallback((boxID: number) => {
-        setHoveredBox(boxID);
-    }, [setHoveredBox]);
 
     return (
         <>
@@ -245,165 +224,14 @@ export const HomePage = () => {
                         </div>
                     </div>
                 </section>
-                <section className={styles.aboutSection} ref={odometerRef}>
-                    <div className={styles.sectionContent}>
-                        <div className={styles.imageContainer}>
-                            <div className={styles.experienceBlock}>
-                                <div className={styles.experienceContent}>
-                                    <div className={styles.number}><Odometer
-                                        currentRef={odometerRef}
-                                        stopValue={31}
-                                        latency={75}
-                                    />+
-                                    </div>
-                                    <div className={styles.title}>
-                                        Years Of Experience
-                                    </div>
-                                </div>
-                            </div>
-                            <img src="https://pixner.net/gamestorm3/main/assets/images/about-block-bg.png" alt="Users"/>
-                        </div>
-                        <div className={styles.titleContainer}>
-                            <div className={`${styles.pageHeading} ${styles.notCenteredText}`}>
-                                <h4>Welcome To <span>GAMESTORM</span> Gaming Shop</h4>
-                                <h2>Bringing People Together Through <span>The Power Of Play</span></h2>
-                                <p>As Gamestorm, we continue to open doors to new worlds every day and we are
-                                    working excitedly introduce new gaming devices!</p>
-                            </div>
-                            <div className={styles.infoContainers}>
-                                <div className={styles.container}>
-                                    <span>
-                                        <Odometer
-                                            currentRef={odometerRef}
-                                            stopValue={500}
-                                            latency={5}
-                                        />
-                                        M
-                                        <p>+</p></span>
-                                    <p>Sales, or 6% of the world’s population.</p>
-                                </div>
-                                <div className={styles.container}>
-                                    <span>
-                                        <Odometer
-                                            currentRef={odometerRef}
-                                            stopValue={2}
-                                            latency={1250}
-                                        />
-                                        M
-                                        <p>+</p>
-                                    </span>
-                                    <p>Our products have over 2 million unique daily customers.</p>
-                                </div>
-                                <div className={styles.container}>
-                                    <span>
-                                        <Odometer
-                                            currentRef={odometerRef}
-                                            stopValue={52}
-                                            latency={50}
-                                        />
-                                        <p>+</p>
-                                    </span>
-                                    <p>Experts collaborating to blow your mind in one place.</p>
-                                </div>
-                                <div className={styles.container}>
-                                    <span>
-                                        <Odometer
-                                            currentRef={odometerRef}
-                                            stopValue={100}
-                                            latency={25}
-                                        />
-                                        <p>%</p></span>
-                                    <p>Our devices gives you full experience.</p>
-                                </div>
-
-                            </div>
-                            <DefaultButton
-                                title={"Explore Out Products"}
-                                link={"/shop"}
-                                grayBtn={false}
-                                wide={false}
-                            />
-                        </div>
-                    </div>
-                </section>
+                {/*ABOUT SECTION */}
+                <AboutSection />
+                {/*GAMES SECTION*/}
                 <GamesSection />
-                <section className={styles.teamSection}>
-                    <div className={styles.sectionContent}>
-                        <div className={styles.teamTitle}>
-                            <div className={`${styles.pageHeading}`}>
-                                <h4>We Have A Passion For <span>Gaming!</span></h4>
-                                <h2>Our Team Consists of Professionals. <span>And We're Proud Of It.</span></h2>
-                                <p>Our dynamic team blends tech-savvy sales professionals, knowledgeable customer
-                                    service representatives, innovative marketing strategists, and visionary product
-                                    managers.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div className={styles.teamSwiper}>
-                        <Swiper
-                            slidesPerView={4}
-                            modules={[Autoplay]}
-                            autoplay={{delay: 2000}}
-                            breakpoints={{
-                                1100: {
-                                    slidesPerView: 4,
-                                },
-                                840: {
-                                    slidesPerView: 3,
-                                },
-                                550: {
-                                    slidesPerView: 2,
-                                },
-                                0: {
-                                    slidesPerView: 1,
-                                },
-                            }}
-                            spaceBetween={50}
-                            freeMode={true}
-                            loop={true}
-                        >
-                            {translatedTeam?.map((member: TEAM_DATA) => {
-                                return (
-                                    <SwiperSlide key={member?.id}>
-                                        <div
-                                            className={`${styles.teamSlide} ${member.id % 2 === 1 ? styles.margin : ''}`}>
-                                            <div className={styles.image}>
-                                                <img src={member?.image} alt={member?.name}/>
-                                            </div>
-                                            <div className={styles.title}>
-                                                <h2>{member?.name}</h2>
-                                                <p>{member?.job}</p>
-                                            </div>
-                                        </div>
-                                    </SwiperSlide>
-                                )
-                            })}
-                        </Swiper>
-
-                    </div>
-                </section>
-                <section className={styles.counterSection} ref={counterRef}>
-                    <div className={styles.sectionContent}>
-                        <div className={styles.informationContainer}>
-                            {translatedInfo?.map((data: INFO_DATA) => {
-                                return (
-                                    <div
-                                        key={data?.id}
-                                        className={`${styles.box} ${data?.id === hoveredBox ? styles.activeBox : ''}`}
-                                        onMouseEnter={() => handleHoverBox(data?.id)}>
-                                        <p>{data?.title}</p>
-                                        <Odometer
-                                            currentRef={counterRef}
-                                            stopValue={data?.value}
-                                            latency={data?.delay}
-                                        />
-                                        {data?.prefix}
-                                    </div>
-                                )
-                            })}
-                        </div>
-                    </div>
-                </section>
+                {/*TEAM SECTION*/}
+                <TeamSection />
+                {/*COUNTER SECTION*/}
+                <CounterSection />
                 <section className={styles.productsSection}>
                     <div className={styles.sectionContent}>
                         <div className={styles.productsTitle}>

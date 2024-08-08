@@ -21,7 +21,6 @@ import SubdirectoryArrowRightIcon from '@mui/icons-material/SubdirectoryArrowRig
 import {Odometer} from "../../Components/Reusables/Odometer/Odometer.tsx";
 import React, {useCallback, useEffect, useRef, useState} from "react";
 import {useTranslation} from "react-i18next";
-import HighlightOffIcon from '@mui/icons-material/HighlightOff';
 import BorderColorIcon from '@mui/icons-material/BorderColor';
 import BurstModeIcon from '@mui/icons-material/BurstMode';
 import ViewInArIcon from '@mui/icons-material/ViewInAr';
@@ -40,6 +39,7 @@ import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
 import EmailIcon from '@mui/icons-material/Email';
 import {DefaultButton} from "../../Components/Reusables/DefaultButton/DefaultButton.tsx";
 import {Bounce, toast} from "react-toastify";
+import {VideoContainer} from "../../Components/Reusables/VideoContainer/VideoContainer.tsx";
 
 interface GAME_DEVELOPMENT_DATA {
     id: number;
@@ -108,7 +108,6 @@ const defaults: INPUT_TYPE = {
 
 export const ServicesPage = () => {
     const focusRef = useRef<HTMLDivElement | null>(null);
-    const [videoVisible, setVideoVisible] = useState(false);
     const [translatedServices, setTranslatedServices] = useState([servicesData?.en]);
     const [translatedProcess, setTranslatedProcess] = useState([processData?.en]);
     const [translatedBenefits, setTranslatedBenefits] = useState([benefitsData?.en]);
@@ -117,13 +116,6 @@ export const ServicesPage = () => {
     const [translatedGameDevelopment, setTranslatedGameDevelopment] = useState([gameDevelopmentData?.en])
     const [inputState, setInputState] = useState(defaults);
 
-    const handleOpenVideo = useCallback(() => {
-        setVideoVisible(true);
-    }, []);
-
-    const handleCloseVideo = useCallback(() => {
-        setVideoVisible(false);
-    }, []);
 
     const handleChangeIndex = useCallback((index: number): void => {
         setActiveIndex(index + 1);
@@ -217,24 +209,6 @@ export const ServicesPage = () => {
         <>
             <Header/>
             <main className={styles.pageWrapper}>
-                <div className={`${styles.videoScreen} ${videoVisible ? styles.videoOpened : ''}`}>
-                    <div className={styles.container}>
-                        <div
-                            className={styles.closeBtn}
-                            onClick={handleCloseVideo}
-                        >
-                            <HighlightOffIcon/>
-                        </div>
-                        <iframe
-                            className={styles.iframe}
-                            src="https://www.youtube.com/embed/IaT4DneyKLc?autoplay=1"
-                            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowFullScreen
-                            title="YouTube Video Player"
-                        ></iframe>
-                    </div>
-
-                </div>
                 <PageBanner
                     whiteText={"Our"}
                     greenText={"Services"}
@@ -325,18 +299,11 @@ export const ServicesPage = () => {
                             </div>
                         </div>
                     </div>
-                    <div className={styles.videoContainer}>
-                        <div className={styles.videoBox}>
-                            <div
-                                className={styles.play}
-                                onClick={handleOpenVideo}
-                            >
-                                <p>Play</p>
-                            </div>
-                            <img src="/images/posters/backgroundVideo.png" alt="Video"/>
-                        </div>
-
-                    </div>
+                    {/*VIDEO CONTAINER*/}
+                    <VideoContainer
+                        link={"https://www.youtube.com/embed/IaT4DneyKLc?autoplay=1"}
+                        image={"https://pixner.net/gamestorm3/main/assets/images/video-bg-2.png"}
+                    />
                 </section>
                 <section className={styles.howItWorksSection}>
                     <div className={styles.sectionContent}>

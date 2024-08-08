@@ -16,20 +16,16 @@
     background-image: url("https://pixner.net/gamestorm3/main/assets/images/pricing-plan-banner-illus.png");
     background-position: bottom right;
     background-repeat: no-repeat;
+    background-color: $grayFill;
   }
 
+
+  &.privacy-policy,
   &.about {
     background-image: url("https://pixner.net/gamestorm3/main/assets/images/about-banner-illus.png");
     background-position: bottom right;
     background-repeat: no-repeat;
     background-color: $grayFill;
-  }
-
-  &.privacy-policy {
-    background-image: url("https://pixner.net/gamestorm3/main/assets/images/about-banner-illus.png");
-    background-position: bottom right;
-    background-repeat: no-repeat;
-    background-color: #222434;
   }
 
   &.wishlist {
@@ -121,7 +117,7 @@
     .bannerTitle {
       display: flex;
       flex-direction: column;
-      max-width: 660px;
+      max-width: 635px;
       width: 100%;
 
       .coloredText {
