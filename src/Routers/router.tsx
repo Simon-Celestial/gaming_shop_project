@@ -16,6 +16,9 @@ import React, {useContext} from "react";
 import {GamesPage} from "../SiteLayout/Pages/GamesPage/GamesPage.tsx";
 import {ServicesPage} from "../SiteLayout/Pages/ServicesPage/ServicesPage.tsx";
 import {AboutPage} from "../SiteLayout/Pages/AboutPage/AboutPage.tsx";
+import {BlogPage} from "../SiteLayout/Pages/BlogPage/BlogPage.tsx";
+import {ContactPage} from "../SiteLayout/Pages/ContactPage/ContactPage.tsx";
+
 
 interface UserData {
     email: string;
@@ -60,7 +63,14 @@ const router = ({userData, token}: RouterProps) => createBrowserRouter([
                     path: 'about',
                     element: <AboutPage/>
                 },
-
+                {
+                    path: 'blog',
+                    element: <BlogPage/>
+                },
+                {
+                    path: 'contact',
+                    element: <ContactPage/>
+                },
                 {
                     path: 'wishlist',
                     element: <WishlistPage/>

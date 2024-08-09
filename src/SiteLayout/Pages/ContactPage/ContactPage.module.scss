@@ -1,0 +1,9 @@
+@import "../../../Variables/Variables";
+@import "../../../Animations/Animations";
+@import "../../../CommonStyles/PageHeadingStyles/PageHeadingStyles.module";
+
+.pageWrapper {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}

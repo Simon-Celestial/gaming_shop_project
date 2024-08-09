@@ -130,15 +130,19 @@
         h2 {
           font-size: 56px;
           color: $white;
+          text-transform: capitalize;
 
           span {
             color: $green;
+            text-transform: capitalize;
+
           }
         }
 
         h3 {
           font-size: 56px;
           color: $green;
+          text-transform: capitalize;
         }
       }
 
