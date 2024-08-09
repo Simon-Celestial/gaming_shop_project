@@ -1,4 +1,4 @@
-import React, {useCallback, useContext, useEffect, useState} from "react";
+import React, {useCallback, useContext, useState} from "react";
 import styles from "./HomePage.module.scss";
 import {Header} from "../../Components/Layout/Header/Header.tsx";
 import {FooterOne} from "../../Components/Layout/FooterOne/FooterOne.tsx";
@@ -9,20 +9,11 @@ import {Swiper, SwiperSlide} from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import {DefaultButton} from "../../Components/Reusables/DefaultButton/DefaultButton.tsx";
-import Diversity2Icon from '@mui/icons-material/Diversity2';
-import WorkOutlineIcon from '@mui/icons-material/WorkOutline';
-import AccessTimeIcon from '@mui/icons-material/AccessTime';
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-expect-error
-import jobsData from "/public/data/JobsData/jobsData.json";
-
 import {
     PAGINATION_STYLES_TYPE,
-    JOBS_DATA,
     CONTACT_DEFAULTS
 } from "../../../Types/types.ts";
 
-import {useTranslation} from "react-i18next";
 import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
 import EmailIcon from "@mui/icons-material/Email";
 import {Bounce, toast} from "react-toastify";
@@ -33,6 +24,7 @@ import {TestimonialsSection} from "../../Components/Sections/TestimonialsSection
 import {AboutSection} from "../../Components/Sections/AboutSection/AboutSection.tsx";
 import {TeamSection} from "../../Components/Sections/TeamSection/TeamSection.tsx";
 import {CounterSection} from "../../Components/Sections/CounterSection/CounterSection.tsx";
+import {JobsSection} from "../../Components/Sections/JobsSection/JobsSection.tsx";
 
 
 const paginationStyles: PAGINATION_STYLES_TYPE = {
@@ -56,7 +48,6 @@ export const HomePage = () => {
         productsLoading
     } = useContext(DataContext);
 
-    const [translatedJobs, setTranslatedJobs] = useState(jobsData.en)
     const [contactInputs, setContactInputs] = useState<CONTACT_DEFAULTS>(contactDefault);
 
     const handleContactInputs = useCallback((field: keyof CONTACT_DEFAULTS, value: string) => {
@@ -96,22 +87,6 @@ export const HomePage = () => {
             });
         }
     }, [contactInputs, setContactInputs]);
-
-
-
-
-    const {i18n} = useTranslation();
-
-
-    useEffect(() => {
-        if (i18n.language === "en") {
-            setTranslatedJobs(jobsData.en);
-        } else if (i18n.language === "ru") {
-            setTranslatedJobs(jobsData.ru);
-        } else {
-            setTranslatedJobs(jobsData.tr);
-        }
-    }, [i18n.language]);
 
     return (
         <>
@@ -334,47 +309,8 @@ export const HomePage = () => {
 
                     </div>
                 </section>
-                <section className={styles.jobsSection}>
-                    <div className={styles.sectionContent}>
-                        <div className={styles.topTitle}>
-                            <div className={`${styles.pageHeading}`}>
-                                <h4>We're Looking For <span>Talented Professionals</span></h4>
-                                <h2><span>Let's Build The Future</span> Of Gaming Industry Together!</h2>
-                                <p>Our belief is that being simple, honest, self-driven and motivated combined with the
-                                    constant pursuit of the ultimate company atmosphere can help grow a creative and
-                                    robust team.</p>
-                            </div>
-                        </div>
-                        <div className={styles.jobsContainer}>
-                            {translatedJobs?.map((job: JOBS_DATA) => {
-                                return (
-                                    <div key={job?.id} className={styles.jobBlock}>
-                                        <div className={styles.topRow}>
-                                            <div className={styles.iconBox}>
-                                                <Diversity2Icon/>
-                                            </div>
-                                            <div className={styles.jobNameColumn}>
-                                                <h2>{job?.jobName}</h2>
-                                                <p>{job?.jobLocation}</p>
-                                            </div>
-                                            <div className={styles.badgeBox}>
-                                                {job?.category}
-                                            </div>
-                                        </div>
-                                        <div className={styles.bottomRow}>
-                                            <div className={styles.timeBox}>
-                                                <WorkOutlineIcon/> <p>Full Time</p>
-                                            </div>
-                                            <div className={styles.timeBox}>
-                                                <AccessTimeIcon/> <p>Full Time</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                )
-                            })}
-                        </div>
-                    </div>
-                </section>
+                {/*JOBS SECTION*/}
+                <JobsSection />
                 {/*TESTIMONIALS SECTION*/}
                 <TestimonialsSection />
                 <section className={styles.communitySection}>

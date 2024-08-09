@@ -1,0 +1,119 @@
+@import '../../../../Variables/Variables';
+@import '../../../../Animations/Animations';
+@import "../../../../CommonStyles/PageHeadingStyles/PageHeadingStyles.module";
+
+.jobsSection {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  background: $background;
+
+  .sectionContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 1320px;
+    padding: 120px 15px;
+
+    .topTitle {
+      max-width: 700px;
+      width: 100%;
+
+    }
+
+    .jobsContainer {
+      display: flex;
+      width: 100%;
+      flex-wrap: wrap;
+      gap: 25px;
+      margin-top: 25px;
+
+      .jobBlock {
+        display: flex;
+        width: 100%;
+        max-width: 632px;
+        padding: 25px;
+        border-top: 1px solid rgba(128, 128, 128, 0.3);
+        border-bottom: 1px solid rgba(128, 128, 128, 0.3);
+        border-radius: 12px;
+        overflow: hidden;
+        flex-direction: column;
+        gap: 35px;
+
+        .topRow {
+          display: flex;
+          width: 100%;
+          align-items: start;
+          gap: 25px;
+
+          .iconBox {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 5px;
+            background: #4c4d5a;
+            padding: 8px;
+
+            svg {
+              font-size: 32px;
+              color: $green;
+            }
+          }
+
+          .jobNameColumn {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+
+            h2 {
+              font-size: 20px;
+              color: $white;
+            }
+
+            p {
+              color: $gray;
+              font-size: 14px;
+            }
+          }
+
+          .badgeBox {
+            margin-left: auto;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: $green;
+            color: $black;
+            padding: 5px 10px;
+            border-radius: 10px;
+            font-weight: 400;
+            font-family: $interFont;
+            text-align: center;
+          }
+        }
+
+        .bottomRow {
+          display: flex;
+          width: 100%;
+          align-items: center;
+          gap: 25px;
+          padding-left: 70px;
+
+          .timeBox {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            color: $gray;
+
+            p {
+              font-size: 14px;
+            }
+          }
+        }
+      }
+
+
+    }
+  }
+}

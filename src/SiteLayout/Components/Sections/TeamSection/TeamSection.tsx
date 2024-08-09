@@ -78,7 +78,6 @@ export const TeamSection = () => {
                         )
                     })}
                 </Swiper>
-
             </div>
         </section>
 

@@ -14,22 +14,11 @@ import benefitsData from "/public/data/BenefitsData/benefitsData.json";
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-expect-error
 import gameDevelopmentData from "/public/data/GameDevelopmentData/gameDevelopmentData.json";
-
-
 import {Link} from "react-router-dom";
 import SubdirectoryArrowRightIcon from '@mui/icons-material/SubdirectoryArrowRight';
 import {Odometer} from "../../Components/Reusables/Odometer/Odometer.tsx";
 import React, {useCallback, useEffect, useRef, useState} from "react";
 import {useTranslation} from "react-i18next";
-import BorderColorIcon from '@mui/icons-material/BorderColor';
-import BurstModeIcon from '@mui/icons-material/BurstMode';
-import ViewInArIcon from '@mui/icons-material/ViewInAr';
-import AutoAwesomeMotionIcon from '@mui/icons-material/AutoAwesomeMotion';
-import KeyboardDoubleArrowRightIcon from '@mui/icons-material/KeyboardDoubleArrowRight';
-import SportsEsportsIcon from '@mui/icons-material/SportsEsports';
-import SearchIcon from '@mui/icons-material/Search';
-import VerifiedIcon from '@mui/icons-material/Verified';
-import MilitaryTechIcon from '@mui/icons-material/MilitaryTech';
 import CallMadeIcon from '@mui/icons-material/CallMade';
 import {Swiper, SwiperSlide} from "swiper/react";
 import {Autoplay, EffectFade} from "swiper/modules";
@@ -40,6 +29,8 @@ import EmailIcon from '@mui/icons-material/Email';
 import {DefaultButton} from "../../Components/Reusables/DefaultButton/DefaultButton.tsx";
 import {Bounce, toast} from "react-toastify";
 import {VideoContainer} from "../../Components/Reusables/VideoContainer/VideoContainer.tsx";
+import KeyboardDoubleArrowRightIcon from "@mui/icons-material/KeyboardDoubleArrowRight";
+import {useIconComponent} from "../../../Hooks/UseIconComponent/UseIconComponent.tsx";
 
 interface GAME_DEVELOPMENT_DATA {
     id: number;
@@ -69,29 +60,6 @@ interface BENEFITS_DATA {
     icon: string;
 }
 
-const getIconComponent = (iconName: string) => {
-    switch (iconName) {
-        case 'BorderColorIcon':
-            return <BorderColorIcon/>;
-        case 'BurstModeIcon':
-            return <BurstModeIcon/>;
-        case 'ViewInArIcon':
-            return <ViewInArIcon/>;
-        case 'AutoAwesomeMotionIcon':
-            return <AutoAwesomeMotionIcon/>;
-        case 'SportsEsportsIcon':
-            return <SportsEsportsIcon/>;
-        case 'SearchIcon':
-            return <SearchIcon/>;
-        case 'VerifiedIcon':
-            return <VerifiedIcon/>;
-        case 'MilitaryTechIcon':
-            return <MilitaryTechIcon/>;
-        default:
-            return null;
-    }
-};
-
 interface INPUT_TYPE {
     name: string;
     email: string;
@@ -105,7 +73,6 @@ const defaults: INPUT_TYPE = {
     subject: "",
     message: ""
 }
-
 export const ServicesPage = () => {
     const focusRef = useRef<HTMLDivElement | null>(null);
     const [translatedServices, setTranslatedServices] = useState([servicesData?.en]);
@@ -116,6 +83,7 @@ export const ServicesPage = () => {
     const [translatedGameDevelopment, setTranslatedGameDevelopment] = useState([gameDevelopmentData?.en])
     const [inputState, setInputState] = useState(defaults);
 
+    const getIcon = useIconComponent();
 
     const handleChangeIndex = useCallback((index: number): void => {
         setActiveIndex(index + 1);
@@ -323,7 +291,7 @@ export const ServicesPage = () => {
                                             <KeyboardDoubleArrowRightIcon/>
                                         </div>
                                         <div className={styles.circle}>
-                                            {getIconComponent(data?.icon)}
+                                            {getIcon(data?.icon)}
                                         </div>
                                         <h2>{data?.title}</h2>
                                         <p>{data?.description}</p>
@@ -349,7 +317,7 @@ export const ServicesPage = () => {
                                 return (
                                     <div key={data?.id} className={styles.box}>
                                         <div className={styles.circle}>
-                                            {getIconComponent(data?.icon)}
+                                            {getIcon(data?.icon)}
                                         </div>
                                         <div className={styles.title}>
                                             <h2>{data?.title}</h2>

@@ -1,0 +1,116 @@
+{
+  "en": [
+    {
+      "id": 1,
+      "icon": "LocalFireDepartmentIcon",
+      "title": "Passion",
+      "description": "How can we fuel creativity with passion? What excites us to take our work to new heights?"
+    },
+    {
+      "id": 2,
+      "icon": "ElectricBoltIcon",
+      "title": "Determination",
+      "description": "What drives us to keep pushing forward? How do we maintain focus on our long-term goals?"
+    },
+    {
+      "id": 3,
+      "icon": "LocalLibraryIcon",
+      "title": "Learning",
+      "description": "Why is learning a lifelong journey? How can we consistently expand our skills and knowledge?"
+    },
+    {
+      "id": 4,
+      "icon": "Groups2Icon",
+      "title": "Teamwork",
+      "description": "What makes teamwork effective? How do we collaborate seamlessly to reach our shared goals?"
+    },
+    {
+      "id": 5,
+      "icon": "EmojiObjectsIcon",
+      "title": "Creativity",
+      "description": "How do we craft unique experiences? What sparks the imagination to create fresh ideas?"
+    },
+    {
+      "id": 6,
+      "icon": "FlagIcon",
+      "title": "Pioneering",
+      "description": "What does it mean to pioneer innovation? How do bold ideas shape our future landscape?"
+    }
+  ],
+  "ru": [
+    {
+      "id": 1,
+      "icon": "LocalFireDepartmentIcon",
+      "title": "Страсть",
+      "description": "Как страсть помогает нам в творчестве? Что вдохновляет нас достигать новых высот?"
+    },
+    {
+      "id": 2,
+      "icon": "ElectricBoltIcon",
+      "title": "Решимость",
+      "description": "Что заставляет нас идти вперёд? Как мы сохраняем фокус на долгосрочных целях?"
+    },
+    {
+      "id": 3,
+      "icon": "LocalLibraryIcon",
+      "title": "Обучение",
+      "description": "Почему обучение — это бесконечный путь? Как мы расширяем свои навыки и знания?"
+    },
+    {
+      "id": 4,
+      "icon": "Groups2Icon",
+      "title": "Командная работа",
+      "description": "Что делает командную работу эффективной? Как мы работаем вместе для достижения целей?"
+    },
+    {
+      "id": 5,
+      "icon": "EmojiObjectsIcon",
+      "title": "Креативность",
+      "description": "Как мы создаем уникальные впечатления? Что зажигает наше воображение для новых идей?"
+    },
+    {
+      "id": 6,
+      "icon": "FlagIcon",
+      "title": "Пионерство",
+      "description": "Что значит быть пионером в инновациях? Как смелые идеи формируют наше будущее?"
+    }
+  ],
+  "tr": [
+    {
+      "id": 1,
+      "icon": "LocalFireDepartmentIcon",
+      "title": "Tutku",
+      "description": "Tutku, yaratıcılığı nasıl besler? Bizi işimizde yeni zirvelere ne heyecanlandırır?"
+    },
+    {
+      "id": 2,
+      "icon": "ElectricBoltIcon",
+      "title": "Kararlılık",
+      "description": "Bizi ileriye doğru iten nedir? Uzun vadeli hedeflerimize nasıl odaklanırız?"
+    },
+    {
+      "id": 3,
+      "icon": "LocalLibraryIcon",
+      "title": "Öğrenme",
+      "description": "Öğrenme neden ömür boyu süren bir yolculuktur? Bilgi ve becerilerimizi nasıl geliştiririz?"
+    },
+    {
+      "id": 4,
+      "icon": "Groups2Icon",
+      "title": "Takım Çalışması",
+      "description": "Takım çalışmasını ne etkili kılar? Ortak hedeflere nasıl sorunsuzca ulaşırız?"
+    },
+    {
+      "id": 5,
+      "icon": "EmojiObjectsIcon",
+      "title": "Yaratıcılık",
+      "description": "Eşsiz deneyimler nasıl tasarlanır? Hayal gücünü yeni fikirler için ne ateşler?"
+    },
+    {
+      "id": 6,
+      "icon": "FlagIcon",
+      "title": "Öncülük",
+      "description": "Yeniliğe öncülük etmek ne anlama gelir? Cesur fikirler geleceğimizi nasıl şekillendirir?"
+    }
+  ]
+}

@@ -1,0 +1,98 @@
+{
+  "en": [
+    {
+      "id": 1,
+      "year": 2008,
+      "title": "Company Founded",
+      "description": "Company founded. Initial team of 5 employees including 2 programmers, 1 designer, 1 artist, and 1 project manager."
+    },
+    {
+      "id": 2,
+      "year": 2010,
+      "title": "First Game Release",
+      "description": "Successfully launched our first game, which received positive reviews and exceeded sales expectations, establishing a strong brand presence."
+    },
+    {
+      "id": 3,
+      "year": 2013,
+      "title": "International Expansion",
+      "description": "Expanded operations internationally, opening new offices in Europe and Asia to cater to a growing global audience and improve localization efforts."
+    },
+    {
+      "id": 4,
+      "year": 2017,
+      "title": "Award-Winning Game",
+      "description": "Released an award-winning game that was recognized for innovation in gameplay and design at several prestigious industry events."
+    },
+    {
+      "id": 5,
+      "year": 2022,
+      "title": "Diversification Strategy",
+      "description": "Diversified the product portfolio by entering the mobile gaming market and launching a new line of interactive virtual reality experiences."
+    }
+  ],
+  "ru": [
+    {
+      "id": 1,
+      "year": 2008,
+      "title": "Основание компании",
+      "description": "Компания основана. Начальная команда из 5 сотрудников, включая 2 программистов, 1 дизайнера, 1 художника и 1 менеджера проекта."
+    },
+    {
+      "id": 2,
+      "year": 2010,
+      "title": "Первый выпуск игры",
+      "description": "Успешный запуск нашей первой игры, которая получила положительные отзывы и превысила ожидания по продажам, укрепив сильное присутствие бренда."
+    },
+    {
+      "id": 3,
+      "year": 2013,
+      "title": "Международная экспансия",
+      "description": "Расширение операций на международном уровне, открытие новых офисов в Европе и Азии для удовлетворения растущей глобальной аудитории и улучшения усилий по локализации."
+    },
+    {
+      "id": 4,
+      "year": 2017,
+      "title": "Игра, получившая награды",
+      "description": "Выпуск игры, получившей награды за инновации в игровом процессе и дизайне на нескольких престижных индустриальных мероприятиях."
+    },
+    {
+      "id": 5,
+      "year": 2022,
+      "title": "Стратегия диверсификации",
+      "description": "Диверсификация продуктового портфеля за счет выхода на рынок мобильных игр и запуска новой линии интерактивных виртуальных реальностей."
+    }
+  ],
+  "tr": [
+    {
+      "id": 1,
+      "year": 2008,
+      "title": "Şirket Kuruldu",
+      "description": "Şirket kuruldu. İlk ekip 2 programcı, 1 tasarımcı, 1 sanatçı ve 1 proje yöneticisi dahil olmak üzere 5 çalışandan oluşuyor."
+    },
+    {
+      "id": 2,
+      "year": 2010,
+      "title": "İlk Oyun Çıkışı",
+      "description": "İlk oyunumuzu başarıyla piyasaya sürdük, olumlu eleştiriler aldı ve satış beklentilerini aştı, güçlü bir marka varlığı oluşturdu."
+    },
+    {
+      "id": 3,
+      "year": 2013,
+      "title": "Uluslararası Genişleme",
+      "description": "Operasyonları uluslararası alanda genişlettik, büyüyen küresel izleyici kitlesine hitap etmek ve yerelleştirme çabalarını iyileştirmek için Avrupa ve Asya'da yeni ofisler açtık."
+    },
+    {
+      "id": 4,
+      "year": 2017,
+      "title": "Ödül Kazanan Oyun",
+      "description": "Birçok prestijli endüstri etkinliğinde oyun süreci ve tasarımında yenilikçilikle tanınan ödüllü bir oyun yayınladık."
+    },
+    {
+      "id": 5,
+      "year": 2022,
+      "title": "Çeşitlendirme Stratejisi",
+      "description": "Mobil oyun pazarına girerek ve yeni bir etkileşimli sanal gerçeklik deneyimleri serisi başlatarak ürün portföyünü çeşitlendirdi."
+    }
+  ]
+}
