@@ -14,12 +14,13 @@ import {ContactForm} from "../../Components/Reusables/ContactForm/ContactForm.ts
 import {DefaultButton} from "../../Components/Reusables/DefaultButton/DefaultButton.tsx";
 import {PartnersSection} from "../../Components/Sections/PartnersSection/PartnersSection.tsx";
 import {SliderSection} from "../../Components/Sections/SliderSection/SliderSection.tsx";
-import {useEffect, useState} from "react";
+import {useCallback, useEffect, useState} from "react";
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-expect-error
 import askedQuestionsData from "/public/data/AskedQuestionsData/askedQuestionsData.json";
 import {useTranslation} from "react-i18next";
 import AddIcon from '@mui/icons-material/Add';
+import RemoveIcon from '@mui/icons-material/Remove';
 
 interface ASKED_QUESTIONS_DATA {
     id: number;
@@ -30,8 +31,18 @@ interface ASKED_QUESTIONS_DATA {
 
 export const ContactPage = () => {
     const [translatedQuestions, setTranslatedQuestions] = useState(askedQuestionsData.en);
-
+    const [selectedAccordion, setSelectedAccordion] = useState<number | null>(null);
     const {i18n} = useTranslation();
+
+    const handleOpenAccordion = useCallback((selectedID: number) => {
+        setSelectedAccordion(prev => {
+            if (prev === selectedID) {
+                return null;
+            } else {
+                return selectedID;
+            }
+        });
+    }, []);
 
     useEffect(() => {
         if (i18n.language === "en") {
@@ -121,13 +132,30 @@ export const ContactPage = () => {
                         </div>
                         <div className={styles.mainContainer}>
                             <div className={styles.accordion}>
-                                {translatedQuestions?.map((data : ASKED_QUESTIONS_DATA)=> {
+                                {translatedQuestions?.map((data: ASKED_QUESTIONS_DATA) => {
                                     return (
-                                        <div key={data?.id} className={styles.questionBox}>
+                                        <div
+                                            key={data?.id}
+                                            className={`${styles.questionBox} ${data?.id === selectedAccordion ? styles.accordionOpen : ''}`}
+                                            onClick={()=> handleOpenAccordion(data?.id)}
+                                        >
                                             <div className={styles.expand}>
-                                                <AddIcon />
+                                                {selectedAccordion === data?.id?
+                                                    <RemoveIcon
+                                                    style={{
+                                                        color: data?.id === selectedAccordion ? "#0EF0AD" : ''
+                                                    }}
+                                                    />
+                                                    :
+                                                    <AddIcon/>
+                                                }
                                             </div>
-                                            <h2>{data?.question}</h2>
+                                            <h2
+                                                style={{
+                                                    color: data?.id === selectedAccordion ? "#0EF0AD" : ''
+                                                }}
+
+                                            >{data?.question}</h2>
                                             <p>{data?.answer}</p>
                                         </div>
                                     )

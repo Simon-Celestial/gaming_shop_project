@@ -16,6 +16,9 @@ import {SearchPanel} from "../SearchPanel/SearchPanel.tsx";
 import {AuthContext} from "../../../../Context/AuthContext/AuthContext.tsx";
 import LogoutIcon from '@mui/icons-material/Logout';
 import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
+import {QuickView} from "../../Reusables/QuickView/QuickView.tsx";
+import {DataContext} from "../../../../Context/DataContext/DataContext.tsx";
+import CloseIcon from '@mui/icons-material/Close';
 
 interface NAV_DATA {
     id: string;
@@ -33,6 +36,12 @@ export const Header = () => {
         logOut,
         token
     } = useContext(AuthContext);
+
+    const {
+        selectedProduct,
+        quickView,
+        handleQuickViewClose
+    } = useContext(DataContext);
     const location = useLocation();
     const [basketOpen, setBasketOpen] = useState(false);
     const [searchPanelOpen, setSearchPanelOpen] = useState(false);
@@ -63,6 +72,15 @@ export const Header = () => {
 
     return (
         <>
+            <div className={`${styles.quickViewWrapper} ${quickView ? styles.opened : ''}`}>
+                <div
+                    className={styles.closeBtn}
+                    onClick={handleQuickViewClose}
+                >
+                    <CloseIcon/>
+                </div>
+                <QuickView product={selectedProduct} quickView={true}/>
+            </div>
             <SideMenu/>
             <header
                 className={styles.headerWrapper}
@@ -149,8 +167,8 @@ export const Header = () => {
                             >
                                 {userData && token ? (
                                     <>
-                                        <span><PersonOutlineIcon /> Hello, <p>{userData.username}</p></span>
-                                        <span onClick={logOut}><LogoutIcon /> Log off</span>
+                                        <span><PersonOutlineIcon/> Hello, <p>{userData.username}</p></span>
+                                        <span onClick={logOut}><LogoutIcon/> Log off</span>
                                     </>
                                 ) : (
                                     <>

@@ -196,39 +196,64 @@
           display: flex;
           flex-direction: column;
           gap: 25px;
+
           .questionBox {
             display: flex;
             flex-direction: column;
             position: relative;
-            padding: 25px 80px 25px 25px;
+            padding: 15px 80px 15px 25px;
             background-color: #303141;
+            cursor: pointer;
+            overflow-y: hidden;
+
+            &.accordionOpen {
+              p {
+                opacity: 1;
+                height: auto;
+                pointer-events: auto;
+                padding-top: 15px;
+                line-height: 27px;
+                transition: opacity 0.3s ease
+
+              }
+            }
             .expand {
               right: 15px;
-              top: 20px;
+              top: 10px;
               position: absolute;
               padding: 5px;
               cursor: pointer;
               transition: color $transition;
+
               &:hover {
-                color: $greenDark;
+                color: $green;
+
                 svg {
                   transform: rotate(360deg) scale(1.2);
                 }
               }
+
               svg {
                 transition: transform 0.5s ease;
               }
             }
+
             h2 {
               font-size: 20px;
-              margin-bottom: 15px;
+              transition: color $transition;
             }
+
             p {
               font-size: 16px;
               color: $gray;
               font-family: $interFont;
+              opacity: 0;
+              height: 0;
+              pointer-events: none;
+              transition: height 0.5s ease,
+              padding-top 0.5s ease,
+              line-height 0.5s ease;
             }
-
           }
         }
 

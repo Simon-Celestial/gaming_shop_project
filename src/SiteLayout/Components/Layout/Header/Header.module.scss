@@ -1,5 +1,47 @@
 @import "../../../../Variables/Variables";
 
+.quickViewWrapper {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.8);
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 25;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.6s ease;
+
+  .closeBtn {
+    position: absolute;
+    right: 50px;
+    top: 50px;
+    cursor: pointer;
+
+    &:hover {
+      svg {
+        transform: rotate(180deg);
+        color: $green;
+
+      }
+    }
+
+    svg {
+      transition: transform $transition, color $transition;
+      font-size: 50px;
+    }
+
+  }
+
+  &.opened {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+
 .headerWrapper {
   display: flex;
   width: 100%;
@@ -242,16 +284,20 @@
               display: inline-flex;
               align-items: center;
               gap: 5px;
+
               &:nth-child(1) {
                 cursor: default;
               }
+
               &:nth-child(2) {
                 transition: color $transition;
+
                 &:hover {
                   cursor: pointer;
                   color: $green;
                 }
               }
+
               p {
                 text-transform: capitalize;
               }

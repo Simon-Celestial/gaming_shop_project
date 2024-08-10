@@ -8,6 +8,7 @@ import React, {useCallback, useContext, useState} from "react";
 import {Rating} from "@mui/material";
 import {BasketContext} from "../../../../Context/BasketContext/BasketContext.tsx";
 import {WishlistContext} from "../../../../Context/WishlishContext/WishlistContext.tsx";
+import {DataContext} from "../../../../Context/DataContext/DataContext.tsx";
 
 interface DeviceCardProps {
     data: PRODUCTS_DATA
@@ -16,6 +17,9 @@ interface DeviceCardProps {
 export const DeviceCard: React.FC<DeviceCardProps> = ({data}) => {
     const {addToCart} = useContext(BasketContext);
     const {addToWishlist, isInWishlist} = useContext(WishlistContext);
+    const {
+        handleQuickViewOpen
+    } = useContext(DataContext);
 
     const [selectedColor, setSelectedColor] = useState(data?.colors[0]);
 
@@ -30,7 +34,6 @@ export const DeviceCard: React.FC<DeviceCardProps> = ({data}) => {
             style={{
                 filter: data?.quantity < 1 ? "grayscale(0.9) blur(1px)" : ""
             }}
-
         >
             <div className={styles.deviceOptions}>
                 <div
@@ -51,7 +54,10 @@ export const DeviceCard: React.FC<DeviceCardProps> = ({data}) => {
                         />
                     }
                 </div>
-                <div className={styles.option}>
+                <div
+                    className={styles.option}
+                    onClick={()=> handleQuickViewOpen(data)}
+                >
                     <RemoveRedEyeOutlinedIcon/>
                 </div>
                 <div className={styles.colorsBox}>
@@ -127,7 +133,6 @@ export const DeviceCard: React.FC<DeviceCardProps> = ({data}) => {
                     add to card
                 </div>
             </div>
-
         </div>
     );
 };
