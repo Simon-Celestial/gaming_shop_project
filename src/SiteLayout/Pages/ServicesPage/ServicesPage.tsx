@@ -17,7 +17,7 @@ import gameDevelopmentData from "/public/data/GameDevelopmentData/gameDevelopmen
 import {Link} from "react-router-dom";
 import SubdirectoryArrowRightIcon from '@mui/icons-material/SubdirectoryArrowRight';
 import {Odometer} from "../../Components/Reusables/Odometer/Odometer.tsx";
-import React, {useCallback, useEffect, useRef, useState} from "react";
+import {useCallback, useEffect, useRef, useState} from "react";
 import {useTranslation} from "react-i18next";
 import CallMadeIcon from '@mui/icons-material/CallMade';
 import {Swiper, SwiperSlide} from "swiper/react";
@@ -26,11 +26,10 @@ import {TestimonialsSection} from "../../Components/Sections/TestimonialsSection
 import {SliderSection} from "../../Components/Sections/SliderSection/SliderSection.tsx";
 import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
 import EmailIcon from '@mui/icons-material/Email';
-import {DefaultButton} from "../../Components/Reusables/DefaultButton/DefaultButton.tsx";
-import {Bounce, toast} from "react-toastify";
 import {VideoContainer} from "../../Components/Reusables/VideoContainer/VideoContainer.tsx";
 import KeyboardDoubleArrowRightIcon from "@mui/icons-material/KeyboardDoubleArrowRight";
 import {useIconComponent} from "../../../Hooks/UseIconComponent/UseIconComponent.tsx";
+import {ContactForm} from "../../Components/Reusables/ContactForm/ContactForm.tsx";
 
 interface GAME_DEVELOPMENT_DATA {
     id: number;
@@ -60,19 +59,6 @@ interface BENEFITS_DATA {
     icon: string;
 }
 
-interface INPUT_TYPE {
-    name: string;
-    email: string;
-    subject: string;
-    message: string;
-}
-
-const defaults: INPUT_TYPE = {
-    name: "",
-    email: "",
-    subject: "",
-    message: ""
-}
 export const ServicesPage = () => {
     const focusRef = useRef<HTMLDivElement | null>(null);
     const [translatedServices, setTranslatedServices] = useState([servicesData?.en]);
@@ -81,7 +67,6 @@ export const ServicesPage = () => {
     const [activeIndex, setActiveIndex] = useState(0);
     const [animate, setAnimate] = useState(false);
     const [translatedGameDevelopment, setTranslatedGameDevelopment] = useState([gameDevelopmentData?.en])
-    const [inputState, setInputState] = useState(defaults);
 
     const getIcon = useIconComponent();
 
@@ -119,59 +104,6 @@ export const ServicesPage = () => {
             setTranslatedGameDevelopment(gameDevelopmentData?.tr);
         }
     }, [i18n.language]);
-
-    const handleInputChange = useCallback(
-        (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-            const {name, value} = event.target;
-            setInputState((prevState) => ({
-                ...prevState,
-                [name]: value,
-            }));
-        },
-        []
-    );
-
-    const handleSendMessage = useCallback(() => {
-        const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-        if (
-            inputState?.name === '' ||
-            inputState?.email === '' ||
-            inputState?.subject === '' ||
-            inputState?.message === ''
-        ) {
-            toast.error('Please fill all fields!', {
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: false,
-                draggable: true,
-                progress: undefined,
-                theme: 'dark',
-                transition: Bounce,
-            });
-        } else if (!emailPattern.test(inputState?.email)) {
-            toast.error('Please enter a valid email address!', {
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: false,
-                draggable: true,
-                progress: undefined,
-                theme: 'dark',
-                transition: Bounce,
-            });
-        } else {
-            toast.success('Your message has been sent successfully!', {
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: false,
-                draggable: true,
-                progress: undefined,
-                theme: 'dark',
-                transition: Bounce,
-            });
-            setInputState(defaults);
-        }
-    }, [inputState?.email, inputState?.message, inputState?.name, inputState?.subject]);
-
 
     return (
         <>
@@ -428,60 +360,7 @@ export const ServicesPage = () => {
 
                         </div>
                         <div className={styles.rightContainer}>
-                            <div className={styles.formWrapper}>
-                                <div className={styles.inputWrapper}>
-                                    Name
-                                    <input
-                                        onChange={handleInputChange}
-                                        value={inputState?.name}
-                                        type="text"
-                                        name={"name"}
-                                        placeholder={"Enter your name"}
-                                    />
-                                </div>
-                                <div className={styles.inputWrapper}>
-                                    Email
-                                    <input
-                                        onChange={handleInputChange}
-                                        value={inputState?.email}
-                                        type="email"
-                                        name={"email"}
-                                        placeholder={"Enter your email"}
-                                    />
-                                </div>
-                                <div className={styles.inputWrapper}>
-                                    Subject
-                                    <input
-                                        onChange={handleInputChange}
-                                        value={inputState?.subject}
-                                        type="text"
-                                        name={"subject"}
-                                        placeholder={"Enter subject"}
-                                    />
-                                </div>
-                                <div className={styles.inputWrapper}>
-                                    Leave us message
-                                    <textarea
-                                        onChange={handleInputChange}
-                                        value={inputState?.message}
-                                        name={"message"}
-                                        placeholder={"Please type your message here..."}
-                                    />
-                                </div>
-                                <div
-                                    className={styles.btnWrapper}
-                                    onClick={handleSendMessage}
-                                >
-                                    <DefaultButton
-                                        title={"Send Message"}
-                                        link={""}
-                                        grayBtn={false}
-                                        wide={false}
-                                    />
-                                </div>
-
-
-                            </div>
+                            <ContactForm />
                         </div>
 
                     </div>

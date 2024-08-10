@@ -12,10 +12,6 @@ import valuesData from "/public/data/ValuesData/valuesData.json";
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-expect-error
 import goalsData from "/public/data/GoalsData/goalsData.json";
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-expect-error
-import partnersData from "/public/data/PartnersData/partnersData.json";
-
 
 import {Dispatch, SetStateAction, useCallback, useEffect, useState} from "react";
 import {useTranslation} from "react-i18next";
@@ -26,11 +22,8 @@ import {ContactSection} from "../../Components/Sections/ContactSection/ContactSe
 import {JobsSection} from "../../Components/Sections/JobsSection/JobsSection.tsx";
 import {TestimonialsSection} from "../../Components/Sections/TestimonialsSection/TestimonialsSection.tsx";
 import {SliderSection} from "../../Components/Sections/SliderSection/SliderSection.tsx";
+import {PartnersSection} from "../../Components/Sections/PartnersSection/PartnersSection.tsx";
 
-interface PARTNERS_DATA {
-    id: number;
-    image: string;
-}
 
 interface VALUES_DATA {
     id: number;
@@ -269,31 +262,8 @@ export const AboutPage = () => {
                 </div>
                 {/*TESTIMONIALS SECTION*/}
                 <TestimonialsSection/>
-                <div className={styles.partnersSection}>
-                    <div className={styles.sectionContent}>
-                        <div className={styles.sectionTitle}>
-                            <div className={`${styles.pageHeading}`}>
-                                <h4>Trusted <span>By</span></h4>
-                                <h2>We are happy to work with <span> global largest brands</span></h2>
-                                <p>We are proud to support industry leaders around the world.</p>
-                            </div>
-                        </div>
-                        <div className={styles.partnersContainer}>
-                            {partnersData?.map((partner: PARTNERS_DATA) => {
-                                return (
-                                    <div
-                                        key={partner?.id}
-                                        className={styles.partnerLogo}
-                                    >
-                                        <img
-                                            src={partner?.image}
-                                            alt="Partner Company"/>
-                                    </div>
-                                )
-                            })}
-                        </div>
-                    </div>
-                </div>
+                {/*PARTNERS SECTION*/}
+                <PartnersSection />
                 {/*SLIDER SECTION*/}
                 <div className={styles.sliderSectionWrapper}>
                     <SliderSection/>

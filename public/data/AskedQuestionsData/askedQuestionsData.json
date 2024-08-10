@@ -1,0 +1,98 @@
+{
+  "en": [
+    {
+      "id": 1,
+      "question": "What services does GameStorm offer for game development?",
+      "answer": "GameStorm offers a comprehensive suite of services including game design, art and animation, programming, sound design, and post-launch support. They provide end-to-end game development solutions, from concept to delivery, ensuring a seamless and integrated process."
+    },
+    {
+      "id": 2,
+      "question": "How does GameStorm handle project management during game development?",
+      "answer": "GameStorm utilizes agile project management methodologies to ensure flexibility and adaptability throughout the development process. They use iterative development cycles, regular team meetings, and project tracking tools to keep the project on schedule and within scope."
+    },
+    {
+      "id": 3,
+      "question": "How does GameStorm ensure the game art matches the overall vision and design of the game?",
+      "answer": "GameStorm collaborates closely with game designers and artists to ensure the art aligns with the game's vision. They hold regular design reviews, create detailed art style guides, and maintain open communication channels between teams to ensure consistency in the game's visual aesthetics."
+    },
+    {
+      "id": 4,
+      "question": "What is GameStorm's approach to testing and quality assurance during game development?",
+      "answer": "GameStorm has a dedicated QA team that conducts rigorous testing at every stage of development. They utilize automated and manual testing methods to identify and fix bugs, ensuring that the game is stable, functional, and delivers a high-quality user experience."
+    },
+    {
+      "id": 5,
+      "question": "How does GameStorm handle player feedback and make changes to the game during development?",
+      "answer": "GameStorm actively engages with players through beta testing and early access programs to gather feedback. They analyze player feedback and make data-driven decisions to refine and improve the game, ensuring it meets player expectations and industry standards."
+    },
+    {
+      "id": 6,
+      "question": "How does GameStorm ensure the games it develops are optimized for performance and stability?",
+      "answer": "GameStorm employs optimization techniques such as code profiling, memory management, and performance testing to ensure games run smoothly across all platforms. They focus on minimizing load times, reducing lag, and ensuring stable frame rates to provide a seamless gaming experience."
+    }
+  ],
+  "tr": [
+    {
+      "id": 1,
+      "question": "GameStorm oyun geliştirme için hangi hizmetleri sunuyor?",
+      "answer": "GameStorm, oyun tasarımı, sanat ve animasyon, programlama, ses tasarımı ve lansman sonrası destek dahil olmak üzere kapsamlı bir hizmet paketi sunar. Konseptten teslimata kadar uçtan uca oyun geliştirme çözümleri sunarak sorunsuz ve entegre bir süreç sağlar."
+    },
+    {
+      "id": 2,
+      "question": "GameStorm, oyun geliştirme sürecinde proje yönetimini nasıl ele alıyor?",
+      "answer": "GameStorm, geliştirme sürecinin esnekliğini ve uyarlanabilirliğini sağlamak için çevik proje yönetimi metodolojilerini kullanır. Projenin program dahilinde ve kapsam dahilinde tutulmasını sağlamak için yinelemeli geliştirme döngüleri, düzenli ekip toplantıları ve proje takip araçları kullanır."
+    },
+    {
+      "id": 3,
+      "question": "GameStorm, oyun sanatı ile oyunun genel vizyonu ve tasarımı arasındaki uyumu nasıl sağlıyor?",
+      "answer": "GameStorm, sanatın oyunun vizyonuyla uyumlu olmasını sağlamak için oyun tasarımcıları ve sanatçılarla yakın işbirliği yapar. Düzenli tasarım incelemeleri yapar, ayrıntılı sanat tarzı kılavuzları oluşturur ve oyunun görsel estetiğinde tutarlılığı sağlamak için ekipler arasında açık iletişim kanalları sağlar."
+    },
+    {
+      "id": 4,
+      "question": "GameStorm, oyun geliştirme sırasında test ve kalite güvencesine nasıl yaklaşıyor?",
+      "answer": "GameStorm'un her geliştirme aşamasında titiz testler yapan özel bir kalite güvence ekibi vardır. Oyunların kararlı, işlevsel olmasını ve yüksek kaliteli bir kullanıcı deneyimi sunmasını sağlamak için otomatik ve manuel test yöntemlerini kullanır."
+    },
+    {
+      "id": 5,
+      "question": "GameStorm, geliştirme sırasında oyuncu geri bildirimlerini nasıl ele alıyor ve oyunda değişiklikler yapıyor?",
+      "answer": "GameStorm, geri bildirim toplamak için beta testleri ve erken erişim programları aracılığıyla oyuncularla aktif olarak etkileşim kurar. Oyuncu geri bildirimlerini analiz eder ve oyunu geliştirmek ve oyuncu beklentilerini ve endüstri standartlarını karşılamak için veri odaklı kararlar alır."
+    },
+    {
+      "id": 6,
+      "question": "GameStorm, geliştirdiği oyunların performans ve stabilite açısından optimize edilmesini nasıl sağlıyor?",
+      "answer": "GameStorm, oyunların tüm platformlarda sorunsuz çalışmasını sağlamak için kod profil oluşturma, bellek yönetimi ve performans testi gibi optimizasyon tekniklerini kullanır. Yükleme sürelerini en aza indirmeye, gecikmeyi azaltmaya ve sorunsuz bir oyun deneyimi sağlamak için sabit kare hızlarını sağlamaya odaklanır."
+    }
+  ],
+  "ru": [
+    {
+      "id": 1,
+      "question": "Какие услуги GameStorm предлагает для разработки игр?",
+      "answer": "GameStorm предлагает комплексный набор услуг, включая дизайн игр, искусство и анимацию, программирование, звуковой дизайн и поддержку после запуска. Они предоставляют комплексные решения для разработки игр от концепции до поставки, обеспечивая плавный и интегрированный процесс."
+    },
+    {
+      "id": 2,
+      "question": "Как GameStorm управляет проектами во время разработки игр?",
+      "answer": "GameStorm использует методологии гибкого управления проектами для обеспечения гибкости и адаптивности на протяжении всего процесса разработки. Они используют итерационные циклы разработки, регулярные встречи команды и инструменты отслеживания проектов, чтобы поддерживать проект в рамках графика и объема."
+    },
+    {
+      "id": 3,
+      "question": "Как GameStorm обеспечивает соответствие игрового искусства общему видению и дизайну игры?",
+      "answer": "GameStorm тесно сотрудничает с дизайнерами и художниками, чтобы искусство соответствовало видению игры. Они проводят регулярные обзоры дизайна, создают подробные руководства по стилю искусства и поддерживают открытые каналы связи между командами, чтобы обеспечить согласованность в визуальной эстетике игры."
+    },
+    {
+      "id": 4,
+      "question": "Какой подход GameStorm использует для тестирования и обеспечения качества при разработке игр?",
+      "answer": "У GameStorm есть специальная команда обеспечения качества, которая проводит тщательное тестирование на каждом этапе разработки. Они используют автоматизированные и ручные методы тестирования для выявления и устранения ошибок, обеспечивая стабильность и функциональность игры, а также предоставляя пользователю высококачественный опыт."
+    },
+    {
+      "id": 5,
+      "question": "Как GameStorm обрабатывает отзывы игроков и вносит изменения в игру во время разработки?",
+      "answer": "GameStorm активно взаимодействует с игроками через бета-тестирование и программы раннего доступа для сбора отзывов. Они анализируют отзывы игроков и принимают решения, основанные на данных, чтобы улучшить игру и соответствовать ожиданиям игроков и отраслевым стандартам."
+    },
+    {
+      "id": 6,
+      "question": "Как GameStorm обеспечивает оптимизацию разрабатываемых игр для производительности и стабильности?",
+      "answer": "GameStorm использует методы оптимизации, такие как профилирование кода, управление памятью и тестирование производительности, чтобы игры работали плавно на всех платформах. Они сосредоточены на минимизации времени загрузки, снижении задержек и обеспечении стабильной частоты кадров для беспроблемного игрового процесса."
+    }
+  ]
+}

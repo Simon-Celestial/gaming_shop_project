@@ -1,0 +1,38 @@
+@import "../../../../Variables/Variables";
+@import "../../../../Animations/Animations";
+@import "../../../../CommonStyles/PageHeadingStyles/PageHeadingStyles.module";
+
+.partnersSection {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  .sectionContent {
+    display: flex;
+    width: 100%;
+    max-width: 1320px;
+    padding: 120px 15px 60px 15px;
+    flex-direction: column;
+    .sectionTitle {
+      max-width: 650px;
+      margin: 0 auto;
+    }
+    .partnersContainer {
+      display: flex;
+      width: 100%;
+      flex-wrap: wrap;
+      gap: 25px;
+      max-width: 1100px;
+      justify-content: space-between;
+      margin:  50px auto 0 auto;
+      .partnerLogo {
+        width: 100%;
+        max-width: 210px;
+        img {
+          width: 100%;
+          object-fit: cover;
+          object-position: center;
+        }
+      }
+    }
+  }
+}
