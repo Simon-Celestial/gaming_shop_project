@@ -11,17 +11,11 @@ import processData from "/public/data/ProcessData/processData.json";
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-expect-error
 import benefitsData from "/public/data/BenefitsData/benefitsData.json";
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-expect-error
-import gameDevelopmentData from "/public/data/GameDevelopmentData/gameDevelopmentData.json";
 import {Link} from "react-router-dom";
 import SubdirectoryArrowRightIcon from '@mui/icons-material/SubdirectoryArrowRight';
 import {Odometer} from "../../Components/Reusables/Odometer/Odometer.tsx";
-import {useCallback, useEffect, useRef, useState} from "react";
+import {useEffect, useRef, useState} from "react";
 import {useTranslation} from "react-i18next";
-import CallMadeIcon from '@mui/icons-material/CallMade';
-import {Swiper, SwiperSlide} from "swiper/react";
-import {Autoplay, EffectFade} from "swiper/modules";
 import {TestimonialsSection} from "../../Components/Sections/TestimonialsSection/TestimonialsSection.tsx";
 import {SliderSection} from "../../Components/Sections/SliderSection/SliderSection.tsx";
 import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
@@ -30,13 +24,9 @@ import {VideoContainer} from "../../Components/Reusables/VideoContainer/VideoCon
 import KeyboardDoubleArrowRightIcon from "@mui/icons-material/KeyboardDoubleArrowRight";
 import {useIconComponent} from "../../../Hooks/UseIconComponent/UseIconComponent.tsx";
 import {ContactForm} from "../../Components/Reusables/ContactForm/ContactForm.tsx";
-
-interface GAME_DEVELOPMENT_DATA {
-    id: number;
-    image: string;
-    title: string;
-    description: string;
-}
+import {
+    RecentlyCompletedSection
+} from "../../Components/Sections/RecentlyCompletedSection/RecentlyCompletedSection.tsx";
 
 interface SERVICES_DATA {
     id: number;
@@ -64,23 +54,8 @@ export const ServicesPage = () => {
     const [translatedServices, setTranslatedServices] = useState([servicesData?.en]);
     const [translatedProcess, setTranslatedProcess] = useState([processData?.en]);
     const [translatedBenefits, setTranslatedBenefits] = useState([benefitsData?.en]);
-    const [activeIndex, setActiveIndex] = useState(0);
-    const [animate, setAnimate] = useState(false);
-    const [translatedGameDevelopment, setTranslatedGameDevelopment] = useState([gameDevelopmentData?.en])
 
     const getIcon = useIconComponent();
-
-    const handleChangeIndex = useCallback((index: number): void => {
-        setActiveIndex(index + 1);
-    }, [setActiveIndex]);
-
-    useEffect(() => {
-        setAnimate(true);
-        const timer = setTimeout(() => setAnimate(false), 3000);
-
-        return () => clearTimeout(timer);
-    }, [activeIndex]);
-
 
     const {i18n} = useTranslation();
 
@@ -89,19 +64,16 @@ export const ServicesPage = () => {
             setTranslatedServices(servicesData?.en);
             setTranslatedProcess(processData?.en);
             setTranslatedBenefits(benefitsData?.en);
-            setTranslatedGameDevelopment(gameDevelopmentData?.en);
 
         } else if (i18n.language === "ru") {
             setTranslatedServices(servicesData?.ru);
             setTranslatedProcess(processData?.ru);
             setTranslatedBenefits(benefitsData?.ru);
-            setTranslatedGameDevelopment(gameDevelopmentData?.ru);
 
         } else {
             setTranslatedServices(servicesData?.tr);
             setTranslatedProcess(processData?.tr);
             setTranslatedBenefits(benefitsData?.tr);
-            setTranslatedGameDevelopment(gameDevelopmentData?.tr);
         }
     }, [i18n.language]);
 
@@ -263,75 +235,8 @@ export const ServicesPage = () => {
 
                     </div>
                 </section>
-                <section className={styles.recentlyCompletedSection}>
-                    <div className={styles.sectionContent}>
-                        <div className={styles.topRow}>
-                            <div className={styles.titleBlock}>
-                                <div className={`${styles.pageHeading} ${styles.notCenteredText}`}>
-                                    <h4>Recently <span> Completed</span></h4>
-                                    <h2>Game Development and Art, <span> Elevated to a New Level</span></h2>
-                                </div>
-                            </div>
-                            <Link to={"/games"} className={styles.viewAll}>
-                                <p>View All Games</p>
-                                <CallMadeIcon/>
-                            </Link>
-                        </div>
-                        <div className={styles.swiperContainer}>
-                            <div className={styles.animatedBlock}>
-                                <div className={styles.monitoringBox}>
-                                    <h2>{activeIndex} <span className={animate ? styles.animated : ""}></span>
-                                        <p>{translatedGameDevelopment?.length}</p></h2>
-                                </div>
-                                <div className={styles.customPagination}>
-                                    <div className={styles.circle}
-                                         style={{
-                                             backgroundColor: activeIndex === 1 ? "#0EF0AD" : '',
-                                             transform: activeIndex === 1 ? 'scale(1.3)' : ''
-
-                                         }}></div>
-                                    <div className={styles.circle}
-                                         style={{
-                                             backgroundColor: activeIndex === 2 ? "#0EF0AD" : '',
-                                             transform: activeIndex === 2 ? 'scale(1.3)' : ''
-                                         }}></div>
-                                    <div className={styles.circle}
-                                         style={{
-                                             backgroundColor: activeIndex === 3 ? "#0EF0AD" : '',
-                                             transform: activeIndex === 3 ? 'scale(1.3)' : ''
-                                         }}></div>
-                                </div>
-
-                            </div>
-                            <Swiper
-                                direction={'horizontal'}
-                                modules={[EffectFade, Autoplay]}
-                                slidesPerView={1}
-                                autoplay={{delay: 3000}}
-                                spaceBetween={25}
-                                loop={true}
-                                allowTouchMove={false}
-                                onSlideChange={(swiper) => handleChangeIndex(swiper.realIndex)}
-                            >
-                                {translatedGameDevelopment?.map((data: GAME_DEVELOPMENT_DATA) => (
-                                    <SwiperSlide key={data.id}>
-                                        <div className={styles.sliderBox}>
-                                            <div
-                                                className={`${styles.titleContainer} ${activeIndex === data?.id ? styles.visible : ''}`}>
-                                                <h2>{data?.title}</h2>
-                                                <p>{data?.description}</p>
-                                                <Link to={"/games"}>
-                                                    <CallMadeIcon/>
-                                                </Link>
-                                            </div>
-                                            <img src={data.image} alt="Gamestorm Office"/>
-                                        </div>
-                                    </SwiperSlide>
-                                ))}
-                            </Swiper>
-                        </div>
-                    </div>
-                </section>
+                {/*RECENTLY COMPLETED SECTION*/}
+                <RecentlyCompletedSection />
                 {/*TESTIMONIALS SECTION*/}
                 <TestimonialsSection/>
                 <section className={styles.contactUsSection}>

@@ -25,6 +25,7 @@ import {AboutSection} from "../../Components/Sections/AboutSection/AboutSection.
 import {TeamSection} from "../../Components/Sections/TeamSection/TeamSection.tsx";
 import {CounterSection} from "../../Components/Sections/CounterSection/CounterSection.tsx";
 import {JobsSection} from "../../Components/Sections/JobsSection/JobsSection.tsx";
+import SettingsIcon from '@mui/icons-material/Settings';
 
 
 const paginationStyles: PAGINATION_STYLES_TYPE = {
@@ -56,7 +57,6 @@ export const HomePage = () => {
             [field]: value,
         }));
     }, [setContactInputs]);
-
 
     const handleSendMessage = useCallback(() => {
         if (
@@ -147,9 +147,20 @@ export const HomePage = () => {
                         <img src="https://pixner.net/gamestorm3/main/assets/images/abs-items/ellipse-6.png"
                              alt="Star"/>
                     </div>
+                    <div className={styles.gearBox}>
+                        <div className={styles.gear}>
+                            <SettingsIcon/>
+                        </div>
+                        <div className={styles.gear}>
+                            <SettingsIcon/>
+                        </div>
+                        <div className={styles.gear}>
+                            <SettingsIcon/>
+                        </div>
+                    </div>
                     <div className={styles.sectionContent}>
                         <div className={styles.titleContainer}>
-                            <h4>Enjoy Gaming World</h4>
+                        <h4>Enjoy Gaming World</h4>
                             <h2>We Selling Devices</h2>
                             <TypeAnimation
                                 sequence={['Entertainment', 600, 'Quality', 600, 'Reliability', 600]}

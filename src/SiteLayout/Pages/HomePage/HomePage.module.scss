@@ -15,6 +15,46 @@
     align-items: center;
     position: relative;
     overflow: hidden;
+    .gearBox {
+      position: absolute;
+      right: 0.5%;
+      top: 8.5%;
+      display: flex;
+      width: 95px;
+      height: 95px;
+      flex-direction: column;
+      .gear {
+        position: absolute;
+        &:nth-child(1) {
+          right: 0;
+          top: 0;
+
+          svg {
+            font-size: 50px;
+          }
+        }
+        &:nth-child(2) {
+          left: 0;
+          top: 5px;
+
+          svg {
+            font-size: 40px;
+          }
+        }
+        &:nth-child(3) {
+          right: 15px;
+          bottom: 5px;
+          svg {
+            font-size: 30px;
+          }
+        }
+        svg {
+          animation: rotate 3s linear infinite;
+          color: $green;
+        }
+
+      }
+    }
 
     .decoration {
       position: absolute;

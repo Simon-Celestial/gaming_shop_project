@@ -1,0 +1,212 @@
+@import "../../../../Variables/Variables";
+@import "../../../../Animations/Animations";
+@import "../../../../CommonStyles/PageHeadingStyles/PageHeadingStyles.module";
+
+.recentlyCompletedSection {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+
+  .sectionContent {
+    max-width: 1320px;
+    padding: 120px 15px;
+    background-color: $background;
+    flex-direction: column;
+    display: flex;
+    width: 100%;
+
+    .topRow {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      gap: 25px;
+
+      .titleBlock {
+        max-width: 700px;
+      }
+
+      .viewAll {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        width: 150px;
+        height: 150px;
+        background-color: $grayFill;
+        border: 1px solid $greenDark;
+        padding: 15px;
+        border-radius: 50%;
+        transition: background-color $transition;
+        box-shadow: 0 0 15px $green;
+        animation: rotateMoveShake 15s linear infinite;
+
+        &:hover {
+          background-color: $green;
+
+          p {
+            color: $black;
+          }
+
+          svg {
+            color: $black;
+          }
+        }
+
+        p {
+          color: $gray;
+          font-weight: 600;
+          font-size: 16px;
+          transition: color $transition;
+          font-family: $interFont;
+        }
+
+        svg {
+          color: $gray;
+          transition: color $transition;
+        }
+      }
+    }
+
+    .swiperContainer {
+      display: flex;
+      width: 100%;
+      margin-top: 75px;
+      position: relative;
+
+      .animatedBlock {
+        position: absolute;
+        right: 0;
+        bottom: 7px;
+        z-index: 5;
+        background-color: $background;
+        padding: 10px 25px;
+        display: flex;
+        align-items: center;
+        gap: 50px;
+        border-radius: 10px 0 0 0;
+
+        .monitoringBox {
+          h2 {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: $green;
+
+            span {
+              background: $white;
+              height: 2px;
+              width: 100px;
+              position: relative;
+
+              &:after {
+                content: "";
+                width: 100%;
+                height: 100%;
+                background: $green;
+                position: absolute;
+                left: 0;
+                top: 0;
+              }
+
+              &.animated {
+                &:after {
+                  animation: widthAnim 3s linear;
+                }
+              }
+            }
+
+            p {
+              color: $gray
+            }
+          }
+        }
+
+        .customPagination {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+
+          .circle {
+            width: 10px;
+            height: 10px;
+            background-color: gray;
+            border-radius: 50%;
+            transition: background-color $transition, transform $transition;
+          }
+        }
+      }
+
+      .sliderBox {
+        width: 100%;
+        position: relative;
+        overflow: hidden;
+
+        .titleContainer {
+          display: flex;
+          flex-direction: column;
+          padding: 32px;
+          background-color: $background;
+          position: absolute;
+          left: 0;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 100%;
+          max-width: 420px;
+          border-radius: 0 10px 10px 0;
+          transition: opacity $transition;
+
+          &.visible {
+            animation: show 1.5s ease;
+          }
+
+          h2 {
+            font-size: 32px;
+            color: $white;
+
+          }
+
+          p {
+            font-size: 16px;
+            font-family: $interFont;
+            color: $gray;
+            margin-top: 12px;
+          }
+
+          a {
+            border-radius: 50%;
+            display: flex;
+            width: 40px;
+            height: 40px;
+            align-items: center;
+            justify-content: center;
+            background: $grayFill;
+            margin-top: 25px;
+            transition: background-color 0.5s ease;
+
+            &:hover {
+              background-color: #4c4d5a;
+
+              svg {
+                transform: rotate(360deg);
+              }
+            }
+
+            svg {
+              transition: transform 0.5s ease;
+              color: $green;
+            }
+          }
+        }
+
+        img {
+          width: 100%;
+          object-fit: cover;
+          object-position: center;
+          border-radius: 10px 10px 0 0;
+          border-bottom: 2px solid $green;
+        }
+      }
+    }
+  }
+}
+
