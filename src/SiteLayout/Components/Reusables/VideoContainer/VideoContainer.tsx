@@ -1,6 +1,7 @@
 import styles from "./VideoContainer.module.scss";
 import HighlightOffIcon from "@mui/icons-material/HighlightOff";
 import React, {useCallback, useRef, useState} from "react";
+import {useTranslation} from "react-i18next";
 
 interface VideoContainerProps {
     image: string;
@@ -24,6 +25,8 @@ export const VideoContainer: React.FC<VideoContainerProps> = ({image, link}) => 
             iframeRef.current.src = "";
         }
     }, []);
+
+    const {t} = useTranslation();
 
     return (
         <div className={styles.videoContainer}>
@@ -51,7 +54,7 @@ export const VideoContainer: React.FC<VideoContainerProps> = ({image, link}) => 
                     className={styles.play}
                     onClick={handleOpenVideo}
                 >
-                    <p>Play</p>
+                    <p>{t('videoContainer.play')}</p>
                 </div>
                 <img src={image} alt="Video"/>
             </div>

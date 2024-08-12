@@ -8,6 +8,7 @@ import LocationOnIcon from '@mui/icons-material/LocationOn';
 import {DefaultButton} from "../../Reusables/DefaultButton/DefaultButton.tsx";
 import {ChangeEvent, useCallback, useState} from "react";
 import {Bounce, toast} from "react-toastify";
+import {useTranslation} from "react-i18next";
 
 const validateEmail = (email: string): boolean => {
     const emailRegex : RegExp = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -18,13 +19,15 @@ export const FooterOne = () => {
 
     const [mailInput, setMailInput] = useState<string>("");
 
+    const {t} = useTranslation();
+
     const handleMessageValue = useCallback((e: ChangeEvent<HTMLInputElement>) => {
         setMailInput(e.target.value)
     }, [setMailInput]);
 
     const handleSendMessage = useCallback(() => {
         if (mailInput === "") {
-            toast.error("Field must not be empty!", {
+            toast.error(`${t('footerOne.toastFieldEmpty')}`, {
                 hideProgressBar: false,
                 closeOnClick: true,
                 pauseOnHover: false,
@@ -34,7 +37,7 @@ export const FooterOne = () => {
                 transition: Bounce,
             });
         } else if (!validateEmail(mailInput)) {
-            toast.error("Incorrect mail format!", {
+            toast.error(`${t('footerOne.toastInvalidEmail')}`, {
                 hideProgressBar: false,
                 closeOnClick: true,
                 pauseOnHover: false,
@@ -44,7 +47,7 @@ export const FooterOne = () => {
                 transition: Bounce,
             });
         } else {
-            toast.success("Message sent successfully!", {
+            toast.success(`${t('footerOne.toastSuccess')}`, {
                 hideProgressBar: false,
                 closeOnClick: true,
                 pauseOnHover: false,
@@ -55,40 +58,38 @@ export const FooterOne = () => {
             });
             setMailInput("");
         }
-    }, [mailInput, setMailInput]);
+    }, [mailInput, t]);
 
     return (
         <footer className={styles.footerWrapper}>
             <div className={styles.socialContainer}>
                 <div className={styles.iconContainer}>
-                    <Link to={"https://www.facebook.com/"} target={"_blank"}><FacebookIcon/> Facebook</Link>
+                    <Link to={"https://www.facebook.com/"} target={"_blank"}><FacebookIcon/> {t('footerOne.facebook')}</Link>
                 </div>
                 <div className={styles.iconContainer}>
-                    <Link to={"https://www.instagram.com/"} target={"_blank"}><InstagramIcon/> Instagram</Link>
+                    <Link to={"https://www.instagram.com/"} target={"_blank"}><InstagramIcon/> {t('footerOne.instagram')}</Link>
                 </div>
                 <div className={styles.iconContainer}>
-                    <Link to={"https://www.linkedin.com/"} target={"_blank"}><LinkedInIcon/> linkedin</Link>
+                    <Link to={"https://www.linkedin.com/"} target={"_blank"}><LinkedInIcon/> {t('footerOne.linkedin')}</Link>
                 </div>
                 <div className={styles.iconContainer}>
-                    <Link to={"https://x.com/"} target={"_blank"}><XIcon/> Twitter</Link>
+                    <Link to={"https://x.com/"} target={"_blank"}><XIcon/> {t('footerOne.twitter')}</Link>
                 </div>
             </div>
             <div className={styles.footerContent}>
                 <div className={styles.boxesContainer}>
                     <div className={styles.boxesTitle}>
-                        <h2>GAMESTORM</h2>
+                        <h2>{t('footerOne.gamestormTitle')}</h2>
                         <p>
-                            Gamestorm is a gaming shop selling
-                            innovative and engaging products for players of all ages. Offering a wide
-                            variety of gaming experiences.
+                            {t('footerOne.gamestormDescription')}
                         </p>
                         <div className={styles.infoRow}>
                             <div className={styles.infoIcon}>
                                 <LocationOnIcon/>
                             </div>
                             <div className={styles.infoTitle}>
-                                <h3>London</h3>
-                                <p>Al. Brucknera Aleksandra 63, Wrocław 51-410</p>
+                                <h3>{t('footerOne.london')}</h3>
+                                <p>{t('footerOne.londonAddress')}</p>
                             </div>
                         </div>
                         <div className={styles.infoRow}>
@@ -96,8 +97,8 @@ export const FooterOne = () => {
                                 <LocationOnIcon/>
                             </div>
                             <div className={styles.infoTitle}>
-                                <h3>New York</h3>
-                                <p>7012 Green Lake Ave., Poughkeepsie, NY 12601</p>
+                                <h3>{t('footerOne.newYork')}</h3>
+                                <p>{t('footerOne.newYorkAddress')}</p>
                             </div>
                         </div>
                     </div>
@@ -126,27 +127,27 @@ export const FooterOne = () => {
                 </div>
                 <div className={styles.titleContainer}>
                     <div className={styles.titleBox}>
-                        <h2>Stay informed With News On All Updated</h2>
-                        <p>Want to be the first to know freshest news? Subscribe out newsletter!</p>
+                        <h2>{t('footerOne.stayInformed')}</h2>
+                        <p>{t('footerOne.subscribeText')}</p>
                         <div className={styles.inputBox}>
                             <input
                                 type="email"
                                 name={"mailInput"}
-                                placeholder={"Enter Your Email..."}
+                                placeholder={t('footerOne.emailPlaceholder')}
                                 value={mailInput}
                                 onChange={handleMessageValue}
                             />
                             <div onClick={handleSendMessage}>
                                 <DefaultButton
                                     link={""}
-                                    title={"Send Message"}
+                                    title={t('footerOne.sendMessage')}
                                     grayBtn={false}
                                     wide={false}
                                 />
                             </div>
                         </div>
                         <div className={styles.postBox}>
-                            <h2>Instagram Posts</h2>
+                            <h2>{t('footerOne.instagramPosts')}</h2>
                             <div className={styles.postsRow}>
                                 <Link to={"https://www.instagram.com/"} target={"_blank"} className={styles.post}>
                                     <img src="https://pixner.net/gamestorm3/main/assets/images/instagram-img-1.png"
@@ -167,7 +168,7 @@ export const FooterOne = () => {
                 </div>
             </div>
             <div className={styles.copyright}>
-                <p>Copyright © 2023 <Link to={"/"}>Gamestorm</Link> - All Right Reserved</p>
+                <p>{t('footerOne.copyright')} <Link to={"/"}>Gamestorm</Link> {t('footerOne.allRightsReserved')}</p>
             </div>
         </footer>
     );

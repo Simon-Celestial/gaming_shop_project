@@ -9,6 +9,7 @@ import {Rating} from "@mui/material";
 import {BasketContext} from "../../../../Context/BasketContext/BasketContext.tsx";
 import {WishlistContext} from "../../../../Context/WishlishContext/WishlistContext.tsx";
 import {DataContext} from "../../../../Context/DataContext/DataContext.tsx";
+import {useTranslation} from "react-i18next";
 
 interface DeviceCardProps {
     data: PRODUCTS_DATA
@@ -22,6 +23,8 @@ export const DeviceCard: React.FC<DeviceCardProps> = ({data}) => {
     } = useContext(DataContext);
 
     const [selectedColor, setSelectedColor] = useState(data?.colors[0]);
+
+    const {t} = useTranslation();
 
     // SELECT PRODUCT COLOR
     const handleSelectColor = useCallback((color: string): void => {
@@ -81,7 +84,7 @@ export const DeviceCard: React.FC<DeviceCardProps> = ({data}) => {
                 <div className={`${styles.flag} ${styles.offer}`}>
                     {data.regularPrice
                         ? `${(((data.regularPrice - data.salePrice) / data.regularPrice) * 100).toFixed(1)} %`
-                        : 'offer'}
+                        : `${t('deviceCard.offer')}`}
                 </div>
                 <Link
                     to={`/product-details/${data?.id.toString()}`}
@@ -105,7 +108,7 @@ export const DeviceCard: React.FC<DeviceCardProps> = ({data}) => {
                 {
                     data?.quantity < 1 ?
                         <div className={styles.outOfStock}>
-                            Out of stock
+                            {t('deviceCard.outOfStock')}
                         </div>
                         :
                         null
@@ -130,7 +133,7 @@ export const DeviceCard: React.FC<DeviceCardProps> = ({data}) => {
                     className={styles.addBtn}
                     onClick={() => addToCart(data, selectedColor)}
                 >
-                    add to card
+                    {t('deviceCard.addToCart')}
                 </div>
             </div>
         </div>

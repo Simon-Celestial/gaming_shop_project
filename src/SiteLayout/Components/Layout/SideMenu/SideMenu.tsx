@@ -31,7 +31,7 @@ export const SideMenu = () => {
     const [translatedNavigation, setTranslatedNavigation] = useState(navData?.en)
 
 
-    const {i18n} = useTranslation();
+    const {i18n,t} = useTranslation();
 
 
     useEffect(() => {
@@ -56,12 +56,12 @@ export const SideMenu = () => {
                         menuState ?
                             <>
                                 <ClearIcon/>
-                                Close Menu
+                                {t('sideMenu.closeMenu')}
                             </>
                             :
                             <>
                                 <WidgetsIcon/>
-                                menu
+                                {t('sideMenu.menu')}
                             </>
                     }
                 </div>
@@ -115,61 +115,61 @@ export const SideMenu = () => {
                 <div className={styles.contacts}>
                     <div className={styles.contactsEntity}>
                         <div className={styles.title}>
-                            Office
+                            {t('sideMenu.office')}
                         </div>
                         <div className={styles.details}>
                             <div className={styles.icon}>
                                 <LocationOnIcon/>
                             </div>
                             <div className={styles.address}>
-                                <h2>London</h2>
-                                <p>Al. Brucknera Aleksandra 63,</p>
-                                <p>Wrocław 51-410</p>
+                                <h2>{t('sideMenu.london')}</h2>
+                                <p>{t('sideMenu.addressLine1')}</p>
+                                <p>{t('sideMenu.addressLine2')}</p>
                             </div>
                         </div>
 
                     </div>
                     <div className={styles.contactsEntity}>
                         <div className={styles.title}>
-                            Email Address
+                            {t('sideMenu.emailAddress')}
                         </div>
                         <div className={styles.details}>
                             <div className={styles.icon}>
                                 <EmailIcon/>
                             </div>
                             <div className={styles.address}>
-                                <p>sales@gamestorm.com</p>
-                                <p>info@gamestorm.com</p>
+                                <p>{t('sideMenu.email1')}</p>
+                                <p>{t('sideMenu.email2')}</p>
                             </div>
                         </div>
 
                     </div>
                     <div className={styles.contactsEntity}>
                         <div className={styles.title}>
-                            Phone Number
+                            {t('sideMenu.phoneNumber')}
                         </div>
                         <div className={styles.details}>
                             <div className={styles.icon}>
                                 <LocalPhoneIcon/>
                             </div>
                             <div className={styles.address}>
-                                <p>(123) 1232-1234</p>
-                                <p>(123) 1232-1234</p>
+                                <p>{t('sideMenu.phone1')}</p>
+                                <p>{t('sideMenu.phone2')}</p>
                             </div>
                         </div>
 
                     </div>
                     <div className={styles.contactsEntity}>
                         <div className={styles.title}>
-                            Working Hours
+                            {t('sideMenu.workingHours')}
                         </div>
                         <div className={styles.details}>
                             <div className={styles.icon}>
                                 <WatchLaterIcon/>
                             </div>
                             <div className={styles.address}>
-                                <p>Mon-Fri: 09: 00-18: 00</p>
-                                <p>Sat-Sun: Weekend</p>
+                                <p>{t('sideMenu.hoursWeekdays')}</p>
+                                <p>{t('sideMenu.hoursWeekend')}</p>
                             </div>
                         </div>
                     </div>

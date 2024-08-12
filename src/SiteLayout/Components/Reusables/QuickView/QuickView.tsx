@@ -8,6 +8,8 @@ import {Rating} from "@mui/material";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import SearchIcon from '@mui/icons-material/Search';
+import {useTranslation} from "react-i18next";
+
 interface QuickViewProps  {
     product : PRODUCTS_DATA | null;
     quickView: boolean;
@@ -22,6 +24,8 @@ export const QuickView: React.FC<QuickViewProps> = ({product,quickView}) => {
     const [isProductInWishlist, setIsProductInWishlist] = useState(false);
     const [selectedColor, setSelectedColor] = useState('');
 
+    const {t} = useTranslation();
+    
     useEffect(() => {
         if (product) {
             setIsProductInWishlist(isInWishlist(product?.id, selectedColor));
@@ -44,7 +48,7 @@ export const QuickView: React.FC<QuickViewProps> = ({product,quickView}) => {
 
     const handleAddToCard = useCallback((product: PRODUCTS_DATA, color: string) => {
         if (selectedColor === "") {
-            toast.error(`Please select color!`, {
+            toast.error(`${t('quickView.selectColor')}`, {
                 hideProgressBar: false,
                 closeOnClick: true,
                 pauseOnHover: false,
@@ -56,13 +60,13 @@ export const QuickView: React.FC<QuickViewProps> = ({product,quickView}) => {
         } else {
             addToCart(product, color);
         }
-    }, [addToCart, selectedColor]);
+    }, [addToCart, selectedColor, t]);
 
     const handleAddToCartClick = useCallback(() => {
         if (product) {
             handleAddToCard(product, selectedColor);
         } else {
-            toast.error(`Problem in adding product!`, {
+            toast.error(`${t('quickView.problemAddingProduct')}`, {
                 hideProgressBar: false,
                 closeOnClick: true,
                 pauseOnHover: false,
@@ -72,11 +76,11 @@ export const QuickView: React.FC<QuickViewProps> = ({product,quickView}) => {
                 transition: Bounce,
             });
         }
-    }, [product, selectedColor, handleAddToCard]);
+    }, [product, handleAddToCard, selectedColor, t]);
 
     const handleAddToWishlist = useCallback((product: PRODUCTS_DATA, color: string) => {
         if (selectedColor === "") {
-            toast.error(`Please select color!`, {
+            toast.error(`${t('quickView.selectColor')}`, {
                 hideProgressBar: false,
                 closeOnClick: true,
                 pauseOnHover: false,
@@ -88,13 +92,13 @@ export const QuickView: React.FC<QuickViewProps> = ({product,quickView}) => {
         } else {
             addToWishlist(product, color);
         }
-    }, [addToWishlist, selectedColor]);
+    }, [addToWishlist, selectedColor, t]);
 
     const handleAddToWishlistClick = useCallback(() => {
         if (product) {
             handleAddToWishlist(product, selectedColor);
         } else {
-            toast.error(`Problem in adding product!`, {
+            toast.error(`${t('quickView.problemAddingProduct')}`, {
                 hideProgressBar: false,
                 closeOnClick: true,
                 pauseOnHover: false,
@@ -104,14 +108,15 @@ export const QuickView: React.FC<QuickViewProps> = ({product,quickView}) => {
                 transition: Bounce,
             });
         }
-    }, [product, handleAddToWishlist, selectedColor]);
+    }, [product, handleAddToWishlist, selectedColor, t]);
 
+    
     return (
         <section className={`${styles.mainProductSection} ${quickView? styles.quickView : ''}`}>
             <div className={styles.productTitle}>
                 <h2>{product?.name}</h2>
                 <div className={styles.rating}>
-                    <h3>Rating : </h3>
+                    <h3>{t('quickView.rating')} : </h3>
                     <Rating
                         name="read-only"
                         value={product?.rating || 0}
@@ -130,12 +135,12 @@ export const QuickView: React.FC<QuickViewProps> = ({product,quickView}) => {
                 </div>
                 <p>{product?.description}</p>
                 <div className={styles.details}>
-                    <p><strong>SKU: NTLFL5-{product?.id}</strong></p>
-                    <p><strong>Category: </strong> {product?.category}</p>
-                    <p><strong>Brand: </strong> {product?.brand}</p>
+                    <p><strong>{t('quickView.sku')}{product?.id}</strong></p>
+                    <p><strong>{t('quickView.category')}: </strong> {product?.category}</p>
+                    <p><strong>{t('quickView.brand')}: </strong> {product?.brand}</p>
                 </div>
                 <div className={styles.colorSelection}>
-                    <span>Color:</span>
+                    <span>{t('quickView.color')}:</span>
                     <select
                         value={selectedColor}
                         onChange={handleSelectColor}
@@ -145,7 +150,7 @@ export const QuickView: React.FC<QuickViewProps> = ({product,quickView}) => {
                             defaultChecked={true}
                             disabled={false}
                         >
-                            Choose an option
+                            {t('quickView.chooseOption')}
                         </option>
                         {product?.colors?.map((color: string, index: number) => {
                             return (
@@ -160,19 +165,19 @@ export const QuickView: React.FC<QuickViewProps> = ({product,quickView}) => {
                     </select>
                 </div>
                 <div className={styles.stock}>
-                    <span>{product?.quantity} in stock</span>
+                    <span>{product?.quantity} {t('quickView.inStock')}</span>
                 </div>
                 <div
                     className={styles.addBtn}
                     onClick={handleAddToCartClick}
                 >
-                    Add to cart
+                    {t('quickView.addToCart')}
                 </div>
                 <div
-                    className={styles.wishlistBtn}
+                    className={styles.addToWishlist}
                     onClick={handleAddToWishlistClick}
                 >
-                    add to wishlist
+                    {t('quickView.addToCart')}
                     {
                         isProductInWishlist ?
                             <FavoriteIcon/>

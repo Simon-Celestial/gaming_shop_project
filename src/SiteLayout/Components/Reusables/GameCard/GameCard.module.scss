@@ -159,11 +159,11 @@
       display: flex;
       align-items: center;
       gap: 15px;
-      padding: 6px 16px;
+      padding: 10px 15px;
       background: $black;
       border-radius: 10px;
       border: 1px solid rgba(128, 128, 128, 0.3);
-      max-width: 200px;
+      max-width: 250px;
       transition: transform $transition,box-shadow $transition;
       &:hover {
         transform: scale(1.05);
@@ -175,6 +175,9 @@
         object-position: center;
         width: 100%;
         filter: invert(1);
+      }
+      p {
+        white-space: nowrap;
       }
 
     }

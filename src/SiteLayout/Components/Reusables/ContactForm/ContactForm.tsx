@@ -2,6 +2,7 @@ import React, {useCallback, useState} from "react";
 import {Bounce, toast} from "react-toastify";
 import styles from "./ContactForm.module.scss";
 import {DefaultButton} from "../DefaultButton/DefaultButton.tsx";
+import {useTranslation} from "react-i18next";
 
 interface INPUT_TYPE {
     name: string;
@@ -21,6 +22,7 @@ const defaults: INPUT_TYPE = {
 export const ContactForm = () => {
     const [inputState, setInputState] = useState(defaults);
 
+    const {t} = useTranslation();
     const handleInputChange = useCallback(
         (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
             const {name, value} = event.target;
@@ -40,7 +42,7 @@ export const ContactForm = () => {
             inputState?.subject === '' ||
             inputState?.message === ''
         ) {
-            toast.error('Please fill all fields!', {
+            toast.error(`${t('contactForm.pleaseFillAllFields')}`, {
                 hideProgressBar: false,
                 closeOnClick: true,
                 pauseOnHover: false,
@@ -50,7 +52,7 @@ export const ContactForm = () => {
                 transition: Bounce,
             });
         } else if (!emailPattern.test(inputState?.email)) {
-            toast.error('Please enter a valid email address!', {
+            toast.error(`${t('contactForm.pleaseEnterValidEmail')}`, {
                 hideProgressBar: false,
                 closeOnClick: true,
                 pauseOnHover: false,
@@ -60,7 +62,7 @@ export const ContactForm = () => {
                 transition: Bounce,
             });
         } else {
-            toast.success('Your message has been sent successfully!', {
+            toast.success(`${t('contactForm.messageSentSuccess')}`, {
                 hideProgressBar: false,
                 closeOnClick: true,
                 pauseOnHover: false,
@@ -71,47 +73,47 @@ export const ContactForm = () => {
             });
             setInputState(defaults);
         }
-    }, [inputState?.email, inputState?.message, inputState?.name, inputState?.subject]);
+    }, [inputState?.email, inputState?.message, inputState?.name, inputState?.subject, t]);
 
     return (
         <div className={styles.formContent}>
             <div className={styles.inputWrapper}>
-                Name
+                {t('contactForm.name')}
                 <input
                     onChange={handleInputChange}
                     value={inputState?.name}
                     type="text"
                     name={"name"}
-                    placeholder={"Enter your name"}
+                    placeholder={t('contactForm.enterYourName')}
                 />
             </div>
             <div className={styles.inputWrapper}>
-                Email
+                {t('contactForm.email')}
                 <input
                     onChange={handleInputChange}
                     value={inputState?.email}
                     type="email"
                     name={"email"}
-                    placeholder={"Enter your email"}
+                    placeholder={t('contactForm.enterYourEmail')}
                 />
             </div>
             <div className={styles.inputWrapper}>
-                Subject
+                {t('contactForm.subject')}
                 <input
                     onChange={handleInputChange}
                     value={inputState?.subject}
                     type="text"
                     name={"subject"}
-                    placeholder={"Enter subject"}
+                    placeholder={t('contactForm.enterSubject')}
                 />
             </div>
             <div className={styles.inputWrapper}>
-                Leave us message
+                {t('contactForm.leaveMessage')}
                 <textarea
                     onChange={handleInputChange}
                     value={inputState?.message}
                     name={"message"}
-                    placeholder={"Please type your message here..."}
+                    placeholder={t('contactForm.typeYourMessage')}
                 />
             </div>
             <div
@@ -119,13 +121,12 @@ export const ContactForm = () => {
                 onClick={handleSendMessage}
             >
                 <DefaultButton
-                    title={"Send Message"}
+                    title={t('contactForm.sendMessage')}
                     link={""}
                     grayBtn={false}
                     wide={false}
                 />
             </div>
-
         </div>
     );
 };

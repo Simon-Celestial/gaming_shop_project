@@ -3,6 +3,7 @@ import StarsIcon from "@mui/icons-material/Stars";
 import {Link} from "react-router-dom";
 import React, {useCallback} from "react";
 import {GAME_TYPE} from "../../../../Types/types.ts";
+import {useTranslation} from "react-i18next";
 
 interface GAME_CARD_PROPS {
     data: GAME_TYPE;
@@ -20,13 +21,14 @@ export const GameCard: React.FC<GAME_CARD_PROPS> = ({data}) => {
         }
     }, []);
 
+    const {t} = useTranslation();
 
     return (
         <div className={styles.gameBox}>
             {
                 data?.new ?
                     <div className={styles.flag}>
-                        <p>new</p>
+                        <p>{t('gameCard.new')}</p>
                     </div>
                     :
                     null
@@ -43,7 +45,7 @@ export const GameCard: React.FC<GAME_CARD_PROPS> = ({data}) => {
                 <div className={styles.infoBox}>
                     <div className={styles.infoItem}>
                         <h2>{data?.release}</h2>
-                        <p>Release Date</p>
+                        <p>{t('gameCard.releaseDate')}</p>
                     </div>
                     <div className={styles.infoItem}>
                         <h3>
@@ -54,19 +56,19 @@ export const GameCard: React.FC<GAME_CARD_PROPS> = ({data}) => {
                             {data?.rating}
                         </h3>
                         <p>
-                            Game Rating
+                            {t('gameCard.gameRating')}
                         </p>
                     </div>
                     <div className={styles.infoItem}>
                         <h4>{data?.publisher}</h4>
-                        <p>Publisher</p>
+                        <p>{t('gameCard.publisher')}</p>
                     </div>
                 </div>
                 <Link to={data?.link} className={styles.linkBox} target={"_blank"}>
                     <img src="/images/icons/steam.webp" alt="steam"/>
                     <div className={styles.blockTitle}>
-                        <p>Available at</p>
-                        <h2>STEAM</h2>
+                        <p>{t('gameCard.availableAt')}</p>
+                        <h2>{t('gameCard.steam')}</h2>
                     </div>
                 </Link>
             </div>

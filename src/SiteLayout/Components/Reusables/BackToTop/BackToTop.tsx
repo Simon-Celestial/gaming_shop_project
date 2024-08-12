@@ -1,9 +1,9 @@
 import {useState, useEffect, useCallback} from 'react';
 import styles from "./BackToTop.module.scss";
+import {useTranslation} from "react-i18next";
 
 export const BackToTop = () => {
     const [backToTop, setBackToTop] = useState(false);
-
 
     const handleScroll = useCallback(() => {
         if (window.scrollY > 300) {
@@ -28,13 +28,15 @@ export const BackToTop = () => {
             behavior: 'smooth'
         });
     }, []);
+    const { t } = useTranslation();
+
     return (
         <div
             className={`${styles.backToTop} ${backToTop ? styles.show : ''}`}
             onClick={scrollToTop}
         >
             <span></span>
-            <p>Back To Top</p>
+            <p>{t('backToTop')}</p>
         </div>
     );
 };
