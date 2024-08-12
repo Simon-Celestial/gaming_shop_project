@@ -1,1 +1,23 @@
-{}
+{
+  "header": {
+    "loginLink": "Войти в аккаунт",
+    "registerLink": "Создать аккаунт",
+    "helloUser": "Привет",
+    "logOff": "Выйти"
+  },
+  "searchPanel": {
+    "searchPlaceholder": "Введите слова для поиска",
+    "noMatchingProducts": "Нет товаров, соответствующих запросу..."
+  },
+  "basket": {
+    "yourShopper": "Ваши Покупки",
+    "color": "цвет",
+    "products": "Товары",
+    "items": "штука",
+    "subTotal": "Итого",
+    "visitCart": "Перейти в корзину",
+    "checkout": "Оформить заказ",
+    "emptyShopperMessage": "Ваша корзина пуста"
+  }
+
+}

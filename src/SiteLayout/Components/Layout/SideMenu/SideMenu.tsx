@@ -14,18 +14,36 @@ import ClearIcon from '@mui/icons-material/Clear';
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-expect-error
 import navData from '/public/data/NavData/navData.json';
-import {useCallback, useState} from "react";
+import {useCallback, useEffect, useState} from "react";
 import {LanguageSelection} from "../../Reusables/LanguageSelection/LanguageSelection.tsx";
+import {useTranslation} from "react-i18next";
 
 interface NAV_DATA {
     id: string;
     name: string;
     route: string;
+    children: NAV_DATA[] | null;
 }
 
 
 export const SideMenu = () => {
     const [menuState, setMenuState] = useState(false);
+    const [translatedNavigation, setTranslatedNavigation] = useState(navData?.en)
+
+
+    const {i18n} = useTranslation();
+
+
+    useEffect(() => {
+        if (i18n.language === "en") {
+            setTranslatedNavigation(navData?.en);
+        } else if (i18n.language === "ru") {
+            setTranslatedNavigation(navData?.ru);
+        } else {
+            setTranslatedNavigation(navData?.tr);
+        }
+    }, [i18n.language]);
+
 
     const handleMenuOpen = useCallback(() => {
         setMenuState(prevState => !prevState);
@@ -67,7 +85,7 @@ export const SideMenu = () => {
             </aside>
             <div className={`${styles.sideMenuContent} ${menuState ? styles.menuActive : ""}`}>
                 <nav className={styles.navigation}>
-                    {navData?.map((nav: NAV_DATA) => {
+                    {translatedNavigation?.map((nav: NAV_DATA) => {
                         return (
                             <div key={nav?.id} className={`${styles.navItem} `}>
                                 {nav?.id === 'pages' ?
@@ -75,26 +93,14 @@ export const SideMenu = () => {
                                         <p className={`${styles.item}`}>{nav?.name}<ExpandLessOutlinedIcon/></p>
                                         <div className={styles.navDropDown}>
                                             <div className={styles.dropDownContent}>
-                                                <Link to={"/wishlist"}>
-                                                    Wishlist
-                                                </Link>
-                                                <Link to={"/basket"}>
-                                                    Basket
-                                                </Link>
-                                                <Link to={"/checkout"}>
-                                                    Checkout
-                                                </Link>
-                                                <Link to={"/login"}>
-                                                    Login
-                                                </Link>
-                                                <Link to={"/register"}>
-                                                    Register
-                                                </Link>
-                                                <Link to={"/privacy-policy"}>
-                                                    Privacy Policy
-                                                </Link>
+                                                {nav?.children?.map((child : NAV_DATA)=> {
+                                                    return (
+                                                        <Link key={child?.id} to={child?.route}>
+                                                            {child?.name}
+                                                        </Link>
+                                                    )
+                                                })}
                                             </div>
-
                                         </div>
                                     </>
                                     :

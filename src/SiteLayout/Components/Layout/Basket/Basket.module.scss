@@ -222,7 +222,7 @@
         transition: color $transition,background $transition;
         &:nth-child(1) {
           color: $white;
-          background: $grayFill;
+          background: #2D2F3E;
           &:hover {
             background: $greenDark;
           }

@@ -1,46 +1,224 @@
-[
-  {
-    "id": "home",
-    "name": "Home",
-    "route": "/"
-  },
-  {
-    "id": "shop",
-    "name": "Shop",
-    "route": "/shop"
-
-  },
-  {
-    "id": "games",
-    "name": "Games",
-    "route": "/games"
-  },
-  {
-    "id": "services",
-    "name": "Services",
-    "route": "/services"
-  },
-  {
-    "id": "about",
-    "name": "About",
-    "route": "/about"
-
-  },
-  {
-    "id": "blog",
-    "name": "Blog",
-    "route": "/blog"
-
-  },
-  {
-    "id": "contact",
-    "name": "Contact",
-    "route": "/contact"
-  },
-  {
-    "id": "pages",
-    "name": "Pages",
-    "route": ""
-
-  }
-]
+{
+  "en": [
+    {
+      "id": "home",
+      "name": "Home",
+      "route": "/"
+    },
+    {
+      "id": "shop",
+      "name": "Shop",
+      "route": "/shop"
+    },
+    {
+      "id": "games",
+      "name": "Games",
+      "route": "/games"
+    },
+    {
+      "id": "services",
+      "name": "Services",
+      "route": "/services"
+    },
+    {
+      "id": "about",
+      "name": "About",
+      "route": "/about"
+    },
+    {
+      "id": "blog",
+      "name": "Blog",
+      "route": "/blog"
+    },
+    {
+      "id": "contact",
+      "name": "Contact",
+      "route": "/contact"
+    },
+    {
+      "id": "pages",
+      "name": "Pages",
+      "route": "",
+      "children" : [
+        {
+          "id": "wishlist",
+          "name": "Wishlist",
+          "route": "/wishlist"
+        },
+        {
+          "id": "basket",
+          "name": "Basket",
+          "route": "/basket"
+        },
+        {
+          "id": "checkout",
+          "name": "Checkout",
+          "route": "/checkout"
+        },
+        {
+          "id": "login",
+          "name": "Login",
+          "route": "/login"
+        },
+        {
+          "id": "register",
+          "name": "Register",
+          "route": "/register"
+        },
+        {
+          "id": "privacy",
+          "name": "Privacy Policy",
+          "route": "/privacy-policy"
+        }
+      ]
+    }
+  ],
+  "ru": [
+    {
+      "id": "home",
+      "name": "Главная",
+      "route": "/"
+    },
+    {
+      "id": "shop",
+      "name": "Магазин",
+      "route": "/shop"
+    },
+    {
+      "id": "games",
+      "name": "Игры",
+      "route": "/games"
+    },
+    {
+      "id": "services",
+      "name": "Услуги",
+      "route": "/services"
+    },
+    {
+      "id": "about",
+      "name": "О нас",
+      "route": "/about"
+    },
+    {
+      "id": "blog",
+      "name": "Блог",
+      "route": "/blog"
+    },
+    {
+      "id": "contact",
+      "name": "Контакты",
+      "route": "/contact"
+    },
+    {
+      "id": "pages",
+      "name": "Страницы",
+      "route": "",
+      "children": [
+        {
+          "id": "wishlist",
+          "name": "Желаемое",
+          "route": "/wishlist"
+        },
+        {
+          "id": "basket",
+          "name": "Корзина",
+          "route": "/basket"
+        },
+        {
+          "id": "checkout",
+          "name": "Оформление",
+          "route": "/checkout"
+        },
+        {
+          "id": "login",
+          "name": "Вход",
+          "route": "/login"
+        },
+        {
+          "id": "register",
+          "name": "Регистрация",
+          "route": "/register"
+        },
+        {
+          "id": "privacy",
+          "name": "Конфиденциальность",
+          "route": "/privacy-policy"
+        }
+      ]
+    }
+  ],
+  "tr": [
+    {
+      "id": "home",
+      "name": "Anasayfa",
+      "route": "/"
+    },
+    {
+      "id": "shop",
+      "name": "Mağaza",
+      "route": "/shop"
+    },
+    {
+      "id": "games",
+      "name": "Oyunlar",
+      "route": "/games"
+    },
+    {
+      "id": "services",
+      "name": "Hizmetler",
+      "route": "/services"
+    },
+    {
+      "id": "about",
+      "name": "Hakkımızda",
+      "route": "/about"
+    },
+    {
+      "id": "blog",
+      "name": "Blog",
+      "route": "/blog"
+    },
+    {
+      "id": "contact",
+      "name": "İletişim",
+      "route": "/contact"
+    },
+    {
+      "id": "pages",
+      "name": "Sayfalar",
+      "route": "",
+      "children": [
+        {
+          "id": "wishlist",
+          "name": "İstek Listesi",
+          "route": "/wishlist"
+        },
+        {
+          "id": "basket",
+          "name": "Sepet",
+          "route": "/basket"
+        },
+        {
+          "id": "checkout",
+          "name": "Ödeme",
+          "route": "/checkout"
+        },
+        {
+          "id": "login",
+          "name": "Giriş Yap",
+          "route": "/login"
+        },
+        {
+          "id": "register",
+          "name": "Kayıt Ol",
+          "route": "/register"
+        },
+        {
+          "id": "privacy",
+          "name": "Gizlilik Politikası",
+          "route": "/privacy-policy"
+        }
+      ]
+    }
+  ]
+}

@@ -19,11 +19,13 @@ import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
 import {QuickView} from "../../Reusables/QuickView/QuickView.tsx";
 import {DataContext} from "../../../../Context/DataContext/DataContext.tsx";
 import CloseIcon from '@mui/icons-material/Close';
+import {useTranslation} from "react-i18next";
 
 interface NAV_DATA {
     id: string;
     name: string;
     route: string;
+    children: NAV_DATA[] | null
 }
 
 
@@ -42,10 +44,14 @@ export const Header = () => {
         quickView,
         handleQuickViewClose
     } = useContext(DataContext);
+
+    const {i18n,t} = useTranslation();
     const location = useLocation();
+
     const [basketOpen, setBasketOpen] = useState(false);
     const [searchPanelOpen, setSearchPanelOpen] = useState(false);
     const [accountOpen, setAccountOpen] = useState(false);
+    const [translatedNavigation, setTranslatedNavigation] = useState(navData?.en)
 
     const handleOpenAccount = useCallback((e: React.MouseEvent) => {
         e.stopPropagation();
@@ -59,6 +65,16 @@ export const Header = () => {
             document.removeEventListener("click", handleCloseAccount);
         };
     }, []);
+
+    useEffect(() => {
+        if (i18n.language === "en") {
+            setTranslatedNavigation(navData?.en);
+        } else if (i18n.language === "ru") {
+            setTranslatedNavigation(navData?.ru);
+        } else {
+            setTranslatedNavigation(navData?.tr);
+        }
+    }, [i18n.language]);
 
 
     const handleOpenSearchPanel = useCallback(() => {
@@ -106,7 +122,7 @@ export const Header = () => {
                         </div>
                     </div>
                     <nav className={styles.navigationBlock}>
-                        {navData?.map((nav: NAV_DATA) => {
+                        {translatedNavigation?.map((nav: NAV_DATA) => {
                             return (
                                 <div key={nav?.id} className={`${styles.navEntity} `}>
                                     {nav?.id === 'pages' ?
@@ -114,24 +130,17 @@ export const Header = () => {
                                             <p className={`${styles.entity}`}>{nav?.name}<ExpandLessOutlinedIcon/></p>
                                             <div className={styles.navDropDown}>
                                                 <div className={styles.dropDownContent}>
-                                                    <Link to={"/wishlist"}>
-                                                        Wishlist
-                                                    </Link>
-                                                    <Link to={"/basket"}>
-                                                        Basket
-                                                    </Link>
-                                                    <Link to={"/checkout"}>
-                                                        Checkout
-                                                    </Link>
-                                                    <Link to={"/login"}>
-                                                        Login
-                                                    </Link>
-                                                    <Link to={"/register"}>
-                                                        Register
-                                                    </Link>
-                                                    <Link to={"/privacy-policy"}>
-                                                        Privacy Policy
-                                                    </Link>
+                                                    {nav?.children?.map((child: NAV_DATA) => {
+                                                        return (
+                                                            <Link
+                                                                className={location.pathname === child?.route ? styles.current : ''}
+                                                                key={child?.id}
+                                                                to={child?.route}
+                                                            >
+                                                                {child?.name}
+                                                            </Link>
+                                                        )
+                                                    })}
                                                 </div>
 
                                             </div>
@@ -167,13 +176,13 @@ export const Header = () => {
                             >
                                 {userData && token ? (
                                     <>
-                                        <span><PersonOutlineIcon/> Hello, <p>{userData.username}</p></span>
-                                        <span onClick={logOut}><LogoutIcon/> Log off</span>
+                                        <span><PersonOutlineIcon/> {t("header.helloUser")}, <p>{userData.username}</p></span>
+                                        <span onClick={logOut}><LogoutIcon/> {t("header.logOff")}</span>
                                     </>
                                 ) : (
                                     <>
-                                        <Link to="/login">Login into account</Link>
-                                        <Link to="/register">Create an account</Link>
+                                        <Link to="/login">{t("header.loginLink")}</Link>
+                                        <Link to="/register">{t("header.registerLink")}</Link>
                                     </>
                                 )}
                             </div>

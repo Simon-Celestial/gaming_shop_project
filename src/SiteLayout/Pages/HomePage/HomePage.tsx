@@ -196,7 +196,7 @@ export const HomePage = () => {
                                     autoplay={{delay: 3000}}
                                     style={paginationStyles as React.CSSProperties}
                                 >
-                                    {productsData?.map((product) => {
+                                    {productsData?.slice(5,12)?.map((product) => {
                                         return (
                                             <SwiperSlide key={product?.id}>
                                                 <div className={styles.cardWrapper}>

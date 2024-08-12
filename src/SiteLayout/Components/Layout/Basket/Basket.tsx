@@ -7,6 +7,7 @@ import AddIcon from '@mui/icons-material/Add';
 import DeleteIcon from '@mui/icons-material/Delete';
 import {BasketContext} from "../../../../Context/BasketContext/BasketContext.tsx";
 import {PRODUCTS_DATA} from "../../../../Types/types.ts";
+import {useTranslation} from "react-i18next";
 
 interface BasketProps {
     basketOpen: boolean;
@@ -28,6 +29,8 @@ export const Basket: React.FC<BasketProps> = ({basketOpen, setBasketOpen}) => {
         setBasketOpen(false);
     }, [setBasketOpen]);
 
+    const {t} = useTranslation();
+
     return (
         <div className={`${styles.basketWrapper} ${basketOpen ? styles.active : ''}`}>
             <div className={styles.closeMenu} onClick={handleCloseBasket}>
@@ -37,7 +40,7 @@ export const Basket: React.FC<BasketProps> = ({basketOpen, setBasketOpen}) => {
                 cartItems?.length > 0 ?
                     <>
                         <div className={styles.basketHead}>
-                            Your Shopper
+                            {t('basket.yourShopper')}
                         </div>
                         <div className={styles.basketProducts}>
                             {cartItems?.map((product: PRODUCTS_DATA) => {
@@ -47,7 +50,7 @@ export const Basket: React.FC<BasketProps> = ({basketOpen, setBasketOpen}) => {
                                         className={styles.productCard}
                                     >
                                         <div className={styles.color}>
-                                            color: {product?.selectedColor}
+                                            {t('basket.color')} : {product?.selectedColor}
                                         </div>
                                         <div className={styles.image}>
                                             <img
@@ -88,19 +91,19 @@ export const Basket: React.FC<BasketProps> = ({basketOpen, setBasketOpen}) => {
                         </div>
                         <div className={styles.basketFooter}>
                             <div className={styles.priceInfo}>
-                                <p>Products: {cartItems?.length} items</p>
-                                <p>Sub Total: ${calculateSubtotal?.toFixed(2)}</p>
+                                <p>{t('basket.products')}: {cartItems?.length} {t('basket.items')}</p>
+                                <p>{t('basket.subTotal')}: ${calculateSubtotal?.toFixed(2)}</p>
                             </div>
                             <div className={styles.buttonsBlock}>
-                                <Link to={"/basket"}>Visit Cart</Link>
-                                <Link to={"/checkout"}>Checkout</Link>
+                                <Link to={"/basket"}>{t('basket.visitCart')}</Link>
+                                <Link to={"/checkout"}>{t('basket.checkout')}</Link>
                             </div>
                         </div>
                     </>
                     :
                     <div className={styles.emptyShopper}>
                         <img src="/images/icons/empty.png" alt="empty shopper"/>
-                        <p>Your shopper is empty...</p>
+                        <p>{t('basket.emptyShopperMessage')}...</p>
                     </div>
             }
         </div>

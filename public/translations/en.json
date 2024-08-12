@@ -1,3 +1,22 @@
 {
-
+  "header": {
+    "loginLink": "Login into account",
+    "registerLink": "Create an account",
+    "helloUser": "Hello",
+    "logOff": "Log off"
+  },
+  "searchPanel": {
+    "searchPlaceholder": "Type words to search",
+    "noMatchingProducts": "No matching search query products..."
+  },
+  "basket": {
+    "yourShopper": "Your Shopper",
+    "color": "color",
+    "products": "Products",
+    "items": "items",
+    "subTotal": "Sub Total",
+    "visitCart": "Visit Cart",
+    "checkout": "Checkout",
+    "emptyShopperMessage": "Your shopper is empty"
+  }
 }

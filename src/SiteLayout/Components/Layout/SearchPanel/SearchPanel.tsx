@@ -3,11 +3,11 @@ import CloseIcon from '@mui/icons-material/Close';
 import React, {useCallback, useContext, useMemo, useState} from "react";
 import {DataContext} from "../../../../Context/DataContext/DataContext.tsx";
 import {Link} from "react-router-dom";
+import {useTranslation} from "react-i18next";
 
 interface SearchPanelProps {
     searchPanelOpen: boolean;
     setSearchPanelOpen: React.Dispatch<React.SetStateAction<boolean>>;
-
 }
 
 export const SearchPanel: React.FC<SearchPanelProps> = ({searchPanelOpen, setSearchPanelOpen}) => {
@@ -16,6 +16,8 @@ export const SearchPanel: React.FC<SearchPanelProps> = ({searchPanelOpen, setSea
     } = useContext(DataContext);
 
     const [searchInputValue, setSearchInputValue] = useState("");
+
+    const {t} = useTranslation();
 
     const handleSearchInputChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
         setSearchInputValue(e.target.value)
@@ -56,7 +58,7 @@ export const SearchPanel: React.FC<SearchPanelProps> = ({searchPanelOpen, setSea
                 <div className={styles.inputWrapper}>
                     <input
                         type="text"
-                        placeholder={"Type words to search"}
+                        placeholder={t("searchPanel.searchPlaceholder")}
                         value={searchInputValue}
                         onChange={handleSearchInputChange}
                     />
@@ -79,7 +81,7 @@ export const SearchPanel: React.FC<SearchPanelProps> = ({searchPanelOpen, setSea
                     )
                     :
                     searchInputValue.length > 0 ?
-                        <h2>No matching search query products...</h2>
+                        <h2>{t("searchPanel.noMatchingProducts")}</h2>
                         :
                         null
                 }

@@ -1,1 +1,23 @@
-{}
+{
+  "header": {
+    "loginLink": "Hesaba giriş yap",
+    "registerLink": "Hesap oluştur",
+    "helloUser": "Merhaba",
+    "logOff": "Çıkış Yap"
+  },
+  "searchPanel": {
+    "searchPlaceholder": "Aramak için kelimeleri yazın",
+    "noMatchingProducts": "Arama sorgusuna uygun ürün bulunamadı..."
+  },
+  "basket": {
+    "yourShopper": "Alışveriş Sepetiniz",
+    "color": "renk",
+    "products": "Ürünler",
+    "items": "adet",
+    "subTotal": "Ara Toplam",
+    "visitCart": "Sepeti Görüntüle",
+    "checkout": "Ödeme",
+    "emptyShopperMessage": "Alışveriş sepetiniz boş"
+  }
+
+}
