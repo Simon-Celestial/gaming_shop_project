@@ -9,10 +9,10 @@ import {Swiper, SwiperSlide} from "swiper/react";
 import {Autoplay, EffectFade} from "swiper/modules";
 import {DeviceCard} from "../../Components/Reusables/DeviceCard/DeviceCard.tsx";
 import {QuickView} from "../../Components/Reusables/QuickView/QuickView.tsx";
+import {useTranslation} from "react-i18next";
 
 export const ProductDetailsPage: React.FC = () => {
     const {productsData} = useContext(DataContext);
-
     const [product, setProduct] = useState<PRODUCTS_DATA | null>(null);
 
     const similarProducts = useMemo(() => {
@@ -22,8 +22,9 @@ export const ProductDetailsPage: React.FC = () => {
         );
     }, [product?.brand, product?.category, product?.id, productsData]);
 
-
     const {id} = useParams<{ id: string }>();
+
+    const {t} = useTranslation();
 
     useEffect(() => {
         if (id) {
@@ -42,18 +43,18 @@ export const ProductDetailsPage: React.FC = () => {
                     <QuickView product={product} quickView={false}/>
                     <section className={styles.additionalSection}>
                         <div className={styles.sectionContent}>
-                            <h2>Additional information</h2>
+                            <h2>{t('productDetailsPage.additionalInformation')}</h2>
                             <div className={styles.infoTable}>
                                 <div className={styles.tableRow}>
                                     <div className={styles.cell}>
-                                        Weight:
+                                        {t('productDetailsPage.weight')}
                                     </div>
                                     <div className={styles.cell}>
                                         {product?.weight ? product.weight : "Not available"}                                    </div>
                                 </div>
                                 <div className={styles.tableRow}>
                                     <div className={styles.cell}>
-                                        Dimensions:
+                                        {t('productDetailsPage.dimensions')}
                                     </div>
                                     <div className={styles.cell}>
                                         {product?.dimension ? product.dimension : "Not available"}
@@ -61,7 +62,7 @@ export const ProductDetailsPage: React.FC = () => {
                                 </div>
                                 <div className={styles.tableRow}>
                                     <div className={styles.cell}>
-                                        Warranty:
+                                        {t('productDetailsPage.warranty')}
                                     </div>
                                     <div className={styles.cell}>
                                         {product?.warranty ? product.warranty : "Not available"}
@@ -69,7 +70,7 @@ export const ProductDetailsPage: React.FC = () => {
                                 </div>
                                 <div className={styles.tableRow}>
                                     <div className={styles.cell}>
-                                        Material:
+                                        {t('productDetailsPage.material')}
                                     </div>
                                     <div className={styles.cell}>
                                         {product?.material ? product.material : "Not available"}
@@ -77,17 +78,17 @@ export const ProductDetailsPage: React.FC = () => {
                                 </div>
                                 <div className={styles.tableRow}>
                                     <div className={styles.cell}>
-                                        RGB:
+                                        {t('productDetailsPage.rgb')}
                                     </div>
                                     <div className={styles.cell}>
                                         {
                                             product?.rgb === true ?
-                                                "Yes"
+                                                t('productDetailsPage.yes')
                                                 :
                                                 product?.rgb === false ?
-                                                    "No"
+                                                    t('productDetailsPage.no')
                                                     :
-                                                    "Not available"
+                                                    t('productDetailsPage.notAvailable')
                                         }
                                     </div>
                                 </div>
@@ -96,7 +97,7 @@ export const ProductDetailsPage: React.FC = () => {
                     </section>
                     <section className={styles.mayLikeSection}>
                         <div className={styles.sectionContent}>
-                            <h2>You may also like…</h2>
+                            <h2>{t('productDetailsPage.youMayAlsoLike')}</h2>
                             <div className={styles.productsSwiper}>
                                 <Swiper
                                     direction={'horizontal'}

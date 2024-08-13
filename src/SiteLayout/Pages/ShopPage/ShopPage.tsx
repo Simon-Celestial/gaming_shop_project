@@ -48,7 +48,7 @@ export const ShopPage = () => {
     const ALL_BRANDS = useMemo(() => Array.from(new Set(productsData?.map(it => it.brand))), [productsData]);
     const ALL_RATINGS = useMemo(() => Array.from(new Set(productsData?.map(it => it.rating))), [productsData]);
 
-    const {i18n} = useTranslation();
+    const {i18n,t} = useTranslation();
 
     const onApply = useCallback(() => {
         setFilteredPriceRange(priceRange);
@@ -250,25 +250,29 @@ export const ShopPage = () => {
             }
             <Header/>
             <main className={styles.shopWrapper}>
-                <PageBanner greenText={"Shop"} whiteText={""} smallText={"Play · Improve · Win"}/>
+                <PageBanner
+                    greenText={t('shopPage.greenText')}
+                    whiteText={""}
+                    smallText={t('shopPage.smallText')}
+                />
                 <section className={styles.productsSection}>
                     <div className={styles.sectionContent}>
                         <div className={styles.allFilters}>
-                            <h2>Filter</h2>
+                            <h2>{t('shopPage.filter')}</h2>
                             <div className={styles.filterBox}>
-                                <h2>search</h2>
+                                <h2>{t('shopPage.search')}</h2>
                                 <div className={styles.searchContainer}>
                                     <SearchIcon/>
                                     <input
                                         value={searchTerm}
                                         onChange={handleSearchProducts}
                                         type="text"
-                                        placeholder={"Type to search..."}
+                                        placeholder={t('shopPage.searchPlaceholder')}
                                     />
                                 </div>
                             </div>
                             <div className={styles.filterBox}>
-                                <h2>category</h2>
+                                <h2>{t('shopPage.category')}</h2>
                                 {ALL_CATEGORIES?.map((category: string) => {
                                     const filtered = productsData?.filter(it => it?.category === category)?.length || 0;
                                     return (
@@ -285,7 +289,7 @@ export const ShopPage = () => {
                                 })}
                             </div>
                             <div className={styles.filterBox}>
-                                <h2>color</h2>
+                                <h2>{t('shopPage.color')}</h2>
                                 {ALL_COLORS?.map((color: string) => {
                                     const filtered = productsData?.filter(it => it?.colors?.includes(color))?.length || 0;
                                     return (
@@ -308,7 +312,7 @@ export const ShopPage = () => {
                                 })}
                             </div>
                             <div className={styles.filterBox}>
-                                <h2>price</h2>
+                                <h2>{t('shopPage.price')}</h2>
                                 <div className={styles.priceSlider}>
                                     <div className={styles.sliderWrapper}>
                                         <Slider
@@ -328,24 +332,31 @@ export const ShopPage = () => {
                                         <div
                                             className={styles.btn}
                                             onClick={onApply}
+                                            style={{
+                                                fontWeight: i18n.language === "ru"? '500': ''
+                                            }}
                                         >
-                                            Filter
+                                            {t('shopPage.filter')}
                                         </div>
                                         <div
                                             className={styles.btn}
                                             onClick={handleResetFilters}
+                                            style={{
+                                                fontWeight: i18n.language === "ru"? '500': ''
+                                            }}
+
                                         >
-                                            Reset
+                                            {t('shopPage.reset')}
                                         </div>
 
                                     </div>
                                     <div className={styles.sliderValue}>
-                                        <p>Price: </p>${priceRange[0].toFixed(2)} <p> — </p> ${priceRange[1].toFixed(2)}
+                                        <p>{t('shopPage.price')}: </p>${priceRange[0].toFixed(2)} <p> — </p> ${priceRange[1].toFixed(2)}
                                     </div>
                                 </div>
                             </div>
                             <div className={styles.filterBox}>
-                                <h2>brand</h2>
+                                <h2>{t('shopPage.brand')}</h2>
                                 {
                                     ALL_BRANDS?.map((brand: string) => {
                                         const filtered = productsData?.filter(it => it?.brand === brand)?.length || 0;
@@ -365,7 +376,7 @@ export const ShopPage = () => {
                                 }
                             </div>
                             <div className={styles.filterBox}>
-                                <h2>rating</h2>
+                                <h2>{t('shopPage.rating')}</h2>
                                 {ALL_RATINGS?.map((rating: number) => {
                                     const filtered = productsData?.filter(it => it?.rating === rating)?.length || 0;
                                     return (
@@ -396,19 +407,19 @@ export const ShopPage = () => {
                         </div>
                         <div className={styles.productsContainer}>
                             <div className={styles.sortingContainer}>
-                                <p>Showing all {filteredByPrice?.length} results</p>
+                                <p>{t('shopPage.showingAll')} {filteredByPrice?.length} {t('shopPage.results')}</p>
                                 <div className={styles.sort}>
                                     <select
                                         value={sortOption}
                                         onChange={handleChangeSorting}
                                     >
                                         <option value="default" disabled>
-                                            Default sorting
+                                            {t('shopPage.defaultSorting')}
                                         </option>
-                                        <option value="rating-high-low">By rating: high-low</option>
-                                        <option value="rating-low-high">By rating: low-high</option>
-                                        <option value="low-high">By price : low-high</option>
-                                        <option value="high-low">By price : high-low</option>
+                                        <option value="rating-high-low">{t('shopPage.sortByRatingHighLow')}</option>
+                                        <option value="rating-low-high">{t('shopPage.sortByRatingLowHigh')}</option>
+                                        <option value="low-high">{t('shopPage.sortByPriceLowHigh')}</option>
+                                        <option value="high-low">{t('shopPage.sortByPriceHighLow')}</option>
                                     </select>
 
                                 </div>
@@ -424,7 +435,7 @@ export const ShopPage = () => {
                                     })
                                     :
                                     <div className={styles.noProducts}>
-                                        No products found...
+                                        {t('shopPage.noProductsFound')}
                                     </div>
                                 }
                             </div>

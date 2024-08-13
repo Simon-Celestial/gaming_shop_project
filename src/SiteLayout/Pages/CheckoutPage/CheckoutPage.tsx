@@ -13,6 +13,7 @@ import {PageBanner} from "../../Components/Layout/PageBanner/PageBanner.tsx";
 import {DefaultButton} from "../../Components/Reusables/DefaultButton/DefaultButton.tsx";
 import {PRODUCTS_DATA} from "../../../Types/types.ts";
 import axios from "axios";
+import {useTranslation} from "react-i18next";
 
 
 type FormFields = {
@@ -61,6 +62,8 @@ export const CheckoutPage = () => {
 
     const navigate = useNavigate();
 
+    const {t} = useTranslation();
+
 
     const handleChange = useCallback((event: SelectChangeEvent) => {
         setPaymentMethod(event.target.value);
@@ -84,7 +87,7 @@ export const CheckoutPage = () => {
 
     const validateForm = useCallback((): boolean => {
         if (!formFields.firstName || !formFields.lastName || !formFields.districtArea || !formFields.streetAddress) {
-            toast.error('Please fill all mandatory fields marked with *', {
+            toast.error(`${t('checkoutPage.mandatoryFieldsMessage')}`, {
                 hideProgressBar: false,
                 closeOnClick: true,
                 pauseOnHover: false,
@@ -96,7 +99,7 @@ export const CheckoutPage = () => {
             return false;
         }
         if (!/^\+994\d{9}$/.test(formFields.phoneNumber)) {
-            toast.error('Invalid phone number! Format should be "+994XXXXXXXXX"', {
+            toast.error(`${t('checkoutPage.invalidPhoneNumber')}`, {
                 hideProgressBar: false,
                 closeOnClick: true,
                 pauseOnHover: false,
@@ -108,7 +111,7 @@ export const CheckoutPage = () => {
             return false;
         }
         if (!paymentMethod) {
-            toast.error('Please select a payment method', {
+            toast.error(`${t('checkoutPage.selectPaymentMethod')}`, {
                 hideProgressBar: false,
                 closeOnClick: true,
                 pauseOnHover: false,
@@ -120,7 +123,14 @@ export const CheckoutPage = () => {
             return false;
         }
         return true;
-    }, [formFields, paymentMethod]);
+    }, [
+        formFields.districtArea,
+        formFields.firstName,
+        formFields.lastName,
+        formFields.phoneNumber,
+        formFields.streetAddress,
+        paymentMethod,
+        t]);
 
     const handlePostOrder = useCallback(async () => {
         if (!validateForm()) {
@@ -145,7 +155,7 @@ export const CheckoutPage = () => {
             setPostLoading(true);
             const response = await axios.post('https://gaming-shop-server.vercel.app/orders', orderData);
             if (response.status === 201 || response.status === 200) {
-                toast.success('Order placed successfully!', {
+                toast.success(`${t('checkoutPage.orderPlacedSuccess')}`, {
                     hideProgressBar: false,
                     closeOnClick: true,
                     pauseOnHover: false,
@@ -164,7 +174,7 @@ export const CheckoutPage = () => {
             }
         } catch (error) {
             console.error('Error placing order:', error);
-            toast.error('Failed to place the order. Please check your connection or try again later.', {
+            toast.error(`${t('checkoutPage.orderPlacementFailed')}`, {
                 hideProgressBar: false,
                 closeOnClick: true,
                 pauseOnHover: false,
@@ -182,8 +192,11 @@ export const CheckoutPage = () => {
         <>
             <Header/>
             <main className={styles.checkoutMain}>
-                <PageBanner greenText={"Checkout"} whiteText={""}
-                            smallText={"Your journey to ultimate entertainment starts now!"}/>
+                <PageBanner
+                    greenText={t('checkoutPage.checkout')}
+                    whiteText={""}
+                    smallText={t('checkoutPage.journeyStart')}
+                />
                 {
                     cartItems.length < 1 ?
                         <div className={styles.checkoutEmpty}>
@@ -193,7 +206,7 @@ export const CheckoutPage = () => {
                                 wide={false}
                                 grayBtn={false}
                                 link={"/shop"}
-                                title={"Return to Shop"}
+                                title={t('checkoutPage.returnToShop')}
                             />
                         </div>
                         :
@@ -202,11 +215,11 @@ export const CheckoutPage = () => {
                                 <div className={styles.checkoutForm}>
                                     {/* LEFT */}
                                     <div className={styles.checkoutLeft}>
-                                        <h3>Billing Details</h3>
+                                        <h3>{t('checkoutPage.billingDetails')}</h3>
                                         <div className={styles.formRow}>
                                             <div className={styles.formShortBlock}>
                                                 <p>
-                                                    First Name<span>*</span>
+                                                    {t('checkoutPage.firstName')}<span>*</span>
                                                 </p>
                                                 <input
                                                     type="text"
@@ -216,7 +229,7 @@ export const CheckoutPage = () => {
                                             </div>
                                             <div className={styles.formShortBlock}>
                                                 <p>
-                                                    Last Name<span>*</span>
+                                                    {t('checkoutPage.lastName')}<span>*</span>
                                                 </p>
                                                 <input
                                                     type="text"
@@ -227,7 +240,7 @@ export const CheckoutPage = () => {
                                         </div>
                                         <div className={styles.formRow}>
                                             <div className={styles.formLongBlock}>
-                                                <p>Company name (Optional)</p>
+                                                <p>{t('checkoutPage.companyNameOptional')}</p>
                                                 <input
                                                     type="text"
                                                     value={formFields.companyName}
@@ -238,7 +251,7 @@ export const CheckoutPage = () => {
                                         </div>
                                         <div className={styles.formRow}>
                                             <div className={styles.formLongBlock}>
-                                                <p>Phone number <span>*</span></p>
+                                                <p>{t('checkoutPage.phoneNumber')} <span>*</span></p>
                                                 <input
                                                     type="tel"
                                                     placeholder="+994XXXXXXXX"
@@ -250,14 +263,14 @@ export const CheckoutPage = () => {
                                         <div className={styles.formRow}>
                                             <div className={styles.formLongBlock}>
                                                 <p>
-                                                    District / Area<span>*</span>
+                                                    {t('checkoutPage.districtArea')}<span>*</span>
                                                 </p>
                                                 <select
                                                     name="area"
                                                     value={formFields.districtArea}
                                                     onChange={(e) => handleInputChange('districtArea', e.target.value)}
                                                 >
-                                                    <option value="">Select a district/area</option>
+                                                    <option value="">{t('checkoutPage.selectDistrictArea')}</option>
                                                     <option value="Binagadi">Binagadi</option>
                                                     <option value="Yasamal">Yasamal</option>
                                                     <option value="Khatai">Khatai</option>
@@ -276,11 +289,11 @@ export const CheckoutPage = () => {
                                         <div className={styles.formRow}>
                                             <div className={styles.formLongBlock}>
                                                 <p>
-                                                    Street Address<span>*</span>
+                                                    {t('checkoutPage.streetAddress')}<span>*</span>
                                                 </p>
                                                 <input
                                                     type="text"
-                                                    placeholder="Example (Adil Mammadov 75 / 5)"
+                                                    placeholder={t('checkoutPage.exampleName')}
                                                     value={formFields.streetAddress}
                                                     onChange={(e) => handleInputChange('streetAddress', e.target.value)}
                                                 />
@@ -288,7 +301,7 @@ export const CheckoutPage = () => {
                                         </div>
                                         <div className={styles.formRow}>
                                             <div className={styles.formLongBlock}>
-                                                <p>Post Code (Optional)</p>
+                                                <p>{t('checkoutPage.postCodeOptional')}</p>
                                                 <input
                                                     type="text"
                                                     placeholder="AZXXXX"
@@ -298,12 +311,12 @@ export const CheckoutPage = () => {
                                             </div>
                                         </div>
                                         <div className={styles.additionalInfo}>
-                                            <h3>Additional information</h3>
+                                            <h3>{t('checkoutPage.additionalInformation')}</h3>
                                             <label htmlFor="info">
-                                                Order Notes (Optional)<textarea
+                                                {t('checkoutPage.orderNotesOptional')}<textarea
                                                 name="info"
                                                 id="info"
-                                                placeholder="Notes about your order, e.g. special notes for delivery."
+                                                placeholder={t('checkoutPage.orderNotesPlaceholder')}
                                                 value={formFields.description}
                                                 onChange={(e) => handleInputChange('description', e.target.value)}
 
@@ -314,7 +327,7 @@ export const CheckoutPage = () => {
                                     {/* RIGHT */}
                                     <div className={styles.checkoutRight}>
                                         <div className={styles.orderContainer}>
-                                            <h3>Your Order</h3>
+                                            <h3>{t('checkoutPage.yourOrder')}</h3>
                                             {/* TOTAL AND SUBTOTAL PRICE HERE */}
                                             {cartItems?.map((cartProduct) => {
                                                 return (
@@ -330,7 +343,7 @@ export const CheckoutPage = () => {
                                             <div className={styles.orderRow}
                                                  style={{borderColor: 'transparent'}}
                                             >
-                                                <p>Subtotal</p>
+                                                <p>{t('checkoutPage.subtotal')}</p>
                                                 <p>$ {calculateSubtotal?.toFixed(2)}</p>
                                             </div>
                                             <div
@@ -339,14 +352,16 @@ export const CheckoutPage = () => {
                                             >
                                                 <p style={{
                                                     color: "#0EF0AD"
-                                                }}>Total</p>
+                                                }}>{t('checkoutPage.total')}</p>
                                                 <p>$ {calculateSubtotal?.toFixed(2)}</p>
                                             </div>
                                         </div>
                                         <div className={styles.paymentContainer}>
-                                            <h3 className={styles.payment}>Shipping & Payment</h3>
+                                            <h3 className={styles.payment}>
+                                                {t('checkoutPage.shippingAndPayment')}
+                                            </h3>
                                             <div className={styles.paymentTypeRow}>
-                                                <b>Select payment method</b>
+                                                <b>{t('checkoutPage.selectPaymentMethod')}</b>
                                                 <FormControl sx={{
                                                     m: 5,
                                                     minWidth: 120,
@@ -364,7 +379,8 @@ export const CheckoutPage = () => {
                                                         sx={{
                                                             color: "rgb(197, 197, 200)"
                                                         }}
-                                                    >Payment
+                                                    >
+                                                        {t('checkoutPage.payment')}
                                                     </InputLabel>
                                                     <Select
                                                         labelId="demo-controlled-open-select-label"
@@ -394,21 +410,19 @@ export const CheckoutPage = () => {
                                                         <MenuItem
                                                             value={"cash"}
                                                         >
-                                                            CASH upon delivery</MenuItem>
+                                                            {t('checkoutPage.cashOnDelivery')}
+                                                        </MenuItem>
                                                         <MenuItem
                                                             value={"card"}
-                                                        >CARD upon delivery
+                                                        >
+                                                            {t('checkoutPage.cardOnDelivery')}
                                                         </MenuItem>
                                                     </Select>
                                                 </FormControl>
                                             </div>
                                             <div className={styles.paymentPrivacyPolicy}>
                                                 <p>
-                                                    Your personal data will be used to process your order, support
-                                                    your
-                                                    experience throughout this website, and for other purposes
-                                                    described in
-                                                    our {' '}
+                                                    {t('checkoutPage.privacyPolicyInfo')} {' '}
                                                     <Link to={"/privacy-policy"}
                                                           style={{
                                                               color: "#0EF0AD",
@@ -416,7 +430,7 @@ export const CheckoutPage = () => {
                                                           }}
                                                           target="_blank"
                                                     >
-                                                        privacy policy
+                                                        {t('checkoutPage.privacyPolicy')}
                                                     </Link>
                                                 </p>
                                                 {/* PLACE ORDER BUTTON */}
@@ -426,8 +440,7 @@ export const CheckoutPage = () => {
                                                 >
                                                     <DefaultButton
                                                         link={""}
-                                                        title={!postLoading ? "Place Order" : "Loading..."}
-                                                        grayBtn={false}
+                                                        title={!postLoading ? t('checkoutPage.placeOrder') : t('checkoutPage.loading')}                                                        grayBtn={false}
                                                         wide={true}
                                                     />
                                                 </div>

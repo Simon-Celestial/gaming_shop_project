@@ -260,7 +260,177 @@
     "total": "Итого",
     "proceedToCheckout": "Перейти к оформлению"
 
+  },
+  "blogPage": {
+    "blog": "Блог",
+    "professionalGameDesignAndDevelopment": "Профессиональные услуги по дизайну и разработке игр с 1995 года"
+
+  },
+  "checkoutPage" : {
+    "checkout": "Оформление заказа",
+    "journeyStart": "Ваше путешествие к высшему развлечение начинается сейчас!",
+    "mandatoryFieldsMessage": "Пожалуйста, заполните все обязательные поля, помеченные *",
+    "invalidPhoneNumber": "Недействительный номер телефона! Формат должен быть \"+994XXXXXXXXX\"",
+    "selectPaymentMethod": "Пожалуйста, выберите способ оплаты",
+    "orderPlacedSuccess": "Заказ успешно размещен!",
+    "orderPlacementFailed": "Не удалось разместить заказ. Пожалуйста, проверьте ваше соединение или попробуйте позже.",
+    "chooseProductFirst": "Сначала выберите продукт для покупки",
+    "returnToShop": "Вернуться в магазин",
+    "billingDetails": "Платежные данные",
+    "firstName": "Имя",
+    "lastName": "Фамилия",
+    "companyNameOptional": "Название компании (Необязательно)",
+    "phoneNumber": "Номер телефона",
+    "districtArea": "Район/Местность",
+    "streetAddress": "Улица",
+    "exampleName": "Пример: Дилара Алиева 237/11",
+    "selectDistrictArea": "Выберите район/местность",
+    "postCodeOptional": "Почтовый индекс (Необязательно)",
+    "additionalInformation": "Дополнительная информация",
+    "orderNotesOptional": "Примечания к заказу (Необязательно)",
+    "orderNotesPlaceholder": "Примечания к вашему заказу, например, особые инструкции для доставки.",
+    "yourOrder": "Ваш заказ",
+    "subtotal": "Подытог",
+    "total": "Итого",
+    "specialNotesPlaceholder": "Заметки о вашем заказе, например, особые примечания для доставки.",
+    "cashOnDelivery": "Оплата Наличными",
+    "cardOnDelivery": "Оплата Терминал",
+    "privacyPolicyInfo": "Ваши личные данные будут использованы для обработки вашего заказа, поддержки вашего опыта на этом сайте и для других целей, описанных в нашей",
+    "placeOrder": "Оформить заказ",
+    "loading": "Загрузка...",
+    "payment": "Оплата",
+    "privacyPolicy": "политика конфиденциальности",
+    "shippingAndPayment": "Доставка и Оплата"
+
+  },
+  "completedPage": {
+    "orderReceived": "Ваш заказ был получен",
+    "thankYou": "Спасибо за покупку!",
+    "confirmationEmail": "Вы получите подтверждение заказа по электронной почте с деталями вашего заказа.",
+    "contactNumber": "Если у вас есть вопросы, свяжитесь с этим номером:",
+    "returnToHome": "Вернуться на главную"
+  },
+  "contactPage" : {
+    "greenText": "Дружелюбной командой",
+    "whiteText": "Свяжитесь с нашей",
+    "smallText": "Наша поддержка идет до конца. Нам нравится получать отзывы от клиентов и посетителей, и мы всегда рады помочь."
+
+  },
+  "gamesPage": {
+    "smallText": "Наши проекты отличает уникальная механика, тонко настроенный геймплей и привлекательный визуальный стиль.",
+    "whiteText": "Наши",
+    "greenText": "Игры"
+
+  },
+  "notFoundPage": {
+    "404": "404",
+    "pageNotFound": "Страница не найдена"
+
+  },
+  "productDetailsPage" : {
+    "additionalInformation": "Дополнительная информация",
+    "weight": "Вес:",
+    "dimensions": "Размеры:",
+    "warranty": "Гарантия:",
+    "material": "Материал:",
+    "rgb": "RGB:",
+    "yes": "Да",
+    "no": "Нет",
+    "notAvailable": "Недоступно",
+    "youMayAlsoLike": "Вам также может понравится…"
+
+  },
+  "servicesPage": {
+    "our": "Наши",
+    "services": "Услуги",
+    "smallText": "Наш систематический подход к разработке искусства гарантирует высокие стандарты доставки для игр и решений на основе игр, от разработки внешнего вида до интеграции с движком."
+
+  },
+  "wishlistPage" : {
+    "yourWishlist": "список желаемого",
+    "yourFavoriteProducts": "Ваши любимые продукты",
+    "wishlistIsEmpty": "Ваш список желаемого в данный момент пуст.",
+    "returnToShop": "Вернуться в магазин",
+    "product": "Продукт",
+    "price": "Цена",
+    "stock": "Наличие",
+    "addToCart": "Добавить",
+    "delete": "Удалить",
+    "color": "цвет :",
+    "addToCartButton": "добавить",
+    "inStock": "В наличии",
+    "outOfStock": "Нет в наличии"
+
+
+  },
+  "shopPage": {
+    "greenText": "Магазин",
+    "whiteText": "",
+    "smallText": "Играй · Развивай · Побеждай",
+    "searchPlaceholder": "Печатайте для поиска...",
+    "filter": "Фильтр",
+    "category": "категория",
+    "color": "цвет",
+    "price": "Цена",
+    "brand": "бренд",
+    "rating": "рейтинг",
+    "reset": "Сброс",
+    "filterButton": "Применить",
+    "priceLabel": "Цена: ",
+    "noProductsFound": "Товары не найдены...",
+    "showingResults": "Показано {{count}} результатов",
+    "defaultSorting": "Сортировка по умолчанию",
+    "sortByRatingHighLow": "По рейтингу: высокий-низкий",
+    "sortByRatingLowHigh": "По рейтингу: низкий-высокий",
+    "sortByPriceLowHigh": "По цене: низкий-высокий",
+    "sortByPriceHighLow": "По цене: высокий-низкий",
+    "client": "Клиент",
+    "ratingOutOf": "{{rating}} / 5.0",
+    "userImagePlaceholder": "/images/icons/user.png",
+    "noComments": "Комментарии отсутствуют",
+    "search": "Поиск",
+    "showingAll": "Показать все",
+    "results" : "результаты"
+
+  },
+  "loginPage": {
+    "enterAccount": "Войдите в ваш аккаунт",
+    "login": "Вход",
+    "email": "Почта",
+    "password": "Пароль",
+    "enterEmail": "Введите вашу электронную почту",
+    "enterPassword": "Введите ваш пароль",
+    "loading": "Загрузка...",
+    "noAccount": "Нет аккаунта? Нажмите здесь",
+    "loginSuccess": "Вы успешно вошли в ваш аккаунт",
+    "noAccountExists": "Такого аккаунта не существует",
+    "wrongPassword": "Пароль для этого аккаунта неверен"
+  },
+  "registerPage": {
+    "title": "Регистрация",
+    "createAccount": "Создать аккаунт",
+    "email": "Электронная почта",
+    "username": "Имя пользователя",
+    "enterEmail": "Введите Email",
+    "enterUsername": "Введите Имя пользователя",
+    "password": "Пароль",
+    "confirmPassword": "Подтвердите пароль",
+    "enterPassword": "Введите пароль",
+    "number": "Номер",
+    "enterNumber": "+994XXXXXXX",
+    "loading": "Загрузка...",
+    "hasAccount": "Есть аккаунт? Нажмите здесь",
+    "registrationSuccess": "Вы успешно зарегистрированы.",
+    "accountExists": "Аккаунт с таким email уже существует.",
+    "passwordError": "Пароль должен содержать не менее 6 символов и совпадать с подтвержденным паролем.",
+    "registrationError": "Произошла ошибка при регистрации. Пожалуйста, попробуйте позже.",
+    "allFieldsRequired": "Все поля обязательны."
+
   }
+
+
+
+
 
 
 }

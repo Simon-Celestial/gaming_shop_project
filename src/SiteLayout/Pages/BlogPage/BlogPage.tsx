@@ -9,18 +9,21 @@ import {SliderSection} from "../../Components/Sections/SliderSection/SliderSecti
 import {TeamSection} from "../../Components/Sections/TeamSection/TeamSection.tsx";
 import {OurServicesSection} from "../../Components/Sections/OurServicesSection/OurServicesSection.tsx";
 import {BannerTwoSection} from "../../Components/Sections/BannerTwoSection/BannerTwoSection.tsx";
+import {useTranslation} from "react-i18next";
 
 
 export const BlogPage = () => {
+
+   const {t} = useTranslation();
 
     return (
         <>
             <Header/>
             <main className={styles.pageWrapper}>
                 <PageBanner
-                    greenText={"Blog"}
+                    greenText={t('blogPage.blog')}
                     whiteText={""}
-                    smallText={"Professional Game design and Development services since 1995"}
+                    smallText={t('blogPage.professionalGameDesignAndDevelopment')}
                 />
                 {/*OUR SERVICES SECTION*/}
                 <OurServicesSection />

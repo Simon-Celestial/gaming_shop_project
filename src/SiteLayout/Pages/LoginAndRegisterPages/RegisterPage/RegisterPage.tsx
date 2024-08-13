@@ -8,6 +8,7 @@ import {PageBanner} from "../../../Components/Layout/PageBanner/PageBanner";
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 import {FooterTwo} from "../../../Components/Layout/FooterTwo/FooterTwo";
+import {useTranslation} from "react-i18next";
 
 interface User {
     userName: string;
@@ -42,6 +43,7 @@ export const RegisterPage: React.FC = () => {
     });
 
     const navigate = useNavigate();
+    const {t} = useTranslation();
 
     const handlePassView = useCallback((btnName: keyof PasswordBtnsStates) => {
         setPasswordBtnsStates((prevState) => ({
@@ -61,7 +63,7 @@ export const RegisterPage: React.FC = () => {
                 setRegisterLoading(true);
 
                 if (!userForm.userEmail || !userForm.userName || !userForm.userPassword || !userForm.userPhone) {
-                    toast.error("All fields are required.", {
+                    toast.error(`${t('registerPage.allFieldsRequired')}`, {
                         hideProgressBar: false,
                         closeOnClick: true,
                         pauseOnHover: false,
@@ -79,7 +81,7 @@ export const RegisterPage: React.FC = () => {
                 const serverEmail = data.find((userData) => userData.userEmail === userForm.userEmail);
 
                 if (serverEmail) {
-                    toast.error(`An account with this email already exists.`, {
+                    toast.error(`${t('registerPage.accountExists')}`, {
                         hideProgressBar: false,
                         closeOnClick: true,
                         pauseOnHover: false,
@@ -103,7 +105,7 @@ export const RegisterPage: React.FC = () => {
                         },
                     });
 
-                    toast.success(`You have successfully registered.`, {
+                    toast.success(`${t('registerPage.registrationSuccess')}`, {
                         hideProgressBar: false,
                         closeOnClick: true,
                         pauseOnHover: false,
@@ -117,7 +119,7 @@ export const RegisterPage: React.FC = () => {
                     setUserForm(userDefaults);
                     setConfirmPassword("");
                 } else {
-                    toast.error(`The password must be at least 6 characters long and must match the confirmation password.`, {
+                    toast.error(`${t('registerPage.passwordError')}`, {
                         hideProgressBar: false,
                         closeOnClick: true,
                         pauseOnHover: false,
@@ -129,7 +131,7 @@ export const RegisterPage: React.FC = () => {
                 }
             } catch (error) {
                 console.error("Error:", error);
-                toast.error(`An error occurred while registering. Please try again later.`, {
+                toast.error(`${t('registerPage.registrationError')}`, {
                     hideProgressBar: false,
                     closeOnClick: true,
                     pauseOnHover: false,
@@ -142,7 +144,15 @@ export const RegisterPage: React.FC = () => {
                 setRegisterLoading(false);
             }
         },
-        [userForm, confirmPassword, navigate]
+        [
+            userForm.userEmail,
+            userForm.userName,
+            userForm.userPassword,
+            userForm.userPhone,
+            confirmPassword,
+            t,
+            navigate
+        ]
     );
 
     const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -157,35 +167,39 @@ export const RegisterPage: React.FC = () => {
         <>
             <Header/>
             <main className={styles.pageWrapper}>
-                <PageBanner greenText={"Register"} whiteText={""} smallText={"Create an account"}/>
+                <PageBanner
+                    greenText={t('registerPage.title')}
+                    whiteText={""}
+                    smallText={t('registerPage.createAccount')}
+                />
                 <div className={styles.pageContent}>
                     <div className={styles.formContainer}>
                         <form onSubmit={addUser}>
                             <div className={styles.inputContainer}>
-                                <p>Email <span>*</span></p>
+                                <p>{t('registerPage.email')} <span>*</span></p>
                                 <input
                                     type="email"
                                     name="userEmail"
                                     required
-                                    placeholder="Enter Email"
+                                    placeholder={t('registerPage.enterEmail')}
                                     onChange={handleChange}
                                     value={userForm.userEmail}
                                 />
                             </div>
                             <div className={styles.inputContainer}>
-                                <p>Username <span>*</span></p>
+                                <p>{t('registerPage.username')} <span>*</span></p>
                                 <input
                                     style={{textTransform: "capitalize"}}
                                     type="text"
                                     name="userName"
-                                    placeholder="Enter Username"
+                                    placeholder={t('registerPage.enterUsername')}
                                     onChange={handleChange}
                                     value={userForm.userName}
                                     required
                                 />
                             </div>
                             <div className={styles.inputContainer}>
-                                <p>Password <span>*</span></p>
+                                <p>{t('registerPage.password')} <span>*</span></p>
                                 <div className={styles.passInputWrapper}>
                                     <div className={styles.viewBtn} onClick={() => handlePassView('mainPass')}>
                                         {passwordBtnsStates.mainPass ? <VisibilityIcon/> : <VisibilityOffIcon/>}
@@ -194,21 +208,21 @@ export const RegisterPage: React.FC = () => {
                                         type={passwordBtnsStates.mainPass ? "text" : "password"}
                                         name="userPassword"
                                         required
-                                        placeholder="Enter Password"
+                                        placeholder={t('registerPage.enterPassword')}
                                         onChange={handleChange}
                                         value={userForm.userPassword}
                                     />
                                 </div>
                             </div>
                             <div className={styles.inputContainer}>
-                                <p>Confirm Password <span>*</span></p>
+                                <p>{t('registerPage.confirmPassword')} <span>*</span></p>
                                 <div className={styles.passInputWrapper}>
                                     <div className={styles.viewBtn} onClick={() => handlePassView('confirmPass')}>
                                         {passwordBtnsStates.confirmPass ? <VisibilityIcon/> : <VisibilityOffIcon/>}
                                     </div>
                                     <input
                                         type={passwordBtnsStates.confirmPass ? "text" : "password"}
-                                        placeholder="Confirm Password"
+                                        placeholder={t('registerPage.confirmPassword')}
                                         onChange={handleConfirmPass}
                                         value={confirmPassword}
                                         required
@@ -216,12 +230,12 @@ export const RegisterPage: React.FC = () => {
                                 </div>
                             </div>
                             <div className={styles.inputContainer}>
-                                <p>Number <span>*</span></p>
+                                <p>{t('registerPage.number')} <span>*</span></p>
                                 <input
                                     required
                                     type="tel"
                                     name="userPhone"
-                                    placeholder="+994XXXXXXX"
+                                    placeholder={t('registerPage.enterNumber')}
                                     onChange={handleChange}
                                     value={userForm.userPhone}
                                     pattern="^\+994\d{9}$"
@@ -235,10 +249,10 @@ export const RegisterPage: React.FC = () => {
                                 type="submit"
                                 className={styles.submitButton}
                             >
-                                {registerLoading ? "Loading..." : "Register"}
+                                {registerLoading ? t('registerPage.loading') : t('registerPage.title')}
                             </button>
                             <div className={styles.redirect}>
-                                <Link to="/login">Have an account? Click here</Link>
+                                <Link to="/login">{t('registerPage.hasAccount')}</Link>
                             </div>
                         </form>
                     </div>

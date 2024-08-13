@@ -259,8 +259,176 @@
     "total": "Toplam",
     "proceedToCheckout": "Almaya Devam Et"
 
-  }
+  },
+  "blogPage": {
+    "blog": "Blog",
+    "professionalGameDesignAndDevelopment": "1995'ten beri Profesyonel Oyun Tasarımı ve Geliştirme hizmetleri"
 
+  },
+  "checkoutPage" : {
+    "checkout": "Ödeme",
+    "journeyStart": "Sonsuz eğlenceye yolculuğunuz şimdi başlıyor!",
+    "mandatoryFieldsMessage": "Lütfen * ile işaretlenmiş tüm zorunlu alanları doldurun",
+    "invalidPhoneNumber": "Geçersiz telefon numarası! Format \"+994XXXXXXXXX\" olmalıdır",
+    "selectPaymentMethod": "Lütfen bir ödeme yöntemi seçin",
+    "orderPlacedSuccess": "Sipariş başarıyla alındı!",
+    "orderPlacementFailed": "Sipariş verilmedi. Lütfen bağlantınızı kontrol edin veya daha sonra tekrar deneyin.",
+    "chooseProductFirst": "Önce ürün seçin",
+    "returnToShop": "Mağazaya Dön",
+    "billingDetails": "Fatura Bilgileri",
+    "firstName": "Ad",
+    "lastName": "Soyad",
+    "companyNameOptional": "Şirket Adı (Opsiyonel)",
+    "phoneNumber": "Telefon Numarası",
+    "districtArea": "Semt/Bölge",
+    "streetAddress": "Sokak Adresi",
+    "exampleName": "Örnek: Dilara Aliyeva 237/11",
+    "selectDistrictArea": "Bir semt/bölge seçin",
+    "postCodeOptional": "Posta Kodu (Opsiyonel)",
+    "additionalInformation": "Ek Bilgi",
+    "orderNotesOptional": "Sipariş Notları (Opsiyonel)",
+    "orderNotesPlaceholder": "Siparişiniz hakkında notlar, örn. özel teslimat notları.",
+    "yourOrder": "Siparişiniz",
+    "subtotal": "Ara Toplam",
+    "total": "Toplam",
+    "specialNotesPlaceholder": "Siparişinizle ilgili notlar, örneğin teslimat için özel notlar.",
+    "cashOnDelivery": "Teslimatta Nakit",
+    "cardOnDelivery": "Teslimatta Kart",
+    "privacyPolicyInfo": "Kişisel verileriniz siparişinizi işlemek, bu web sitesi boyunca deneyiminizi desteklemek ve gizlilik politikamızda açıklanan diğer amaçlar için kullanılacaktır.",
+    "placeOrder": "Siparişi Ver",
+    "loading": "Yükleniyor...",
+    "payment": "Ödeme",
+    "privacyPolicy": "gizlilik politikası",
+    "shippingAndPayment": "Kargo ve Ödeme"
+
+
+
+
+  },
+  "completedPage": {
+    "orderReceived": "Siparişiniz alınmıştır",
+    "thankYou": "Satın aldığınız için teşekkür ederiz!",
+    "confirmationEmail": "Siparişinizin detaylarını içeren bir onay e-postası alacaksınız.",
+    "contactNumber": "Sorularınız varsa, bu numaradan iletişime geçin:",
+    "returnToHome": "Ana Sayfaya Dön"
+
+  },
+  "contactPage" : {
+    "greenText": "Dostane Takım",
+    "whiteText": "Bizimle iletişime geçin",
+    "smallText": "Destek hizmetimiz her zaman yanınızda. Müşterilerimizden ve ziyaretçilerimizden geri bildirim almak bizi mutlu eder ve her zaman yardımcı olmaktan memnuniyet duyarız."
+
+  },
+  "gamesPage": {
+    "smallText": "Projelerimiz, benzersiz mekanikler, ince ayarlanmış oyun deneyimi ve göz alıcı görsel tarz ile öne çıkıyor.",
+    "whiteText": "Bizim",
+    "greenText": "Oyunlarımız"
+
+  },
+  "notFoundPage": {
+    "404": "404",
+    "pageNotFound": "Sayfa bulunamadı"
+
+  },
+  "productDetailsPage" : {
+    "additionalInformation": "Ek bilgi",
+    "weight": "Ağırlık:",
+    "dimensions": "Boyutlar:",
+    "warranty": "Garanti:",
+    "material": "Malzeme:",
+    "rgb": "RGB:",
+    "yes": "Evet",
+    "no": "Hayır",
+    "notAvailable": "Mevcut değil",
+    "youMayAlsoLike": "Bunu da beğenebilirsiniz…"
+
+  },
+  "servicesPage": {
+    "our": "Bizim",
+    "services": "Hizmetler",
+    "smallText": "Sanat geliştirme konusundaki sistematik yaklaşımımız, oyunlar ve oyun tabanlı çözümler için yüksek teslimat standartlarını garanti eder, görünüm geliştirmeden motor entegrasyonuna kadar."
+  },
+  "wishlistPage" : {
+    "yourWishlist": "İstek listeniz",
+    "yourFavoriteProducts": "Favori ürünleriniz",
+    "wishlistIsEmpty": "İstek listeniz şu anda boş.",
+    "returnToShop": "Mağazaya Dön",
+    "product": "Ürün",
+    "price": "Fiyat",
+    "stock": "Stok",
+    "addToCart": "Sepete Ekle",
+    "delete": "Sil",
+    "color": "renk :",
+    "addToCartButton": "sepete ekle",
+    "inStock": "Stokta",
+    "outOfStock": "Stokta Yok"
+
+
+  },
+  "shopPage": {
+    "greenText": "Mağaza",
+    "whiteText": "",
+    "smallText": "Oyna · Geliştir · Kazan",
+    "searchPlaceholder": "Aramak için yazın...",
+    "filter": "Filtre",
+    "category": "kategori",
+    "color": "renk",
+    "price": "Fiyat",
+    "brand": "marka",
+    "rating": "puan",
+    "reset": "Sıfırla",
+    "filterButton": "Uygula",
+    "priceLabel": "Fiyat: ",
+    "noProductsFound": "Ürün bulunamadı...",
+    "showingResults": "Toplam {{count}} sonuç gösteriliyor",
+    "defaultSorting": "Varsayılan sıralama",
+    "sortByRatingHighLow": "Puan: yüksek-düşük",
+    "sortByRatingLowHigh": "Puan: düşük-yüksek",
+    "sortByPriceLowHigh": "Fiyat: düşük-yüksek",
+    "sortByPriceHighLow": "Fiyat: yüksek-düşük",
+    "client": "Müşteri",
+    "ratingOutOf": "{{rating}} / 5.0",
+    "userImagePlaceholder": "/images/icons/user.png",
+    "noComments": "Yorum bulunmuyor",
+    "search": "Arama",
+    "showingAll": "Tüm sonuçları",
+    "results" : "göster"
+
+  },
+  "loginPage": {
+    "enterAccount": "Hesabınıza giriş yapın",
+    "login": "Giriş",
+    "email": "E-posta",
+    "password": "Şifre",
+    "enterEmail": "E-posta adresinizi girin",
+    "enterPassword": "Şifrenizi girin",
+    "loading": "Yükleniyor...",
+    "noAccount": "Hesabınız yok mu? Buraya tıklayın",
+    "loginSuccess": "Hesabınıza başarılı bir şekilde giriş yaptınız",
+    "noAccountExists": "Böyle bir hesap bulunmuyor",
+    "wrongPassword": "Bu hesabın şifresi yanlış"
+  },
+  "registerPage": {
+    "title": "Kayıt Ol",
+    "createAccount": "Bir hesap oluşturun",
+    "email": "E-posta",
+    "username": "Kullanıcı Adı",
+    "enterEmail": "E-posta girin",
+    "enterUsername": "Kullanıcı adı girin",
+    "password": "Şifre",
+    "confirmPassword": "Şifreyi Onayla",
+    "enterPassword": "Şifre girin",
+    "number": "Numara",
+    "enterNumber": "+994XXXXXXX",
+    "loading": "Yükleniyor...",
+    "hasAccount": "Hesabınız var mı? Buraya tıklayın",
+    "registrationSuccess": "Başarıyla kayıt oldunuz.",
+    "accountExists": "Bu e-posta ile bir hesap zaten mevcut.",
+    "passwordError": "Şifre en az 6 karakter uzunluğunda olmalı ve onaylanan şifre ile eşleşmelidir.",
+    "registrationError": "Kayıt sırasında bir hata oluştu. Lütfen daha sonra tekrar deneyin.",
+    "allFieldsRequired": "Tüm alanlar gereklidir."
+
+  }
 
 
 

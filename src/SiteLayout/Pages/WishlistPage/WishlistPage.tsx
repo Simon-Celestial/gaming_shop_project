@@ -9,6 +9,7 @@ import {FooterOne} from "../../Components/Layout/FooterOne/FooterOne.tsx";
 import DeleteIcon from '@mui/icons-material/Delete';
 import {PageBanner} from "../../Components/Layout/PageBanner/PageBanner.tsx";
 import {DefaultButton} from "../../Components/Reusables/DefaultButton/DefaultButton.tsx";
+import {useTranslation} from "react-i18next";
 
 export const WishlistPage = () => {
     const {
@@ -26,21 +27,27 @@ export const WishlistPage = () => {
         await (product?.quantity > 0 ? removeFromWishlist(productId, productName, color, false) : Promise.resolve());
     }, [addToCart, removeFromWishlist]);
 
+    const {t} = useTranslation();
+
 
     return (
         <>
             <Header/>
             <main className={styles.wishlistMain}>
-                <PageBanner greenText={"Your wishlist"} whiteText={""} smallText={"Your favorite products"}/>
+                <PageBanner
+                    greenText={t('wishlistPage.yourWishlist')}
+                    whiteText={""}
+                    smallText={t('wishlistPage.yourFavoriteProducts')}
+                />
                 {wishlistItems?.length < 1 ?
                     <div className={styles.wishlistEmpty}>
                         <img src="/images/icons/empty.png" alt="Empty"/>
-                        <p>Your wishlist is currently empty.</p>
+                        <p>{t('wishlistPage.wishlistIsEmpty')}</p>
                         <div className={styles.container}>
                             <DefaultButton
                                 grayBtn={false}
                                 link={"/shop"}
-                                title={"Return to Shop"}
+                                title={t('wishlistPage.returnToShop')}
                                 wide={false}
                             />
                         </div>
@@ -49,19 +56,19 @@ export const WishlistPage = () => {
                     <div className={styles.wishlistCardsWrapper}>
                         <div className={`${styles.tableRow} ${styles.topRow}`}>
                             <div className={`${styles.product} ${styles.cell}`}>
-                                Product
+                                {t('wishlistPage.product')}
                             </div>
                             <div className={`${styles.price} ${styles.cell}`}>
-                                Price
+                                {t('wishlistPage.price')}
                             </div>
                             <div className={`${styles.stock} ${styles.cell}`}>
-                                Stock
+                                {t('wishlistPage.stock')}
                             </div>
                             <div className={`${styles.add} ${styles.cell}`}>
-                                Add to Cart
+                                {t('wishlistPage.addToCart')}
                             </div>
                             <div className={`${styles.delete} ${styles.cell}`}>
-                                Delete
+                                {t('wishlistPage.delete')}
                             </div>
                         </div>
                         {wishlistItems?.map((product) => {
@@ -69,7 +76,7 @@ export const WishlistPage = () => {
                                 <div key={product.id} className={`${styles.tableRow} ${styles.bottomRow}`}>
                                     <div className={`${styles.product} ${styles.cell}`}>
                                         <div className={styles.colorBox}>
-                                            color : {product?.selectedColor}
+                                            {t('wishlistPage.color')} {product?.selectedColor}
                                         </div>
                                         <img
                                             src={product?.image[0]}
@@ -90,15 +97,15 @@ export const WishlistPage = () => {
                                     </div>
                                     <div className={`${styles.stock} ${styles.cell}`}>
                                         {product?.quantity > 0 ?
-                                            <span className={styles.inStock}>In Stock</span>
+                                            <span className={styles.inStock}>{t('wishlistPage.inStock')}</span>
                                             :
-                                            <span className={styles.notInStock}>Out of Stock</span>
+                                            <span className={styles.notInStock}>{t('wishlistPage.outOfStock')}</span>
                                         }
                                     </div>
                                     <div className={`${styles.add} ${styles.cell}`}>
                                         <div className={`${styles.addToCart}`}
                                              onClick={() => handleAddToCart(product, product.id, product?.name, product?.selectedColor)}>
-                                            add to cart
+                                            {t('wishlistPage.addToCartButton')}
                                         </div>
 
                                     </div>

@@ -12,16 +12,18 @@ import {FocusSection} from "../../Components/Sections/FocusSection/FocusSection.
 import {HowItWorksSection} from "../../Components/Sections/HowItWorksSection/HowItWorksSection.tsx";
 import {ContactUsThreeSection} from "../../Components/Sections/ContactUsThreeSection/ContactUsThreeSection.tsx";
 import {GameFeaturesSection} from "../../Components/Sections/GameFeaturesSection/GameFeaturesSection.tsx";
+import {useTranslation} from "react-i18next";
 
 export const ServicesPage = () => {
+    const {t} = useTranslation();
     return (
         <>
             <Header/>
             <main className={styles.pageWrapper}>
                 <PageBanner
-                    whiteText={"Our"}
-                    greenText={"Services"}
-                    smallText={"Our systematic approach to art development ensures high delivery standards for games and game-based solutions, from look development to engine integration."}
+                    whiteText={t('servicesPage.our')}
+                    greenText={t('servicesPage.services')}
+                    smallText={t('servicesPage.smallText')}
                 />
                 {/*SERVICES SECTION*/}
                 <ServicesSection />

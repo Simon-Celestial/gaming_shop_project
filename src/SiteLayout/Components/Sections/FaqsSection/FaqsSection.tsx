@@ -1,4 +1,4 @@
-import styles from "../../../Pages/ContactPage/ContactPage.module.scss";
+import styles from "./FaqsSection.module.scss";
 import RemoveIcon from "@mui/icons-material/Remove";
 import AddIcon from "@mui/icons-material/Add";
 import {DefaultButton} from "../../Reusables/DefaultButton/DefaultButton.tsx";

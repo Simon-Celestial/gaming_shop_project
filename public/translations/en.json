@@ -260,5 +260,172 @@
     "total": "Total",
     "proceedToCheckout": "Proceed to Checkout"
 
+  },
+  "blogPage": {
+    "blog": "Blog",
+    "professionalGameDesignAndDevelopment": "Professional Game design and Development services since 1995"
+
+  },
+  "checkoutPage" : {
+    "checkout": "Checkout",
+    "journeyStart": "Your journey to ultimate entertainment starts now!",
+    "mandatoryFieldsMessage": "Please fill all mandatory fields marked with *",
+    "invalidPhoneNumber": "Invalid phone number! Format should be \"+994XXXXXXXXX\"",
+    "selectPaymentMethod": "Please select a payment method",
+    "orderPlacedSuccess": "Order placed successfully!",
+    "orderPlacementFailed": "Failed to place the order. Please check your connection or try again later.",
+    "chooseProductFirst": "Choose product to buy first",
+    "returnToShop": "Return to Shop",
+    "billingDetails": "Billing Details",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "companyNameOptional": "Company name (Optional)",
+    "phoneNumber": "Phone number",
+    "districtArea": "District / Area",
+    "streetAddress": "Street Address",
+    "exampleName": "Example: Dilara Aliyeva 237/11",
+    "selectDistrictArea": "Select a district/area",
+    "postCodeOptional": "Post Code (Optional)",
+    "additionalInformation": "Additional Information",
+    "orderNotesOptional": "Order Notes (Optional)",
+    "orderNotesPlaceholder": "Notes about your order, e.g. special notes for delivery.",
+    "yourOrder": "Your Order",
+    "subtotal": "Subtotal",
+    "total": "Total",
+    "specialNotesPlaceholder": "Notes about your order, e.g. special notes for delivery.",
+    "cashOnDelivery": "Cash upon delivery",
+    "cardOnDelivery": "Card upon delivery",
+    "privacyPolicyInfo": "Your personal data will be used to process your order, support your experience throughout this website, and for other purposes described in our",
+    "placeOrder": "Place Order",
+    "loading": "Loading...",
+    "payment": "Payment",
+    "privacyPolicy": "privacy policy",
+    "shippingAndPayment": "Shipping & Payment"
+
+  },
+  "completedPage": {
+    "orderReceived": "Your order has been received",
+    "thankYou": "Thank you for your purchase!",
+    "confirmationEmail": "You will receive an order confirmation email with details of your order.",
+    "contactNumber": "If you have any questions, contact this number:",
+    "returnToHome": "Return to Home"
+  },
+  "contactPage" : {
+    "greenText": "Friendly Team",
+    "whiteText": "Get in touch with our",
+    "smallText": "Our support goes all the way. We love hearing from customers and visitors and are always happy to help."
+
+  },
+  "gamesPage": {
+    "smallText": "Our projects feature unique mechanics, fine-tuned gameplay, and eye-catching visual style.",
+    "whiteText": "Our",
+    "greenText": "Games"
+
+  },
+  "notFoundPage": {
+    "404": "404",
+    "pageNotFound": "Page not found"
+
+  },
+  "productDetailsPage" : {
+    "additionalInformation": "Additional information",
+    "weight": "Weight:",
+    "dimensions": "Dimensions:",
+    "warranty": "Warranty:",
+    "material": "Material:",
+    "rgb": "RGB:",
+    "yes": "Yes",
+    "no": "No",
+    "notAvailable": "Not available",
+    "youMayAlsoLike": "You may also like…"
+
+  },
+  "servicesPage": {
+    "our": "Our",
+    "services": "Services",
+    "smallText": "Our systematic approach to art development ensures high delivery standards for games and game-based solutions, from look development to engine integration."
+
+  },
+  "wishlistPage" : {
+    "yourWishlist": "Your wishlist",
+    "yourFavoriteProducts": "Your favorite products",
+    "wishlistIsEmpty": "Your wishlist is currently empty.",
+    "returnToShop": "Return to Shop",
+    "product": "Product",
+    "price": "Price",
+    "stock": "Stock",
+    "addToCart": "Add to Cart",
+    "delete": "Delete",
+    "color": "color :",
+    "addToCartButton": "add to cart",
+    "inStock": "In Stock",
+    "outOfStock": "Out of Stock"
+
+
+  },
+  "shopPage": {
+    "greenText": "Shop",
+    "whiteText": "",
+    "smallText": "Play · Improve · Win",
+    "searchPlaceholder": "Type to search...",
+    "filter": "Filter",
+    "category": "category",
+    "color": "color",
+    "price": "price",
+    "brand": "brand",
+    "rating": "rating",
+    "reset": "Reset",
+    "filterButton": "Filter",
+    "priceLabel": "Price: ",
+    "noProductsFound": "No products found...",
+    "showingResults": "Showing all {{count}} results",
+    "defaultSorting": "Default sorting",
+    "sortByRatingHighLow": "By rating: high-low",
+    "sortByRatingLowHigh": "By rating: low-high",
+    "sortByPriceLowHigh": "By price : low-high",
+    "sortByPriceHighLow": "By price : high-low",
+    "client": "Client",
+    "ratingOutOf": "{{rating}} / 5.0",
+    "userImagePlaceholder": "/images/icons/user.png",
+    "noComments": "No comments available",
+    "search": "Search",
+    "showingAll": "Showing All",
+    "results" : "results"
+  },
+  "loginPage": {
+    "enterAccount": "Enter into your account",
+    "login": "Login",
+    "email": "Email",
+    "password": "Password",
+    "enterEmail": "Enter your email",
+    "enterPassword": "Enter your password",
+    "loading": "Loading...",
+    "noAccount": "Don't have an account? Click here",
+    "loginSuccess": "You have successfully logged into your account",
+    "noAccountExists": "No such account exists",
+    "wrongPassword": "The password for this account is incorrect"
+  },
+  "registerPage": {
+    "title": "Register",
+    "createAccount": "Create an account",
+    "email": "Email",
+    "username": "Username",
+    "enterEmail": "Enter Email",
+    "enterUsername": "Enter Username",
+    "password": "Password",
+    "confirmPassword": "Confirm Password",
+    "enterPassword": "Enter Password",
+    "number": "Number",
+    "enterNumber": "+994XXXXXXX",
+    "loading": "Loading...",
+    "hasAccount": "Have an account? Click here",
+    "registrationSuccess": "You have successfully registered.",
+    "accountExists": "An account with this email already exists.",
+    "passwordError": "The password must be at least 6 characters long and must match the confirmation password.",
+    "registrationError": "An error occurred while registering. Please try again later.",
+    "allFieldsRequired": "All fields are required."
+
   }
+
+
 }

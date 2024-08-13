@@ -7,16 +7,18 @@ import {FooterTwo} from "../../Components/Layout/FooterTwo/FooterTwo.tsx";
 import {ContactSection} from "../../Components/Sections/ContactSection/ContactSection.tsx";
 import {KeysSection} from "../../Components/Sections/KeysSection/KeysSection.tsx";
 import {CommunityTwoSection} from "../../Components/Sections/CommunityTwoSection/CommunityTwoSection.tsx";
+import {useTranslation} from "react-i18next";
 
 export const GamesPage = () => {
+    const {t} = useTranslation();
     return (
         <>
             <Header/>
             <main className={styles.pageWrapper}>
                 <PageBanner
-                    smallText={"Our projects feature unique mechanics, fine-tuned gameplay, and eye-catching visual style."}
-                    whiteText={"Our"}
-                    greenText={"Games"}
+                    smallText={t('gamesPage.smallText')}
+                    whiteText={t('gamesPage.whiteText')}
+                    greenText={t('gamesPage.greenText')}
                 />
                 {/*KEYS SECTION*/}
                 <KeysSection />

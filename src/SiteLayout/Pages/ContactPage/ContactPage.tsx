@@ -7,19 +7,20 @@ import {SliderSection} from "../../Components/Sections/SliderSection/SliderSecti
 import {MapSection} from "../../Components/Sections/MapSection/MapSection.tsx";
 import {FaqsSection} from "../../Components/Sections/FaqsSection/FaqsSection.tsx";
 import {ContactUsTwoSection} from "../../Components/Sections/ContactUsTwoSection/ContactUsTwoSection.tsx";
+import {useTranslation} from "react-i18next";
 
 
 
 export const ContactPage = () => {
-
-    return (
+     const {t} = useTranslation();
+     return (
         <>
             <Header/>
             <main className={styles.pageWrapper}>
                 <PageBanner
-                    greenText={"Friendly Team"}
-                    whiteText={"Get in touch with our"}
-                    smallText={"Our support goes all the way. We love hearing from customers and visitors and are always happy to help."}
+                    greenText={t('contactPage.greenText')}
+                    whiteText={t('contactPage.whiteText')}
+                    smallText={t('contactPage.smallText')}
                 />
                 {/*CONTACT US TWO SECTION*/}
                 <ContactUsTwoSection />
