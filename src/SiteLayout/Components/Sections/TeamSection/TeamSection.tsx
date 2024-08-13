@@ -12,7 +12,7 @@ import {useTranslation} from "react-i18next";
 export const TeamSection = () => {
     const [translatedTeam, setTranslatedTeam] = useState(teamData.en);
 
-    const {i18n} = useTranslation();
+    const {i18n,t} = useTranslation();
 
     useEffect(() => {
         if (i18n.language === "en") {
@@ -30,11 +30,9 @@ export const TeamSection = () => {
             <div className={styles.sectionContent}>
                 <div className={styles.teamTitle}>
                     <div className={`${styles.pageHeading}`}>
-                        <h4>We Have A Passion For <span>Gaming!</span></h4>
-                        <h2>Our Team Consists of Professionals. <span>And We're Proud Of It.</span></h2>
-                        <p>Our dynamic team blends tech-savvy sales professionals, knowledgeable customer
-                            service representatives, innovative marketing strategists, and visionary product
-                            managers.</p>
+                        <h4>{t('teamSection.passionForGaming')} <span>{t('teamSection.gaming')}</span></h4>
+                        <h2>{t('teamSection.teamProfessionals')} <span>{t('teamSection.proudOfIt')}</span></h2>
+                        <p>{t('teamSection.teamDescription')}</p>
                     </div>
                 </div>
             </div>

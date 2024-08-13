@@ -1,4 +1,4 @@
-import React, {useCallback, useContext, useState} from "react";
+import React, {useContext} from "react";
 import styles from "./HomePage.module.scss";
 import {Header} from "../../Components/Layout/Header/Header.tsx";
 import {FooterOne} from "../../Components/Layout/FooterOne/FooterOne.tsx";
@@ -11,12 +11,10 @@ import 'swiper/css/pagination';
 import {DefaultButton} from "../../Components/Reusables/DefaultButton/DefaultButton.tsx";
 import {
     PAGINATION_STYLES_TYPE,
-    CONTACT_DEFAULTS
 } from "../../../Types/types.ts";
 
 import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
 import EmailIcon from "@mui/icons-material/Email";
-import {Bounce, toast} from "react-toastify";
 import {DataContext} from "../../../Context/DataContext/DataContext.tsx";
 import {Loader} from "../../Components/Reusables/Loader/Loader.tsx";
 import {GamesSection} from "../../Components/Sections/GamesSection/GamesSection.tsx";
@@ -26,6 +24,7 @@ import {TeamSection} from "../../Components/Sections/TeamSection/TeamSection.tsx
 import {CounterSection} from "../../Components/Sections/CounterSection/CounterSection.tsx";
 import {JobsSection} from "../../Components/Sections/JobsSection/JobsSection.tsx";
 import SettingsIcon from '@mui/icons-material/Settings';
+import {ContactForm} from "../../Components/Reusables/ContactForm/ContactForm.tsx";
 
 
 const paginationStyles: PAGINATION_STYLES_TYPE = {
@@ -36,57 +35,12 @@ const paginationStyles: PAGINATION_STYLES_TYPE = {
     "--swiper-pagination-bullet-horizontal-gap": "6px",
     "--swiper-pagination-bottom": "10px",
 };
-const contactDefault: CONTACT_DEFAULTS = {
-    nameInput: "",
-    emailInput: "",
-    subjectInput: "",
-    messageInput: ""
-}
 
 export const HomePage = () => {
     const {
         productsData,
         productsLoading
     } = useContext(DataContext);
-
-    const [contactInputs, setContactInputs] = useState<CONTACT_DEFAULTS>(contactDefault);
-
-    const handleContactInputs = useCallback((field: keyof CONTACT_DEFAULTS, value: string) => {
-        setContactInputs((prev: CONTACT_DEFAULTS) => ({
-            ...prev,
-            [field]: value,
-        }));
-    }, [setContactInputs]);
-
-    const handleSendMessage = useCallback(() => {
-        if (
-            contactInputs.nameInput !== "" &&
-            contactInputs.emailInput !== "" &&
-            contactInputs.subjectInput !== "" &&
-            contactInputs.messageInput !== ""
-        ) {
-            toast.success(`Message sent successfully!`, {
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: false,
-                draggable: true,
-                progress: undefined,
-                theme: 'dark',
-                transition: Bounce,
-            });
-            setContactInputs(contactDefault);
-        } else {
-            toast.error(`Fields must not be empty!`, {
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: false,
-                draggable: true,
-                progress: undefined,
-                theme: 'dark',
-                transition: Bounce,
-            });
-        }
-    }, [contactInputs, setContactInputs]);
 
     return (
         <>
@@ -160,7 +114,7 @@ export const HomePage = () => {
                     </div>
                     <div className={styles.sectionContent}>
                         <div className={styles.titleContainer}>
-                        <h4>Enjoy Gaming World</h4>
+                            <h4>Enjoy Gaming World</h4>
                             <h2>We Selling Devices</h2>
                             <TypeAnimation
                                 sequence={['Entertainment', 600, 'Quality', 600, 'Reliability', 600]}
@@ -196,7 +150,7 @@ export const HomePage = () => {
                                     autoplay={{delay: 3000}}
                                     style={paginationStyles as React.CSSProperties}
                                 >
-                                    {productsData?.slice(5,12)?.map((product) => {
+                                    {productsData?.slice(5, 12)?.map((product) => {
                                         return (
                                             <SwiperSlide key={product?.id}>
                                                 <div className={styles.cardWrapper}>
@@ -211,13 +165,13 @@ export const HomePage = () => {
                     </div>
                 </section>
                 {/*ABOUT SECTION */}
-                <AboutSection />
+                <AboutSection/>
                 {/*GAMES SECTION*/}
-                <GamesSection />
+                <GamesSection/>
                 {/*TEAM SECTION*/}
-                <TeamSection />
+                <TeamSection/>
                 {/*COUNTER SECTION*/}
-                <CounterSection />
+                <CounterSection/>
                 <section className={styles.productsSection}>
                     <div className={styles.sectionContent}>
                         <div className={styles.productsTitle}>
@@ -321,9 +275,9 @@ export const HomePage = () => {
                     </div>
                 </section>
                 {/*JOBS SECTION*/}
-                <JobsSection />
+                <JobsSection/>
                 {/*TESTIMONIALS SECTION*/}
-                <TestimonialsSection />
+                <TestimonialsSection/>
                 <section className={styles.communitySection}>
                     <div className={styles.sectionContent}>
                         <div className={styles.imageBlock}>
@@ -388,63 +342,7 @@ export const HomePage = () => {
                             </div>
                         </div>
                         <div className={styles.formContainer}>
-                            <div className={styles.formBox}>
-                                <div className={styles.inputBox}>
-                                    Name
-                                    <input
-                                        className={styles.input}
-                                        name="nameInput"
-                                        type="text"
-                                        placeholder={"Enter Your Name"}
-                                        value={contactInputs.nameInput}
-                                        onChange={(e) => handleContactInputs('nameInput', e.target.value)}
-
-                                    />
-                                </div>
-                                <div className={styles.inputBox}>
-                                    Email
-                                    <input
-                                        className={styles.input}
-                                        name="emailInput"
-                                        type="email"
-                                        placeholder={"Enter your email"}
-                                        value={contactInputs.emailInput}
-                                        onChange={(e) => handleContactInputs('emailInput', e.target.value)}
-
-                                    />
-                                </div>
-                                <div className={styles.inputBox}>
-                                    Subject
-                                    <input
-                                        className={styles.input}
-                                        name="subjectInput"
-                                        type="text"
-                                        placeholder={"Enter Subject"}
-                                        value={contactInputs.subjectInput}
-                                        onChange={(e) => handleContactInputs('subjectInput', e.target.value)}
-
-                                    />
-                                </div>
-                                <div className={styles.inputBox}>
-                                    Leave us a message
-                                    <textarea
-                                        className={`${styles.input} ${styles.messageInput}`}
-                                        name="messageInput"
-                                        placeholder={"Please type your Message here..."}
-                                        value={contactInputs.messageInput}
-                                        onChange={(e) => handleContactInputs('messageInput', e.target.value)}
-
-                                    />
-                                </div>
-                                <div onClick={handleSendMessage}>
-                                    <DefaultButton
-                                        link={""}
-                                        grayBtn={false}
-                                        title={"Send Message"}
-                                        wide={false}
-                                    />
-                                </div>
-                            </div>
+                            <ContactForm/>
                         </div>
                     </div>
                 </section>

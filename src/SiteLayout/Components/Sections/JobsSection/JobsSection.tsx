@@ -14,7 +14,7 @@ import {useTranslation} from "react-i18next";
 export const JobsSection = () => {
     const [translatedJobs, setTranslatedJobs] = useState(jobsData.en);
 
-    const {i18n} = useTranslation();
+    const {i18n,t} = useTranslation();
 
     useEffect(() => {
         if (i18n.language === "en") {
@@ -31,11 +31,9 @@ export const JobsSection = () => {
             <div className={styles.sectionContent}>
                 <div className={styles.topTitle}>
                     <div className={`${styles.pageHeading}`}>
-                        <h4>We're Looking For <span>Talented Professionals</span></h4>
-                        <h2><span>Let's Build The Future</span> Of Gaming Industry Together!</h2>
-                        <p>Our belief is that being simple, honest, self-driven and motivated combined with the
-                            constant pursuit of the ultimate company atmosphere can help grow a creative and
-                            robust team.</p>
+                        <h4>{t('jobsSection.lookingFor')} <span>{t('jobsSection.talentedProfessionals')}</span></h4>
+                        <h2><span>{t('jobsSection.letsBuildTheFuture')}</span> {t('jobsSection.ofGamingIndustryTogether')}</h2>
+                        <p>{t('jobsSection.beliefText')}</p>
                     </div>
                 </div>
                 <div className={styles.jobsContainer}>
@@ -56,10 +54,10 @@ export const JobsSection = () => {
                                 </div>
                                 <div className={styles.bottomRow}>
                                     <div className={styles.timeBox}>
-                                        <WorkOutlineIcon/> <p>Full Time</p>
+                                        <WorkOutlineIcon/> <p>{t('jobsSection.fullTime')}</p>
                                     </div>
                                     <div className={styles.timeBox}>
-                                        <AccessTimeIcon/> <p>Full Time</p>
+                                        <AccessTimeIcon/> <p>{t('jobsSection.fullTime')}</p>
                                     </div>
                                 </div>
                             </div>

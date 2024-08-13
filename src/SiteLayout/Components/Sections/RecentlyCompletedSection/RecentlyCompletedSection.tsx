@@ -22,7 +22,7 @@ export const RecentlyCompletedSection = () => {
     const [translatedGameDevelopment, setTranslatedGameDevelopment] = useState([gameDevelopmentData?.en])
     const [activeIndex, setActiveIndex] = useState(0);
 
-    const {i18n} = useTranslation();
+    const {i18n,t} = useTranslation();
 
     const handleChangeIndex = useCallback((index: number): void => {
         setActiveIndex(index + 1);
@@ -54,12 +54,12 @@ export const RecentlyCompletedSection = () => {
                 <div className={styles.topRow}>
                     <div className={styles.titleBlock}>
                         <div className={`${styles.pageHeading} ${styles.notCenteredText}`}>
-                            <h4>Recently <span> Completed</span></h4>
-                            <h2>Game Development and Art, <span> Elevated to a New Level</span></h2>
+                            <h4>{t('recentlyCompletedSection.recentlyCompleted')} <span> {t('recentlyCompletedSection.completed')}</span></h4>
+                            <h2>{t('recentlyCompletedSection.gameDevelopmentAndArt')} <span> {t('recentlyCompletedSection.elevatedToNewLevel')}</span></h2>
                         </div>
                     </div>
                     <Link to={"/games"} className={styles.viewAll}>
-                        <p>View All Games</p>
+                        <p>{t('recentlyCompletedSection.viewAllGames')}</p>
                         <CallMadeIcon/>
                     </Link>
                 </div>

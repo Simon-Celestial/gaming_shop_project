@@ -22,7 +22,7 @@ export const GamesSection = () => {
     const [translatedGames, setTranslatedGames] = useState(gamesData.en[0]);
     const [inputValue, setInputValue] = useState("");
 
-    const {i18n} = useTranslation();
+    const {i18n,t} = useTranslation();
 
 
     useEffect(() => {
@@ -72,13 +72,10 @@ export const GamesSection = () => {
             <div className={styles.sectionContent}>
                 <div className={styles.topContainer}>
                     <div className={styles.pageHeading}>
-                        <h4>Feel Unforgettable <span>Gaming Experience</span></h4>
-                        <h2><span>Our Products</span> Will Give You The Best Feelings
-                            During <span>GamePlay</span>
+                        <h4>{t('gamesSection.feelUnforgettable')} <span>{t('gamesSection.gamingExperience')}</span></h4>
+                        <h2><span>{t('gamesSection.ourProducts')}</span> {t('gamesSection.willGiveYouTheBestFeelings')} {t('gamesSection.during')} <span>{t('gamesSection.gamePlay')}</span>
                         </h2>
-                        <p>Our products are distinguished by reliability, low response time, and
-                            user-friendliness
-                            for better immersion in the game.</p>
+                        <p>{t('gamesSection.ourProductsAreDistinguishedByReliability')}</p>
                     </div>
                     <div className={styles.genresContainer}>
                         <div className={styles.genresRow}>
@@ -95,7 +92,7 @@ export const GamesSection = () => {
                         </div>
                         <div className={styles.gameSearch}>
                             <input type="text"
-                                   placeholder={"Type to search..."}
+                                   placeholder={t('gamesSection.typeToSearch')}
                                    onChange={handleInputSearch}
                                    value={inputValue}
                             />
@@ -111,7 +108,7 @@ export const GamesSection = () => {
                                 )
                             })
                             :
-                            <div className={styles.nothingFound}>Nothing found...</div>
+                            <div className={styles.nothingFound}>{t('gamesSection.nothingFound')}</div>
                     }
 
                 </div>

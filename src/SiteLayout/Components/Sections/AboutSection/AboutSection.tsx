@@ -2,11 +2,12 @@ import styles from "./AboutSection.module.scss";
 import {Odometer} from "../../Reusables/Odometer/Odometer.tsx";
 import {DefaultButton} from "../../Reusables/DefaultButton/DefaultButton.tsx";
 import {useRef} from "react";
+import {useTranslation} from "react-i18next";
 
 
 export const AboutSection = () => {
     const odometerRef = useRef<HTMLDivElement | null>(null);
-
+    const {t} = useTranslation();
     return (
             <section className={styles.aboutSection} ref={odometerRef}>
                 <div className={styles.sectionContent}>
@@ -20,7 +21,7 @@ export const AboutSection = () => {
                                 />+
                                 </div>
                                 <div className={styles.title}>
-                                    Years Of Experience
+                                    {t('aboutSection.yearsOfExperience')}
                                 </div>
                             </div>
                         </div>
@@ -28,10 +29,9 @@ export const AboutSection = () => {
                     </div>
                     <div className={styles.titleContainer}>
                         <div className={`${styles.pageHeading} ${styles.notCenteredText}`}>
-                            <h4>Welcome To <span>GAMESTORM</span> Gaming Shop</h4>
-                            <h2>Bringing People Together Through <span>The Power Of Play</span></h2>
-                            <p>As Gamestorm, we continue to open doors to new worlds every day and we are
-                                working excitedly introduce new gaming devices!</p>
+                            <h4>{t('aboutSection.welcome')} <span>{t('aboutSection.brand')}</span> {t('aboutSection.gamingShop')}</h4>
+                            <h2>{t('aboutSection.bringingPeopleTogether')} <span>{t('aboutSection.powerOfPlay')}</span></h2>
+                            <p>{t('aboutSection.introText')}</p>
                         </div>
                         <div className={styles.infoContainers}>
                             <div className={styles.container}>
@@ -41,9 +41,9 @@ export const AboutSection = () => {
                                             stopValue={500}
                                             latency={5}
                                         />
-                                        M
+                                        {t('aboutSection.m')}
                                         <p>+</p></span>
-                                <p>Sales, or 6% of the world’s population.</p>
+                                <p>{t('aboutSection.salesText')}</p>
                             </div>
                             <div className={styles.container}>
                                     <span>
@@ -52,10 +52,10 @@ export const AboutSection = () => {
                                             stopValue={2}
                                             latency={1250}
                                         />
-                                        M
+                                        {t('aboutSection.m')}
                                         <p>+</p>
                                     </span>
-                                <p>Our products have over 2 million unique daily customers.</p>
+                                <p>{t('aboutSection.dailyCustomersText')}</p>
                             </div>
                             <div className={styles.container}>
                                     <span>
@@ -66,7 +66,7 @@ export const AboutSection = () => {
                                         />
                                         <p>+</p>
                                     </span>
-                                <p>Experts collaborating to blow your mind in one place.</p>
+                                <p>{t('aboutSection.expertsText')}</p>
                             </div>
                             <div className={styles.container}>
                                     <span>
@@ -76,12 +76,12 @@ export const AboutSection = () => {
                                             latency={25}
                                         />
                                         <p>%</p></span>
-                                <p>Our devices gives you full experience.</p>
+                                <p>{t('aboutSection.fullExperienceText')}</p>
                             </div>
 
                         </div>
                         <DefaultButton
-                            title={"Explore Out Products"}
+                            title={t('aboutSection.exploreProducts')}
                             link={"/shop"}
                             grayBtn={false}
                             wide={false}

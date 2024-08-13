@@ -162,5 +162,71 @@
     "cookiesItem3Title": "Reklam Çerezleri",
     "cookiesItem3Text": "Bu çerezler, ilgi alanlarınıza uygun hedeflenmiş reklamlar sunmamıza yardımcı olur ve daha kişiselleştirilmiş bir gezinme deneyimi sağlar.",
     "cookiesConsent": "Sitemizi kullanmaya devam ederek çerezlerin kullanımını kabul edersiniz. Ancak, çerez tercihlerinizi her zaman tarayıcı ayarlarınız aracılığıyla yönetebilirsiniz. Çerez uygulamalarımız hakkında daha fazla bilgi için lütfen Çerez Politikamıza bakın. Şeffaflığa bağlıyız ve veri tercihlerinizi kontrol etme araçları sunuyoruz."
+  },
+  "aboutSection" : {
+    "welcome": "Hoşgeldiniz",
+    "brand": "GAMESTORM",
+    "gamingShop": "Oyun Mağazası",
+    "bringingPeopleTogether": "İnsanları Bir Araya Getiriyoruz",
+    "powerOfPlay": "Oynamanın Gücüyle",
+    "introText": "Gamestorm olarak, her gün yeni dünyalara kapılar açmaya devam ediyoruz ve yeni oyun cihazlarını tanıtmaktan heyecan duyuyoruz!",
+    "yearsOfExperience": "Yıllık Deneyim",
+    "salesText": "Satışlar, dünya nüfusundan 6%.",
+    "dailyCustomersText": "Ürünlerimiz günlük 2 milyonun üzerinde benzersiz kullanıcıya sahip.",
+    "expertsText": "Tek bir yerde sizi şaşırtmak için çalışan uzmanlar.",
+    "fullExperienceText": "Cihazlarımız size tam deneyim sunar.",
+    "exploreProducts": "Ürünlerimizi Keşfedin",
+    "m": "M"
+  },
+  "contactSection" : {
+    "contactWithUs": "Bizimle İletişime Geçin",
+    "contactUsToday": "Bugün ücretsiz danışmanlık için bizimle iletişime geçin",
+    "startYourProject": "Projenizi Başlatın",
+    "callUs": "Bizi Arayın",
+    "phoneNumber": "(302) 555-0107"
+  },
+  "gamesSection" : {
+    "feelUnforgettable": "Unutulmaz",
+    "gamingExperience": "Oyun Deneyimini Hissedin",
+    "ourProducts": "Ürünlerimiz",
+    "willGiveYouTheBestFeelings": "Size En İyi Duyguları Verecek",
+    "during": "Sırasında",
+    "gamePlay": "Oyun",
+    "ourProductsAreDistinguishedByReliability": "Ürünlerimiz güvenilirlik, düşük yanıt süresi ve kullanıcı dostu özellikleri ile oyuna daha iyi bir dalış sağlar.",
+    "typeToSearch": "Aramak için yazın...",
+    "nothingFound": "Hiçbir şey bulunamadı..."
+  },
+  "jobsSection" : {
+    "lookingFor": "Yetenekli Profesyoneller",
+    "talentedProfessionals": "Arıyoruz",
+    "letsBuildTheFuture": "Gelin Geleceği İnşa Edelim",
+    "ofGamingIndustryTogether": "Oyun Endüstrisi Birlikte!",
+    "beliefText": "Basit, dürüst, kendi kendine yeten ve motive olmuş olmanın, sürekli olarak mükemmel bir şirket atmosferi yaratma çabasının yaratıcı ve güçlü bir takım oluşturmaya yardımcı olabileceğine inanıyoruz.",
+    "fullTime": "Tam Zamanlı"
+  },
+  "partnersSection" : {
+    "trusted": "Tarafından",
+    "by": "Güvenilir",
+    "happyToWorkWith": "Şu global en büyük markalarla çalışmaktan mutluluk duyuyoruz",
+    "globalLargestBrands": "global en büyük markalar",
+    "proudToSupport": "Dünyanın dört bir yanındaki sektör liderlerini desteklemekten gurur duyuyoruz."
+  },
+  "recentlyCompletedSection" : {
+    "recentlyCompleted": "Son",
+    "completed": "Tamamlanan",
+    "gameDevelopmentAndArt": "Oyun Geliştirme ve Sanat,",
+    "elevatedToNewLevel": "Yeni Bir Seviyeye Taşındı",
+    "viewAllGames": "Tüm Oyunları Görüntüle"
+  },
+  "teamSection" : {
+    "passionForGaming": "Oyun",
+    "gaming": "İçin Tutkumuz Var!",
+    "teamProfessionals": "Ekibimiz Profesyonellerden Oluşuyor.",
+    "proudOfIt": "Ve Bununla Gurur Duyuyoruz.",
+    "teamDescription": "Dinamik ekibimiz teknolojiye hakim satış profesyonelleri, bilgili müşteri hizmetleri temsilcileri, yenilikçi pazarlama stratejistleri ve vizyoner ürün yöneticilerinden oluşmaktadır."
   }
+
+
+
+
 }

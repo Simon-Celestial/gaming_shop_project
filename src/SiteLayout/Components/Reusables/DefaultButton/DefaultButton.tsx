@@ -1,6 +1,7 @@
 import styles from "./DefaultButton.module.scss";
 import {Link} from "react-router-dom";
 import React from "react";
+import {useTranslation} from "react-i18next";
 
 interface DefaultButtonProps {
     title: string;
@@ -11,6 +12,7 @@ interface DefaultButtonProps {
 
 export const DefaultButton : React.FC<DefaultButtonProps> = ({title, link,grayBtn,wide}) => {
 
+    const {i18n} = useTranslation();
     return (
         <>
             {link ?
@@ -18,7 +20,8 @@ export const DefaultButton : React.FC<DefaultButtonProps> = ({title, link,grayBt
                     to={link}
                     className={`${styles.buttonWrapper} ${grayBtn ? styles.grayBtn : ''}`}
                     style={{
-                        width: wide ? "100%" : ""
+                        width: wide ? "100%" : "",
+                        fontWeight: i18n.language === "ru"? "600" : ''
                     }}
                 >
                     {title}
@@ -27,7 +30,8 @@ export const DefaultButton : React.FC<DefaultButtonProps> = ({title, link,grayBt
                 <div
                     className={`${styles.buttonWrapper} ${grayBtn ? styles.grayBtn : ''}`}
                     style={{
-                        width: wide ? "100%" : ""
+                        width: wide ? "100%" : "",
+                        fontWeight: i18n.language === "ru"? "600" : ''
                     }}
                 >
                     {title}

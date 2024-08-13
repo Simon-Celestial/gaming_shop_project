@@ -162,5 +162,68 @@
     "cookiesItem3Title": "Advertising Cookies",
     "cookiesItem3Text": "These cookies help deliver targeted advertisements relevant to your interests, providing a more tailored browsing experience.",
     "cookiesConsent": "By continuing to use our site, you consent to the use of cookies. However, you can manage your cookie preferences at any time through your browser settings. For more information about our cookie practices, please refer to our Cookie Policy. We are committed to transparency and offer you the tools to control your data preferences."
+  },
+  "aboutSection" : {
+    "welcome": "Welcome To",
+    "brand": "GAMESTORM",
+    "gamingShop": "Gaming Shop",
+    "bringingPeopleTogether": "Bringing People Together Through",
+    "powerOfPlay": "The Power Of Play",
+    "introText": "As Gamestorm, we continue to open doors to new worlds every day and we are working excitedly to introduce new gaming devices!",
+    "yearsOfExperience": "Years Of Experience",
+    "salesText": "Sales, or 6% of the world’s population.",
+    "dailyCustomersText": "Our products have over 2 million unique daily customers.",
+    "expertsText": "Experts collaborating to blow your mind in one place.",
+    "fullExperienceText": "Our devices give you the full experience.",
+    "exploreProducts": "Explore Our Products",
+    "m": "M"
+  },
+  "contactSection" : {
+    "contactWithUs": "Contact With Us",
+    "contactUsToday": "Contact us today for a free consultation",
+    "startYourProject": "Start Your Project",
+    "callUs": "Call Us",
+    "phoneNumber": "(302) 555-0107"
+
+  },
+  "gamesSection" : {
+    "feelUnforgettable": "Feel Unforgettable",
+    "gamingExperience": "Gaming Experience",
+    "ourProducts": "Our Products",
+    "willGiveYouTheBestFeelings": "Will Give You The Best Feelings",
+    "during": "During",
+    "gamePlay": "GamePlay",
+    "ourProductsAreDistinguishedByReliability": "Our products are distinguished by reliability, low response time, and user-friendliness for better immersion in the game.",
+    "typeToSearch": "Type to search...",
+    "nothingFound": "Nothing found..."
+  },
+  "jobsSection" : {
+    "lookingFor": "We're Looking For",
+    "talentedProfessionals": "Talented Professionals",
+    "letsBuildTheFuture": "Let's Build The Future",
+    "ofGamingIndustryTogether": "Of Gaming Industry Together!",
+    "beliefText": "Our belief is that being simple, honest, self-driven and motivated combined with the constant pursuit of the ultimate company atmosphere can help grow a creative and robust team.",
+    "fullTime": "Full Time"
+  },
+  "partnersSection" : {
+    "trusted": "Trusted",
+    "by": "By",
+    "happyToWorkWith": "We are happy to work with",
+    "globalLargestBrands": "global largest brands",
+    "proudToSupport": "We are proud to support industry leaders around the world."
+  },
+  "recentlyCompletedSection" : {
+    "recentlyCompleted": "Recently",
+    "completed": "Completed",
+    "gameDevelopmentAndArt": "Game Development and Art,",
+    "elevatedToNewLevel": "Elevated to a New Level",
+    "viewAllGames": "View All Games"
+  },
+  "teamSection" : {
+    "passionForGaming": "We Have A Passion For",
+    "gaming": "Gaming!",
+    "teamProfessionals": "Our Team Consists of Professionals.",
+    "proudOfIt": "And We're Proud Of It.",
+    "teamDescription": "Our dynamic team blends tech-savvy sales professionals, knowledgeable customer service representatives, innovative marketing strategists, and visionary product managers."
   }
 }
