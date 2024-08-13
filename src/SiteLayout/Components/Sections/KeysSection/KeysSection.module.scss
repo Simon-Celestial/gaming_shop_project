@@ -1,0 +1,125 @@
+@import '../../../../Variables/Variables';
+@import '../../../../Animations/Animations';
+@import "../../../../CommonStyles/PageHeadingStyles/PageHeadingStyles.module";
+
+.keysSection {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  position: relative;
+
+  .decoration {
+    position: absolute;
+    max-width: 150px;
+
+    img {
+      width: 100%;
+      object-position: center;
+      object-fit: cover;
+      z-index: 5;
+    }
+
+    &.cube {
+      top: 8%;
+      left: 7%;
+      animation: rotate 15s linear infinite;
+    }
+
+    &.diamond {
+      right: 5%;
+      top: 7%;
+      animation: shake 1s linear infinite;
+    }
+
+    &.xmark {
+      bottom: 0;
+      left: 7%;
+      animation: rotate 15s linear infinite;
+    }
+
+    &.coin {
+      bottom: 0;
+      right: 5%;
+      animation: rotate 15s linear infinite;
+    }
+  }
+
+  .sectionContent {
+    display: flex;
+    width: 100%;
+    max-width: 1320px;
+    padding: 100px 15px 120px 15px;
+    flex-direction: column;
+    align-items: center;
+
+    .heading {
+      font-size: 40px;
+      color: $white;
+      max-width: 700px;
+      text-align: center;
+      text-transform: capitalize;
+      margin-bottom: 25px;
+
+      span {
+        color: $green;
+        animation: textGlow 2s ease infinite;
+      }
+    }
+
+    .keysContainer {
+      display: flex;
+      width: 100%;
+      flex-wrap: wrap;
+      gap: 24px;
+
+      .keyBox {
+        max-width: 633px;
+        display: flex;
+        padding: 25px;
+        border: 1px solid rgba(128, 128, 128, 0.3);
+        border-radius: 12px;
+        gap: 25px;
+        width: 100%;
+
+        .circle {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 50%;
+          background: $grayFill;
+          color: $green;
+          width: 80px;
+          height: 80px;
+          border: 1px solid $green;
+
+          &:hover {
+            svg {
+              transform: rotate(360deg) scale(1.1);
+            }
+          }
+
+          svg {
+            font-size: 32px;
+            transition: transform 0.4s ease;
+          }
+        }
+
+        .title {
+          max-width: 476px;
+          width: 100%;
+
+          h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+          }
+
+          p {
+            font-size: 16px;
+          }
+        }
+
+      }
+    }
+
+  }
+}

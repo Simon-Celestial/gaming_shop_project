@@ -1,0 +1,38 @@
+@import "../../../../Variables/Variables";
+@import "../../../../Animations/Animations";
+@import "../../../../CommonStyles/PageHeadingStyles/PageHeadingStyles.module";
+
+.productsSection {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  background: $background;
+
+  .sectionContent {
+    display: flex;
+    width: 100%;
+    max-width: 1320px;
+    padding: 120px 15px 60px 15px;
+    flex-direction: column;
+    align-items: center;
+
+    .productsTitle {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 700px;
+      width: 100%;
+      margin-bottom: 50px;
+    }
+
+    .productsSwiper {
+      display: flex;
+      width: 100%;
+
+      .cardWrapper {
+        display: flex;
+        padding-bottom: 60px;
+      }
+    }
+  }
+}

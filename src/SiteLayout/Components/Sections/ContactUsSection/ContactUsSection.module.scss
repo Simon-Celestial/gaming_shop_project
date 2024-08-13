@@ -1,0 +1,58 @@
+@import "../../../../Variables/Variables";
+@import "../../../../Animations/Animations";
+@import "../../../../CommonStyles/PageHeadingStyles/PageHeadingStyles.module";
+
+.contactUsSection {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  background-image: url("https://pixner.net/gamestorm3/main/assets/images/contact-us-obj.png"), url("https://pixner.net/gamestorm3/main/assets/images/contact-us-object-2.png");
+  background-position: center left, center right;
+  background-repeat: no-repeat;
+  background-color: $background;
+  .sectionContent {
+    padding: 120px 15px;
+    display: flex;
+    width: 100%;
+    max-width: 1320px;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    .titleBlock {
+      max-width: 550px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      .infoRow {
+        margin-top: 25px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        .icon {
+          width: 40px;
+          height: 40px;
+          background: $grayFill;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: $green;
+          border-radius: 50%;
+        }
+        p {
+          color: $gray;
+          font-family: $interFont;
+        }
+
+      }
+    }
+    .formContainer {
+      max-width: 550px;
+      padding: 16px;
+      border-radius: 10px;
+      width: 100%;
+      background: $grayFill;
+      margin-right: 80px;
+    }
+  }
+
+}

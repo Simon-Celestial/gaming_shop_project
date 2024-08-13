@@ -1,0 +1,105 @@
+@import '../../../../Variables/Variables';
+@import '../../../../Animations/Animations';
+@import "../../../../CommonStyles/PageHeadingStyles/PageHeadingStyles.module";
+
+.ourStorySection {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  .sectionContent {
+    display: flex;
+    width: 100%;
+    max-width: 1320px;
+    padding: 120px 15px 0 15px;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+    .swiperContainer {
+      width: 100%;
+      display: flex;
+      max-width: 660px;
+      flex-direction: column;
+      align-items: center;
+      .title {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        h2 {
+          color: $white;
+          font-size: 24px;
+        }
+        p {
+          font-size: 16px;
+          color: $gray;
+          font-family: $interFont;
+          margin-top: 18px;
+        }
+      }
+      .swiper {
+        display: flex;
+        width: 100%;
+        margin-top: 30px;
+        .swiperBox {
+          width: 100%;
+          padding: 40px 32px;
+          border: 1px solid rgba(128, 128, 128, 0.3);
+          border-radius: 15px;
+          gap: 20px;
+          display: flex;
+          background-color: $grayFill;
+          .date {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #EDCB50;
+            color: $black;
+            min-width: 120px;
+            height: 120px;
+            border-radius: 10px;
+            font-size: 32px;
+            font-weight: 800;
+          }
+          .goal {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            h2 {
+              font-size: 32px;
+              color: $white;
+              margin-bottom: 5px;
+            }
+            p {
+              font-family: $interFont;
+              font-size: 16px;
+              color: $gray;
+              padding-right: 50px;
+              line-height: 23px;
+            }
+          }
+        }
+
+      }
+      .pagination {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        margin-top: 35px;
+        .location {
+          height: 1px;
+          background-color: #4c4d5a;
+          flex: 1;
+        }
+      }
+    }
+    .imageContainer {
+      display: flex;
+      width: 100%;
+      max-width: 550px;
+      img {
+        width: 100%;
+        object-position: center;
+        object-fit: cover;
+      }
+    }
+  }
+}

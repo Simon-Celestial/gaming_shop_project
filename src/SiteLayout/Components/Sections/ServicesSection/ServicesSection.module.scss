@@ -1,0 +1,111 @@
+@import "../../../../Variables/Variables";
+@import "../../../../Animations/Animations";
+@import "../../../../CommonStyles/PageHeadingStyles/PageHeadingStyles.module";
+
+.servicesSection {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  background-color: $background;
+
+  .sectionContent {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    max-width: 1320px;
+    padding: 120px 0;
+
+    .titleBlock {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .containersBlock {
+      display: flex;
+      width: 100%;
+      max-width: 1320px;
+      flex-wrap: wrap;
+      gap: 25px;
+      margin-top: 25px;
+
+      .container {
+        max-width: 423px;
+        width: 100%;
+        padding: 0 12px;
+        height: 470px;
+        background-color: $grayFill;
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        border-bottom: 3px solid $green;
+        border-radius: 10px 10px 0 0;
+        overflow: hidden;
+
+        &:hover {
+          .cover {
+            top: -100%;
+          }
+
+          .text {
+            opacity: 0;
+          }
+        }
+
+        .findOut {
+          border-radius: 50%;
+          background-color: $green;
+          color: $black;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column;
+          gap: 5px;
+          width: 100px;
+          height: 100px;
+          left: 15px;
+          bottom: 15px;
+          transition: color $transition, background-color $transition;
+          position: absolute;
+          border: 3px solid $white;
+          animation: rotateMoveShake 20s linear infinite;
+
+
+          &:hover {
+            background-color: $greenDark;
+            color: $white;
+          }
+
+          p {
+            font-weight: 800;
+          }
+
+        }
+
+        .cover {
+          position: absolute;
+          left: 0;
+          top: 0;
+          transition: top 0.6s ease;
+          width: 100%;
+          height: 100%;
+          background-color: $grayFill;
+        }
+
+        .text {
+          transition: opacity 0.6s ease;
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%);
+          color: $white;
+          font-size: 32px;
+          font-weight: 800;
+          width: 100%;
+          text-align: center;
+        }
+
+
+      }
+    }
+  }
+}

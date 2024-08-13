@@ -1,0 +1,106 @@
+@import "../../../../Variables/Variables";
+@import "../../../../Animations/Animations";
+@import "../../../../CommonStyles/PageHeadingStyles/PageHeadingStyles.module";
+
+.lifeSection {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  background: $background;
+  position: relative;
+
+  &:after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: "";
+    width: 100%;
+    height: 50%;
+    background-position: center;
+    transform: rotate(180deg);
+    background-size: cover;
+    background-image: url("https://pixner.net/gamestorm3/main/assets/images/life-at-gamestorm.png");
+  }
+
+  &:before {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    content: "";
+    width: 100%;
+    height: 50%;
+    background-position: center;
+    background-size: cover;
+    background-image: url("https://pixner.net/gamestorm3/main/assets/images/life-at-gamestorm.png");
+  }
+
+  .sectionContent {
+    display: flex;
+    flex-direction: column;
+    padding: 60px 15px;
+    align-items: center;
+    z-index: 3;
+
+    .topTitle {
+      max-width: 700px;
+    }
+
+    .imagesContainer {
+      display: flex;
+      width: 100%;
+      flex-direction: column;
+      gap: 15px;
+      margin-top: 25px;
+      margin-bottom: 75px;
+
+      .imagesRow {
+        display: flex;
+        width: 100%;
+        gap: 15px;
+        align-items: center;
+        justify-content: space-between;
+
+        img {
+          object-position: center;
+          object-fit: cover;
+          width: 100%;
+          border-bottom: 3px solid $green;
+          border-radius: 5px 5px 0 0;
+        }
+
+        .bigImg {
+          width: 100%;
+          max-width: 636px;
+        }
+
+        .smallImg {
+          width: 100%;
+          max-width: 416px;
+        }
+      }
+    }
+
+    .joinContainer {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      max-width: 550px;
+      width: 100%;
+      align-items: center;
+
+      h2 {
+        font-size: 52px;
+        text-transform: uppercase;
+      }
+
+      p {
+        margin-bottom: 10px;
+        color: $white;
+        font-size: 18px;
+        text-align: center;
+      }
+    }
+
+
+  }
+}

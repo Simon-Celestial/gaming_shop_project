@@ -224,7 +224,44 @@
     "teamProfessionals": "Ekibimiz Profesyonellerden Oluşuyor.",
     "proudOfIt": "Ve Bununla Gurur Duyuyoruz.",
     "teamDescription": "Dinamik ekibimiz teknolojiye hakim satış profesyonelleri, bilgili müşteri hizmetleri temsilcileri, yenilikçi pazarlama stratejistleri ve vizyoner ürün yöneticilerinden oluşmaktadır."
+  },
+  "aboutPage" : {
+    "whiteText": "Bizim Sloganımız Basit Eğlence",
+    "greenText": "Herkes İçin",
+    "smallText": "Her gün yeni dünyalara kapılar açmaya devam ediyoruz ve yeni oyunlar ve benzersiz fikirler yaratmak için heyecanla çalışıyoruz!",
+    "valuesTitle": "Sürekli",
+    "valuesGreenText": "Değerlerimiz",
+    "valuesSubtitle": "Değerlerimiz Bize İlham Veriyor Ve",
+    "valuesGreenSubtitle": "Her Adımımızı Yönlendiriyor",
+    "valuesDescription": "Değerlerimiz, benzersiz deneyimlerimiz, inançlarımız ve arzularımızla şekillenen iç benliğimizin bir yansımasıdır ve başkalarından basitçe alınamaz veya keyfi olarak seçilemez.",
+    "focusTitle": "Bizim",
+    "focusGreenText": "Odak Noktamız",
+    "focusSubtitle": "Esnek, odaklanmış ve yenilikçi: proje vizyonunuzu ve iş hedefleri",
+    "focusGreenSubtitle": "gerçekleştirmeye odaklanıyoruz",
+    "storyTitle": "Bizim Hikayemiz",
+    "storyDescription": "Anlatmaya değer güzel bir hikayemiz var. Size en büyük kilometre taşlarımızı anlatmamıza izin verin."
+  },
+  "basketPage" : {
+    "yourBasket": "Sepetiniz",
+    "readyToMakeThemYours": "Onları almaya hazır mısınız?",
+    "cartEmpty": "Sepetiniz şu anda boş...",
+    "returnToShop": "Alışverişe Dön",
+    "product": "Ürün",
+    "price": "Fiyat",
+    "quantity": "Miktar",
+    "subtotal": "Ara Toplam",
+    "delete": "Sil",
+    "emptyCart": "Sepeti Boşalt",
+    "cartTotal": "SEPET TOPLAMI",
+    "subtotalLabel": "Ara Toplam",
+    "delivery": "Teslimat",
+    "deliveryFree": "ÜCRETSİZ",
+    "total": "Toplam",
+    "proceedToCheckout": "Almaya Devam Et"
+
   }
+
+
 
 
 

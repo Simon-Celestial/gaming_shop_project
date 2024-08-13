@@ -7,6 +7,7 @@ import {FooterOne} from "../../Components/Layout/FooterOne/FooterOne.tsx";
 import {DefaultButton} from "../../Components/Reusables/DefaultButton/DefaultButton.tsx";
 import DeleteIcon from '@mui/icons-material/Delete';
 import {PageBanner} from "../../Components/Layout/PageBanner/PageBanner.tsx";
+import {useTranslation} from "react-i18next";
 
 
 export const BasketPage = () => {
@@ -19,20 +20,26 @@ export const BasketPage = () => {
         calculateSubtotal
     } = useContext(BasketContext);
 
+    const {t} = useTranslation();
+
     return (
         <>
             <Header/>
             <main className={styles.basketMain}>
-                <PageBanner greenText={"Your basket"} whiteText={""} smallText={"Ready to make them yours?"}/>
+                <PageBanner
+                    greenText={t('basketPage.yourBasket')}
+                    whiteText={""}
+                    smallText={t('basketPage.readyToMakeThemYours')}
+                />
                 {
                     cartItems?.length < 1 ?
                         <div className={styles.cartEmpty}>
                             <img src="/images/icons/empty.png" alt="Cart Empty"/>
-                            <p>Your basket is currently empty</p>
+                            <p>{t('basketPage.cartEmpty')}</p>
                             <DefaultButton
                                 grayBtn={false}
                                 link={"/shop"}
-                                title={"Return To Shop"}
+                                title={t('basketPage.returnToShop')}
                                 wide={false}
                             />
                         </div>
@@ -41,19 +48,19 @@ export const BasketPage = () => {
                             <div className={styles.basketCardsWrapper}>
                                 <div className={`${styles.tableRow} ${styles.topRow}`}>
                                     <div className={`${styles.product} ${styles.cell}`}>
-                                        Product
+                                        {t('basketPage.product')}
                                     </div>
                                     <div className={`${styles.price} ${styles.cell}`}>
-                                        Price
+                                        {t('basketPage.price')}
                                     </div>
                                     <div className={`${styles.quantity} ${styles.cell}`}>
-                                        Quantity
+                                        {t('basketPage.quantity')}
                                     </div>
                                     <div className={`${styles.subtotal} ${styles.cell}`}>
-                                        Subtotal
+                                        {t('basketPage.subtotal')}
                                     </div>
                                     <div className={`${styles.delete} ${styles.cell}`}>
-                                        Delete
+                                        {t('basketPage.delete')}
                                     </div>
                                 </div>
                                 {cartItems?.map((product) => {
@@ -99,7 +106,7 @@ export const BasketPage = () => {
                                     <div className={styles.btnWrapper} onClick={emptyCart}>
                                         <DefaultButton
                                             grayBtn={false}
-                                            title={"Empty Cart"}
+                                            title={t('basketPage.emptyCart')}
                                             link={""}
                                             wide={true}
                                         />
@@ -107,25 +114,25 @@ export const BasketPage = () => {
                             </div>
                             <div className={styles.basketRight}>
                                 <div className={styles.rightContainer}>
-                                    <h1>CART TOTAL</h1>
+                                    <h1>{t('basketPage.cartTotal')}</h1>
                                 </div>
                                 <div className={styles.rightContainer}>
-                                    <h1>Subtotal</h1>
+                                    <h1>{t('basketPage.subtotalLabel')}</h1>
                                     <p>$ {calculateSubtotal?.toFixed(2)}</p>
                                 </div>
                                 <div className={styles.rightContainer}>
-                                    <h1>Delivery</h1>
-                                    <p>FREE</p>
+                                    <h1>{t('basketPage.delivery')}</h1>
+                                    <p>{t('basketPage.deliveryFree')}</p>
                                 </div>
                                 <div className={styles.rightContainer}>
-                                    <h1>Total</h1>
+                                    <h1>{t('basketPage.total')}</h1>
                                     <p>$ {calculateSubtotal?.toFixed(2)}</p>
                                 </div>
                                 <div className={styles.btnWrapper}>
                                     <DefaultButton
                                         wide={true}
                                         link={"/checkout"}
-                                        title={"Proceed to Checkout"}
+                                        title={t('basketPage.proceedToCheckout')}
                                         grayBtn={false}/>
                                 </div>
                             </div>

@@ -1,0 +1,104 @@
+@import "../../../../Variables/Variables";
+@import "../../../../CommonStyles/PageHeadingStyles/PageHeadingStyles.module";
+@import "../../../../Animations/Animations";
+
+.gamingCharacterSection {
+  display: flex;
+  width: 100%;
+  background-color: $grayFill;
+  flex-direction: column;
+  align-items: center;
+
+  .sectionContent {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 1320px;
+    padding: 120px 15px 0 15px;
+
+    .sectionTitle {
+      max-width: 530px;
+      margin: 0 auto 40px auto;
+      &.wide {
+        max-width: 700px;
+      }
+    }
+  }
+
+  .swiperContainer {
+    width: 100%;
+    display: flex;
+
+    .sliderBox {
+      display: flex;
+      width: 100%;
+      flex-direction: column;
+      padding: 50px 35px;
+
+      &.activeSlide {
+        background-color: #2D2F3E;
+
+        .circle {
+          transform: rotate(360deg);
+          transition: transform 0.5s ease;
+
+          svg {
+            transform: scale(1.2);
+            transition: transform 0.5s ease;
+
+          }
+
+        }
+      }
+
+      .circle {
+        width: 80px;
+        height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: $greenDark;
+        margin-bottom: 24px;
+        border-radius: 50%;
+
+        svg {
+          color: $white;
+          font-size: 40px;
+        }
+      }
+
+      h2 {
+        color: $white;
+        font-size: 32px;
+        margin-bottom: 8px;
+      }
+
+      p {
+        font-size: 16px;
+        color: $gray;
+        line-height: 25px;
+        padding-right: 35px;
+        font-family: $interFont;
+      }
+    }
+
+  }
+
+  .pagination {
+    max-width: 1320px;
+    padding: 0 15px 120px 15px;
+    width: 100%;
+    justify-content: center;
+    margin-top: 75px;
+    display: flex;
+
+    .container {
+      flex: 1;
+      height: 1px;
+      background-color: rgba(128, 128, 128, 0.6);
+      transition: background-color $transition;
+    }
+
+  }
+
+}

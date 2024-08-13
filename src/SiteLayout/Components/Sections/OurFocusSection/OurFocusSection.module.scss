@@ -1,0 +1,49 @@
+@import '../../../../Variables/Variables';
+@import '../../../../Animations/Animations';
+@import "../../../../CommonStyles/PageHeadingStyles/PageHeadingStyles.module";
+
+.ourFocusSection {
+  display: flex;
+  width: 100%;
+  background-color: $grayFill;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+
+  .decoration {
+    position: absolute;
+
+    &.square {
+      left: 13%;
+      top: 25%;
+      animation: rotate 25s linear infinite;
+    }
+
+    &.spring {
+      top: 5%;
+      right: 12%;
+      animation: shake 3s linear infinite;
+
+    }
+
+    img {
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+
+
+  .sectionContent {
+    display: flex;
+    width: 100%;
+    max-width: 1320px;
+    align-items: center;
+    padding: 120px 15px 0 15px;
+
+    .sectionTitle {
+      margin: 0 auto 50px auto;
+      max-width: 900px;
+    }
+  }
+
+}

@@ -1,0 +1,92 @@
+@import '../../../../Variables/Variables';
+@import '../../../../Animations/Animations';
+@import '../../../../CommonStyles/PageHeadingStyles/PageHeadingStyles.module';
+
+.gameFeaturesSection {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    background-color: $grayFill;
+
+    .sectionContent {
+        display: flex;
+        max-width: 1320px;
+        padding: 120px 15px;
+        flex-direction: column;
+
+        .titleBlock {
+            margin: 0 auto;
+            max-width: 650px;
+        }
+
+        .benefitsContainer {
+            display: flex;
+            width: 100%;
+            flex-wrap: wrap;
+            gap: 25px;
+            margin-top: 35px;
+
+            .box {
+                background-color: #303141;
+                border: 1px solid #303141;
+                display: flex;
+                padding: 40px 36px;
+                border-radius: 12px;
+                max-width: 632px;
+                gap: 25px;
+                transition: background-color $transition;
+
+                &:hover {
+                    background-color: transparent;
+
+                    .circle {
+                        transform: rotate(360deg);
+                    }
+
+                    .title {
+                        h2 {
+                            color: $green;
+                        }
+                    }
+                }
+
+                .circle {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 80px;
+                    height: 80px;
+                    background-color: $greenDark;
+                    border-radius: 50%;
+                    min-width: 80px;
+                    transition: transform 0.5s ease;
+
+                    svg {
+                        color: $white;
+                        font-size: 38px;
+                    }
+                }
+
+                .title {
+                    display: flex;
+                    flex-direction: column;
+                    width: 100%;
+
+                    h2 {
+                        margin-bottom: 10px;
+                        font-size: 20px;
+                        transition: color $transition;
+                    }
+
+                    p {
+                        font-size: 16px;
+                        color: $gray;
+                        line-height: 24px;
+                        font-family: $interFont;
+                    }
+                }
+            }
+        }
+    }
+}
+

@@ -225,5 +225,40 @@
     "teamProfessionals": "Our Team Consists of Professionals.",
     "proudOfIt": "And We're Proud Of It.",
     "teamDescription": "Our dynamic team blends tech-savvy sales professionals, knowledgeable customer service representatives, innovative marketing strategists, and visionary product managers."
+  },
+  "aboutPage" : {
+    "whiteText": "Our Simple is Motto Fun for",
+    "greenText": "Everyone",
+    "smallText": "We continue to open doors to new worlds every day and we are working excitedly for creating new games and unique ideas!",
+    "valuesTitle": "Our Ongoing",
+    "valuesGreenText": "Values",
+    "valuesSubtitle": "Our Values Inspire And",
+    "valuesGreenSubtitle": "Drive Our Every Move",
+    "valuesDescription": "Our values are a reflection of our inner selves, shaped by our unique experiences, beliefs, aspirations, and cannot be simply adopted from others or chosen arbitrarily.",
+    "focusTitle": "Our",
+    "focusGreenText": "Focus",
+    "focusSubtitle": "Flexible, focused and innovative: we’re focused on achieving your project",
+    "focusGreenSubtitle": "vision and business goals",
+    "storyTitle": "Our Story",
+    "storyDescription": "We have a beautiful story, worth telling. Let us walk you through our biggest milestones."
+  },
+  "basketPage" : {
+    "yourBasket": "Your basket",
+    "readyToMakeThemYours": "Ready to make them yours?",
+    "cartEmpty": "Your basket is currently empty...",
+    "returnToShop": "Return To Shop",
+    "product": "Product",
+    "price": "Price",
+    "quantity": "Quantity",
+    "subtotal": "Subtotal",
+    "delete": "Delete",
+    "emptyCart": "Empty Cart",
+    "cartTotal": "CART TOTAL",
+    "subtotalLabel": "Subtotal",
+    "delivery": "Delivery",
+    "deliveryFree": "FREE",
+    "total": "Total",
+    "proceedToCheckout": "Proceed to Checkout"
+
   }
 }

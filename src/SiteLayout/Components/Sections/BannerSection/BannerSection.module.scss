@@ -1,0 +1,258 @@
+@import '../../../../Variables/Variables';
+@import '../../../../Animations/Animations';
+@import "../../../../CommonStyles/PageHeadingStyles/PageHeadingStyles.module.scss";
+
+.bannerSection {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    .gearBox {
+        position: absolute;
+        right: 1%;
+        top: 9%;
+        display: flex;
+        width: 95px;
+        height: 95px;
+        flex-direction: column;
+        .gear {
+            position: absolute;
+            &:nth-child(1) {
+                right: 0;
+                top: 0;
+
+                svg {
+                    font-size: 50px;
+                }
+            }
+            &:nth-child(2) {
+                left: 0;
+                top: 5px;
+
+                svg {
+                    font-size: 40px;
+                }
+            }
+            &:nth-child(3) {
+                right: 15px;
+                bottom: 5px;
+                svg {
+                    font-size: 30px;
+                }
+            }
+            svg {
+                animation: rotate 3s linear infinite;
+                color: $green;
+            }
+
+        }
+    }
+
+    .decoration {
+        position: absolute;
+
+        img {
+            object-fit: cover;
+            object-position: center;
+        }
+
+        &.planet {
+            top: 180px;
+            left: 100px;
+            animation: rotate 15s linear infinite;
+            z-index: 2;
+        }
+
+        &.joystick {
+            left: 38.5%;
+            top: 60px;
+            transform: translateX(-38.5%);
+            animation: shake 15s linear infinite;
+            z-index: 2;
+        }
+
+        &.controllers {
+            left: 45%;
+            transform: translateX(-45%);
+            bottom: 75px;
+            z-index: 2;
+        }
+
+        &.tubesSolid {
+            display: flex;
+            height: 120%;
+            gap: 25px;
+            transform: rotate(20deg);
+            right: 15%;
+            bottom: -105px;
+            width: auto;
+
+            .wideTube {
+                width: 300px;
+                height: 100%;
+                background-color: $greenDark;
+                animation: moveUpShort 15s linear 4s;
+                transform-origin: bottom;
+
+
+            }
+
+            .thinTube {
+                width: 20px;
+                height: 100%;
+                background-color: $greenDark;
+                animation: moveUp 15s linear infinite;
+                transform-origin: bottom;
+
+            }
+        }
+
+        &.tubeTransparent {
+            left: 12%;
+            transform: rotate(18deg);
+            bottom: -227px;
+            height: 35%;
+
+            .wideTube {
+                animation: moveUp 15s linear infinite;
+                background: linear-gradient(to top, #09926a, rgba(14, 240, 173, 0));
+            }
+
+            .thinTube {
+                animation: moveUp 10s linear infinite;
+                background: linear-gradient(to top, #09926a, rgba(14, 240, 173, 0));
+            }
+        }
+
+        &.starsDefault {
+            display: flex;
+            width: 100px;
+            height: 100px;
+            animation: stretch 10s linear infinite;
+
+            img {
+                position: absolute;
+                object-position: center;
+                object-fit: cover;
+
+                &:nth-child(1) {
+                    right: 0;
+                    bottom: 0;
+                }
+
+                &:nth-child(2) {
+                    left: 0;
+                    bottom: 0;
+                }
+
+                &:nth-child(3) {
+                    right: 0;
+                    top: 0;
+                }
+            }
+
+            &.starsOne {
+                left: calc(50% + 110px);
+                bottom: calc(50% - 150px);
+                transform: translate(-50%, -50%);
+            }
+
+            &.starsTwo {
+                top: 15%;
+                left: 15%;
+            }
+
+            &.starsThree {
+                top: 15%;
+                left: 2%;
+            }
+
+            &.starsFour {
+                top: 30%;
+                left: 5%;
+            }
+        }
+    }
+
+    .sectionContent {
+        max-width: 1320px;
+        display: flex;
+        width: 100%;
+        padding: 200px 15px;
+        justify-content: space-between;
+        gap: 25px;
+        align-items: center;
+        z-index: 3;
+
+        .titleContainer {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            max-width: 750px;
+
+            h4 {
+                color: $green;
+                font-size: 32px;
+            }
+
+            h2 {
+                color: $white;
+                font-size: 65px;
+                margin-top: 20px;
+            }
+
+            span {
+                color: $green;
+                font-weight: 700;
+                font-size: 85px !important;
+            }
+
+            p {
+                font-size: 24px;
+                font-family: $interFont;
+                color: $gray;
+                margin-bottom: 32px;
+            }
+        }
+
+        .swiperContainer {
+            display: flex;
+            width: 100%;
+            max-width: 450px;
+            padding: 0 15px;
+            flex-direction: column;
+
+            .swiperHead {
+                display: flex;
+                justify-content: end;
+                gap: 15px;
+                align-items: center;
+                height: min-content;
+                width: 100%;
+                margin-bottom: 20px;
+
+                img {
+                    width: 32px;
+                    object-fit: cover;
+                    object-position: center;
+                    height: 29px;
+                }
+
+                p {
+                    font-size: 24px;
+                    font-weight: 600;
+                    margin-bottom: 5px;
+                }
+            }
+
+            .swiperWrapper {
+                .cardWrapper {
+                    padding-bottom: 50px;
+                }
+            }
+
+        }
+    }
+}

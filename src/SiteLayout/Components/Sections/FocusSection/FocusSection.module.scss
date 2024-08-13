@@ -1,0 +1,75 @@
+@import '../../../../Variables/Variables';
+@import '../../../../Animations/Animations';
+@import '../../../../CommonStyles/PageHeadingStyles/PageHeadingStyles.module';
+
+.focusSection {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  background-color: $grayFill;
+  position: relative;
+  flex-direction: column;
+
+  .decoration {
+    position: absolute;
+
+    &.square {
+      left: 13%;
+      top: 25%;
+      animation: rotate 25s linear infinite;
+    }
+
+    &.spring {
+      top: 5%;
+      right: 12%;
+      animation: shake 3s linear infinite;
+
+    }
+
+    img {
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+
+  .sectionContent {
+    display: flex;
+    width: 100%;
+    max-width: 1320px;
+    padding: 120px 15px;
+
+    .achievementContainer {
+      display: flex;
+      width: 100%;
+      align-items: center;
+      margin-bottom: 25px;
+      flex-wrap: wrap;
+
+      .container {
+        display: flex;
+        justify-content: center;
+        max-width: 322px;
+        width: 100%;
+        align-items: center;
+
+        .title {
+          display: flex;
+          flex-direction: column;
+
+          h2 {
+            font-size: 80px;
+            color: $green;
+            display: flex;
+          }
+
+          p {
+            font-size: 16px;
+            color: $gray;
+          }
+
+        }
+      }
+    }
+
+  }
+}

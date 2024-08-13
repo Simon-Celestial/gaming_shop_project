@@ -1,0 +1,140 @@
+@import "../../../../Variables/Variables";
+@import "../../../../Animations/Animations";
+@import "../../../../CommonStyles/PageHeadingStyles/PageHeadingStyles.module";
+
+.bannerSection {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  background-position: center left;
+  background-repeat: no-repeat;
+  position: relative;
+  overflow: hidden;
+
+  &:after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    background: #222434;
+    opacity: 0.8;
+  }
+
+  .decoration {
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 3;
+
+    img {
+      object-position: center;
+      object-fit: cover;
+    }
+  }
+
+  .joystickTop {
+    position: absolute;
+    left: 45%;
+    z-index: 4;
+    top: 1%;
+    transform: translateX(-45%);
+    animation: shake 3s linear infinite;
+  }
+
+  .joystickBottom {
+    position: absolute;
+    left: 40%;
+    bottom: 3%;
+    z-index: 4;
+    transform: translateX(-40%);
+    animation: shake 3s linear infinite;
+
+  }
+
+  .sectionContent {
+    display: flex;
+    width: 100%;
+    max-width: 1320px;
+    padding: 250px 0;
+    gap: 25px;
+
+    .titleContainer {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      max-width: 660px;
+      z-index: 3;
+      h4 {
+        font-size: 32px;
+        color: $green;
+        margin-bottom: 10px;
+        animation: textGlow 1s linear infinite;
+      }
+
+      h1 {
+        font-size: 80px;
+        color: $white;
+
+        span {
+          color: $green;
+          animation: textGlow 1s linear infinite;
+        }
+      }
+
+      > p {
+        font-size: 24px;
+        color: $gray;
+        font-family: $interFont;
+      }
+
+      .statisticsContainer {
+        display: flex;
+        align-items: center;
+        gap: 50px;
+        margin-top: 40px;
+
+        .box {
+          display: flex;
+          flex-direction: column;
+          gap: 5px;
+
+          p {
+            font-size: 16px;
+            font-family: $interFont;
+            color: $gray;
+            position: relative;
+            width: min-content;
+            white-space: nowrap;
+
+            &:before {
+              position: absolute;
+              content: "";
+              width: 6px;
+              height: 6px;
+              border-radius: 50%;
+              background: blue;
+              right: -10px;
+              top: 0;
+            }
+
+            &.playing {
+              &:before {
+                background: $green !important;
+              }
+            }
+
+          }
+
+          h2 {
+            font-size: 40px;
+          }
+        }
+      }
+
+      .btnContainer {
+        margin-top: 50px;
+      }
+    }
+  }
+}

@@ -1,0 +1,120 @@
+@import '../../../../Variables/Variables';
+@import '../../../../Animations/Animations';
+@import '../../../../CommonStyles/PageHeadingStyles/PageHeadingStyles.module';
+
+.howItWorksSection {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+
+  .sectionContent {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    max-width: 1320px;
+    padding: 120px 15px;
+    background-color: $background;
+
+    .titleBlock {
+      max-width: 700px;
+      margin: 0 auto 50px auto;
+
+    }
+
+    .boxesRow {
+      display: flex;
+      width: 100%;
+      flex-wrap: wrap;
+      gap: 25px;
+      align-items: center;
+
+      .box {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        max-width: 300px;
+        border-radius: 15px;
+        background: $grayFill;
+        align-items: center;
+        padding: 40px 30px;
+        position: relative;
+        transition: background-color $transition;
+
+        &:hover {
+          background-color: rgba(128, 128, 128, 0.3);
+
+          .circle {
+            background-color: $green;
+
+            svg {
+              color: $black;
+              transform: rotate(360deg);
+            }
+          }
+
+          .arrows {
+            svg {
+              transform: rotate(180deg);
+            }
+          }
+        }
+
+        .arrows {
+          position: absolute;
+          top: 50%;
+          width: 40px;
+          height: 40px;
+          right: -15px;
+          z-index: 1;
+          border-radius: 50%;
+          background-color: $greenDark;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: $white;
+          transform: translateY(-50%);
+
+          svg {
+            font-size: 32px;
+            transition: transform 0.5s ease;
+            margin-left: 2px;
+          }
+
+        }
+
+        .circle {
+          width: 80px;
+          height: 80px;
+          align-items: center;
+          justify-content: center;
+          background: #303141;
+          border-radius: 50%;
+          display: flex;
+          margin-bottom: 20px;
+          transition: background-color $transition;
+
+          svg {
+            transition: color $transition, transform 0.5s ease;
+            color: $green;
+            font-size: 32px;
+          }
+        }
+
+        h2 {
+          font-size: 24px;
+          margin-bottom: 15px;
+          text-align: center;
+        }
+
+        p {
+          color: $gray;
+          font-size: 16px;
+          text-align: center;
+          line-height: 25px;
+          font-family: $interFont;
+        }
+      }
+    }
+
+  }
+}

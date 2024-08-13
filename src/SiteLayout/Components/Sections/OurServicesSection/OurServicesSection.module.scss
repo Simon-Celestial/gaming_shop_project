@@ -1,0 +1,125 @@
+@import "../../../../Variables/Variables";
+@import "../../../../Animations/Animations";
+@import "../../../../CommonStyles/PageHeadingStyles/PageHeadingStyles.module";
+
+.ourServicesSection {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+
+  .sectionContent {
+    display: flex;
+    width: 100%;
+    padding: 120px 15px;
+    gap: 25px;
+    max-width: 1320px;
+    justify-content: space-between;
+
+    .leftContainer {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      max-width: 530px;
+      position: relative;
+
+      .decoration {
+        position: absolute;
+        left: -100px;
+        bottom: -55px;
+        animation: rotate 35s linear infinite;
+      }
+
+      .containerTitle {
+        width: 100%;
+      }
+
+      .imageContainer {
+        width: 100%;
+        position: relative;
+        margin-top: 35px;
+        overflow: hidden;
+        border-radius: 10px;
+
+        &:hover {
+          .cover {
+            opacity: 1;
+            pointer-events: auto;
+
+            a {
+              transform: translateX(0) translateY(0);
+            }
+          }
+        }
+
+        .cover {
+          transition: opacity 0.5s ease;
+          width: 100%;
+          opacity: 0;
+          pointer-events: none;
+          height: 100%;
+          position: absolute;
+          left: 0;
+          top: 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background-color: rgba(0, 0, 0, 0.8);
+
+          a {
+            transform: translateX(50px) translateY(50px);
+            transition: color $transition, transform 0.5s ease;
+            font-size: 32px;
+            text-transform: uppercase;
+
+            &:hover {
+              color: $green;
+            }
+          }
+        }
+
+        img {
+          width: 100%;
+          object-fit: cover;
+          object-position: center;
+        }
+
+      }
+
+    }
+
+    .rightContainer {
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+      width: 100%;
+      max-width: 600px;
+
+      .containerEntity {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding: 15px 0;
+        border-top: 1px solid rgba(128, 128, 128, 0.3);
+        border-bottom: 1px solid rgba(128, 128, 128, 0.3);
+        transition: border-color 0.5s ease;
+
+        &:hover {
+          border-color: $green;
+        }
+
+        h2 {
+          font-size: 32px;
+          margin-bottom: 10px;
+          color: $white;
+        }
+
+        p {
+          font-size: 16px;
+          font-family: $interFont;
+          color: $gray;
+        }
+      }
+    }
+
+  }
+}

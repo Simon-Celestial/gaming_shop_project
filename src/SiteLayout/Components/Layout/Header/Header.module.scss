@@ -129,7 +129,7 @@
 
       .navEntity {
         padding: 5px 10px;
-        font-size: 20px;
+        font-size: 18px;
         cursor: pointer;
         position: relative;
         white-space: nowrap;
@@ -173,7 +173,7 @@
         .entity {
           transition: color $transition;
           position: relative;
-          font-weight: 600;
+          font-weight: 500;
 
           &.current {
             color: $green;
