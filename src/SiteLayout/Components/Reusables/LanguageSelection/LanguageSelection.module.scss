@@ -7,9 +7,9 @@
   align-items: center;
   gap: 15px;
   cursor: pointer;
-  transition: top 0.4s linear;
   color: $white;
   position: relative;
+  z-index: 10;
   >span {
     font-size: 20px;
     text-transform: uppercase;
@@ -42,7 +42,7 @@
     display: flex;
     flex-direction: column;
     gap: 5px;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.8);
 
 
     p {
@@ -64,6 +64,28 @@
       opacity: 1;
       pointer-events: auto;
       bottom: 55px;
+    }
+  }
+}
+@media screen and (max-width: 1500px) {
+  .languageSelection {
+    flex-direction: column-reverse;
+    gap: 5px;
+    svg {
+      &.rotate {
+        transform: rotate(90deg);
+      }
+    }
+
+    .languageDropdown {
+      width: 100px;
+      left: 0;
+      bottom: 10px;
+      transition: opacity 0.2s ease, left $transition;
+      &.languageVisible {
+        left: 55px;
+        bottom: 10px;
+      }
     }
   }
 }

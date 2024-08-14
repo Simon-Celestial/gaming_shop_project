@@ -241,7 +241,76 @@
 
       }
     }
+  }
+}
 
+@media screen and (max-width: 1200px) {
+  .basketWrapper {
+    .emptyShopper {
+      gap: 15px;
+      img {
+        max-width: 50px;
+      }
+      p {
+        font-size: 18px;
+      }
+    }
+  }
+}
 
+@media screen and (max-width: 800px) {
+  .basketWrapper {
+    max-width: unset;
+    padding-left: 65px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .basketWrapper {
+    padding: 15px 15px 15px 65px;
+    .closeMenu {
+      top: 10px;
+    }
+    .basketHead {
+      font-size: 20px;
+    }
+    .basketProducts {
+      margin-top: 15px;
+      .productCard {
+        flex-direction: column;
+        gap: 10px;
+        z-index: -1;
+        .color {
+          bottom: 18px;
+        }
+        .details {
+          a {
+            font-size: 16px;
+          }
+          .price {
+            margin-top: 12px;
+          }
+        }
+      }
+
+    }
+    .basketFooter {
+      z-index: 3;
+      padding: 10px 0 0 0;
+      .priceInfo {
+        flex-direction: column;
+        align-items: start;
+        gap: 8px;
+      }
+      .buttonsBlock {
+        align-items: start;
+        flex-direction: column;
+        padding: 15px 0 0 0;
+        width: 100%;
+        a {
+          width: 100%;
+        }
+      }
+    }
   }
 }

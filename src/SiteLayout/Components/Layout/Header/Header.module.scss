@@ -370,3 +370,131 @@
 
   }
 }
+
+@media screen and (max-width: 1600px) {
+.headerWrapper {
+  .headerContent {
+    .leftBlock {
+      gap: 20px;
+    }
+    .rightBlock {
+      .buttonBlock {
+        &.cartButton {
+          margin-left: 0;
+        }
+      }
+    }
+  }
+}
+}
+
+@media screen and (max-width: 1500px) {
+  .headerWrapper {
+    .headerContent {
+      .leftBlock {
+        .logoBlock {
+          gap: 2px;
+          img {
+            width: 38px;
+          }
+          p {
+            font-size: 16px;
+          }
+        }
+        .phoneBlock {
+          svg {
+            font-size: 20px;
+          }
+          a {
+            font-size: 15px;
+          }
+        }
+      }
+      .navigationBlock {
+        .navEntity {
+          padding: 5px 8px;
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1450px) {
+  .headerWrapper {
+    .headerContent {
+      padding: 25px 25px 25px 60px;
+      .leftBlock {
+        .logoBlock {
+          p {
+            display: none;
+          }
+        }
+        .phoneBlock {
+          display: none;
+        }
+      }
+      .rightBlock {
+        gap: 10px;
+        .buttonBlock {
+          width: 30px;
+          height: 30px;
+        }
+      }
+      .navigationBlock {
+        gap: 0;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .headerWrapper {
+    .headerContent {
+      .leftBlock {
+        .logoBlock {
+          p {
+            display: block;
+          }
+        }
+        .phoneBlock {
+          display: flex;
+        }
+      }
+      .navigationBlock {
+        display: none;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .headerWrapper {
+    .headerContent {
+      .leftBlock {
+        .logoBlock {
+          p {
+            display: block;
+          }
+        }
+        .phoneBlock {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .headerWrapper {
+    .headerContent {
+      .leftBlock {
+        .logoBlock {
+          p {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}

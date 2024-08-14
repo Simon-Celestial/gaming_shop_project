@@ -29,9 +29,13 @@ interface NAV_DATA {
 export const SideMenu = () => {
     const [menuState, setMenuState] = useState(false);
     const [translatedNavigation, setTranslatedNavigation] = useState(navData?.en)
+    const [mobileDropDown, setMobileDropDown] = useState(false);
 
+    const handleOpenMobileDropdown = useCallback(() : void => {
+        setMobileDropDown(prev => !prev);
+    }, [setMobileDropDown])
 
-    const {i18n,t} = useTranslation();
+    const {i18n, t} = useTranslation();
 
 
     useEffect(() => {
@@ -48,6 +52,7 @@ export const SideMenu = () => {
     const handleMenuOpen = useCallback(() => {
         setMenuState(prevState => !prevState);
     }, []);
+
     return (
         <>
             <aside className={styles.sideMenuWrapper}>
@@ -80,22 +85,32 @@ export const SideMenu = () => {
                     </Link>
                 </div>
                 <div className={styles.languageBox}>
-                    <LanguageSelection />
+                    <LanguageSelection/>
                 </div>
             </aside>
             <div className={`${styles.sideMenuContent} ${menuState ? styles.menuActive : ""}`}>
                 <nav className={styles.navigation}>
                     {translatedNavigation?.map((nav: NAV_DATA) => {
                         return (
-                            <div key={nav?.id} className={`${styles.navItem} `}>
+                            <div
+                                key={nav?.id}
+                                className={`${styles.navItem}`}
+                                onClick={nav?.id === "pages" ? handleOpenMobileDropdown : undefined}
+                            >
                                 {nav?.id === 'pages' ?
                                     <>
-                                        <p className={`${styles.item}`}>{nav?.name}<ExpandLessOutlinedIcon/></p>
-                                        <div className={styles.navDropDown}>
+                                        <p className={`${styles.item}`}>{nav?.name}<ExpandLessOutlinedIcon
+                                        className={mobileDropDown? styles.svgRotated : ''}
+                                        /></p>
+                                        <div className={`${styles.navDropDown} ${mobileDropDown? styles.activeMobileDropDown : ''}`}>
                                             <div className={styles.dropDownContent}>
-                                                {nav?.children?.map((child : NAV_DATA)=> {
+                                                {nav?.children?.map((child: NAV_DATA) => {
                                                     return (
-                                                        <Link key={child?.id} to={child?.route}>
+                                                        <Link
+                                                            key={child?.id}
+                                                            to={child?.route}
+                                                            className={location.pathname === child?.route ? styles.current : ""}
+                                                        >
                                                             {child?.name}
                                                         </Link>
                                                     )
@@ -105,7 +120,7 @@ export const SideMenu = () => {
                                     </>
                                     :
                                     <Link to={nav?.route}
-                                          className={`${styles.item} ${location.pathname === nav?.route? styles.current : ""}`}>{nav?.name}</Link>
+                                          className={`${styles.item} ${location.pathname === nav?.route ? styles.current : ""}`}>{nav?.name}</Link>
                                 }
                             </div>
                         )

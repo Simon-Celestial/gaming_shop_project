@@ -58,11 +58,12 @@
       height: 32px;
       align-items: center;
       display: flex;
-      transition: border-color $transition,transform $transition;
+      transition: border-color $transition, transform $transition;
 
       &:hover {
         border-color: $green;
         transform: scale(1.1);
+
         svg {
           transform: rotate(360deg) scale(1.1);
         }
@@ -78,16 +79,15 @@
   }
 
 
-
-
 }
+
 .sideMenuContent {
   display: flex;
   width: 100%;
   height: 100vh;
   background: rgba(0, 0, 0, 0.6);
   position: fixed;
-  z-index: 11;
+  z-index: 9;
   margin-left: 100px;
   backdrop-filter: blur(10px);
   flex-direction: column;
@@ -95,18 +95,22 @@
   pointer-events: none;
   opacity: 0;
   transition: opacity 0.5s ease;
+
   &.menuActive {
     opacity: 1;
     pointer-events: auto;
+
     .navigation {
       .navItem {
         padding: 10px 20px;
       }
     }
+
     .contacts {
       transform: translateY(0);
     }
   }
+
   .navigation {
     display: flex;
     gap: 5px;
@@ -130,25 +134,48 @@
         opacity: 0;
         transition: opacity $transition, top 0.4s ease;
         pointer-events: none;
+        z-index: 3;
 
         .dropDownContent {
           display: flex;
           flex-direction: column;
           background-color: black;
           padding: 10px;
-          min-width: 180px;
+          min-width: 200px;
           border-radius: 5px;
           gap: 10px;
+          box-shadow: 0 0 2px rgba(255, 255, 255, 0.2);
+
 
           a {
-            transition: color $transition, letter-spacing $transition;
+            transition: color $transition, letter-spacing 0.5s ease;
             font-size: 20px;
-
+            position: relative;
+            white-space: nowrap;
             &:hover {
               color: $green;
-              letter-spacing: 2px;
+              letter-spacing: 1px;
             }
+            &:after {
+              content: "";
+              opacity: 0;
+              width: 35px;
+              height: 1px;
+              background: $green;
+              position: absolute;
+              left: 20%;
+              top: 50%;
+              transform: translate(-20%, -50%);
+              transition: transform $transition, opacity $transition;
+            }
+            &.current {
+              color: $green;
 
+              &:after {
+                opacity: 1;
+                transform: rotate(-45deg);
+              }
+            }
           }
         }
       }
@@ -181,6 +208,7 @@
           transition: transform $transition, opacity $transition;
         }
       }
+
       p {
         display: inline-flex;
         align-items: center;
@@ -222,6 +250,7 @@
     display: flex;
     transform: translateY(100%);
     transition: transform 1s ease;
+
     .contactsEntity {
       width: 25%;
       border-right: 1px solid rgba(128, 128, 128, 0.5);
@@ -234,10 +263,11 @@
         margin-bottom: 24px;
         font-weight: 700;
       }
+
       .details {
         display: flex;
         gap: 20px;
-        align-items: center;
+
         .icon {
           width: 60px;
           height: 60px;
@@ -247,22 +277,26 @@
           align-items: center;
           justify-content: center;
           border-radius: 50%;
+
           svg {
             font-size: 32px;
             color: $green;
           }
         }
+
         .address {
           display: flex;
           flex-direction: column;
           gap: 5px;
           font-family: $interFont;
+
           h2 {
             font-size: 20px;
           }
+
           p {
             font-size: 16px;
-          color: #9b9b9b;
+            color: #9b9b9b;
 
           }
 
@@ -276,3 +310,210 @@
   }
 
 }
+
+@media screen and (max-width: 1800px) {
+  .sideMenuContent {
+    .navigation {
+      .navItem {
+        padding: 10px !important;
+
+        .item {
+          font-size: 30px;
+        }
+      }
+    }
+
+  }
+}
+
+@media screen and (max-width: 1600px) {
+  .sideMenuContent {
+    .contacts {
+      .contactsEntity {
+        padding: 20px;
+
+        .details {
+          .icon {
+            width: 45px;
+            height: 45px;
+
+            svg {
+              font-size: 25px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1500px) {
+  .sideMenuWrapper {
+    max-width: 50px;
+
+    .menuLogo {
+      font-size: 8px;
+
+      svg {
+        font-size: 28px;
+      }
+    }
+  }
+  .sideMenuContent {
+    margin-left: 50px;
+
+    .contacts {
+      .contactsEntity {
+        .title {
+          margin-bottom: 15px;
+        }
+
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1320px) {
+  .sideMenuContent {
+    .navigation {
+      .navItem {
+        &:hover {
+          .navDropDown {
+            top: 40px;
+          }
+
+        }
+
+        .item {
+          font-size: 23px;
+        }
+      }
+    }
+
+    .contacts {
+      .contactsEntity {
+        .title {
+          font-size: 20px;
+        }
+        .details {
+          flex-direction: column;
+        }
+
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .sideMenuContent {
+    .navigation {
+      .navItem {
+        .item {
+          font-size: 20px;
+        }
+
+        .navDropDown {
+          left: unset;
+          right: 0;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .sideMenuContent {
+    .navigation {
+      flex-direction: column;
+      align-items: center;
+      margin: 50px 100px 0 50px;
+      width: 100%;
+      height: 80%;
+      overflow-y: scroll;
+
+      .navItem {
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        display: flex;
+
+        .item {
+          svg {
+            &.svgRotated {
+              transform: rotate(0)!important;
+            }
+          }
+        }
+
+        &:hover {
+          .item {
+            svg {
+              transform: rotate(180deg);
+            }
+          }
+        }
+
+        .navDropDown {
+          opacity: 0;
+          position: static;
+          align-items: center;
+          justify-content: center;
+          padding: 5px 0 0 0;
+          transform: scaleY(0);
+          transition: opacity 0s ease;
+          pointer-events: none;
+          transform-origin: top;
+          height: 0;
+
+
+          &.activeMobileDropDown {
+            pointer-events: auto;
+            transition: opacity 0.2s ease,transform 0.2s ease;
+
+            transform: scaleY(1);
+            height: auto;
+            opacity: 1;
+
+
+          }
+
+          .dropDownContent {
+            background: transparent;
+            box-shadow: 0 0 0 transparent;
+            align-items: center;
+          }
+        }
+      }
+    }
+
+    .contacts {
+      display: none;
+    }
+  }
+}
+
+@media screen and (max-height: 600px) {
+  .sideMenuContent {
+    .navigation {
+      margin-top: 50px;
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .sideMenuContent {
+    .navigation {
+      margin-top: 25px!important;
+      gap: 0;
+
+      .navItem {
+        .item {
+        }
+
+        .navDropDown {
+        }
+      }
+    }
+  }
+}
+
