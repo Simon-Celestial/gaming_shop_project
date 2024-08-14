@@ -42,7 +42,7 @@
     "toastSuccess": "Сообщение успешно отправлено!"
   },
   "footerTwo" : {
-    "footerTitle": "Начнем",
+    "footerTitle": "Давайте Начнем",
     "footerContactText": "Для получения дополнительной информации и поддержки",
     "footerContactLink": "свяжитесь с нами",
     "footerEmailPlaceholder": "Введите Ваш Email...",
@@ -59,7 +59,7 @@
     "footerWorkingHoursTitle": "Рабочие часы",
     "footerWorkingHours1": "Пн-Пт: 09:00 - 18:00",
     "footerWorkingHours2": "Сб-Вс: Выходные",
-    "footerCopyright": "Авторское право © 2023",
+    "footerCopyright": "Авторство © 2023",
     "footerCopyrightLink": "Gamestorm",
     "footerAllRightsReserved": " - Все права защищены",
     "footerPrivacyLink": "Конфиденциальность",

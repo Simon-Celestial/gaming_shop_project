@@ -64,7 +64,8 @@ export const FooterTwo = () => {
                 <div className={styles.footerTitle}>
                     <div className={styles.titleLeft}>
                         <h2>{t('footerTwo.footerTitle')}</h2>
-                        <p>{t('footerTwo.footerContactText')} <Link to={"/contact"}>{t('footerTwo.footerContactLink')}</Link></p>
+                        <p>{t('footerTwo.footerContactText')} <Link
+                            to={"/contact"}>{t('footerTwo.footerContactLink')}</Link></p>
                     </div>
                     <div className={styles.titleRight}>
                         <div className={styles.inputWrapper}>
@@ -75,18 +76,20 @@ export const FooterTwo = () => {
                                 value={mailInput}
                                 onChange={handleMessageValue}
                             />
-                            <div style={{
+                            <div
+                                className={styles.subscribeButton}
+                                style={{
                                 border: "1px dashed #F5F5F5",
                                 borderRadius: "16px"
                             }}>
-                                <div onClick={handleSendMessage}>
-                                <DefaultButton
-
-                                    link={""}
-                                    title={t('footerTwo.footerSubscribeButton')}
-                                    grayBtn={false}
-                                    wide={false}
-                                />
+                                <div
+                                    onClick={handleSendMessage}>
+                                    <DefaultButton
+                                        link={""}
+                                        title={t('footerTwo.footerSubscribeButton')}
+                                        grayBtn={false}
+                                        wide={true}
+                                    />
                                 </div>
                             </div>
                         </div>
@@ -142,15 +145,14 @@ export const FooterTwo = () => {
                         </div>
                     </div>
                 </div>
-                <div className={styles.footerCopyright}>
-                    <p>{t('footerTwo.footerCopyright')} <Link to={"/"}>{t('footerTwo.footerCopyrightLink')}</Link>
-                        {t('footerTwo.footerAllRightsReserved')}</p>
-                    <span>
-                        <Link to={"/"}>{t('footerTwo.footerPrivacyLink')}</Link>
-                        <Link to={"/"}>{t('footerTwo.footerTermsLink')}</Link>
+            </div>
+            <div className={styles.footerCopyright}>
+                <p>{t('footerTwo.footerCopyright')} <Link to={"/"}>{t('footerTwo.footerCopyrightLink')}</Link>
+                    {t('footerTwo.footerAllRightsReserved')}</p>
+                <span>
+                        <Link to={"/privacy-policy"}>{t('footerTwo.footerPrivacyLink')}</Link>
+                        <Link to={"/privacy-policy"}>{t('footerTwo.footerTermsLink')}</Link>
                     </span>
-                </div>
-
             </div>
         </footer>
     );

@@ -5,6 +5,8 @@ import {useTranslation} from "react-i18next";
 export const BackToTop = () => {
     const [backToTop, setBackToTop] = useState(false);
 
+    const {i18n} = useTranslation();
+
     const handleScroll = useCallback(() => {
         if (window.scrollY > 300) {
             setBackToTop(true);
@@ -32,7 +34,7 @@ export const BackToTop = () => {
 
     return (
         <div
-            className={`${styles.backToTop} ${backToTop ? styles.show : ''}`}
+            className={`${styles.backToTop} ${backToTop ? styles.show : ''} ${i18n.language === "ru" || i18n.language === "tr"? styles.differentShow : ''}`}
             onClick={scrollToTop}
         >
             <span></span>

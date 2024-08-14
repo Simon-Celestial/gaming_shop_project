@@ -137,12 +137,14 @@ export const FooterOne = () => {
                                 value={mailInput}
                                 onChange={handleMessageValue}
                             />
-                            <div onClick={handleSendMessage}>
+                            <div
+                                className={styles.btnWrap}
+                                onClick={handleSendMessage}>
                                 <DefaultButton
                                     link={""}
                                     title={t('footerOne.sendMessage')}
                                     grayBtn={false}
-                                    wide={false}
+                                    wide={true}
                                 />
                             </div>
                         </div>

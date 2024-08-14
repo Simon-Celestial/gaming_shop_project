@@ -45,6 +45,7 @@
     width: 100%;
     align-items: center;
     height: 615px;
+
     .boxesContainer {
       width: 50%;
       display: flex;
@@ -75,25 +76,29 @@
         }
 
       }
+
       .boxesTitle {
         display: flex;
         flex-direction: column;
         width: 100%;
-        max-width: 450px;
+        max-width: 430px;
         z-index: 2;
-        margin-left: 280px;
+        margin-left: 130px;
         pointer-events: none;
+
         h2 {
           padding-bottom: 25px;
           font-size: 25px;
           letter-spacing: 2px;
           color: $white;
         }
+
         p {
           font-size: 16px;
           color: $gray;
           font-family: $interFont;
         }
+
         .infoRow {
           display: flex;
           width: 100%;
@@ -102,7 +107,7 @@
           margin-top: 32px;
 
           .infoIcon {
-            width: 60px;
+            min-width: 60px;
             height: 60px;
             display: flex;
             align-items: center;
@@ -110,15 +115,19 @@
             background: $grayFill;
             border-radius: 50%;
             border: 1px solid $green;
+
             svg {
               font-size: 25px;
               color: $green;
             }
           }
+
           .infoTitle {
             display: flex;
             flex-direction: column;
             gap: 5px;
+            max-width: 350px;
+
             h3 {
               font-size: 20px;
             }
@@ -137,20 +146,24 @@
       border-bottom: 1px solid rgba(128, 128, 128, 0.3);
 
       justify-content: start;
+
       .titleBox {
         display: flex;
         flex-direction: column;
         width: 100%;
         max-width: 420px;
+
         h2 {
           font-size: 24px;
         }
+
         p {
           font-size: 16px;
           color: $gray;
           font-family: $interFont;
           margin-top: 20px;
         }
+
         .inputBox {
           display: flex;
           width: 100%;
@@ -158,7 +171,8 @@
           padding: 16px;
           align-items: center;
           border: 1px solid rgba(128, 128, 128, 0.3);
-          border-radius: 10px ;
+          border-radius: 10px;
+
           input {
             width: 100%;
             padding-right: 15px;
@@ -168,6 +182,7 @@
             font-size: 16px;
             outline: 0;
             color: $white;
+
             &::placeholder {
               color: rgba(128, 128, 128, 0.3);
             }
@@ -175,28 +190,34 @@
           }
 
         }
+
         .postBox {
           display: flex;
           width: 100%;
           margin-top: 25px;
           flex-direction: column;
           gap: 20px;
+
           h2 {
             font-size: 20px;
           }
+
           .postsRow {
             display: flex;
             align-items: center;
             width: 100%;
             gap: 10px;
+
             a {
               width: 60px;
               height: 60px;
+
               &:hover {
                 img {
                   transform: rotate(360deg);
                 }
               }
+
               img {
                 width: 100%;
                 object-position: center;
@@ -217,12 +238,157 @@
     padding: 32px 15px;
     justify-content: center;
     background: $grayFill;
+
     p {
       text-align: center;
       font-size: 16px;
       color: $gray;
+
       a {
         color: $green;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1320px) {
+  .footerWrapper {
+    .socialContainer {
+      padding-left: 50px;
+    }
+
+    .footerContent {
+      height: 500px;
+
+      .boxesContainer {
+        .boxesTitle {
+          margin-left: 75px;
+          padding-right: 25px;
+        }
+      }
+
+      .titleContainer {
+        padding: 80px 50px;
+
+        .titleBox {
+          max-width: unset;
+        }
+      }
+
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .footerWrapper {
+    .footerContent {
+      height: auto;
+      flex-direction: column;
+
+      .boxesContainer {
+        width: 100%;
+        padding: 50px 15px;
+        justify-content: start;
+
+        .boxesTitle {
+          max-width: 570px;
+          margin-left: 50px;
+          padding-right: 0;
+        }
+
+        .boxesBlock {
+          .box {
+            width: 33.33%;
+
+          }
+        }
+      }
+
+      .titleContainer {
+        width: 100%;
+        padding: 50px 15px 50px 65px;
+
+        .titleBox {
+          max-width: 580px;
+
+        }
+      }
+
+    }
+    .copyright {
+      padding: 20px 15px 20px 65px;
+      justify-content: start;
+
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .footerWrapper {
+    .socialContainer {
+      flex-direction: column;
+
+      .iconContainer {
+        width: 100%;
+        padding: 10px 0;
+        justify-content: start;
+      }
+    }
+
+    .footerContent {
+      .boxesContainer {
+        padding: 35px 15px;
+      }
+
+      .titleContainer {
+        padding: 35px 15px 35px 65px;
+      }
+
+
+    }
+
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .footerWrapper {
+    .footerContent {
+      .titleContainer {
+        .titleBox {
+          .inputBox {
+            flex-direction: column;
+            gap: 15px;
+            align-items: start;
+            .btnWrap {
+              width: 100%;
+              max-width: unset;
+            }
+          }
+        }
+      }
+      .boxesContainer {
+        .boxesTitle {
+          h2 {
+            padding-bottom: 8px;
+
+          }
+          .infoRow {
+            margin-top: 20px;
+            flex-direction: column;
+            align-items: start;
+
+            .infoIcon {
+              min-width: 45px;
+              height: 45px;
+            }
+          }
+        }
+        .boxesBlock {
+          .box {
+            width: 50%;
+          }
+        }
+
       }
     }
   }
