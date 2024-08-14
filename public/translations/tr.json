@@ -428,7 +428,150 @@
     "registrationError": "Kayıt sırasında bir hata oluştu. Lütfen daha sonra tekrar deneyin.",
     "allFieldsRequired": "Tüm alanlar gereklidir."
 
+  },
+  "bannerSection": {
+    "title": "Oyun Dünyasının Tadını Çıkarın",
+    "sellingDevices": "Sizin için yapıyoruz",
+    "description": "Yenilikçi ve eğlenceli oyun cihazları yaratıyoruz, bu da oyun deneyiminize canlı renkler katıyor.",
+    "exploreButton": "Ürünlerimizi Keşfedin",
+    "featuredDevice": "Öne Çıkan Cihaz",
+    "arrowBottomAlt": "aşağı ok"
+  },
+  "bannerTwoSection": {
+    "craftingGames": "İstisnai Oyunlar Yapıyoruz",
+    "playImproveWin": "Oyna, Geliştir",
+    "win": "Kazan",
+    "description": "Gamestorm, oyun oynama, tartışma ve oyun oluşturma için en iyi yerdir.",
+    "online": "Çevrimiçi",
+    "playingNow": "Şu Anda Oynayan",
+    "exploreGamesButton": "Oyunlarımızı Keşfedin",
+    "and": "ve"
+  },
+  "communitySection": {
+    "joinOur": "Topluluğumuza",
+    "community": "Katılın!",
+    "connectWith": "Dünyaca Ünlü",
+    "gamersWorldwide": "Oyun Severlerle Bağlantı Kurun",
+    "description": "Devrime katılın ve gerçeklik ile hayal arasındaki sınırların bulanıklaştığı, tek sınırın hayal gücünüz olduğu en iyi oyun deneyimine kendinizi kaptırın. Şimdi kaydolun ve en son oyunlarımızı oynayan ilk kişi olun.",
+    "exploreGamesButton": "Oyunlarımızı Keşfedin",
+    "joinCommunityButton": "Topluluğumuza Katılın"
+  },
+  "contactUsSection": {
+    "haveQuestions": "Sorularınız",
+    "questions": "Var mı?",
+    "weWouldLoveToHear": "Sizi Duymak İsteriz!",
+    "hearFromYou": "Bize Ulaşın!",
+    "description": "Lütfen formu doldurun ve endişelerinizi bize bildirin. En iyi çözümleri sunmak için elimizden geleni yapacağız."
+  },
+  "communityTwoSection": {
+    "communityDescription": "Çalışmalarımız, bir topluluğu bir araya getirdi",
+    "gamersCount": "59,135,660",
+    "gamersDescription": "Dünyanın dört bir yanından oyuncular"
+  },
+  "faqsSection": {
+    "titleCommonQuestions": "Şirketimiz hakkında Sıkça Sorulan Soruların",
+    "titleCompany": "Yanıtları",
+    "titleFaq": "Oyun Stüdyomuz Hakkında",
+    "titleGamingStudio": "Sıkça Sorulan Sorular",
+    "description": "Oyun şirketimiz, birçok platform için oyunlar geliştiriyor ve her zaman ekibimize katılacak yetenekli bireyler arıyor. Kalite ve oyuncu memnuniyeti bizim en büyük önceliğimizdir.",
+    "faqTitle": "Daha Fazla Bilgi Kontrol Et",
+    "faqDescription": "GameStorm, oyun geliştirme, sanat, tasarım ve proje yönetiminde uzmanlaşmış tam hizmet oyun stüdyosu şirketidir.",
+    "btnLearnMore": "Daha Fazla Bilgi Edin"
+  },
+  "servicesSection": {
+    "Game": "Oyun",
+    "DesignAndDevelopment": "Tasarım & Geliştirme",
+    "Services": "Hizmetler",
+    "OurComprehensiveGame": "Kapsamlı Oyun Geliştirme ",
+    "DevelopmentServices": "Hizmetlerimiz",
+    "EndToEndGameDevelopment": "Uçtan uca oyun geliştirme, yeniden yapılandırma ve dış kaynak hizmetleri. Üst sınıf oyun deneyimleri için sürükleyici teknoloji uzmanlığı",
+    "FindOut": "Fazla Bilgi"
+  },
+  "productsSection" : {
+    "EmbraceTheWorldOf": "Oyun Dünyasını",
+    "Gaming": "Kucaklayın!",
+    "OurDedicatedShop": "Size Özel Mağazamız Hizmetinizde.",
+    "ExperienceTheBest": "En İyiyi Deneyimleyin.",
+    "ExploreVariety": "Geniş bir oyun ekipmanı ve çevre birimleri yelpazesini keşfedin."
+  },
+  "ourServicesSection" : {
+    "BringingYourGamingVision": "Oyun Vizyonunuzu",
+    "GamingVisionToLife": "Gerçeğe",
+    "life" : "Dönüştürüyoruz",
+    "InnovativeGamingSolutions": "Yenilikçi",
+    "GamingSolutionsEverywhere": "Oyun Çözümleri",
+    "everywhere" : "Her Yerde",
+    "OurGamingStudio": "Oyun stüdyomuz, oyun geliştirme, sanat ve tasarım, NFT oluşturma ve VR & AR çözümleri konusunda birinci sınıf hizmetler sunar.",
+    "TransformingGaming": "Oyunları, ileri teknoloji ve platform bağımsız çözümlerle dönüştürüyoruz.",
+    "SeeAllServices": "Tüm Hizmetleri Gör"
+  },
+  "keysSection" : {
+    "TheFourKeyComponents": "Dört Anat Bileşen",
+    "GamestormStudio": "Gamestorm stüdyosu",
+    "LongLastingFun": "Uzun Süreli Eğlence",
+    "LongLastingFunDescription": "Oyunlarımız, oyun oynanabilirliği ve oyun hizmeti yaklaşımımız sayesinde sürekli içerik güncellemeleri ile patlayıcı bir eğlence sunar.",
+    "ForEveryone": "Herkes İçin",
+    "ForEveryoneDescription": "Video oyunlarımızı geliştirirken, her oyuncunun oyun oynama isteğini karşılayabileceğinden emin oluruz, gündelik oyunculardan hız koşucularına kadar.",
+    "UniqueTwist": "Benzersiz Bir Dokunuş",
+    "UniqueTwistDescription": "Sevilen oyun türlerine kendi dokunuşumuzu katıyoruz; yarış oyunu, durmanın amaç olduğu yarış oyunu, 360 derecelik bir ortamda point-and-click oyunu gibi.",
+    "GradualLearningCurve": "Kademeli Öğrenme Eğrisi",
+    "GradualLearningCurveDescription": "Oyunlarımız öğrenmesi kolay ama ustalaşması zor. Bu da oyunlarımızı hem yeni başlayanlar için erişilebilir hem de profesyoneller için zorlu hale getiriyor."
+
+  },
+  "lifeSection" : {
+    "topTitleH4": "Büyük Bir Ailenin ",
+    "topTitleH4Span": "Parçasıyız",
+    "topTitleH2": "Ekibimizi Daha İyi",
+    "topTitleH2Span": "Tanıyın.",
+    "topTitleP": "Stüdyomuza bir bakışla oyun geliştirme sihrini yaşayın. Sanat, bilim ve yeniliği çalışma sırasında görün.",
+    "joinContainerH2": "Bize Katılın!",
+    "joinContainerP": "Hala hayalinizdeki işi bulamadınız mı? Gamestorm Ekibine katılın ve hızla büyüyen bir ailenin bir parçası olun!",
+    "defaultButtonTitle": "Açık Pozisyonları Kontrol Et"
+  },
+  "howItWorksSection" : {
+    "simplePowerfulEfficientProcess": "Basit ama Güçlü ve Etkili Bir",
+    "process" : "Süreç",
+    "ourGame": "Oyunlarımız",
+    "developmentProcess": "Geliştirme Süreci",
+    "gameDevelopmentNextLevel": "Oyun geliştirmeyi 10 basit adımda bir üst seviyeye taşıyın. Her zaman aşağıdaki sürece göre çalışıyoruz"
+
+  },
+  "gameFeaturesSection": {
+    "clientCentric": "Müşteri Merkezli",
+    "creativity": "Yaratıcılık",
+    "ourFundamentalBenefits": "Oyun Sanatı ve",
+    "gameART": "Geliştirmedeki Temel Yararlarımız",
+    "andDevelopment": "Oyun Sanatı",
+    "clientCentricApproach": "Müşteri merkezli bir yaklaşımın, yaratıcı özgürlük, profesyonel deneme ve sınırların ötesinde yaratma isteği ile birleşmesi, bizi öne çıkan bir ürün sunmayı hedefleyen işletmeler için mükemmel bir ortak yapar."
+
+  },
+  "focusSection" : {
+    "yearsInBusiness": "İş Yılları",
+    "downloads": "İndirmeler",
+    "gamesLaunched": "Yayınlanan Oyunlar",
+    "gamingProjectsDelivered": "Oyun Projeleri"
+
+  },
+  "contactUsTwoSection" : {
+    "have": "Sorularınız mı",
+    "questions": "var?",
+    "cantFindWhatYouLookingFor": "Aradığınızı mı",
+    "lookingFor": "bulamadınız?",
+    "getInTouch": "İletişime Geçin",
+    "formNote": "Lütfen formu doldurun ve endişelerinizi bize bildirin. Size en iyi çözümleri sunmak için elimizden geleni yapacağız.",
+    "writeAMessage": "Mesaj Yaz",
+    "getInTouchTitle": "İletişime Geçin",
+    "haveAnyQuestions": "Sorularınız mı var?",
+    "phoneNumbers": "(302) 555-0107 | (704) 555-0127",
+    "contactAddress": "İletişim Adresi",
+    "address": "San Francisco, Kaliforniya, 53 Shore View Avenue",
+    "openingHours": "Açılış Saatleri",
+    "monFriHours": "Pzt-Cum: 9:00 - 18:00",
+    "satHours": "Cmt: 10:00 - 16:00",
+    "sunClosed": "Paz: Kapalı"
+
   }
+
 
 
 

@@ -16,7 +16,7 @@ interface GAMING_VISION_DATA {
 export const OurServicesSection = () => {
     const [translatedGameVision, setTranslatedGameVision] = useState(gamingVisionData.en);
 
-    const {i18n} = useTranslation();
+    const {i18n,t} = useTranslation();
 
     useEffect(() => {
         if (i18n.language === "en") {
@@ -38,16 +38,14 @@ export const OurServicesSection = () => {
                     </div>
                     <div className={styles.containerTitle}>
                         <div className={`${styles.pageHeading} ${styles.notCenteredText}`}>
-                            <h4>Bringing Your <span> Gaming Vision</span> to Life</h4>
-                            <h2>Innovative <span> Gaming Solutions</span> Everywhere</h2>
-                            <p>Our gaming studio delivers top-notch services in game development, art & design,
-                                NFT creation, and VR & AR solutions. Transforming gaming with cutting-edge and
-                                platform-independent solutions.</p>
+                            <h4>{t('ourServicesSection.BringingYourGamingVision')} <span> {t('ourServicesSection.GamingVisionToLife')}</span> {t('ourServicesSection.life')}</h4>
+                            <h2>{t('ourServicesSection.InnovativeGamingSolutions')} <span> {t('ourServicesSection.GamingSolutionsEverywhere')}</span> {t('ourServicesSection.everywhere')}</h2>
+                            <p>{t('ourServicesSection.OurGamingStudio')}</p>
                         </div>
                     </div>
                     <div className={styles.imageContainer}>
                         <div className={styles.cover}>
-                            <Link to={"/services"}>See All Services</Link>
+                            <Link to={"/services"}>{t('ourServicesSection.SeeAllServices')}</Link>
                         </div>
                         <img src="/images/posters/poster-001.png" alt="Poster"/>
                     </div>

@@ -2,17 +2,18 @@ import styles from './ContactUsSection.module.scss';
 import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
 import EmailIcon from "@mui/icons-material/Email";
 import {ContactForm} from "../../Reusables/ContactForm/ContactForm.tsx";
+import {useTranslation} from "react-i18next";
 
 export const ContactUsSection = () => {
+    const {t} = useTranslation();
     return (
         <section className={styles.contactUsSection}>
             <div className={styles.sectionContent}>
                 <div className={styles.titleBlock}>
                     <div className={`${styles.pageHeading} ${styles.notCenteredText}`}>
-                        <h4>Have <span>Questions?</span></h4>
-                        <h2>We'd Love To <span>Hear From You!</span></h2>
-                        <p>Please fill out the form and let us know about your concerns.We will try our best to
-                            provide optimized solutions.</p>
+                        <h4>{t('contactUsSection.haveQuestions')} <span>{t('contactUsSection.questions')}</span></h4>
+                        <h2>{t('contactUsSection.weWouldLoveToHear')} <span>{t('contactUsSection.hearFromYou')}</span></h2>
+                        <p>{t('contactUsSection.description')}</p>
                     </div>
                     <div className={styles.infoRow}>
                         <div className={styles.icon}>

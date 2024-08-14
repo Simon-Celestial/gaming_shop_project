@@ -18,7 +18,7 @@ interface SERVICES_DATA {
 export const ServicesSection = () => {
     const [translatedServices, setTranslatedServices] = useState([servicesData?.en]);
 
-    const {i18n} = useTranslation();
+    const {i18n, t} = useTranslation();
 
     useEffect(() => {
         if (i18n.language === "en") {
@@ -38,10 +38,13 @@ export const ServicesSection = () => {
             <div className={styles.sectionContent}>
                 <div className={styles.titleBlock}>
                     <div className={`${styles.pageHeading}`}>
-                        <h4>Game <span>Design & Development</span> Services</h4>
-                        <h2>Our Comprehensive Game <span> Development Services</span></h2>
-                        <p>End-to-end game development, revamping, and outsourcing services. Immersive
-                            technology expertise for top-class gaming experiences</p>
+                        <h4>{t('servicesSection.Game')}
+                            <span> {t('servicesSection.DesignAndDevelopment')} </span>
+                            {t('servicesSection.Services')}
+                        </h4>
+                        <h2>{t('servicesSection.OurComprehensiveGame')}
+                            <span> {t('servicesSection.DevelopmentServices')}</span></h2>
+                        <p>{t('servicesSection.EndToEndGameDevelopment')}</p>
                     </div>
                 </div>
                 <div className={styles.containersBlock}>
@@ -54,8 +57,13 @@ export const ServicesSection = () => {
                                     backgroundImage: data?.image
                                 }}
                             >
-                                <Link to={data?.link} className={styles.findOut}>
-                                    <p>Find Out</p>
+                                <Link to={"/about"} className={styles.findOut}>
+                                    <p
+                                        style={{
+                                            fontWeight: i18n.language === "ru" ? "600" : "",
+                                            fontSize: i18n.language === "ru" ? "15px" : ""
+                                        }}
+                                    >{t('servicesSection.FindOut')}</p>
                                     <SubdirectoryArrowRightIcon/>
                                 </Link>
                                 <div className={styles.cover}></div>

@@ -3,7 +3,9 @@ import CelebrationIcon from "@mui/icons-material/Celebration";
 import SportsEsportsIcon from "@mui/icons-material/SportsEsports";
 import TipsAndUpdatesIcon from "@mui/icons-material/TipsAndUpdates";
 import TrackChangesIcon from "@mui/icons-material/TrackChanges";
+import {useTranslation} from "react-i18next";
 export const KeysSection = () => {
+    const {t} = useTranslation();
     return (
         <section className={styles.keysSection}>
             <div className={`${styles.decoration} ${styles.cube}`}>
@@ -20,8 +22,8 @@ export const KeysSection = () => {
             </div>
             <div className={styles.sectionContent}>
                 <h2 className={styles.heading}>
-                    The Four Key Components of a
-                    <span> Gamestorm studio</span>
+                    {t('keysSection.TheFourKeyComponents')}
+                    <span> {t('keysSection.GamestormStudio')}</span>
                 </h2>
                 <div className={styles.keysContainer}>
                     <div className={styles.keyBox}>
@@ -29,9 +31,8 @@ export const KeysSection = () => {
                             <CelebrationIcon/>
                         </div>
                         <div className={styles.title}>
-                            <h3>Long-Lasting Fun</h3>
-                            <p>Our games offer explosive fun with playability and constant content updates
-                                through our games as a service approach.</p>
+                            <h3>{t('keysSection.LongLastingFun')}</h3>
+                            <p>{t('keysSection.LongLastingFunDescription')}</p>
                         </div>
                     </div>
                     <div className={styles.keyBox}>
@@ -39,9 +40,8 @@ export const KeysSection = () => {
                             <SportsEsportsIcon/>
                         </div>
                         <div className={styles.title}>
-                            <h3>For Everyone</h3>
-                            <p>When developing our video games, we make sure that every player can scratch
-                                their gaming itch, from casual to completes to speed runners.</p>
+                            <h3>{t('keysSection.ForEveryone')}</h3>
+                            <p>{t('keysSection.ForEveryoneDescription')}</p>
                         </div>
                     </div>
                     <div className={styles.keyBox}>
@@ -49,9 +49,8 @@ export const KeysSection = () => {
                             <TipsAndUpdatesIcon/>
                         </div>
                         <div className={styles.title}>
-                            <h3>Unique Twist</h3>
-                            <p>We put our own spin on beloved game genres, from a racing game where the goal
-                                is to stop, to a point-and-click game in a 360-degree environment.</p>
+                            <h3>{t('keysSection.UniqueTwist')}</h3>
+                            <p>{t('keysSection.UniqueTwistDescription')}</p>
                         </div>
                     </div>
                     <div className={styles.keyBox}>
@@ -59,9 +58,8 @@ export const KeysSection = () => {
                             <TrackChangesIcon/>
                         </div>
                         <div className={styles.title}>
-                            <h3>Gradual Learning Curve</h3>
-                            <p>Our games are easy to learn but hard to master. This makes our games both
-                                accessible to newcomers and challenging for pros.</p>
+                            <h3>{t('keysSection.GradualLearningCurve')}</h3>
+                            <p>{t('keysSection.GradualLearningCurveDescription')}</p>
                         </div>
                     </div>
                 </div>

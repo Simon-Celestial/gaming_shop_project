@@ -5,21 +5,23 @@ import React, {useContext} from "react";
 import {DeviceCard} from "../../Reusables/DeviceCard/DeviceCard.tsx";
 import {paginationStyles} from "../../../../CommonStyles/PaginationStyles/PaginationStyles.ts";
 import {DataContext} from "../../../../Context/DataContext/DataContext.tsx";
+import {useTranslation} from "react-i18next";
 
 export const ProductsSection = () => {
     const {
         productsData
     } = useContext(DataContext);
 
+    const {t} = useTranslation();
+
     return (
         <section className={styles.productsSection}>
             <div className={styles.sectionContent}>
                 <div className={styles.productsTitle}>
                     <div className={`${styles.pageHeading}`}>
-                        <h4>Embrace the World of <span>Gaming!</span></h4>
-                        <h2>Our Dedicated Shop is Here for You. <span>Experience the Best.</span></h2>
-                        <p>Explore an extensive variety of gaming equipment and peripherals. We providing an
-                            unparalleled gaming experience.</p>
+                        <h4>{t('productsSection.EmbraceTheWorldOf')} <span>{t('productsSection.Gaming')}</span></h4>
+                        <h2>{t('productsSection.OurDedicatedShop')} <span>{t('productsSection.ExperienceTheBest')}</span></h2>
+                        <p>{t('productsSection.ExploreVariety')}</p>
                     </div>
 
                 </div>

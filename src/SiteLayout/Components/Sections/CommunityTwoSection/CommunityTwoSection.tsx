@@ -1,6 +1,8 @@
 import styles from './CommunityTwoSection.module.scss';
+import {useTranslation} from "react-i18next";
 
 export const CommunityTwoSection = () => {
+    const {t} = useTranslation();
     return (
         <section className={styles.communitySection}>
             <div className={styles.background}>
@@ -14,9 +16,9 @@ export const CommunityTwoSection = () => {
             </div>
             <div className={styles.sectionContent}>
                 <div className={styles.circleContainer}>
-                    <p>Our work has brought together a community of</p>
-                    <h2>59,135,660</h2>
-                    <p>Gamers from all over the world</p>
+                    <p>{t('communityTwoSection.communityDescription')}</p>
+                    <h2>{t('communityTwoSection.gamersCount')}</h2>
+                    <p>{t('communityTwoSection.gamersDescription')}</p>
                 </div>
             </div>
         </section>

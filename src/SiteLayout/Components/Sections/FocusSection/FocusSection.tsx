@@ -2,10 +2,11 @@ import styles from './FocusSection.module.scss';
 import {Odometer} from "../../Reusables/Odometer/Odometer.tsx";
 import {VideoContainer} from "../../Reusables/VideoContainer/VideoContainer.tsx";
 import {useRef} from "react";
+import {useTranslation} from "react-i18next";
 
 export const FocusSection = () => {
     const focusRef = useRef<HTMLDivElement | null>(null);
-
+    const {t} = useTranslation();
     return (
         <section className={styles.focusSection} ref={focusRef}>
             <div className={`${styles.decoration} ${styles.square}`}>
@@ -22,7 +23,7 @@ export const FocusSection = () => {
                                 <Odometer stopValue={26} latency={100} currentRef={focusRef}/>+
                             </h2>
                             <p>
-                                Years in Business
+                                {t('focusSection.yearsInBusiness')}
                             </p>
                         </div>
                     </div>
@@ -32,7 +33,7 @@ export const FocusSection = () => {
                                 <Odometer stopValue={78} latency={25} currentRef={focusRef}/>+
                             </h2>
                             <p>
-                                Downloads
+                                {t('focusSection.downloads')}
                             </p>
                         </div>
                     </div>
@@ -42,7 +43,7 @@ export const FocusSection = () => {
                                 <Odometer stopValue={89} latency={20} currentRef={focusRef}/>+
                             </h2>
                             <p>
-                                Games Launched
+                                {t('focusSection.gamesLaunched')}
                             </p>
                         </div>
                     </div>
@@ -52,7 +53,7 @@ export const FocusSection = () => {
                                 <Odometer stopValue={22} latency={80} currentRef={focusRef}/>+
                             </h2>
                             <p>
-                                Gaming Projects Delivered
+                                {t('focusSection.gamingProjectsDelivered')}
                             </p>
                         </div>
                     </div>

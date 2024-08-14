@@ -1,7 +1,10 @@
 import styles from "./CommunitySection.module.scss";
 import {DefaultButton} from "../../Reusables/DefaultButton/DefaultButton.tsx";
+import {useTranslation} from "react-i18next";
 
 export const CommunitySection = () => {
+
+    const {t} = useTranslation();
     return (
         <section className={styles.communitySection}>
             <div className={styles.sectionContent}>
@@ -21,21 +24,19 @@ export const CommunitySection = () => {
                 </div>
                 <div className={styles.titleBlock}>
                     <div className={`${styles.pageHeading} ${styles.notCenteredText}`}>
-                        <h4>Join Our <span>Community!</span></h4>
-                        <h2>Connect With <span>Gamers Worldwide</span></h2>
-                        <p>Join the revolution and immerse yourself in the ultimate gaming experience, where the
-                            boundaries between reality and fantasy blur, and the only limit is your imagination.
-                            Sign up now and be the first to play our latest game releases.</p>
+                        <h4>{t('communitySection.joinOur')} <span>{t('communitySection.community')}</span></h4>
+                        <h2>{t('communitySection.connectWith')} <span>{t('communitySection.gamersWorldwide')}</span></h2>
+                        <p>{t('communitySection.description')}</p>
                     </div>
                     <div className={styles.buttonsBlock}>
                         <DefaultButton
-                            title={"Explore Our Games"}
+                            title={t('communitySection.exploreGamesButton')}
                             link={"/games"}
                             grayBtn={false}
                             wide={false}
                         />
                         <DefaultButton
-                            title={"Join Our Community"}
+                            title={t('communitySection.joinCommunityButton')}
                             link={"/about"}
                             grayBtn={true}
                             wide={false}

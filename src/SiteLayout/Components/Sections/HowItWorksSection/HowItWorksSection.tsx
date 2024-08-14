@@ -1,4 +1,4 @@
-import styles from "../../../Pages/ServicesPage/ServicesPage.module.scss";
+import styles from "./HowItWorksSection.module.scss";
 import KeyboardDoubleArrowRightIcon from "@mui/icons-material/KeyboardDoubleArrowRight";
 import {useEffect, useState} from "react";
 import {useTranslation} from "react-i18next";
@@ -19,7 +19,7 @@ interface PROCESS_DATA {
 export const HowItWorksSection = () => {
     const [translatedProcess, setTranslatedProcess] = useState([processData?.en]);
 
-    const {i18n} = useTranslation();
+    const {i18n,t} = useTranslation();
     const getIcon = useIconComponent();
 
     useEffect(() => {
@@ -39,10 +39,9 @@ export const HowItWorksSection = () => {
             <div className={styles.sectionContent}>
                 <div className={styles.titleBlock}>
                     <div className={`${styles.pageHeading}`}>
-                        <h4>A Simple yet Powerful and efficient <span> Process</span></h4>
-                        <h2>Our Game <span> Development Process</span></h2>
-                        <p>Take your game development for next level in 10 simple step. Always work
-                            Done By the Following Process</p>
+                        <h4>{t('howItWorksSection.simplePowerfulEfficientProcess')} <span> {t('howItWorksSection.process')}</span></h4>
+                        <h2>{t('howItWorksSection.ourGame')} <span> {t('howItWorksSection.developmentProcess')}</span></h2>
+                        <p>{t('howItWorksSection.gameDevelopmentNextLevel')}</p>
                     </div>
                 </div>
                 <div className={styles.boxesRow}>

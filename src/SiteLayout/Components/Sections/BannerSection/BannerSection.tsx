@@ -4,10 +4,11 @@ import {TypeAnimation} from "react-type-animation";
 import {DefaultButton} from "../../Reusables/DefaultButton/DefaultButton.tsx";
 import {Swiper, SwiperSlide} from "swiper/react";
 import {Autoplay, EffectFade, Pagination} from "swiper/modules";
-import React, {useContext} from "react";
+import React, {useCallback, useContext, useMemo} from "react";
 import {DeviceCard} from "../../Reusables/DeviceCard/DeviceCard.tsx";
 import {DataContext} from "../../../../Context/DataContext/DataContext.tsx";
 import {PAGINATION_STYLES_TYPE} from "../../../../Types/types.ts";
+import {useTranslation} from "react-i18next";
 
 const paginationStyles: PAGINATION_STYLES_TYPE = {
     "--swiper-pagination-color": "#0EF0AD",
@@ -23,6 +24,38 @@ export const BannerSection = () => {
     const {
         productsData,
     } = useContext(DataContext);
+
+    const {t, i18n} = useTranslation();
+
+    const translateWords = useCallback((word: string) => {
+        switch (i18n.language) {
+            case 'ru':
+                switch (word) {
+                    case 'Reliability': return 'Надежность';
+                    case 'Entertainment': return 'Развлечение';
+                    case 'Quality': return 'Качество';
+                    default: return word;
+                }
+            case 'tr':
+                switch (word) {
+                    case 'Reliability': return 'Güvenilirlik';
+                    case 'Entertainment': return 'Eğlence';
+                    case 'Quality': return 'Kalite';
+                    default: return word;
+                }
+            default:
+                return word;
+        }
+    }, [i18n.language]);
+
+    const animationSequence = useMemo(() => [
+        translateWords("Reliability"),
+        600,
+        translateWords("Entertainment"),
+        600,
+        translateWords("Quality"),
+        600
+    ], [translateWords]);
 
     return (
         <section className={styles.bannerSection}>
@@ -89,17 +122,17 @@ export const BannerSection = () => {
             </div>
             <div className={styles.sectionContent}>
                 <div className={styles.titleContainer}>
-                    <h4>Enjoy Gaming World</h4>
-                    <h2>We Selling Devices</h2>
+                    <h4>{t('bannerSection.title')}</h4>
+                    <h2>{t('bannerSection.sellingDevices')}</h2>
                     <TypeAnimation
-                        sequence={['Entertainment', 600, 'Quality', 600, 'Reliability', 600]}
+                        sequence={animationSequence}
                         style={{fontSize: '2em'}}
                         repeat={Infinity}
+                        key={i18n.language}
                     />
-                    <p>Creating innovative, fun-filled gaming devices that bring vibrant colors to your gaming
-                        experience.</p>
+                    <p>{t('bannerSection.description')}</p>
                     <DefaultButton
-                        title={'Explore Our Products'}
+                        title={t('bannerSection.exploreButton')}
                         link={'/shop'}
                         grayBtn={false}
                         wide={false}
@@ -107,8 +140,8 @@ export const BannerSection = () => {
                 </div>
                 <div className={styles.swiperContainer}>
                     <div className={styles.swiperHead}>
-                        <img src="/images/icons/bottomArrow.png" alt="arrow bottom"/>
-                        <p>Featured Device</p>
+                        <img src="/images/icons/bottomArrow.png" alt={t('bannerSection.arrowBottomAlt')}/>
+                        <p>{t('bannerSection.featuredDevice')}</p>
                     </div>
                     <div className={styles.swiperWrapper}>
                         <Swiper

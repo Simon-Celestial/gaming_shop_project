@@ -18,7 +18,7 @@ export const FaqsSection = () => {
     const [translatedQuestions, setTranslatedQuestions] = useState(askedQuestionsData.en);
     const [selectedAccordion, setSelectedAccordion] = useState<number | null>(null);
 
-    const {i18n} = useTranslation();
+    const {i18n,t} = useTranslation();
 
     const handleOpenAccordion = useCallback((selectedID: number) => {
         setSelectedAccordion(prev => {
@@ -52,11 +52,9 @@ export const FaqsSection = () => {
             <div className={styles.sectionContent}>
                 <div className={styles.sectionTitle}>
                     <div className={styles.pageHeading}>
-                        <h4>Answers to Common Questions about <span>Our Company</span></h4>
-                        <h2>Frequently Asked Questions About <span> Our Gaming Studio</span></h2>
-                        <p>Our gaming company develops games for multiple platforms and is always looking for
-                            talented individuals to join our team. Quality and player satisfaction is our top
-                            priority.</p>
+                        <h4>{t('faqsSection.titleCommonQuestions')} <span>{t('faqsSection.titleCompany')}</span></h4>
+                        <h2>{t('faqsSection.titleFaq')} <span> {t('faqsSection.titleGamingStudio')}</span></h2>
+                        <p>{t('faqsSection.description')}</p>
                     </div>
                 </div>
                 <div className={styles.mainContainer}>
@@ -95,15 +93,14 @@ export const FaqsSection = () => {
                         <div className={styles.image}>
                             <img src="/images/icons/faqIcon.png" alt="FAQ image"/>
                         </div>
-                        <h2>Check More Information</h2>
-                        <p>GameStorm is a full-service gaming studio company specializing in game development,
-                            art, design, and project management</p>
+                        <h2>{t('faqsSection.faqTitle')}</h2>
+                        <p>{t('faqsSection.faqDescription')}</p>
                         <div className={styles.btnWrapper}>
                             <DefaultButton
                                 link={"/about"}
                                 wide={false}
                                 grayBtn={false}
-                                title={"Learn More"}
+                                title={t('faqsSection.btnLearnMore')}
                             />
                         </div>
                     </div>

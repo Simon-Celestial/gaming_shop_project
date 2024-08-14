@@ -1,7 +1,10 @@
 import styles from './BannerTwoSection.module.scss';
 import {DefaultButton} from "../../Reusables/DefaultButton/DefaultButton.tsx";
+import {useTranslation} from "react-i18next";
 
 export const BannerTwoSection = () => {
+    const {t} = useTranslation();
+
     return (
         <section className={styles.bannerSection}
                  style={{
@@ -20,23 +23,23 @@ export const BannerTwoSection = () => {
             </div>
             <div className={styles.sectionContent}>
                 <div className={styles.titleContainer}>
-                    <h4>Crafting Exceptional Games</h4>
-                    <h1>Play, Improve & <span>Win</span></h1>
-                    <p>Gamestorm is the ultimate destination for playing, discussing and creating game.</p>
+                    <h4>{t('bannerTwoSection.craftingGames')}</h4>
+                    <h1>{t('bannerTwoSection.playImproveWin')} {t('bannerTwoSection.and')} <span>{t('bannerTwoSection.win')}</span></h1>
+                    <p>{t('bannerTwoSection.description')}</p>
                     <div className={styles.statisticsContainer}>
                         <div className={styles.box}>
-                            <p>Online</p>
+                            <p>{t('bannerTwoSection.online')}</p>
                             <h2>19,302,927</h2>
                         </div>
                         <div className={styles.box}>
-                            <p className={styles.playing}>Playing Now</p>
+                            <p className={styles.playing}>{t('bannerTwoSection.playingNow')}</p>
                             <h2>4,831,224</h2>
                         </div>
                     </div>
                     <div className={styles.btnContainer}>
                         <DefaultButton
                             link={"/games"}
-                            title={"Explore Out Games"}
+                            title={t('bannerTwoSection.exploreGamesButton')}
                             grayBtn={false}
                             wide={false}
                         />

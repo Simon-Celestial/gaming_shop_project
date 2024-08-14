@@ -10,9 +10,9 @@ import {
 import {ServicesSection} from "../../Components/Sections/ServicesSection/ServicesSection.tsx";
 import {FocusSection} from "../../Components/Sections/FocusSection/FocusSection.tsx";
 import {HowItWorksSection} from "../../Components/Sections/HowItWorksSection/HowItWorksSection.tsx";
-import {ContactUsThreeSection} from "../../Components/Sections/ContactUsThreeSection/ContactUsThreeSection.tsx";
 import {GameFeaturesSection} from "../../Components/Sections/GameFeaturesSection/GameFeaturesSection.tsx";
 import {useTranslation} from "react-i18next";
+import {ContactUsSection} from "../../Components/Sections/ContactUsSection/ContactUsSection.tsx";
 
 export const ServicesPage = () => {
     const {t} = useTranslation();
@@ -38,7 +38,7 @@ export const ServicesPage = () => {
                 {/*TESTIMONIALS SECTION*/}
                 <TestimonialsSection/>
                 {/*CONTACT US THREE SECTION*/}
-                <ContactUsThreeSection />
+                <ContactUsSection />
                 {/*SLIDER SECTION*/}
                 <SliderSection/>
             </main>

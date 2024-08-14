@@ -1,16 +1,17 @@
 import styles from "./LifeSection.module.scss";
 import {DefaultButton} from "../../Reusables/DefaultButton/DefaultButton.tsx";
+import {useTranslation} from "react-i18next";
 
 export const LifeSection = () => {
+    const {t} = useTranslation();
     return (
         <section className={styles.lifeSection}>
             <div className={styles.sectionContent}>
                 <div className={styles.topTitle}>
                     <div className={`${styles.pageHeading}`}>
-                        <h4>We're Part Of A <span>Big Family</span></h4>
-                        <h2>Get to know our staff <span>Better.</span></h2>
-                        <p>Experience the magic of gaming development with a look inside our studio. See the
-                            art, science, and innovation at work.</p>
+                        <h4>{t('lifeSection.topTitleH4')} <span>{t('lifeSection.topTitleH4Span')}</span></h4>
+                        <h2>{t('lifeSection.topTitleH2')} <span>{t('lifeSection.topTitleH2Span')}</span></h2>
+                        <p>{t('lifeSection.topTitleP')}</p>
                     </div>
                 </div>
                 <div className={styles.imagesContainer}>
@@ -42,12 +43,11 @@ export const LifeSection = () => {
 
                 </div>
                 <div className={styles.joinContainer}>
-                    <h2>join us!</h2>
-                    <p>Still haven't found your dream job? Join Team Gamestorm and become the next Gamestorm of
-                        an ever-growing family!</p>
+                    <h2>{t('lifeSection.joinContainerH2')}</h2>
+                    <p>{t('lifeSection.joinContainerP')}</p>
                     <DefaultButton
                         link={"/about"}
-                        title={"Check Open Positions"}
+                        title={t('lifeSection.defaultButtonTitle')}
                         grayBtn={false}
                         wide={false}
                     />

@@ -19,7 +19,7 @@ interface BENEFITS_DATA {
 export const GameFeaturesSection = () => {
     const [translatedBenefits, setTranslatedBenefits] = useState([benefitsData?.en]);
 
-    const {i18n} = useTranslation();
+    const {i18n,t} = useTranslation();
     const getIcon = useIconComponent();
 
 
@@ -40,11 +40,9 @@ export const GameFeaturesSection = () => {
             <div className={styles.sectionContent}>
                 <div className={styles.titleBlock}>
                     <div className={`${styles.pageHeading}`}>
-                        <h4>Client-Centric <span> Creativity</span></h4>
-                        <h2>Our Fundamental Benefits in <span> Game ART and Development</span></h2>
-                        <p>A client-centric approach coupled with creative freedom, professional
-                            experimentation, and a willingness to create beyond the limits makes us a great
-                            partner for businesses looking to deliver a product that stands out.</p>
+                        <h4>{t('gameFeaturesSection.clientCentric')} <span> {t('gameFeaturesSection.creativity')}</span></h4>
+                        <h2>{t('gameFeaturesSection.ourFundamentalBenefits')} <span> {t('gameFeaturesSection.gameART')}</span> {t('gameFeaturesSection.andDevelopment')}</h2>
+                        <p>{t('gameFeaturesSection.clientCentricApproach')}</p>
                     </div>
                 </div>
                 <div className={styles.benefitsContainer}>

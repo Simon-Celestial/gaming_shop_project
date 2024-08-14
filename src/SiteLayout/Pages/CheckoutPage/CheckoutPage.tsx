@@ -201,7 +201,7 @@ export const CheckoutPage = () => {
                     cartItems.length < 1 ?
                         <div className={styles.checkoutEmpty}>
                             <img src="/images/icons/empty.png" alt="Cart Empty"/>
-                            <p>Choose product to buy first</p>
+                            <p>{t('checkoutPage.chooseProductFirst')}...</p>
                             <DefaultButton
                                 wide={false}
                                 grayBtn={false}

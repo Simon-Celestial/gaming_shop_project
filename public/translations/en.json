@@ -425,7 +425,148 @@
     "registrationError": "An error occurred while registering. Please try again later.",
     "allFieldsRequired": "All fields are required."
 
-  }
+  },
+  "bannerSection": {
+    "title": "Enjoy Gaming World",
+    "sellingDevices": "We try for you",
+    "description": "Creating innovative, fun-filled gaming devices that bring vibrant colors to your gaming experience.",
+    "exploreButton": "Explore Our Products",
+    "featuredDevice": "Featured Device",
+    "arrowBottomAlt": "arrow bottom"
+  },
+  "bannerTwoSection": {
+    "craftingGames": "Crafting Exceptional Games",
+    "playImproveWin": "Play, Improve",
+    "win": "Win",
+    "description": "Gamestorm is the ultimate destination for playing, discussing and creating games.",
+    "online": "Online",
+    "playingNow": "Playing Now",
+    "exploreGamesButton": "Explore Our Games",
+    "and": "and"
+  },
+  "communitySection": {
+    "joinOur": "Join Our",
+    "community": "Community!",
+    "connectWith": "Connect With",
+    "gamersWorldwide": "Gamers Worldwide",
+    "description": "Join the revolution and immerse yourself in the ultimate gaming experience, where the boundaries between reality and fantasy blur, and the only limit is your imagination. Sign up now and be the first to play our latest game releases.",
+    "exploreGamesButton": "Explore Our Games",
+    "joinCommunityButton": "Join Our Community"
+  },
+  "contactUsSection": {
+    "haveQuestions": "Have",
+    "questions": "Questions?",
+    "weWouldLoveToHear": "We'd Love To",
+    "hearFromYou": "Hear From You!",
+    "description": "Please fill out the form and let us know about your concerns. We will try our best to provide optimized solutions."
+  },
+  "communityTwoSection": {
+    "communityDescription": "Our work has brought together a community of",
+    "gamersCount": "59,135,660",
+    "gamersDescription": "Gamers from all over the world"
+  },
+  "faqsSection": {
+    "titleCommonQuestions": "Answers to Common Questions about",
+    "titleCompany": "Our Company",
+    "titleFaq": "Frequently Asked Questions About",
+    "titleGamingStudio": "Our Gaming Studio",
+    "description": "Our gaming company develops games for multiple platforms and is always looking for talented individuals to join our team. Quality and player satisfaction is our top priority.",
+    "faqTitle": "Check More Information",
+    "faqDescription": "GameStorm is a full-service gaming studio company specializing in game development, art, design, and project management",
+    "btnLearnMore": "Learn More"
+  },
+  "servicesSection": {
+    "Game": "Game",
+    "DesignAndDevelopment": "Design & Development",
+    "Services": "Services",
+    "OurComprehensiveGame": "Our Comprehensive Game",
+    "DevelopmentServices": "Development Services",
+    "EndToEndGameDevelopment": "End-to-end game development, revamping, and outsourcing services. Immersive technology expertise for top-class gaming experiences",
+    "FindOut": "Find Out"
+  },
+  "productsSection" : {
+    "EmbraceTheWorldOf": "Embrace the World of",
+    "Gaming": "Gaming!",
+    "OurDedicatedShop": "Our Dedicated Shop is Here for You.",
+    "ExperienceTheBest": "Experience the Best.",
+    "ExploreVariety": "Explore an extensive variety of gaming equipment and peripherals."
+  },
+  "ourServicesSection" : {
+    "BringingYourGamingVision": "Bringing Your",
+    "GamingVisionToLife": "Gaming Vision",
+    "life" : "to Life",
+    "InnovativeGamingSolutions": "Innovative",
+    "GamingSolutionsEverywhere": "Gaming Solutions",
+    "everywhere" : "Everywhere",
+    "OurGamingStudio": "Our gaming studio delivers top-notch services in game development, art & design, NFT creation, and VR & AR solutions.",
+    "TransformingGaming": "Transforming gaming with cutting-edge and platform-independent solutions.",
+    "SeeAllServices": "See All Services"
 
+  },
+  "keysSection" : {
+    "TheFourKeyComponents": "The Four Key Components of a",
+    "GamestormStudio": "Gamestorm studio",
+    "LongLastingFun": "Long-Lasting Fun",
+    "LongLastingFunDescription": "Our games offer explosive fun with playability and constant content updates through our games as a service approach.",
+    "ForEveryone": "For Everyone",
+    "ForEveryoneDescription": "When developing our video games, we make sure that every player can scratch their gaming itch, from casual to completes to speed runners.",
+    "UniqueTwist": "Unique Twist",
+    "UniqueTwistDescription": "We put our own spin on beloved game genres, from a racing game where the goal is to stop, to a point-and-click game in a 360-degree environment.",
+    "GradualLearningCurve": "Gradual Learning Curve",
+    "GradualLearningCurveDescription": "Our games are easy to learn but hard to master. This makes our games both accessible to newcomers and challenging for pros."
+
+  },
+  "lifeSection" : {
+    "topTitleH4": "We're Part Of A",
+    "topTitleH4Span": "Big Family",
+    "topTitleH2": "Get to know our staff",
+    "topTitleH2Span": "Better.",
+    "topTitleP": "Experience the magic of gaming development with a look inside our studio. See the art, science, and innovation at work.",
+    "joinContainerH2": "Join Us!",
+    "joinContainerP": "Still haven't found your dream job? Join Team Gamestorm and become the next Gamestorm of an ever-growing family!",
+    "defaultButtonTitle": "Check Open Positions"
+  },
+  "howItWorksSection" : {
+    "simplePowerfulEfficientProcess": "A Simple yet Powerful and efficient",
+    "process": "Process",
+    "ourGame": "Our Game",
+    "developmentProcess": "Development",
+    "gameDevelopmentNextLevel": "Take your game development for next level in 10 simple steps. Always work Done By the Following Process"
+
+  },
+  "gameFeaturesSection": {
+    "clientCentric": "Client-Centric",
+    "creativity": "Creativity",
+    "ourFundamentalBenefits": "Our Fundamental Benefits in",
+    "gameART": "Game ART",
+    "andDevelopment": "and Development",
+    "clientCentricApproach": "A client-centric approach coupled with creative freedom, professional experimentation, and a willingness to create beyond the limits makes us a great partner for businesses looking to deliver a product that stands out."
+
+  },
+  "focusSection" : {
+    "yearsInBusiness": "Years in Business",
+    "downloads": "Downloads",
+    "gamesLaunched": "Games Launched",
+    "gamingProjectsDelivered": "Projects Delivered"
+
+  },
+  "contactUsTwoSection" : {
+    "have": "Have",
+    "questions": "Questions?",
+    "cantFindWhatYouLookingFor": "Can’t find what are",
+    "lookingFor": "you looking for?",
+    "getInTouch": "Get in Touch",
+    "formNote": "Please fill out the form and let us know about your concerns. We will try our best to provide optimized solutions.",
+    "writeAMessage": "Write A Message",
+    "getInTouchTitle": "Get In Touch",
+    "haveAnyQuestions": "Have any Questions",
+    "phoneNumbers": "(302) 555-0107 | (704) 555-0127",
+    "contactAddress": "Contact Address",
+    "address": "San Francisco, California, 53 Shore View Avenue",
+    "openingHours": "Opening Hours",
+    "monFriHours": "Mon-Fri: 9:00 AM - 6:00 PM",
+    "satHours": "Sat: 10:00 AM - 4:00 PM",
+    "sunClosed": "Sun: Closed"
+  }
 
 }
