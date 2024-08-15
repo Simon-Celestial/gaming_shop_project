@@ -5,7 +5,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0 15px 0 15px;
   background: $background;
   min-height: 100vh;
 
@@ -231,89 +230,89 @@
   }
 }
 
-@media screen and (max-width: 1000px) {
-
-  .wishlistMain {
-    padding: 100px 15px 75px 15px;
-    .wishlistEmpty {
-      gap: 10px;
-    }
-
-    .wishlistCardsWrapper {
-      .tableRow {
-        flex-direction: column;
-        align-items: start;
-        padding-bottom: 25px;
-
-        &.topRow {
-          display: none;
-        }
-
-        .cell {
-          padding: 5px 10px 10px 0;
-          margin: 0;
-        }
-
-        .product {
-          max-width: unset;
-          flex-direction: column;
-          align-items: start;
-
-          img {
-            margin: 0;
-          }
-
-          a {
-            max-width: unset;
-          }
-
-        }
-
-        .price {
-          max-width: unset;
-        }
-
-        .stock {
-          max-width: unset;
-        }
-
-        .add {
-          max-width: unset;
-          justify-content: start;
-        }
-
-        .delete {
-          max-width: unset;
-          justify-content: start;
-        }
-      }
-    }
-  }
-}
-
-
-@media screen and (max-width: 800px) {
-  .wishlistMain {
-    padding: 50px 15px 50px 15px;
-
-    .wishlistCardsWrapper {
-      .tableRow {
-        .add {
-          height: 50px;
-          align-items: end;
-        }
-
-        .delete {
-          .deleteBtn {
-            height: 40px;
-            width: 40px;
-            svg {
-              font-size: 23px;
-            }
-          }
-        }
-      }
-    }
-  }
-
-}
+//@media screen and (max-width: 1000px) {
+//
+//  .wishlistMain {
+//    padding: 100px 15px 75px 15px;
+//    .wishlistEmpty {
+//      gap: 10px;
+//    }
+//
+//    .wishlistCardsWrapper {
+//      .tableRow {
+//        flex-direction: column;
+//        align-items: start;
+//        padding-bottom: 25px;
+//
+//        &.topRow {
+//          display: none;
+//        }
+//
+//        .cell {
+//          padding: 5px 10px 10px 0;
+//          margin: 0;
+//        }
+//
+//        .product {
+//          max-width: unset;
+//          flex-direction: column;
+//          align-items: start;
+//
+//          img {
+//            margin: 0;
+//          }
+//
+//          a {
+//            max-width: unset;
+//          }
+//
+//        }
+//
+//        .price {
+//          max-width: unset;
+//        }
+//
+//        .stock {
+//          max-width: unset;
+//        }
+//
+//        .add {
+//          max-width: unset;
+//          justify-content: start;
+//        }
+//
+//        .delete {
+//          max-width: unset;
+//          justify-content: start;
+//        }
+//      }
+//    }
+//  }
+//}
+//
+//
+//@media screen and (max-width: 800px) {
+//  .wishlistMain {
+//    padding: 50px 15px 50px 15px;
+//
+//    .wishlistCardsWrapper {
+//      .tableRow {
+//        .add {
+//          height: 50px;
+//          align-items: end;
+//        }
+//
+//        .delete {
+//          .deleteBtn {
+//            height: 40px;
+//            width: 40px;
+//            svg {
+//              font-size: 23px;
+//            }
+//          }
+//        }
+//      }
+//    }
+//  }
+//
+//}

@@ -103,6 +103,11 @@
     display: flex;
     align-items: center;
     margin-top: 150px;
+    transition:  margin-top 0.6s ease;
+    &.move {
+      margin-top: 50px;
+    }
+
 
     .inputWrapper {
       width: 100%;
@@ -191,3 +196,61 @@
   }
 }
 
+@media screen and (max-width: 1200px) {
+  .searchWrapper {
+    height: 400px;
+    padding: 25px;
+    .topRow {
+      .closeBtn {
+        svg {
+          font-size: 32px;
+        }
+      }
+    }
+    .searchRow {
+      .inputWrapper {
+        padding-bottom: 12.5px;
+        input {
+          font-size: 18px;
+        }
+      }
+    }
+    .searchResults {
+      h2 {
+        font-size: 20px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .searchWrapper {
+    height: 300px;
+    padding: 15px;
+    .searchRow {
+      margin-top: 100px;
+      &.move {
+        margin-top: 25px;
+      }
+      .inputWrapper {
+        input {
+          font-size: 16px;
+        }
+      }
+    }
+    .searchResults {
+      h2 {
+        font-size: 15px;
+      }
+      .productWrapper {
+        flex-direction: column;
+        align-items: start;
+        gap: 10px;
+        img {
+          width: 80px;
+          margin: 0;
+        }
+      }
+    }
+  }
+}

@@ -17,8 +17,8 @@
     background-position: bottom right;
     background-repeat: no-repeat;
     background-color: $grayFill;
+    background-size: cover;
   }
-
 
   &.privacy-policy,
   &.about {
@@ -28,24 +28,15 @@
     background-color: $grayFill;
   }
 
+  &.contact,
+  &.blog,
+  &.basket,
   &.wishlist {
     background-image: url("https://pixner.net/gamestorm3/main/assets/images/store-banner-illus.png");
     background-size: cover;
-  }
-
-  &.basket {
-    background-image: url("https://pixner.net/gamestorm3/main/assets/images/store-banner-illus.png");
-    background-size: cover;
-  }
-
-  &.blog {
-    background-image: url("https://pixner.net/gamestorm3/main/assets/images/store-banner-illus.png");
-    background-size: cover;
-  }
-
-  &.contact {
-    background-image: url("https://pixner.net/gamestorm3/main/assets/images/store-banner-illus.png");
-    background-size: cover;
+    background-color: $grayFill;
+    background-position: bottom right;
+    background-repeat: no-repeat;
   }
 
   &.services {
@@ -154,3 +145,205 @@
     }
   }
 }
+
+@media screen and (max-width: 1750px) {
+  .bannerSection {
+    &.about,
+    &.games,
+    &.services,
+    &.privacy-policy {
+      background-size: 50%;
+    }
+
+    .decoration {
+      &.decorationShape {
+        opacity: 0.5;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1550px) {
+  .bannerSection {
+    &.about,
+    &.games,
+    &.services,
+    &.shop,
+    &.login,
+    &.register,
+    &.checkout,
+    &.privacy-policy,
+    &.wishlist,
+    &.basket,
+    &.contact,
+    &.blog {
+      padding-left: 75px;
+    }
+
+    .bannerContent {
+      .bannerTitle {
+        max-width: 550px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1250px) {
+  .bannerSection {
+    .decoration {
+      &.decorationBubbles {
+        display: none;
+      }
+
+      &.decorationShape {
+        top: 0;
+        opacity: 1;
+      }
+    }
+
+    .bannerContent {
+      padding: 150px 15px 130px 15px !important;
+
+      .bannerTitle {
+        max-width: 450px;
+
+        .coloredText {
+          h2 {
+            font-size: 40px;
+          }
+
+          h3 {
+            font-size: 40px;
+          }
+
+        }
+
+        .solidText {
+          font-size: 20px;
+        }
+      }
+
+    }
+  }
+}
+
+@media screen and (max-width: 950px) {
+  .bannerSection {
+    &.about,
+    &.games,
+    &.services,
+    &.shop,
+    &.login,
+    &.register,
+    &.checkout,
+    &.privacy-policy,
+    &.wishlist,
+    &.basket,
+    &.contact,
+    &.blog {
+      background-image: none;
+      padding-left: 75px;
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .bannerSection {
+    .bannerContent {
+      padding: 135px 15px 130px 15px;
+
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .bannerSection {
+    .bannerContent {
+      .pageLocation {
+        border-radius: 10px 0 0 0;
+        border-right: 0;
+        right: 0;
+        padding: 10px 16px;
+
+        a {
+          font-size: 15px;
+        }
+
+        p {
+          font-size: 15px;
+        }
+      }
+    }
+
+    &.about,
+    &.games,
+    &.services,
+    &.shop,
+    &.login,
+    &.register,
+    &.checkout,
+    &.privacy-policy,
+    &.wishlist,
+    &.basket,
+    &.contact,
+    &.blog {
+      padding-left: 50px;
+
+      .bannerContent {
+        padding: 130px 15px 80px 15px;
+
+        .bannerTitle {
+          max-width: unset;
+
+          .coloredText {
+            h2, h3 {
+              font-size: 32px;
+              word-break: break-word;
+
+            }
+          }
+
+          .solidText {
+            font-size: 18px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .bannerSection {
+    padding-left: 49px !important;
+
+    .bannerContent {
+      .bannerTitle {
+        .coloredText {
+          h3, h2 {
+            font-size: 28px;
+          }
+        }
+      }
+
+      .pageLocation {
+        width: 100%;
+        border-bottom: 1px solid $green;
+        border-left: 0;
+        border-radius: 0;
+        justify-content: center;
+
+        a {
+          font-size: 12px;
+        }
+
+        p {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+}
+
+
+
+

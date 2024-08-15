@@ -54,7 +54,7 @@ export const SearchPanel: React.FC<SearchPanelProps> = ({searchPanelOpen, setSea
                     <CloseIcon/>
                 </div>
             </div>
-            <div className={styles.searchRow}>
+            <div className={`${styles.searchRow} ${filteredData?.length > 0? styles.move : ''}`}>
                 <div className={styles.inputWrapper}>
                     <input
                         type="text"
