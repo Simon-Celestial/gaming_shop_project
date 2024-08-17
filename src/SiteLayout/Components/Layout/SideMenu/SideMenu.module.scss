@@ -17,6 +17,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  transition: transform 0.5s ease;
 
   .menuLogo {
     display: flex;
@@ -508,6 +509,14 @@
       margin-top: 75px;
     }
   }
+}
+@media screen and (max-width: 500px) {
+.sideMenuWrapper {
+  transform: translateX(-50px);
+  &.visible {
+    transform: translateX(0);
+  }
+}
 }
 
 

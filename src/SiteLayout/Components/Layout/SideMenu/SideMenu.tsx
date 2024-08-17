@@ -14,9 +14,10 @@ import ClearIcon from '@mui/icons-material/Clear';
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-expect-error
 import navData from '/public/data/NavData/navData.json';
-import {useCallback, useEffect, useState} from "react";
+import {useCallback, useContext, useEffect, useState} from "react";
 import {LanguageSelection} from "../../Reusables/LanguageSelection/LanguageSelection.tsx";
 import {useTranslation} from "react-i18next";
+import {LayoutContext} from "../../../../Context/LayoutContext/LayoutConext.tsx";
 
 interface NAV_DATA {
     id: string;
@@ -27,11 +28,16 @@ interface NAV_DATA {
 
 
 export const SideMenu = () => {
-    const [menuState, setMenuState] = useState(false);
+    const
+        {
+            menuState,
+            handleMenuOpen
+        } = useContext(LayoutContext);
+
     const [translatedNavigation, setTranslatedNavigation] = useState(navData?.en)
     const [mobileDropDown, setMobileDropDown] = useState(false);
 
-    const handleOpenMobileDropdown = useCallback(() : void => {
+    const handleOpenMobileDropdown = useCallback((): void => {
         setMobileDropDown(prev => !prev);
     }, [setMobileDropDown])
 
@@ -48,14 +54,9 @@ export const SideMenu = () => {
         }
     }, [i18n.language]);
 
-
-    const handleMenuOpen = useCallback(() => {
-        setMenuState(prevState => !prevState);
-    }, []);
-
     return (
         <>
-            <aside className={styles.sideMenuWrapper}>
+            <aside className={`${styles.sideMenuWrapper} ${menuState? styles.visible : ''}`}>
                 <div className={styles.menuLogo} onClick={handleMenuOpen}>
                     {
                         menuState ?
@@ -100,9 +101,10 @@ export const SideMenu = () => {
                                 {nav?.id === 'pages' ?
                                     <>
                                         <p className={`${styles.item}`}>{nav?.name}<ExpandLessOutlinedIcon
-                                        className={mobileDropDown? styles.svgRotated : ''}
+                                            className={mobileDropDown ? styles.svgRotated : ''}
                                         /></p>
-                                        <div className={`${styles.navDropDown} ${mobileDropDown? styles.activeMobileDropDown : ''}`}>
+                                        <div
+                                            className={`${styles.navDropDown} ${mobileDropDown ? styles.activeMobileDropDown : ''}`}>
                                             <div className={styles.dropDownContent}>
                                                 {nav?.children?.map((child: NAV_DATA) => {
                                                     return (

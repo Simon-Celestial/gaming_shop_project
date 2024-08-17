@@ -53,6 +53,37 @@
   left: 0;
   top: 0;
   z-index: 8;
+  .openSideMenu {
+    position: absolute;
+    left: 16px;
+    top: 23px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 8px;
+    text-transform: uppercase;
+    color: #c5c5ca;
+    gap: 2px;
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    transition: color $transition, transform $transition,opacity $transition;
+
+    &:hover {
+      color: $green;
+      transform: scale(1.1);
+
+      svg {
+        transform: rotate(360deg);
+      }
+    }
+
+    svg {
+      font-size: 25px;
+      transition: transform $transition;
+    }
+
+  }
 
   .headerContent {
     padding: 25px 25px 25px 105px;
@@ -480,6 +511,19 @@
         .phoneBlock {
           display: none;
         }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .headerWrapper {
+    .openSideMenu {
+      opacity: 1;
+      pointer-events: auto;
+      &.mobileVisible {
+        opacity: 0;
+        pointer-events: none;
       }
     }
   }

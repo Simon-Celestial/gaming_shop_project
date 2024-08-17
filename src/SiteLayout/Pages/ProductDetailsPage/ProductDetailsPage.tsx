@@ -10,6 +10,7 @@ import {Autoplay, EffectFade} from "swiper/modules";
 import {DeviceCard} from "../../Components/Reusables/DeviceCard/DeviceCard.tsx";
 import {QuickView} from "../../Components/Reusables/QuickView/QuickView.tsx";
 import {useTranslation} from "react-i18next";
+import {Loader} from "../../Components/Reusables/Loader/Loader.tsx";
 
 export const ProductDetailsPage: React.FC = () => {
     const {productsData} = useContext(DataContext);
@@ -36,11 +37,12 @@ export const ProductDetailsPage: React.FC = () => {
 
     return (
         <>
+            {product === null? <Loader /> : null}
             <Header/>
             <main className={styles.pageWrapper}>
                 <div className={styles.pageContent}>
                     {/*PRODUCT MAIN DETAILS*/}
-                    <QuickView product={product} quickView={false}/>
+                    <QuickView product={product}/>
                     <section className={styles.additionalSection}>
                         <div className={styles.sectionContent}>
                             <h2>{t('productDetailsPage.additionalInformation')}</h2>
@@ -50,7 +52,8 @@ export const ProductDetailsPage: React.FC = () => {
                                         {t('productDetailsPage.weight')}
                                     </div>
                                     <div className={styles.cell}>
-                                        {product?.weight ? product.weight : "Not available"}                                    </div>
+                                        {product?.weight ? product.weight : "Not available"}
+                                    </div>
                                 </div>
                                 <div className={styles.tableRow}>
                                     <div className={styles.cell}>

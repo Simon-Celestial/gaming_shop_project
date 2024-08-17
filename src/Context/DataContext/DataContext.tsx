@@ -8,10 +8,6 @@ interface DataContextType {
     update: () => void;
     setSelectedProduct: (product: PRODUCTS_DATA | null) => void;
     selectedProduct: PRODUCTS_DATA | null;
-    setQuickView: (open: boolean) => void;
-    quickView: boolean;
-    handleQuickViewOpen: (product: PRODUCTS_DATA | null) => void;
-    handleQuickViewClose: () => void;
 }
 
 const defaults: DataContextType = {
@@ -21,14 +17,7 @@ const defaults: DataContextType = {
     },
     setSelectedProduct: () => {
     },
-    selectedProduct: null,
-    setQuickView: () => {
-    },
-    quickView: false,
-    handleQuickViewOpen: () => {
-    },
-    handleQuickViewClose: () => {
-    },
+    selectedProduct: null
 }
 export const DataContext = createContext<DataContextType>(defaults);
 
@@ -42,18 +31,6 @@ export const DataContextProvider: React.FC<DataContextProviderProps> = ({childre
     const [productsLoading, setProductsLoading] = useState(true);
     const [dataUpdate, setDataUpdate] = useState(Date.now());
     const [selectedProduct, setSelectedProduct] = useState<PRODUCTS_DATA | null>(null);
-    const [quickView, setQuickView] = useState(false);
-
-    // OPEN AND CLOSE QUICK VIEW OF PRODUCT AND SET IT
-    const handleQuickViewOpen = useCallback((product: PRODUCTS_DATA | null) => {
-        setSelectedProduct(product);
-        setQuickView(true);
-    }, [setQuickView, setSelectedProduct]);
-
-    const handleQuickViewClose = useCallback(() => {
-        setQuickView(false);
-    }, [setQuickView]);
-
 
     const update = useCallback(() => {
         setDataUpdate(Date.now());
@@ -79,17 +56,11 @@ export const DataContextProvider: React.FC<DataContextProviderProps> = ({childre
             productsLoading,
             update,
             setSelectedProduct,
-            selectedProduct,
-            setQuickView,
-            quickView,
-            handleQuickViewOpen,
-            handleQuickViewClose
+            selectedProduct
         }),
         [
-            handleQuickViewClose,
-            handleQuickViewOpen,
-            productsData, productsLoading,
-            quickView,
+            productsData,
+            productsLoading,
             selectedProduct,
             update
         ]);

@@ -8,19 +8,21 @@ import React, {useCallback, useContext, useState} from "react";
 import {Rating} from "@mui/material";
 import {BasketContext} from "../../../../Context/BasketContext/BasketContext.tsx";
 import {WishlistContext} from "../../../../Context/WishlishContext/WishlistContext.tsx";
-import {DataContext} from "../../../../Context/DataContext/DataContext.tsx";
 import {useTranslation} from "react-i18next";
+import {LayoutContext} from "../../../../Context/LayoutContext/LayoutConext.tsx";
+import {DataContext} from "../../../../Context/DataContext/DataContext.tsx";
 
 interface DeviceCardProps {
     data: PRODUCTS_DATA
 }
 
 export const DeviceCard: React.FC<DeviceCardProps> = ({data}) => {
+    const {setSelectedProduct} = useContext(DataContext);
     const {addToCart} = useContext(BasketContext);
     const {addToWishlist, isInWishlist} = useContext(WishlistContext);
     const {
         handleQuickViewOpen
-    } = useContext(DataContext);
+    } = useContext(LayoutContext);
 
     const [selectedColor, setSelectedColor] = useState(data?.colors[0]);
 
@@ -30,6 +32,11 @@ export const DeviceCard: React.FC<DeviceCardProps> = ({data}) => {
     const handleSelectColor = useCallback((color: string): void => {
         setSelectedColor(color)
     }, [setSelectedColor]);
+
+    const setProductToQuickViewAndOpen = useCallback((product : PRODUCTS_DATA) => {
+        setSelectedProduct(product);
+        handleQuickViewOpen();
+    }, [handleQuickViewOpen, setSelectedProduct])
 
     return (
         <div
@@ -59,7 +66,7 @@ export const DeviceCard: React.FC<DeviceCardProps> = ({data}) => {
                 </div>
                 <div
                     className={styles.option}
-                    onClick={()=> handleQuickViewOpen(data)}
+                    onClick={() => setProductToQuickViewAndOpen(data)}
                 >
                     <RemoveRedEyeOutlinedIcon/>
                 </div>

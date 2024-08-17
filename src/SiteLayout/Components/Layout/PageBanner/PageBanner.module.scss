@@ -312,10 +312,14 @@
   }
 }
 
+@media screen and (max-width: 500px) {
+  .bannerSection {
+    padding-left: 0!important;
+  }
+}
+
 @media screen and (max-width: 400px) {
   .bannerSection {
-    padding-left: 49px !important;
-
     .bannerContent {
       .bannerTitle {
         .coloredText {
@@ -324,7 +328,6 @@
           }
         }
       }
-
       .pageLocation {
         width: 100%;
         border-bottom: 1px solid $green;

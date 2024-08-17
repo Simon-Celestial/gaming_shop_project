@@ -9,15 +9,18 @@ import FavoriteIcon from "@mui/icons-material/Favorite";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import SearchIcon from '@mui/icons-material/Search';
 import {useTranslation} from "react-i18next";
+import {LayoutContext} from "../../../../Context/LayoutContext/LayoutConext.tsx";
 
-interface QuickViewProps  {
-    product : PRODUCTS_DATA | null;
-    quickView: boolean;
+interface QuickViewProps {
+    product: PRODUCTS_DATA | null;
 }
 
-export const QuickView: React.FC<QuickViewProps> = ({product,quickView}) => {
+export const QuickView: React.FC<QuickViewProps> = ({product}) => {
     const {addToCart} = useContext(BasketContext);
+
     const {addToWishlist, isInWishlist} = useContext(WishlistContext);
+
+    const {quickView} = useContext(LayoutContext);
 
     const [selectedImage, setSelectedImage] = useState(0);
     const [scaleImage, setScaleImage] = useState(false);
@@ -25,7 +28,7 @@ export const QuickView: React.FC<QuickViewProps> = ({product,quickView}) => {
     const [selectedColor, setSelectedColor] = useState('');
 
     const {t} = useTranslation();
-    
+
     useEffect(() => {
         if (product) {
             setIsProductInWishlist(isInWishlist(product?.id, selectedColor));
@@ -110,9 +113,9 @@ export const QuickView: React.FC<QuickViewProps> = ({product,quickView}) => {
         }
     }, [product, handleAddToWishlist, selectedColor, t]);
 
-    
+
     return (
-        <section className={`${styles.mainProductSection} ${quickView? styles.quickView : ''}`}>
+        <section className={`${styles.mainProductSection} ${quickView ? styles.quickView : ''}`}>
             <div className={styles.productTitle}>
                 <h2>{product?.name}</h2>
                 <div className={styles.rating}>

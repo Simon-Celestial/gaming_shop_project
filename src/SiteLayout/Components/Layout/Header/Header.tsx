@@ -20,6 +20,8 @@ import {QuickView} from "../../Reusables/QuickView/QuickView.tsx";
 import {DataContext} from "../../../../Context/DataContext/DataContext.tsx";
 import CloseIcon from '@mui/icons-material/Close';
 import {useTranslation} from "react-i18next";
+import WidgetsIcon from "@mui/icons-material/Widgets";
+import {LayoutContext} from "../../../../Context/LayoutContext/LayoutConext.tsx";
 
 interface NAV_DATA {
     id: string;
@@ -30,6 +32,12 @@ interface NAV_DATA {
 
 
 export const Header = () => {
+
+    const {
+        handleMenuOpen,
+        menuState
+    } = useContext(LayoutContext);
+
     const {
         cartItems
     } = useContext(BasketContext);
@@ -41,11 +49,14 @@ export const Header = () => {
 
     const {
         selectedProduct,
-        quickView,
-        handleQuickViewClose
     } = useContext(DataContext);
 
-    const {i18n,t} = useTranslation();
+    const {
+        quickView,
+        handleQuickViewClose,
+    } = useContext(LayoutContext);
+
+    const {i18n, t} = useTranslation();
     const location = useLocation();
 
     const [basketOpen, setBasketOpen] = useState(false);
@@ -95,7 +106,7 @@ export const Header = () => {
                 >
                     <CloseIcon/>
                 </div>
-                <QuickView product={selectedProduct} quickView={true}/>
+                <QuickView product={selectedProduct}/>
             </div>
             <SideMenu/>
             <header
@@ -110,6 +121,13 @@ export const Header = () => {
                     basketOpen={basketOpen}
                     setBasketOpen={setBasketOpen}
                 />
+                <div
+                    className={`${styles.openSideMenu} ${menuState ? styles.mobileVisible : ''}`}
+                    onClick={handleMenuOpen}
+                >
+                    <WidgetsIcon/>
+                    {t('sideMenu.menu')}
+                </div>
                 <div className={styles.headerContent}>
                     <div className={styles.leftBlock}>
                         <Link to={"/"} className={styles.logoBlock}>
