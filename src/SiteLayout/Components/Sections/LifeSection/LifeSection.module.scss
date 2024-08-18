@@ -91,6 +91,7 @@
       h2 {
         font-size: 52px;
         text-transform: uppercase;
+        text-align: center;
       }
 
       p {
@@ -102,5 +103,64 @@
     }
 
 
+  }
+}
+
+@media screen and (max-width: 1600px) {
+  .lifeSection {
+    padding-left: 50px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .lifeSection {
+    .sectionContent {
+      .imagesContainer {
+        margin-top: 15px;
+      }
+      .joinContainer {
+        h2 {
+          font-size: 45px;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 800px) {
+  .lifeSection {
+    .sectionContent {
+      .imagesContainer {
+        margin-bottom: 35px;
+      }
+      .joinContainer {
+        h2 {
+          font-size: 32px;
+        }
+        p {
+          font-size: 16px;
+        }
+      }
+
+    }
+  }
+}
+@media screen and (max-width: 500px) {
+  .lifeSection {
+    padding-left: 0;
+    .sectionContent {
+      padding: 50px 15px;
+      .imagesContainer {
+        margin-bottom: 25px;
+      }
+      .joinContainer {
+        h2 {
+          font-size: 25px;
+        }
+        p {
+          font-size: 15px;
+        }
+      }
+
+    }
   }
 }

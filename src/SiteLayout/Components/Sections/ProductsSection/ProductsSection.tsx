@@ -37,7 +37,7 @@ export const ProductsSection = () => {
                         slidesPerView={3}
                         autoplay={{delay: 3000}}
                         breakpoints={{
-                            1000: {
+                            1050: {
                                 slidesPerView: 3,
                             },
                             750: {

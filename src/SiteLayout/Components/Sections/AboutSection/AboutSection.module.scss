@@ -164,13 +164,11 @@
 
         .infoContainers {
           .container {
+            max-width: unset;
+            margin-bottom: 0;
             &:nth-child(4) {
               margin-bottom: 35px;
             }
-
-            max-width: unset;
-            margin-bottom: 0;
-
             > p {
               padding: 15px 15px 35px 0;
             }

@@ -9,8 +9,6 @@ import {useEffect, useState} from "react";
 import jobsData from "/public/data/JobsData/jobsData.json";
 import {useTranslation} from "react-i18next";
 
-
-
 export const JobsSection = () => {
     const [translatedJobs, setTranslatedJobs] = useState(jobsData.en);
 

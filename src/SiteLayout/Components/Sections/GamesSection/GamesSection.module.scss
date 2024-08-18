@@ -206,15 +206,12 @@
 
 @media screen and (max-width: 900px) {
   .gamesSection {
-    .sectionContent {
-      &:before {
-        display: none;
-      }
-      &:after {
-        display: none;
-      }
+    &:before {
+      display: none!important;
     }
-
+    &:after {
+      display: none!important;
+    }
   }
 }
 

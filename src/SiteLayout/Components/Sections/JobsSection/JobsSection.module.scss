@@ -112,8 +112,121 @@
           }
         }
       }
-
-
     }
   }
 }
+
+@media screen and (max-width: 1600px) {
+  .jobsSection {
+    padding-left: 50px;
+    .sectionContent {
+      padding: 110px 15px;
+    }
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .jobsSection {
+    .sectionContent {
+      padding: 100px 15px;
+      .jobsContainer {
+        max-width: 800px;
+        .jobBlock {
+          max-width: 387px;
+
+          .topRow {
+            flex-direction: column;
+            align-items: start;
+            .badgeBox {
+              margin: 0;
+            }
+          }
+          .bottomRow {
+            padding: 0;
+          }
+        }
+      }
+
+    }
+
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .jobsSection {
+    .sectionContent {
+      padding: 80px 15px;
+      .jobsContainer {
+        gap: 15px;
+        .jobBlock {
+          padding: 15px;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 900px) {
+  .jobsSection {
+    .sectionContent {
+      padding: 70px 15px;
+      .jobsContainer {
+        padding: 0 50px;
+        .jobBlock {
+          max-width: 100%;
+          gap: 20px;
+          .topRow {
+            flex-direction: row;
+            align-items: start;
+            .badgeBox {
+              margin-left:  auto;
+            }
+          }
+
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .jobsSection {
+    .sectionContent {
+      padding: 60px 15px;
+      .jobsContainer {
+        padding: 0;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .jobsSection {
+    .sectionContent {
+      padding: 50px 15px;
+      .jobsContainer {
+        .jobBlock {
+          .topRow {
+            flex-direction: column;
+            align-items: start;
+            .badgeBox {
+              margin: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .jobsSection {
+    padding-left: 0;
+  }
+}
+
+
+
+
+
+
+
