@@ -187,8 +187,13 @@
   }
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1500px) {
   .deviceCard {
+    .cardTitle {
+      a {
+        font-size: 20px;
+      }
+    }
     .cardBottom {
       .price {
         p {
@@ -204,12 +209,10 @@
     }
   }
 }
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 800px) {
   .deviceCard {
     .cardBottom {
       .price {
-
-
         flex-direction: column;
         align-items: start;
         p {

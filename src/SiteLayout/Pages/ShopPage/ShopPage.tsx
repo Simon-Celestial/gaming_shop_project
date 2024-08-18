@@ -476,7 +476,14 @@ export const ShopPage = () => {
                             modules={[EffectFade, Autoplay]}
                             slidesPerView={2}
                             autoplay={{delay: 2500}}
-                            breakpoints={{}}
+                            breakpoints={{
+                                1320: {
+                                    slidesPerView: 2,
+                                },
+                                0: {
+                                    slidesPerView: 1,
+                                }
+                            }}
                             spaceBetween={15}
                             freeMode={true}
                             loop={true}
