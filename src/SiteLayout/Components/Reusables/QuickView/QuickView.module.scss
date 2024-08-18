@@ -132,6 +132,7 @@
     width: 100%;
     max-width: 710px;
     gap: 15px;
+    height: min-content;
 
     .imagesColumn {
       display: flex;
@@ -204,4 +205,136 @@
     }
   }
 
+}
+
+@media screen and (max-width: 1320px) {
+.mainProductSection {
+  gap: 25px;
+  .productTitle {
+    max-width: 500px;
+    padding-right: 0;
+    .rating {
+      h3 {
+        font-size: 18px;
+      }
+    }
+    h2 {
+      font-size: 32px;
+    }
+    .price {
+      font-size: 18px;
+    }
+  }
+}
+}
+
+@media screen and (max-width: 1150px) {
+  .mainProductSection {
+    gap: 20px;
+    .productTitle {
+      max-width: 400px;
+      padding-right: 0;
+      .rating {
+        margin-bottom: 0;
+        h3 {
+          font-size: 18px;
+        }
+      }
+      h2 {
+        font-size: 28px;
+      }
+      .price {
+        flex-direction: column;
+        align-items: start;
+        margin: 10px 0;
+
+      }
+      .addBtn {
+        font-size: 13px;
+      }
+      .addToWishlist {
+        font-size: 14px;
+
+      }
+    }
+    .productImage {
+      .imagesColumn {
+        max-width: 90px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .mainProductSection {
+    flex-direction: column;
+    align-items: center;
+    max-width: unset;
+    gap: 35px;
+    .productTitle {
+      max-width: unset;
+    }
+    .productImage {
+      max-width: unset;
+      padding-right: 200px;
+      .mainImage {
+        max-width: unset;
+      }
+      .imagesColumn {
+        max-width: 120px;
+
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .mainProductSection {
+    .productImage {
+      padding-right: 75px;
+    }
+  }
+}
+@media screen and (max-width: 700px) {
+  .mainProductSection {
+    .productImage {
+      padding-right: 35px;
+    }
+  }
+}
+@media screen and (max-width: 600px) {
+  .mainProductSection {
+    .productImage {
+      padding-right: 0;
+      .imagesColumn {
+        max-width: 80px;
+      }
+    }
+  }
+}
+@media screen and (max-width: 600px) {
+  .mainProductSection {
+    .productImage {
+      padding-right: 0;
+      .imagesColumn {
+        max-width: 80px;
+      }
+    }
+  }
+}
+@media screen and (max-width: 500px) {
+  .mainProductSection {
+    .productImage {
+      flex-direction: column-reverse;
+      .imagesColumn {
+        flex-direction: row;
+        max-width: unset;
+      }
+    }
+    .productTitle {
+    >h2 {
+      font-size: 22px;
+    }
+    }
+  }
 }

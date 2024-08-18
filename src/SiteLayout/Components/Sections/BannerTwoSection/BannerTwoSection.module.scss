@@ -138,3 +138,279 @@
     }
   }
 }
+
+@media screen and (max-width: 1800px) {
+  .bannerSection {
+    .joystickBottom {
+      left: 28%;
+    }
+  }
+}
+
+@media screen and (max-width: 1600px) {
+.bannerSection {
+  .joystickTop {
+    left: 30%;
+  }
+  .joystickBottom {
+    left: 30%;
+  }
+
+  .sectionContent {
+    padding: 230px 15px 230px 65px;
+    .titleContainer {
+      max-width: 550px;
+      h1 {
+        font-size: 50px;
+      }
+      p {
+        font-size: 18px;
+      }
+      .statisticsContainer {
+        margin-top: 35px;
+      }
+      .btnContainer {
+        margin-top: 25px;
+      }
+    }
+  }
+}
+}
+
+@media screen and (max-width: 1420px) {
+  .bannerSection {
+    .joystickTop {
+      left: 15%;
+    }
+    .joystickBottom {
+      left: 20%;
+    }
+    .decoration {
+      right: -6%;
+    }
+    .sectionContent {
+      padding: 200px 15px 200px 65px;
+      .titleContainer {
+        max-width: 450px;
+        h1 {
+          font-size: 35px;
+        }
+        p {
+          font-size: 16px;
+          margin-top: 15px;
+        }
+        .statisticsContainer {
+          margin-top: 15px;
+        }
+        .btnContainer {
+          margin-top: 25px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .bannerSection {
+    .joystickTop {
+      left: 12%;
+      img {
+        max-width: 200px;
+      }
+    }
+    .joystickBottom {
+      left: 22%;
+      img {
+        max-width: 180px;
+      }
+    }
+    .decoration {
+      right: -18%;
+      img {
+        width: 80%;
+      }
+    }
+    .sectionContent {
+      padding: 150px 15px 150px 65px;
+      .titleContainer {
+        max-width: 450px;
+        h1 {
+          font-size: 32px;
+        }
+        p {
+          font-size: 16px;
+        }
+        .statisticsContainer {
+          flex-direction: column;
+          align-items: start;
+          gap: 5px;
+
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .bannerSection {
+    .joystickTop {
+      left: 15%;
+      top: 0;
+      img {
+        max-width: 180px;
+      }
+    }
+    .joystickBottom {
+      left: 34%;
+      img {
+        max-width: 130px;
+      }
+    }
+    .decoration {
+      right: -30%;
+      img {
+        width: 70%;
+      }
+    }
+    .sectionContent {
+      padding: 120px 15px 120px 65px;
+      .titleContainer {
+        max-width: 430px;
+        h1 {
+          font-size: 28px;
+        }
+        p {
+          font-size: 15px;
+        }
+        .statisticsContainer {
+          margin-top: 5px;
+          .box {
+            h2 {
+              font-size: 24px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .bannerSection {
+    .joystickTop {
+      top: -1%;
+      img {
+        max-width: 180px;
+      }
+    }
+    .joystickBottom {
+      left: 35%;
+      img {
+        max-width: 120px;
+      }
+    }
+    .decoration {
+      right: -41%;
+      img {
+        width: 60%;
+      }
+    }
+    .sectionContent {
+      padding: 100px 15px 100px 65px;
+      .titleContainer {
+        max-width: 400px;
+        h1 {
+          font-size: 26px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 920px) {
+  .bannerSection {
+    .joystickTop {
+      display: none;
+    }
+    .joystickBottom {
+      display: none;
+    }
+    .decoration {
+      display: none;
+    }
+    .sectionContent {
+      padding: 80px 15px 80px 65px;
+      .titleContainer {
+        max-width: 600px;
+        margin: 0 auto;
+        h1 {
+          font-size: 42px;
+        }
+        p {
+          font-size: 22px;
+        }
+        .statisticsContainer {
+          .box {
+            h2 {
+              font-size: 32px;
+            }
+          }
+        }
+
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .bannerSection {
+    .sectionContent {
+      padding: 50px 15px 50px 65px;
+      .titleContainer {
+        h1 {
+          font-size: 32px;
+        }
+        p {
+          font-size: 18px;
+        }
+        .statisticsContainer {
+          .box {
+            h2 {
+              font-size: 26px;
+            }
+          }
+        }
+
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .bannerSection {
+    .sectionContent {
+      padding: 35px 15px 35px 15px;
+      .titleContainer {
+        h1 {
+          font-size: 28px;
+        }
+        p {
+          font-size: 16px;
+        }
+        .statisticsContainer {
+          .box {
+            h2 {
+              font-size: 22px;
+            }
+          }
+        }
+
+      }
+    }
+  }
+}
+
+
+
+
+

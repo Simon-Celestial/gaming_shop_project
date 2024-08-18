@@ -13,79 +13,139 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+  }
+  .additionalSection {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    padding: 75px 0 50px 0;
+    background-color: $grayFill;
 
-    .additionalSection {
+    .sectionContent {
       display: flex;
+      max-width: 1400px;
+      flex-direction: column;
       width: 100%;
-      justify-content: center;
-      padding: 75px 0 50px 0;
-      background-color: $grayFill;
-      .sectionContent {
-        display: flex;
-        max-width: 1400px;
-        flex-direction: column;
-        width: 100%;
-        >h2 {
-          font-size: 35px;
-          color: $white;
-          margin-bottom: 25px;
-        }
-        .infoTable {
-          display: flex;
-          flex-direction: column;
-          border: 1px solid $gray;
-          border-radius: 10px;
-          width: 100%;
-          .tableRow {
-            display: flex;
-            gap: 5px;
-            border-bottom: 1px solid $gray;
-            &:last-child {
-              border-bottom: 0;
-            }
-            .cell {
-              display: flex;
-              align-items: center;
-              padding: 10px;
-              width: 100%;
-              &:nth-child(1) {
-                border-right: 1px solid $gray;
-                max-width: 150px;
-              }
-            }
 
-          }
-        }
+      > h2 {
+        font-size: 35px;
+        color: $white;
+        margin-bottom: 25px;
       }
-    }
-    .mayLikeSection {
-      display: flex;
-      width: 100%;
-      padding: 0 0 75px 0;
-      justify-content: center;
-      background: $grayFill;
-      border-bottom: 2px solid $background;
-      .sectionContent {
-        display: flex;
-        width: 100%;
-        max-width: 1400px;
-        flex-direction: column;
-        >h2 {
-          font-size: 35px;
-          color: $white;
-          margin-bottom: 25px;
-        }
-        .productsSwiper {
-          display: flex;
-          width: 100%;
-          align-items: center;
-          .cardWrapper {
-            max-width: 450px;
-            width: 100%;
-          }
-        }
 
+      .infoTable {
+        display: flex;
+        flex-direction: column;
+        border: 1px solid $gray;
+        border-radius: 10px;
+        width: 100%;
+
+        .tableRow {
+          display: flex;
+          gap: 5px;
+          border-bottom: 1px solid $gray;
+
+          &:last-child {
+            border-bottom: 0;
+          }
+
+          .cell {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            width: 100%;
+
+            &:nth-child(1) {
+              border-right: 1px solid $gray;
+              max-width: 150px;
+            }
+          }
+
+        }
       }
     }
   }
+
+  .mayLikeSection {
+    display: flex;
+    width: 100%;
+    padding: 0 0 75px 0;
+    justify-content: center;
+    background: $grayFill;
+    border-bottom: 2px solid $background;
+
+    .sectionContent {
+      display: flex;
+      width: 100%;
+      max-width: 1400px;
+      flex-direction: column;
+
+      > h2 {
+        font-size: 35px;
+        color: $white;
+        margin-bottom: 25px;
+      }
+
+      .productsSwiper {
+        display: flex;
+        width: 100%;
+        align-items: center;
+
+        .cardWrapper {
+          max-width: 450px;
+          width: 100%;
+        }
+      }
+
+    }
+  }
+
 }
+
+@media screen and (max-width: 1700px) {
+  .pageWrapper {
+    .pageContent {
+      padding: 150px 15px 0 65px;
+    }
+  }
+}
+@media screen and (max-width: 1650px) {
+  .pageWrapper {
+    .pageContent {
+      padding: 150px 15px 0 85px;
+    }
+  }
+}
+@media screen and (max-width: 1580px) {
+  .pageWrapper {
+    .pageContent {
+      padding: 150px 15px 0 110px;
+    }
+  }
+}
+@media screen and (max-width: 1550px) {
+  .pageWrapper {
+    .pageContent {
+      padding: 150px 15px 0 115px;
+    }
+  }
+}
+@media screen and (max-width: 1500px) {
+  .pageWrapper {
+    .pageContent {
+      padding: 150px 15px 0 65px;
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .pageWrapper {
+    .pageContent {
+      padding: 115px 15px 0 15px;
+    }
+  }
+}
+
+
+
+

@@ -35,7 +35,6 @@ export const QuickView: React.FC<QuickViewProps> = ({product}) => {
         }
     }, [isInWishlist, product, selectedColor]);
 
-
     const handleScaleImage = useCallback(() => {
         setScaleImage(prev => !prev)
     }, []);
@@ -113,7 +112,6 @@ export const QuickView: React.FC<QuickViewProps> = ({product}) => {
         }
     }, [product, handleAddToWishlist, selectedColor, t]);
 
-
     return (
         <section className={`${styles.mainProductSection} ${quickView ? styles.quickView : ''}`}>
             <div className={styles.productTitle}>
@@ -143,7 +141,7 @@ export const QuickView: React.FC<QuickViewProps> = ({product}) => {
                     <p><strong>{t('quickView.brand')}: </strong> {product?.brand}</p>
                 </div>
                 <div className={styles.colorSelection}>
-                    <span>{t('quickView.color')}:</span>
+                    <span>{t('quickView.color')}</span>
                     <select
                         value={selectedColor}
                         onChange={handleSelectColor}

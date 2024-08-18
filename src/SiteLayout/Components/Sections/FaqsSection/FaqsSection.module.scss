@@ -15,11 +15,11 @@
 
     &.topDecor {
       right: 8%;
-      top: 10%;
+      top: 2%;
     }
 
     &.bottomDecor {
-      bottom: 10%;
+      bottom: 1%;
       left: 4%;
     }
   }
@@ -70,6 +70,7 @@
 
             }
           }
+
           .expand {
             right: 15px;
             top: 10px;
@@ -150,6 +151,158 @@
           margin-top: 35px;
         }
 
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1600px) {
+  .faqsSection {
+    .sectionContent {
+      padding: 100px 15px 100px 65px;
+    }
+  }
+}
+
+@media screen and (max-width: 1500px) {
+  .faqsSection {
+    .decoration {
+      &.topDecor {
+        right: 1%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .faqsSection {
+    .decoration {
+      &.topDecor {
+        right: 2%;
+
+        img {
+          max-width: 100px;
+        }
+      }
+
+      &.bottomDecor {
+        left: 5%;
+        bottom: unset;
+        top: 2%;
+
+        img {
+          max-width: 100px;
+        }
+
+      }
+
+    }
+
+    .sectionContent {
+      padding: 75px 15px 75px 65px;
+
+      .mainContainer {
+        margin-top: 25px;
+
+        .accordion {
+          gap: 15px;
+
+          .questionBox {
+            h2 {
+              font-size: 16px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .faqsSection {
+    .decoration {
+      &.topDecor {
+        right: 3%;
+
+        img {
+          max-width: 50px;
+        }
+      }
+
+      &.bottomDecor {
+        left: 7%;
+
+        img {
+          max-width: 50px;
+        }
+
+      }
+
+    }
+
+    .sectionContent {
+      padding: 65px 15px 65px 65px;
+      .sectionTitle {
+        max-width: 600px;
+      }
+
+      .mainContainer {
+        flex-direction: column;
+        align-items: center;
+
+        .faq {
+          max-width: 600px;
+          padding: 30px 15px;
+          >h2{
+            font-size: 24px;
+          }
+          p {
+            font-size: 14px;
+          }
+
+        }
+
+        .accordion {
+          max-width: 600px;
+        }
+
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .faqsSection {
+    .decoration {
+      &.topDecor {
+        display: none;
+      }
+      &.bottomDecor {
+        display: none;
+      }
+    }
+
+    .sectionContent {
+      padding: 50px 15px 50px 15px;
+      .mainContainer {
+        .faq {
+          max-width: 600px;
+          padding: 30px 15px;
+          >h2{
+            font-size: 24px;
+          }
+          p {
+            font-size: 14px;
+          }
+        }
+        .accordion  {
+          .questionBox {
+            padding: 15px 50px 15px 25px;
+            >p {
+              font-size: 14px;
+            }
+          }
+        }
       }
     }
   }

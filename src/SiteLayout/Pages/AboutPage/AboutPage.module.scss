@@ -9,8 +9,9 @@
 
   .spaceForSection {
     width: 100%;
-    padding: 60px 0;
+    padding: 30px 0;
     background-color: $background;
+
   }
 
   .jobsSectionWrapper {
@@ -22,17 +23,27 @@
   .sliderSectionWrapper {
     margin-bottom: -60px;
   }
+
   .spaceBetweenSections {
     padding: 35px 0;
     display: none;
   }
 }
 
+@media screen and (max-width: 1320px) {
+  .pageWrapper {
+    .spaceForSection {
+      display: none;
+    }
+  }
+}
+
 @media screen and (max-width: 1000px) {
   .pageWrapper {
-    .jobsSectionWrapper{
+    .jobsSectionWrapper {
       margin-bottom: 0;
     }
+
     .spaceBetweenSections {
       display: block;
     }
