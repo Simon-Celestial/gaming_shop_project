@@ -42,20 +42,20 @@ export const TeamSection = () => {
                     modules={[Autoplay]}
                     autoplay={{delay: 2000}}
                     breakpoints={{
-                        1100: {
+                        1550: {
                             slidesPerView: 4,
                         },
-                        840: {
+                        1200: {
                             slidesPerView: 3,
                         },
-                        550: {
+                        800: {
                             slidesPerView: 2,
                         },
                         0: {
                             slidesPerView: 1,
                         },
                     }}
-                    spaceBetween={50}
+                    spaceBetween={0}
                     freeMode={true}
                     loop={true}
                 >

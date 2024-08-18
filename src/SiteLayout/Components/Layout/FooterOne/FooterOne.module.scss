@@ -352,6 +352,23 @@
 @media screen and (max-width: 500px) {
   .footerWrapper {
     padding-left: 0;
+    .socialContainer {
+      padding-left: 0;
+    }
+    .footerContent {
+      .titleContainer {
+        padding: 35px 15px 35px 15px;
+
+      }
+      .boxesContainer {
+        .boxesTitle {
+          margin: 0;
+        }
+      }
+    }
+    .copyright {
+      padding: 20px 15px 20px 15px;
+    }
   }
 }
 

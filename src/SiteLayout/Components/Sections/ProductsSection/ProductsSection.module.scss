@@ -31,7 +31,83 @@
 
       .cardWrapper {
         display: flex;
-        padding-bottom: 60px;
+        padding: 0 15px 50px 15px;
+
+      }
+    }
+  }
+}
+@media screen and (max-width: 1600px) {
+  .productsSection {
+    .sectionContent {
+      padding: 110px 15px 60px 65px;
+    }
+  }
+}
+@media screen and (max-width: 1320px) {
+  .productsSection {
+    .sectionContent {
+      padding: 60px 15px 60px 65px;
+    }
+  }
+}
+
+
+@media screen and (max-width: 1200px) {
+  .productsSection {
+    .sectionContent {
+      .productsTitle {
+        margin-bottom: 25px;
+      }
+      .productsSwiper {
+        .cardWrapper {
+          padding: 0 10px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .productsSection {
+    .sectionContent {
+      padding: 50px 15px 50px 65px;
+
+      .productsSwiper {
+        .cardWrapper {
+          padding: 0 90px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .productsSection {
+    .sectionContent {
+      padding: 25px 15px 50px 15px;
+      .productsTitle {
+        padding: 0 15px 0 50px;
+      }
+      .productsSwiper {
+        .cardWrapper {
+          padding: 0 45px 0 95px;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 500px) {
+  .productsSection {
+    .sectionContent {
+      padding: 25px 0 50px 0;
+      .productsTitle {
+        padding: 0 15px 0 15px;
+      }
+      .productsSwiper {
+        .cardWrapper {
+          padding: 0 15px;
+        }
       }
     }
   }

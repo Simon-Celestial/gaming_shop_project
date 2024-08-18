@@ -270,6 +270,7 @@
     .sectionContent {
       padding: 200px 15px 200px 50px;
     }
+
     .decoration {
       &.planet {
         img {
@@ -284,27 +285,33 @@
   .bannerSection {
     .sectionContent {
       padding: 180px 15px 180px 65px;
+
       .titleContainer {
         max-width: 600px;
+
         h2 {
           font-size: 50px;
         }
+
         span {
-          font-size: 50px!important;
+          font-size: 50px !important;
           margin-top: 10px;
         }
+
         p {
           font-size: 20px;
           margin-top: 10px;
         }
       }
     }
+
     .decoration {
       &.planet {
         img {
           max-width: 150px;
         }
       }
+
       &.joystick {
         left: 20%;
         top: 30px;
@@ -313,7 +320,7 @@
   }
 }
 
-@media  screen and (max-width: 1250px) {
+@media screen and (max-width: 1250px) {
   .bannerSection {
     .decoration {
       &.tubeTransparent {
@@ -328,10 +335,12 @@
     .decoration {
       &.controllers {
         left: 30%;
+
         img {
           max-width: 200px;
         }
       }
+
       &.joystick {
         left: 25%;
 
@@ -340,6 +349,7 @@
         }
       }
     }
+
     .gearBox {
       .gear {
         &:nth-child(3) {
@@ -347,16 +357,21 @@
         }
       }
     }
+
     .sectionContent {
       padding: 150px 15px 150px 65px;
+
       .titleContainer {
         max-width: 500px;
+
         h2 {
           font-size: 40px;
         }
+
         span {
-          font-size: 40px!important;
+          font-size: 40px !important;
         }
+
         p {
           font-size: 18px;
         }
@@ -367,10 +382,11 @@
 
 }
 
-@media  screen and (max-width: 1024px) {
+@media screen and (max-width: 1024px) {
   .bannerSection {
     .gearBox {
       top: 7%;
+
       .gear {
         &:nth-child(3) {
           display: block;
@@ -378,30 +394,37 @@
 
       }
     }
+
     .decoration {
       &.planet {
         top: 100px;
         left: 50px;
+
         img {
           max-width: 100px;
         }
 
       }
+
       &.controllers {
         left: 85%;
         bottom: 15%;
+
         img {
           max-width: 150px;
         }
       }
+
       &.starsTwo {
-        top: 5%!important;
-        left: 5%!important;
+        top: 5% !important;
+        left: 5% !important;
       }
+
       &.starsOne {
-        left: 82%!important;
+        left: 82% !important;
       }
     }
+
     .sectionContent {
       flex-direction: column;
       gap: 50px;
@@ -409,13 +432,16 @@
 
       .titleContainer {
         max-width: 700px;
+
         h4 {
           font-size: 45px;
         }
+
         span {
-          font-size: 45px!important;
+          font-size: 45px !important;
         }
       }
+
       .swiperContainer {
         max-width: 700px;
         padding-right: 200px;
@@ -426,41 +452,63 @@
 }
 
 @media screen and (max-width: 800px) {
-.bannerSection {
-  .decoration {
-    &.planet {
-      display: none;
-    }
-    &.joystick {
-     left: 15%;
-      top: 3%;
-      img {
-        max-width: 200px;
-      }
-    }
-  }
-  .gearBox {
-    .gear {
-      &:nth-child(3) {
+  .bannerSection {
+    .decoration {
+      &.planet {
         display: none;
       }
-    }
-  }
-  .sectionContent {
-    padding: 125px 15px 25px 65px;
-    .titleContainer {
-      h4 {
-        font-size: 32px;
-      }
-      span {
-        font-size: 32px!important;
-      }
-      p {
-        max-width: 500px;
+
+      &.joystick {
+        left: 15%;
+        top: 3%;
+
+        img {
+          max-width: 200px;
+        }
       }
     }
+
+    .gearBox {
+      .gear {
+        &:nth-child(3) {
+          display: none;
+        }
+      }
+    }
+
+    .sectionContent {
+      padding: 125px 15px 25px 65px;
+
+      .titleContainer {
+        h4 {
+          font-size: 32px;
+        }
+
+        span {
+          font-size: 32px !important;
+        }
+
+        p {
+          max-width: 500px;
+        }
+      }
+
+      .swiperContainer {
+        padding-right: 100px;
+
+        .swiperHead {
+          p {
+            font-size: 18px;
+          }
+
+          img {
+            width: 28px;
+          }
+        }
+      }
+
+    }
   }
-}
 }
 
 @media screen and (max-width: 600px) {
@@ -469,17 +517,21 @@
       &.joystick {
         left: 5%;
       }
+
       &.controllers {
         display: none;
       }
     }
+
     .gearBox {
       top: 7.5%;
     }
+
     .sectionContent {
       gap: 35px;
+
       .swiperContainer {
-        padding-right: 100px;
+        padding-right: 0;
       }
     }
   }
@@ -487,6 +539,17 @@
 
 @media screen and (max-width: 500px) {
   .bannerSection {
+    .decoration {
+      &.starsThree {
+        opacity: 0.3!important;
+        top: 22% !important;
+
+      }
+      &.starsTwo {
+        opacity: 0.3!important;
+        top: 8% !important;
+      }
+    }
     .gearBox {
       width: 75px;
       height: 75px;
@@ -497,6 +560,7 @@
             font-size: 40px;
           }
         }
+
         &:nth-child(2) {
           svg {
             font-size: 30px;
@@ -505,35 +569,37 @@
 
       }
     }
-    .decoration {
-      &.starsOne {
-        display: none;
-      }
-      &.joystick {
-        display: none;
-      }
-      &.starsTwo {
-        top: 8%!important;
-      }
-    }
+
     .sectionContent {
-      padding: 125px 10px 25px 55px;
+      padding: 125px 15px 25px 15px;
+
       .titleContainer {
         h4 {
           font-size: 22px;
         }
+
         h2 {
-          font-size: 25px!important;
+          font-size: 25px !important;
         }
+
         span {
-          font-size: 22px!important;
+          font-size: 22px !important;
         }
+
         p {
           font-size: 16px;
         }
       }
+
       .swiperContainer {
         padding-right: 0;
+
+        .swiperWrapper {
+          .cardWrapper {
+            padding-bottom: 25px;
+          }
+
+        }
       }
     }
   }

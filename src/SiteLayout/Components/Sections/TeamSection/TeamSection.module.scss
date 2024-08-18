@@ -8,7 +8,7 @@
   align-items: center;
   background: $background;
   flex-direction: column;
-  padding: 120px 15px 0 15px;
+  padding: 120px 0 0 0;
 
   .sectionContent {
     max-width: 1320px;
@@ -23,6 +23,7 @@
       max-width: 700px;
       align-items: center;
       margin-bottom: 50px;
+      padding: 0 15px 0 65px;
     }
   }
 
@@ -34,6 +35,8 @@
       display: flex;
       flex-direction: column;
       width: 100%;
+      padding: 0 15px;
+
 
       &.margin {
         margin-top: 50px;
@@ -43,13 +46,13 @@
         width: 100%;
         height: 600px;
         margin-bottom: 32px;
-        border-bottom: 2px solid $green;
 
         img {
           object-fit: cover;
           object-position: center;
           width: 100%;
           height: 100%;
+          border-bottom: 2px solid $green;
         }
       }
 
@@ -72,5 +75,59 @@
       }
     }
 
+  }
+}
+
+@media  screen and (max-width: 1550px) {
+.teamSection {
+  .teamSwiper {
+    .teamSlide {
+      .image {
+        img {
+          object-position: top;
+        }
+      }
+    }
+  }
+}
+}
+@media  screen and (max-width: 1200px) {
+  .teamSection {
+    padding: 60px 0 50px 0;
+    .teamSwiper {
+      padding-left: 50px;
+    }
+  }
+}
+
+@media  screen and (max-width: 800px) {
+  .teamSection {
+    padding: 60px 0 50px 0;
+    .sectionContent {
+      .teamTitle {
+        margin-bottom: 25px;
+      }
+    }
+  }
+}
+@media  screen and (max-width: 500px) {
+  .teamSection {
+    padding: 50px 0 50px 0;
+    .sectionContent {
+      .teamTitle {
+        padding: 0 15px;
+      }
+    }
+    .teamSwiper {
+      padding-left: 0;
+
+      .teamSlide {
+        padding: 0 15px;
+        .image {
+          height: 500px;
+        }
+
+      }
+    }
   }
 }

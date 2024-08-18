@@ -152,3 +152,78 @@
 
   }
 }
+
+@media screen and (max-width: 1700px) {
+  .gamesSection {
+    &::after {
+      top: 17%;
+      background-size: 90%;
+      width: 325px;
+      right: 1%;
+    }
+
+    &::before {
+      top: 17%;
+      background-size: 90%;
+      width: 325px;
+      left: 2%;
+
+    }
+  }
+}
+
+@media screen and (max-width: 1600px) {
+  .gamesSection {
+    .sectionContent {
+      padding: 100px 15px 100px 65px;
+
+    }
+  }
+}
+
+@media screen and (max-width: 1320px) {
+  .gamesSection {
+    .sectionContent {
+      padding: 80px 15px 80px 65px;
+      .topContainer {
+        .genresContainer {
+          .genresRow {
+            .genreBox {
+              img {
+                max-width: 65px;
+              }
+
+            }
+          }
+        }
+      }
+      .gamesContainer {
+        max-width: 850px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .gamesSection {
+    .sectionContent {
+      &:before {
+        display: none;
+      }
+      &:after {
+        display: none;
+      }
+    }
+
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .gamesSection {
+    .sectionContent {
+      padding: 35px 15px 35px 15px;
+
+    }
+
+  }
+}

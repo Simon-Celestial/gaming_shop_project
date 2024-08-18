@@ -37,7 +37,7 @@ export const GameCard: React.FC<GAME_CARD_PROPS> = ({data}) => {
                 <img src={`${data?.poster}`} alt={data?.name} loading="lazy"/>
             </div>
             <div className={styles.titleBox}>
-                <h2>{data?.name}</h2>
+                <h2 className={data?.new? styles.hasFlag : ''}>{data?.name}</h2>
                 <h3>
                     {data?.tags?.map((tag,index) => <span key={index}>{tag}</span>)}
                 </h3>

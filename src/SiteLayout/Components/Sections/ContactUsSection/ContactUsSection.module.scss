@@ -17,7 +17,7 @@
     max-width: 1320px;
     align-items: center;
     justify-content: space-between;
-    gap: 25px;
+    gap: 35px;
     .titleBlock {
       max-width: 550px;
       width: 100%;
@@ -55,4 +55,66 @@
     }
   }
 
+}
+
+@media  screen and (max-width: 1600px) {
+  .contactUsSection {
+    background-position: center left, center center;
+    .sectionContent {
+      padding: 110px 15px 110px 65px;
+      .formContainer {
+        margin-right: 0;
+      }
+    }
+  }
+}
+@media  screen and (max-width: 1320px) {
+  .contactUsSection {
+    .sectionContent {
+      padding: 90px 15px 90px 65px;
+      gap: 25px;
+    }
+  }
+}
+@media  screen and (max-width: 1024px) {
+  .contactUsSection {
+    background-position: left top, bottom right;
+    .sectionContent {
+      padding: 80px 15px 80px 65px;
+      gap: 25px;
+      flex-direction: column;
+      .titleBlock {
+        .infoRow {
+          margin-top: 15px;
+        }
+      }
+    }
+  }
+}
+
+@media  screen and (max-width: 800px) {
+  .contactUsSection {
+    background-image: url("https://pixner.net/gamestorm3/main/assets/images/contact-us-obj.png");
+    background-position: right top;
+    .sectionContent {
+      padding: 50px 15px 50px 65px;
+      max-width: unset;
+      .formContainer {
+        max-width: unset;
+      }
+      .titleBlock {
+        max-width: unset;
+      }
+    }
+  }
+}
+@media  screen and (max-width: 500px) {
+  .contactUsSection {
+    .sectionContent {
+      padding: 50px 15px 50px 15px;
+      .formContainer {
+        padding: 10px;
+      }
+    }
+  }
 }

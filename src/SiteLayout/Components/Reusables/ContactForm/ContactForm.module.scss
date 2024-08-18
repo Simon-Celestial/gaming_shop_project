@@ -70,3 +70,19 @@
 }
 
 
+@media screen and (max-width: 1320px) {
+  .formContent {
+    .inputWrapper {
+      font-size: 15px;
+      margin-bottom: 5px;
+      input {
+        padding: 15px;
+      }
+    }
+  }
+}
+@media screen and (max-width: 500px) {
+  .formContent {
+    padding: 15px;
+  }
+}

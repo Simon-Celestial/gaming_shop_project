@@ -37,21 +37,21 @@ export const ProductsSection = () => {
                         slidesPerView={3}
                         autoplay={{delay: 3000}}
                         breakpoints={{
-                            1100: {
+                            1000: {
                                 slidesPerView: 3,
                             },
-                            840: {
+                            750: {
                                 slidesPerView: 2,
                             },
-                            550: {
+                            0: {
                                 slidesPerView: 1,
                             }
                         }}
-                        spaceBetween={25}
+                        spaceBetween={0}
                         freeMode={true}
                         loop={true}
                     >
-                        {productsData?.map((product) => {
+                        {productsData?.slice(5,12)?.map((product) => {
                             return (
                                 <SwiperSlide key={product?.id}>
                                     <div className={styles.cardWrapper}>

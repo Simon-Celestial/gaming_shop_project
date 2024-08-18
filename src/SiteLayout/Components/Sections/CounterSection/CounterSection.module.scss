@@ -52,3 +52,48 @@
     }
   }
 }
+
+@media screen and (max-width: 1600px) {
+  .counterSection {
+    .sectionContent {
+      padding: 100px 15px 0 50px;
+    }
+  }
+}
+@media screen and (max-width: 1320px) {
+  .counterSection {
+    .sectionContent {
+      padding: 75px 15px 50px 50px;
+      .informationContainer {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+    }
+  }
+}
+@media screen and (max-width: 1074px) {
+  .counterSection {
+    .sectionContent {
+      padding: 50px 15px 50px 65px;
+    }
+  }
+}
+@media screen and (max-width: 750px) {
+  .counterSection {
+    .sectionContent {
+      padding: 25px 15px 75px 65px;
+      .informationContainer {
+       .box {
+         max-width: 100%;
+       }
+      }
+    }
+  }
+}
+@media screen and (max-width: 500px) {
+  .counterSection {
+    .sectionContent {
+      padding: 25px 15px 50px 15px;
+    }
+  }
+}
