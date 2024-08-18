@@ -22,5 +22,20 @@
   .sliderSectionWrapper {
     margin-bottom: -60px;
   }
+  .spaceBetweenSections {
+    padding: 35px 0;
+    display: none;
+  }
 }
 
+@media screen and (max-width: 1000px) {
+  .pageWrapper {
+    .jobsSectionWrapper{
+      margin-bottom: 0;
+    }
+    .spaceBetweenSections {
+      display: block;
+    }
+
+  }
+}

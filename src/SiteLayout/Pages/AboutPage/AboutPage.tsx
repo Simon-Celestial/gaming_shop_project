@@ -45,6 +45,7 @@ export const AboutPage = () => {
                 <OurStorySection />
                 {/*CONTACT SECTION*/}
                 <ContactSection/>
+                <span className={styles.spaceBetweenSections}></span>
                 {/*JOBS SECTION*/}
                 <div className={styles.jobsSectionWrapper}>
                     <JobsSection/>

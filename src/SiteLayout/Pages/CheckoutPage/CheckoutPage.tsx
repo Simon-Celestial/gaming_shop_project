@@ -332,7 +332,7 @@ export const CheckoutPage = () => {
                                             {cartItems?.map((cartProduct) => {
                                                 return (
                                                     <div key={cartProduct?.id} className={styles.orderRow}>
-                                                        <p><img src={cartProduct?.image[0]}
+                                                        <p><img src={cartProduct?.image?.[0]}
                                                                 alt=""/> {cartProduct?.name} ({cartProduct?.selectedColor})
                                                             <span> × {cartProduct?.count}</span></p>
                                                         <p>$ {(cartProduct?.salePrice * cartProduct?.count)?.toFixed(2)}</p>

@@ -102,3 +102,84 @@
   }
 
 }
+
+@media screen and (max-width: 1600px) {
+.gamingCharacterSection {
+  .sectionContent {
+    padding: 100px 15px 0 65px;
+  }
+  .swiperContainer {
+    padding-left: 65px;
+  }
+  .pagination {
+    padding: 0 15px 120px 65px;
+
+  }
+}
+}
+@media screen and (max-width: 1320px) {
+  .gamingCharacterSection {
+    .sectionContent {
+      padding: 80px 15px 0 65px;
+    }
+    .swiperContainer {
+      padding-left: 65px;
+      .sliderBox {
+        h2 {
+          font-size: 24px;
+        }
+      }
+    }
+    .pagination {
+      padding: 0 15px 80px 65px;
+
+    }
+  }
+}
+@media screen and (max-width: 1000px) {
+  .gamingCharacterSection {
+    .sectionContent {
+      padding: 70px 15px 0 65px;
+    }
+    .swiperContainer {
+      .sliderBox {
+        align-items: center;
+        h2 {
+          margin-bottom: 15px;
+        }
+        p {
+          text-align: center;
+          padding: 0;
+        }
+      }
+    }
+    .pagination {
+      padding: 0 15px 70px 65px;
+
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .gamingCharacterSection {
+    .sectionTitle {
+      margin: 0 auto 15px auto;
+    }
+    .sectionContent {
+      padding: 50px 15px 0 15px;
+    }
+    .swiperContainer {
+      padding-left: 0;
+
+      .sliderBox {
+        padding: 25px;
+      }
+    }
+    .pagination {
+      padding: 0 15px 50px 15px;
+      margin-top: 35px;
+
+
+    }
+  }
+}

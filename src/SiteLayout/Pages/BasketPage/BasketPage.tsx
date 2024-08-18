@@ -65,9 +65,9 @@ export const BasketPage = () => {
                                 </div>
                                 {cartItems?.map((product) => {
                                     return (
-                                        <div key={product?.id} className={`${styles.tableRow} ${styles.bottomRow}`}>
+                                        <div key={`${product?.id}_${product.selectedColor}`} className={`${styles.tableRow} ${styles.bottomRow}`}>
                                             <div className={`${styles.product} ${styles.cell}`}>
-                                                <img src={product?.image[0]} alt={product?.name}/>
+                                                <img src={product?.image?.[0]} alt={product?.name}/>
                                                 <Link to={`/single-product/${product?.id}`}>
                                                     {product?.name}
                                                 </Link>

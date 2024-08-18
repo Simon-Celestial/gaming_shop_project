@@ -69,10 +69,8 @@ export const ServicesSection = () => {
                                 <div className={styles.cover}></div>
                                 <div className={styles.text}>{data?.title}</div>
                             </div>
-
                         )
                     })}
-
                 </div>
             </div>
         </section>

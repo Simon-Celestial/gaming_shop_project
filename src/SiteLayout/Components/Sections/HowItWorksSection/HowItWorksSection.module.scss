@@ -118,3 +118,85 @@
 
   }
 }
+
+@media screen and (max-width: 1600px) {
+  .howItWorksSection {
+    .sectionContent {
+      padding: 100px 15px 100px 65px;
+
+      .boxesRow {
+        .box {
+          max-width: 291px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1320px) {
+  .howItWorksSection {
+    .sectionContent {
+      padding: 80px 15px 80px 65px;
+      .titleBlock {
+       margin: 0 auto 25px auto;
+      }
+      .boxesRow {
+        max-width: 960px;
+        margin: 0 auto;
+        .box {
+          max-width: 467px;
+          padding: 25px 20px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .howItWorksSection {
+    .sectionContent {
+      padding: 70px 15px 70px 65px;
+      .boxesRow {
+        max-width: 800px;
+        .box {
+          max-width: 387px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .howItWorksSection {
+    .sectionContent {
+      padding: 60px 15px 60px 65px;
+      .boxesRow {
+        max-width: 700px;
+        .box {
+          max-width: 337px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .howItWorksSection {
+    .sectionContent {
+      padding: 50px 15px 50px 65px;
+      .boxesRow {
+        max-width: 600px;
+        .box {
+          max-width: 100%;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 500px) {
+  .howItWorksSection {
+    .sectionContent {
+      padding: 50px 15px 50px 15px;
+    }
+  }
+}

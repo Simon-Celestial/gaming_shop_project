@@ -121,12 +121,12 @@ export const DeviceCard: React.FC<DeviceCardProps> = ({data}) => {
                         null
                 }
                 <img
-                    src={data?.image[0]}
+                    src={data?.image?.[0]}
                     alt={data?.name}
                     loading={"lazy"}
                 />
                 <img
-                    src={data?.image[1]}
+                    src={data?.image?.[1]}
                     alt={data?.name}
                     loading={"lazy"}
                 />

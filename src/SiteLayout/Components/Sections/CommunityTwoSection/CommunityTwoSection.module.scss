@@ -44,6 +44,8 @@
       color: $black;
       gap: 25px;
       flex-direction: column;
+      animation: circleGlow 2s linear infinite;
+      box-shadow: 0 0 25px #EDCB50;
 
       p {
         font-size: 24px;
@@ -58,3 +60,43 @@
 
   }
 }
+
+@media screen and (max-width: 1320px) {
+  .communitySection {
+    .sectionContent{
+      padding: 100px 15px;
+
+      .circleContainer {
+        width: 350px;
+        height: 350px;
+        p {
+          font-size: 16px;
+          padding: 0 45px;
+        }
+        h2 {
+          font-size: 50px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .communitySection {
+    .sectionContent{
+      padding: 50px 15px;
+
+      .circleContainer {
+        width: 280px;
+        height: 280px;
+        p {
+          font-size: 15px;
+        }
+        h2 {
+          font-size: 42px;
+        }
+      }
+    }
+  }
+}
+

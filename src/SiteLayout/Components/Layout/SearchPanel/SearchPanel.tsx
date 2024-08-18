@@ -68,7 +68,7 @@ export const SearchPanel: React.FC<SearchPanelProps> = ({searchPanelOpen, setSea
                 {filteredData?.length > 0 ? (
                         filteredData?.map((product) => (
                             <div key={product?.id} className={styles.productWrapper}>
-                                <img src={product?.image[0]} alt={product?.name}/>
+                                <img src={product?.image?.[0]} alt={product?.name}/>
                                 <Link to={product?.id?.toString()}>
                                     {product?.name}
                                 </Link>

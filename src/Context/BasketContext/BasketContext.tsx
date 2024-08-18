@@ -88,7 +88,9 @@ export const BasketContextProvider: React.FC<BasketContextProviderProps> = ({chi
 
     const removeFromCart = useCallback((productId: number, productName: string, color: string) => {
         setCartItems((prev) => {
-            const updatedCart = prev.filter(item => item.id !== productId || item.selectedColor !== color);
+            const updatedCart = prev.filter(item => {
+                return !(item.id === productId && item.selectedColor === color);
+            });
             if (updatedCart.length < prev.length) {
                 toast.success(`${productName} (${color}) removed from basket!`, {
                     hideProgressBar: false,
@@ -121,16 +123,18 @@ export const BasketContextProvider: React.FC<BasketContextProviderProps> = ({chi
         ));
     }, []);
 
+
     const decreaseQuantity = useCallback((productId: number, color: string) => {
-        setCartItems(prev =>
-            prev
-                .map(item =>
-                    item?.id === productId && item?.selectedColor === color
-                        ? {...item, count: Math.max(0, item?.count - 1)}
-                        : item
-                )
-                .filter(item => item?.count > 0)
-        );
+        setCartItems(prev => {
+            // Map through items to adjust the count
+            const updatedItems = prev.map(item =>
+                item.id === productId && item.selectedColor === color
+                    ? {...item, count: Math.max(0, (item.count || 0) - 1)}
+                    : item
+            );
+            // Filter out items with zero count
+            return updatedItems.filter(it => it.count !== 0);
+        });
     }, []);
 
     const emptyCart = useCallback(() => {

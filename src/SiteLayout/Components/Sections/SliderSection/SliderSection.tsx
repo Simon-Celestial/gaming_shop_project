@@ -20,7 +20,27 @@ export const SliderSection = () => {
                 slidesPerView={6}
                 modules={[Autoplay]}
                 autoplay={{delay: 2500}}
-                breakpoints={{}}
+                breakpoints={{
+                    1600: {
+                        slidesPerView: 6,
+                    },
+                    1400: {
+                        slidesPerView: 5,
+                    },
+                    1100: {
+                        slidesPerView: 4,
+                    },
+                    700: {
+                        slidesPerView: 3,
+                    },
+                    450: {
+                        slidesPerView: 2,
+                    },
+                    0: {
+                        slidesPerView: 1,
+                    }
+                }}
+
                 spaceBetween={10}
                 freeMode={true}
                 loop={true}

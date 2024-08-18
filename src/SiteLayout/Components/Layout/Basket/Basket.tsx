@@ -46,7 +46,7 @@ export const Basket: React.FC<BasketProps> = ({basketOpen, setBasketOpen}) => {
                             {cartItems?.map((product: PRODUCTS_DATA) => {
                                 return (
                                     <div
-                                        key={product?.id}
+                                        key={`${product?.id}+${product.selectedColor}`}
                                         className={styles.productCard}
                                     >
                                         <div className={styles.color}>
@@ -54,7 +54,7 @@ export const Basket: React.FC<BasketProps> = ({basketOpen, setBasketOpen}) => {
                                         </div>
                                         <div className={styles.image}>
                                             <img
-                                                src={product?.image[0]}
+                                                src={product?.image?.[0]}
                                                 alt={product?.name}/>
                                         </div>
                                         <div className={styles.details}>

@@ -14,14 +14,14 @@
     position: absolute;
 
     &.square {
-      left: 13%;
+      left: 12%;
       top: 25%;
       animation: rotate 25s linear infinite;
     }
 
     &.spring {
       top: 5%;
-      right: 10%;
+      right: 5%;
       animation: shake 3s linear infinite;
 
     }
@@ -71,5 +71,103 @@
       }
     }
 
+  }
+}
+
+@media screen and (max-width: 1650px) {
+.focusSection {
+  .sectionContent {
+    max-width: 1000px;
+    .achievementContainer {
+      .container {
+        max-width: 242px;
+        .title {
+          h2 {
+            font-size: 65px;
+          }
+        }
+      }
+    }
+  }
+}
+}
+
+@media screen and (max-width: 1400px) {
+  .focusSection {
+    .decoration {
+      &.spring {
+        right: 5%;
+        top: 3%;
+        max-width: 100px;
+        img {
+          width: 100%;
+        }
+      }
+      &.square {
+        left: 5%;
+        max-width: 100px;
+        top: 3%;
+        img {
+          width: 100%;
+        }
+      }
+    }
+    .sectionContent {
+      padding: 100px 15px 100px 65px;
+
+      .achievementContainer {
+        .container {
+          max-width: 230px;
+
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .focusSection {
+    .decoration {
+      &.spring {
+        top: 2%;
+      }
+      &.square {
+        left: 7%;
+        top: 2%;
+      }
+    }
+    .sectionContent {
+      padding: 100px 15px 50px 65px;
+
+      .achievementContainer {
+        justify-content: center;
+        gap: 25px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .focusSection {
+    .sectionContent {
+      padding: 95px 15px 35px 65px;
+
+      .achievementContainer {
+        .container {
+          max-width: 100%;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .focusSection {
+    .decoration {
+      display: none;
+    }
+    .sectionContent {
+      padding: 35px 15px 35px 15px;
+    }
   }
 }

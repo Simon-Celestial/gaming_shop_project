@@ -80,6 +80,7 @@
       border-radius: 50%;
       gap: 12px;
       position: relative;
+
       .decoration {
         position: absolute;
         left: 50%;
@@ -154,6 +155,119 @@
           color: $green;
         }
       }
+    }
+  }
+}
+
+@media screen and (max-width: 1600px) {
+  .contactSection {
+    padding: 100px 15px 100px 65px;
+
+    .sectionContent {
+      max-width: 1000px;
+      padding: 100px 50px;
+
+      .title {
+        max-width: 450px;
+
+        h2 {
+          font-size: 32px;
+        }
+      }
+
+      .animatedBox {
+        margin-right: 75px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1320px) {
+  .contactSection {
+    padding: 80px 15px 80px 65px;
+
+    .sectionContent {
+      padding: 75px 25px 50px 25px;
+      flex-direction: column-reverse;
+      max-width: 700px;
+      align-items: center;
+      gap: 75px;
+
+      .title {
+        max-width: 500px;
+        text-align: center;
+        align-items: center;
+
+        a {
+          font-size: 14px;
+        }
+      }
+
+      .animatedBox {
+        margin-right: 0;
+
+        .decoration {
+          animation: circleGrowSmall 3s linear infinite;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .contactSection {
+    padding: 50px 15px 50px 65px;
+
+    .sectionContent {
+      padding: 75px 25px 50px 25px;
+      flex-direction: column-reverse;
+      max-width: 400px;
+
+      .title {
+        p {
+          margin-bottom: 5px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .contactSection {
+    padding: 50px 15px 50px 15px;
+    .sectionContent {
+      padding: 75px 15px 50px 15px;
+      flex-direction: column-reverse;
+      max-width: 350px;
+      .title {
+        h2 {
+          font-size: 25px;
+        }
+        p {
+          font-size: 20px;
+          margin-bottom: 5px;
+        }
+      }
+      .animatedBox {
+        width: 200px;
+        height: 200px;
+        .row {
+          h2 {
+            font-size: 18px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .contactSection {
+    padding: 50px 15px 50px 15px;
+    .sectionContent {
+      padding: 50px 10px 25px 10px;
+      flex-direction: column-reverse;
+      max-width: 280px;
     }
   }
 }

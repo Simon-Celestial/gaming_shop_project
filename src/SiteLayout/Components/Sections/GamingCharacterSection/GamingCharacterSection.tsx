@@ -1,7 +1,7 @@
 import styles from "./GamingCharacterSection.module.scss";
 import {Swiper, SwiperSlide} from "swiper/react";
 import {Autoplay} from "swiper/modules";
-import {Dispatch, SetStateAction, useCallback, useEffect, useState} from "react";
+import {Dispatch, SetStateAction, useCallback, useEffect, useMemo, useState} from "react";
 import {useTranslation} from "react-i18next";
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-expect-error
@@ -44,6 +44,17 @@ export const GamingCharacterSection = () => {
         }
     }, [i18n.language]);
 
+    const screenSizeValue = useMemo(() => {
+        const screenWidth = window.innerWidth;
+
+        if (screenWidth <= 1200 ) {
+            return 1;
+        } else {
+            return 2;
+        }
+    }, []);
+
+
 
     return (
         <section className={styles.gamingCharacterSection}>
@@ -60,15 +71,32 @@ export const GamingCharacterSection = () => {
                 <Swiper
                     slidesPerView={5}
                     modules={[Autoplay]}
-                    autoplay={{delay: 2500}}
-                    breakpoints={{}}
-                    spaceBetween={50}
+                    autoplay={{delay: 2000}}
+                    breakpoints={{
+                        1600: {
+                            slidesPerView: 5,
+                        },
+                        1200: {
+                            slidesPerView: 4,
+                        },
+                        1000: {
+                            slidesPerView: 3,
+                        },
+                        700: {
+                            slidesPerView: 2,
+                        },
+                        0: {
+                            slidesPerView: 1,
+                        }
+                    }}
+
+                    spaceBetween={0}
                     loop={true}
                     allowTouchMove={false}
                     onSlideChange={(swiper) => handleChangeIndex(swiper.realIndex, setActiveIndex)}
                 >
                     {translatedValues?.map((data: VALUES_DATA, index: number) => {
-                        const isActive = index === (activeIndex + 2) % translatedValues.length;
+                        const isActive = index === (activeIndex + screenSizeValue) % translatedValues.length;
                         return (
                             <SwiperSlide key={data?.id}>
                                 <div key={data?.id}

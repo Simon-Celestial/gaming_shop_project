@@ -73,13 +73,13 @@ export const WishlistPage = () => {
                         </div>
                         {wishlistItems?.map((product) => {
                             return (
-                                <div key={product.id} className={`${styles.tableRow} ${styles.bottomRow}`}>
+                                <div key={`${product.id}_${product.selectedColor}`} className={`${styles.tableRow} ${styles.bottomRow}`}>
                                     <div className={`${styles.product} ${styles.cell}`}>
                                         <div className={styles.colorBox}>
                                             {t('wishlistPage.color')} {product?.selectedColor}
                                         </div>
                                         <img
-                                            src={product?.image[0]}
+                                            src={product?.image?.[0]}
                                             alt={product?.name}/>
                                         <Link to={`/single-product/${product?.id}`}>
                                             {product?.name}

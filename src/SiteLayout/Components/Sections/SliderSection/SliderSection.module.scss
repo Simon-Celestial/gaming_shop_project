@@ -18,3 +18,19 @@
     }
   }
 }
+
+@media screen and (max-width: 800px) {
+  .sliderSection {
+    padding: 50px 0;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .sliderSection {
+    padding: 50px 0;
+    .slideBox {
+      max-height: 250px!important;
+      height: 250px;
+    }
+  }
+}

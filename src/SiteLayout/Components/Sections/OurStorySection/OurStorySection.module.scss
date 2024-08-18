@@ -103,3 +103,72 @@
     }
   }
 }
+
+@media screen and (max-width: 1600px) {
+  .ourStorySection {
+    .sectionContent {
+      padding: 120px 15px 0 95px;
+    }
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .ourStorySection {
+    .sectionContent {
+      padding: 110px 15px 0 95px;
+      .swiperContainer {
+        max-width: 500px;
+        .swiper{
+          .swiperBox {
+            padding: 25px;
+            .goal {
+              h2 {
+                font-size: 25px;
+              }
+              p {
+                padding-right: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .ourStorySection {
+    .sectionContent {
+      padding: 100px 15px 25px 65px;
+      flex-direction: column;
+    }
+  }
+}
+@media screen and (max-width: 600px) {
+  .ourStorySection {
+    .sectionContent {
+      padding: 50px 15px 25px 65px;
+      .swiperContainer {
+        .swiper {
+          .swiperBox {
+            min-height: 330px;
+            flex-direction: column-reverse;
+            justify-content: space-between;
+            .date {
+              height: 50px;
+            }
+          }
+        }
+      }
+
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .ourStorySection {
+    .sectionContent {
+      padding: 50px 15px 25px 15px;
+    }
+  }
+}
