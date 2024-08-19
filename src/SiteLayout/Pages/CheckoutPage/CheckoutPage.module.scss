@@ -3,9 +3,9 @@
 .checkoutEmpty {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 20px;
   width: 100%;
-  max-width: 500px;
+  max-width: 800px;
   margin: auto;
   align-items: center;
   color: $white;
@@ -310,6 +310,7 @@
 @media screen and (max-width: 1440px) {
   .checkoutMain {
     .checkoutSection {
+      padding: 50px 15px 100px 65px;
       .checkoutContent {
         .checkoutForm {
           gap: 25px;
@@ -318,12 +319,26 @@
     }
   }
 }
+@media screen and (max-width: 1440px) {
+  .checkoutEmpty {
+    padding: 150px 15px 150px 65px;
+    img {
+      max-width: 60px;
+    }
+    p {
+      font-size: 22px;
+    }
+
+  }
+}
+
 
 @media screen and (max-width: 1200px) {
-  h3 {
-    font-size: 30px;
-  }
+
   .checkoutMain {
+    h3 {
+      font-size: 25px!important;
+    }
     .checkoutSection {
       .checkoutContent {
         .checkoutForm {
@@ -341,8 +356,14 @@
 
               .orderRow {
                 flex-direction: column;
-                align-items: end;
                 gap: 15px;
+                align-items: start;
+                p {
+                  align-items: start;
+                  span {
+                    white-space: nowrap;
+                  }
+                }
 
               }
             }
@@ -358,6 +379,18 @@
 }
 
 @media screen and (max-width: 1024px) {
+  .checkoutEmpty {
+    padding: 120px 15px 120px 65px;
+    gap: 15px;
+    img {
+      max-width: 50px;
+    }
+    p {
+      font-size: 18px;
+    }
+
+  }
+
   .checkoutMain {
     .checkoutSection {
       .checkoutContent {
@@ -387,10 +420,6 @@
 @media screen and (max-width: 800px) {
   .checkoutEmpty {
     gap: 10px;
-
-    img {
-      max-width: 80px
-    }
   }
   .checkoutMain {
     .checkoutSection {
@@ -503,3 +532,37 @@
     }
   }
 }
+
+@media screen and (max-width: 500px) {
+  .checkoutEmpty {
+    padding: 80px 15px;
+  }
+  .checkoutMain {
+    .checkoutSection {
+      padding: 25px 15px 50px 15px;
+      .checkoutContent {
+        .checkoutForm {
+          .checkoutLeft {
+            padding: 15px;
+
+          }
+          .checkoutRight {
+            .orderContainer {
+              padding: 15px;
+            }
+            .paymentContainer {
+              padding: 15px;
+
+              .paymentTypeRow {
+                b {
+                  font-size: 16px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+

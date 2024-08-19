@@ -17,6 +17,7 @@
     gap: 25px;
     color: $white;
     padding: 200px 15px;
+
     img {
       max-width: 80px;
       object-fit: cover;
@@ -24,17 +25,19 @@
       width: 100%;
       filter: invert(0.9);
     }
+
     p {
       font-size: 25px;
     }
   }
 
   .basketContent {
-    max-width: 1400px;
+    max-width: 1320px;
     width: 100%;
     display: flex;
-    gap: 20px;
-    padding: 50px 0 100px 0;
+    gap: 35px;
+    padding: 50px 15px 100px 15px;
+    justify-content: space-between;
 
 
     .basketCardsWrapper {
@@ -43,6 +46,7 @@
       width: 100%;
       flex-direction: column;
       gap: 40px;
+
       .tableRow {
         display: flex;
         width: 100%;
@@ -51,6 +55,7 @@
 
         &.topRow {
           border-bottom: 1px solid $green;
+
           .cell {
             font-weight: 700;
           }
@@ -70,7 +75,16 @@
         }
 
         .product {
-          max-width: 375px;
+          max-width: 355px;
+          position: relative;
+          .colorBox {
+            position: absolute;
+            top: 0;
+            left: 0;
+            color: rgba(128, 128, 128, 1);
+            text-transform: uppercase;
+            font-size: 12px;
+          }
 
           img {
             max-width: 120px;
@@ -81,7 +95,7 @@
           }
 
           a {
-            font-size: 23px;
+            font-size: 20px;
             transition: color $transition;
 
             &:hover {
@@ -142,6 +156,7 @@
         .delete {
           max-width: 80px;
           justify-content: end;
+          margin-right: 0;
 
           .deleteBtn {
             cursor: pointer;
@@ -166,6 +181,7 @@
           }
         }
       }
+
       .btnWrapper {
         max-width: 250px;
       }
@@ -182,14 +198,17 @@
       flex-direction: column;
       height: min-content;
       gap: 25px;
+
       .rightContainer {
         width: 100%;
         justify-content: space-between;
         align-items: center;
         display: flex;
+
         h1 {
           font-size: 22px;
         }
+
         p {
           font-size: 18px;
         }
@@ -225,56 +244,142 @@
     }
   }
 }
+@media screen and (max-width: 1550px) {
+  .basketMain {
+    .basketContent {
+      margin-left: 65px;
+    }
+  }
+}
 
-@media screen and (max-width: 1400px) {
+
+@media screen and (max-width: 1500px) {
   .basketMain {
     .basketContent {
       .basketRight {
-        max-width: 300px;
+        .rightContainer {
+          h1 {
+            font-size: 18px;
+          }
+        }
       }
+
       .basketCardsWrapper {
-        max-width: unset;
+        .tableRow {
+          .product {
+            a {
+              font-size: 18px;
+            }
+
+            img {
+              max-width: 100px;
+            }
+          }
+
+          .price {
+            b {
+              font-size: 18px;
+            }
+          }
+
+          .subtotal {
+            b {
+              font-size: 18px;
+            }
+          }
+        }
       }
     }
   }
 }
 
+
+
+
+@media screen and (max-width: 1400px) {
+  .basketMain {
+    .basketContent {
+      padding-left: 65px;
+      margin-left: 0;
+      .basketRight {
+        max-width: 300px;
+      }
+
+      .basketCardsWrapper {
+        max-width: unset;
+      }
+    }
+
+    .cartEmpty {
+      padding: 150px 15px 150px 65px;
+
+      img {
+        max-width: 60px;
+      }
+
+      p {
+        font-size: 22px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1320px) {
+  .basketMain {
+    .basketContent {
+      .basketCardsWrapper {
+        .tableRow {
+          .subtotal {
+            max-width: 100px;
+          }
+        }
+      }
+    }
+  }
+}
+
+
 @media screen and (max-width: 1200px) {
   .basketMain {
     .basketContent {
       flex-direction: column;
+
       .basketCardsWrapper {
         order: 2;
         gap: 0;
+
         .tableRow {
           .product {
             img {
               max-width: 100px;
             }
-            a {
-              font-size: 22px;
-            }
           }
+
           .delete {
             max-width: 50px;
           }
+
           .subtotal {
             max-width: 80px;
           }
+
           .price {
             max-width: 80px;
           }
 
         }
+
         .container {
           margin-top: 25px;
         }
 
       }
+
       .basketRight {
         width: 100%;
         max-width: 100%;
         align-items: center;
+
         .container {
           max-width: 250px;
         }
@@ -283,17 +388,39 @@
   }
 }
 
+@media screen and (max-width: 1000px) {
+  .basketMain {
+    .cartEmpty {
+      padding: 120px 15px 120px 65px;
+
+      img {
+        max-width: 50px;
+      }
+
+      p {
+        font-size: 20px;
+      }
+    }
+  }
+}
+
+
 @media screen and (max-width: 800px) {
   .basketMain {
-    .cartEmpty{
-      gap: 10px;
+    .cartEmpty {
+      gap: 15px;
+
       .container {
         height: 45px;
       }
     }
 
     .basketContent {
+      padding: 50px 15px 50px 65px;
       .basketCardsWrapper {
+        .btnWrapper {
+          margin-top: 25px;
+        }
         .topRow {
           display: none;
         }
@@ -301,8 +428,9 @@
         .tableRow {
           flex-direction: column;
           padding: 0 15px 25px 15px;
+
           .cell {
-            padding: 15px 0;
+            padding: 35px 0 15px 0;
           }
 
           .product {
@@ -311,22 +439,18 @@
             flex-direction: column;
             align-items: start;
             gap: 10px;
-
-            a {
-              font-size: 30px;
+            .colorBox {
+              top: 10px;
             }
+
             img {
-              max-width: 150px;
+              max-width: 120px;
             }
           }
 
           .price {
             width: 100%;
             max-width: 100%;
-
-            b {
-              font-size: 30px;
-            }
           }
 
           .quantity {
@@ -341,17 +465,15 @@
           .subtotal {
             max-width: 100%;
             width: 100%;
-            b {
-              font-size: 30px;
-            }
           }
 
           .delete {
             width: 100%;
-            max-width:unset;
+            max-width: unset;
             margin-right: auto;
             margin-left: -15px;
             justify-content: start;
+
             .deleteBtn {
               max-width: 100%;
               height: 60px;
@@ -360,6 +482,7 @@
             }
           }
         }
+
         .container {
           margin-top: 0;
         }
@@ -371,29 +494,51 @@
 
 @media screen and (max-width: 500px) {
   .basketMain {
-    .basketContent {
-      .basketCardsWrapper {
+    .cartEmpty {
+      padding: 80px 15px 80px 15px;
 
+      p {
+        font-size: 18px;
+      }
+
+      .container {
+        height: 45px;
+      }
+    }
+
+    .basketContent {
+      padding: 50px 15px 50px 15px;
+
+      .basketCardsWrapper {
         .tableRow {
           .cell {
-            padding: 15px 0;
             justify-content: center;
             align-items: center;
             margin-right: 0;
           }
+
           .product {
             img {
               margin-right: 0;
             }
+            .colorBox {
+              left: 50%;
+              transform: translateX(-50%);
+            }
           }
+
           .delete {
             margin: 0;
           }
         }
+
         .container {
           max-width: 100%;
         }
 
+      }
+      .basketRight {
+        padding: 10px;
       }
     }
   }

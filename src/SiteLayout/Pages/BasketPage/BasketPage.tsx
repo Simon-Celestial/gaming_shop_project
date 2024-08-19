@@ -67,8 +67,11 @@ export const BasketPage = () => {
                                     return (
                                         <div key={`${product?.id}_${product.selectedColor}`} className={`${styles.tableRow} ${styles.bottomRow}`}>
                                             <div className={`${styles.product} ${styles.cell}`}>
+                                                <div className={styles.colorBox}>
+                                                    color: {product?.selectedColor}
+                                                </div>
                                                 <img src={product?.image?.[0]} alt={product?.name}/>
-                                                <Link to={`/single-product/${product?.id}`}>
+                                                <Link to={`/product-details/${product?.id}`}>
                                                     {product?.name}
                                                 </Link>
                                             </div>
@@ -117,15 +120,15 @@ export const BasketPage = () => {
                                     <h1>{t('basketPage.cartTotal')}</h1>
                                 </div>
                                 <div className={styles.rightContainer}>
-                                    <h1>{t('basketPage.subtotalLabel')}</h1>
+                                    <h1>{t('basketPage.subtotalLabel')} :</h1>
                                     <p>$ {calculateSubtotal?.toFixed(2)}</p>
                                 </div>
                                 <div className={styles.rightContainer}>
-                                    <h1>{t('basketPage.delivery')}</h1>
+                                    <h1>{t('basketPage.delivery')} :</h1>
                                     <p>{t('basketPage.deliveryFree')}</p>
                                 </div>
                                 <div className={styles.rightContainer}>
-                                    <h1>{t('basketPage.total')}</h1>
+                                    <h1>{t('basketPage.total')} :</h1>
                                     <p>$ {calculateSubtotal?.toFixed(2)}</p>
                                 </div>
                                 <div className={styles.btnWrapper}>
