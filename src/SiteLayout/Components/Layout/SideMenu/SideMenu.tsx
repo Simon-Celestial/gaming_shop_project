@@ -56,7 +56,7 @@ export const SideMenu = () => {
 
     return (
         <>
-            <aside className={`${styles.sideMenuWrapper} ${menuState? styles.visible : ''}`}>
+            <aside className={`${styles.sideMenuWrapper} ${menuState ? styles.visible : ''}`}>
                 <div className={styles.menuLogo} onClick={handleMenuOpen}>
                     {
                         menuState ?
@@ -112,6 +112,7 @@ export const SideMenu = () => {
                                                             key={child?.id}
                                                             to={child?.route}
                                                             className={location.pathname === child?.route ? styles.current : ""}
+                                                            onClick={handleMenuOpen}
                                                         >
                                                             {child?.name}
                                                         </Link>
@@ -121,8 +122,13 @@ export const SideMenu = () => {
                                         </div>
                                     </>
                                     :
-                                    <Link to={nav?.route}
-                                          className={`${styles.item} ${location.pathname === nav?.route ? styles.current : ""}`}>{nav?.name}</Link>
+                                    <Link
+                                        to={nav?.route}
+                                        className={`${styles.item} ${location.pathname === nav?.route ? styles.current : ""}`}
+                                        onClick={handleMenuOpen}
+                                    >
+                                        {nav?.name}
+                                    </Link>
                                 }
                             </div>
                         )
