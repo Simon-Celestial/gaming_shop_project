@@ -110,10 +110,21 @@ export const ProductDetailsPage: React.FC = () => {
                                     dynamicBullets: true,
                                 }}
                                 modules={[EffectFade, Autoplay]}
-                                slidesPerView={Math.min(4, similarProducts?.length)}
-                                autoplay={{delay: 3000}}
-                                breakpoints={{}}
-                                spaceBetween={25}
+                                slidesPerView={3}
+                                autoplay={{delay: 3333000}}
+                                breakpoints={{
+                                    1100: {
+                                        slidesPerView: 3,
+                                    },
+                                    800: {
+                                        slidesPerView: 2,
+                                    },
+                                    0: {
+                                        slidesPerView: 1,
+                                    }
+
+                                }}
+                                spaceBetween={15}
                                 freeMode={true}
                                 loop={true}
                             >

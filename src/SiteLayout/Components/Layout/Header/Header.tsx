@@ -106,7 +106,9 @@ export const Header = () => {
                 >
                     <CloseIcon/>
                 </div>
+                <div className={styles.overFlow}>
                 <QuickView product={selectedProduct}/>
+                </div>
             </div>
             <SideMenu/>
             <header

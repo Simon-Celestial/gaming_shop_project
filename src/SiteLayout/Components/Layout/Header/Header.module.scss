@@ -9,12 +9,11 @@
   height: 100vh;
   z-index: 25;
   display: flex;
-  align-items: center;
+  padding-top: 50px;
   justify-content: center;
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.6s ease;
-
   .closeBtn {
     position: absolute;
     right: 50px;
@@ -40,8 +39,11 @@
     opacity: 1;
     pointer-events: auto;
   }
+  .overFlow {
+    height: 100%;
+    overflow-y: auto;
+  }
 }
-
 .headerWrapper {
   display: flex;
   width: 100%;
@@ -420,6 +422,14 @@
 }
 
 @media screen and (max-width: 1500px) {
+  .quickViewWrapper {
+    padding-top: 0;
+    .closeBtn {
+      top: 15px;
+      right: 15px;
+      z-index: 10;
+    }
+  }
   .headerWrapper {
     .headerContent {
       .leftBlock {

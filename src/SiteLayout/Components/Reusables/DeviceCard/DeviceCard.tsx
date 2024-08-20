@@ -33,7 +33,7 @@ export const DeviceCard: React.FC<DeviceCardProps> = ({data}) => {
         setSelectedColor(color)
     }, [setSelectedColor]);
 
-    const setProductToQuickViewAndOpen = useCallback((product : PRODUCTS_DATA) => {
+    const setProductToQuickViewAndOpen = useCallback((product: PRODUCTS_DATA) => {
         setSelectedProduct(product);
         handleQuickViewOpen();
     }, [handleQuickViewOpen, setSelectedProduct])
@@ -111,7 +111,7 @@ export const DeviceCard: React.FC<DeviceCardProps> = ({data}) => {
                 />
                 <p>{data?.brand}</p>
             </div>
-            <div className={styles.cardImage}>
+            <div className={`${styles.cardImage}`}>
                 {
                     data?.quantity < 1 ?
                         <div className={styles.outOfStock}>
@@ -135,6 +135,7 @@ export const DeviceCard: React.FC<DeviceCardProps> = ({data}) => {
                 <div className={styles.price}>
                     <p>$ {data?.salePrice?.toFixed(2)}</p>
                     {data?.regularPrice ? <span>$ {data?.regularPrice?.toFixed(2)}</span> : null}
+                    {data.regularPrice?  null : <span style={{height: "18px"}}></span>}
                 </div>
                 <div
                     className={styles.addBtn}
