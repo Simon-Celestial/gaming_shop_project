@@ -1,6 +1,7 @@
 import React, {useState, useEffect, useCallback, useMemo} from "react";
 import {Bounce, toast} from 'react-toastify';
 import {PRODUCTS_DATA} from "../../Types/types.ts";
+import {useTranslation} from "react-i18next";
 
 
 interface BasketContextType {
@@ -36,6 +37,7 @@ const initialCartItems: PRODUCTS_DATA[] = JSON.parse(localStorage.getItem("baske
 
 export const BasketContextProvider: React.FC<BasketContextProviderProps> = ({children}) => {
     const [cartItems, setCartItems] = useState<PRODUCTS_DATA[]>(initialCartItems);
+    const {t} = useTranslation();
 
     useEffect(() => {
         localStorage.setItem("basket", JSON.stringify(cartItems));
@@ -45,7 +47,7 @@ export const BasketContextProvider: React.FC<BasketContextProviderProps> = ({chi
         setCartItems(prev => {
             const existingItem = prev.find(item => item?.id === product?.id && item?.selectedColor === color);
             if (existingItem) {
-                toast.success(`${product?.name} (${color}) added to basket`, {
+                toast.success(`${product?.name} (${color}) ${t('basketActions.addedToBasket')}!`, {
                     hideProgressBar: false,
                     closeOnClick: true,
                     pauseOnHover: false,
@@ -60,7 +62,7 @@ export const BasketContextProvider: React.FC<BasketContextProviderProps> = ({chi
                         : item
                 );
             } else if (product?.quantity < 1) {
-                toast.error(`Product is out of stock!`, {
+                toast.error(`${t('basketActions.outOfStock')}`, {
                     hideProgressBar: false,
                     closeOnClick: true,
                     pauseOnHover: false,
@@ -71,7 +73,7 @@ export const BasketContextProvider: React.FC<BasketContextProviderProps> = ({chi
                 });
                 return [...prev];
             } else {
-                toast.success(`${product?.name} (${color}) added to basket`, {
+                toast.success(`${product?.name} (${color}) ${t('basketActions.addedToBasket')}!`, {
                     hideProgressBar: false,
                     closeOnClick: true,
                     pauseOnHover: false,
@@ -92,7 +94,7 @@ export const BasketContextProvider: React.FC<BasketContextProviderProps> = ({chi
                 return !(item.id === productId && item.selectedColor === color);
             });
             if (updatedCart.length < prev.length) {
-                toast.success(`${productName} (${color}) removed from basket!`, {
+                toast.success(`${productName} (${color}) ${t('basketActions.basketRemove')}!`, {
                     hideProgressBar: false,
                     closeOnClick: true,
                     pauseOnHover: false,
@@ -102,7 +104,7 @@ export const BasketContextProvider: React.FC<BasketContextProviderProps> = ({chi
                     transition: Bounce,
                 });
             } else {
-                toast.error(`Failed to remove ${productName} (${color}) from basket!`, {
+                toast.error(`${t('basketActions.failedToRemove')} ${productName} (${color}) ${t('basketActions.fromBasket')}!`, {
                     hideProgressBar: false,
                     closeOnClick: true,
                     pauseOnHover: false,
@@ -139,7 +141,7 @@ export const BasketContextProvider: React.FC<BasketContextProviderProps> = ({chi
 
     const emptyCart = useCallback(() => {
         setCartItems([]);
-        toast.success(`Basket successfully cleared!`, {
+        toast.success(`${t('basketActions.clearBasket')}!`, {
             hideProgressBar: false,
             closeOnClick: true,
             pauseOnHover: false,

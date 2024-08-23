@@ -570,5 +570,19 @@
     "satHours": "Сб: 10:00 - 16:00",
     "sunClosed": "Вс: Закрыто"
 
+  },
+  "basketActions": {
+    "addedToBasket": "добавлено в корзину",
+    "outOfStock": "Товар отсутствует на складе",
+    "basketRemove": "удалено из корзины",
+    "failedToRemove": "Не удалось удалить",
+    "fromBasket": "из корзины",
+    "clearBasket": "Корзина успешно очищена"
+  },
+  "wishlistActions": {
+    "addedToWishlist": "добавлен в список желаемого",
+    "removedFromWishlist": "удален из списка желаемого"
   }
+
+
 }

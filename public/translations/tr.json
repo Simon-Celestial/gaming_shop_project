@@ -19,7 +19,7 @@
     "checkout": "Ödeme",
     "emptyShopperMessage": "Alışveriş sepetiniz boş"
   },
-  "footerOne" : {
+  "footerOne": {
     "facebook": "Facebook",
     "instagram": "Instagram",
     "linkedin": "LinkedIn",
@@ -41,7 +41,7 @@
     "toastInvalidEmail": "E-posta formatı yanlış!",
     "toastSuccess": "Mesaj başarıyla gönderildi!"
   },
-  "footerTwo" : {
+  "footerTwo": {
     "footerTitle": "Hadi Başlayalım",
     "footerContactText": "Daha fazla bilgi ve destek için",
     "footerContactLink": "bize ulaşın",
@@ -86,7 +86,7 @@
     "hoursWeekend": "Cmt-Pazar: Hafta Sonu"
   },
   "backToTop": "Üste Dön",
-  "contactForm" : {
+  "contactForm": {
     "pleaseFillAllFields": "Lütfen tüm alanları doldurun!",
     "pleaseEnterValidEmail": "Lütfen geçerli bir e-posta adresi girin!",
     "messageSentSuccess": "Mesajınız başarıyla gönderildi!",
@@ -100,12 +100,12 @@
     "typeYourMessage": "Lütfen mesajınızı buraya yazın...",
     "sendMessage": "Mesajı Gönder"
   },
-  "deviceCard" : {
+  "deviceCard": {
     "outOfStock": "Stokta yok",
     "addToCart": "Sepete ekle",
     "offer": "Teklif"
   },
-  "gameCard" : {
+  "gameCard": {
     "new": "Yeni",
     "releaseDate": "Çıkış Tarihi",
     "gameRating": "Oyun Puanı",
@@ -163,7 +163,7 @@
     "cookiesItem3Text": "Bu çerezler, ilgi alanlarınıza uygun hedeflenmiş reklamlar sunmamıza yardımcı olur ve daha kişiselleştirilmiş bir gezinme deneyimi sağlar.",
     "cookiesConsent": "Sitemizi kullanmaya devam ederek çerezlerin kullanımını kabul edersiniz. Ancak, çerez tercihlerinizi her zaman tarayıcı ayarlarınız aracılığıyla yönetebilirsiniz. Çerez uygulamalarımız hakkında daha fazla bilgi için lütfen Çerez Politikamıza bakın. Şeffaflığa bağlıyız ve veri tercihlerinizi kontrol etme araçları sunuyoruz."
   },
-  "aboutSection" : {
+  "aboutSection": {
     "welcome": "Hoşgeldiniz",
     "brand": "GAMESTORM",
     "gamingShop": "Oyun Mağazası",
@@ -178,14 +178,14 @@
     "exploreProducts": "Ürünlerimizi Keşfedin",
     "m": "M"
   },
-  "contactSection" : {
+  "contactSection": {
     "contactWithUs": "Bizimle İletişime Geçin",
     "contactUsToday": "Bugün ücretsiz danışmanlık için bizimle iletişime geçin",
     "startYourProject": "Projenizi Başlatın",
     "callUs": "Bizi Arayın",
     "phoneNumber": "(302) 555-0107"
   },
-  "gamesSection" : {
+  "gamesSection": {
     "feelUnforgettable": "Unutulmaz",
     "gamingExperience": "Oyun Deneyimini Hissedin",
     "ourProducts": "Ürünlerimiz",
@@ -196,7 +196,7 @@
     "typeToSearch": "Aramak için yazın...",
     "nothingFound": "Hiçbir şey bulunamadı..."
   },
-  "jobsSection" : {
+  "jobsSection": {
     "lookingFor": "Yetenekli Profesyoneller",
     "talentedProfessionals": "Arıyoruz",
     "letsBuildTheFuture": "Gelin Geleceği İnşa Edelim",
@@ -204,28 +204,28 @@
     "beliefText": "Basit, dürüst, kendi kendine yeten ve motive olmuş olmanın, sürekli olarak mükemmel bir şirket atmosferi yaratma çabasının yaratıcı ve güçlü bir takım oluşturmaya yardımcı olabileceğine inanıyoruz.",
     "fullTime": "Tam Zamanlı"
   },
-  "partnersSection" : {
+  "partnersSection": {
     "trusted": "Tarafından",
     "by": "Güvenilir",
     "happyToWorkWith": "Şu global en büyük markalarla çalışmaktan mutluluk duyuyoruz",
     "globalLargestBrands": "global en büyük markalar",
     "proudToSupport": "Dünyanın dört bir yanındaki sektör liderlerini desteklemekten gurur duyuyoruz."
   },
-  "recentlyCompletedSection" : {
+  "recentlyCompletedSection": {
     "recentlyCompleted": "Son",
     "completed": "Tamamlanan",
     "gameDevelopmentAndArt": "Oyun Geliştirme ve Sanat,",
     "elevatedToNewLevel": "Yeni Bir Seviyeye Taşındı",
     "viewAllGames": "Tüm Oyunları Görüntüle"
   },
-  "teamSection" : {
+  "teamSection": {
     "passionForGaming": "Oyun",
     "gaming": "İçin Tutkumuz Var!",
     "teamProfessionals": "Ekibimiz Profesyonellerden Oluşuyor.",
     "proudOfIt": "Ve Bununla Gurur Duyuyoruz.",
     "teamDescription": "Dinamik ekibimiz teknolojiye hakim satış profesyonelleri, bilgili müşteri hizmetleri temsilcileri, yenilikçi pazarlama stratejistleri ve vizyoner ürün yöneticilerinden oluşmaktadır."
   },
-  "aboutPage" : {
+  "aboutPage": {
     "whiteText": "Bizim Sloganımız Basit Eğlence",
     "greenText": "Herkes İçin",
     "smallText": "Her gün yeni dünyalara kapılar açmaya devam ediyoruz ve yeni oyunlar ve benzersiz fikirler yaratmak için heyecanla çalışıyoruz!",
@@ -241,7 +241,7 @@
     "storyTitle": "Bizim Hikayemiz",
     "storyDescription": "Anlatmaya değer güzel bir hikayemiz var. Size en büyük kilometre taşlarımızı anlatmamıza izin verin."
   },
-  "basketPage" : {
+  "basketPage": {
     "yourBasket": "Sepetiniz",
     "readyToMakeThemYours": "Onları almaya hazır mısınız?",
     "cartEmpty": "Sepetiniz şu anda boş...",
@@ -258,14 +258,12 @@
     "deliveryFree": "ÜCRETSİZ",
     "total": "Toplam",
     "proceedToCheckout": "Almaya Devam Et"
-
   },
   "blogPage": {
     "blog": "Blog",
     "professionalGameDesignAndDevelopment": "1995'ten beri Profesyonel Oyun Tasarımı ve Geliştirme hizmetleri"
-
   },
-  "checkoutPage" : {
+  "checkoutPage": {
     "checkout": "Ödeme",
     "journeyStart": "Sonsuz eğlenceye yolculuğunuz şimdi başlıyor!",
     "mandatoryFieldsMessage": "Lütfen * ile işaretlenmiş tüm zorunlu alanları doldurun",
@@ -300,10 +298,6 @@
     "payment": "Ödeme",
     "privacyPolicy": "gizlilik politikası",
     "shippingAndPayment": "Kargo ve Ödeme"
-
-
-
-
   },
   "completedPage": {
     "orderReceived": "Siparişiniz alınmıştır",
@@ -311,26 +305,22 @@
     "confirmationEmail": "Siparişinizin detaylarını içeren bir onay e-postası alacaksınız.",
     "contactNumber": "Sorularınız varsa, bu numaradan iletişime geçin:",
     "returnToHome": "Ana Sayfaya Dön"
-
   },
-  "contactPage" : {
+  "contactPage": {
     "greenText": "Dostane Takım",
     "whiteText": "Bizimle iletişime geçin",
     "smallText": "Destek hizmetimiz her zaman yanınızda. Müşterilerimizden ve ziyaretçilerimizden geri bildirim almak bizi mutlu eder ve her zaman yardımcı olmaktan memnuniyet duyarız."
-
   },
   "gamesPage": {
     "smallText": "Projelerimiz, benzersiz mekanikler, ince ayarlanmış oyun deneyimi ve göz alıcı görsel tarz ile öne çıkıyor.",
     "whiteText": "Bizim",
     "greenText": "Oyunlarımız"
-
   },
   "notFoundPage": {
     "404": "404",
     "pageNotFound": "Sayfa bulunamadı"
-
   },
-  "productDetailsPage" : {
+  "productDetailsPage": {
     "additionalInformation": "Ek bilgi",
     "weight": "Ağırlık:",
     "dimensions": "Boyutlar:",
@@ -341,14 +331,13 @@
     "no": "Hayır",
     "notAvailable": "Mevcut değil",
     "youMayAlsoLike": "Bunu da beğenebilirsiniz…"
-
   },
   "servicesPage": {
     "our": "Bizim",
     "services": "Hizmetler",
     "smallText": "Sanat geliştirme konusundaki sistematik yaklaşımımız, oyunlar ve oyun tabanlı çözümler için yüksek teslimat standartlarını garanti eder, görünüm geliştirmeden motor entegrasyonuna kadar."
   },
-  "wishlistPage" : {
+  "wishlistPage": {
     "yourWishlist": "İstek listeniz",
     "yourFavoriteProducts": "Favori ürünleriniz",
     "wishlistIsEmpty": "İstek listeniz şu anda boş.",
@@ -362,8 +351,6 @@
     "addToCartButton": "sepete ekle",
     "inStock": "Stokta",
     "outOfStock": "Stokta Yok"
-
-
   },
   "shopPage": {
     "greenText": "Mağaza",
@@ -392,8 +379,7 @@
     "noComments": "Yorum bulunmuyor",
     "search": "Arama",
     "showingAll": "Tüm sonuçları",
-    "results" : "göster"
-
+    "results": "göster"
   },
   "loginPage": {
     "enterAccount": "Hesabınıza giriş yapın",
@@ -427,7 +413,6 @@
     "passwordError": "Şifre en az 6 karakter uzunluğunda olmalı ve onaylanan şifre ile eşleşmelidir.",
     "registrationError": "Kayıt sırasında bir hata oluştu. Lütfen daha sonra tekrar deneyin.",
     "allFieldsRequired": "Tüm alanlar gereklidir."
-
   },
   "bannerSection": {
     "title": "Oyun Dünyasının Tadını Çıkarın",
@@ -487,25 +472,25 @@
     "EndToEndGameDevelopment": "Uçtan uca oyun geliştirme, yeniden yapılandırma ve dış kaynak hizmetleri. Üst sınıf oyun deneyimleri için sürükleyici teknoloji uzmanlığı",
     "FindOut": "Fazla Bilgi"
   },
-  "productsSection" : {
+  "productsSection": {
     "EmbraceTheWorldOf": "Oyun Dünyasını",
     "Gaming": "Kucaklayın!",
     "OurDedicatedShop": "Size Özel Mağazamız Hizmetinizde.",
     "ExperienceTheBest": "En İyiyi Deneyimleyin.",
     "ExploreVariety": "Geniş bir oyun ekipmanı ve çevre birimleri yelpazesini keşfedin."
   },
-  "ourServicesSection" : {
+  "ourServicesSection": {
     "BringingYourGamingVision": "Oyun Vizyonunuzu",
     "GamingVisionToLife": "Gerçeğe",
-    "life" : "Dönüştürüyoruz",
+    "life": "Dönüştürüyoruz",
     "InnovativeGamingSolutions": "Yenilikçi",
     "GamingSolutionsEverywhere": "Oyun Çözümleri",
-    "everywhere" : "Her Yerde",
+    "everywhere": "Her Yerde",
     "OurGamingStudio": "Oyun stüdyomuz, oyun geliştirme, sanat ve tasarım, NFT oluşturma ve VR & AR çözümleri konusunda birinci sınıf hizmetler sunar.",
     "TransformingGaming": "Oyunları, ileri teknoloji ve platform bağımsız çözümlerle dönüştürüyoruz.",
     "SeeAllServices": "Tüm Hizmetleri Gör"
   },
-  "keysSection" : {
+  "keysSection": {
     "TheFourKeyComponents": "Dört Anat Bileşen",
     "GamestormStudio": "Gamestorm stüdyosu",
     "LongLastingFun": "Uzun Süreli Eğlence",
@@ -516,9 +501,8 @@
     "UniqueTwistDescription": "Sevilen oyun türlerine kendi dokunuşumuzu katıyoruz; yarış oyunu, durmanın amaç olduğu yarış oyunu, 360 derecelik bir ortamda point-and-click oyunu gibi.",
     "GradualLearningCurve": "Kademeli Öğrenme Eğrisi",
     "GradualLearningCurveDescription": "Oyunlarımız öğrenmesi kolay ama ustalaşması zor. Bu da oyunlarımızı hem yeni başlayanlar için erişilebilir hem de profesyoneller için zorlu hale getiriyor."
-
   },
-  "lifeSection" : {
+  "lifeSection": {
     "topTitleH4": "Büyük Bir Ailenin ",
     "topTitleH4Span": "Parçasıyız",
     "topTitleH2": "Ekibimizi Daha İyi",
@@ -528,13 +512,12 @@
     "joinContainerP": "Hala hayalinizdeki işi bulamadınız mı? Gamestorm Ekibine katılın ve hızla büyüyen bir ailenin bir parçası olun!",
     "defaultButtonTitle": "Açık Pozisyonları Kontrol Et"
   },
-  "howItWorksSection" : {
+  "howItWorksSection": {
     "simplePowerfulEfficientProcess": "Basit ama Güçlü ve Etkili Bir",
-    "process" : "Süreç",
+    "process": "Süreç",
     "ourGame": "Oyunlarımız",
     "developmentProcess": "Geliştirme Süreci",
     "gameDevelopmentNextLevel": "Oyun geliştirmeyi 10 basit adımda bir üst seviyeye taşıyın. Her zaman aşağıdaki sürece göre çalışıyoruz"
-
   },
   "gameFeaturesSection": {
     "clientCentric": "Müşteri Merkezli",
@@ -543,16 +526,14 @@
     "gameART": "Geliştirmedeki Temel Yararlarımız",
     "andDevelopment": "Oyun Sanatı",
     "clientCentricApproach": "Müşteri merkezli bir yaklaşımın, yaratıcı özgürlük, profesyonel deneme ve sınırların ötesinde yaratma isteği ile birleşmesi, bizi öne çıkan bir ürün sunmayı hedefleyen işletmeler için mükemmel bir ortak yapar."
-
   },
-  "focusSection" : {
+  "focusSection": {
     "yearsInBusiness": "İş Yılları",
     "downloads": "İndirmeler",
     "gamesLaunched": "Yayınlanan Oyunlar",
     "gamingProjectsDelivered": "Oyun Projeleri"
-
   },
-  "contactUsTwoSection" : {
+  "contactUsTwoSection": {
     "have": "Sorularınız mı",
     "questions": "var?",
     "cantFindWhatYouLookingFor": "Aradığınızı mı",
@@ -569,12 +550,17 @@
     "monFriHours": "Pzt-Cum: 9:00 - 18:00",
     "satHours": "Cmt: 10:00 - 16:00",
     "sunClosed": "Paz: Kapalı"
-
+  },
+  "basketActions": {
+    "addedToBasket": "sepete eklendi",
+    "outOfStock": "Ürün stokta yok",
+    "basketRemove": "sepetten çıkarıldı",
+    "failedToRemove": "Ürün",
+    "fromBasket": "sepetten çıkarılamadı",
+    "clearBasket": "Sepet başarıyla temizlendi"
+  },
+  "wishlistActions": {
+    "addedToWishlist": "istek listesine eklendi",
+    "removedFromWishlist": "istek listesinden çıkarıldı"
   }
-
-
-
-
-
-
 }

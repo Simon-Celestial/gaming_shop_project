@@ -40,8 +40,10 @@ export const DataContextProvider: React.FC<DataContextProviderProps> = ({childre
         (async () => {
             setProductsLoading(true);
             try {
+                // WHEN YOU RUN THIS ON REMOTE SERVER
                 const response = await axios.get("https://gaming-shop-server.vercel.app/products");
-              // const response = await axios.get("http://localhost:8000/products");
+                // WHEN YOU RUN THIS ON LOCAL SERVER
+                // const response = await axios.get("http://localhost:8000/products");
                 setProductsData(response.data);
             } catch (error) {
                 console.error('Axios error:', error);

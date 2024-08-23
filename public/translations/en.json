@@ -41,7 +41,7 @@
     "toastInvalidEmail": "Incorrect email format!",
     "toastSuccess": "Message sent successfully!"
   },
-  "footerTwo" : {
+  "footerTwo": {
     "footerTitle": "Let’s Get started",
     "footerContactText": "For further info and support",
     "footerContactLink": "contact us",
@@ -86,7 +86,7 @@
     "hoursWeekend": "Sat-Sun: Weekend"
   },
   "backToTop": "Back To Top",
-  "contactForm" : {
+  "contactForm": {
     "pleaseFillAllFields": "Please fill all fields!",
     "pleaseEnterValidEmail": "Please enter a valid email address!",
     "messageSentSuccess": "Your message has been sent successfully!",
@@ -100,12 +100,12 @@
     "typeYourMessage": "Please type your message here...",
     "sendMessage": "Send Message"
   },
-  "deviceCard" : {
+  "deviceCard": {
     "outOfStock": "Out of stock",
     "addToCart": "Add to cart",
     "offer": "Offer"
   },
-  "gameCard" : {
+  "gameCard": {
     "new": "New",
     "releaseDate": "Release Date",
     "gameRating": "Game Rating",
@@ -163,7 +163,7 @@
     "cookiesItem3Text": "These cookies help deliver targeted advertisements relevant to your interests, providing a more tailored browsing experience.",
     "cookiesConsent": "By continuing to use our site, you consent to the use of cookies. However, you can manage your cookie preferences at any time through your browser settings. For more information about our cookie practices, please refer to our Cookie Policy. We are committed to transparency and offer you the tools to control your data preferences."
   },
-  "aboutSection" : {
+  "aboutSection": {
     "welcome": "Welcome To",
     "brand": "GAMESTORM",
     "gamingShop": "Gaming Shop",
@@ -178,15 +178,14 @@
     "exploreProducts": "Explore Our Products",
     "m": "M"
   },
-  "contactSection" : {
+  "contactSection": {
     "contactWithUs": "Contact With Us",
     "contactUsToday": "Contact us today for a free consultation",
     "startYourProject": "Start Your Project",
     "callUs": "Call Us",
     "phoneNumber": "(302) 555-0107"
-
   },
-  "gamesSection" : {
+  "gamesSection": {
     "feelUnforgettable": "Feel Unforgettable",
     "gamingExperience": "Gaming Experience",
     "ourProducts": "Our Products",
@@ -197,7 +196,7 @@
     "typeToSearch": "Type to search...",
     "nothingFound": "Nothing found..."
   },
-  "jobsSection" : {
+  "jobsSection": {
     "lookingFor": "We're Looking For",
     "talentedProfessionals": "Talented Professionals",
     "letsBuildTheFuture": "Let's Build The Future",
@@ -205,28 +204,28 @@
     "beliefText": "Our belief is that being simple, honest, self-driven and motivated combined with the constant pursuit of the ultimate company atmosphere can help grow a creative and robust team.",
     "fullTime": "Full Time"
   },
-  "partnersSection" : {
+  "partnersSection": {
     "trusted": "Trusted",
     "by": "By",
     "happyToWorkWith": "We are happy to work with",
     "globalLargestBrands": "global largest brands",
     "proudToSupport": "We are proud to support industry leaders around the world."
   },
-  "recentlyCompletedSection" : {
+  "recentlyCompletedSection": {
     "recentlyCompleted": "Recently",
     "completed": "Completed",
     "gameDevelopmentAndArt": "Game Development and Art,",
     "elevatedToNewLevel": "Elevated to a New Level",
     "viewAllGames": "View All Games"
   },
-  "teamSection" : {
+  "teamSection": {
     "passionForGaming": "We Have A Passion For",
     "gaming": "Gaming!",
     "teamProfessionals": "Our Team Consists of Professionals.",
     "proudOfIt": "And We're Proud Of It.",
     "teamDescription": "Our dynamic team blends tech-savvy sales professionals, knowledgeable customer service representatives, innovative marketing strategists, and visionary product managers."
   },
-  "aboutPage" : {
+  "aboutPage": {
     "whiteText": "Our Simple is Motto Fun for",
     "greenText": "Everyone",
     "smallText": "We continue to open doors to new worlds every day and we are working excitedly for creating new games and unique ideas!",
@@ -242,7 +241,7 @@
     "storyTitle": "Our Story",
     "storyDescription": "We have a beautiful story, worth telling. Let us walk you through our biggest milestones."
   },
-  "basketPage" : {
+  "basketPage": {
     "yourBasket": "Your basket",
     "readyToMakeThemYours": "Ready to make them yours?",
     "cartEmpty": "Your basket is currently empty...",
@@ -259,14 +258,12 @@
     "deliveryFree": "FREE",
     "total": "Total",
     "proceedToCheckout": "Proceed to Checkout"
-
   },
   "blogPage": {
     "blog": "Blog",
     "professionalGameDesignAndDevelopment": "Professional Game design and Development services since 1995"
-
   },
-  "checkoutPage" : {
+  "checkoutPage": {
     "checkout": "Checkout",
     "journeyStart": "Your journey to ultimate entertainment starts now!",
     "mandatoryFieldsMessage": "Please fill all mandatory fields marked with *",
@@ -301,7 +298,6 @@
     "payment": "Payment",
     "privacyPolicy": "privacy policy",
     "shippingAndPayment": "Shipping & Payment"
-
   },
   "completedPage": {
     "orderReceived": "Your order has been received",
@@ -310,24 +306,21 @@
     "contactNumber": "If you have any questions, contact this number:",
     "returnToHome": "Return to Home"
   },
-  "contactPage" : {
+  "contactPage": {
     "greenText": "Friendly Team",
     "whiteText": "Get in touch with our",
     "smallText": "Our support goes all the way. We love hearing from customers and visitors and are always happy to help."
-
   },
   "gamesPage": {
     "smallText": "Our projects feature unique mechanics, fine-tuned gameplay, and eye-catching visual style.",
     "whiteText": "Our",
     "greenText": "Games"
-
   },
   "notFoundPage": {
     "404": "404",
     "pageNotFound": "Page not found"
-
   },
-  "productDetailsPage" : {
+  "productDetailsPage": {
     "additionalInformation": "Additional information",
     "weight": "Weight:",
     "dimensions": "Dimensions:",
@@ -338,15 +331,13 @@
     "no": "No",
     "notAvailable": "Not available",
     "youMayAlsoLike": "You may also like…"
-
   },
   "servicesPage": {
     "our": "Our",
     "services": "Services",
     "smallText": "Our systematic approach to art development ensures high delivery standards for games and game-based solutions, from look development to engine integration."
-
   },
-  "wishlistPage" : {
+  "wishlistPage": {
     "yourWishlist": "Your wishlist",
     "yourFavoriteProducts": "Your favorite products",
     "wishlistIsEmpty": "Your wishlist is currently empty.",
@@ -360,8 +351,6 @@
     "addToCartButton": "add to cart",
     "inStock": "In Stock",
     "outOfStock": "Out of Stock"
-
-
   },
   "shopPage": {
     "greenText": "Shop",
@@ -390,7 +379,7 @@
     "noComments": "No comments available",
     "search": "Search",
     "showingAll": "Showing All",
-    "results" : "results"
+    "results": "results"
   },
   "loginPage": {
     "enterAccount": "Enter into your account",
@@ -424,7 +413,6 @@
     "passwordError": "The password must be at least 6 characters long and must match the confirmation password.",
     "registrationError": "An error occurred while registering. Please try again later.",
     "allFieldsRequired": "All fields are required."
-
   },
   "bannerSection": {
     "title": "Enjoy Gaming World",
@@ -484,26 +472,25 @@
     "EndToEndGameDevelopment": "End-to-end game development, revamping, and outsourcing services. Immersive technology expertise for top-class gaming experiences",
     "FindOut": "Find Out"
   },
-  "productsSection" : {
+  "productsSection": {
     "EmbraceTheWorldOf": "Embrace the World of",
     "Gaming": "Gaming!",
     "OurDedicatedShop": "Our Dedicated Shop is Here for You.",
     "ExperienceTheBest": "Experience the Best.",
     "ExploreVariety": "Explore an extensive variety of gaming equipment and peripherals."
   },
-  "ourServicesSection" : {
+  "ourServicesSection": {
     "BringingYourGamingVision": "Bringing Your",
     "GamingVisionToLife": "Gaming Vision",
-    "life" : "to Life",
+    "life": "to Life",
     "InnovativeGamingSolutions": "Innovative",
     "GamingSolutionsEverywhere": "Gaming Solutions",
-    "everywhere" : "Everywhere",
+    "everywhere": "Everywhere",
     "OurGamingStudio": "Our gaming studio delivers top-notch services in game development, art & design, NFT creation, and VR & AR solutions.",
     "TransformingGaming": "Transforming gaming with cutting-edge and platform-independent solutions.",
     "SeeAllServices": "See All Services"
-
   },
-  "keysSection" : {
+  "keysSection": {
     "TheFourKeyComponents": "The Four Key Components of a",
     "GamestormStudio": "Gamestorm studio",
     "LongLastingFun": "Long-Lasting Fun",
@@ -514,9 +501,8 @@
     "UniqueTwistDescription": "We put our own spin on beloved game genres, from a racing game where the goal is to stop, to a point-and-click game in a 360-degree environment.",
     "GradualLearningCurve": "Gradual Learning Curve",
     "GradualLearningCurveDescription": "Our games are easy to learn but hard to master. This makes our games both accessible to newcomers and challenging for pros."
-
   },
-  "lifeSection" : {
+  "lifeSection": {
     "topTitleH4": "We're Part Of A",
     "topTitleH4Span": "Big Family",
     "topTitleH2": "Get to know our staff",
@@ -526,13 +512,12 @@
     "joinContainerP": "Still haven't found your dream job? Join Team Gamestorm and become the next Gamestorm of an ever-growing family!",
     "defaultButtonTitle": "Check Open Positions"
   },
-  "howItWorksSection" : {
+  "howItWorksSection": {
     "simplePowerfulEfficientProcess": "A Simple yet Powerful and efficient",
     "process": "Process",
     "ourGame": "Our Game",
     "developmentProcess": "Development",
     "gameDevelopmentNextLevel": "Take your game development for next level in 10 simple steps. Always work Done By the Following Process"
-
   },
   "gameFeaturesSection": {
     "clientCentric": "Client-Centric",
@@ -541,16 +526,14 @@
     "gameART": "Game ART",
     "andDevelopment": "and Development",
     "clientCentricApproach": "A client-centric approach coupled with creative freedom, professional experimentation, and a willingness to create beyond the limits makes us a great partner for businesses looking to deliver a product that stands out."
-
   },
-  "focusSection" : {
+  "focusSection": {
     "yearsInBusiness": "Years in Business",
     "downloads": "Downloads",
     "gamesLaunched": "Games Launched",
     "gamingProjectsDelivered": "Projects Delivered"
-
   },
-  "contactUsTwoSection" : {
+  "contactUsTwoSection": {
     "have": "Have",
     "questions": "Questions?",
     "cantFindWhatYouLookingFor": "Can’t find what are",
@@ -567,6 +550,17 @@
     "monFriHours": "Mon-Fri: 9:00 AM - 6:00 PM",
     "satHours": "Sat: 10:00 AM - 4:00 PM",
     "sunClosed": "Sun: Closed"
+  },
+  "basketActions": {
+    "addedToBasket": "added to basket",
+    "outOfStock": "Product is out of stock",
+    "basketRemove": "removed from basket",
+    "failedToRemove": "Failed to remove",
+    "fromBasket": "from basket",
+    "clearBasket": "Basket successfully cleared"
+  },
+  "wishlistActions": {
+    "addedToWishlist": "added to wishlist",
+    "removedFromWishlist": "removed from wishlist"
   }
-
 }

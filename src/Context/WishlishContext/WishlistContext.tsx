@@ -1,6 +1,7 @@
 import React, {useCallback, useEffect, useMemo, useState} from "react";
 import {Bounce, toast} from "react-toastify";
 import {PRODUCTS_DATA} from "../../Types/types.ts";
+import {useTranslation} from "react-i18next";
 
 
 interface WishlistContextType {
@@ -29,6 +30,8 @@ export const WishlistContextProvider: React.FC<WishlistContextProviderProps> = (
     const initialItems: PRODUCTS_DATA[] = JSON.parse(localStorage.getItem("wishlist") || "[]");
     const [wishlistItems, setWishlistItems] = useState<PRODUCTS_DATA[]>(initialItems);
 
+    const {t} = useTranslation();
+
 
     useEffect(() => {
         localStorage.setItem("wishlist", JSON.stringify(wishlistItems));
@@ -41,7 +44,7 @@ export const WishlistContextProvider: React.FC<WishlistContextProviderProps> = (
             );
 
             if (isExistingIndex === -1) {
-                toast.success(`${product?.name} (${color}) added to wishlist`, {
+                toast.success(`${product?.name} (${color}) ${t('wishlistActions.addedToWishlist')}!`, {
                     hideProgressBar: false,
                     closeOnClick: true,
                     pauseOnHover: false,
@@ -53,7 +56,7 @@ export const WishlistContextProvider: React.FC<WishlistContextProviderProps> = (
 
                 return [...prev, {...product, selectedColor: color}];
             } else {
-                toast.error(`${product?.name} (${color}) removed from wishlist!`, {
+                toast.error(`${product?.name} (${color}) ${t('wishlistActions.removedFromWishlist')}!`, {
                     hideProgressBar: false,
                     closeOnClick: true,
                     pauseOnHover: false,
@@ -73,7 +76,7 @@ export const WishlistContextProvider: React.FC<WishlistContextProviderProps> = (
     const removeFromWishlist = useCallback(
         (productId: number, productName: string, color: string, alert: boolean) => {
             if (alert) {
-                toast.error(`${productName} (${color}) removed from wishlist`, {
+                toast.error(`${productName} (${color}) ${t('wishlistActions.removedFromWishlist')}!`, {
                     hideProgressBar: false,
                     closeOnClick: true,
                     pauseOnHover: false,
